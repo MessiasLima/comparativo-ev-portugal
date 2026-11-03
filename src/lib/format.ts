@@ -52,6 +52,16 @@ export function formatPercent(value: number): string {
   return `${number1.format(value)}%`
 }
 
+/** Trims prose for meta descriptions, cutting on a word boundary. */
+export function truncateText(value: string, max = 160): string {
+  const normalized = value.replace(/\s+/g, " ").trim()
+  if (normalized.length <= max) return normalized
+  const cut = normalized.slice(0, max - 1)
+  const lastSpace = cut.lastIndexOf(" ")
+  const body = lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut
+  return `${body.trimEnd()}…`
+}
+
 export function formatDatePt(isoDate: string): string {
   return new Intl.DateTimeFormat("pt-PT", {
     day: "2-digit",

@@ -24,6 +24,11 @@
 .DS_Store
 *.pem
 
+# generated SEO files (scripts/generate-seo.mjs, scripts/generate-og.mjs)
+/public/sitemap.xml
+/public/robots.txt
+/public/og/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

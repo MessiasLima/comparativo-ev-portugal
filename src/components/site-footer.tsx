@@ -36,7 +36,7 @@ export function SiteFooter() {
               dados são calculados a partir dos ficheiros JSON de cada carro,
               para que o ranking acompanhe qualquer alteração.
             </p>
-            <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/35">
+            <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/60">
               Atualizado a {formatDatePt(SITE_UPDATED_AT)}
             </p>
           </div>

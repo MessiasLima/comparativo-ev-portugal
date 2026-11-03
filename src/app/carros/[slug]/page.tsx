@@ -16,6 +16,7 @@ import {
 import { CriterionList } from "@/components/criterion-list"
 import { EquipmentChecklist } from "@/components/equipment-checklist"
 import { SpecGrid } from "@/components/spec-grid"
+import { JsonLd } from "@/components/structured-data"
 import { WeightedScorePanel } from "@/components/weighted-score-panel"
 import { Badge } from "@/components/ui/badge"
 import { CRITERIA } from "@/data/criteria"
@@ -27,8 +28,15 @@ import {
   formatEuro,
   formatNumber,
   formatScore,
+  truncateText,
 } from "@/lib/format"
 import { getComparison, getScoredCar } from "@/lib/scoring"
+import {
+  SITE_LOCALE,
+  SITE_NAME,
+  absoluteUrl,
+  publicAssetUrl,
+} from "@/lib/site-url"
 import { cn } from "cn"
 
 const navItems = [
@@ -89,9 +97,36 @@ export async function generateMetadata({
   const entry = getScoredCar(slug)
   if (!entry) return { title: "Carro não encontrado" }
 
+  const { car } = entry
+  const title = formatCarName(car)
+  const description = truncateText(`${car.tagline} ${car.dossier.verdict}`)
+  const canonical = absoluteUrl(`/carros/${car.slug}/`)
+  const image = {
+    url: publicAssetUrl(`/og/carros/${car.slug}.png`),
+    width: 1200,
+    height: 630,
+    alt: `${title} — autonomia, equipamento e custo por ponto`,
+  }
+
   return {
-    title: formatCarName(entry.car),
-    description: `${entry.car.tagline} ${entry.car.dossier.verdict}`,
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      type: "website",
+      locale: SITE_LOCALE,
+      url: canonical,
+      siteName: SITE_NAME,
+      title,
+      description,
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image.url],
+    },
   }
 }
 
@@ -116,8 +151,109 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
     ) as Record<CriterionId, number>,
   }))
 
+  const canonical = absoluteUrl(`/carros/${car.slug}/`)
+  const ogImage = publicAssetUrl(`/og/carros/${car.slug}.png`)
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Início",
+            item: absoluteUrl("/"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Ranking",
+            item: absoluteUrl("/#ranking"),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: formatCarName(car),
+            item: canonical,
+          },
+        ],
+      },
+      {
+        "@type": ["Product", "Car"],
+        "@id": `${canonical}#product`,
+        name: formatCarName(car),
+        description: car.dossier.verdict,
+        url: canonical,
+        image: ogImage,
+        category: car.segment,
+        brand: { "@type": "Brand", name: car.brand },
+        model: car.model,
+        vehicleModelDate: String(car.year),
+        bodyType: car.segment,
+        fuelType: "Electric",
+        vehicleTransmission: car.specs.drivetrain,
+        seatingCapacity: car.specs.seats,
+        numberOfDoors: car.specs.doors,
+        weight: {
+          "@type": "QuantitativeValue",
+          value: car.specs.weightKg,
+          unitCode: "KGM",
+        },
+        offers: {
+          "@type": "Offer",
+          price: car.price.amount,
+          priceCurrency: car.price.currency,
+          availability: "https://schema.org/InStock",
+          url: canonical,
+          seller: { "@type": "Organization", name: SITE_NAME },
+        },
+        additionalProperty: [
+          {
+            "@type": "PropertyValue",
+            name: "Autonomia WLTP",
+            value: car.specs.rangeKm,
+            unitCode: "KMT",
+          },
+          {
+            "@type": "PropertyValue",
+            name: "Consumo WLTP",
+            value: car.specs.consumptionKwh100,
+            unitText: "kWh/100 km",
+          },
+          {
+            "@type": "PropertyValue",
+            name: "Bateria utilizável",
+            value: car.specs.usableBatteryKwh,
+            unitCode: "KWH",
+          },
+          {
+            "@type": "PropertyValue",
+            name: "Potência",
+            value: car.specs.powerKw,
+            unitCode: "KWT",
+          },
+        ],
+        review: {
+          "@type": "Review",
+          name: `Avaliação editorial: ${formatCarName(car)}`,
+          reviewBody: car.dossier.verdict,
+          author: { "@type": "Organization", name: SITE_NAME },
+          publisher: { "@type": "Organization", name: SITE_NAME },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: Number(entry.total.toFixed(2)),
+            bestRating: 10,
+            worstRating: 0,
+          },
+        },
+      },
+    ],
+  }
+
   return (
     <article>
+      <JsonLd data={structuredData} />
       <section className="relative overflow-hidden bg-ink text-paper">
         <div className="absolute inset-0 bg-grid opacity-50" />
         <div className="absolute inset-0 bg-hero-glow" />

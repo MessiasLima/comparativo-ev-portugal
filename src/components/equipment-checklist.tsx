@@ -69,7 +69,7 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
                       className={
                         has
                           ? "flex items-start gap-2.5 text-sm leading-6"
-                          : "flex items-start gap-2.5 text-sm leading-6 text-muted-foreground/55"
+                          : "flex items-start gap-2.5 text-sm leading-6 text-muted-foreground"
                       }
                     >
                       <span

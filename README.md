@@ -1,6 +1,6 @@
 # Comparativo EV Portugal
 
-Comparador de carros elétricos do mercado português. O site tem duas vistas principais:
+Comparador de carros elétricos do mercado português, publicado em <https://comparativo-ev-portugal.appoutlet.dev>. O site tem duas vistas principais:
 
 - **Home (`/`)** — hero e uma tabela única de ranking com nota global, os dez critérios e o custo em €/ponto. Qualquer coluna pode ser usada para ordenar, com atalhos para “Melhor nota” e “Melhor custo-benefício”. O botão Pesos abre um modal para ajustar o peso de cada critério; ao mover os sliders, a nota global, o €/ponto e o ranking são recalculados em tempo real (com pré-visualização dentro do modal) e a configuração fica guardada no `localStorage` do browser. Cancelar repõe os pesos que estavam ativos ao abrir o modal.
 - **Dossiê (`/carros/[slug]`)** — visão geral, ficha técnica, critérios de avaliação (3.1 a 3.10), equipamento, informações adicionais e fontes.
@@ -93,8 +93,24 @@ O carregamento é um índice composto: **70% potência DC + 30% potência AC**. 
 | --- | --- |
 | `/` | Hero + tabela de ranking ordenável + metodologia |
 | `/carros/[slug]` | Dossiê gerado para cada carro registado |
+| `/sitemap.xml` | Sitemap com home, dossiês e imagens sociais |
+| `/robots.txt` | Regras de indexação + referência ao sitemap |
 
 Rotas atuais: `/carros/cupra-raval-vz`, `/carros/byd-seal-design`, `/carros/byd-seal-excellence-awd` e `/carros/polestar-4-rear-motor-prime`.
+
+## SEO
+
+- **Site publicado** — <https://comparativo-ev-portugal.appoutlet.dev> (GitHub Pages com domínio próprio). O site é servido na raiz do domínio.
+- **Canonical e domínio** — `src/lib/site-url.ts` define a origem pública, com `https://comparativo-ev-portugal.appoutlet.dev` como fallback. O deploy passa `NEXT_PUBLIC_SITE_URL` explicitamente; qualquer build pode forçar outra origem com `NEXT_PUBLIC_SITE_URL=https://exemplo.pt npm run build`. Canonicals, Open Graph, sitemap e robots usam sempre essa origem.
+- **`basePath`** — vazio no domínio próprio: os assets são servidos em `/_next/...` na raiz. `NEXT_PUBLIC_BASE_PATH` só é necessário se o site voltar a ser publicado num subcaminho, como `/comparativo-ev-portugal`.
+- **Sitemap e robots** — gerados por `npm run seo` (executado antes de `dev` e `build`) em `public/sitemap.xml` e `public/robots.txt`. Não usam as rotas `app/sitemap.ts`/`app/robots.ts` porque estas exigem `force-static` em exportação estática, diretiva que o modo com Cache Components rejeita. Os ficheiros gerados estão no `.gitignore`.
+- **Redes sociais** — cada página tem `openGraph` e `twitter:summary_large_image`. As imagens PNG 1200×630 são geradas a partir dos JSONs por `scripts/generate-og.mjs` em `public/og/` (home + um por carro) e não são versionadas.
+- **Dados estruturados** — `WebSite` + `ItemList` na home e `BreadcrumbList` + `Product`/`Car` (com `Offer`, especificações e avaliação editorial) nos dossiês. O componente `JsonLd` escapa `<` para evitar fechar o `script`.
+- **Verificação** — Lighthouse (build de produção, mobile): SEO 100, Boas práticas 100, Acessibilidade 100; desempenho 95–96 (LCP ~2,9 s, TBT 10 ms, CLS 0). O modal de pesos é carregado só ao abrir (`next/dynamic`), mantendo o JS inicial abaixo dos 175 KB.
+
+## Analytics
+
+O site usa **Umami** (analytics sem cookies) através de um `<script defer>` no `<head>` do layout raiz, identificado pelo website ID `8a02495b-916b-4a40-a014-08eb3a060c3e`. Carrega em todas as páginas, não bloqueia o render e acrescenta cerca de 3 KB ao total transferido; não afeta as métricas de Lighthouse (desempenho mantém-se em 96).
 
 ## Notas de implementação
 

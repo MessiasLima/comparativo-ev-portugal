@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import {
   ArrowDown,
   ArrowUp,
@@ -22,7 +23,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { CriterionTooltip } from "@/components/criterion-tooltip"
-import { WeightModal } from "@/components/weight-modal"
 import { CRITERIA } from "@/data/criteria"
 import type { CriterionDefinition, CriterionId } from "@/data/types"
 import { formatCarName, formatEuro, formatScore } from "@/lib/format"
@@ -56,6 +56,11 @@ interface SortState {
   key: SortKey
   direction: SortDirection
 }
+
+const WeightModal = dynamic(
+  () => import("@/components/weight-modal").then((mod) => mod.WeightModal),
+  { ssr: false },
+)
 
 const compactLabels: Record<CriterionId, string> = {
   interior: "Acab.",

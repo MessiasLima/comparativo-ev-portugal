@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run seo && next dev",
+    "build": "npm run seo && next build",
+    "seo": "node scripts/generate-seo.mjs && node scripts/generate-og.mjs",
     "start": "next start",
     "lint": "eslint",
     "validate:data": "node scripts/validate-data.mjs"

@@ -7,10 +7,17 @@ import {
 } from "lucide-react"
 import { Methodology } from "@/components/methodology"
 import { RankingTable } from "@/components/ranking-table"
+import { JsonLd } from "@/components/structured-data"
 import type { ComparisonRow } from "@/components/ranking-table"
 import { CRITERIA } from "@/data/criteria"
 import type { CriterionId } from "@/data/types"
+import { formatCarName } from "@/lib/format"
 import { getComparison } from "@/lib/scoring"
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  absoluteUrl,
+} from "@/lib/site-url"
 
 function SectionHeading({
   index,
@@ -65,6 +72,36 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": `${absoluteUrl("/")}#website`,
+              url: absoluteUrl("/"),
+              name: SITE_NAME,
+              description: SITE_DESCRIPTION,
+              inLanguage: "pt-PT",
+            },
+            {
+              "@type": "ItemList",
+              "@id": `${absoluteUrl("/")}#ranking`,
+              name: "Ranking de carros elétricos em Portugal",
+              description:
+                "Ranking calculado a partir de dez critérios: acabamento, conforto, marca e assistência, equipamento, som, autonomia, potência/peso, eficiência, carregamento e satisfação.",
+              numberOfItems: comparison.cars.length,
+              itemListOrder: "https://schema.org/ItemListOrderAscending",
+              itemListElement: comparison.cars.map((entry, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                name: formatCarName(entry.car),
+                url: absoluteUrl(`/carros/${entry.car.slug}/`),
+              })),
+            },
+          ],
+        }}
+      />
       <section className="relative overflow-hidden bg-ink text-paper">
         <div className="absolute inset-0 bg-grid opacity-60" />
         <div className="absolute inset-0 bg-hero-glow" />

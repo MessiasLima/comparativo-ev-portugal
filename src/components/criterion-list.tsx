@@ -173,7 +173,7 @@ export function CriterionList({
                           <div className="flex items-baseline justify-between gap-2 text-xs">
                             <span className="text-muted-foreground">
                               {component.label}
-                              <span className="text-muted-foreground/60">
+                              <span className="text-muted-foreground">
                                 {" "}
                                 · {Math.round(component.weight * 100)}%
                               </span>
@@ -222,7 +222,7 @@ export function CriterionList({
                           <div className="flex items-baseline justify-between gap-2 text-xs">
                             <span className="text-muted-foreground">
                               {component.label}
-                              <span className="text-muted-foreground/60">
+                              <span className="text-muted-foreground">
                                 {" "}· {Math.round(component.weight * 100)}%
                               </span>
                             </span>
@@ -279,7 +279,7 @@ export function CriterionList({
                           <div className="flex items-baseline justify-between gap-2 text-xs">
                             <span className="text-muted-foreground">
                               {component.label}
-                              <span className="text-muted-foreground/60">
+                              <span className="text-muted-foreground">
                                 {" "}· {Math.round(component.weight * 100)}%
                               </span>
                             </span>
