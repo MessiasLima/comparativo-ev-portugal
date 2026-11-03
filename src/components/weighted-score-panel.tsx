@@ -60,7 +60,7 @@ export function WeightedScorePanel({
           <span className="pb-1 text-xs text-white/40">/ 10</span>
         </div>
         <p className="mt-3 text-xs text-white/50">
-          Lidera {leadingCriteria} dos 10 critérios. Nota relativa à lista
+          Lidera {leadingCriteria} dos 10 critérios. Nota comparada com a lista
           atual.
         </p>
         {customized ? (

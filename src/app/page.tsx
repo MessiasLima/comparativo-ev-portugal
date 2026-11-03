@@ -162,7 +162,7 @@ export default function HomePage() {
             index="01"
             eyebrow="Ranking geral"
             title="Quem entrega mais, critério a critério."
-            description="A nota global é a média ponderada dos dez critérios. Por defeito, todos pesam o mesmo; usa o botão Pesos para ajustar o que mais valorizas. Em cada coluna, o melhor carro da lista recebe 10. Ordene por qualquer coluna, pela nota global ou pelo custo por ponto."
+            description="A nota global é a média ponderada dos dez critérios. Por defeito, todos pesam o mesmo; usa o botão Pesos para ajustar o que mais valorizas. Nos critérios de dados e editoriais, o melhor carro da lista recebe 10; o acabamento interno usa uma rubrica absoluta, com penalização para plástico duro. Ordene por qualquer coluna, pela nota global ou pelo custo por ponto."
           />
         </div>
         <div className="w-full px-3 pb-16 sm:px-5 sm:pb-24 lg:px-6">

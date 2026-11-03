@@ -45,7 +45,7 @@ export const EQUIPMENT_CHECKLIST: EquipmentItem[] = [
   { id: "v2h", label: "V2H (alimentar a casa)", category: "Carroçaria e conveniência" },
   { id: "electric-tailgate", label: "Porta-bagagens elétrico", category: "Carroçaria e conveniência" },
   { id: "frunk", label: "Bagageira dianteira (frunk)", category: "Carroçaria e conveniência" },
-  { id: "wheels-19", label: 'Jantes de 19"', category: "Carroçaria e conveniência" },
+  { id: "wheels-19", label: 'Jantes de 19" ou superiores', category: "Carroçaria e conveniência" },
   { id: "sport-seats", label: "Bancos desportivos", category: "Carroçaria e conveniência" },
   { id: "ambient-lighting", label: "Iluminação ambiente", category: "Carroçaria e conveniência" },
   { id: "rear-usb", label: "USB traseiras", category: "Carroçaria e conveniência" },

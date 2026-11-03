@@ -18,12 +18,13 @@ export const CRITERIA: CriterionDefinition[] = [
     number: 1,
     label: "Acabamento interno",
     shortLabel: "Acabamento",
-    question: "Materiais, montagem e sensação premium.",
+    question: "Materiais macios, couro e design contido?",
     description:
-      "Qualidade percebida dos materiais, solidez da montagem, ergonomia e coerência do design interior.",
+      "Rubrica absoluta de 0 a 10: 40% superfícies macias nas zonas de contacto, 25% estofos e couro, 20% design sofisticado e contido, 15% montagem. Plástico duro visível desconta pontos e impõe um teto à nota; designs extravagantes descem a avaliação de design.",
     icon: Armchair,
-    kind: "editorial",
+    kind: "rubric",
     direction: "higher",
+    scale: "absolute",
     weight: 1,
   },
   {
@@ -37,19 +38,21 @@ export const CRITERIA: CriterionDefinition[] = [
     icon: Waves,
     kind: "editorial",
     direction: "higher",
+    scale: "relative",
     weight: 1,
   },
   {
     id: "brand",
     number: 3,
-    label: "Confiabilidade da marca em Portugal",
-    shortLabel: "Marca",
-    question: "Histórico, rede e assistência.",
+    label: "Marca e assistência",
+    shortLabel: "Marca/assist.",
+    question: "Que experiência, rede e apoio estão por trás da marca?",
     description:
-      "Maturidade da marca no mercado português, dimensão da rede de concessionários e oficinas, garantia e disponibilidade de peças.",
+      "Rubrica relativa: 30% experiência automóvel da marca, 30% cobertura da rede de oficinas autorizadas em Portugal, 25% maturidade do fabrico automóvel na Europa e 15% apoio de grupo/fabricante estabelecido. Uma fábrica automóvel em Portugal acrescenta 0,5 pontos à rubrica (máximo 10). Idade, rede e produção são indicadores de capacidade e logística, não garantias de fiabilidade nem de rapidez na entrega de peças.",
     icon: ShieldCheck,
-    kind: "editorial",
+    kind: "rubric",
     direction: "higher",
+    scale: "relative",
     weight: 1,
   },
   {
@@ -63,6 +66,7 @@ export const CRITERIA: CriterionDefinition[] = [
     icon: ListChecks,
     kind: "objective",
     direction: "higher",
+    scale: "relative",
     weight: 1,
   },
   {
@@ -76,6 +80,7 @@ export const CRITERIA: CriterionDefinition[] = [
     icon: Speaker,
     kind: "editorial",
     direction: "higher",
+    scale: "relative",
     weight: 1,
   },
   {
@@ -89,6 +94,7 @@ export const CRITERIA: CriterionDefinition[] = [
     icon: Route,
     kind: "objective",
     direction: "higher",
+    scale: "relative",
     weight: 1,
   },
   {
@@ -102,6 +108,7 @@ export const CRITERIA: CriterionDefinition[] = [
     icon: Gauge,
     kind: "objective",
     direction: "higher",
+    scale: "relative",
     weight: 1,
   },
   {
@@ -114,6 +121,7 @@ export const CRITERIA: CriterionDefinition[] = [
     icon: Leaf,
     kind: "objective",
     direction: "lower",
+    scale: "relative",
     weight: 1,
   },
   {
@@ -127,6 +135,7 @@ export const CRITERIA: CriterionDefinition[] = [
     icon: Plug,
     kind: "objective",
     direction: "higher",
+    scale: "relative",
     weight: 1,
   },
   {
@@ -136,10 +145,11 @@ export const CRITERIA: CriterionDefinition[] = [
     shortLabel: "Satisfação",
     question: "Quem já conduz, recomenda?",
     description:
-      "Síntese de reviews de imprensa, fóruns, redes sociais e sites especializados. Para modelos novos, a amostra de proprietários é limitada.",
+      "Rubrica relativa: 40% satisfação de proprietários e testes independentes de longa duração, 35% defeitos/reclamações recorrentes reportados por utilizadores e 25% recalls de segurança do modelo. Considere recorrência, gravidade e exposição; não compare contagens brutas sem dados de vendas/quilometragem. Evidência limitada ou moderada limita a nota máxima dos componentes para que ausência de relatos não seja tratada como prova de ausência de problemas. Campanhas de serviço não são recalls.",
     icon: Star,
-    kind: "editorial",
+    kind: "rubric",
     direction: "higher",
+    scale: "relative",
     weight: 1,
   },
 ]

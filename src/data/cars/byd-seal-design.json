@@ -93,7 +93,13 @@
   "options": [],
   "reviews": {
     "interior": {
-      "baseScore": 8.6,
+      "assessment": {
+        "softTouch": 8,
+        "upholstery": 8.5,
+        "design": 7.5,
+        "assembly": 8.5,
+        "hardPlastic": "low"
+      },
       "summary": "O habitáculo é exatamente o do Excellence: pele com costuras trabalhadas, ecrã rotativo de 15,6\", cockpit de 10,25\", carregadores wireless duplos e bancos elétricos aquecidos e ventilados. A única ausência visível é o head-up display, exclusivo do Excellence. A qualidade percebida mantém-se alta, com os mesmos reparos da imprensa a alguns revestimentos ao toque.",
       "pros": [
         "Mesmo habitáculo rico da versão Excellence",
@@ -123,22 +129,28 @@
       "sourceIds": ["byd-guide", "byd-caetano", "carwow", "highmotor", "evani"]
     },
     "brand": {
-      "baseScore": 7.7,
-      "summary": "A BYD está em Portugal desde 2023, com uma rede de 24 pontos de venda e serviço que inclui Caetano, M&Costas, Rodda, Santogal, Lizauto e MSCAR. A garantia é das melhores do mercado (6 anos/150.000 km e 8 anos/250.000 km para a bateria), mas o histórico da marca no mercado português ainda é curto.",
+      "assessment": {
+        "automotiveExperience": 8,
+        "portugalServiceNetwork": 8,
+        "europeanManufacturing": 6,
+        "establishedGroupSupport": 8,
+        "portugalFactory": false
+      },
+      "summary": "A rubrica pondera experiência automóvel (8/10), rede autorizada em Portugal (8/10), fabrico europeu (6/10) e apoio industrial (8/10), resultando num índice bruto de 7,50/10. A BYD foi fundada em 1995 e entrou na indústria automóvel em 2003; a rede portuguesa, iniciada em 2023, inclui vários grupos e reparadores autorizados com cobertura no continente e ilhas. A fábrica de Szeged iniciou produção-piloto, mas fontes de outubro de 2026 ainda descrevem a produção em série como prevista para o quarto trimestre; não foi possível confirmar que já esteja em regime regular. Também não há confirmação de que o Seal seja produzido nessa fábrica. A BYD é um fabricante integrado de grande escala, embora não dependa de uma aliança com outra marca automóvel tradicional.",
       "pros": [
-        "Garantia de 6 anos / 150.000 km",
-        "Bateria com 8 anos / 250.000 km e SOH ≥ 70%",
-        "Rede de 24 pontos de venda e oficinas em Portugal"
+        "Mais de duas décadas de experiência da BYD na indústria automóvel",
+        "Diretório oficial apresenta concessionários e reparadores autorizados em várias regiões de Portugal",
+        "A fábrica europeia de Szeged já passou à fase de produção-piloto"
       ],
       "cons": [
-        "Marca presente em Portugal apenas desde 2023",
-        "Rede ainda em expansão face à CUPRA/SEAT",
-        "Histórico de assistência e valores residuais por provar"
+        "Presença comercial e rede portuguesa mais recentes do que as de grupos tradicionais",
+        "A produção em série em Szeged ainda era apresentada como futura nas fontes mais recentes consultadas",
+        "Sem fábrica de automóveis da BYD em Portugal; a montagem europeia não prova menor prazo de peças para o Seal"
       ],
-      "sourceIds": ["byd-warranty", "byd-dealers", "byd-caetano"]
+      "sourceIds": ["byd-history", "byd-dealers", "byd-hungary-factory", "byd-szeged-pilot", "byd-szeged-status"]
     },
     "equipment": {
-      "summary": "33 dos 38 equipamentos da checklist. O Design tem exatamente o mesmo equipamento do Excellence — Dynaudio de 12 altifalantes, bancos aquecidos/ventilados com memória, volante aquecido, bomba de calor, teto panorâmico, porta-bagagens elétrico, frunk, V2L e câmara 360º — menos duas peças: head-up display e suspensão com amortecimento variável. Faltam ainda, como no Excellence, estacionamento remoto, V2H e bancos traseiros aquecidos.",
+      "summary": "O Design tem o mesmo equipamento do Excellence — Dynaudio de 12 altifalantes, bancos aquecidos/ventilados com memória, volante aquecido, bomba de calor, teto panorâmico, porta-bagagens elétrico, frunk, V2L e câmara 360º — menos duas peças: head-up display e suspensão com amortecimento variável. Faltam ainda, como no Excellence, estacionamento remoto, V2H e bancos traseiros aquecidos.",
       "pros": [
         "Equipamento de série quase idêntico ao do Excellence",
         "Dynaudio de 12 altifalantes e bomba de calor de série",
@@ -153,7 +165,7 @@
     },
     "sound": {
       "baseScore": 8.8,
-      "summary": "Sistema Dynaudio Performance com 12 altifalantes, de série também no Design. É o mesmo sistema elogiado pela imprensa no Excellence: equilíbrio, clareza e palco sonoro muito acima do sistema do Raval e entre os melhores da lista.",
+      "summary": "Sistema Dynaudio Performance com 12 altifalantes, de série também no Design. É o mesmo sistema elogiado pela imprensa no Excellence: equilíbrio, clareza e palco sonoro muito acima do sistema do Raval.",
       "pros": [
         "12 altifalantes Dynaudio de série",
         "Boa definição e palco sonoro",
@@ -166,9 +178,9 @@
       "sourceIds": ["byd-guide", "byd-caetano", "autoexpress"]
     },
     "range": {
-      "summary": "570 km de autonomia combinada WLTP (690 km em cidade) com a mesma bateria Blade de 82,5 kWh: é a maior autonomia da lista, graças ao motor único e ao consumo de 16,6 kWh/100 km. O EV Database estima cerca de 475 km de autonomia real combinada; em autoestrada e no inverno fica perto dos 400 km.",
+      "summary": "570 km de autonomia combinada WLTP (690 km em cidade) com a mesma bateria Blade de 82,5 kWh, graças ao motor único e ao consumo de 16,6 kWh/100 km. O EV Database estima cerca de 475 km de autonomia real combinada; em autoestrada e no inverno fica perto dos 400 km.",
       "pros": [
-        "570 km WLTP, a maior autonomia da lista",
+        "570 km WLTP e 690 km em cidade",
         "690 km WLTP em ciclo urbano",
         "Mesma bateria Blade de 82,5 kWh do Excellence"
       ],
@@ -208,9 +220,9 @@
       "sourceIds": ["byd-guide", "byd-caetano", "ev-database", "highmotor"]
     },
     "charging": {
-      "summary": "Idêntico ao Excellence: 11 kW em AC trifásico e 150 kW em DC, com 30-80% em 26 minutos e 10-80% em 37 minutos, além de V2L de 3 kW. Com a mesma bateria de 82,5 kWh, é dos carregamentos mais rápidos da lista em potência absoluta.",
+      "summary": "Idêntico ao Excellence: 11 kW em AC trifásico e 150 kW em DC, com 30-80% em 26 minutos e 10-80% em 37 minutos, além de V2L de 3 kW. Com a mesma bateria de 82,5 kWh, carrega depressa em potência absoluta.",
       "pros": [
-        "150 kW DC, empatado com o mais rápido da lista",
+        "150 kW DC e 11 kW AC",
         "11 kW AC trifásico (8 h 36 min para carga completa)",
         "V2L de 3 kW de série"
       ],
@@ -222,31 +234,36 @@
       "sourceIds": ["byd-guide", "byd-caetano", "ev-database"]
     },
     "satisfaction": {
-      "baseScore": 7.5,
-      "summary": "Aplica-se ao modelo Seal como um todo: proprietários elogiam conforto, equipamento, silêncio e relação preço/equipamento — e o Design é precisamente a versão mais acessível da gama. As críticas recorrentes incidem na app, no cartão NFC, nos assistentes interventivos e no pós-venda. A BYD ficou em 16.º de 30 marcas no Driver Power 2025 (Reino Unido).",
+      "assessment": {
+        "ownerSentiment": 7.5,
+        "reportedDefects": 6,
+        "recallRecord": 7,
+        "evidenceLevel": "moderate"
+      },
+      "summary": "Aplica-se à família Seal, incluindo o Design: proprietários e testes independentes elogiam conforto, equipamento, silêncio e desempenho. Em relatos de utilizadores e reviews surgem repetidamente queixas de software/app, emparelhamento do cartão NFC, assistentes intrusivos e variação no pós-venda; não há um registo público comparável que permita converter essas menções numa taxa por veículo ou quilómetro. O portal português de campanhas da BYD indicava não haver recalls ativos em 03/11/2026; a base britânica DVSA também não devolveu registo para o Seal na consulta feita. Isto não demonstra ausência histórica de defeitos/campanhas noutros mercados, nem substitui consulta pelo VIN.",
       "pros": [
-        "Boa satisfação com conforto, silêncio e equipamento",
-        "Versão mais acessível da gama Seal",
-        "Garantia longa e bom valor percebido"
+        "Proprietários elogiam conforto, silêncio, equipamento e valor percebido",
+        "Não foi identificado recall ativo no portal português da BYD na data da consulta",
+        "O modelo já tem mais tempo de exposição e relatos de proprietários do que os lançamentos mais recentes"
       ],
       "cons": [
-        "Software e app com críticas frequentes",
-        "Assistentes de condução por vezes intrusivos",
-        "Serviço pós-venda inconsistente entre concessionários"
+        "Relatos repetidos de falhas ou fricção na app, software e cartão NFC",
+        "Queixas sobre assistentes de condução intrusivos e pós-venda inconsistente",
+        "Sem denominador público de frota/quilometragem para estimar a incidência dos problemas reportados"
       ],
-      "sourceIds": ["reddit-18m", "reddit-uk", "carwow", "autoexpress"]
+      "sourceIds": ["reddit-18m", "reddit-uk", "carwow", "autoexpress", "byd-recall-campaigns", "dvsa-recalls"]
     }
   },
   "dossier": {
-    "headline": "O Seal racional: máxima autonomia pelo mínimo de euros",
-    "verdict": "O Seal Design é a versão sensata da família: guarda a bateria de 82,5 kWh, o habitáculo e quase todo o equipamento do Excellence, troca o segundo motor por 50 km extra de autonomia WLTP e custa menos cerca de 5.500 €. Perde o head-up display, a suspensão adaptativa e a capacidade de cronómetro, mas ganha em consumo, leveza e preço por ponto. Para quem faz quilómetros e não procura prestações, é o Seal a comprar.",
+    "headline": "O Seal racional: autonomia longa e eficiência na versão Design",
+    "verdict": "O Seal Design é a versão sensata da família: guarda a bateria de 82,5 kWh, o habitáculo e quase todo o equipamento do Excellence, troca o segundo motor por 50 km extra de autonomia WLTP e custa menos do que o Excellence AWD. Perde o head-up display, a suspensão adaptativa e a capacidade de cronómetro, mas ganha em consumo, leveza e preço por ponto. Para quem faz quilómetros e não procura prestações, é o Seal a comprar.",
     "pros": [
-      "570 km WLTP (690 km em cidade), a maior autonomia da lista",
-      "16,6 kWh/100 km, o melhor consumo entre os BYD",
+      "570 km WLTP (690 km em cidade)",
+      "16,6 kWh/100 km WLTP e 13,8 kWh/100 km em cidade",
       "Mesmo habitáculo, Dynaudio e bomba de calor do Excellence",
       "150 kW DC e 11 kW AC, com V2L de 3 kW",
       "Garantia de 6 anos / 150.000 km e bateria 8 anos / 250.000 km",
-      "Preço cerca de 5.500 € abaixo do Excellence AWD"
+      "Preço abaixo do Excellence AWD"
     ],
     "cons": [
       "Sem head-up display nem suspensão adaptativa",
@@ -272,11 +289,11 @@
       },
       {
         "title": "Equipamento e tecnologia",
-        "body": "A dotação é quase idêntica à do Excellence: Dynaudio de 12 altifalantes, teto panorâmico, câmara 360º, ADAS completo, bomba de calor, porta-bagagens elétrico, frunk, V2L de 3 kW, cartão NFC e DiLink com 4G, OTA, Apple CarPlay e Android Auto. Ficam de fora face ao Excellence apenas o head-up display e a suspensão com amortecimento variável; face à lista, faltam também estacionamento remoto, V2H e bancos traseiros aquecidos."
+        "body": "A dotação é quase idêntica à do Excellence: Dynaudio de 12 altifalantes, teto panorâmico, câmara 360º, ADAS completo, bomba de calor, porta-bagagens elétrico, frunk, V2L de 3 kW, cartão NFC e DiLink com 4G, OTA, Apple CarPlay e Android Auto. Ficam de fora face ao Excellence apenas o head-up display e a suspensão com amortecimento variável; faltam também estacionamento remoto, V2H e bancos traseiros aquecidos."
       },
       {
         "title": "Propriedade e rede",
-        "body": "A garantia é a melhor da lista: 6 anos / 150.000 km para o veículo e 8 anos / 250.000 km para a bateria de alta tensão (SOH ≥ 70%), segundo a BYD Portugal. A rede nacional tem 24 pontos de venda e serviço, incluindo Caetano, M&Costas, Rodda, Santogal, Lizauto e MSCAR. Sendo elétrica, beneficia de isenção de ISV e IUC e, para empresas, dedução integral do IVA até ao limite legal."
+        "body": "A garantia é de 6 anos / 150.000 km para o veículo e 8 anos / 250.000 km para a bateria de alta tensão (SOH ≥ 70%), segundo a BYD Portugal. O diretório oficial lista concessionários e reparadores autorizados de vários grupos, do continente às ilhas; a rede tem crescido desde a chegada da marca em 2023, mas a cobertura concreta depende da oficina e localidade. Sendo elétrica, beneficia de isenção de ISV e IUC e, para empresas, dedução integral do IVA até ao limite legal."
       },
       {
         "title": "Versão avaliada",
@@ -314,6 +331,42 @@
       "label": "BYD Portugal — Concessionários",
       "url": "https://www.byd-auto.pt/concessionarios",
       "type": "official"
+    },
+    {
+      "id": "byd-recall-campaigns",
+      "label": "BYD Portugal — campanhas técnicas e consulta de recalls por VIN",
+      "url": "https://www.byd-auto.pt/byd-service/campanhas-tecnicas",
+      "type": "official"
+    },
+    {
+      "id": "dvsa-recalls",
+      "label": "DVSA — base pública britânica de recalls de veículos",
+      "url": "https://www.check-vehicle-recalls.service.gov.uk/documents/RecallsFile.csv",
+      "type": "database"
+    },
+    {
+      "id": "byd-history",
+      "label": "BYD Europe — história da empresa e entrada na indústria automóvel",
+      "url": "https://www.byd.com/eu/blog/Hello-we-are-BYD.html",
+      "type": "official"
+    },
+    {
+      "id": "byd-hungary-factory",
+      "label": "BYD — fábrica de automóveis de passageiros em Szeged, Hungria",
+      "url": "https://www.byd.com/eu/news-list/BYD_to_Build_A_New_Energy_Passenger_Vehicle_Factory_in_Hungary_for_Localised_Production_in_Europe",
+      "type": "official"
+    },
+    {
+      "id": "byd-szeged-pilot",
+      "label": "Electrive — produção-piloto de automóveis BYD em Szeged",
+      "url": "https://www.electrive.com/2026/02/02/byd-begins-trial-production-of-passenger-cars-in-hungary/",
+      "type": "press"
+    },
+    {
+      "id": "byd-szeged-status",
+      "label": "Hungarian Conservative — produção em série em Szeged prevista para o 4.º trimestre de 2026",
+      "url": "https://www.hungarianconservative.com/articles/current/byd-hungary-ev-manufacturing-europe-china/",
+      "type": "press"
     },
     {
       "id": "ev-database",

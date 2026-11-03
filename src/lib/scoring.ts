@@ -9,6 +9,12 @@ import type {
   EditorialReview,
 } from "@/data/types"
 import { formatDecimal, formatScore } from "@/lib/format"
+import {
+  HARD_PLASTIC_LABELS,
+  interiorScore,
+} from "@/lib/interior"
+import { brandScore } from "@/lib/brand"
+import { satisfactionScore } from "@/lib/satisfaction"
 
 export interface CriterionScore {
   criterion: CriterionDefinition
@@ -46,6 +52,24 @@ function equipmentCount(car: Car): number {
 
 function metricValue(car: Car, criterionId: CriterionId): number {
   switch (criterionId) {
+    case "interior": {
+      const assessment = car.reviews.interior.assessment
+      return assessment && "hardPlastic" in assessment
+        ? interiorScore(assessment)
+        : 0
+    }
+    case "brand": {
+      const assessment = car.reviews.brand.assessment
+      return assessment && "automotiveExperience" in assessment
+        ? brandScore(assessment)
+        : 0
+    }
+    case "satisfaction": {
+      const assessment = car.reviews.satisfaction.assessment
+      return assessment && "ownerSentiment" in assessment
+        ? satisfactionScore(assessment)
+        : 0
+    }
     case "equipment":
       return equipmentCount(car)
     case "range":
@@ -63,6 +87,25 @@ function metricValue(car: Car, criterionId: CriterionId): number {
 
 function rawLabel(car: Car, criterionId: CriterionId): string {
   switch (criterionId) {
+    case "interior": {
+      const assessment = car.reviews.interior.assessment
+      if (!assessment || !("hardPlastic" in assessment)) {
+        return "Rubrica de acabamento em falta"
+      }
+      return `Rubrica ${formatScore(interiorScore(assessment))}/10 · ${HARD_PLASTIC_LABELS[assessment.hardPlastic]}`
+    }
+    case "brand": {
+      const assessment = car.reviews.brand.assessment
+      return assessment && "automotiveExperience" in assessment
+        ? `Rubrica ${formatScore(brandScore(assessment))}/10`
+        : "Rubrica de marca em falta"
+    }
+    case "satisfaction": {
+      const assessment = car.reviews.satisfaction.assessment
+      return assessment && "ownerSentiment" in assessment
+        ? `Rubrica ${formatScore(satisfactionScore(assessment))}/10`
+        : "Rubrica de satisfação em falta"
+    }
     case "equipment":
       return `${equipmentCount(car)}/${EQUIPMENT_CHECKLIST.length} equipamentos`
     case "range":
@@ -132,6 +175,20 @@ export function getComparison(): Comparison {
     for (const criterion of CRITERIA) {
       const metrics = metricsByCriterion.get(criterion.id) ?? []
       const value = metricValue(car, criterion.id)
+
+      if (criterion.scale === "absolute") {
+        criteria[criterion.id] = {
+          criterion,
+          score: clampScore(value),
+          rawValue: value,
+          rawLabel: rawLabel(car, criterion.id),
+          bestRawValue: Math.max(...metrics),
+          rank: 1,
+          review: car.reviews[criterion.id],
+        }
+        continue
+      }
+
       const best = criterion.direction === "higher" ? Math.max(...metrics) : Math.min(...metrics)
       const score =
         best <= 0

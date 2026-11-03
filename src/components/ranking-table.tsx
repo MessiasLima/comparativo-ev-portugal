@@ -60,7 +60,7 @@ interface SortState {
 const compactLabels: Record<CriterionId, string> = {
   interior: "Acab.",
   comfort: "Conforto",
-  brand: "Marca",
+  brand: "Marca/assist.",
   equipment: "Equip.",
   sound: "Som",
   range: "Auton.",

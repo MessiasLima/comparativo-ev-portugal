@@ -352,7 +352,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                 index="03"
                 eyebrow="Critérios de avaliação"
                 title="Nota a nota, com a fonte à vista."
-                description="Cada critério tem uma nota relativa de 0 a 10. Abra 3.1 Acabamento interno para ler a síntese, os argumentos e as fontes usadas na avaliação."
+                description="Cada critério tem uma nota de 0 a 10. Os critérios de dados e editoriais são relativos à lista; o acabamento interno usa uma rubrica absoluta de materiais. Abra 3.1 Acabamento interno para ver a decomposição, a síntese e as fontes."
               />
               <CriterionList entry={entry} sectionNumber={3} />
             </section>

@@ -16,11 +16,15 @@ and verify everything. The phases must run in order, because each one feeds the 
    and `src/data/cars/byd-seal-excellence-awd.json` before writing anything.
 2. **JSON files store data, never results.** No scores, rankings, "best of list"
    claims, or €/ponto values belong in the JSON as *numbers* — those are computed by
-   `src/lib/scoring.ts`. Comparative *prose* in reviews/dossiers is allowed (and
-   expected), but must be re-verified in Phase 5.
-3. **Scoring is relative.** In each criterion the best car in the list gets 10 and the
-   others get their proportion. Adding one car changes the score, rank, €/ponto and
-   value-rank of **every** car. Phase 5 is not optional.
+   `src/lib/scoring.ts`. The interior criterion follows the same rule: store the
+   rubric components in `reviews.interior.assessment`, never the resulting score.
+   Comparative *prose* in reviews/dossiers is allowed (and expected), but must be
+   re-verified in Phase 5.
+3. **Scoring is relative — except for the interior.** In each relative criterion the
+   best car in the list gets 10 and the others get their proportion. Adding one car
+   changes the score, rank, €/ponto and value-rank of **every** car. The interior
+   uses an absolute rubric (`src/lib/interior.ts`), so it does not move when the
+   line-up changes. Phase 5 is not optional either way.
 4. **Every claim needs a source.** Each `reviews.<criterion>.sourceIds` entry must
    reference a source declared in the same JSON's `sources` array. The validator
    (`npm run validate:data`) enforces this — use it early and often.
@@ -33,6 +37,14 @@ and verify everything. The phases must run in order, because each one feeds the 
    have to write or modify Next.js-specific code (routes, metadata, params), first
    read the relevant guide in `node_modules/next/dist/docs/` as instructed by the
    repo's `AGENTS.md`. Most of this skill's work is data-only and needs none of that.
+7. **No list-relative claims in JSON prose.** Never write "o mais caro da lista",
+   "a maior autonomia da lista", "o melhor consumo da lista", "líder", "melhor
+   custo por ponto" or hardcoded counts like "29 dos 38 equipamentos": they are
+   static text and silently become false when a car or checklist item is added.
+   Write stable facts instead ("Preço de €50.926 com IVA", "570 km WLTP") or
+   comparisons against a named car ("consome 1,6 kWh menos do que o Excellence"),
+   which stay true regardless of new entries. The UI calculates ranks and counts
+   dynamically; the prose must not duplicate them.
 
 ## Architecture you must understand before starting
 
@@ -42,8 +54,9 @@ and verify everything. The phases must run in order, because each one feeds the 
 | `src/data/cars/*.json` | One JSON per car **version**. Data only. |
 | `src/data/cars/index.ts` | Registry: imports every JSON and exports the `CARS` array. Order here controls the footer (first 4 entries). |
 | `src/data/equipment.ts` | `EQUIPMENT_CHECKLIST` (the normalized feature list) + `EQUIPMENT_CATEGORIES`. |
-| `src/data/criteria.ts` | The 10 criteria definitions. 5 editorial (`interior`, `comfort`, `brand`, `sound`, `satisfaction` — need a human-style `baseScore`), 5 objective (`equipment`, `range`, `powerToWeight`, `efficiency`, `charging` — computed from specs). |
-| `src/lib/scoring.ts` | The scoring engine. `equipment` = count of checklist ids; `powerToWeight` = cv/kg; `charging` = 0.7·DC + 0.3·AC; `efficiency` = lower is better. |
+| `src/data/criteria.ts` | The criterion definitions. Current set: 2 editorial (`comfort`, `sound` — need a human-style `baseScore`), 3 rubrics (`interior`, `brand`, `satisfaction` — need their typed `assessment`; interior is absolute, brand and satisfaction are relative), and 5 objective (`equipment`, `range`, `powerToWeight`, `efficiency`, `charging` — computed from specs). Check the live registry and `CriterionId` before preparing reviews; the `add-criteria` skill documents how the set evolves. |
+| `src/lib/scoring.ts` | The scoring engine. `equipment` = count of checklist ids; `powerToWeight` = cv/kg; `charging` = 0.7·DC + 0.3·AC; `efficiency` = lower is better. Relative criteria rescale against the best car; interior is absolute. |
+| `src/lib/interior.ts` | Interior rubric: 40% soft-touch, 25% upholstery/leather, 20% design, 15% assembly, minus a hard-plastic penalty, with a hard-plastic cap. Never duplicate these weights in JSON or prose. |
 | `src/data/site.ts` | `SITE_UPDATED_AT` — editorial "last updated" date, shown in the footer. |
 | `scripts/validate-data.mjs` | Validator + ranking preview. Run with `npm run validate:data`. |
 | `public/sources/` | User-provided PDFs (offers, product guides), referenced from JSON as `/sources/<file>` with `type: "pdf"`. |
@@ -85,13 +98,14 @@ evidence checklist, and conflict-resolution rules. In summary:
    equipment extraction, PT market/pricing).
 3. Build a **research dossier** (in your head or as scratch notes) with: versions,
    PT prices (IVA included, dated), full specs (WLTP), charging, warranty, equipment
-   list, evidence for each of the 5 editorial criteria, and URLs for every source.
+    list, evidence for each editorial criterion and each rubric assessment, and
+   URLs for every source.
 4. For **satisfaction**, look for press verdicts, owner forums/Facebook groups, and
    brand-level surveys (e.g. Driver Power). For a brand new model, say so explicitly
    in the prose, like the CUPRA dossier does.
 
-Do not skip evidence gathering for editorial criteria — each `baseScore` must be
-defensible from the sources you cite.
+Do not skip evidence gathering for editorial criteria — each `baseScore` and each
+interior rubric component must be defensible from the sources you cite.
 
 ## Phase 2 — Equipment checklist (feature list)
 
@@ -145,13 +159,24 @@ template skeleton, and formatting conventions. Core rules:
 - **B. File name and slug**: kebab-case `brand-model-versionsuffix.json`
   (e.g. `mg4-trophy.json`, `tesla-model-3-long-range.json`). `slug` = `id`.
   Both must be unique across all cars (validator enforces).
-- **C. Fill every field of the `Car` interface** — all 10 criteria reviews
-  (editorial ones with a justified `baseScore` 0–10, objective ones without
-  `baseScore`), the full `dossier` (headline, verdict, ~5 pros, ~5 cons, `bestFor`,
+- **C. Fill every field of the `Car` interface** — provide a review for every ID in
+  `CriterionId`/`CRITERIA`. Editorial criteria require an evidence-based
+  `baseScore` 0–10; rubric criteria require their own typed `assessment` (never
+  `baseScore`); objective criteria store their underlying data without a score.
+  For the current brand rubric, follow `src/lib/brand.ts` and the `brand`
+  assessment shape in `src/data/types.ts`. Plus the full `dossier` (headline, verdict, ~5 pros, ~5 cons, `bestFor`,
   ~6 sections), `options` (or `[]`), and `sources` with real URLs.
-- **D. Portuguese prose, decimal commas in text** ("15,79 kWh/100 km"), plain JSON
+- **D. Score the interior from evidence, not from the line-up.** The rubric
+  components are absolute 0–10 judgements:
+  `softTouch` = soft-touch coverage on contact surfaces; `upholstery` = leather or
+  quality vegan, stitching, seats/steering wheel; `design` = restrained, coherent
+  sophistication (showy/gratuitous design scores lower); `assembly` = solidity and
+  squeak-free build. `hardPlastic` is the share of visible/touchable hard plastic:
+  `low`, `moderate`, `high` (cap 7.0) or `extensive` (cap 5.5). A cabin that is
+  mostly hard plastic must never score near 9.
+- **E. Portuguese prose, decimal commas in text** ("15,79 kWh/100 km"), plain JSON
   numbers in fields. Prices in EUR, `vatIncluded: true`, dated `asOf`.
-- **E. Write reviews at the quality bar of the existing dossiers**: concrete numbers,
+- **F. Write reviews at the quality bar of the existing dossiers**: concrete numbers,
   honest cons, 2–4 sentences per summary, 2–3 pros and cons each, real `sourceIds`.
 
 ## Phase 4 — Registration and UI updates
@@ -192,15 +217,21 @@ The essential steps:
 1. `npm run validate:data` — must pass with zero errors; it also prints the new
    ranking and cost-benefit table. If it fails, fix the data before anything else.
 2. **Hand-check the math** for the new car(s): recompute at least one objective
-   criterion score by hand from the formulas in `src/lib/scoring.ts` and confirm it
-   matches the validator's ranking output.
-3. **Stale comparative claims sweep.** Read every car's `reviews` and `dossier`
-   prose (old cars included) and verify each claim that references the list:
-   "melhor consumo da lista", "o mais barato", "fica atrás do Seal", "melhor custo
-   por ponto", "o mais eficiente", counts like "29 dos 38 equipamentos", etc.
-   Grep helps (`da lista|melhor|pior|mais barato|mais caro|rival|fica atrás|à frente|líder|38`)
-   but the judgment is yours — recompute who actually leads now and rewrite every
-   broken sentence. Also grep each dossier for the *names* of the other cars.
+   criterion score by hand from the formulas in `src/lib/scoring.ts` and the
+   interior score from the rubric in `src/lib/interior.ts`, then confirm both match
+   the validator's output. Check that a car with `hardPlastic: "high"` or
+   `"extensive"` actually respects the 7.0/5.5 cap.
+3. **List-relative claims sweep.** Read every car's `reviews` and `dossier` prose
+   (old cars included) and make sure it contains **no** claim that depends on the
+   current line-up: "melhor consumo da lista", "o mais barato", "o mais caro",
+   "líder", "melhor custo por ponto", counts like "29 dos 38 equipamentos", etc.
+   They go stale as soon as a car or checklist item is added, so replace them with
+   stable facts ("570 km WLTP", "Preço de €50.926 com IVA"). Grep helps
+   (`da lista|na lista|o mais |a mais |melhor da lista|pior da lista|38`) but
+   judgment is yours. Comparisons against a **named** car ("fica atrás do Seal",
+   "o Design consome menos do que o Excellence") are allowed — verify they are
+   still numerically true and keep them scoped to those cars. Also grep each
+   dossier for the names of the other cars.
 4. **Name and variant check.** Every car has a `variant` (trim) and a public name
    `brand + model + variant` rendered by `formatCarName()`. Adding a version of an
    existing model must not create a duplicate public name — the validator checks
@@ -230,7 +261,10 @@ Summarize in chat (do not create a report file unless asked):
 | `src/data/cars/*.json` (existing) | re-audit `equipmentIncluded`; fix stale comparative prose (Phase 5) |
 | `src/data/site.ts` | bump `SITE_UPDATED_AT` |
 | `src/data/criteria.ts` | update equipment criterion description if the checklist size/categories changed |
+| `src/lib/scoring.ts` | confirm the interior rubric is applied absolutely |
+| `src/lib/interior.ts` | rubric weights, penalties and caps — single source of truth |
 | `src/components/weighted-score-panel.tsx`, `src/app/carros/[slug]/page.tsx` | confirm they use `EQUIPMENT_CHECKLIST.length` |
+| `src/components/criterion-list.tsx` | renders the interior rubric breakdown automatically |
 | `src/components/equipment-checklist.tsx` | generalize the zero-options fallback if needed |
 | `README.md` | routes list, data tree, checklist count |
 | `public/sources/` | copy provided PDFs |

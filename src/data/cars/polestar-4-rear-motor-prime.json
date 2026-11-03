@@ -1,0 +1,446 @@
+{
+  "id": "polestar-4-rear-motor-prime",
+  "slug": "polestar-4-rear-motor-prime",
+  "brand": "Polestar",
+  "model": "4 coupé",
+  "variant": "Rear motor Prime",
+  "version": "Rear motor 100 kWh (MY27), Pack Prime",
+  "year": 2027,
+  "segment": "SUV-coupé premium",
+  "tagline": "Um grande coupé elétrico de tração traseira, com 620 km WLTP e um habitáculo minimalista.",
+  "accent": "ocean",
+  "price": {
+    "amount": 56800,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-11-03",
+    "note": "Encomenda particular configurada em 03/11/2026. Inclui versão Rear motor, pintura Magnesium, interior Bio-attributed MicroTech Charcoal/Zinc, jantes Aero de 20 polegadas, Pack Prime (Pilot, Plus e Comfort), vidros traseiros escurecidos e cabo CA de 11 kW. O total da viatura configurada é 70.800 €; acrescem 1.300 € de legalização e transporte e aplica-se a oferta Polestar de −15.300 €, resultando em 56.800 € com IVA e despesas incluídos. Entrega prevista para março–abril de 2027.",
+    "sourceId": "polestar-order"
+  },
+  "specs": {
+    "powerKw": 200,
+    "powerHp": 272,
+    "torqueNm": 343,
+    "drivetrain": "Tração traseira (RWD)",
+    "acceleration0100": 7.1,
+    "topSpeedKmh": 200,
+    "batteryKwh": 100,
+    "usableBatteryKwh": 94,
+    "batteryChemistry": "NMC811, 400 V",
+    "rangeKm": 620,
+    "consumptionKwh100": 17.8,
+    "weightKg": 2230,
+    "grossWeightKg": 2685,
+    "lengthMm": 4840,
+    "widthMm": 1994,
+    "heightMm": 1534,
+    "wheelbaseMm": 2999,
+    "bootL": 526,
+    "frunkL": 15,
+    "seats": 5,
+    "doors": 5,
+    "towingBrakedKg": 1500
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 200,
+    "dcTime1080Min": 30,
+    "connector": "CCS2",
+    "v2l": true,
+    "v2lKw": 3.3,
+    "v2h": false
+  },
+  "warranty": {
+    "vehicle": "3 anos",
+    "battery": "8 anos / 160.000 km (SOH ≥ 70%)",
+    "note": "A Polestar cobre defeitos de fabrico durante 3 anos; a bateria de alta tensão tem garantia de 8 anos ou 160.000 km, o que ocorrer primeiro, com reparação ou substituição se o SOH descer abaixo de 70%. A garantia anticorrosão é de 12 anos. A marca indica assistência em viagem durante 3 anos e manutenção normalmente necessária até aos 2 anos ou 30.000 km. Confirmar termos e condições aplicáveis à encomenda."
+  },
+  "equipmentIncluded": [
+    "acc",
+    "lane-keep",
+    "blind-spot",
+    "rear-cross-traffic",
+    "aeb",
+    "traffic-sign",
+    "driver-monitor",
+    "camera-360",
+    "parking-sensors",
+    "adaptive-high-beam",
+    "heated-seats",
+    "memory-seats",
+    "heated-steering",
+    "climate-2zone",
+    "heat-pump",
+    "heated-rear-seats",
+    "hud",
+    "premium-audio",
+    "wireless-charging",
+    "carplay",
+    "digital-cockpit",
+    "large-screen",
+    "connected-services",
+    "ota",
+    "digital-key",
+    "panoramic-roof",
+    "electric-tailgate",
+    "frunk",
+    "wheels-19",
+    "v2l",
+    "ambient-lighting",
+    "rear-usb"
+  ],
+  "options": [
+    {
+      "name": "Pack Prime",
+      "price": 5900,
+      "description": "Pack combinado com Pilot, Plus e Comfort: assistência de condução, som Harman Kardon, HUD, bancos traseiros aquecidos, climatização de três zonas, volante aquecido, bancos dianteiros elétricos de 12 posições e porta-bagagens elétrico com sensor de pé."
+    },
+    {
+      "name": "Vidros traseiros escurecidos",
+      "price": 0,
+      "description": "Opção individual incluída na configuração."
+    },
+    {
+      "name": "Cabo de carregamento CA de 11 kW",
+      "price": 0,
+      "description": "Opção individual incluída na configuração."
+    }
+  ],
+  "reviews": {
+    "interior": {
+      "assessment": {
+        "softTouch": 8,
+        "upholstery": 7.8,
+        "design": 8.8,
+        "assembly": 8.5,
+        "hardPlastic": "moderate"
+      },
+      "summary": "O interior Charcoal com decoração Zinc usa MicroTech bio-atribuído, com toque têxtil e aspeto cuidado, em vez de couro. O desenho escandinavo é limpo, há materiais macios nas zonas de contacto e a montagem recebe elogios da imprensa; os comandos táteis e a dependência do ecrã reduzem a sensação de sofisticação funcional.",
+      "pros": [
+        "MicroTech de boa qualidade e materiais macios nas zonas de contacto",
+        "Design minimalista coerente, com iluminação ambiente inspirada no sistema solar",
+        "Montagem sólida e bancos confortáveis, com vários ajustes elétricos"
+      ],
+      "cons": [
+        "Sem couro nesta configuração; o MicroTech é um revestimento sintético",
+        "A maioria das funções está concentrada no ecrã tátil",
+        "A ausência de vidro traseiro obriga a usar o retrovisor digital"
+      ],
+      "sourceIds": ["polestar-order", "polestar-specs", "autoexpress", "carwow"]
+    },
+    "comfort": {
+      "baseScore": 8.1,
+      "summary": "A configuração Rear motor usa chassis passivo, molas helicoidais e jantes Aero de 20 polegadas; a imprensa descreve boa absorção das irregularidades, habitáculo silencioso e comportamento composto em autoestrada. O Pack Comfort acrescenta bancos dianteiros de 12 posições e volante aquecido; a largura de quase dois metros e a massa de 2.230 kg fazem-se notar em cidade e em mudanças de direção.",
+      "pros": [
+        "Suspensão confortável em piso degradado e estável em autoestrada",
+        "Bancos dianteiros elétricos de 12 posições e traseiros reclináveis",
+        "Habitáculo silencioso em andamento"
+      ],
+      "cons": [
+        "Dimensões largas complicam ruas e parques apertados",
+        "A massa elevada sente-se em condução mais empenhada",
+        "Ruído aerodinâmico dos retrovisores em velocidade, segundo a imprensa"
+      ],
+      "sourceIds": ["polestar-order", "polestar-specs", "autoexpress", "carwow", "electrifying"]
+    },
+    "brand": {
+      "assessment": {
+        "automotiveExperience": 6.5,
+        "portugalServiceNetwork": 7,
+        "europeanManufacturing": 2,
+        "establishedGroupSupport": 9,
+        "portugalFactory": false
+      },
+      "summary": "A rubrica pondera experiência automóvel (6,5/10), assistência em Portugal (7/10), fabrico europeu (2/10) e apoio de grupo (9/10), resultando num índice bruto de 5,90/10. A Polestar tem raízes no desporto automóvel e tornou-se marca autónoma de elétricos em 2017. A parceria oficial com o grupo Volvo Car dá acesso a centenas de pontos de assistência globais, embora o localizador não permita confirmar uma cobertura portuguesa tão densa como a de uma rede generalista. Os modelos Polestar atuais são produzidos fora da Europa; a produção europeia do Polestar 7 na Eslováquia está anunciada para 2028 e não conta como fábrica operacional. A relação com Volvo/Geely dá suporte industrial, sem significar que a Volvo seja atualmente a única proprietária da Polestar.",
+      "pros": [
+        "Parceria formal com o grupo Volvo Car e acesso à rede global de assistência",
+        "Apoio industrial e tecnológico de um grupo automóvel estabelecido, Geely, e ligação operacional à Volvo",
+        "A Polestar anunciou produção europeia futura para o Polestar 7 na Eslováquia"
+      ],
+      "cons": [
+        "Marca autónoma de elétricos criada em 2017, com histórico mais curto do que fabricantes tradicionais",
+        "Não há produção automóvel Polestar atualmente confirmada em território europeu",
+        "A fábrica eslovaca anunciada para 2028 não serve ainda como capacidade produtiva atual"
+      ],
+      "sourceIds": ["polestar-history", "polestar-service", "polestar-production", "polestar-busan", "polestar-europe-plan", "polestar-ownership"]
+    },
+    "equipment": {
+      "summary": "A configuração acrescenta o Pack Prime, que reúne Pilot, Plus e Comfort: HUD, Harman Kardon de 12 altifalantes, assistências ao condutor, bancos dianteiros e traseiros aquecidos, volante aquecido, climatização de três zonas e porta-bagagens elétrico. Inclui também teto panorâmico, câmara 360º, bomba de calor, carregamento wireless, V2L até 3,3 kW e cabo CA de 11 kW.",
+      "pros": [
+        "Pack Prime junta assistência de condução, HUD e sistema Harman Kardon",
+        "Bancos dianteiros e traseiros aquecidos, volante aquecido e climatização de três zonas",
+        "Câmara 360º, bomba de calor, teto panorâmico, porta-bagagens elétrico e V2L"
+      ],
+      "cons": [
+        "Estacionamento assistido do Pack Pilot depende de disponibilidade posterior",
+        "Sem ventilação ou massagem nos bancos, reservadas ao upgrade Nappa",
+        "Sem V2H e sem carregador CA de 22 kW nesta configuração"
+      ],
+      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
+    },
+    "sound": {
+      "baseScore": 8.1,
+      "summary": "O Pack Plus instalado inclui o sistema Harman Kardon Premium, com 12 altifalantes e 1.320 W. É uma configuração de áudio bem equipada; opiniões de proprietários sobre a afinação são mistas, pelo que a potência e o número de altifalantes não garantem preferência subjetiva.",
+      "pros": [
+        "Harman Kardon Premium de 12 altifalantes e 1.320 W",
+        "Sistema premium incluído no Pack Prime desta configuração",
+        "Perfis de som e conectividade para várias fontes digitais"
+      ],
+      "cons": [
+        "Alguns proprietários consideram a reprodução pouco encorpada",
+        "O sistema de 16 altifalantes com colunas nos encostos de cabeça exige o upgrade Nappa",
+        "Não há teste comparativo independente do sistema nesta configuração específica"
+      ],
+      "sourceIds": ["polestar-specs", "harman-owner-review", "reddit-audio"]
+    },
+    "range": {
+      "summary": "A encomenda indica até 620 km WLTP com a bateria de 100 kWh (94 kWh úteis). A Polestar e a EV Database confirmam esse valor para a versão Rear motor; a estimativa de autonomia real da EV Database é de cerca de 495 km e varia bastante com temperatura, velocidade e percurso.",
+      "pros": [
+        "620 km WLTP na configuração de tração traseira",
+        "94 kWh de capacidade útil",
+        "Pré-condicionamento da bateria associado à navegação"
+      ],
+      "cons": [
+        "Autonomia real em autoestrada e frio fica aquém do valor homologado",
+        "A massa de 2.230 kg é elevada para um veículo de tração traseira",
+        "O valor WLTP depende da configuração e das jantes escolhidas"
+      ],
+      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
+    },
+    "powerToWeight": {
+      "summary": "Os 272 cv e a tara de 2.230 kg indicada na encomenda correspondem a cerca de 122 cv por tonelada. A EV Database publica 2.305 kg como peso EU, uma base de medição diferente. O motor traseiro entrega 343 Nm e acelera dos 0 aos 100 km/h em 7,1 segundos: resposta suficiente para ultrapassagens e condução diária, sem a prioridade de prestações das versões Dual motor.",
+      "pros": [
+        "272 cv e 343 Nm com resposta linear",
+        "0-100 km/h em 7,1 segundos",
+        "Tração traseira e velocidade máxima de 200 km/h"
+      ],
+      "cons": [
+        "Relação potência/peso moderada para um SUV-coupé premium pesado",
+        "Sem a aceleração e tração integral da versão Dual motor",
+        "A massa nota-se quando se aumenta o ritmo em curva"
+      ],
+      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27", "euroncap"]
+    },
+    "efficiency": {
+      "summary": "O configurador indica 17,8 kWh/100 km WLTP para esta configuração; a EV Database confirma 17,8 kWh/100 km no ciclo TEL e 18,4 no TEH, consoante a variante de homologação. A bomba de calor é de série, mas a carroçaria larga e a massa elevada podem aumentar o consumo real, sobretudo em autoestrada.",
+      "pros": [
+        "Consumo homologado de 17,8 kWh/100 km na encomenda",
+        "Bomba de calor de série",
+        "Tração traseira e motor único reduzem o consumo face à versão Dual motor"
+      ],
+      "cons": [
+        "A EV Database regista também 18,4 kWh/100 km na variante TEH",
+        "Consumo real sensível à velocidade e à temperatura",
+        "A massa de 2.230 kg penaliza a eficiência em utilização urbana e rápida"
+      ],
+      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
+    },
+    "charging": {
+      "summary": "Carregador de bordo de 11 kW CA e potência máxima de 200 kW CC. A Polestar indica 30 minutos dos 10 aos 80%; a EV Database mede uma média de cerca de 135 kW e aproximadamente 31 minutos nesse intervalo. A encomenda inclui um cabo CA de 11 kW; o carregador de bordo opcional de 22 kW não foi selecionado.",
+      "pros": [
+        "Até 200 kW em corrente contínua",
+        "10-80% em 30 minutos segundo a Polestar",
+        "Carregamento CA de 11 kW e compatibilidade Plug & Charge"
+      ],
+      "cons": [
+        "A média de carregamento DC fica abaixo da potência de pico",
+        "Sem carregador CA opcional de 22 kW",
+        "Não suporta V2H"
+      ],
+      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
+    },
+    "satisfaction": {
+      "assessment": {
+        "ownerSentiment": 6.5,
+        "reportedDefects": 5,
+        "recallRecord": 7,
+        "evidenceLevel": "moderate"
+      },
+      "summary": "A avaliação combina opiniões de proprietários com um teste independente de longa duração de uma versão anterior (cerca de 6.000 milhas num único carro): a Electrifying relata três apagões dos ecrãs durante a utilização, controlos dos bancos/volante aquecidos que não respondiam em cerca de 70% das tentativas observadas ao longo de seis semanas, ligação automática do CarPlay irregular e câmara traseira por vezes embaciada. A mesma autora elogia conforto, autonomia e condução; relatos de outros proprietários são mistos e alguns dizem que atualizações corrigiram falhas. Estes números descrevem uma experiência individual, não uma taxa da frota. Na base britânica DVSA consultada em 03/11/2026 não encontrei recall específico do Polestar 4; isso só cobre os registos do Reino Unido e não prova ausência de campanhas noutros mercados.",
+      "pros": [
+        "Teste de longa duração elogia conforto, silêncio, autonomia e facilidade em viagens",
+        "Carregamento e utilização em estrada foram estáveis no teste independente",
+        "Alguns proprietários relatam melhorias após atualizações de software"
+      ],
+      "cons": [
+        "O teste de longa duração registou três apagões dos ecrãs, incluindo dois após atualizações",
+        "Controlos táteis, ligação do CarPlay e câmara traseira apresentaram falhas/intermitências",
+        "A experiência de um único carro não permite estimar a incidência na frota, sobretudo na versão MY27"
+      ],
+      "sourceIds": ["electrifying", "autoexpress", "polestar-owner-forum", "polestar-owner-early-failure", "polestar-owner-after-update", "dvsa-recalls"]
+    }
+  },
+  "dossier": {
+    "headline": "Minimalismo escandinavo, autonomia longa e um coupé sem vidro traseiro",
+    "verdict": "O Polestar 4 coupé Rear motor Prime combina um motor traseiro de 272 cv, bateria útil de 94 kWh e uma configuração rica em conforto e assistência. O interior destaca-se pelo espaço, pelos materiais sustentáveis e pelo desenho limpo; a utilização depende muito do ecrã central e do retrovisor por câmara. A encomenda tem uma oferta de marca substancial, mas o custo de manutenção, a rede local e a maturidade do software merecem ser ponderados.",
+    "pros": [
+      "620 km WLTP e bateria útil de 94 kWh",
+      "Pack Prime com HUD, Harman Kardon, conforto térmico e assistências",
+      "Habitáculo espaçoso, silencioso e com acabamentos cuidados",
+      "Bagageira de 526 L e compartimento dianteiro de 15 L",
+      "Carregamento DC até 200 kW e reboque até 1.500 kg"
+    ],
+    "cons": [
+      "Ecrã tátil concentra muitas funções quotidianas",
+      "Retrovisor digital pode não agradar e exige habituação",
+      "Largura de 1.994 mm dificulta estacionamento em locais apertados",
+      "Garantia do veículo de 3 anos",
+      "Relatos de bugs de software e falhas ocasionais dos ecrãs"
+    ],
+    "bestFor": "Quem procura um elétrico premium espaçoso para viagens longas, valoriza materiais sustentáveis e aceita uma interface digital pouco convencional.",
+    "sections": [
+      {
+        "title": "Posicionamento",
+        "body": "O Polestar 4 coupé é um SUV-coupé elétrico de 4,84 m sobre a plataforma SEA do grupo Geely. A configuração Rear motor usa um motor síncrono no eixo traseiro, com 200 kW (272 cv) e 343 Nm, bateria de 100 kWh e autonomia homologada até 620 km. A versão avaliada é MY27 e a entrega prevista na encomenda é para março–abril de 2027."
+      },
+      {
+        "title": "Interior e ergonomia",
+        "body": "O interior Charcoal com decoração Zinc usa Bio-attributed MicroTech, revestimento sintético de origem bio-atribuída, sem couro. O desenho é minimalista, a montagem é sólida e o habitáculo oferece bastante espaço atrás; o teto panorâmico e a iluminação ambiente ajudam a compensar a ausência de vidro traseiro. Em contrapartida, funções como climatização, espelhos e abertura do porta-luvas passam pelo ecrã central de 15,4 polegadas."
+      },
+      {
+        "title": "Como se conduz",
+        "body": "Os 272 cv levam o carro aos 100 km/h em 7,1 segundos, com entrega suave e progressiva. O chassis passivo e as jantes de 20 polegadas da configuração foram descritos pela imprensa como confortáveis em piso irregular e estáveis em autoestrada; os bancos do Pack Comfort acrescentam ajuste elétrico de 12 posições. A largura, a massa de 2.230 kg e o círculo de viragem de 11,64 m não favorecem manobras apertadas."
+      },
+      {
+        "title": "Vida a bordo e tecnologia",
+        "body": "O Pack Prime agrega Pilot, Plus e Comfort. Nesta configuração há HUD, sistema Harman Kardon de 12 altifalantes, bancos dianteiros e traseiros aquecidos, volante aquecido, climatização de três zonas, faróis Pixel LED e porta-bagagens elétrico com sensor de pé. A bagageira tem 526 L, mais 15 L no compartimento dianteiro; o retrovisor digital substitui o vidro traseiro e pode exigir adaptação."
+      },
+      {
+        "title": "Propriedade e assistência",
+        "body": "A Polestar recorre à colaboração com o grupo Volvo Car para assistência e manutenção, com service points autorizados e atualizações OTA. A marca anuncia garantia de 3 anos para o veículo, 8 anos/160.000 km para a bateria com limiar de SOH de 70%, 12 anos anticorrosão e 3 anos de assistência em viagem. A experiência de software relatada em testes de longa duração é mista, pelo que convém confirmar atualizações e apoio no ponto de serviço que servirá o veículo."
+      },
+      {
+        "title": "Configuração avaliada",
+        "body": "Encomenda particular feita em 03/11/2026: Rear motor, cor exterior Magnesium, interior Bio-attributed MicroTech Charcoal com decoração Zinc, jantes Aero de 20 polegadas, Pack Prime e vidros traseiros escurecidos. Inclui ainda cabo de carregamento CA de 11 kW. O PDF indica valor configurado de 70.800 €, despesas de legalização e transporte de 1.300 € e desconto Polestar de 15.300 €, com total final de 56.800 € com IVA incluído."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "polestar-order",
+      "label": "Encomenda/configuração Polestar 4 coupé (PDF fornecido, 03/11/2026)",
+      "url": "/sources/polestar-4-rear-motor-configuracao.pdf",
+      "type": "pdf"
+    },
+    {
+      "id": "polestar-specs",
+      "label": "Polestar Portugal — Especificações técnicas do 4 coupé",
+      "url": "https://www.polestar.com/pt/polestar-4-models/polestar-4-coupe/specifications/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-overview",
+      "label": "Polestar Portugal — Polestar 4 coupé",
+      "url": "https://www.polestar.com/pt/polestar-4-models/polestar-4-coupe/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-warranty",
+      "label": "Polestar Portugal — Garantia",
+      "url": "https://www.polestar.com/pt/owning-a-polestar/car-warranty/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-service",
+      "label": "Polestar Portugal — Assistência e manutenção",
+      "url": "https://www.polestar.com/pt/owning-a-polestar/service-points/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-history",
+      "label": "Volvo Cars — Polestar lançada como marca autónoma em 2017",
+      "url": "https://www.volvocars.com/intl/media/press-releases/294BE5254B2A7342/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-production",
+      "label": "Polestar — início da produção do Polestar 4",
+      "url": "https://media.polestar.com/releases/560?lang=en_GB",
+      "type": "official"
+    },
+    {
+      "id": "polestar-busan",
+      "label": "Polestar — produção adicional do Polestar 4 em Busan, Coreia do Sul",
+      "url": "https://media.polestar.com/releases/539?lang=en_US",
+      "type": "official"
+    },
+    {
+      "id": "polestar-europe-plan",
+      "label": "Polestar — produção do Polestar 7 na Eslováquia anunciada para 2028",
+      "url": "https://investors.polestar.com/news-releases/news-release-details/european-production-polestar-7-confirmed-kosice-slovakia",
+      "type": "official"
+    },
+    {
+      "id": "polestar-ownership",
+      "label": "Reuters — investimento de Geely/PSD e participação da Volvo na Polestar",
+      "url": "https://www.reuters.com/markets/europe/polestar-secures-200-million-funding-psd-investment-2025-06-16/",
+      "type": "press"
+    },
+    {
+      "id": "evdb-my27",
+      "label": "EV Database — Polestar 4 Coupé Rear Motor (MY27)",
+      "url": "https://ev-database.org/car/3606/Polestar-4-Coupe-Rear-Motor",
+      "type": "database"
+    },
+    {
+      "id": "autoexpress",
+      "label": "Auto Express — Polestar 4 Coupé review",
+      "url": "https://www.autoexpress.co.uk/polestar/4",
+      "type": "press"
+    },
+    {
+      "id": "carwow",
+      "label": "Carwow — Polestar 4 review",
+      "url": "https://www.carwow.co.uk/polestar/4",
+      "type": "press"
+    },
+    {
+      "id": "electrifying",
+      "label": "Electrifying — Polestar 4 long-term review",
+      "url": "https://www.electrifying.com/long-term-reviews/polestar-reviews/4/review",
+      "type": "press"
+    },
+    {
+      "id": "euroncap",
+      "label": "Euro NCAP — Polestar 4 (2025)",
+      "url": "https://www.euroncap.com/assessments/polestar/4/1145/",
+      "type": "database"
+    },
+    {
+      "id": "harman-owner-review",
+      "label": "Polestar Forum — opiniões sobre o Harman Kardon do Polestar 4",
+      "url": "https://www.polestar-forum.com/threads/polestar-4-harman-kardon-thoughts.16751/",
+      "type": "owner"
+    },
+    {
+      "id": "reddit-audio",
+      "label": "Reddit r/Polestar — Harman Kardon com colunas nos encostos",
+      "url": "https://www.reddit.com/r/Polestar/comments/1p7y17u/polestar-4-harman_kardon_with_headrest_speakers/",
+      "type": "owner"
+    },
+    {
+      "id": "polestar-owner-forum",
+      "label": "Polestar Forum — experiências de proprietários do Polestar 4",
+      "url": "https://www.polestar-forum.com/forums/polestar-4-forum.61/",
+      "type": "owner"
+    },
+    {
+      "id": "polestar-owner-early-failure",
+      "label": "Reddit r/Polestar — relato de falhas nas primeiras semanas de um Polestar 4",
+      "url": "https://www.reddit.com/r/Polestar/comments/1qljchh/polestar_4_2_week_ownership_before_it_broke/",
+      "type": "owner"
+    },
+    {
+      "id": "polestar-owner-after-update",
+      "label": "Reddit r/Polestar — proprietário relata falha GPS corrigida por atualização",
+      "url": "https://www.reddit.com/r/Polestar/comments/1sai1ed/really_that_many_issues_should_i_buy_something/",
+      "type": "owner"
+    },
+    {
+      "id": "dvsa-recalls",
+      "label": "DVSA — base pública britânica de recalls de veículos",
+      "url": "https://www.check-vehicle-recalls.service.gov.uk/documents/RecallsFile.csv",
+      "type": "database"
+    }
+  ]
+}

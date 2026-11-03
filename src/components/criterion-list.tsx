@@ -1,10 +1,30 @@
-import { ChevronDown, ExternalLink } from "lucide-react"
+import { ArrowDown, ChevronDown, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { CRITERIA } from "@/data/criteria"
 import type { Source } from "@/data/types"
+import type {
+  BrandAssessment,
+  InteriorAssessment,
+  SatisfactionAssessment,
+} from "@/data/types"
 import { formatScore } from "@/lib/format"
 import type { ScoredCar } from "@/lib/scoring"
 import { ACCENT_HEX, ScoreBar } from "@/components/score"
+import {
+  HARD_PLASTIC_CAP,
+  HARD_PLASTIC_LABELS,
+  HARD_PLASTIC_PENALTY,
+  INTERIOR_COMPONENTS,
+  interiorScore,
+} from "@/lib/interior"
+import { BRAND_COMPONENTS, brandScore, PORTUGAL_FACTORY_BONUS } from "@/lib/brand"
+import {
+  SATISFACTION_COMPONENTS,
+  SATISFACTION_EVIDENCE_CAPS,
+  SATISFACTION_EVIDENCE_LABELS,
+  satisfactionComponentScores,
+  satisfactionScore,
+} from "@/lib/satisfaction"
 
 function SourceLinks({
   ids,
@@ -64,6 +84,7 @@ export function CriterionList({
       {CRITERIA.map((criterion, index) => {
         const scored = entry.criteria[criterion.id]
         const review = scored.review
+        const assessment = review.assessment
         const Icon = criterion.icon
 
         return (
@@ -87,7 +108,11 @@ export function CriterionList({
                     variant="outline"
                     className="hidden border-line text-[10px] text-muted-foreground sm:inline-flex"
                   >
-                    {criterion.kind === "objective" ? "dado" : "editorial"}
+                    {criterion.kind === "objective"
+                      ? "dado"
+                      : criterion.kind === "rubric"
+                        ? "rubrica"
+                        : "editorial"}
                   </Badge>
                 </span>
                 <span className="mt-0.5 block text-xs text-muted-foreground">
@@ -118,6 +143,174 @@ export function CriterionList({
                   {criterion.description}
                 </p>
               </div>
+
+              {criterion.id === "equipment" ? (
+                <a
+                  href="#equipamento"
+                  className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-3 py-1.5 text-[11px] font-medium text-foreground transition-colors hover:border-forest/40 hover:bg-muted/40"
+                >
+                  Ver a checklist completa de equipamento
+                  <ArrowDown className="size-3 text-muted-foreground" />
+                </a>
+              ) : null}
+
+              {criterion.id === "interior" && assessment ? (
+                <div className="mt-3 rounded-xl border border-line bg-background px-3.5 py-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Rubrica de acabamento
+                    </p>
+                    <p className="font-mono text-[11px] text-muted-foreground">
+                      {formatScore(interiorScore(assessment as InteriorAssessment))}/10
+                    </p>
+                  </div>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    {INTERIOR_COMPONENTS.map((component) => {
+                      const value = (assessment as InteriorAssessment)[component.key]
+                      return (
+                        <div key={component.key} title={component.description}>
+                          <div className="flex items-baseline justify-between gap-2 text-[11px]">
+                            <span className="text-muted-foreground">
+                              {component.label}
+                              <span className="text-muted-foreground/60">
+                                {" "}
+                                · {Math.round(component.weight * 100)}%
+                              </span>
+                            </span>
+                            <span className="font-mono font-medium">
+                              {formatScore(value)}
+                            </span>
+                          </div>
+                          <ScoreBar
+                            score={value}
+                            color={ACCENT_HEX[entry.car.accent]}
+                            className="mt-1.5"
+                          />
+                        </div>
+                      )
+                    })}
+                  </div>
+                  <p className="mt-3 text-[11px] leading-5 text-muted-foreground">
+                    Plástico duro:{" "}
+                    <span className="font-medium text-foreground">
+                      {HARD_PLASTIC_LABELS[(assessment as InteriorAssessment).hardPlastic]}
+                    </span>
+                    .{" "}
+                    {HARD_PLASTIC_PENALTY[(assessment as InteriorAssessment).hardPlastic] > 0
+                      ? `Desconta ${formatScore(HARD_PLASTIC_PENALTY[(assessment as InteriorAssessment).hardPlastic])} pontos e limita a nota a ${formatScore(HARD_PLASTIC_CAP[(assessment as InteriorAssessment).hardPlastic])}/10.`
+                      : "Sem desconto na nota."}
+                  </p>
+                </div>
+              ) : null}
+
+              {criterion.id === "brand" && assessment ? (
+                <div className="mt-3 rounded-xl border border-line bg-background px-3.5 py-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Rubrica de marca e assistência
+                    </p>
+                    <p className="font-mono text-[11px] text-muted-foreground">
+                      Índice {formatScore(brandScore(assessment as BrandAssessment))}/10
+                    </p>
+                  </div>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    {BRAND_COMPONENTS.map((component) => {
+                      const value = (assessment as BrandAssessment)[component.key]
+                      return (
+                        <div key={component.key} title={component.description}>
+                          <div className="flex items-baseline justify-between gap-2 text-[11px]">
+                            <span className="text-muted-foreground">
+                              {component.label}
+                              <span className="text-muted-foreground/60">
+                                {" "}· {Math.round(component.weight * 100)}%
+                              </span>
+                            </span>
+                            <span className="font-mono font-medium">
+                              {formatScore(value)}
+                            </span>
+                          </div>
+                          <ScoreBar
+                            score={value}
+                            color={ACCENT_HEX[entry.car.accent]}
+                            className="mt-1.5"
+                          />
+                        </div>
+                      )
+                    })}
+                  </div>
+                  <p className="mt-3 text-[11px] leading-5 text-muted-foreground">
+                    Fábrica automóvel em Portugal: {" "}
+                    <span className="font-medium text-foreground">
+                      {(assessment as BrandAssessment).portugalFactory ? "sim" : "não"}
+                    </span>
+                    . {" "}
+                    {(assessment as BrandAssessment).portugalFactory
+                      ? `Bónus de ${formatScore(PORTUGAL_FACTORY_BONUS)} pontos, limitado a 10.`
+                      : "Sem bónus local."}
+                  </p>
+                </div>
+              ) : null}
+
+              {criterion.id === "satisfaction" &&
+              assessment &&
+              "ownerSentiment" in assessment ? (
+                <div className="mt-3 rounded-xl border border-line bg-background px-3.5 py-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Rubrica de satisfação e ocorrências
+                    </p>
+                    <p className="font-mono text-[11px] text-muted-foreground">
+                      Índice {formatScore(satisfactionScore(assessment))}/10
+                    </p>
+                  </div>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    {SATISFACTION_COMPONENTS.map((component) => {
+                      const values = satisfactionComponentScores(assessment)
+                      const rawValue =
+                        (assessment as SatisfactionAssessment)[component.key]
+                      const value = values[component.key]
+                      const cap =
+                        SATISFACTION_EVIDENCE_CAPS[assessment.evidenceLevel][
+                          component.key
+                        ]
+                      return (
+                        <div key={component.key} title={component.description}>
+                          <div className="flex items-baseline justify-between gap-2 text-[11px]">
+                            <span className="text-muted-foreground">
+                              {component.label}
+                              <span className="text-muted-foreground/60">
+                                {" "}· {Math.round(component.weight * 100)}%
+                              </span>
+                            </span>
+                            <span className="font-mono font-medium">
+                              {formatScore(value)}
+                            </span>
+                          </div>
+                          <ScoreBar
+                            score={value}
+                            color={ACCENT_HEX[entry.car.accent]}
+                            className="mt-1.5"
+                          />
+                          {rawValue > cap ? (
+                            <p className="mt-1 text-[10px] text-muted-foreground">
+                              Limitada a {formatScore(cap)} pela amostra {" "}
+                              {SATISFACTION_EVIDENCE_LABELS[assessment.evidenceLevel]}.
+                            </p>
+                          ) : null}
+                        </div>
+                      )
+                    })}
+                  </div>
+                  <p className="mt-3 text-[11px] leading-5 text-muted-foreground">
+                    Maturidade da evidência: {" "}
+                    <span className="font-medium text-foreground">
+                      {SATISFACTION_EVIDENCE_LABELS[assessment.evidenceLevel]}
+                    </span>
+                    . As contagens de queixas não são taxas de defeitos sem dados
+                    comparáveis de frota, quilometragem e exposição.
+                  </p>
+                </div>
+              ) : null}
 
               <p className="mt-4 max-w-3xl text-sm leading-6 text-muted-foreground">
                 {review.summary}

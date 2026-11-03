@@ -1,7 +1,8 @@
 # Research guide — exhaustive car research for a new dossier
 
 Goal: gather enough verified evidence to fill every field of the car JSON with
-confidence, and to justify each editorial `baseScore` with citable sources.
+confidence, and to justify each editorial `baseScore` and each interior rubric
+component with citable sources.
 
 ## Order of trust
 
@@ -64,22 +65,39 @@ Work through these blocks; note the URL for everything you'll cite:
 - Which of those come via the included options vs. standard.
 - Options NOT included that a buyer might add (for prose context).
 
-### Block 6 — Warranty and network (feeds `brand` criterion)
+### Block 6 — Warranty and network (brand and assistance rubric)
 - Vehicle warranty, battery warranty (years/km/SOH), PT legal warranty context.
-- Dealer/after-sales network size in Portugal, importer, time in the PT market.
-- Parts availability reputation, brand reliability surveys.
+- Brand and automotive-group history, clearly distinguishing the age of a standalone marque from its parent/division lineage.
+- Official after-sales workshop reach in Portugal (do not count sales-only outlets as service locations), importer, and time in the PT market.
+- Active passenger-car manufacturing in Europe, its production stage, and whether the evaluated model is made there; distinguish active series production from pilot lines and future announcements. Record any Portuguese factory separately for the rubric bonus.
+- Formal backing from established automotive groups/brands; an independent, vertically integrated automaker can also score well. Do not treat age, manufacturing location, or affiliation as proof of reliability or parts lead times.
 
 ### Block 7 — Editorial evidence, criterion by criterion
-- `interior`: materials, build quality complaints/praise, ergonomics of controls
-  (touch vs physical), design reception.
+- `interior`: evidence for the absolute rubric, component by component:
+  soft-touch coverage on contact surfaces (dashboard top, door cards, armrests,
+  console — not just the top of the dash), leather/vegan quality and stitching,
+  design reception (restrained vs. showy), and build solidity/squeaks. Record how
+  much visible or touchable hard plastic the cabin has and classify it as `low`,
+  `moderate`, `high` or `extensive`; press photos and owner complaints are valid
+  evidence. Do not let the car's position in the list influence these ratings.
 - `comfort`: suspension behavior, wheel/tire impact, ride reviews on broken
   roads, motorway stability, noise isolation.
-- `brand`: everything from Block 6 plus brand history in PT and satisfaction
-  surveys (Driver Power positions, ADAC reliability, etc.).
+- `brand`: apply all four dimensions in `src/lib/brand.ts` consistently to every
+  car: automotive experience, Portuguese authorized-service network, European
+  manufacturing, and established-group/manufacturer support. Cite evidence for
+  each component in `reviews.brand.sourceIds`. Warranty and reliability surveys
+  are context only; they are not extra sub-scores in this rubric.
 - `sound`: speaker count, premium system brand (Dynaudio, Sennheiser, Harman…),
   whether it's standard/option/included, press opinions on audio quality.
-- `satisfaction`: press verdicts, owner forums/groups, known issues/recalls,
-  long-term tests. For new models, state the sample limitation explicitly.
+- `satisfaction`: follow `src/lib/satisfaction.ts`: 40% owner sentiment and
+  independent long-term tests, 35% recurring user-reported defects/complaints,
+  25% model-specific safety recalls. Prefer reports from owners and independent
+  outlets over brand marketing. Separate isolated anecdotes from repeated
+  corroborated patterns; research public recall records, distinguish safety
+  recalls from service campaigns, and note affected build dates/VIN limits. Never
+  divide raw complaints by nothing: counts are not incidence rates without fleet
+  size and mileage. For new models, mark evidence maturity as limited and state
+  the sample limitation explicitly; lack of reports is not proof of no defects.
 
 ### Block 8 — Press round (aim for 4–6 usable reviews)
 Typical outlets used by this project: carwow, electrifying, electrive,

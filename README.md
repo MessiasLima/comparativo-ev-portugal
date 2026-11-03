@@ -42,13 +42,16 @@ src/data/
 │   ├── index.ts                  # registo dos carros
 │   ├── cupra-raval-vz.json
 │   ├── byd-seal-design.json
-│   └── byd-seal-excellence-awd.json
+│   ├── byd-seal-excellence-awd.json
+│   └── polestar-4-rear-motor-prime.json
 ├── criteria.ts                   # os 10 critérios
 ├── equipment.ts                  # checklist normalizada de 38 equipamentos
 ├── site.ts                       # data editorial da lista
 └── types.ts                      # tipos do modelo de dados
 
 src/lib/weights.ts                # pesos padrão, validação e persistência
+src/lib/scoring.ts                # notas, ranking e €/ponto
+src/lib/interior.ts               # rubrica do acabamento interno
 src/hooks/use-weights.ts          # store de pesos reativa (localStorage)
 ```
 
@@ -65,8 +68,9 @@ O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia,
 ### Como as notas são calculadas
 
 - **Critérios objetivos** — autonomia, potência/peso, eficiência, carregamento e quantidade de equipamento. O valor é calculado a partir dos dados do JSON.
-- **Critérios editoriais** — acabamento, conforto, marca, som e satisfação. Cada carro tem uma avaliação base de 0 a 10, sustentada por fontes no próprio JSON.
-- **Relatividade** — em cada critério, o melhor carro da lista recebe 10. Os restantes recebem a proporção do seu desempenho face ao líder. Se entrar um carro novo, as notas de todos mudam.
+- **Critérios editoriais** — conforto, marca, som e satisfação. Cada carro tem uma avaliação base de 0 a 10, sustentada por fontes no próprio JSON.
+- **Acabamento interno** — critério de rubrica, com nota **absoluta** (não relativa à lista). Cada carro é avaliado em quatro componentes de 0 a 10: superfícies macias (40%), estofos e couro (25%), design sofisticado e contido (20%) e montagem (15%). A proporção de plástico duro visível desconta pontos e impõe um teto à nota (`low` sem teto, `moderate` sem teto, `high` 7,0, `extensive` 5,5). Extravagância no design desce a nota do componente de design. A fórmula vive em `src/lib/interior.ts` e a avaliação de cada carro em `reviews.interior.assessment`.
+- **Relatividade** — nos restantes critérios, o melhor carro da lista recebe 10. Os restantes recebem a proporção do seu desempenho face ao líder. Se entrar um carro novo, estas notas mudam; a rubrica de acabamento não muda, porque é absoluta.
 - **Nota global** — média ponderada dos 10 critérios. Cada critério tem um peso-multiplicador float entre 0 e 2 (passo 0.1, defeito ×1): ×1 mantém o peso base, ×2 duplica-o e ×0 anula o critério. A média é normalizada pela soma dos multiplicadores, pelo que com todos a ×1 resulta na média simples. Ao alterar um slider, a nota global e o €/ponto mudam imediatamente, sem necessidade de confirmar.
 - **Custo-benefício** — `preço / nota global` = euros por ponto. Quanto menor, melhor.
 - **Persistência** — os pesos são guardados em `localStorage` com a chave `comparativo-ev-portugal:weights:v2` e recuperados quando o utilizador volta ao site. A tabela e o painel de nota dos dossiês usam a mesma configuração.
@@ -78,8 +82,10 @@ O carregamento é um índice composto: **70% potência DC + 30% potência AC**. 
 - Preços de referência para **Portugal Continental**, com IVA, à data indicada em cada JSON.
 - CUPRA Raval VZ: proposta `C84TSZ1`, com opcionais, fornecida pelo utilizador. O PDF original está em `public/sources/`.
 - BYD Seal Excellence AWD: PVP de referência da Caetano (concessionário oficial BYD). O guia do produto está em `public/sources/`.
+- Polestar 4 coupé Rear motor Prime: configuração fornecida pelo utilizador, encomendada em 03/11/2026 com entrega prevista para março–abril de 2027. O total de 56.800 € inclui IVA, legalização, transporte e a oferta indicada no PDF; a versão e o equipamento foram cruzados com a ficha MY27 da Polestar.
 - Autonomia e consumo são **WLTP**. Os valores reais variam com percurso, clima, carga e estilo de condução.
 - As avaliações editoriais são uma síntese de imprensa especializada, dados oficiais e testemunhos de proprietários. As fontes estão listadas em cada dossiê.
+- As descrições evitam comparações relativas à lista (“o mais caro”, “a maior autonomia”), porque ficariam desatualizadas assim que entrasse um carro novo. Os rankings, contagens e superlativos são calculados na interface; o texto usa valores concretos ou comparações com carros nomeados.
 
 ## Rotas
 
@@ -88,7 +94,7 @@ O carregamento é um índice composto: **70% potência DC + 30% potência AC**. 
 | `/` | Hero + tabela de ranking ordenável + metodologia |
 | `/carros/[slug]` | Dossiê gerado para cada carro registado |
 
-Rotas atuais: `/carros/cupra-raval-vz`, `/carros/byd-seal-design` e `/carros/byd-seal-excellence-awd`.
+Rotas atuais: `/carros/cupra-raval-vz`, `/carros/byd-seal-design`, `/carros/byd-seal-excellence-awd` e `/carros/polestar-4-rear-motor-prime`.
 
 ## Notas de implementação
 

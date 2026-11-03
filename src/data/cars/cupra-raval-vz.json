@@ -109,17 +109,23 @@
   ],
   "reviews": {
     "interior": {
-      "baseScore": 7.7,
-      "summary": "A cabine está acima da média do segmento: superfícies macias na parte superior, costuras e detalhes em cobre, bancos baquet em Dinamica e PVC vegan. A crítica aponta plásticos duros na consola central e os controlos táteis da climatização, pouco práticos em piso irregular.",
+      "assessment": {
+        "softTouch": 4,
+        "upholstery": 6.5,
+        "design": 6.5,
+        "assembly": 7,
+        "hardPlastic": "high"
+      },
+      "summary": "O desenho é distintivo — costuras em cobre, bancos baquet em Dinamica e um habitáculo com personalidade —, mas a qualidade ao toque fica aquém do preço: só o topo do tablier e os apoios de braço são macios, enquanto a maioria das superfícies visíveis, da consola central aos painéis de porta, é plástico duro. A montagem é sólida e sem ruídos relevantes; os sliders táteis da climatização continuam pouco práticos em piso irregular.",
       "pros": [
-        "Design interior distintivo e materiais agradáveis ao toque nas zonas principais",
-        "Bancos baquet com bom apoio lateral",
-        "Boa posição de condução e espaço traseiro surpreendente para 4,05 m"
+        "Bancos baquet em Dinamica com bom apoio lateral",
+        "Boa posição de condução e espaço traseiro surpreendente para 4,05 m",
+        "Montagem sólida e cabine bem isolada"
       ],
       "cons": [
-        "Plásticos duros junto à consola central",
+        "Maioria das superfícies visíveis é plástico duro",
         "Climatização em sliders táteis",
-        "Sem materiais premium em todas as superfícies"
+        "Poucos materiais nobres para o preço pedido"
       ],
       "sourceIds": ["cupra-official", "autonext", "selectcarleasing", "electrive", "carmagazine"]
     },
@@ -139,22 +145,28 @@
       "sourceIds": ["carwow", "electrive", "electrifying", "autonext"]
     },
     "brand": {
-      "baseScore": 8.6,
-      "summary": "A CUPRA existe como marca autónoma desde 2018, mas assenta na rede e na engenharia do grupo Volkswagen/SEAT, importado em Portugal pela SIVA. A cobertura de concessionários e oficinas é consolidada e as peças são comuns ao grupo, o que reduz o risco de longas esperas.",
+      "assessment": {
+        "automotiveExperience": 7,
+        "portugalServiceNetwork": 9.5,
+        "europeanManufacturing": 8,
+        "establishedGroupSupport": 9.5,
+        "portugalFactory": false
+      },
+      "summary": "A rubrica pondera experiência da marca (7/10), rede de oficinas em Portugal (9,5/10), produção europeia (8/10) e apoio de grupo (9,5/10), resultando num índice bruto de 8,38/10. A CUPRA tornou-se marca autónoma em 2018, com origem na divisão desportiva da SEAT; o Raval já é produzido em série em Martorell. O relatório da SEAT S.A. confirma que os centros de serviço SEAT também assistem CUPRA. Estes fatores sustentam capacidade industrial e de pós-venda, mas não são uma garantia de fiabilidade nem de prazo de peças.",
       "pros": [
-        "Rede de vendas e pós-venda consolidada em Portugal",
-        "Base técnica do grupo Volkswagen",
-        "Bateria com garantia de 8 anos / 160.000 km"
+        "Rede CUPRA apoiada por centros de serviço SEAT em Portugal",
+        "Integração industrial e tecnológica no grupo Volkswagen",
+        "O Raval é produzido em série na fábrica de Martorell, em Espanha"
       ],
       "cons": [
-        "Marca recente, com histórico curto face a marcas generalistas",
-        "Garantia geral de 3 anos, inferior à da BYD",
-        "Satisfação de proprietários mediana em estudos internacionais"
+        "A CUPRA é uma marca autónoma recente, apesar da experiência herdada da SEAT",
+        "Não existe fábrica automóvel da marca em Portugal",
+        "A presença de uma fábrica europeia não permite inferir, por si só, prazos de peças"
       ],
-      "sourceIds": ["cupra-dealers", "cupra-warranty", "ev-database", "cupra-official"]
+      "sourceIds": ["cupra-dealers", "cupra-history", "cupra-report-2025", "cupra-raval-production"]
     },
     "equipment": {
-      "summary": "29 dos 38 equipamentos da checklist, contando com os opcionais incluídos nesta configuração. A dotação é forte em ADAS, mas faltam itens de conforto e tecnologia que o rival traz de série: HUD, som premium, bancos aquecidos/ventilados, bomba de calor e porta-bagagens elétrico.",
+      "summary": "A dotação, contando com os opcionais incluídos nesta configuração, é forte em ADAS, mas faltam itens de conforto e tecnologia que os Seal trazem de série: HUD, som premium, bancos aquecidos/ventilados, bomba de calor e porta-bagagens elétrico.",
       "pros": [
         "Pacote ADAS completo, incluindo câmara 360º e estacionamento remoto",
         "Suspensão adaptativa e V2H de série",
@@ -169,7 +181,7 @@
     },
     "sound": {
       "baseScore": 6.2,
-      "summary": "Esta configuração traz sete altifalantes, sem subwoofer nem sistema assinado. O Sennheiser AMBEO de 12 altifalantes existe como opção, mas não foi incluído na proposta. Para um carro de quase €39 mil, é um ponto fraco.",
+      "summary": "Esta configuração traz sete altifalantes, sem subwoofer nem sistema assinado. O Sennheiser AMBEO de 12 altifalantes existe como opção, mas não foi incluído na proposta. Para um carro deste preço, é um ponto fraco.",
       "pros": [
         "Sete altifalantes com palco frontal decente",
         "Possibilidade de upgrade Sennheiser de 12 altifalantes"
@@ -182,7 +194,7 @@
       "sourceIds": ["cupra-offer", "sennheiser", "electrifying"]
     },
     "range": {
-      "summary": "389 km de autonomia combinada WLTP na ficha oficial atual. A proposta que acompanha este dossiê indica 384 km, uma diferença de homologação. É a autonomia mais baixa da lista, mas também a bateria mais pequena.",
+      "summary": "389 km de autonomia combinada WLTP na ficha oficial atual. A proposta que acompanha este dossiê indica 384 km, uma diferença de homologação. A bateria de 55 kWh explica a autonomia contida.",
       "pros": [
         "Bateria de 51,7 kWh úteis mantém o peso baixo",
         "Consumo homologado muito competitivo",
@@ -210,9 +222,9 @@
       "sourceIds": ["cupra-official", "cupra-offer", "ev-database"]
     },
     "efficiency": {
-      "summary": "15,79 kWh/100 km WLTP, o melhor consumo da lista. A proposta que acompanha este dossiê indica 15,99 kWh/100 km. A combinação de peso contido, aerodinâmica e bateria NMC faz do Raval o mais eficiente em ciclo homologado. Em testes reais, a imprensa registou valores entre 14 e 17 kWh/100 km.",
+      "summary": "15,79 kWh/100 km WLTP. A proposta que acompanha este dossiê indica 15,99 kWh/100 km. A combinação de peso contido, aerodinâmica e bateria NMC traduz-se num consumo baixo em ciclo homologado. Em testes reais, a imprensa registou valores entre 14 e 17 kWh/100 km.",
       "pros": [
-        "Melhor eficiência da lista",
+        "Consumo WLTP de 15,79 kWh/100 km",
         "Bateria pequena reduz peso e custo",
         "Boa autonomia por kWh"
       ],
@@ -223,7 +235,7 @@
       "sourceIds": ["cupra-official", "cupra-offer", "ev-database", "autonext"]
     },
     "charging": {
-      "summary": "Carrega a 11 kW em AC e até 105 kW em DC, com 10-80% em cerca de 24 minutos. A potência DC é a mais baixa da lista, mas a bateria pequena compensa em tempo de paragem. Tem V2L e V2H.",
+      "summary": "Carrega a 11 kW em AC e até 105 kW em DC, com 10-80% em cerca de 24 minutos. A potência DC é modesta, mas a bateria pequena compensa em tempo de paragem. Tem V2L e V2H.",
       "pros": [
         "10-80% em cerca de 24 minutos",
         "11 kW AC trifásico",
@@ -237,28 +249,33 @@
       "sourceIds": ["cupra-official", "cupra-offer", "ev-database"]
     },
     "satisfaction": {
-      "baseScore": 6.9,
-      "summary": "O Raval chegou ao mercado em 2026, por isso a amostra de proprietários ainda é curta. A imprensa elogia condução, design e eficiência; critica o conforto firme, os controlos táteis e os plásticos duros. A CUPRA ficou em 28.º de 31 marcas no Driver Power 2025 (Reino Unido), o que pesa na satisfação da marca.",
+      "assessment": {
+        "ownerSentiment": 7,
+        "reportedDefects": 6,
+        "recallRecord": 4,
+        "evidenceLevel": "limited"
+      },
+      "summary": "A evidência de proprietários do Raval ainda é limitada: os testes independentes elogiam a condução, mas há relatos iniciais isolados de avisos eletrónicos, insuficientes para medir prevalência. A base pública da DVSA, consultada em 03/11/2026, regista uma campanha de segurança para 200 Raval no Reino Unido (R/2026/372; fabricados entre 2 de julho e 3 de setembro de 2026): o cinto dianteiro pode não estar corretamente preso no ponto inferior da coluna B. A imprensa alemã reporta a campanha KBA 17072R para Raval e Terramar, com 10.151 veículos no total e sem divisão pública por modelo ou acabamento. São registos de jurisdições diferentes e os totais não devem ser somados. O VIN é necessário para confirmar uma unidade concreta; a pequena amostra também limita o que se pode concluir da ausência de outros defeitos reportados.",
       "pros": [
-        "Reviews muito positivas no capítulo dinâmico",
-        "Boa relação entre tamanho, espaço e prazer de condução",
-        "Sem problemas críticos documentados até à data"
+        "Imprensa independente elogia a condução e o comportamento dinâmico",
+        "Problemas eletrónicos reportados até agora são relatos iniciais isolados, sem taxa pública de incidência",
+        "O fabricante disponibiliza consulta de campanhas de segurança pelo VIN"
       ],
       "cons": [
-        "Poucos proprietários com quilometragens altas",
-        "Satisfação da marca abaixo da média em estudos internacionais",
-        "Críticas recorrentes ao conforto e à ergonomia dos controlos"
+        "Recall de segurança dos cintos dianteiros que abrange 200 Raval no registo britânico consultado; confirmar o VIN",
+        "Amostra curta de proprietários e pouca exposição em quilometragem",
+        "Relatos de avisos eletrónicos ainda não permitem distinguir falhas isoladas de padrão recorrente"
       ],
-      "sourceIds": ["carwow", "autonext", "electrive", "evpowered", "cupra-owners"]
+      "sourceIds": ["carwow", "autonext", "electrive", "evpowered", "cupra-owners", "cupra-raval-owner-warning", "cupra-seatbelt-recall", "cupra-recall-check", "dvsa-recalls"]
     }
   },
   "dossier": {
     "headline": "O lado emocional do segmento B elétrico",
-    "verdict": "O Raval VZ é a escolha para quem quer um elétrico compacto com carácter, direção afinada e um preço competitivo. É o mais eficiente da lista e o que custa menos por ponto. Mas não é o mais confortável, nem o mais equipado: para quem faz muitos km ou quer um interior mais rico, o Seal justifica o extra.",
+    "verdict": "O Raval VZ é a escolha para quem quer um elétrico compacto com carácter, direção afinada e um preço competitivo. É eficiente — 15,79 kWh/100 km em ciclo WLTP — mas o interior maioritariamente em plástico duro pesa na nota global. Também não é tão confortável nem tão equipado como os Seal: para quem faz muitos km ou quer um interior mais rico, o Seal justifica o extra.",
     "pros": [
       "Chassis ágil, direção precisa e DCC no VZ",
-      "Consumo WLTP de 15,79 kWh/100 km, o melhor da lista",
-      "Preço competitivo e melhor custo por ponto",
+      "Consumo WLTP de 15,79 kWh/100 km",
+      "Preço competitivo com os opcionais incluídos",
       "441 L de bagageira em apenas 4,05 m",
       "V2L e V2H de série"
     ],
@@ -267,9 +284,9 @@
       "Sete altifalantes e sem sistema premium nesta configuração",
       "Sem bancos aquecidos, bomba de calor ou HUD",
       "Autonomia de 389 km e relação potência/peso inferior ao Seal",
-      "Garantia geral de 3 anos e satisfação de marca mediana"
+      "Garantia geral de 3 anos e amostra de proprietários ainda curta para avaliar a fiabilidade a longo prazo"
     ],
-    "bestFor": "Quem conduz sobretudo em cidade e estradas nacionais, valoriza prazer de condução e quer o menor custo por ponto.",
+    "bestFor": "Quem conduz sobretudo em cidade e estradas nacionais, valoriza prazer de condução e quer um preço competitivo.",
     "sections": [
       {
         "title": "Posicionamento",
@@ -277,7 +294,7 @@
       },
       {
         "title": "Interior e ergonomia",
-        "body": "A cabine é um dos pontos fortes: desenho distintivo, costuras em cobre, bancos baquet em Dinamica e PVC vegan, boa posição de condução e espaço traseiro acima do esperado. A qualidade percebida é boa para o segmento, mas há plásticos duros na consola central e os controlos táteis da climatização exigem atenção. Os bancos são firmes e com bom apoio lateral; a mala de 441 L é excelente para 4,05 m."
+        "body": "O interior ganha no desenho — costuras em cobre, bancos baquet em Dinamica e PVC vegan — e na posição de condução, com espaço traseiro acima do esperado para 4,05 m. Perde ao toque: só a parte superior do tablier e os apoios de braço são macios; a consola, os painéis de porta e a zona inferior são de plástico duro, o que se nota em qualquer percurso. Os controlos táteis da climatização exigem atenção e os bancos são firmes, com bom apoio lateral; a mala de 441 L é excelente para o tamanho."
       },
       {
         "title": "Como se conduz",
@@ -289,7 +306,7 @@
       },
       {
         "title": "Propriedade e rede",
-        "body": "A CUPRA está em Portugal desde 2018, apoiada pela SIVA/SEAT e pela base técnica do grupo Volkswagen. A rede é consolidada, as peças são comuns e a assistência é madura. A garantia geral é de 3 anos (extensível) e a bateria tem 8 anos / 160.000 km. A satisfação de proprietários em estudos internacionais é mediana: a marca ficou em 28.º de 31 no Driver Power 2025, no Reino Unido."
+        "body": "A CUPRA está em Portugal desde 2018, apoiada pela SIVA/SEAT e pela base técnica do grupo Volkswagen. A rede é consolidada, as peças são comuns e a assistência é madura. A garantia geral é de 3 anos (extensível) e a bateria tem 8 anos / 160.000 km. Como o Raval só chegou ao mercado em 2026, ainda há poucos proprietários com quilometragem suficiente para avaliar a satisfação e fiabilidade a longo prazo."
       },
       {
         "title": "Configuração avaliada",
@@ -326,6 +343,24 @@
       "id": "cupra-dealers",
       "label": "CUPRA Portugal — Rede de concessionários",
       "url": "https://www.cupraofficial.pt/o-seu-cupra/concessionarios",
+      "type": "official"
+    },
+    {
+      "id": "cupra-history",
+      "label": "CUPRA — história da marca e produção do milionésimo automóvel",
+      "url": "https://www.cupra.com/en/brand/annual-report/cupra-reaches-one-million-cars-produced",
+      "type": "official"
+    },
+    {
+      "id": "cupra-report-2025",
+      "label": "SEAT S.A. — Relatório anual 2025 (centros SEAT também assistem CUPRA)",
+      "url": "https://www.seat-cupra-mediacenter.com/content/dam/seat-media-center/homepage/anual-report/annual-report-2025.pdf",
+      "type": "official"
+    },
+    {
+      "id": "cupra-raval-production",
+      "label": "Volkswagen Group — início de produção do CUPRA Raval em Martorell",
+      "url": "https://www.volkswagen-group.com/en/articles/seat-and-cupra-plant-in-martorell-starts-production-of-cupra-raval-and-volkswagen-id-polo-leading-a-new-era-of-mobility-in-europe-20463",
       "type": "official"
     },
     {
@@ -387,6 +422,30 @@
       "label": "Comunidade CUPRA Raval (Facebook)",
       "url": "https://www.facebook.com/groups/1498677361179203/",
       "type": "owner"
+    },
+    {
+      "id": "cupra-raval-owner-warning",
+      "label": "Proprietário CUPRA Raval — relato inicial de avisos eletrónicos (Facebook)",
+      "url": "https://www.facebook.com/groups/1498677361179203/posts/1815505462829723/",
+      "type": "owner"
+    },
+    {
+      "id": "cupra-seatbelt-recall",
+      "label": "Autoevolution — recall KBA 17072R de cintos dianteiros em Raval/Terramar",
+      "url": "https://www.autoevolution.com/news/cupra-recalling-terramar-and-raval-models-for-incorrectly-secured-front-seatbelts-276825.html",
+      "type": "press"
+    },
+    {
+      "id": "cupra-recall-check",
+      "label": "CUPRA UK — consulta de campanhas de recall pelo VIN",
+      "url": "https://www.cupra.com/en-gb/owners/car-recall-checker",
+      "type": "official"
+    },
+    {
+      "id": "dvsa-recalls",
+      "label": "DVSA — base pública britânica de recalls de veículos",
+      "url": "https://www.check-vehicle-recalls.service.gov.uk/documents/RecallsFile.csv",
+      "type": "database"
     }
   ]
 }

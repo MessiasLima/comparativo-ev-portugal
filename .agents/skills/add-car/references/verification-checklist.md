@@ -1,10 +1,13 @@
 # Verification checklist — recalculate and verify everything
 
-Why this exists: every score in this site is **relative** (`src/lib/scoring.ts`):
-per criterion, the best car in the list gets 10 and the others get their
-proportion. Adding one car changes: every car's per-criterion scores, the weighted
-total, the ranking, the €/ponto, the value ranking, and the truthfulness of every
-comparative sentence in every dossier. Work through ALL sections below, in order.
+Why this exists: every relative score in this site (`src/lib/scoring.ts`) is
+proportional to the list: per criterion, the best car in the list gets 10 and the
+others get their proportion. Adding one car changes every car's per-criterion
+scores (except the interior), the weighted total, the ranking, the €/ponto, the
+value ranking, and the truthfulness of every comparative sentence in every
+dossier. The interior is an **absolute rubric** (`src/lib/interior.ts`): it does
+not move with the line-up, but every interior claim in the prose must still match
+its components. Work through ALL sections below, in order.
 
 ## Section 1 — Data validation
 
@@ -24,51 +27,72 @@ npm run validate:data
 
 ## Section 2 — Math spot-check (do at least one by hand)
 
-Formulas from `src/lib/scoring.ts` (criteria weights all default to 1, so the
-total is the mean of the 10 criterion scores):
+Formulas from `src/lib/scoring.ts`, `src/lib/interior.ts` and `src/lib/brand.ts`
+(criterion weights all default to 1, so the total is the mean of the 10 criterion
+scores):
 
+- `interior` raw = absolute rubric: `0.40·softTouch + 0.25·upholstery + 0.20·design
+  + 0.15·assembly − penalty`, capped by `hardPlastic` level. Penalty 0 / 0.5 / 1.0
+  / 1.8 and cap 10 / 10 / 7.0 / 5.5 for `low` / `moderate` / `high` / `extensive`.
+  The resulting score is used **as-is** (absolute), not rescaled against the list.
+- `brand` raw = `0.30·automotiveExperience + 0.30·portugalServiceNetwork +
+  0.25·europeanManufacturing + 0.15·establishedGroupSupport`, plus 0.5 if
+  `portugalFactory` is true, capped at 10 and rounded to two decimals. This rubric
+  index is relative-scaled against the best car (unlike `interior`).
+- `satisfaction` raw = `0.40·ownerSentiment + 0.35·reportedDefects +
+  0.25·recallRecord`, with component ceilings based on `evidenceLevel` in
+  `src/lib/satisfaction.ts`; it is then relative-scaled against the best car.
 - `equipment` raw = count of `equipmentIncluded` ids that exist in the checklist
 - `range` raw = `specs.rangeKm`
 - `powerToWeight` raw = `specs.powerHp / specs.weightKg`
 - `efficiency` raw = `specs.consumptionKwh100` (lower is better)
 - `charging` raw = `charging.dcKw × 0.7 + charging.acKw × 0.3`
-- Editorial raw = `reviews.<id>.baseScore`
-- Score per criterion (higher-is-better): `clamp(raw / bestRaw × 10, 0, 10)`;
+- Editorial raw = `reviews.<id>.baseScore` (currently comfort and sound)
+- Score per relative criterion (higher-is-better): `clamp(raw / bestRaw × 10, 0, 10)`;
   lower-is-better (only `efficiency`): `clamp(bestRaw / raw × 10, 0, 10)`.
 - Total = weighted mean of the 10 scores → `pricePerPoint = price.amount / total`.
 
-Pick the new car and one existing car, recompute two criteria and the totals by
-hand, and confirm they match the validator's output and your expectations. If the
-site and the validator disagree, the data feeding them differs (usually an
-unregistered JSON — see Section 1).
+Pick the new car and one existing car, recompute objective criteria and every
+rubric's raw value by hand (including the interior cap and brand weights), and
+confirm they match the validator's output and your expectations. Include the
+satisfaction rubric and its evidence caps when relevant. If the site and the validator disagree,
+the data feeding them differs (usually an unregistered JSON — see Section 1).
 
-## Section 3 — Stale comparative claims sweep (the heart of Phase 5)
+## Section 3 — List-relative claims sweep (the heart of Phase 5)
 
-Every existing dossier was written against the old line-up. Now re-read each
-car's `reviews` and `dossier` (all JSONs in `src/data/cars/`) and verify every
-list-relative claim. Grep finds candidates; you judge each one against the new
-ranking:
+The dossiers' prose is static: any claim that depends on the current line-up goes
+stale the moment a car or checklist item is added. This project deliberately keeps
+those claims out of the JSON. Re-read each car's `reviews` and `dossier` (all
+JSONs in `src/data/cars/`) and **remove** every list-relative claim. Grep finds
+candidates:
 
 ```bash
-grep -rnE "da lista|melhor|pior|mais barato|mais caro|mais eficiente|mais rápido|rival|fica atrás|à frente|líder|lidera|únic" src/data/cars/
-grep -rnE "\b38\b|/ ?38" src README.md   # word-bounded, so "389 km" won't match
+grep -rnE "da lista|na lista|o mais |a mais |melhor|pior|mais barato|mais caro|mais eficiente|mais rápido|líder|lidera|únic" src/data/cars/
+grep -rnE "\b[0-9]+ dos [0-9]+\b" src/data/cars/   # hardcoded checklist counts
 ```
 
-The `38` grep assumes the current checklist size — replace the number with whatever
-the total was before this skill ran.
+The `38`-style grep assumes the current checklist size — replace the number with
+whatever the total was before this skill ran, but the right fix is to drop the
+count from the prose entirely (the UI already shows `X/total`).
 
-Then, per claim type, recompute who actually leads now and rewrite broken
-sentences (in pt-PT, keeping the dossier's voice):
+Replace each claim with a stable fact or a comparison against a **named** car
+(in pt-PT, keeping the dossier's voice):
 
-- Superlatives: "melhor consumo da lista", "o mais barato", "melhor custo por
-  ponto", "a autonomia mais baixa da lista", "a potência DC mais baixa".
+- Forbidden superlatives → facts: "o mais caro da lista" → "Preço de €50.926 com
+  IVA"; "a maior autonomia da lista" → "570 km WLTP"; "o melhor consumo da lista"
+  → "15,79 kWh/100 km"; "o mais rápido da lista" → "0-100 km/h em 3,8 s".
+- Counts: "29 dos 38 equipamentos" → describe what is present/missing, never a
+  hardcoded total.
 - Cross-references by name: grep for every other car's brand/model inside each
   JSON ("fica muito atrás do Seal", "o Seal justifica o extra") and check the
-  relationship still holds numerically.
-- Counts and totals: "29 dos 38 equipamentos", "X/Y equipamentos" — recompute
-  against the new checklist size and re-audited `equipmentIncluded` arrays.
-- Rank statements: "ficou em 28.º de 31 marcas" (external facts stay), but any
-  in-list rank or "lidera N dos 10 critérios" style claim must be re-derived.
+  relationship still holds numerically. These are allowed and should stay scoped
+  to those cars.
+- External facts stay: "ficou em 28.º de 31 marcas", "garantia de 6 anos". They
+  do not depend on our line-up.
+- Interior claims: "cabine premium", "materiais macios em todas as superfícies" or
+  "plásticos duros" must match the `assessment` components, the hard-plastic level
+  and the rubric score. A car with `hardPlastic: "high"` or `"extensive"` must not
+  be described as having premium or mostly soft materials.
 - Version-pair prose: if the new car slots between two versions of the same model
   (e.g. between BYD Design and Excellence), their mutual comparisons may flip.
 

@@ -8,8 +8,8 @@ const steps = [
   },
   {
     number: "02",
-    title: "Notas relativas",
-    body: "Em cada critério, o melhor carro da lista recebe 10. Os restantes recebem a proporção do seu desempenho face ao líder. Se entrar um novo carro, as notas recalculam-se automaticamente.",
+    title: "Notas comparáveis",
+    body: "Nos critérios de dados e nas avaliações editoriais, o melhor carro da lista recebe 10 e os restantes a proporção do seu desempenho. O acabamento interno é a exceção: usa uma rubrica absoluta — superfícies macias, estofos e couro, design contido, montagem e proporção de plástico duro —, para que uma cabine maioritariamente plástica não chegue ao topo só por ser a menos má. Se entrar um novo carro, as notas relativas recalculam-se automaticamente.",
   },
   {
     number: "03",
@@ -86,7 +86,11 @@ export function Methodology() {
                 </p>
               </div>
               <span className="hidden self-start rounded-full border border-line px-2 py-0.5 font-mono text-[10px] text-muted-foreground sm:block">
-                {criterion.kind === "objective" ? "dados" : "editorial"}
+                {criterion.kind === "objective"
+                  ? "dados"
+                  : criterion.kind === "rubric"
+                    ? "rubrica"
+                    : "editorial"}
               </span>
             </div>
             )
