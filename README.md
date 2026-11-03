@@ -82,7 +82,7 @@ O carregamento é um índice composto: **70% potência DC + 30% potência AC**. 
 - Preços de referência para **Portugal Continental**, com IVA, à data indicada em cada JSON.
 - CUPRA Raval VZ: proposta `C84TSZ1`, com opcionais, fornecida pelo utilizador. O PDF original está em `public/sources/`.
 - BYD Seal Excellence AWD: PVP de referência da Caetano (concessionário oficial BYD). O guia do produto está em `public/sources/`.
-- Polestar 4 coupé Rear motor Prime: configuração fornecida pelo utilizador, encomendada em 03/11/2026 com entrega prevista para março–abril de 2027. O total de 56.800 € inclui IVA, legalização, transporte e a oferta indicada no PDF; a versão e o equipamento foram cruzados com a ficha MY27 da Polestar.
+- Polestar 4 coupé RM Prime: configuração fornecida pelo utilizador, encomendada em 03/11/2026 com entrega prevista para março–abril de 2027. O total de 56.800 € inclui IVA, legalização, transporte e a oferta indicada no PDF; a versão e o equipamento foram cruzados com a ficha MY27 da Polestar.
 - Autonomia e consumo são **WLTP**. Os valores reais variam com percurso, clima, carga e estilo de condução.
 - As avaliações editoriais são uma síntese de imprensa especializada, dados oficiais e testemunhos de proprietários. As fontes estão listadas em cada dossiê.
 - As descrições evitam comparações relativas à lista (“o mais caro”, “a maior autonomia”), porque ficariam desatualizadas assim que entrasse um carro novo. Os rankings, contagens e superlativos são calculados na interface; o texto usa valores concretos ou comparações com carros nomeados.

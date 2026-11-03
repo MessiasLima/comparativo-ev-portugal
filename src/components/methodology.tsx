@@ -39,7 +39,7 @@ export function Methodology() {
           ))}
         </div>
 
-        <div className="mt-5 rounded-2xl bg-sand/70 p-5 text-sm leading-6 text-muted-foreground sm:p-6">
+        <div className="mt-5 rounded-2xl bg-sand/70 p-5 text-base leading-7 text-muted-foreground sm:p-6">
           <p className="font-semibold uppercase tracking-[0.18em] text-foreground">
             Nota importante
           </p>

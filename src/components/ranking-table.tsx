@@ -386,7 +386,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
       <Table className="min-w-[1100px]">
         <TableHeader>
           <TableRow className="border-line hover:bg-transparent">
-            <TableHead className="min-w-[210px] pl-5 text-sm uppercase tracking-[0.12em] text-muted-foreground">
+            <TableHead className="min-w-[210px] pl-5 text-xs uppercase tracking-[0.12em] text-muted-foreground">
               Carro
             </TableHead>
             {CRITERIA.map((criterion) => (

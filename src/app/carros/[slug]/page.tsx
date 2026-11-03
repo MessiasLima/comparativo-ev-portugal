@@ -332,11 +332,11 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
               />
               <SpecGrid entry={entry} />
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl border border-line bg-card p-4 text-sm leading-6 text-muted-foreground">
+                <div className="rounded-xl border border-line bg-card p-4 text-base leading-7 text-muted-foreground">
                   <span className="font-medium text-foreground">Nota de preço:</span>{" "}
                   {car.price.note}
                 </div>
-                <div className="rounded-xl border border-line bg-card p-4 text-sm leading-6 text-muted-foreground">
+                <div className="rounded-xl border border-line bg-card p-4 text-base leading-7 text-muted-foreground">
                   <span className="font-medium text-foreground">
                     Nota de garantia:
                   </span>{" "}
