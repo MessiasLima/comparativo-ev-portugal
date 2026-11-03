@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="icon-title icon-desc">
+  <title id="icon-title">Comparativo EV Portugal</title>
+  <desc id="icon-desc">Ícone do Comparativo EV Portugal com uma tomada minimalista e um carro elétrico em destaque nas cores da aplicação.</desc>
+
+  <defs>
+    <!-- Rich Ink-to-Forest Background Gradient -->
+    <linearGradient id="bg-surface" x1="64" y1="32" x2="448" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#173a2a" />
+      <stop offset="55%" stop-color="#14201a" />
+      <stop offset="100%" stop-color="#0f1914" />
+    </linearGradient>
+
+    <!-- App Hero Ambient Glows -->
+    <radialGradient id="glow-lime" cx="25%" cy="25%" r="58%">
+      <stop offset="0%" stop-color="#d7ff4f" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#d7ff4f" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-copper" cx="82%" cy="18%" r="48%">
+      <stop offset="0%" stop-color="#b86a45" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#b86a45" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-ocean" cx="75%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#2f5f8f" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#2f5f8f" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Electric Lime Gradient -->
+    <linearGradient id="lime-grad" x1="80" y1="100" x2="360" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e5ff85" />
+      <stop offset="50%" stop-color="#d7ff4f" />
+      <stop offset="100%" stop-color="#a5b83a" />
+    </linearGradient>
+
+    <!-- Car Body Gradient (Warm Paper to Sand) -->
+    <linearGradient id="car-body" x1="120" y1="200" x2="450" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fbfaf6" />
+      <stop offset="65%" stop-color="#f2efe7" />
+      <stop offset="100%" stop-color="#e6dfd0" />
+    </linearGradient>
+
+    <!-- Car Cabin Glass Gradient (Ocean to Ink) -->
+    <linearGradient id="car-glass" x1="190" y1="210" x2="380" y2="285" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2f5f8f" />
+      <stop offset="100%" stop-color="#14201a" />
+    </linearGradient>
+
+    <clipPath id="icon-clip">
+      <rect x="16" y="16" width="480" height="480" rx="112" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#icon-clip)">
+    <!-- Background & Atmospheric Glows -->
+    <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#bg-surface)" />
+    <rect x="16" y="16" width="480" height="480" fill="url(#glow-lime)" />
+    <rect x="16" y="16" width="480" height="480" fill="url(#glow-copper)" />
+    <rect x="16" y="16" width="480" height="480" fill="url(#glow-ocean)" />
+
+    <!-- BIGGER, SIMPLER OUTLET (Top-Left, slightly behind the car) -->
+    <g transform="translate(172, 176)">
+      <!-- Soft Lime Glow Behind Outlet -->
+      <circle cx="0" cy="0" r="102" fill="#d7ff4f" fill-opacity="0.1" />
+      <!-- Simple Bold Circular Outlet Ring -->
+      <circle cx="0" cy="0" r="88" fill="#173a2a" stroke="url(#lime-grad)" stroke-width="12" />
+      <!-- Inner Socket Well -->
+      <circle cx="0" cy="0" r="62" fill="#14201a" />
+      <!-- Two Simple Bold Pin Holes -->
+      <circle cx="-24" cy="0" r="13" fill="#d7ff4f" />
+      <circle cx="24" cy="0" r="13" fill="#b86a45" />
+    </g>
+
+    <!-- Simple Glowing Charging Cord (From Outlet into Car) -->
+    <path
+      d="M112 242 C82 282 88 332 136 332"
+      stroke="url(#lime-grad)"
+      stroke-width="14"
+      stroke-linecap="round"
+    />
+
+    <!-- BIGGER, SIMPLER CAR (Slightly overlapping the outlet) -->
+    <g>
+      <!-- Soft Ground Shadow -->
+      <ellipse cx="292" cy="406" rx="164" ry="12" fill="#09100c" fill-opacity="0.65" />
+
+      <!-- Simple, Bold Car Silhouette -->
+      <path
+        d="M124 342
+           V304
+           C124 282 138 266 158 260
+           L208 202
+           C222 186 242 178 264 178
+           H344
+           C370 178 394 190 410 212
+           L436 250
+           C452 258 462 276 462 296
+           V342
+           C462 357 450 370 434 370
+           H152
+           C136 370 124 357 124 342
+           Z"
+        fill="url(#car-body)"
+        stroke="#14201a"
+        stroke-width="8"
+        stroke-linejoin="round"
+      />
+
+      <!-- Single Clean Cabin Window -->
+      <path
+        d="M192 256
+           L226 214
+           C236 202 250 196 266 196
+           H340
+           C360 196 378 206 390 222
+           L414 256
+           H192
+           Z"
+        fill="url(#car-glass)"
+      />
+
+      <!-- Simple Rear Wheel (Copper) -->
+      <g transform="translate(202, 370)">
+        <circle cx="0" cy="0" r="42" fill="#14201a" />
+        <circle cx="0" cy="0" r="22" fill="#b86a45" />
+      </g>
+
+      <!-- Simple Front Wheel (Electric Lime) -->
+      <g transform="translate(384, 370)">
+        <circle cx="0" cy="0" r="42" fill="#14201a" />
+        <circle cx="0" cy="0" r="22" fill="#d7ff4f" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Subtle Outer Squircle Border -->
+  <rect x="16.75" y="16.75" width="478.5" height="478.5" rx="111.25" stroke="#f2efe7" stroke-opacity="0.14" stroke-width="1.5" />
+</svg>

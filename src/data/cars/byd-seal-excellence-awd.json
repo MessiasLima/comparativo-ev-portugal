@@ -1,0 +1,375 @@
+{
+  "id": "byd-seal-excellence-awd",
+  "slug": "byd-seal-excellence-awd",
+  "brand": "BYD",
+  "model": "Seal",
+  "variant": "Excellence AWD",
+  "version": "Excellence AWD 82,5 kWh",
+  "year": 2026,
+  "segment": "Sedan desportivo",
+  "tagline": "Um sedan elétrico com performance de supercarro e equipamento de topo.",
+  "accent": "ocean",
+  "price": {
+    "amount": 50926,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-11-03",
+    "note": "PVP da versão Excellence AWD com IVA incluído, segundo a Caetano (concessionário oficial BYD). Não inclui despesas de legalização, transporte ou pintura opcional.",
+    "sourceId": "byd-caetano"
+  },
+  "specs": {
+    "powerKw": 390,
+    "powerHp": 530,
+    "torqueNm": 670,
+    "drivetrain": "Tração integral (AWD)",
+    "acceleration0100": 3.8,
+    "topSpeedKmh": 180,
+    "batteryKwh": 82.5,
+    "usableBatteryKwh": 82.5,
+    "batteryChemistry": "LFP Blade Battery",
+    "rangeKm": 520,
+    "consumptionKwh100": 18.2,
+    "weightKg": 2185,
+    "grossWeightKg": 2631,
+    "lengthMm": 4800,
+    "widthMm": 1875,
+    "heightMm": 1460,
+    "wheelbaseMm": 2920,
+    "bootL": 485,
+    "frunkL": 53,
+    "seats": 5,
+    "doors": 4
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 150,
+    "dcTime1080Min": 37,
+    "dcTime3080Min": 26,
+    "connector": "CCS2",
+    "v2l": true,
+    "v2lKw": 3,
+    "v2h": false
+  },
+  "warranty": {
+    "vehicle": "6 anos / 150.000 km",
+    "battery": "8 anos / 250.000 km (SOH ≥ 70%)",
+    "note": "Garantia de fábrica BYD para uso particular. Consulte o manual de garantia para exclusões e condições."
+  },
+  "equipmentIncluded": [
+    "acc",
+    "lane-keep",
+    "blind-spot",
+    "rear-cross-traffic",
+    "front-cross-traffic",
+    "aeb",
+    "traffic-sign",
+    "driver-monitor",
+    "camera-360",
+    "parking-sensors",
+    "adaptive-high-beam",
+    "heated-seats",
+    "ventilated-seats",
+    "memory-seats",
+    "heated-steering",
+    "climate-2zone",
+    "heat-pump",
+    "hud",
+    "premium-audio",
+    "wireless-charging",
+    "carplay",
+    "digital-cockpit",
+    "large-screen",
+    "connected-services",
+    "ota",
+    "digital-key",
+    "panoramic-roof",
+    "v2l",
+    "electric-tailgate",
+    "frunk",
+    "wheels-19",
+    "sport-seats",
+    "ambient-lighting",
+    "rear-usb",
+    "adaptive-suspension"
+  ],
+  "options": [],
+  "reviews": {
+    "interior": {
+      "baseScore": 8.6,
+      "summary": "O habitáculo é um dos mais ricos da lista: pele vegan com costuras em diamante, materiais macios nas zonas de contacto, ecrã rotativo de 15,6\", cockpit de 10,25\", HUD e Dynaudio. A imprensa elogia a qualidade geral, mas nota que alguns revestimentos parecem menos nobres ao toque do que sugerem à vista.",
+      "pros": [
+        "Materiais macios e acabamentos cuidados",
+        "Bancos confortáveis, aquecidos, ventilados e com memória",
+        "Ambiente premium e muito espaço para cinco adultos"
+      ],
+      "cons": [
+        "Alguns revestimentos parecem plastificados ao toque",
+        "Ergonomia do infotainment demasiado dependente do ecrã",
+        "Pilares A grossos e visibilidade traseira limitada"
+      ],
+      "sourceIds": ["byd-guide", "byd-official", "autoexpress", "autonext", "drive"]
+    },
+    "comfort": {
+      "baseScore": 7.6,
+      "summary": "A suspensão de duplo braço à frente e multilink atrás, com amortecedores de frequência variável (FSD), dá um bom equilíbrio em cidade. Em autoestrada, o peso de 2,2 t e a afinação mais firme notam-se; em modo Comfort pode balançar, e em piso irregular o corpo segue demasiado a estrada.",
+      "pros": [
+        "Boa absorção em cidade e a baixa velocidade",
+        "Bancos muito confortáveis e bem acolchoados",
+        "Cabine silenciosa e bem isolada"
+      ],
+      "cons": [
+        "Peso elevado faz-se sentir em mudanças de direção",
+        "Pode balançar em autoestrada no modo Comfort",
+        "Jantes de 19\" e pneus desportivos endurecem o rolamento"
+      ],
+      "sourceIds": ["byd-guide", "byd-official", "autonext", "drive", "carwow"]
+    },
+    "brand": {
+      "baseScore": 7.7,
+      "summary": "A BYD está em Portugal desde 2023, com uma rede de 24 pontos de venda e serviço que inclui Caetano, M&Costas, Rodda, Santogal, Lizauto, MSCAR, entre outros. A garantia é excelente (6 anos/150.000 km e 8 anos/250.000 km para a bateria), mas o histórico de marca no mercado português é curto.",
+      "pros": [
+        "Garantia de 6 anos / 150.000 km",
+        "Bateria com 8 anos / 250.000 km e SOH ≥ 70%",
+        "Rede de 24 pontos de venda e oficinas em Portugal"
+      ],
+      "cons": [
+        "Marca presente em Portugal apenas desde 2023",
+        "Rede ainda em expansão face à CUPRA/SEAT",
+        "Histórico de assistência e valores residuais por provar"
+      ],
+      "sourceIds": ["byd-warranty", "byd-dealers", "byd-official", "carwow"]
+    },
+    "equipment": {
+      "summary": "35 dos 38 equipamentos da checklist. É a dotação mais completa da lista: HUD, Dynaudio de 12 altifalantes, bancos aquecidos/ventilados com memória, volante aquecido, bomba de calor, teto panorâmico, porta-bagagens elétrico, frunk e V2L. Só faltam estacionamento remoto, V2H e bancos traseiros aquecidos.",
+      "pros": [
+        "Equipamento de série muito completo",
+        "HUD, Dynaudio e bancos ventilados",
+        "Bomba de calor, V2L e porta-bagagens elétrico"
+      ],
+      "cons": [
+        "Sem estacionamento remoto",
+        "Sem V2H",
+        "Sem aquecimento nos bancos traseiros"
+      ],
+      "sourceIds": ["byd-guide", "byd-official", "byd-caetano"]
+    },
+    "sound": {
+      "baseScore": 8.8,
+      "summary": "Sistema Dynaudio Performance com 12 altifalantes, elogiado pela imprensa pelo equilíbrio e pela clareza. É claramente superior ao sistema de sete altifalantes do Raval e um dos pontos fortes do Seal.",
+      "pros": [
+        "12 altifalantes Dynaudio",
+        "Boa definição e palco sonoro",
+        "Sistema de série na versão Excellence"
+      ],
+      "cons": [
+        "Sem equalização avançada por utilizador",
+        "O volume máximo pode distorcer em graves extremos"
+      ],
+      "sourceIds": ["byd-guide", "autoexpress", "byd-caetano"]
+    },
+    "range": {
+      "summary": "520 km de autonomia combinada WLTP com a bateria Blade de 82,5 kWh. É a maior autonomia da lista, mas também a maior bateria e o maior peso. Em autoestrada, a autonomia real cai de forma significativa.",
+      "pros": [
+        "520 km WLTP, a maior da lista",
+        "Bateria LFP de 82,5 kWh",
+        "Boa autonomia urbana (600 km WLTP)"
+      ],
+      "cons": [
+        "Consumo elevado em autoestrada",
+        "Autonomia real abaixo da homologada em condições frias",
+        "Bateria grande e pesada"
+      ],
+      "sourceIds": ["byd-guide", "byd-official", "byd-caetano", "autonext"]
+    },
+    "powerToWeight": {
+      "summary": "530 cv para 2.185 kg dão 243 cv/t, quase o dobro do Raval. Os 0-100 km/h em 3,8 s e os 670 Nm explicam porque é o carro mais rápido da lista, apesar do peso.",
+      "pros": [
+        "530 cv e 670 Nm",
+        "0-100 km/h em 3,8 s",
+        "Tração integral e repartição 50:50"
+      ],
+      "cons": [
+        "2.185 kg penalizam a agilidade em estradas estreitas",
+        "Pneus e travões mais caros de substituir",
+        "Potência difícil de explorar no dia a dia"
+      ],
+      "sourceIds": ["byd-guide", "byd-official", "byd-caetano", "ev-database"]
+    },
+    "efficiency": {
+      "summary": "18,2 kWh/100 km WLTP, o consumo mais alto da lista. A culpa é do peso, da tração integral e da bateria grande. Em contrapartida, a bomba de calor ajuda no inverno e a bateria LFP é mais tolerante a ciclos frequentes.",
+      "pros": [
+        "Bomba de calor de série",
+        "Bateria LFP com boa longevidade",
+        "Consumo urbano de 15,8 kWh/100 km"
+      ],
+      "cons": [
+        "18,2 kWh/100 km é o pior valor da lista",
+        "Peso de 2.185 kg",
+        "Aerodinâmica boa, mas insuficiente para compensar o peso"
+      ],
+      "sourceIds": ["byd-guide", "byd-official", "byd-caetano"]
+    },
+    "charging": {
+      "summary": "11 kW em AC e 150 kW em DC, com 30-80% em 26 minutos e 10-80% em 37 minutos. É o carregamento mais rápido da lista, apesar da bateria ser o dobro da do Raval. Tem V2L de 3 kW, mas não V2H.",
+      "pros": [
+        "150 kW DC, o mais rápido da lista",
+        "11 kW AC trifásico",
+        "V2L de 3 kW"
+      ],
+      "cons": [
+        "37 minutos de 10-80% não é excecional para 150 kW",
+        "Sem V2H",
+        "Curva de carga dependente da temperatura da bateria"
+      ],
+      "sourceIds": ["byd-guide", "byd-official", "byd-caetano"]
+    },
+    "satisfaction": {
+      "baseScore": 7.5,
+      "summary": "Proprietários elogiam conforto, equipamento, silêncio e relação preço/equipamento. As críticas recorrentes incidem na app, no cartão NFC, nos assistentes demasiado interventivos, no software e na qualidade do serviço pós-venda. A BYD ficou em 16.º de 30 marcas no Driver Power 2025 (Reino Unido), uma subida face ao ano anterior.",
+      "pros": [
+        "Boa satisfação com conforto e equipamento",
+        "Garantia longa e bom valor percebido",
+        "Comunidade de proprietários ativa"
+      ],
+      "cons": [
+        "Software e app com críticas frequentes",
+        "Assistentes de condução por vezes intrusivos",
+        "Serviço pós-venda inconsistente entre concessionários"
+      ],
+      "sourceIds": ["reddit-18m", "reddit-uk", "carwow", "autoexpress", "thecarexpert", "evguide"]
+    }
+  },
+  "dossier": {
+    "headline": "O sedan desportivo que faz as contas todas",
+    "verdict": "O Seal Excellence AWD é o carro mais completo da lista: 530 cv, tração integral, 520 km WLTP e um nível de equipamento que só se encontra em premium. Custa mais do que o Raval e gasta mais, mas justifica o extra em performance, espaço, conforto e tecnologia. É o líder absoluto; o Raval é o líder de custo-benefício.",
+    "pros": [
+      "530 cv e 3,8 s dos 0-100 km/h",
+      "520 km WLTP e bateria Blade de 82,5 kWh",
+      "Equipamento de topo: Dynaudio, HUD, bancos ventilados, bomba de calor",
+      "Carregamento DC de 150 kW e AC de 11 kW",
+      "Garantia de 6 anos / 150.000 km e bateria 8 anos / 250.000 km",
+      "Interior espaçoso e confortável"
+    ],
+    "cons": [
+      "O mais caro da lista",
+      "Consumo WLTP de 18,2 kWh/100 km, o pior da lista",
+      "2.185 kg e 4,8 m: menos ágil em cidade",
+      "Autonomia real abaixo da WLTP em autoestrada",
+      "Software, app e assistentes com críticas",
+      "Rede BYD em Portugal ainda recente"
+    ],
+    "bestFor": "Quem quer o máximo de carro por dinheiro e não se importa de pagar mais por performance, espaço e equipamento.",
+    "sections": [
+      {
+        "title": "Posicionamento",
+        "body": "Sedan desportivo do segmento D, com 4,80 m e 2,92 m de entre-eixos. A versão Excellence AWD é a topo de gama: dois motores (160 kW à frente + 230 kW atrás), 390 kW de potência combinada e bateria Blade LFP de 82,5 kWh integrada na estrutura (Cell-to-Body). A plataforma e-Platform 3.0 e a distribuição de peso 50:50 são os argumentos técnicos."
+      },
+      {
+        "title": "Interior e espaço",
+        "body": "O habitáculo é amplo e luxuoso, com pele vegan, costuras em diamante e um ecrã rotativo de 15,6\" que domina a consola. Os bancos dianteiros são aquecidos, ventilados, elétricos e com memória; o condutor tem apoio lombar regulável. O espaço traseiro é de berlina executiva e a bagageira soma 400 L atrás e 53 L à frente. A qualidade percebida é alta, embora alguns materiais não sejam tão nobres ao toque como aparentam."
+      },
+      {
+        "title": "Como se conduz",
+        "body": "É rápido e silencioso: 530 cv, 670 Nm e 3,8 s dos 0-100 km/h. A tração integral e o sistema iTAC ajudam a colocar a potência no chão, mas o peso de 2.185 kg faz-se sentir em mudanças de direção e em estradas estreitas. A suspensão duplo braço/multilink com amortecedores FSD absorve bem em cidade; em autoestrada pode balançar em modo Comfort e seguir demasiado a estrada em piso irregular. É mais GT do que hot hatch."
+      },
+      {
+        "title": "Equipamento e tecnologia",
+        "body": "A lista é extensa e inclui 12 altifalantes Dynaudio, HUD, teto panorâmico, carregamento wireless, quatro USB, 360º, ADAS completo, bomba de calor, porta-bagagens elétrico, frunk e V2L de 3 kW. O sistema DiLink tem 4G, Spotify, HERE, Apple CarPlay/Android Auto, comandos de voz e atualizações OTA. A ergonomia depende muito do ecrã e os assistentes podem ser intrusivos."
+      },
+      {
+        "title": "Propriedade e rede",
+        "body": "A garantia é a melhor da lista: 6 anos / 150.000 km para o veículo e 8 anos / 250.000 km para a bateria (SOH ≥ 70%). A BYD está em Portugal desde 2023 e já tem 24 pontos de venda e serviço, incluindo Caetano, M&Costas, Rodda, Santogal, Lizauto e MSCAR. A rede é jovem e o histórico de assistência ainda está a ser construído."
+      },
+      {
+        "title": "Versão avaliada",
+        "body": "A versão Excellence AWD de 82,5 kWh é a topo de gama. O preço de referência é €50.926, com IVA incluído, sem despesas de legalização, transporte ou pintura opcional. Não há opções relevantes em falta: o equipamento de série é praticamente completo."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "byd-guide",
+      "label": "BYD SEAL — Guia Interativo do Produto (PDF fornecido)",
+      "url": "/sources/byd-seal-guia-produto.pdf",
+      "type": "pdf"
+    },
+    {
+      "id": "byd-official",
+      "label": "BYD Portugal — SEAL",
+      "url": "https://www.byd-auto.pt/modelos/byd-seal",
+      "type": "official"
+    },
+    {
+      "id": "byd-caetano",
+      "label": "Caetano — BYD Seal",
+      "url": "https://caetano.pt/byd/carros-novos/seal",
+      "type": "official"
+    },
+    {
+      "id": "byd-warranty",
+      "label": "BYD Portugal — Garantias",
+      "url": "https://www.byd-auto.pt/byd-service/garantias",
+      "type": "official"
+    },
+    {
+      "id": "byd-dealers",
+      "label": "BYD Portugal — Concessionários",
+      "url": "https://www.byd-auto.pt/concessionarios",
+      "type": "official"
+    },
+    {
+      "id": "ev-database",
+      "label": "EV Database — BYD SEAL 82.5 kWh AWD Excellence",
+      "url": "https://ev-database.org/car/3516/BYD-SEAL-825-kWh-AWD-Excellence",
+      "type": "database"
+    },
+    {
+      "id": "autonext",
+      "label": "AutoNext — 2026 BYD Seal",
+      "url": "https://www.autonext.co/reviews/byd/2026-byd-seal",
+      "type": "press"
+    },
+    {
+      "id": "autoexpress",
+      "label": "Auto Express — BYD Seal review",
+      "url": "https://www.autoexpress.co.uk/byd/seal",
+      "type": "press"
+    },
+    {
+      "id": "carwow",
+      "label": "Carwow — BYD Seal review",
+      "url": "https://www.carwow.co.uk/byd/seal",
+      "type": "press"
+    },
+    {
+      "id": "drive",
+      "label": "Drive — 2026 BYD Seal Performance review",
+      "url": "https://www.drive.com.au/reviews/2026-byd-seal-performance-review",
+      "type": "press"
+    },
+    {
+      "id": "thecarexpert",
+      "label": "The Car Expert — BYD Seal review",
+      "url": "https://www.thecarexpert.co.uk/byd-seal-test-drive-2026",
+      "type": "press"
+    },
+    {
+      "id": "evguide",
+      "label": "EV Guide — BYD Seal Design 2026 review Portugal",
+      "url": "https://evguide.pt/cars/byd-seal",
+      "type": "press"
+    },
+    {
+      "id": "reddit-18m",
+      "label": "Reddit r/BYD — 18 months Seal ownership feedback",
+      "url": "https://www.reddit.com/r/BYD/comments/1mzmcv5/18_months_byd_seal_ownership_feedback",
+      "type": "owner"
+    },
+    {
+      "id": "reddit-uk",
+      "label": "Reddit r/BYD — UK driver honest Seal reviews",
+      "url": "https://www.reddit.com/r/BYD/comments/1j3zxbh/uk_driver_honest_seal_reviews_please",
+      "type": "owner"
+    }
+  ]
+}
