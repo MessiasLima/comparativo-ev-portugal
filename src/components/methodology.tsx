@@ -14,7 +14,7 @@ const steps = [
   {
     number: "03",
     title: "Ranking e custo por ponto",
-    body: "A nota global é a média ponderada dos dez critérios. Por defeito, todos pesam o mesmo; no ranking, podes ajustar os pesos no botão Pesos — cada peso é um multiplicador ×0 a ×2 da nota desse critério, e a média é normalizada pela soma dos multiplicadores. O custo-benefício divide o preço pela nota global: quanto menos euros por ponto, melhor o negócio.",
+    body: `A nota global é a média ponderada dos ${CRITERIA.length} critérios. Por defeito, todos pesam o mesmo; no ranking, podes ajustar os pesos no botão Pesos — cada peso é um multiplicador ×0 a ×2 da nota desse critério, e a média é normalizada pela soma dos multiplicadores. O custo-benefício divide o preço pela nota global: quanto menos euros por ponto, melhor o negócio.`,
   },
 ]
 
@@ -57,7 +57,7 @@ export function Methodology() {
         <div className="flex flex-wrap items-end justify-between gap-3 border-b border-line pb-5">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-              Os dez critérios
+              Os {CRITERIA.length} critérios
             </p>
             <h3 className="mt-2 font-heading text-xl font-semibold">
               O que entra na nota

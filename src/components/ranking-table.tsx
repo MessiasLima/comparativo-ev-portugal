@@ -554,7 +554,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
 
       <div className="border-t border-line bg-muted/35 px-5 py-3 text-sm leading-6 text-muted-foreground sm:px-6">
         <span className="font-medium text-foreground">Nota global</span> = média
-        ponderada dos 10 critérios, ajustável em{" "}
+        ponderada dos {CRITERIA.length} critérios, ajustável em{" "}
         <span className="font-medium text-foreground">Pesos</span> ·{" "}
         <span className="font-medium text-foreground">€/ponto</span> = preço ÷
         nota global · o <span className="font-medium text-foreground">#</span> é

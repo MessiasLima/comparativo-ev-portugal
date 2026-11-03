@@ -1,3 +1,5 @@
+import { CRITERIA } from "@/data/criteria"
+
 /**
  * Public origin of the deployed site.
  *
@@ -8,7 +10,6 @@
  *   and is what the deploy workflow sets.
  */
 const FALLBACK_SITE_URL = "https://comparativo-ev-portugal.appoutlet.dev"
-
 function trimTrailingSlash(value: string): string {
   return value.replace(/\/+$/, "")
 }
@@ -19,8 +20,7 @@ export const SITE_URL = trimTrailingSlash(
 
 export const SITE_NAME = "Comparativo EV Portugal"
 
-export const SITE_DESCRIPTION =
-  "Compare carros elétricos no mercado português: autonomia, potência, equipamento, conforto e custo por ponto. Dez critérios, uma decisão."
+export const SITE_DESCRIPTION = `Compare carros elétricos no mercado português: autonomia, potência, equipamento, conforto e custo por ponto. ${CRITERIA.length} critérios, uma decisão.`
 
 export const SITE_LOCALE = "pt_PT"
 

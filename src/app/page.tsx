@@ -88,8 +88,10 @@ export default function HomePage() {
               "@type": "ItemList",
               "@id": `${absoluteUrl("/")}#ranking`,
               name: "Ranking de carros elétricos em Portugal",
-              description:
-                "Ranking calculado a partir de dez critérios: acabamento, conforto, marca e assistência, equipamento, som, autonomia, potência/peso, eficiência, carregamento e satisfação.",
+              description: `Ranking calculado a partir de ${CRITERIA.length} critérios: ${CRITERIA.map(
+                (criterion) =>
+                  criterion.label.charAt(0).toLowerCase() + criterion.label.slice(1),
+              ).join(", ")}.`,
               numberOfItems: comparison.cars.length,
               itemListOrder: "https://schema.org/ItemListOrderAscending",
               itemListElement: comparison.cars.map((entry, index) => ({
@@ -124,8 +126,8 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/60">
-              Dez critérios. Dossiês completos. O custo real de cada ponto —
-              para escolher com números, não com slogans.
+              {CRITERIA.length} critérios. Dossiês completos. O custo real de cada
+              ponto — para escolher com números, não com slogans.
             </p>
 
             <div className="mt-5 flex flex-wrap items-center gap-3">
@@ -199,7 +201,7 @@ export default function HomePage() {
             index="01"
             eyebrow="Ranking geral"
             title="Quem entrega mais, critério a critério."
-            description="A nota global é a média ponderada dos dez critérios. Por defeito, todos pesam o mesmo; usa o botão Pesos para ajustar o que mais valorizas. Nos critérios de dados e editoriais, o melhor carro da lista recebe 10; o acabamento interno usa uma rubrica absoluta, com penalização para plástico duro. Ordene por qualquer coluna, pela nota global ou pelo custo por ponto."
+            description={`A nota global é a média ponderada dos ${CRITERIA.length} critérios. Por defeito, todos pesam o mesmo; usa o botão Pesos para ajustar o que mais valorizas. Nos critérios de dados e editoriais, o melhor carro da lista recebe 10; o acabamento interno usa uma rubrica absoluta, com penalização para plástico duro. Ordene por qualquer coluna, pela nota global ou pelo custo por ponto.`}
           />
         </div>
         <div className="w-full px-3 pb-16 sm:px-5 sm:pb-24 lg:px-6">
