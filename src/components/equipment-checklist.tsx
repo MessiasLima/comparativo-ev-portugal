@@ -18,14 +18,14 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
       <div className="rounded-2xl border border-line bg-card p-5 sm:p-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               Checklist normalizada
             </p>
             <p className="mt-2 font-heading text-3xl font-semibold tracking-[-0.03em]">
               {entry.equipmentCount}
               <span className="text-lg text-muted-foreground"> / {total}</span>
             </p>
-            <p className="mt-1 text-xs text-muted-foreground">
+            <p className="mt-1 text-sm text-muted-foreground">
               Equipamentos de série ou incluídos na configuração avaliada.
             </p>
           </div>
@@ -34,7 +34,7 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
               {formatScore(score)}
               <span className="text-sm text-muted-foreground">/10</span>
             </p>
-            <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+            <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
               nota no critério
             </p>
           </div>
@@ -55,8 +55,8 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
               className="rounded-2xl border border-line bg-card p-5"
             >
               <div className="flex items-center justify-between gap-3 border-b border-line pb-3">
-                <h3 className="font-heading text-sm font-semibold">{category}</h3>
-                <Badge variant="outline" className="font-mono text-[10px]">
+                <h3 className="font-heading text-base font-semibold">{category}</h3>
+                <Badge variant="outline" className="font-mono text-xs">
                   {count}/{items.length}
                 </Badge>
               </div>
@@ -68,8 +68,8 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
                       key={item.id}
                       className={
                         has
-                          ? "flex items-start gap-2.5 text-xs leading-5"
-                          : "flex items-start gap-2.5 text-xs leading-5 text-muted-foreground/55"
+                          ? "flex items-start gap-2.5 text-sm leading-6"
+                          : "flex items-start gap-2.5 text-sm leading-6 text-muted-foreground/55"
                       }
                     >
                       <span
@@ -100,7 +100,7 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
       <div className="rounded-2xl border border-line bg-card p-5 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               Opcionais
             </p>
             <h3 className="mt-1 font-heading text-lg font-semibold">
@@ -121,11 +121,11 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
               >
                 <div>
                   <p className="text-sm font-medium">{option.name}</p>
-                  <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">
                     {option.description}
                   </p>
                 </div>
-                <span className="shrink-0 font-mono text-xs text-muted-foreground">
+                <span className="shrink-0 font-mono text-sm text-muted-foreground">
                   {formatEuro(option.price)}
                 </span>
               </li>

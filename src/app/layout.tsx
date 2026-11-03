@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
 import "./globals.css"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
+import { withBasePath } from "@/lib/base-path"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,14 +31,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/comparativo-ev-portugal-icon.svg",
+        url: withBasePath("/comparativo-ev-portugal-icon.svg"),
         type: "image/svg+xml",
       },
     ],
-    shortcut: "/comparativo-ev-portugal-icon.svg",
-    apple: "/comparativo-ev-portugal-icon.svg",
+    shortcut: withBasePath("/comparativo-ev-portugal-icon.svg"),
+    apple: withBasePath("/comparativo-ev-portugal-icon.svg"),
   },
-  manifest: "/manifest.webmanifest",
+  manifest: withBasePath("/manifest.webmanifest"),
   keywords: [
     "carros elétricos",
     "EV Portugal",

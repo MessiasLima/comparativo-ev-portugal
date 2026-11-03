@@ -85,7 +85,7 @@ export function ScoreCell({
 }) {
   return (
     <div className={cn("flex min-w-11 flex-col gap-1.5", className)}>
-      <span className="font-mono text-[14px] font-semibold tabular-nums">
+      <span className="font-mono text-sm font-semibold tabular-nums">
         {formatScore(score)}
       </span>
       <ScoreBar score={score} color={ACCENT_HEX[accent]} />

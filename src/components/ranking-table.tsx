@@ -300,10 +300,10 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
       <div className="border-b border-line px-5 py-4 sm:px-6">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
               Ranking completo
             </p>
-            <p className="mt-1 text-[15px] leading-6 text-muted-foreground">
+            <p className="mt-1 text-base leading-7 text-muted-foreground">
               Clique num cabeçalho para ordenar. O líder de cada critério recebe
               10.
             </p>
@@ -314,7 +314,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
               onClick={() => setSort({ key: "total", direction: "desc" })}
               aria-pressed={bestScoreActive}
               className={cn(
-                "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-[13px] font-medium transition-colors",
+                "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-colors",
                 bestScoreActive
                   ? "border-forest bg-forest text-paper"
                   : "border-line bg-card text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -335,7 +335,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
               }
               aria-pressed={bestValueActive}
               className={cn(
-                "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-[13px] font-medium transition-colors",
+                "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-colors",
                 bestValueActive
                   ? "border-copper bg-copper text-white"
                   : "border-line bg-card text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -355,7 +355,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
               aria-label="Configurar pesos das notas"
               title="Configurar pesos das notas"
               className={cn(
-                "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-[13px] font-medium transition-colors",
+                "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-colors",
                 customized
                   ? "border-forest bg-lime/20 text-forest"
                   : "border-line bg-card text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -370,7 +370,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
           </div>
         </div>
 
-        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
           <span>
             A ordenar por{" "}
             <span className="font-medium text-foreground">{currentSortLabel}</span>{" "}
@@ -386,7 +386,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
       <Table className="min-w-[1100px]">
         <TableHeader>
           <TableRow className="border-line hover:bg-transparent">
-            <TableHead className="min-w-[210px] pl-5 text-xs uppercase tracking-[0.12em] text-muted-foreground">
+            <TableHead className="min-w-[210px] pl-5 text-sm uppercase tracking-[0.12em] text-muted-foreground">
               Carro
             </TableHead>
             {CRITERIA.map((criterion) => (
@@ -399,7 +399,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                       : "descending"
                     : "none"
                 }
-                className="px-1 text-center text-xs"
+                className="px-1 text-center text-sm"
               >
                 <CriterionHeader
                   criterion={criterion}
@@ -416,7 +416,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                     : "descending"
                   : "none"
               }
-              className="min-w-[92px] text-right text-xs"
+              className="min-w-[92px] text-right text-sm"
             >
               <SortHeader
                 label="Preço"
@@ -435,7 +435,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                     : "descending"
                   : "none"
               }
-              className="min-w-[84px] text-right text-xs"
+              className="min-w-[84px] text-right text-sm"
             >
               <SortHeader
                 label="Nota"
@@ -454,7 +454,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                     : "descending"
                   : "none"
               }
-              className="min-w-[92px] pr-5 text-right text-xs"
+              className="min-w-[92px] pr-5 text-right text-sm"
             >
               <SortHeader
                 label="€/ponto"
@@ -479,7 +479,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                   className="group flex items-center gap-2.5"
                 >
                   <span
-                    className="shrink-0 font-mono text-xs font-semibold text-muted-foreground"
+                    className="shrink-0 font-mono text-sm font-semibold text-muted-foreground"
                     title="Posição no ranking geral"
                   >
                     #{entry.rank}
@@ -492,7 +492,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                   />
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                      <span className="whitespace-nowrap font-heading text-[17px] leading-tight font-semibold">
+                       <span className="whitespace-nowrap font-heading text-lg leading-tight font-semibold">
                         {formatCarName(entry)}
                       </span>
                       {entry.rank === 1 && (
@@ -507,7 +507,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                         </Badge>
                       )}
                     </span>
-                    <span className="mt-1 block text-[13px] leading-5 text-muted-foreground">
+                    <span className="mt-1 block text-sm leading-6 text-muted-foreground">
                       {entry.version}
                     </span>
                   </span>
@@ -525,7 +525,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                 </TableCell>
               ))}
               <TableCell className="text-right">
-                <span className="font-mono text-[14px]">
+                <span className="font-mono text-sm">
                   {formatEuro(entry.price)}
                 </span>
               </TableCell>
@@ -534,11 +534,11 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
                   <span className="font-heading text-lg leading-none font-semibold">
                     {formatScore(entry.total)}
                   </span>
-                  <span className="text-[10px] text-muted-foreground">/10</span>
+                  <span className="text-sm text-muted-foreground">/10</span>
                 </div>
               </TableCell>
               <TableCell className="pr-5 text-right">
-                <span className="font-mono text-[15px] font-semibold text-copper">
+                <span className="font-mono text-base font-semibold text-copper">
                   {formatEuro(entry.pricePerPoint)}
                 </span>
               </TableCell>
@@ -547,7 +547,7 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
         </TableBody>
       </Table>
 
-      <div className="border-t border-line bg-muted/35 px-5 py-3 text-xs leading-5 text-muted-foreground sm:px-6 sm:text-[13px] sm:leading-6">
+      <div className="border-t border-line bg-muted/35 px-5 py-3 text-sm leading-6 text-muted-foreground sm:px-6">
         <span className="font-medium text-foreground">Nota global</span> = média
         ponderada dos 10 critérios, ajustável em{" "}
         <span className="font-medium text-foreground">Pesos</span> ·{" "}

@@ -1,0 +1,18 @@
+{
+  "name": "Comparativo EV Portugal",
+  "short_name": "Comparativo EV",
+  "description": "Compare carros elétricos no mercado português: autonomia, equipamento, conforto e custo por ponto.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#14201a",
+  "theme_color": "#14201a",
+  "icons": [
+    {
+      "src": "comparativo-ev-portugal-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

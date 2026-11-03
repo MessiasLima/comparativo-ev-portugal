@@ -12,12 +12,12 @@ export function CriterionTooltip({
 }) {
   if (typeof window === "undefined") return null
 
-  const width = Math.min(320, window.innerWidth - 24)
+  const width = Math.min(360, window.innerWidth - 24)
   const left = Math.min(
     Math.max(rect.left + rect.width / 2 - width / 2, 12),
     window.innerWidth - width - 12,
   )
-  const estimatedHeight = 190
+  const estimatedHeight = 240
   const showAbove = rect.bottom + 10 + estimatedHeight > window.innerHeight
   const top = showAbove
     ? Math.max(rect.top - 10 - estimatedHeight, 8)
@@ -36,18 +36,18 @@ export function CriterionTooltip({
           <Icon className="size-5" />
         </span>
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-copper">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">
             Critério {criterion.number}
           </p>
-          <p className="mt-0.5 font-heading text-sm leading-tight font-semibold">
+          <p className="mt-0.5 font-heading text-base leading-tight font-semibold">
             {criterion.label}
           </p>
         </div>
       </div>
-      <p className="mt-3 text-xs font-medium leading-5 text-foreground/80">
+      <p className="mt-3 text-sm font-medium leading-6 text-foreground/80">
         {criterion.question}
       </p>
-      <p className="mt-1.5 text-xs leading-5 text-muted-foreground">
+      <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
         {criterion.description}
       </p>
     </div>,

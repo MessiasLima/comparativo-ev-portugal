@@ -28,7 +28,7 @@ function SectionHeading({
       <div className="flex items-start gap-3 pt-1">
         <span className="font-mono text-xs text-copper">{index}</span>
         <span className="h-px w-7 bg-copper/50 sm:mt-2" />
-        <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+        <span className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
           {eyebrow}
         </span>
       </div>
@@ -36,7 +36,7 @@ function SectionHeading({
         <h2 className="font-heading text-3xl leading-[1.02] font-semibold tracking-[-0.035em] sm:text-4xl lg:text-5xl">
           {title}
         </h2>
-        <p className="mt-4 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">
+        <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
           {description}
         </p>
       </div>
@@ -80,13 +80,13 @@ export default function HomePage() {
               </span>
             </div>
 
-            <h1 className="mt-4 max-w-3xl font-heading text-[clamp(2.8rem,12vw,3.4rem)] leading-[0.92] font-semibold tracking-[-0.06em] sm:text-[clamp(3.4rem,5.8vw,4.8rem)]">
+            <h1 className="mt-4 max-w-3xl font-heading text-5xl leading-[0.92] font-semibold tracking-[-0.06em] sm:text-6xl lg:text-7xl">
               Comparativo <span className="text-lime">EV</span>
               <br />
               <span className="text-white/50">Portugal</span>
             </h1>
 
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-white/60 sm:text-base sm:leading-7">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-white/60">
               Dez critérios. Dossiês completos. O custo real de cada ponto —
               para escolher com números, não com slogans.
             </p>
@@ -127,7 +127,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-8 border-t border-white/10 pt-4">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/35">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/50">
               Critérios em avaliação
             </p>
             <div className="flex gap-2 overflow-x-auto pb-1 lg:grid lg:grid-cols-5 lg:gap-x-5 lg:gap-y-3 lg:overflow-visible lg:pb-0">

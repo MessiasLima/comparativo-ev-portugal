@@ -16,12 +16,12 @@ function SpecGroup({
 }) {
   return (
     <div className="rounded-2xl border border-line bg-card p-5 sm:p-6">
-      <h3 className="font-heading text-sm font-semibold">{title}</h3>
+      <h3 className="font-heading text-base font-semibold">{title}</h3>
       <dl className="mt-4 divide-y divide-line">
         {rows.map((row) => (
           <div
             key={row.label}
-            className="flex items-start justify-between gap-6 py-2.5 text-xs"
+            className="flex items-start justify-between gap-6 py-3 text-sm"
           >
             <dt className="text-muted-foreground">{row.label}</dt>
             <dd className="text-right font-mono font-medium">{row.value}</dd>

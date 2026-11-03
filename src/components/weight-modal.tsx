@@ -113,7 +113,7 @@ export function WeightModal({
               <Settings2 className="size-5" />
             </span>
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-copper">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-copper">
                 Configuração
               </p>
               <h2
@@ -122,7 +122,7 @@ export function WeightModal({
               >
                 Pesos das notas
               </h2>
-              <p className="mt-1 max-w-lg text-sm leading-6 text-muted-foreground">
+              <p className="mt-1 max-w-lg text-base leading-7 text-muted-foreground">
                 Cada peso é um multiplicador da nota do critério:{" "}
                 <span className="font-medium text-foreground">×1</span> mantém o
                 peso base, <span className="font-medium text-foreground">×2</span>{" "}
@@ -145,7 +145,7 @@ export function WeightModal({
         </div>
 
         <div className="overflow-y-auto px-5 py-3 sm:px-6 sm:py-4">
-          <div className="flex items-center justify-between gap-3 border-b border-line pb-3 text-xs text-muted-foreground">
+          <div className="flex items-center justify-between gap-3 border-b border-line pb-3 text-sm text-muted-foreground">
             <span>
               {allEqual
                 ? "Pesos iguais em todos os critérios"
@@ -183,7 +183,7 @@ export function WeightModal({
                     </span>
                   </div>
                   <div className="mt-2 flex items-center gap-3">
-                    <span className="text-[10px] font-medium text-muted-foreground">
+                    <span className="text-xs font-medium text-muted-foreground">
                       {MIN_WEIGHT}
                     </span>
                     <input
@@ -202,7 +202,7 @@ export function WeightModal({
                       aria-label={`Peso de ${criterion.label}`}
                       className="h-2 w-full cursor-pointer accent-[var(--color-forest)]"
                     />
-                    <span className="text-[10px] font-medium text-muted-foreground">
+                    <span className="text-xs font-medium text-muted-foreground">
                       {MAX_WEIGHT}
                     </span>
                   </div>
@@ -214,7 +214,7 @@ export function WeightModal({
 
         {cars.length > 0 ? (
           <div className="border-t border-line px-5 py-3.5 sm:px-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               Resultado com estes pesos
             </p>
             <div className="mt-2 flex flex-col gap-1.5">
@@ -223,13 +223,13 @@ export function WeightModal({
                   key={car.id}
                   className="flex items-center gap-3 rounded-lg bg-muted/50 px-3 py-2"
                 >
-                  <span className="font-mono text-[11px] text-muted-foreground">
+                  <span className="font-mono text-xs text-muted-foreground">
                     #{index + 1}
                   </span>
                   <span className="min-w-0 flex-1 truncate text-sm font-medium">
                     {car.name}
                   </span>
-                  <span className="font-mono text-xs text-muted-foreground">
+                  <span className="font-mono text-sm text-muted-foreground">
                     {formatEuro(car.pricePerPoint)}/ponto
                   </span>
                   <span
@@ -240,7 +240,7 @@ export function WeightModal({
                     }
                   >
                     {formatScore(car.total)}
-                    <span className="ml-0.5 text-[10px] font-medium text-muted-foreground">
+                    <span className="ml-0.5 text-xs font-medium text-muted-foreground">
                       /10
                     </span>
                   </span>
@@ -254,7 +254,7 @@ export function WeightModal({
           <button
             type="button"
             onClick={() => updateDraft({ ...DEFAULT_WEIGHTS })}
-            className="inline-flex h-9 items-center gap-2 rounded-full border border-line bg-card px-3 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="inline-flex h-10 items-center gap-2 rounded-full border border-line bg-card px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <RotateCcw className="size-3.5" />
             Repor iguais
@@ -263,14 +263,14 @@ export function WeightModal({
             <button
               type="button"
               onClick={cancel}
-              className="inline-flex h-9 items-center rounded-full px-3 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="inline-flex h-10 items-center rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               Cancelar
             </button>
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex h-9 items-center gap-2 rounded-full bg-forest px-4 text-xs font-semibold text-paper transition-colors hover:bg-forest/90"
+              className="inline-flex h-10 items-center gap-2 rounded-full bg-forest px-4 text-sm font-semibold text-paper transition-colors hover:bg-forest/90"
             >
               <Check className="size-3.5 text-lime" />
               Aplicar pesos

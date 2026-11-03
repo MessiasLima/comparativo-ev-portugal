@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { withBasePath } from "@/lib/base-path"
 
 const navItems = [
   { href: "/#ranking", label: "Ranking" },
@@ -12,7 +13,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
         <Link href="/" className="group flex items-center gap-3">
           <Image
-            src="/comparativo-ev-portugal-icon.svg"
+            src={withBasePath("/comparativo-ev-portugal-icon.svg")}
             alt=""
             width={36}
             height={36}
@@ -23,13 +24,13 @@ export function SiteHeader() {
             <span className="font-heading text-sm font-semibold tracking-tight">
               Comparativo EV
             </span>
-            <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.28em] text-white/45">
+            <span className="mt-1 text-xs font-medium uppercase tracking-[0.28em] text-white/60">
               Portugal
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-xs font-medium uppercase tracking-[0.18em] text-white/55 sm:flex">
+        <nav className="hidden items-center gap-8 text-sm font-medium uppercase tracking-[0.18em] text-white/65 sm:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}

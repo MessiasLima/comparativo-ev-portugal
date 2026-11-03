@@ -61,7 +61,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-6 border-b border-line pb-5">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-copper">
+      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-copper">
         <span className="font-mono">{index}</span>
         <span className="mx-2 text-copper/50">·</span>
         {eyebrow}
@@ -70,15 +70,13 @@ function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
+        <p className="mt-2 max-w-2xl text-base leading-7 text-muted-foreground">
           {description}
         </p>
       ) : null}
     </div>
   )
 }
-
-export const instant = false
 
 export function generateStaticParams() {
   return getComparison().cars.map((entry) => ({ slug: entry.car.slug }))
@@ -126,7 +124,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
         <div className="relative mx-auto w-full max-w-7xl px-5 pt-8 pb-12 sm:px-8 sm:pt-10 sm:pb-16">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.18em] text-white/45 transition-colors hover:text-lime"
+            className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-white/65 transition-colors hover:text-lime"
           >
             <ArrowLeft className="size-3.5" />
             Voltar ao comparativo
@@ -141,12 +139,12 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                     car.accent === "copper" ? "bg-copper" : "bg-ocean",
                   )}
                 />
-                <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-white/45">
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/65">
                   {car.brand} · {car.year} · {car.segment}
                 </p>
                 <Badge
                   variant="outline"
-                  className="border-white/15 text-[10px] text-white/50"
+                  className="border-white/15 text-xs text-white/70"
                 >
                   Dossiê
                 </Badge>
@@ -154,12 +152,12 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
 
               <h1
                 aria-label={formatCarName(car)}
-                className="mt-4 font-heading text-[clamp(3rem,8vw,6rem)] leading-[0.9] font-semibold tracking-[-0.06em]"
+                className="mt-4 font-heading text-5xl leading-[0.95] font-semibold tracking-[-0.06em] sm:text-6xl lg:text-7xl"
               >
                 {car.brand}
                 <br />
                 {car.model}
-                <span className="mt-2 block text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.05] tracking-[-0.03em] text-lime">
+                <span className="mt-2 block text-2xl leading-tight tracking-[-0.03em] text-lime sm:text-3xl lg:text-4xl">
                   {car.variant}
                 </span>
               </h1>
@@ -171,7 +169,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                 <span className="rounded-full border border-lime/25 bg-lime/10 px-3 py-1.5 font-mono text-sm font-medium text-lime">
                   {formatEuro(car.price.amount)}
                 </span>
-                <span className="rounded-full border border-white/15 px-3 py-1.5 text-[11px] text-white/50">
+                <span className="rounded-full border border-white/15 px-3 py-1.5 text-xs text-white/70">
                   Garantia: {car.warranty.vehicle}
                 </span>
               </div>
@@ -221,7 +219,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
               <div key={stat.label} className="bg-ink/85 px-4 py-3.5">
                 <div className="flex items-center gap-2 text-white/35">
                   <stat.icon className="size-3" />
-                  <p className="text-[9px] uppercase tracking-[0.16em]">
+                  <p className="text-xs uppercase tracking-[0.16em] text-white/60">
                     {stat.label}
                   </p>
                 </div>
@@ -238,14 +236,14 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
         <div className="grid gap-10 py-10 lg:grid-cols-[190px_minmax(0,1fr)] lg:gap-14 lg:py-14">
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1">
-              <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 Neste dossiê
               </p>
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block rounded-lg px-3 py-2 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {item.label}
                 </a>
@@ -259,7 +257,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="shrink-0 rounded-full border border-line px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground"
+                  className="shrink-0 rounded-full border border-line px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground"
                 >
                   {item.label}
                 </a>
@@ -269,7 +267,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
             <section id="visao-geral" className="scroll-mt-28">
               <div className="grid gap-8 lg:grid-cols-[1.12fr_0.88fr]">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-copper">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-copper">
                     <span className="font-mono">01</span>
                     <span className="mx-2 text-copper/50">·</span>
                     Visão geral
@@ -277,27 +275,27 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                   <h2 className="mt-2 max-w-2xl font-heading text-3xl leading-[1.05] font-semibold tracking-[-0.04em] sm:text-4xl">
                     {car.dossier.headline}
                   </h2>
-                  <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+                  <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
                     {car.dossier.verdict}
                   </p>
                   <div className="mt-6 rounded-2xl border border-line bg-sand/55 p-4 sm:p-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       Ideal para
                     </p>
-                    <p className="mt-2 text-sm leading-6">{car.dossier.bestFor}</p>
+                    <p className="mt-2 text-base leading-7">{car.dossier.bestFor}</p>
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
                   <div className="rounded-2xl border border-line bg-card p-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-forest">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-forest">
                       Pontos fortes
                     </p>
                     <ul className="mt-3 space-y-2.5">
                       {car.dossier.pros.map((item) => (
                         <li
                           key={item}
-                          className="flex gap-2.5 text-xs leading-5 text-muted-foreground"
+                          className="flex gap-2.5 text-sm leading-6 text-muted-foreground"
                         >
                           <Check className="mt-0.5 size-3.5 shrink-0 text-forest" />
                           {item}
@@ -306,14 +304,14 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                     </ul>
                   </div>
                   <div className="rounded-2xl border border-line bg-card p-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-copper">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">
                       A rever
                     </p>
                     <ul className="mt-3 space-y-2.5">
                       {car.dossier.cons.map((item) => (
                         <li
                           key={item}
-                          className="flex gap-2.5 text-xs leading-5 text-muted-foreground"
+                          className="flex gap-2.5 text-sm leading-6 text-muted-foreground"
                         >
                           <X className="mt-0.5 size-3.5 shrink-0 text-copper" />
                           {item}
@@ -334,11 +332,11 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
               />
               <SpecGrid entry={entry} />
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl border border-line bg-card p-4 text-xs leading-5 text-muted-foreground">
+                <div className="rounded-xl border border-line bg-card p-4 text-sm leading-6 text-muted-foreground">
                   <span className="font-medium text-foreground">Nota de preço:</span>{" "}
                   {car.price.note}
                 </div>
-                <div className="rounded-xl border border-line bg-card p-4 text-xs leading-5 text-muted-foreground">
+                <div className="rounded-xl border border-line bg-card p-4 text-sm leading-6 text-muted-foreground">
                   <span className="font-medium text-foreground">
                     Nota de garantia:
                   </span>{" "}
@@ -382,7 +380,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                       "rounded-2xl border border-line bg-card p-5 sm:p-6",
                     )}
                   >
-                    <p className="font-mono text-[10px] text-copper">
+                    <p className="font-mono text-xs text-copper">
                       {String(index + 1).padStart(2, "0")}
                     </p>
                     <h3 className="mt-2 font-heading text-lg font-semibold">
@@ -396,7 +394,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                         {section.bullets.map((item) => (
                           <li
                             key={item}
-                            className="flex gap-2 text-xs leading-5 text-muted-foreground"
+                            className="flex gap-2 text-sm leading-6 text-muted-foreground"
                           >
                             <span className="mt-2 size-1 shrink-0 rounded-full bg-copper" />
                             {item}
@@ -423,7 +421,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                       <span className="flex items-center gap-2">
                         <Badge
                           variant="outline"
-                          className="border-line text-[9px] text-muted-foreground"
+                          className="border-line text-xs text-muted-foreground"
                         >
                           {sourceTypeLabel[source.type]}
                         </Badge>
@@ -431,7 +429,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
                           <ExternalLink className="size-3 text-muted-foreground/50" />
                         ) : null}
                       </span>
-                      <span className="mt-2 block text-xs leading-5 font-medium">
+                      <span className="mt-2 block text-sm leading-6 font-medium">
                         {source.label}
                       </span>
                     </>
@@ -462,7 +460,7 @@ export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
             <div className="border-t border-line pt-6">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 <ArrowLeft className="size-3.5" />
                 Voltar ao ranking

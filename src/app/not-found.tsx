@@ -12,7 +12,7 @@ export default function NotFound() {
         <h1 className="mt-4 font-heading text-5xl font-semibold tracking-[-0.05em] sm:text-7xl">
           Fora de rota.
         </h1>
-        <p className="mt-4 max-w-md text-sm leading-6 text-white/50">
+        <p className="mt-4 max-w-md text-base leading-7 text-white/60">
           O carro que procura não está neste comparativo. Volte ao ranking para
           ver os dossiês disponíveis.
         </p>

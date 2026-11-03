@@ -8,6 +8,7 @@ import type {
   SatisfactionAssessment,
 } from "@/data/types"
 import { formatScore } from "@/lib/format"
+import { withBasePath } from "@/lib/base-path"
 import type { ScoredCar } from "@/lib/scoring"
 import { ACCENT_HEX, ScoreBar } from "@/components/score"
 import {
@@ -42,7 +43,7 @@ function SourceLinks({
 
   return (
     <div className="mt-5 border-t border-line pt-4">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
         Fontes
       </p>
       <div className="mt-2 flex flex-wrap gap-2">
@@ -50,10 +51,10 @@ function SourceLinks({
           source.url ? (
             <a
               key={source.id}
-              href={source.url}
+              href={source.url.startsWith("/") ? withBasePath(source.url) : source.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-2.5 py-1 text-[11px] text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
+              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-2.5 py-1 text-xs text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
             >
               {source.label}
               <ExternalLink className="size-2.5" />
@@ -61,7 +62,7 @@ function SourceLinks({
           ) : (
             <span
               key={source.id}
-              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-2.5 py-1 text-[11px] text-muted-foreground"
+              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-2.5 py-1 text-xs text-muted-foreground"
             >
               {source.label}
             </span>
@@ -95,7 +96,7 @@ export function CriterionList({
             className="group scroll-mt-28 border-b border-line last:border-b-0"
           >
             <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-4 gap-y-3 px-4 py-4 transition-colors hover:bg-muted/40 sm:flex-nowrap sm:px-5">
-              <span className="w-8 shrink-0 font-mono text-[11px] font-semibold text-copper">
+              <span className="w-8 shrink-0 font-mono text-xs font-semibold text-copper">
                 {sectionNumber}.{criterion.number}
               </span>
               <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-muted text-forest">
@@ -106,7 +107,7 @@ export function CriterionList({
                   <span className="text-sm font-medium">{criterion.label}</span>
                   <Badge
                     variant="outline"
-                    className="hidden border-line text-[10px] text-muted-foreground sm:inline-flex"
+                    className="hidden border-line text-xs text-muted-foreground sm:inline-flex"
                   >
                     {criterion.kind === "objective"
                       ? "dado"
@@ -115,7 +116,7 @@ export function CriterionList({
                         : "editorial"}
                   </Badge>
                 </span>
-                <span className="mt-0.5 block text-xs text-muted-foreground">
+                <span className="mt-1 block text-sm text-muted-foreground">
                   {scored.rawLabel} · #{scored.rank} da lista
                 </span>
               </span>
@@ -128,7 +129,7 @@ export function CriterionList({
                 <span className="font-heading text-2xl leading-none font-semibold tabular-nums">
                   {formatScore(scored.score)}
                 </span>
-                <span className="text-[11px] text-muted-foreground">/10</span>
+                <span className="text-xs text-muted-foreground">/10</span>
               </span>
 
               <ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
@@ -136,10 +137,10 @@ export function CriterionList({
 
             <div className="px-4 pb-6 sm:px-5 sm:pl-16">
               <div className="rounded-xl bg-muted/40 px-3.5 py-3">
-                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                   O que mede
                 </p>
-                <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">
                   {criterion.description}
                 </p>
               </div>
@@ -147,7 +148,7 @@ export function CriterionList({
               {criterion.id === "equipment" ? (
                 <a
                   href="#equipamento"
-                  className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-3 py-1.5 text-[11px] font-medium text-foreground transition-colors hover:border-forest/40 hover:bg-muted/40"
+                  className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-forest/40 hover:bg-muted/40"
                 >
                   Ver a checklist completa de equipamento
                   <ArrowDown className="size-3 text-muted-foreground" />
@@ -157,10 +158,10 @@ export function CriterionList({
               {criterion.id === "interior" && assessment ? (
                 <div className="mt-3 rounded-xl border border-line bg-background px-3.5 py-3">
                   <div className="flex items-center justify-between gap-3">
-                    <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       Rubrica de acabamento
                     </p>
-                    <p className="font-mono text-[11px] text-muted-foreground">
+                    <p className="font-mono text-xs text-muted-foreground">
                       {formatScore(interiorScore(assessment as InteriorAssessment))}/10
                     </p>
                   </div>
@@ -169,7 +170,7 @@ export function CriterionList({
                       const value = (assessment as InteriorAssessment)[component.key]
                       return (
                         <div key={component.key} title={component.description}>
-                          <div className="flex items-baseline justify-between gap-2 text-[11px]">
+                          <div className="flex items-baseline justify-between gap-2 text-xs">
                             <span className="text-muted-foreground">
                               {component.label}
                               <span className="text-muted-foreground/60">
@@ -190,7 +191,7 @@ export function CriterionList({
                       )
                     })}
                   </div>
-                  <p className="mt-3 text-[11px] leading-5 text-muted-foreground">
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
                     Plástico duro:{" "}
                     <span className="font-medium text-foreground">
                       {HARD_PLASTIC_LABELS[(assessment as InteriorAssessment).hardPlastic]}
@@ -206,10 +207,10 @@ export function CriterionList({
               {criterion.id === "brand" && assessment ? (
                 <div className="mt-3 rounded-xl border border-line bg-background px-3.5 py-3">
                   <div className="flex items-center justify-between gap-3">
-                    <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       Rubrica de marca e assistência
                     </p>
-                    <p className="font-mono text-[11px] text-muted-foreground">
+                    <p className="font-mono text-xs text-muted-foreground">
                       Índice {formatScore(brandScore(assessment as BrandAssessment))}/10
                     </p>
                   </div>
@@ -218,7 +219,7 @@ export function CriterionList({
                       const value = (assessment as BrandAssessment)[component.key]
                       return (
                         <div key={component.key} title={component.description}>
-                          <div className="flex items-baseline justify-between gap-2 text-[11px]">
+                          <div className="flex items-baseline justify-between gap-2 text-xs">
                             <span className="text-muted-foreground">
                               {component.label}
                               <span className="text-muted-foreground/60">
@@ -238,7 +239,7 @@ export function CriterionList({
                       )
                     })}
                   </div>
-                  <p className="mt-3 text-[11px] leading-5 text-muted-foreground">
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
                     Fábrica automóvel em Portugal: {" "}
                     <span className="font-medium text-foreground">
                       {(assessment as BrandAssessment).portugalFactory ? "sim" : "não"}
@@ -256,10 +257,10 @@ export function CriterionList({
               "ownerSentiment" in assessment ? (
                 <div className="mt-3 rounded-xl border border-line bg-background px-3.5 py-3">
                   <div className="flex items-center justify-between gap-3">
-                    <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                       Rubrica de satisfação e ocorrências
                     </p>
-                    <p className="font-mono text-[11px] text-muted-foreground">
+                    <p className="font-mono text-xs text-muted-foreground">
                       Índice {formatScore(satisfactionScore(assessment))}/10
                     </p>
                   </div>
@@ -275,7 +276,7 @@ export function CriterionList({
                         ]
                       return (
                         <div key={component.key} title={component.description}>
-                          <div className="flex items-baseline justify-between gap-2 text-[11px]">
+                          <div className="flex items-baseline justify-between gap-2 text-xs">
                             <span className="text-muted-foreground">
                               {component.label}
                               <span className="text-muted-foreground/60">
@@ -292,7 +293,7 @@ export function CriterionList({
                             className="mt-1.5"
                           />
                           {rawValue > cap ? (
-                            <p className="mt-1 text-[10px] text-muted-foreground">
+                            <p className="mt-1 text-xs text-muted-foreground">
                               Limitada a {formatScore(cap)} pela amostra {" "}
                               {SATISFACTION_EVIDENCE_LABELS[assessment.evidenceLevel]}.
                             </p>
@@ -301,7 +302,7 @@ export function CriterionList({
                       )
                     })}
                   </div>
-                  <p className="mt-3 text-[11px] leading-5 text-muted-foreground">
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
                     Maturidade da evidência: {" "}
                     <span className="font-medium text-foreground">
                       {SATISFACTION_EVIDENCE_LABELS[assessment.evidenceLevel]}
@@ -320,14 +321,14 @@ export function CriterionList({
                 <div className="mt-5 grid gap-5 sm:grid-cols-2">
                   {review.pros?.length ? (
                     <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-forest">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-forest">
                         A favor
                       </p>
                       <ul className="mt-2 space-y-2">
                         {review.pros.map((item) => (
                           <li
                             key={item}
-                            className="flex gap-2 text-xs leading-5 text-muted-foreground"
+                            className="flex gap-2 text-sm leading-6 text-muted-foreground"
                           >
                             <span className="mt-2 size-1 shrink-0 rounded-full bg-forest" />
                             {item}
@@ -339,14 +340,14 @@ export function CriterionList({
 
                   {review.cons?.length ? (
                     <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-copper">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper">
                         A rever
                       </p>
                       <ul className="mt-2 space-y-2">
                         {review.cons.map((item) => (
                           <li
                             key={item}
-                            className="flex gap-2 text-xs leading-5 text-muted-foreground"
+                            className="flex gap-2 text-sm leading-6 text-muted-foreground"
                           >
                             <span className="mt-2 size-1 shrink-0 rounded-full bg-copper" />
                             {item}

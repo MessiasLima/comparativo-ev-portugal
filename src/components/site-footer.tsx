@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react"
 import { CARS } from "@/data/cars"
 import { SITE_UPDATED_AT } from "@/data/site"
 import { formatCarName, formatDatePt } from "@/lib/format"
+import { withBasePath } from "@/lib/base-path"
 
 const footerCars = CARS.slice(0, 4)
 
@@ -15,7 +16,7 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center gap-3">
               <Image
-                src="/comparativo-ev-portugal-icon.svg"
+                src={withBasePath("/comparativo-ev-portugal-icon.svg")}
                 alt=""
                 width={36}
                 height={36}
@@ -25,7 +26,7 @@ export function SiteFooter() {
                 <span className="font-heading text-sm font-semibold tracking-tight">
                   Comparativo EV
                 </span>
-                <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.28em] text-white/45">
+                <span className="mt-1 text-xs font-medium uppercase tracking-[0.28em] text-white/60">
                   Portugal
                 </span>
               </div>
@@ -41,7 +42,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/40">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
               Explorar
             </p>
             <ul className="mt-4 space-y-3 text-sm text-white/55">
@@ -59,7 +60,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/40">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
               Dossiês
             </p>
             <ul className="mt-4 space-y-3 text-sm text-white/55">
@@ -88,7 +89,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs leading-5 text-white/35 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm leading-6 text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             Projeto independente. Preços de referência para Portugal Continental,
             com IVA. Não substitui proposta de concessionário.
