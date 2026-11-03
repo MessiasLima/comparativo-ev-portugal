@@ -574,7 +574,7 @@ export function RankingTable({
       <div className="flex flex-col gap-1.5 border-t border-line bg-muted/35 px-5 py-3 text-sm leading-6 text-muted-foreground sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:px-6">
         <p>
           <span className="font-medium text-foreground">Nota global</span> = média
-          ponderada dos 10 critérios, ajustável em{" "}
+          ponderada dos {CRITERIA.length} critérios, ajustável em{" "}
           <span className="font-medium text-foreground">Pesos</span> ·{" "}
           <span className="font-medium text-foreground">€/ponto</span> = preço ÷
           nota global · o{" "}

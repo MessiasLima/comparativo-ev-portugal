@@ -35,7 +35,7 @@
     "widthMm": 1875,
     "heightMm": 1460,
     "wheelbaseMm": 2920,
-    "bootL": 485,
+    "bootL": 400,
     "frunkL": 53,
     "seats": 5,
     "doors": 4
@@ -222,8 +222,7 @@
     "charging": {
       "summary": "Idêntico ao Excellence: 11 kW em AC trifásico e 150 kW em DC, com 30-80% em 26 minutos e 10-80% em 37 minutos, além de V2L de 3 kW. Com a mesma bateria de 82,5 kWh, carrega depressa em potência absoluta.",
       "pros": [
-        "150 kW DC e 11 kW AC",
-        "11 kW AC trifásico (8 h 36 min para carga completa)",
+        "150 kW DC e 11 kW AC trifásico (8 h 36 min para carga completa)",
         "V2L de 3 kW de série"
       ],
       "cons": [
@@ -281,7 +280,7 @@
       },
       {
         "title": "Interior e espaço",
-        "body": "O habitáculo é partilhado com o Excellence: pele, costuras trabalhadas, ecrã rotativo de 15,6\", painel digital de 10,25\", carregadores wireless duplos de 15 W, bancos dianteiros elétricos aquecidos e ventilados (o do condutor com memória) e volante aquecido. O espaço traseiro é de berlina executiva e as bagageiras somam 485 L atrás e 53 L à frente, com tampa. A ausência notada é o head-up display, exclusivo do Excellence."
+        "body": "O habitáculo é partilhado com o Excellence: pele, costuras trabalhadas, ecrã rotativo de 15,6\", painel digital de 10,25\", carregadores wireless duplos de 15 W, bancos dianteiros elétricos aquecidos e ventilados (o do condutor com memória) e volante aquecido. O espaço traseiro é de berlina executiva e as bagageiras somam 400 L atrás e 53 L à frente, com tampa. A ausência notada é o head-up display, exclusivo do Excellence."
       },
       {
         "title": "Como se conduz",

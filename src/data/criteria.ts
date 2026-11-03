@@ -11,6 +11,7 @@ import {
   Waves,
 } from "lucide-react"
 import type { CriterionDefinition, CriterionId } from "@/data/types"
+import { EQUIPMENT_CATEGORIES, EQUIPMENT_CHECKLIST } from "@/data/equipment"
 
 export const CRITERIA: CriterionDefinition[] = [
   {
@@ -62,7 +63,7 @@ export const CRITERIA: CriterionDefinition[] = [
     shortLabel: "Equipamento",
     question: "Quantos equipamentos relevantes traz?",
     description:
-      "Contagem normalizada de 38 equipamentos de série ou incluídos na configuração, em ADAS, conforto, tecnologia e conveniência.",
+      `Contagem normalizada de ${EQUIPMENT_CHECKLIST.length} equipamentos de série ou incluídos na configuração, em ${EQUIPMENT_CATEGORIES.join(", ")}.`,
     icon: ListChecks,
     kind: "objective",
     direction: "higher",

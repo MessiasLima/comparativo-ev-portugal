@@ -9,7 +9,7 @@ import type {
 } from "@/data/types"
 import { formatScore } from "@/lib/format"
 import { withBasePath } from "@/lib/base-path"
-import type { ScoredCar } from "@/lib/scoring"
+import type { CriterionScore, ScoredCar } from "@/lib/scoring"
 import { ACCENT_HEX, ScoreBar } from "@/components/score"
 import {
   HARD_PLASTIC_CAP,
@@ -73,11 +73,59 @@ function SourceLinks({
   )
 }
 
+function ScoreExplanation({
+  scored,
+  totalCars,
+  note,
+}: {
+  scored: CriterionScore
+  totalCars: number
+  note?: string
+}) {
+  const { criterion, rank } = scored
+  const relative = criterion.scale !== "absolute"
+  const lowerIsBetter = criterion.direction === "lower"
+
+  let explanation: string
+  if (!relative) {
+    explanation =
+      "Escala absoluta: a nota é o índice da rubrica, sem comparação com os outros carros."
+  } else if (rank === 1) {
+    explanation = lowerIsBetter
+      ? "Escala relativa: tem o menor consumo da lista, por isso recebe 10,0. Os restantes carros ficam pela proporção inversa do seu consumo."
+      : "Escala relativa: tem o melhor valor da lista, por isso recebe 10,0. Os restantes carros ficam pela proporção do seu desempenho."
+  } else {
+    explanation = lowerIsBetter
+      ? `Escala relativa: o menor consumo da lista recebe 10,0 e este carro fica pela proporção inversa do seu (${rank}.º de ${totalCars}).`
+      : `Escala relativa: o melhor valor da lista recebe 10,0 e este carro fica com a proporção do seu desempenho (${rank}.º de ${totalCars}).`
+  }
+
+  return (
+    <div className="mt-3 rounded-xl border border-line bg-background px-3.5 py-3">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        Como se chega à nota
+      </p>
+      <p className="mt-2 text-sm leading-6 text-muted-foreground">
+        <span className="font-medium text-foreground">{scored.rawLabel}</span>
+        <span aria-hidden="true"> → </span>
+        <span className="sr-only"> resulta em </span>
+        <span className="font-medium text-foreground">
+          {formatScore(scored.score)}/10{relative ? " na lista" : ""}
+        </span>
+        . {explanation}
+        {note ? ` ${note}` : null}
+      </p>
+    </div>
+  )
+}
+
 export function CriterionList({
   entry,
+  totalCars,
   sectionNumber = 3,
 }: {
   entry: ScoredCar
+  totalCars: number
   sectionNumber?: number
 }) {
   return (
@@ -125,11 +173,18 @@ export function CriterionList({
                 <ScoreBar score={scored.score} color={ACCENT_HEX[entry.car.accent]} />
               </span>
 
-              <span className="flex min-w-14 items-baseline justify-end gap-1">
-                <span className="font-heading text-2xl leading-none font-semibold tabular-nums">
-                  {formatScore(scored.score)}
+              <span className="flex min-w-14 shrink-0 flex-col items-end">
+                <span className="flex items-baseline justify-end gap-1">
+                  <span className="font-heading text-2xl leading-none font-semibold tabular-nums">
+                    {formatScore(scored.score)}
+                  </span>
+                  <span className="text-xs text-muted-foreground">/10</span>
                 </span>
-                <span className="text-xs text-muted-foreground">/10</span>
+                <span className="text-[11px] whitespace-nowrap text-muted-foreground">
+                  {criterion.scale === "absolute"
+                    ? "escala absoluta"
+                    : "relativa à lista"}
+                </span>
               </span>
 
               <ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
@@ -144,6 +199,18 @@ export function CriterionList({
                   {criterion.description}
                 </p>
               </div>
+
+              <ScoreExplanation
+                scored={scored}
+                totalCars={totalCars}
+                note={
+                  criterion.id === "satisfaction" &&
+                  assessment &&
+                  "evidenceLevel" in assessment
+                    ? `A evidência ${SATISFACTION_EVIDENCE_LABELS[assessment.evidenceLevel]} limita cada componente da rubrica; a nota da lista compara o índice resultante com o dos outros carros.`
+                    : undefined
+                }
+              />
 
               {criterion.id === "equipment" ? (
                 <a
