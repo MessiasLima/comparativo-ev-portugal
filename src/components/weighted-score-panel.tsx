@@ -1,6 +1,7 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
+import { CRITERIA } from "@/data/criteria"
 import { EQUIPMENT_CHECKLIST } from "@/data/equipment"
 import type { CriterionId } from "@/data/types"
 import { formatEuro, formatScore } from "@/lib/format"
@@ -60,8 +61,8 @@ export function WeightedScorePanel({
           <span className="pb-1 text-xs text-white/40">/ 10</span>
         </div>
         <p className="mt-3 text-sm leading-6 text-white/70">
-          Lidera {leadingCriteria} dos 10 critérios. Nota comparada com a lista
-          atual.
+          Lidera {leadingCriteria} dos {CRITERIA.length} critérios. Nota comparada
+          com a lista atual.
         </p>
         {customized ? (
           <p className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-lime/90">

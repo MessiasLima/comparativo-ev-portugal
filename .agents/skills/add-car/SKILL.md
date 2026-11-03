@@ -45,6 +45,16 @@ and verify everything. The phases must run in order, because each one feeds the 
    comparisons against a named car ("consome 1,6 kWh menos do que o Excellence"),
    which stay true regardless of new entries. The UI calculates ranks and counts
    dynamically; the prose must not duplicate them.
+8. **Never hardcode a calculated value, in JSON or in UI copy.** Notes, rubric
+   indices, ranks, "#2 da lista", €/ponto, "lidera 3 dos 10 critérios" and every
+   count that follows the line-up or the registry (cars, criteria, checklist items)
+   must be rendered from data: `CRITERIA.length`, `EQUIPMENT_CHECKLIST.length`,
+   `comparison.cars.length`, or the `rawLabel`/`score`/`rank` fields of a `ScoredCar`.
+   A literal "dez critérios", "38 equipamentos" or "Rubrica 6,9 → 10,0" in a component
+   string goes stale the moment a car, a checklist item or a criterion is added, and
+   then contradicts the engine on the same screen. When a number has to appear in
+   copy, template it from its source of truth; when it cannot be templated (e.g.
+   Markdown docs), update it in the same change and flag it in the report.
 
 ## Architecture you must understand before starting
 
@@ -133,19 +143,18 @@ don't exist yet in the checklist are added as new entries.
    *evaluated configuration* has that feature (check its sources/PDF/configurator)
    and add the id to its `equipmentIncluded` if so. Do not guess — a wrong "no"
    unfairly penalizes an existing car; a wrong "yes" is fabrication.
-5. **Fix the hardcoded checklist totals.** The count 38 is baked into several places
-   and must not go stale. Grep the repo (`grep -rnE "\b38\b|/ ?38" src README.md` —
-   word-bounded so values like "389 km" don't match) — known
-   locations (line numbers drift, trust the grep):
-   - `src/data/criteria.ts` — the `equipment` criterion `description` ("…de 38 equipamentos…")
-   - `README.md` — two mentions of the 38-item checklist
-   
-   The UI (`equipment-checklist.tsx`, `weighted-score-panel.tsx`, the equipment
-   section in `carros/[slug]/page.tsx`) already uses `EQUIPMENT_CHECKLIST.length`;
-   keep it that way. For prose in `criteria.ts`/`README.md`, update the number
-   literally.
+5. **Keep the checklist totals derived, never literal.** `src/data/criteria.ts`
+   builds the equipment description from `EQUIPMENT_CHECKLIST.length` and
+   `EQUIPMENT_CATEGORIES`, and the UI (`equipment-checklist.tsx`,
+   `weighted-score-panel.tsx`, the equipment section in `carros/[slug]/page.tsx`)
+   uses `EQUIPMENT_CHECKLIST.length` too: adding items must change every count by
+   itself. Do not reintroduce a literal "38" anywhere in `src/`. The only literal
+   left is in `README.md` (the data tree and the checklist sentence) — update it
+   there in the same change and call it out in the report. Grep to confirm:
+   `grep -rnE "\b38\b|/ ?38" src README.md` (word-bounded so "389 km" doesn't match).
 6. Also update the `equipment` criterion `description` in `criteria.ts` if the
-   categories or item count language changed.
+   categories or item count language changed — the numbers are interpolated, so only
+   wording changes need attention.
 
 ## Phase 3 — Create the dossier JSON(s)
 
@@ -202,7 +211,16 @@ template skeleton, and formatting conventions. Core rules:
    tree (they enumerate cars and JSON files), and any component that names a
    specific car. Grep for the existing cars' names to find spots that assume the
    current line-up.
-6. Nothing else should need changes: the hero counts, ranking table, weights modal,
+6. **Sweep for hardcoded calculated values in copy.** No component may print a
+   number that the engine computes. Grep for numeric literals next to words like
+   critérios/equipamentos/carros and for rank or score sentences:
+   `grep -rnE "[0-9]+\s*(critérios|equipamentos|carros)|dos [0-9]+|#1|melhor da lista|lidera [0-9]" src`
+   (plus `criteria.ts`, `methodology.tsx`, `weighted-score-panel.tsx`,
+   `ranking-table.tsx`, `site-url.ts`). Every count must come from
+   `CRITERIA.length`, `EQUIPMENT_CHECKLIST.length` or `comparison.cars.length`, and
+   every note from `rawLabel`/`score`/`rank` on a `ScoredCar`. If you add copy that
+   mentions a count, template it — never type the number.
+7. Nothing else should need changes: the hero counts, ranking table, weights modal,
    dossier routes and footer links are all derived from the registry and the scoring
    engine. Every public car name is `brand + model + variant` through
    `formatCarName()`, so a new version cannot be confused with a sibling.
@@ -232,15 +250,24 @@ The essential steps:
    "o Design consome menos do que o Excellence") are allowed — verify they are
    still numerically true and keep them scoped to those cars. Also grep each
    dossier for the names of the other cars.
-4. **Name and variant check.** Every car has a `variant` (trim) and a public name
+4. **Score-explanation check.** Open the new dossier's criteria section and read the
+   "Como se chega à nota" line of all ten criteria. It is generated from
+   `rawLabel`/`score`/`rank`, so it doubles as a consistency test: every relative
+   criterion where the car ranks #1 must display 10,0; the interior must say
+   "escala absoluta" and show its rubric index; lower-is-better criteria (eficiência)
+   must say "menor consumo", not "melhor valor". A mismatch means the scorer or the
+   label is wrong — fix the engine, never the copy. Also confirm the row caption reads
+   "relativa à lista" or "escala absoluta" and that the badge (`dado`/`rubrica`
+   /`editorial`) matches `criterion.kind`.
+5. **Name and variant check.** Every car has a `variant` (trim) and a public name
    `brand + model + variant` rendered by `formatCarName()`. Adding a version of an
    existing model must not create a duplicate public name — the validator checks
    this. Confirm the new name appears correctly in the ranking table, weights
    modal, dossier hero and footer, and that sibling versions read as separate cars.
-5. `npm run lint` and `npm run build` — both must pass.
-6. Optionally `npm run dev` and eyeball: `/` (hero counts, table, footer),
+6. `npm run lint` and `npm run build` — both must pass.
+7. Optionally `npm run dev` and eyeball: `/` (hero counts, table, footer),
    `/carros/<new-slug>` (all sections), and one existing dossier (scores,
-   equipment checklist shows the new total).
+   equipment checklist shows the new total and the derived counts).
 
 ## Phase 6 — Final report to the user
 
@@ -260,11 +287,10 @@ Summarize in chat (do not create a report file unless asked):
 | `src/data/equipment.ts` | add new checklist items |
 | `src/data/cars/*.json` (existing) | re-audit `equipmentIncluded`; fix stale comparative prose (Phase 5) |
 | `src/data/site.ts` | bump `SITE_UPDATED_AT` |
-| `src/data/criteria.ts` | update equipment criterion description if the checklist size/categories changed |
-| `src/lib/scoring.ts` | confirm the interior rubric is applied absolutely |
+| `src/data/criteria.ts` | equipment description is derived from `EQUIPMENT_CHECKLIST`/`EQUIPMENT_CATEGORIES` — keep it derived |
+| `src/lib/scoring.ts` | confirm the interior rubric is applied absolutely; `rawLabel` is the only place a raw value is formatted for display |
 | `src/lib/interior.ts` | rubric weights, penalties and caps — single source of truth |
-| `src/components/weighted-score-panel.tsx`, `src/app/carros/[slug]/page.tsx` | confirm they use `EQUIPMENT_CHECKLIST.length` |
-| `src/components/criterion-list.tsx` | renders the interior rubric breakdown automatically |
-| `src/components/equipment-checklist.tsx` | generalize the zero-options fallback if needed |
+| `src/components/criterion-list.tsx` | renders the rubric breakdown and the derived "Como se chega à nota" explanation for every criterion |
+| `src/components/equipment-checklist.tsx` | equipment counts and present/absent states come from the checklist |
 | `README.md` | routes list, data tree, checklist count |
 | `public/sources/` | copy provided PDFs |

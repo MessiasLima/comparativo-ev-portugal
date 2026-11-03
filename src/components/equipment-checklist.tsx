@@ -11,6 +11,7 @@ import { ScoreBar } from "@/components/score"
 export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
   const included = new Set(entry.car.equipmentIncluded)
   const total = EQUIPMENT_CHECKLIST.length
+  const missing = total - entry.equipmentCount
   const score = entry.criteria.equipment.score
 
   return (
@@ -24,6 +25,7 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
             <p className="mt-2 font-heading text-3xl font-semibold tracking-[-0.03em]">
               {entry.equipmentCount}
               <span className="text-lg text-muted-foreground"> / {total}</span>
+              <span className="sr-only"> equipamentos incluídos</span>
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               Equipamentos de série ou incluídos na configuração avaliada.
@@ -40,6 +42,26 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
           </div>
         </div>
         <ScoreBar score={score} className="mt-5" />
+        <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-4 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <span
+              aria-hidden="true"
+              className="grid size-4 place-items-center rounded-full bg-lime text-ink"
+            >
+              <Check className="size-2.5" strokeWidth={3} />
+            </span>
+            Incluído ({entry.equipmentCount})
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span
+              aria-hidden="true"
+              className="grid size-4 place-items-center rounded-full border border-line text-muted-foreground/50"
+            >
+              <Minus className="size-2.5" />
+            </span>
+            Não incluído ({missing})
+          </span>
+        </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -57,7 +79,12 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
               <div className="flex items-center justify-between gap-3 border-b border-line pb-3">
                 <h3 className="font-heading text-base font-semibold">{category}</h3>
                 <Badge variant="outline" className="font-mono text-xs">
-                  {count}/{items.length}
+                  <span aria-hidden="true">
+                    {count}/{items.length}
+                  </span>
+                  <span className="sr-only">
+                    {count} de {items.length} equipamentos incluídos
+                  </span>
                 </Badge>
               </div>
               <ul className="mt-3 space-y-2.5">
@@ -73,6 +100,7 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
                       }
                     >
                       <span
+                        aria-hidden="true"
                         className={
                           has
                             ? "mt-0.5 grid size-4 shrink-0 place-items-center rounded-full bg-lime text-ink"
@@ -86,6 +114,9 @@ export function EquipmentChecklist({ entry }: { entry: ScoredCar }) {
                         )}
                       </span>
                       <span className={has ? "" : "line-through decoration-line"}>
+                        <span className="sr-only">
+                          {has ? "Incluído: " : "Não incluído: "}
+                        </span>
                         {item.label}
                       </span>
                     </li>
