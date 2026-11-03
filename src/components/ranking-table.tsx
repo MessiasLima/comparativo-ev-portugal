@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
   Settings2,
   TrendingDown,
+  TriangleAlert,
   Trophy,
 } from "lucide-react"
 import { cn } from "cn"
@@ -65,7 +66,7 @@ const WeightModal = dynamic(
 const compactLabels: Record<CriterionId, string> = {
   interior: "Acab.",
   comfort: "Conforto",
-  brand: "Marca/assist.",
+  brand: "Marca",
   equipment: "Equip.",
   sound: "Som",
   range: "Auton.",
@@ -203,7 +204,14 @@ function CriterionHeader({
   )
 }
 
-export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
+export function RankingTable({
+  rows,
+  updatedAt,
+}: {
+  rows: ComparisonRow[]
+  /** Data editorial já formatada para apresentação (ex.: "3 de novembro de 2026"). */
+  updatedAt: string
+}) {
   const [sort, setSort] = useState<SortState>({
     key: "total",
     direction: "desc",
@@ -302,6 +310,17 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
   return (
     <>
       <div className="overflow-hidden rounded-2xl border border-line bg-card shadow-[0_1px_0_rgba(20,32,26,0.04),0_20px_50px_-35px_rgba(20,32,26,0.25)]">
+      <p className="flex items-start gap-3 border-b border-copper/20 bg-copper/5 px-5 py-3.5 text-sm leading-6 text-copper sm:px-6">
+        <TriangleAlert
+          className="mt-1 size-4 shrink-0"
+          strokeWidth={1.8}
+          aria-hidden="true"
+        />
+        <span>
+          <span className="font-semibold">Site em desenvolvimento.</span> Os
+          dados apresentados ainda não estão completos.
+        </span>
+      </p>
       <div className="border-b border-line px-5 py-4 sm:px-6">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
           <div>
@@ -552,14 +571,19 @@ export function RankingTable({ rows }: { rows: ComparisonRow[] }) {
         </TableBody>
       </Table>
 
-      <div className="border-t border-line bg-muted/35 px-5 py-3 text-sm leading-6 text-muted-foreground sm:px-6">
-        <span className="font-medium text-foreground">Nota global</span> = média
-        ponderada dos 10 critérios, ajustável em{" "}
-        <span className="font-medium text-foreground">Pesos</span> ·{" "}
-        <span className="font-medium text-foreground">€/ponto</span> = preço ÷
-        nota global · o <span className="font-medium text-foreground">#</span> é
-        a posição na nota global. Passa o rato sobre um critério para ver o que
-        mede.
+      <div className="flex flex-col gap-1.5 border-t border-line bg-muted/35 px-5 py-3 text-sm leading-6 text-muted-foreground sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:px-6">
+        <p>
+          <span className="font-medium text-foreground">Nota global</span> = média
+          ponderada dos 10 critérios, ajustável em{" "}
+          <span className="font-medium text-foreground">Pesos</span> ·{" "}
+          <span className="font-medium text-foreground">€/ponto</span> = preço ÷
+          nota global · o{" "}
+          <span className="font-medium text-foreground">#</span> é a posição na
+          nota global. Passa o rato sobre um critério para ver o que mede.
+        </p>
+        <p className="shrink-0 text-xs tracking-[0.14em] whitespace-nowrap uppercase">
+          Atualizado a {updatedAt}
+        </p>
       </div>
     </div>
     {weightModalOpen ? (

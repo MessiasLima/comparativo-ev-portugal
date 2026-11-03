@@ -4,7 +4,7 @@ const steps = [
   {
     number: "01",
     title: "Dossier verificável",
-    body: "Cada carro tem um ficheiro JSON com preço, powertrain, bateria, carregamento, dimensões, equipamento e uma síntese editorial com fontes. Nada de notas escondidas no código.",
+    body: "Cada carro tem um dossiê completo com preço, motorização, bateria, carregamento, dimensões, equipamento e uma síntese editorial com fontes. Todos os valores estão à vista — nada de notas escondidas.",
   },
   {
     number: "02",

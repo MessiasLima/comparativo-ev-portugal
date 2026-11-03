@@ -11,7 +11,7 @@ import { JsonLd } from "@/components/structured-data"
 import type { ComparisonRow } from "@/components/ranking-table"
 import { CRITERIA } from "@/data/criteria"
 import type { CriterionId } from "@/data/types"
-import { formatCarName } from "@/lib/format"
+import { formatCarName, formatDatePt } from "@/lib/format"
 import { getComparison } from "@/lib/scoring"
 import {
   SITE_DESCRIPTION,
@@ -203,7 +203,10 @@ export default function HomePage() {
           />
         </div>
         <div className="w-full px-3 pb-16 sm:px-5 sm:pb-24 lg:px-6">
-          <RankingTable rows={rankingRows} />
+          <RankingTable
+            rows={rankingRows}
+            updatedAt={formatDatePt(comparison.updatedAt)}
+          />
         </div>
       </section>
 
@@ -213,7 +216,7 @@ export default function HomePage() {
             index="02"
             eyebrow="Metodologia"
             title="Números transparentes, opiniões assumidas."
-            description="Cada nota tem uma origem: um valor objetivo do dossier ou uma avaliação editorial sustentada por fontes. O motor de cálculo corre sobre os ficheiros JSON e recalcula tudo quando os dados mudam."
+            description="Cada nota tem uma origem: um valor objetivo do dossiê ou uma avaliação editorial sustentada por fontes. Quando os dados de um carro mudam, as notas e o ranking são recalculados de imediato."
           />
           <Methodology />
         </div>
