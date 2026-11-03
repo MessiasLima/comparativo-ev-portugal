@@ -1,0 +1,48 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+# Cancel superseded runs on the same PR to save runner minutes.
+concurrency:
+  group: "pr-${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate data
+        run: npm run validate:data
+
+      - name: Lint
+        run: npm run lint
+
+      # Builds with the same environment as the Deploy workflow so a PR can't pass
+      # CI and then fail the production export. No Pages setup/upload here: this
+      # job only verifies that the build succeeds.
+      - name: Build with Next.js
+        run: npm run build
+        env:
+          GITHUB_PAGES: "true"
+          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_SITE_URL: https://comparativo-ev-portugal.appoutlet.dev
+
+      - name: Type-check
+        run: npx tsc --noEmit
