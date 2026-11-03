@@ -32,9 +32,9 @@ export function SiteFooter() {
               </div>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-6 text-white/55">
-              Dossiês independentes, critérios transparentes e custo por ponto. Os
-              dados são calculados a partir dos ficheiros JSON de cada carro,
-              para que o ranking acompanhe qualquer alteração.
+              Dossiês independentes, critérios transparentes e custo por ponto.
+              Cada dossiê é revisto à medida que surgem novos dados, para que o
+              ranking acompanhe sempre a informação mais recente.
             </p>
             <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/60">
               Atualizado a {formatDatePt(SITE_UPDATED_AT)}
@@ -89,7 +89,42 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm leading-6 text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
+              Desenvolvido pela AppOutlet
+            </p>
+            <p className="mt-2 max-w-md text-sm leading-6 text-white/55">
+              Software, web e design, feitos em Portugal.
+            </p>
+          </div>
+          <a
+            href="https://appoutlet.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AppOutlet — appoutlet.dev (abre num novo separador)"
+            className="group inline-flex shrink-0 items-center gap-3 self-start rounded-full border border-white/10 bg-white/[0.03] py-2 pr-4 pl-2 transition-colors hover:border-white/25 hover:bg-white/[0.06] sm:self-auto"
+          >
+            <Image
+              src={withBasePath("/appoutlet-logo.svg")}
+              alt=""
+              width={32}
+              height={32}
+              className="size-8"
+            />
+            <span className="flex flex-col leading-none">
+              <span className="font-heading text-sm font-semibold tracking-tight transition-colors group-hover:text-lime">
+                AppOutlet
+              </span>
+              <span className="mt-1 text-xs tracking-[0.2em] text-white/60 uppercase">
+                appoutlet.dev
+              </span>
+            </span>
+            <ArrowUpRight className="size-3.5 text-white/35 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-lime" />
+          </a>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm leading-6 text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             Projeto independente. Preços de referência para Portugal Continental,
             com IVA. Não substitui proposta de concessionário.

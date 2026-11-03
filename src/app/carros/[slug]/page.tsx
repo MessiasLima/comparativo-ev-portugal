@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Suspense } from "react"
 import {
   ArrowLeft,
   BatteryCharging,
@@ -130,7 +131,89 @@ export async function generateMetadata({
   }
 }
 
-export default async function CarPage({ params }: PageProps<"/carros/[slug]">) {
+export default function CarPage({ params }: PageProps<"/carros/[slug]">) {
+  return (
+    <Suspense fallback={<CarDossierSkeleton />}>
+      <CarDossier params={params} />
+    </Suspense>
+  )
+}
+
+function Bone({ className }: { className: string }) {
+  return <div aria-hidden="true" className={cn("animate-pulse", className)} />
+}
+
+function CarDossierSkeleton() {
+  return (
+    <article aria-busy="true">
+      <section className="relative overflow-hidden bg-ink text-paper">
+        <div className="absolute inset-0 bg-grid opacity-50" />
+        <div className="relative mx-auto w-full max-w-7xl px-5 pt-8 pb-12 sm:px-8 sm:pt-10 sm:pb-16">
+          <Bone className="h-3 w-44 rounded-full bg-white/10" />
+          <div className="mt-8 grid items-start gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+            <div>
+              <Bone className="h-3 w-56 rounded-full bg-white/10" />
+              <div className="mt-5 space-y-3">
+                <Bone className="h-12 w-[13rem] rounded-lg bg-white/10" />
+                <Bone className="h-12 w-[10rem] rounded-lg bg-white/10" />
+                <Bone className="h-7 w-[8rem] rounded-lg bg-white/[0.07]" />
+              </div>
+              <div className="mt-6 space-y-2.5">
+                <Bone className="h-4 w-full max-w-md rounded-full bg-white/[0.07]" />
+                <Bone className="h-4 w-full max-w-sm rounded-full bg-white/[0.07]" />
+              </div>
+              <div className="mt-7 flex flex-wrap gap-2">
+                <Bone className="h-8 w-28 rounded-full bg-white/10" />
+                <Bone className="h-8 w-44 rounded-full bg-white/10" />
+              </div>
+            </div>
+            <div className="space-y-4">
+              <Bone className="h-44 rounded-2xl border border-white/10 bg-white/[0.04]" />
+              <div className="grid grid-cols-2 gap-4">
+                <Bone className="h-24 rounded-2xl border border-white/10 bg-white/[0.04]" />
+                <Bone className="h-24 rounded-2xl border border-white/10 bg-white/[0.04]" />
+              </div>
+            </div>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3 lg:grid-cols-6">
+            {[0, 1, 2, 3, 4, 5].map((slot) => (
+              <div key={slot} className="bg-ink/85 px-4 py-3.5">
+                <Bone className="h-2.5 w-16 rounded-full bg-white/15" />
+                <Bone className="mt-2.5 h-3 w-12 rounded-full bg-white/10" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
+        <div className="grid gap-10 py-10 lg:grid-cols-[190px_minmax(0,1fr)] lg:gap-14 lg:py-14">
+          <div className="hidden space-y-2 lg:block">
+            <Bone className="h-2.5 w-24 rounded-full bg-line" />
+            <Bone className="mt-5 h-8 w-full rounded-lg bg-line/60" />
+            <Bone className="h-8 w-full rounded-lg bg-line/60" />
+            <Bone className="h-8 w-full rounded-lg bg-line/60" />
+          </div>
+          <div className="space-y-6">
+            <Bone className="h-4 w-36 rounded-full bg-line" />
+            <Bone className="h-10 w-full max-w-2xl rounded-lg bg-line/70" />
+            <div className="space-y-2.5">
+              <Bone className="h-4 w-full rounded-full bg-line/50" />
+              <Bone className="h-4 w-full rounded-full bg-line/50" />
+              <Bone className="h-4 w-3/4 rounded-full bg-line/50" />
+            </div>
+            <div className="h-40 rounded-2xl border border-line bg-card" />
+            <div className="h-40 rounded-2xl border border-line bg-card" />
+          </div>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+async function CarDossier({
+  params,
+}: Pick<PageProps<"/carros/[slug]">, "params">) {
   const { slug } = await params
   const entry = getScoredCar(slug)
   if (!entry) notFound()
