@@ -157,19 +157,11 @@ the `add-criteria` skill before assuming the count or review shape.
 }
 ```
 
-- `softTouch` (40%): soft-touch coverage on the surfaces occupants actually touch
-  (dashboard top, door cards, armrests, console). Hard plastic under the elbow is
-  not "mostly soft" because the top of the dash is padded.
-- `upholstery` (25%): leather or quality vegan leather, stitching, seat and
-  steering-wheel quality. Thin PVC and plain cloth score low.
-- `design` (20%): restrained, coherent sophistication. Showy contrast, forced
-  decoration and gratuitous screens lower the score; that is deliberate.
-- `assembly` (15%): panel fit, solidity, squeaks and rattles.
-- `hardPlastic`: `low` | `moderate` | `high` (cap 7.0) | `extensive` (cap 5.5).
-  Penalty is 0 / 0.5 / 1.0 / 1.8 points respectively.
-- The components are **absolute quality judgements**, never scaled against the
-  other cars. Do not inflate a mediocre cabin just because it is the best of a
-  weak list. The formula lives in `src/lib/interior.ts`.
+- For evidence, component marks, design-style evaluation, hard-plastic levels and
+  score verification, follow
+  [`evaluate-interior`](../../evaluate-interior/SKILL.md). Its assessment is
+  absolute, not scaled against the other cars; `src/lib/interior.ts` remains the
+  formula's source of truth.
 
 ### Brand and assistance review (relative rubric)
 
@@ -224,10 +216,8 @@ Quality bar (match the existing dossiers):
 - `baseScore` 0–10 with one decimal for the two editorial criteria. It is an
   *absolute* judgement that the site then re-scales against the best car in the
   list, so score on merit, not to game the ranking.
-- Interior rubric components are 0–10, one decimal (integers are fine). Judge the
-  cabin on its own merit: a plastic-heavy interior scores below 6 even if it is
-  the nicest in a weak list. Pick `hardPlastic` honestly — `high` and `extensive`
-  cap the score at 7.0 and 5.5.
+- Follow [`evaluate-interior`](../../evaluate-interior/SKILL.md) when preparing or
+  checking the interior assessment; do not duplicate its rubric guidance here.
 - `summary`: cite real numbers (km, kWh, cv/t, speaker counts, survey positions),
   acknowledge the evaluated configuration when it matters ("nesta configuração").
 - 2–3 `pros` and `cons` each, short and specific. Objective criteria reviews still

@@ -66,7 +66,7 @@ and verify everything. The phases must run in order, because each one feeds the 
 | `src/data/equipment.ts` | `EQUIPMENT_CHECKLIST` (the normalized feature list) + `EQUIPMENT_CATEGORIES`. |
 | `src/data/criteria.ts` | The criterion definitions. Current set: 2 editorial (`comfort`, `sound` — need a human-style `baseScore`), 3 rubrics (`interior`, `brand`, `satisfaction` — need their typed `assessment`; interior is absolute, brand and satisfaction are relative), and 5 objective (`equipment`, `range`, `powerToWeight`, `efficiency`, `charging` — computed from specs). Check the live registry and `CriterionId` before preparing reviews; the `add-criteria` skill documents how the set evolves. |
 | `src/lib/scoring.ts` | The scoring engine. `equipment` = count of checklist ids; `powerToWeight` = cv/kg; `charging` = 0.7·DC + 0.3·AC; `efficiency` = lower is better. Relative criteria rescale against the best car; interior is absolute. |
-| `src/lib/interior.ts` | Interior rubric: 40% soft-touch, 25% upholstery/leather, 20% design, 15% assembly, minus a hard-plastic penalty, with a hard-plastic cap. Never duplicate these weights in JSON or prose. |
+| `src/lib/interior.ts` | Source of truth for the absolute interior rubric formula. For evidence gathering, component marks and hard-plastic classification, follow [`evaluate-interior`](../evaluate-interior/SKILL.md); never duplicate the formula in JSON or prose. |
 | `src/data/site.ts` | `SITE_UPDATED_AT` — editorial "last updated" date, shown in the footer. |
 | `scripts/validate-data.mjs` | Validator + ranking preview. Run with `npm run validate:data`. |
 | `public/sources/` | User-provided PDFs (offers, product guides), referenced from JSON as `/sources/<file>` with `type: "pdf"`. |
@@ -114,8 +114,10 @@ evidence checklist, and conflict-resolution rules. In summary:
    brand-level surveys (e.g. Driver Power). For a brand new model, say so explicitly
    in the prose, like the CUPRA dossier does.
 
-Do not skip evidence gathering for editorial criteria — each `baseScore` and each
-interior rubric component must be defensible from the sources you cite.
+Do not skip evidence gathering for editorial criteria — each `baseScore` must be
+defensible from the sources you cite. For the interior, follow
+[`evaluate-interior`](../evaluate-interior/SKILL.md) and support every component
+assessment with cited evidence.
 
 ## Phase 2 — Equipment checklist (feature list)
 
@@ -175,14 +177,10 @@ template skeleton, and formatting conventions. Core rules:
   For the current brand rubric, follow `src/lib/brand.ts` and the `brand`
   assessment shape in `src/data/types.ts`. Plus the full `dossier` (headline, verdict, ~5 pros, ~5 cons, `bestFor`,
   ~6 sections), `options` (or `[]`), and `sources` with real URLs.
-- **D. Score the interior from evidence, not from the line-up.** The rubric
-  components are absolute 0–10 judgements:
-  `softTouch` = soft-touch coverage on contact surfaces; `upholstery` = leather or
-  quality vegan, stitching, seats/steering wheel; `design` = restrained, coherent
-  sophistication (showy/gratuitous design scores lower); `assembly` = solidity and
-  squeak-free build. `hardPlastic` is the share of visible/touchable hard plastic:
-  `low`, `moderate`, `high` (cap 7.0) or `extensive` (cap 5.5). A cabin that is
-  mostly hard plastic must never score near 9.
+- **D. Score the interior from evidence, not from the line-up.** Follow the
+  [`evaluate-interior`](../evaluate-interior/SKILL.md) workflow for its absolute
+  assessment, examples and hard-plastic classification. `src/lib/interior.ts` remains
+  the only source of the formula; never store the resulting mark in the car JSON.
 - **E. Portuguese prose, decimal commas in text** ("15,79 kWh/100 km"), plain JSON
   numbers in fields. Prices in EUR, `vatIncluded: true`, dated `asOf`.
 - **F. Write reviews at the quality bar of the existing dossiers**: concrete numbers,
@@ -235,10 +233,10 @@ The essential steps:
 1. `npm run validate:data` — must pass with zero errors; it also prints the new
    ranking and cost-benefit table. If it fails, fix the data before anything else.
 2. **Hand-check the math** for the new car(s): recompute at least one objective
-   criterion score by hand from the formulas in `src/lib/scoring.ts` and the
-   interior score from the rubric in `src/lib/interior.ts`, then confirm both match
-   the validator's output. Check that a car with `hardPlastic: "high"` or
-   `"extensive"` actually respects the 7.0/5.5 cap.
+   criterion score by hand from `src/lib/scoring.ts` and verify the interior score
+   with `interiorScore()` by following
+   [`evaluate-interior`](../evaluate-interior/SKILL.md). Confirm the results match
+   the validator's output.
 3. **List-relative claims sweep.** Read every car's `reviews` and `dossier` prose
    (old cars included) and make sure it contains **no** claim that depends on the
    current line-up: "melhor consumo da lista", "o mais barato", "o mais caro",
