@@ -115,9 +115,10 @@ evidence checklist, and conflict-resolution rules. In summary:
    in the prose, like the CUPRA dossier does.
 
 Do not skip evidence gathering for editorial criteria — each `baseScore` must be
-defensible from the sources you cite. For the interior, follow
-[`evaluate-interior`](../evaluate-interior/SKILL.md) and support every component
-assessment with cited evidence.
+defensible from the sources you cite. For interior assessments, follow
+[`evaluate-interior`](../evaluate-interior/SKILL.md); for suspension comfort, follow
+[`evaluate-comfort`](../evaluate-comfort/SKILL.md). Support each assessment with
+cited evidence.
 
 ## Phase 2 — Equipment checklist (feature list)
 
