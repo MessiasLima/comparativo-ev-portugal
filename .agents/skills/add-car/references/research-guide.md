@@ -73,13 +73,10 @@ Work through these blocks; note the URL for everything you'll cite:
 - Formal backing from established automotive groups/brands; an independent, vertically integrated automaker can also score well. Do not treat age, manufacturing location, or affiliation as proof of reliability or parts lead times.
 
 ### Block 7 — Editorial evidence, criterion by criterion
-- `interior`: evidence for the absolute rubric, component by component:
-  soft-touch coverage on contact surfaces (dashboard top, door cards, armrests,
-  console — not just the top of the dash), leather/vegan quality and stitching,
-  design reception (restrained vs. showy), and build solidity/squeaks. Record how
-  much visible or touchable hard plastic the cabin has and classify it as `low`,
-  `moderate`, `high` or `extensive`; press photos and owner complaints are valid
-  evidence. Do not let the car's position in the list influence these ratings.
+- `interior`: gather configuration-specific evidence for each component and the
+  visible/touchable hard-plastic assessment. Follow
+  [`evaluate-interior`](../../evaluate-interior/SKILL.md) for the evidence workflow
+  and scoring guidance; do not let the car's position in the list influence marks.
 - `comfort`: suspension behavior, wheel/tire impact, ride reviews on broken
   roads, motorway stability, noise isolation.
 - `brand`: apply all four dimensions in `src/lib/brand.ts` consistently to every

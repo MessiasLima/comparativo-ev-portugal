@@ -27,14 +27,12 @@ npm run validate:data
 
 ## Section 2 — Math spot-check (do at least one by hand)
 
-Formulas from `src/lib/scoring.ts`, `src/lib/interior.ts` and `src/lib/brand.ts`
-(criterion weights all default to 1, so the total is the mean of the 10 criterion
-scores):
+Formulas from `src/lib/scoring.ts` and `src/lib/brand.ts` (criterion weights all
+default to 1, so the total is the mean of the 10 criterion scores). For the interior
+assessment and score, follow the verification steps in
+[`evaluate-interior`](../../evaluate-interior/SKILL.md) and use
+`interiorScore()` from `src/lib/interior.ts` rather than duplicating its formula.
 
-- `interior` raw = absolute rubric: `0.40·softTouch + 0.25·upholstery + 0.20·design
-  + 0.15·assembly − penalty`, capped by `hardPlastic` level. Penalty 0 / 0.5 / 1.0
-  / 1.8 and cap 10 / 10 / 7.0 / 5.5 for `low` / `moderate` / `high` / `extensive`.
-  The resulting score is used **as-is** (absolute), not rescaled against the list.
 - `brand` raw = `0.30·automotiveExperience + 0.30·portugalServiceNetwork +
   0.25·europeanManufacturing + 0.15·establishedGroupSupport`, plus 0.5 if
   `portugalFactory` is true, capped at 10 and rounded to two decimals. This rubric
@@ -52,11 +50,12 @@ scores):
   lower-is-better (only `efficiency`): `clamp(bestRaw / raw × 10, 0, 10)`.
 - Total = weighted mean of the 10 scores → `pricePerPoint = price.amount / total`.
 
-Pick the new car and one existing car, recompute objective criteria and every
-rubric's raw value by hand (including the interior cap and brand weights), and
-confirm they match the validator's output and your expectations. Include the
-satisfaction rubric and its evidence caps when relevant. If the site and the validator disagree,
-the data feeding them differs (usually an unregistered JSON — see Section 1).
+Pick the new car and one existing car, recompute objective criteria and the
+brand/satisfaction rubric inputs as applicable, and confirm they match the
+validator's output and your expectations. For the interior, use `interiorScore()`
+as described above rather than reimplementing its calculation. If the site and the
+validator disagree, the data feeding them differs (usually an unregistered JSON —
+see Section 1).
 
 ## Section 3 — List-relative claims sweep (the heart of Phase 5)
 
@@ -89,10 +88,9 @@ Replace each claim with a stable fact or a comparison against a **named** car
   to those cars.
 - External facts stay: "ficou em 28.º de 31 marcas", "garantia de 6 anos". They
   do not depend on our line-up.
-- Interior claims: "cabine premium", "materiais macios em todas as superfícies" or
-  "plásticos duros" must match the `assessment` components, the hard-plastic level
-  and the rubric score. A car with `hardPlastic: "high"` or `"extensive"` must not
-  be described as having premium or mostly soft materials.
+- Interior claims about materials, style or hard plastic must match the evidence and
+  assessment; use [`evaluate-interior`](../../evaluate-interior/SKILL.md) for this
+  consistency check.
 - Version-pair prose: if the new car slots between two versions of the same model
   (e.g. between BYD Design and Excellence), their mutual comparisons may flip.
 
