@@ -45,7 +45,7 @@ jobs:
       # next.config.ts and drops the Tailwind Turbopack loader, breaking @apply and
       # CSS package imports.
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build with Next.js
         run: npm run build
