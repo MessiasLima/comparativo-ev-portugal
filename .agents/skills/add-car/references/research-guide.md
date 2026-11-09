@@ -77,8 +77,9 @@ Work through these blocks; note the URL for everything you'll cite:
   visible/touchable hard-plastic assessment. Follow
   [`evaluate-interior`](../../evaluate-interior/SKILL.md) for the evidence workflow
   and scoring guidance; do not let the car's position in the list influence marks.
-- `comfort`: suspension behavior, wheel/tire impact, ride reviews on broken
-  roads, motorway stability, noise isolation.
+- `comfort`: gather configuration-specific evidence and assess suspension behaviour
+  only. Follow [`evaluate-comfort`](../../evaluate-comfort/SKILL.md) for what to
+  observe and how to score it; exclude seats and noise.
 - `brand`: apply all four dimensions in `src/lib/brand.ts` consistently to every
   car: automotive experience, Portuguese authorized-service network, European
   manufacturing, and established-group/manufacturer support. Cite evidence for

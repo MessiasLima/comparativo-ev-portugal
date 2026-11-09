@@ -25,7 +25,12 @@ Use this workflow when a user provides the proposed criterion's name and descrip
 4. Decide what earns or loses points. Define the evidence hierarchy, the measurement unit or rubric, and how uncertainty/absence of data affects an evaluation. Apply the same rules to every car.
 5. Choose the scoring implementation deliberately:
    - **Objective, relative:** use a published/measurable raw value and define its direction (`higher` or `lower`). Store the raw input in an existing canonical field where possible; if a new field is needed, extend the TypeScript data model and validation. Implement its metric and display label in the scoring and validator code.
-   - **Editorial, relative:** use `baseScore` from 0–10 in each car's review, supported by evidence. The existing scorer scales this against the best car, so the `baseScore` is an evidence-based judgement, not a precomputed relative result.
+   - **Editorial, relative:** use `baseScore` from 0–10 in each car's review,
+     supported by evidence. The existing scorer scales this against the best car,
+     so the `baseScore` is an evidence-based judgement, not a precomputed relative
+     result. For the existing suspension-comfort criterion, follow
+     [`evaluate-comfort`](../evaluate-comfort/SKILL.md); do not duplicate its
+     evaluation guidance.
    - **Rubric or absolute:** use only when an explicit, reusable rubric is genuinely better than relative comparison. Add a typed per-car assessment, a single scoring function, validation, and UI to expose its components. For the existing interior assessment, follow [`evaluate-interior`](../evaluate-interior/SKILL.md). For an unrelated rubric, use the interior implementation only as an architectural pattern; do not copy its evaluation guidance or couple the new criterion to interior-specific logic.
    - If none fits cleanly, update the type and scoring architecture explicitly rather than smuggling raw measurements into prose or misusing an existing field.
 6. Choose a unique camelCase `CriterionId`, display order/number, pt-PT label, short label, question, description, Lucide icon, kind, direction, scale, and default weight. Use weight `1` unless the user or a documented methodology calls for a different neutral baseline. Explain any non-neutral weight.
