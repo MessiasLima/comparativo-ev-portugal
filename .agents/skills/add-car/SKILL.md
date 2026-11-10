@@ -124,42 +124,14 @@ cited evidence.
 
 ## Phase 2 — Equipment checklist (feature list)
 
-Goal: the new car's features are mapped to the normalized checklist; features that
-don't exist yet in the checklist are added as new entries.
-
-1. Read `src/data/equipment.ts` fully.
-2. Map every feature of the new car (from the PDF, configurator, and press reviews)
-   to existing checklist ids. Only ids present in the checklist may go into
-   `equipmentIncluded` — the validator rejects unknown ids.
-3. For features with no matching id, **add new items** to `EQUIPMENT_CHECKLIST`:
-   - One line per item, exact format: `{ id: "kebab-case-id", label: "…", category: "…" }`
-     (the validator parses items with a regex that expects this single-line shape).
-   - `id`: kebab-case, unique, English-ish tokens like the existing ones
-     (`heat-pump`, `large-screen`).
-   - `label`: pt-PT, phrased like the existing items.
-   - `category`: one of the existing `EQUIPMENT_CATEGORIES` (add a new category to
-     that array only for a genuinely new domain, e.g. "Desempenho" — and then check
-     that `src/components/equipment-checklist.tsx` renders it correctly, which it
-     does generically).
-   - Place the item inside the block of its category, in a sensible position.
-4. **Re-audit every existing car.** This is the step people forget: a new checklist
-   item changes the denominator shown to all cars (`X/41` instead of `X/38`) and the
-   relative equipment score. For each new id, verify whether each existing car's
-   *evaluated configuration* has that feature (check its sources/PDF/configurator)
-   and add the id to its `equipmentIncluded` if so. Do not guess — a wrong "no"
-   unfairly penalizes an existing car; a wrong "yes" is fabrication.
-5. **Keep the checklist totals derived, never literal.** `src/data/criteria.ts`
-   builds the equipment description from `EQUIPMENT_CHECKLIST.length` and
-   `EQUIPMENT_CATEGORIES`, and the UI (`equipment-checklist.tsx`,
-   `weighted-score-panel.tsx`, the equipment section in `carros/[slug]/page.tsx`)
-   uses `EQUIPMENT_CHECKLIST.length` too: adding items must change every count by
-   itself. Do not reintroduce a literal "38" anywhere in `src/`. The only literal
-   left is in `README.md` (the data tree and the checklist sentence) — update it
-   there in the same change and call it out in the report. Grep to confirm:
-   `grep -rnE "\b38\b|/ ?38" src README.md` (word-bounded so "389 km" doesn't match).
-6. Also update the `equipment` criterion `description` in `criteria.ts` if the
-   categories or item count language changed — the numbers are interpolated, so only
-   wording changes need attention.
+Map the evaluated version's equipment to the normalized checklist and decide whether
+any uncovered feature merits a new item by following
+[`evaluate-equipment`](../evaluate-equipment/SKILL.md). Do not add every unlisted
+feature automatically: the skill defines the relevance test, checklist update,
+evidence-based re-audit of existing configurations, and count/ranking verification.
+Only IDs in `EQUIPMENT_CHECKLIST` may go into `equipmentIncluded`;
+`npm run validate:data` rejects unknown IDs. Keep the existing scoring formula
+unchanged.
 
 ## Phase 3 — Create the dossier JSON(s)
 

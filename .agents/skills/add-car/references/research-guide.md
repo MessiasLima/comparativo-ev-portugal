@@ -51,19 +51,12 @@ Work through these blocks; note the URL for everything you'll cite:
   times, connector, V2L (and its kW), V2H.
 
 ### Block 5 — Equipment (feeds Phase 2)
-- Extract the FULL standard equipment list for the evaluated version: ADAS suite
-  item by item (ACC, lane keep, blind spot, cross traffic front/rear, AEB, traffic
-  signs, driver monitoring, 360 camera, remote park, parking sensors, adaptive
-  high beam), comfort (heated/ventilated seats, memory, heated steering, climate
-  zones, heat pump, rear heated seats), tech (HUD, premium audio brand + speaker
-  count, wireless charging, CarPlay/AA, digital cockpit, central screen size,
-  connected services, OTA, digital key), body/convenience (panoramic roof, V2L,
-  V2H, electric tailgate, frunk, wheel sizes, sport seats, ambient lighting, rear
-  USB, adaptive suspension).
-- Plus anything the car has that the checklist doesn't cover yet → new checklist
-  items (massage seats, rear-wheel steering, electric doors, etc.).
-- Which of those come via the included options vs. standard.
-- Options NOT included that a buyer might add (for prose context).
+- Extract the full standard equipment list for the exact evaluated version, and
+  distinguish standard items, options included in the evaluated configuration, and
+  options not selected (the latter may be relevant to prose, but do not count).
+- Map features and decide whether uncovered features merit a new checklist item by
+  following [`evaluate-equipment`](../../evaluate-equipment/SKILL.md). Do not assume
+  every unlisted feature belongs in the checklist.
 
 ### Block 6 — Warranty and network (brand and assistance rubric)
 - Vehicle warranty, battery warranty (years/km/SOH), PT legal warranty context.
