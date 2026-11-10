@@ -25,6 +25,10 @@ Use this workflow when a user provides the proposed criterion's name and descrip
 4. Decide what earns or loses points. Define the evidence hierarchy, the measurement unit or rubric, and how uncertainty/absence of data affects an evaluation. Apply the same rules to every car.
 5. Choose the scoring implementation deliberately:
    - **Objective, relative:** use a published/measurable raw value and define its direction (`higher` or `lower`). Store the raw input in an existing canonical field where possible; if a new field is needed, extend the TypeScript data model and validation. Implement its metric and display label in the scoring and validator code.
+      For the existing `equipment` criterion or changes to its normalized checklist,
+      follow [`evaluate-equipment`](../evaluate-equipment/SKILL.md) for feature
+      mapping, relevance decisions and re-auditing; do not duplicate that workflow
+      or change the existing scoring formula as part of an equipment assessment.
    - **Editorial, relative:** use `baseScore` from 0–10 in each car's review,
      supported by evidence. The existing scorer scales this against the best car,
      so the `baseScore` is an evidence-based judgement, not a precomputed relative

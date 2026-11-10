@@ -103,6 +103,9 @@ If the car has V2L/V2H, also make sure the corresponding equipment ids (`v2l`,
 ## `equipmentIncluded`
 
 - Array of ids from `EQUIPMENT_CHECKLIST` in `src/data/equipment.ts` only.
+- For feature mapping, included-option rules, relevance decisions for unlisted
+  features and checklist re-audits, follow
+  [`evaluate-equipment`](../../evaluate-equipment/SKILL.md).
 - Includes equipment that is standard **or** included via the options of the
   evaluated configuration (this is how the CUPRA dossier counts the panoramic roof
   that came with the offer).

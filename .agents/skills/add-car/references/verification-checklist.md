@@ -117,18 +117,16 @@ rejects duplicates.
 
 ## Section 5 — Equipment re-audit verification
 
-If Phase 2 added checklist items:
+If an equipment feature was assessed or a checklist item was added, follow
+[`evaluate-equipment`](../../evaluate-equipment/SKILL.md) for the relevance decision,
+configuration-by-configuration re-audit and recalculation. In addition, verify:
 
-- For each new id, confirm every existing car was audited (has the id in
-  `equipmentIncluded` if its evaluated configuration includes the feature, with a
-  source to back it).
-- Confirm the displayed totals are consistent: `equipment-checklist.tsx` is
-  dynamic, but `weighted-score-panel.tsx`, the equipment section in
-  `carros/[slug]/page.tsx`, `criteria.ts` description and `README.md` had hardcoded
-  `38` — re-grep and confirm all now show the new total.
-- Equipment criterion scores changed for everyone (denominator grew) — that's
-  expected and correct; just make sure the *prose* about equipment counts (Section
-  3) matches.
+- Unknown IDs fail `npm run validate:data`, and the data still contains only
+  evidence-backed IDs for each evaluated configuration.
+- Displayed totals and equipment scores use the current checklist; update stale
+  fixed-count mentions when the checklist changes.
+- Run `npm run validate:data` to recalculate the equipment values and full ranking
+  for every car. Do not manually store calculated scores in dossier JSONs.
 
 ## Section 6 — Build and runtime checks
 
