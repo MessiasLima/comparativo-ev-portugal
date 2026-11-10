@@ -182,18 +182,18 @@
       "sourceIds": ["cupra-offer", "cupra-official", "cupra-specs"]
     },
     "sound": {
-      "baseScore": 6.2,
-      "summary": "Esta configuração traz sete altifalantes, sem subwoofer nem sistema assinado. O Sennheiser AMBEO de 12 altifalantes existe como opção, mas não foi incluído na proposta. Para um carro deste preço, é um ponto fraco.",
+      "baseScore": 2.5,
+      "summary": "A configuração avaliada traz o sistema de série de sete altifalantes, sem assinatura de um especialista de áudio; a ficha do modelo não indica subwoofer dedicado. O Sennheiser AMBEO de 12 altifalantes e 475 W existe como opção no Raval, mas não foi incluído nesta proposta e por isso não conta para a nota. Não há potência publicada para o sistema de série nem um teste independente específico deste sistema, pelo que a avaliação fica contida.",
       "pros": [
-        "Sete altifalantes com palco frontal decente",
-        "Possibilidade de upgrade Sennheiser de 12 altifalantes"
+        "Sete altifalantes na zona frontal, conforme a ficha do modelo",
+        "O Raval pode receber o sistema Sennheiser AMBEO de 12 altifalantes e 475 W como opção"
       ],
       "cons": [
-        "Sem sistema premium na configuração avaliada",
-        "Sem subwoofer dedicado",
-        "O upgrade Sennheiser não foi incluído"
+        "Sistema de série sem marca de áudio especialista nem subwoofer dedicado",
+        "O upgrade Sennheiser não faz parte desta configuração",
+        "Sem potência publicada para o sistema de série e sem teste independente específico ao sistema base"
       ],
-      "sourceIds": ["cupra-offer", "sennheiser", "electrifying"]
+      "sourceIds": ["cupra-offer", "cupra-specs", "sennheiser", "electrifying"]
     },
     "range": {
       "summary": "389 km de autonomia combinada WLTP na ficha oficial atual. A proposta que acompanha este dossiê indica 384 km, uma diferença de homologação. A bateria de 55 kWh explica a autonomia contida.",

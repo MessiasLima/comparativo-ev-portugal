@@ -181,17 +181,17 @@
       "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
     },
     "sound": {
-      "baseScore": 8.1,
-      "summary": "O Pack Plus instalado inclui o sistema Harman Kardon Premium, com 12 altifalantes e 1.320 W. É uma configuração de áudio bem equipada; opiniões de proprietários sobre a afinação são mistas, pelo que a potência e o número de altifalantes não garantem preferência subjetiva.",
+      "baseScore": 7.9,
+      "summary": "O Pack Plus instalado inclui o sistema Harman Kardon Premium, com 12 altifalantes e 1.320 W. Como a Polestar não indica outra base de medição, a potência é tratada como RMS ao abrigo da regra editorial. O sistema é bem equipado, mas as opiniões de proprietários sobre a afinação são divididas: há quem elogie o volume e a limpeza, e há quem considere o som pouco encorpado. As colunas nos encostos de cabeça exigem o upgrade Nappa.",
       "pros": [
-        "Harman Kardon Premium de 12 altifalantes e 1.320 W",
-        "Sistema premium incluído no Pack Prime desta configuração",
-        "Perfis de som e conectividade para várias fontes digitais"
+        "Harman Kardon Premium de 12 altifalantes, incluído no Pack Prime",
+        "1.320 W tratados como RMS e bons recursos de afinação e conectividade",
+        "Volume e limpeza elogiados por parte dos proprietários"
       ],
       "cons": [
-        "Alguns proprietários consideram a reprodução pouco encorpada",
-        "O sistema de 16 altifalantes com colunas nos encostos de cabeça exige o upgrade Nappa",
-        "Não há teste comparativo independente do sistema nesta configuração específica"
+        "Opiniões de proprietários divididas quanto ao corpo e à afinação",
+        "O equalizador é pouco configurável, segundo alguns proprietários",
+        "As colunas nos encostos de cabeça exigem o upgrade Nappa"
       ],
       "sourceIds": ["polestar-specs", "harman-owner-review", "reddit-audio"]
     },

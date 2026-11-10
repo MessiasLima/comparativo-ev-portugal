@@ -68,7 +68,7 @@ O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia,
 ### Como as notas são calculadas
 
 - **Critérios objetivos** — autonomia, potência/peso, eficiência, carregamento e quantidade de equipamento. O valor é calculado a partir dos dados do JSON.
-- **Critérios editoriais** — conforto e som. Cada carro tem uma avaliação base de 0 a 10, sustentada por fontes no próprio JSON.
+- **Critérios editoriais** — conforto e som. Cada carro tem uma avaliação base de 0 a 10, sustentada por fontes no próprio JSON. A avaliação do som segue a [skill de avaliação do som](.agents/skills/evaluate-sound/SKILL.md): 50% marca do sistema de áudio, 20% número de altifalantes, 20% opiniões específicas e 10% potência RMS. Uma potência publicada em watts é tratada como RMS, salvo se a fonte indicar outra base de medição; sem qualquer valor de potência, usa-se a referência neutra.
 - **Marca e assistência** — rubrica relativa com seis componentes sobre idade global e presença em Portugal, rede autorizada, fabrico europeu, apoio e estabilidade financeira. A [skill de avaliação da marca](.agents/skills/evaluate-brand/SKILL.md) orienta a evidência; o cálculo e os pesos vivem em `src/lib/brand.ts`.
 - **Satisfação, defeitos e recalls** — rubrica relativa baseada em relatos de proprietários, testes de longa duração e campanhas/recalls específicos.
 - **Acabamento interno** — critério de rubrica, com nota **absoluta** (não relativa à lista). A avaliação dos componentes, do estilo e do plástico duro segue a [skill de avaliação do interior](.agents/skills/evaluate-interior/SKILL.md); a fórmula vive em `src/lib/interior.ts` e os dados de cada carro em `reviews.interior.assessment`.

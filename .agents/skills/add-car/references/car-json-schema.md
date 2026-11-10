@@ -144,6 +144,9 @@ the `add-criteria` skill before assuming the count or review shape.
 
 For the `comfort` review's suspension-specific evidence, `baseScore` guidance and
 scope exclusions, follow [`evaluate-comfort`](../../evaluate-comfort/SKILL.md).
+For the `sound` review's installed-system identification, 50/20/20/10 weighted
+components (brand, speaker count, specific opinions, RMS power) and `baseScore`
+bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
 
 ### Interior review (rubric)
 

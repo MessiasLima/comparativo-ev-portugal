@@ -43,7 +43,10 @@ and score, follow the verification steps in
 - `powerToWeight` raw = `specs.powerHp / specs.weightKg`
 - `efficiency` raw = `specs.consumptionKwh100` (lower is better)
 - `charging` raw = `charging.dcKw × 0.7 + charging.acKw × 0.3`
-- Editorial raw = `reviews.<id>.baseScore` (currently comfort and sound)
+- Editorial raw = `reviews.<id>.baseScore` (currently comfort and sound). For
+  sound, recompute `0.50·brand + 0.20·speakers + 0.20·opinions + 0.10·RMS` as
+  described in [`evaluate-sound`](../../evaluate-sound/SKILL.md) and confirm the
+  stored value rounds to the `baseScore`.
 - Score per relative criterion (higher-is-better): `clamp(raw / bestRaw × 10, 0, 10)`;
   lower-is-better (only `efficiency`): `clamp(bestRaw / raw × 10, 0, 10)`.
 - Total = weighted mean of the 10 scores → `pricePerPoint = price.amount / total`.

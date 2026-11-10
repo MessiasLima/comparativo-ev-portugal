@@ -77,7 +77,7 @@ export const CRITERIA: CriterionDefinition[] = [
     shortLabel: "Som",
     question: "Sistema base ou assinado?",
     description:
-      "Número de altifalantes, existência de sistema premium, potência e qualidade reconhecida em testes.",
+      "Avaliação editorial com pesos fixos: 50% marca do sistema de áudio, 20% número de altifalantes, 20% opiniões específicas sobre o som e 10% potência RMS. A marca do sistema instalado é o factor mais importante. Só conta o equipamento incluído na configuração avaliada; um upgrade premium opcional não é pontuado. Uma potência publicada em watts é tratada como RMS, salvo indicação de outra base de medição; sem valor de potência, usa-se a referência neutra.",
     icon: Speaker,
     kind: "editorial",
     direction: "higher",

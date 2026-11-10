@@ -118,8 +118,10 @@ evidence checklist, and conflict-resolution rules. In summary:
 Do not skip evidence gathering for editorial criteria — each `baseScore` must be
 defensible from the sources you cite. For interior assessments, follow
 [`evaluate-interior`](../evaluate-interior/SKILL.md); for suspension comfort, follow
-[`evaluate-comfort`](../evaluate-comfort/SKILL.md); and for the brand assessment,
-follow [`evaluate-brand`](../evaluate-brand/SKILL.md). Support each assessment with
+[`evaluate-comfort`](../evaluate-comfort/SKILL.md); for sound, follow
+[`evaluate-sound`](../evaluate-sound/SKILL.md) and score the system actually fitted;
+and for the brand assessment, follow
+[`evaluate-brand`](../evaluate-brand/SKILL.md). Support each assessment with
 cited evidence.
 
 ## Phase 2 — Equipment checklist (feature list)
@@ -151,7 +153,9 @@ template skeleton, and formatting conventions. Core rules:
   `baseScore`); objective criteria store their underlying data without a score.
   For the brand assessment, follow [`evaluate-brand`](../evaluate-brand/SKILL.md)
   and the `BrandAssessment` shape in `src/data/types.ts`; `src/lib/brand.ts` is the
-  formula's source of truth. Plus the full `dossier` (headline, verdict, ~5 pros, ~5 cons, `bestFor`,
+  formula's source of truth. For the sound `baseScore`, follow
+  [`evaluate-sound`](../evaluate-sound/SKILL.md) and the installed-system rule.
+  Plus the full `dossier` (headline, verdict, ~5 pros, ~5 cons, `bestFor`,
   ~6 sections), `options` (or `[]`), and `sources` with real URLs.
 - **D. Score the interior from evidence, not from the line-up.** Follow the
   [`evaluate-interior`](../evaluate-interior/SKILL.md) workflow for its absolute
