@@ -132,24 +132,26 @@
     },
     "brand": {
       "assessment": {
-        "automotiveExperience": 8,
-        "portugalServiceNetwork": 8,
+        "globalBrandAge": 9.5,
+        "portugalMarketTenure": 3.5,
+        "portugalServiceNetwork": 7.5,
         "europeanManufacturing": 6,
-        "establishedGroupSupport": 8,
+        "establishedGroupSupport": 9,
+        "financialStability": 6.5,
         "portugalFactory": false
       },
-      "summary": "A rubrica pondera experiência automóvel (8/10), rede autorizada em Portugal (8/10), fabrico europeu (6/10) e apoio industrial (8/10), resultando num índice bruto de 7,50/10. A BYD foi fundada em 1995 e entrou na indústria automóvel em 2003; a rede portuguesa, iniciada em 2023, inclui vários grupos e reparadores autorizados com cobertura no continente e ilhas. A fábrica de Szeged iniciou produção-piloto, mas fontes de outubro de 2026 ainda descrevem a produção em série como prevista para o quarto trimestre; não foi possível confirmar que já esteja em regime regular. Também não há confirmação de que o Seal seja produzido nessa fábrica. A BYD é um fabricante integrado de grande escala, embora não dependa de uma aliança com outra marca automóvel tradicional.",
+      "summary": "A BYD Auto entrou na indústria automóvel em 2003, enquanto a empresa-mãe nasceu como fabricante de baterias em 1995; a presença oficial de automóveis de passageiros em Portugal começou com a parceria nacional de maio de 2023. A rede autorizada cobre regiões do continente, Madeira e Açores, e a fábrica de Szeged iniciou produção-piloto de automóveis de passageiros em janeiro de 2026; a produção em série estava prevista para o quarto trimestre, sem confirmação consultada até 10/11/2026. No acumulado de janeiro a setembro de 2026, as vendas de automóveis de passageiros recuaram 4,36%, a receita consolidada manteve-se praticamente estável e o lucro atribuível desceu 4,24%, embora o fluxo operacional de caixa tenha crescido 33,36%; o boletim de outubro reportou 490.168 vendas totais de NEV (+11% homólogo, ainda não auditadas). As contas e a estimativa externa da CMB International são da BYD Company, não separadas para a BYD Auto; a CMBI reviu em baixa a previsão de lucro de 2026 em 5,2%, para cerca de 35,1 mil milhões de yuan, não se tratando de guidance da empresa.",
       "pros": [
-        "Mais de duas décadas de experiência da BYD na indústria automóvel",
-        "Diretório oficial apresenta concessionários e reparadores autorizados em várias regiões de Portugal",
-        "A fábrica europeia de Szeged já passou à fase de produção-piloto"
+        "Mais de duas décadas de atividade automóvel própria e integração de baterias, motores e eletrónica",
+        "Rede autorizada de reparação distribuída pelo continente, Madeira e Açores",
+        "BYD Auto já iniciou produção-piloto de automóveis de passageiros na Hungria"
       ],
       "cons": [
-        "Presença comercial e rede portuguesa mais recentes do que as de grupos tradicionais",
-        "A produção em série em Szeged ainda era apresentada como futura nas fontes mais recentes consultadas",
-        "Sem fábrica de automóveis da BYD em Portugal; a montagem europeia não prova menor prazo de peças para o Seal"
+        "Presença oficial de automóveis de passageiros em Portugal apenas desde 2023",
+        "A produção em série em Szeged ainda não estava confirmada nas fontes consultadas em novembro de 2026",
+        "O lucro acumulado e as vendas de automóveis de passageiros recuaram em 2026, com redução do saldo de caixa"
       ],
-      "sourceIds": ["byd-history", "byd-dealers", "byd-hungary-factory", "byd-szeged-pilot", "byd-szeged-status"]
+      "sourceIds": ["byd-history", "byd-portugal-entry", "byd-dealers", "byd-hungary-factory", "byd-szeged-pilot", "byd-szeged-q4-target", "byd-szeged-status", "byd-sales-2026-sep", "byd-q3-2026-financials", "byd-sales-2026-oct", "byd-analyst-forecast-2026"]
     },
     "equipment": {
       "summary": "Dotação quase completa: HUD, Dynaudio de 12 altifalantes, bancos aquecidos/ventilados com memória, volante aquecido, bomba de calor, teto panorâmico, porta-bagagens elétrico, frunk e V2L. Só faltam estacionamento remoto, V2H e bancos traseiros aquecidos.",
@@ -422,6 +424,42 @@
       "label": "Reddit r/BYD — UK driver honest Seal reviews",
       "url": "https://www.reddit.com/r/BYD/comments/1j3zxbh/uk_driver_honest_seal_reviews_please",
       "type": "owner"
+    },
+    {
+      "id": "byd-portugal-entry",
+      "label": "BYD Europe — estreia dos automóveis de passageiros em Portugal (02/05/2023)",
+      "url": "https://www.byd.com/eu/news-list/BYD_Appoints_Salvador_Caetano_Group_as_National_Dealer_Partner_in_Portugal",
+      "type": "official"
+    },
+    {
+      "id": "byd-szeged-q4-target",
+      "label": "Reuters — produção em série na Hungria prevista para o 4.º trimestre de 2026 (09/06/2026)",
+      "url": "https://www.reuters.com/business/retail-consumer/byd-hungary-plant-start-production-late-2026-executive-says-2026-06-09/",
+      "type": "press"
+    },
+    {
+      "id": "byd-q3-2026-financials",
+      "label": "BYD Company Limited — 3.º relatório trimestral de 2026 (não auditado, 29/10/2026)",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1029/2026102900816.pdf",
+      "type": "official"
+    },
+    {
+      "id": "byd-sales-2026-sep",
+      "label": "BYD Company Limited — produção e vendas de setembro de 2026 (01/10/2026)",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1001/2026100100047.pdf",
+      "type": "official"
+    },
+    {
+      "id": "byd-analyst-forecast-2026",
+      "label": "CMB International — previsão de lucro BYD para 2026 revista após o Q3 (30/10/2026)",
+      "url": "https://hk-official.cmbi.info/upload/2f7cf233-87fb-401a-bd85-bf69aa0e4665.pdf",
+      "type": "press"
+    },
+    {
+      "id": "byd-sales-2026-oct",
+      "label": "BYD Company Limited — produção e vendas de outubro de 2026 (01/11/2026)",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1101/2026110100043.pdf",
+      "type": "official"
     }
   ]
 }

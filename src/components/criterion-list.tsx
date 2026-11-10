@@ -307,7 +307,7 @@ export function CriterionList({
                     })}
                   </div>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    Fábrica automóvel em Portugal: {" "}
+                    Produção da marca em fábrica portuguesa: {" "}
                     <span className="font-medium text-foreground">
                       {(assessment as BrandAssessment).portugalFactory ? "sim" : "não"}
                     </span>

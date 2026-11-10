@@ -47,9 +47,9 @@ export const CRITERIA: CriterionDefinition[] = [
     number: 3,
     label: "Marca e assistência",
     shortLabel: "Marca/assist.",
-    question: "Que experiência, rede e apoio estão por trás da marca?",
+    question: "A marca tem experiência, presença e estabilidade para apoiar os seus clientes?",
     description:
-      "Rubrica relativa: 30% experiência automóvel da marca, 30% cobertura da rede de oficinas autorizadas em Portugal, 25% maturidade do fabrico automóvel na Europa e 15% apoio de grupo/fabricante estabelecido. Uma fábrica automóvel em Portugal acrescenta 0,5 pontos à rubrica (máximo 10). Idade, rede e produção são indicadores de capacidade e logística, não garantias de fiabilidade nem de rapidez na entrega de peças.",
+      "Rubrica relativa com seis dimensões: idade automóvel global da marca, presença oficial contínua em Portugal, rede autorizada, maturidade do fabrico europeu, apoio de grupo/fabricante e estabilidade financeira. Uma fábrica em Portugal só acrescenta 0,5 pontos se produzir ou montar automóveis da marca avaliada, em fase-piloto ou série (máximo 10); instalações do grupo que fabriquem outra marca não contam. Idade, rede e produção são indicadores de capacidade e logística, não garantias de fiabilidade nem de rapidez na entrega de peças.",
     icon: ShieldCheck,
     kind: "rubric",
     direction: "higher",

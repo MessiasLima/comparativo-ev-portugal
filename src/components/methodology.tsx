@@ -9,7 +9,7 @@ const steps = [
   {
     number: "02",
     title: "Notas comparáveis",
-    body: "Nos critérios de dados e nas avaliações editoriais, o melhor carro da lista recebe 10 e os restantes a proporção do seu desempenho. O acabamento interno é a exceção: usa uma rubrica absoluta — superfícies macias, estofos e couro, design contido, montagem e proporção de plástico duro —, para que uma cabine maioritariamente plástica não chegue ao topo só por ser a menos má. Se entrar um novo carro, as notas relativas recalculam-se automaticamente.",
+    body: "Nos critérios relativos — de dados, editoriais e rubricas —, o melhor carro da lista recebe 10 e os restantes a proporção do seu desempenho. O acabamento interno é a exceção: usa uma rubrica absoluta — superfícies macias, estofos e couro, design contido, montagem e proporção de plástico duro —, para que uma cabine maioritariamente plástica não chegue ao topo só por ser a menos má. Se entrar um novo carro, as notas relativas recalculam-se automaticamente.",
   },
   {
     number: "03",

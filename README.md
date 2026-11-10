@@ -68,7 +68,9 @@ O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia,
 ### Como as notas são calculadas
 
 - **Critérios objetivos** — autonomia, potência/peso, eficiência, carregamento e quantidade de equipamento. O valor é calculado a partir dos dados do JSON.
-- **Critérios editoriais** — conforto, marca, som e satisfação. Cada carro tem uma avaliação base de 0 a 10, sustentada por fontes no próprio JSON.
+- **Critérios editoriais** — conforto e som. Cada carro tem uma avaliação base de 0 a 10, sustentada por fontes no próprio JSON.
+- **Marca e assistência** — rubrica relativa com seis componentes sobre idade global e presença em Portugal, rede autorizada, fabrico europeu, apoio e estabilidade financeira. A [skill de avaliação da marca](.agents/skills/evaluate-brand/SKILL.md) orienta a evidência; o cálculo e os pesos vivem em `src/lib/brand.ts`.
+- **Satisfação, defeitos e recalls** — rubrica relativa baseada em relatos de proprietários, testes de longa duração e campanhas/recalls específicos.
 - **Acabamento interno** — critério de rubrica, com nota **absoluta** (não relativa à lista). A avaliação dos componentes, do estilo e do plástico duro segue a [skill de avaliação do interior](.agents/skills/evaluate-interior/SKILL.md); a fórmula vive em `src/lib/interior.ts` e os dados de cada carro em `reviews.interior.assessment`.
 - **Relatividade** — nos restantes critérios, o melhor carro da lista recebe 10. Os restantes recebem a proporção do seu desempenho face ao líder. Se entrar um carro novo, estas notas mudam; a rubrica de acabamento não muda, porque é absoluta.
 - **Nota global** — média ponderada dos 10 critérios. Cada critério tem um peso-multiplicador float entre 0 e 2 (passo 0.1, defeito ×1): ×1 mantém o peso base, ×2 duplica-o e ×0 anula o critério. A média é normalizada pela soma dos multiplicadores, pelo que com todos a ×1 resulta na média simples. Ao alterar um slider, a nota global e o €/ponto mudam imediatamente, sem necessidade de confirmar.

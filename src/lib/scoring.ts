@@ -60,7 +60,7 @@ function metricValue(car: Car, criterionId: CriterionId): number {
     }
     case "brand": {
       const assessment = car.reviews.brand.assessment
-      return assessment && "automotiveExperience" in assessment
+      return assessment && "globalBrandAge" in assessment
         ? brandScore(assessment)
         : 0
     }
@@ -96,7 +96,7 @@ function rawLabel(car: Car, criterionId: CriterionId): string {
     }
     case "brand": {
       const assessment = car.reviews.brand.assessment
-      return assessment && "automotiveExperience" in assessment
+      return assessment && "globalBrandAge" in assessment
         ? `Rubrica ${formatScore(brandScore(assessment))}/10`
         : "Rubrica de marca em falta"
     }

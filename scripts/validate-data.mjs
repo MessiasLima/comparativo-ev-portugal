@@ -39,10 +39,12 @@ const hardPlasticCap = {
 }
 const hardPlasticLevels = Object.keys(hardPlasticPenalty)
 const brandWeights = {
-  automotiveExperience: 0.3,
-  portugalServiceNetwork: 0.3,
-  europeanManufacturing: 0.25,
+  globalBrandAge: 0.1,
+  portugalMarketTenure: 0.2,
+  portugalServiceNetwork: 0.2,
+  europeanManufacturing: 0.15,
   establishedGroupSupport: 0.15,
+  financialStability: 0.2,
 }
 const brandAssessmentFields = Object.keys(brandWeights)
 const portugalFactoryBonus = 0.5
@@ -264,10 +266,12 @@ function metric(car, criterionId) {
     case "brand": {
       const assessment = car.reviews.brand.assessment
       const weighted =
-        assessment.automotiveExperience * brandWeights.automotiveExperience +
+        assessment.globalBrandAge * brandWeights.globalBrandAge +
+        assessment.portugalMarketTenure * brandWeights.portugalMarketTenure +
         assessment.portugalServiceNetwork * brandWeights.portugalServiceNetwork +
         assessment.europeanManufacturing * brandWeights.europeanManufacturing +
-        assessment.establishedGroupSupport * brandWeights.establishedGroupSupport
+        assessment.establishedGroupSupport * brandWeights.establishedGroupSupport +
+        assessment.financialStability * brandWeights.financialStability
       return Math.round(
         clamp(weighted + (assessment.portugalFactory ? portugalFactoryBonus : 0)) * 100,
       ) / 100
