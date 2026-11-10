@@ -63,18 +63,23 @@ export interface InteriorAssessment {
 
 /**
  * Brand and after-sales rubric. Component marks are evidence-based 0–10 values;
- * the Portugal factory bonus is capped by brandScore at the overall maximum.
+ * the Portugal factory bonus applies only to a plant producing this marque's cars
+ * in Portugal and is capped by brandScore at the overall maximum.
  */
 export interface BrandAssessment {
-  /** Automotive/brand history, distinguishing the marque's age from its group's. */
-  automotiveExperience: number
+  /** Age of the marque as an autonomous automotive brand, not the parent group's age. */
+  globalBrandAge: number
+  /** Years of the marque's current uninterrupted official presence in Portugal. */
+  portugalMarketTenure: number
   /** Reach and maturity of authorized service workshops in Portugal. */
   portugalServiceNetwork: number
   /** European passenger-car production maturity: none to established series output. */
   europeanManufacturing: number
   /** Formal backing from established groups or the scale of an established OEM. */
   establishedGroupSupport: number
-  /** Add a capped bonus when the automotive group has an active car factory in Portugal. */
+  /** Financial resilience of the marque or its transparently identified reporting entity. */
+  financialStability: number
+  /** True only if a Portugal plant actually builds this marque's cars in pilot or series production. */
   portugalFactory: boolean
 }
 

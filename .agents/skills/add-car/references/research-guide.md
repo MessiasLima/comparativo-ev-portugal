@@ -67,10 +67,8 @@ Work through these blocks; note the URL for everything you'll cite:
 
 ### Block 6 — Warranty and network (brand and assistance rubric)
 - Vehicle warranty, battery warranty (years/km/SOH), PT legal warranty context.
-- Brand and automotive-group history, clearly distinguishing the age of a standalone marque from its parent/division lineage.
-- Official after-sales workshop reach in Portugal (do not count sales-only outlets as service locations), importer, and time in the PT market.
-- Active passenger-car manufacturing in Europe, its production stage, and whether the evaluated model is made there; distinguish active series production from pilot lines and future announcements. Record any Portuguese factory separately for the rubric bonus.
-- Formal backing from established automotive groups/brands; an independent, vertically integrated automaker can also score well. Do not treat age, manufacturing location, or affiliation as proof of reliability or parts lead times.
+- For every component of the brand assessment, including its financial evidence and Portugal factory bonus, follow [`evaluate-brand`](../../evaluate-brand/SKILL.md) instead of duplicating the rubric here.
+- Do not treat age, manufacturing location or group affiliation as proof of reliability or parts lead times.
 
 ### Block 7 — Editorial evidence, criterion by criterion
 - `interior`: gather configuration-specific evidence for each component and the
@@ -80,11 +78,10 @@ Work through these blocks; note the URL for everything you'll cite:
 - `comfort`: gather configuration-specific evidence and assess suspension behaviour
   only. Follow [`evaluate-comfort`](../../evaluate-comfort/SKILL.md) for what to
   observe and how to score it; exclude seats and noise.
-- `brand`: apply all four dimensions in `src/lib/brand.ts` consistently to every
-  car: automotive experience, Portuguese authorized-service network, European
-  manufacturing, and established-group/manufacturer support. Cite evidence for
-  each component in `reviews.brand.sourceIds`. Warranty and reliability surveys
-  are context only; they are not extra sub-scores in this rubric.
+- `brand`: follow [`evaluate-brand`](../../evaluate-brand/SKILL.md) for all six
+  components, financial reporting proxies and the Portuguese-factory bonus. Cite
+  evidence for each component in `reviews.brand.sourceIds`; warranty and reliability
+  surveys are context only, not extra sub-scores.
 - `sound`: speaker count, premium system brand (Dynaudio, Sennheiser, Harman…),
   whether it's standard/option/included, press opinions on audio quality.
 - `satisfaction`: follow `src/lib/satisfaction.ts`: 40% owner sentiment and

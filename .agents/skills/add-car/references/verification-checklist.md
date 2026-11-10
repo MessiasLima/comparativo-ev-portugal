@@ -27,16 +27,14 @@ npm run validate:data
 
 ## Section 2 — Math spot-check (do at least one by hand)
 
-Formulas from `src/lib/scoring.ts` and `src/lib/brand.ts` (criterion weights all
-default to 1, so the total is the mean of the 10 criterion scores). For the interior
-assessment and score, follow the verification steps in
+Calculations from `src/lib/scoring.ts` (criterion weights all default to 1, so the
+total is the mean of the 10 criterion scores). For the brand assessment, follow
+[`evaluate-brand`](../../evaluate-brand/SKILL.md) and use `brandScore()` from
+`src/lib/brand.ts`; do not reproduce its formula here. For the interior assessment
+and score, follow the verification steps in
 [`evaluate-interior`](../../evaluate-interior/SKILL.md) and use
 `interiorScore()` from `src/lib/interior.ts` rather than duplicating its formula.
 
-- `brand` raw = `0.30·automotiveExperience + 0.30·portugalServiceNetwork +
-  0.25·europeanManufacturing + 0.15·establishedGroupSupport`, plus 0.5 if
-  `portugalFactory` is true, capped at 10 and rounded to two decimals. This rubric
-  index is relative-scaled against the best car (unlike `interior`).
 - `satisfaction` raw = `0.40·ownerSentiment + 0.35·reportedDefects +
   0.25·recallRecord`, with component ceilings based on `evidenceLevel` in
   `src/lib/satisfaction.ts`; it is then relative-scaled against the best car.
@@ -50,12 +48,12 @@ assessment and score, follow the verification steps in
   lower-is-better (only `efficiency`): `clamp(bestRaw / raw × 10, 0, 10)`.
 - Total = weighted mean of the 10 scores → `pricePerPoint = price.amount / total`.
 
-Pick the new car and one existing car, recompute objective criteria and the
-brand/satisfaction rubric inputs as applicable, and confirm they match the
-validator's output and your expectations. For the interior, use `interiorScore()`
-as described above rather than reimplementing its calculation. If the site and the
-validator disagree, the data feeding them differs (usually an unregistered JSON —
-see Section 1).
+Pick the new car and one existing car, recompute objective criteria and inspect the
+brand/satisfaction rubric inputs as applicable, then confirm they match the
+validator's output and your expectations. For the brand, use `brandScore()` as
+described above; for the interior, use `interiorScore()` rather than reimplementing
+its calculation. If the site and the validator disagree, the data feeding them
+differs (usually an unregistered JSON — see Section 1).
 
 ## Section 3 — List-relative claims sweep (the heart of Phase 5)
 

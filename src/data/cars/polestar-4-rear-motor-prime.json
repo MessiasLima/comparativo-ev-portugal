@@ -145,24 +145,26 @@
     },
     "brand": {
       "assessment": {
-        "automotiveExperience": 6.5,
+        "globalBrandAge": 5.5,
+        "portugalMarketTenure": 3.5,
         "portugalServiceNetwork": 7,
         "europeanManufacturing": 2,
         "establishedGroupSupport": 9,
+        "financialStability": 2,
         "portugalFactory": false
       },
-      "summary": "A rubrica pondera experiência automóvel (6,5/10), assistência em Portugal (7/10), fabrico europeu (2/10) e apoio de grupo (9/10), resultando num índice bruto de 5,90/10. A Polestar tem raízes no desporto automóvel e tornou-se marca autónoma de elétricos em 2017. A parceria oficial com o grupo Volvo Car dá acesso a centenas de pontos de assistência globais, embora o localizador não permita confirmar uma cobertura portuguesa tão densa como a de uma rede generalista. Os modelos Polestar atuais são produzidos fora da Europa; a produção europeia do Polestar 7 na Eslováquia está anunciada para 2028 e não conta como fábrica operacional. A relação com Volvo/Geely dá suporte industrial, sem significar que a Volvo seja atualmente a única proprietária da Polestar.",
+      "summary": "A Polestar lançou-se como marca autónoma de automóveis elétricos em 2017 e iniciou vendas oficiais em Portugal em maio de 2022. A assistência nacional recorre a oficinas autorizadas Polestar na rede Volvo Car; a produção atual está na Ásia e América do Norte, enquanto a produção europeia do Polestar 7 está planeada para 2028. As contas consolidadas da própria Polestar no primeiro semestre de 2026 registaram prejuízo líquido de 842 milhões de dólares e fluxo operacional negativo de 850 milhões; a direção prevê fluxos operacionais negativos no curto prazo e reconhece incerteza material sobre a continuidade da empresa. As vendas estimadas nos primeiros nove meses cresceram apenas 0,6% e a orientação de 2026 aponta para crescimento de volume baixo a médio de um dígito, sem previsão oficial de lucro; os empréstimos convertidos/estendidos por Volvo/Geely são apoio do grupo, não resultados da marca.",
       "pros": [
-        "Parceria formal com o grupo Volvo Car e acesso à rede global de assistência",
-        "Apoio industrial e tecnológico de um grupo automóvel estabelecido, Geely, e ligação operacional à Volvo",
-        "A Polestar anunciou produção europeia futura para o Polestar 7 na Eslováquia"
+        "Apoio técnico e industrial formal de Volvo/Geely, incluindo financiamento e acordos de produção",
+        "Acesso em Portugal a oficinas autorizadas Polestar através da rede Volvo Car",
+        "Presença comercial oficial em Portugal desde 2022, com vendas diretas e assistência local"
       ],
       "cons": [
-        "Marca autónoma de elétricos criada em 2017, com histórico mais curto do que fabricantes tradicionais",
-        "Não há produção automóvel Polestar atualmente confirmada em território europeu",
-        "A fábrica eslovaca anunciada para 2028 não serve ainda como capacidade produtiva atual"
+        "A presença global como marca automóvel autónoma começou apenas em 2017 e a entrada oficial em Portugal ocorreu em 2022",
+        "Não há produção europeia atual; a fábrica eslovaca para o Polestar 7 está prevista para 2028",
+        "Prejuízos e fluxos de caixa operacionais negativos persistem, com dúvida material sobre a continuidade nas contas de H1 2026"
       ],
-      "sourceIds": ["polestar-history", "polestar-service", "polestar-production", "polestar-busan", "polestar-europe-plan", "polestar-ownership"]
+      "sourceIds": ["polestar-global-launch", "polestar-portugal-entry", "polestar-market-expansion-2022", "polestar-service", "polestar-q3-2026-update", "polestar-europe-plan", "polestar-financial-h1-2026", "polestar-shareholder-support-2026"]
     },
     "equipment": {
       "summary": "A configuração acrescenta o Pack Prime, que reúne Pilot, Plus e Comfort: HUD, Harman Kardon de 12 altifalantes, assistências ao condutor, bancos dianteiros e traseiros aquecidos, volante aquecido, climatização de três zonas e porta-bagagens elétrico. Inclui também teto panorâmico, câmara 360º, bomba de calor, carregamento wireless, V2L até 3,3 kW e cabo CA de 11 kW.",
@@ -441,6 +443,42 @@
       "label": "DVSA — base pública britânica de recalls de veículos",
       "url": "https://www.check-vehicle-recalls.service.gov.uk/documents/RecallsFile.csv",
       "type": "database"
+    },
+    {
+      "id": "polestar-global-launch",
+      "label": "Polestar — lançamento da marca autónoma elétrica em 2017",
+      "url": "https://www.polestar.com/global/about/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-portugal-entry",
+      "label": "Observador — vendas do Polestar 2 em Portugal a partir de 24/05/2022",
+      "url": "https://observador.pt/2022/05/20/polestar-ja-esta-em-portugal-e-as-vendas-do-2-arrancam-a-24-de-maio/",
+      "type": "press"
+    },
+    {
+      "id": "polestar-market-expansion-2022",
+      "label": "Polestar — Portugal entre os novos mercados de 2022 (15/06/2022)",
+      "url": "https://investors.polestar.com/news-releases/news-release-details/polestar-delivering-growth-promise-continues-drive-customer",
+      "type": "official"
+    },
+    {
+      "id": "polestar-q3-2026-update",
+      "label": "Polestar — vendas estimadas no Q3/9M 2026 e produção por continente (08/10/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1884082/000110465926114526/tm2627195d1_ex99-1.htm",
+      "type": "official"
+    },
+    {
+      "id": "polestar-financial-h1-2026",
+      "label": "Polestar Automotive Holding — demonstrações financeiras intercalares H1 2026 (03/09/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1884082/000188408226000013/psny-20260630.htm",
+      "type": "official"
+    },
+    {
+      "id": "polestar-shareholder-support-2026",
+      "label": "Polestar — conversão e extensão de empréstimos de acionistas (31/03/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1884082/000110465926037200/tm2610648d1_ex99-1.htm",
+      "type": "official"
     }
   ]
 }

@@ -146,24 +146,26 @@
     },
     "brand": {
       "assessment": {
-        "automotiveExperience": 7,
-        "portugalServiceNetwork": 9.5,
-        "europeanManufacturing": 8,
-        "establishedGroupSupport": 9.5,
+        "globalBrandAge": 5.5,
+        "portugalMarketTenure": 5.5,
+        "portugalServiceNetwork": 7.5,
+        "europeanManufacturing": 10,
+        "establishedGroupSupport": 9,
+        "financialStability": 5.5,
         "portugalFactory": false
       },
-      "summary": "A rubrica pondera experiência da marca (7/10), rede de oficinas em Portugal (9,5/10), produção europeia (8/10) e apoio de grupo (9,5/10), resultando num índice bruto de 8,38/10. A CUPRA tornou-se marca autónoma em 2018, com origem na divisão desportiva da SEAT; o Raval já é produzido em série em Martorell. O relatório da SEAT S.A. confirma que os centros de serviço SEAT também assistem CUPRA. Estes fatores sustentam capacidade industrial e de pós-venda, mas não são uma garantia de fiabilidade nem de prazo de peças.",
+      "summary": "A CUPRA foi lançada como marca automóvel autónoma em fevereiro de 2018, e a sua presença oficial em Portugal está documentada desde dezembro desse ano. A rede CUPRA inclui oficinas autorizadas em várias regiões; modelos da marca são produzidos em série em diferentes instalações europeias, mas não encontrei evidência de produção da CUPRA em Portugal. Como a marca não publica contas autónomas, a estabilidade financeira usa dados da SEAT S.A./SEAT & CUPRA como proxy: a empresa registou resultado operacional de €6 milhões nos primeiros nove meses de 2026 e alertou para baixa rentabilidade e geração de caixa; as vendas da CUPRA ultrapassaram 250 mil unidades no período. A ambição corporativa de margem operacional de 6% até 2030 é um objetivo, não um resultado nem uma previsão de curto prazo.",
       "pros": [
-        "Rede CUPRA apoiada por centros de serviço SEAT em Portugal",
-        "Integração industrial e tecnológica no grupo Volkswagen",
-        "O Raval é produzido em série na fábrica de Martorell, em Espanha"
+        "A marca integra o grupo Volkswagen e dispõe de apoio industrial e técnico da SEAT S.A.",
+        "Oficinas autorizadas CUPRA estão distribuídas por várias regiões de Portugal",
+        "Modelos CUPRA têm produção em série em vários centros europeus"
       ],
       "cons": [
-        "A CUPRA é uma marca autónoma recente, apesar da experiência herdada da SEAT",
-        "Não existe fábrica automóvel da marca em Portugal",
-        "A presença de uma fábrica europeia não permite inferir, por si só, prazos de peças"
+        "A marca autónoma e a presença oficial portuguesa contam menos de uma década",
+        "O resultado operacional da SEAT & CUPRA foi de apenas €6 milhões nos primeiros nove meses de 2026, com alerta sobre margens e geração de caixa",
+        "Não foi confirmada produção ou montagem de veículos CUPRA numa fábrica em Portugal"
       ],
-      "sourceIds": ["cupra-dealers", "cupra-history", "cupra-report-2025", "cupra-raval-production"]
+      "sourceIds": ["cupra-brand-launch", "cupra-portugal-entry", "cupra-dealers", "cupra-dealer-directory-feed", "cupra-production-sites", "cupra-financial-q3-2026", "cupra-financial-outlook-2030", "cupra-report-2025", "autoeuropa-models", "cupra-raval-production"]
     },
     "equipment": {
       "summary": "A dotação, contando com os opcionais incluídos nesta configuração, é forte em ADAS, mas faltam itens de conforto e tecnologia que os Seal trazem de série: HUD, som premium, bancos aquecidos/ventilados, bomba de calor e porta-bagagens elétrico.",
@@ -446,6 +448,48 @@
       "label": "DVSA — base pública britânica de recalls de veículos",
       "url": "https://www.check-vehicle-recalls.service.gov.uk/documents/RecallsFile.csv",
       "type": "database"
+    },
+    {
+      "id": "cupra-brand-launch",
+      "label": "SEAT — lançamento da CUPRA como marca automóvel autónoma (22/02/2018)",
+      "url": "https://www.seat.com/company/news/cars/cupra-sports-car-launch",
+      "type": "official"
+    },
+    {
+      "id": "cupra-portugal-entry",
+      "label": "Observador — presença comercial da CUPRA em Lisboa (11/12/2018)",
+      "url": "https://observador.pt/2018/12/11/nova-marca-cupra-ja-tem-espaco-proprio-em-lisboa/",
+      "type": "press"
+    },
+    {
+      "id": "cupra-production-sites",
+      "label": "SEAT S.A. — instalações de produção e modelos CUPRA por localização",
+      "url": "https://www.seat-cupra-mediacenter.com/SEAT-sa/about-seat-sa/production-facilities",
+      "type": "official"
+    },
+    {
+      "id": "cupra-financial-q3-2026",
+      "label": "SEAT & CUPRA — resultados operacionais dos primeiros nove meses de 2026 (30/10/2026)",
+      "url": "https://www.seat-cupra-mediacenter.com/SEAT-sa/seat-sa-news/company/2026/seat-cupra-adapts-market-shifts-intensified-external-pressures-q3",
+      "type": "official"
+    },
+    {
+      "id": "autoeuropa-models",
+      "label": "Volkswagen Newsroom — modelos produzidos na Autoeuropa (dados de 04/2025)",
+      "url": "https://www.volkswagen-newsroom.com/en/volkswagen-autoeuropa-lda-3731",
+      "type": "official"
+    },
+    {
+      "id": "cupra-financial-outlook-2030",
+      "label": "SEAT & CUPRA — objetivo de margem operacional de 6% em 2030 (12/03/2026)",
+      "url": "https://www.seat-cupra-mediacenter.com/SEAT-sa/seat-sa-news/company/2026/seat-cupra-completes-a-year-of-resilience-transformation-outlines-clear-roadmap-for-sustainable-growth-starting-with-launch-of-cupra-raval",
+      "type": "official"
+    },
+    {
+      "id": "cupra-dealer-directory-feed",
+      "label": "CUPRA Portugal — dados oficiais de vendas e oficinas autorizadas (consulta 10/11/2026)",
+      "url": "https://groupcms-services-api.porsche-holding.com/v3/dealers/pt/R",
+      "type": "official"
     }
   ]
 }

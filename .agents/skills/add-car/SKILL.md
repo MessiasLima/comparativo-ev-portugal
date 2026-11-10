@@ -67,6 +67,7 @@ and verify everything. The phases must run in order, because each one feeds the 
 | `src/data/criteria.ts` | The criterion definitions. Current set: 2 editorial (`comfort`, `sound` — need a human-style `baseScore`), 3 rubrics (`interior`, `brand`, `satisfaction` — need their typed `assessment`; interior is absolute, brand and satisfaction are relative), and 5 objective (`equipment`, `range`, `powerToWeight`, `efficiency`, `charging` — computed from specs). Check the live registry and `CriterionId` before preparing reviews; the `add-criteria` skill documents how the set evolves. |
 | `src/lib/scoring.ts` | The scoring engine. `equipment` = count of checklist ids; `powerToWeight` = cv/kg; `charging` = 0.7·DC + 0.3·AC; `efficiency` = lower is better. Relative criteria rescale against the best car; interior is absolute. |
 | `src/lib/interior.ts` | Source of truth for the absolute interior rubric formula. For evidence gathering, component marks and hard-plastic classification, follow [`evaluate-interior`](../evaluate-interior/SKILL.md); never duplicate the formula in JSON or prose. |
+| `src/lib/brand.ts` | Source of truth for brand-rubric weights and `brandScore()`. For evidence, component marks and the Portugal factory bonus, follow [`evaluate-brand`](../evaluate-brand/SKILL.md); keep `scripts/validate-data.mjs` in sync. |
 | `src/data/site.ts` | `SITE_UPDATED_AT` — editorial "last updated" date, shown in the footer. |
 | `scripts/validate-data.mjs` | Validator + ranking preview. Run with `npm run validate:data`. |
 | `public/sources/` | User-provided PDFs (offers, product guides), referenced from JSON as `/sources/<file>` with `type: "pdf"`. |
@@ -117,7 +118,8 @@ evidence checklist, and conflict-resolution rules. In summary:
 Do not skip evidence gathering for editorial criteria — each `baseScore` must be
 defensible from the sources you cite. For interior assessments, follow
 [`evaluate-interior`](../evaluate-interior/SKILL.md); for suspension comfort, follow
-[`evaluate-comfort`](../evaluate-comfort/SKILL.md). Support each assessment with
+[`evaluate-comfort`](../evaluate-comfort/SKILL.md); and for the brand assessment,
+follow [`evaluate-brand`](../evaluate-brand/SKILL.md). Support each assessment with
 cited evidence.
 
 ## Phase 2 — Equipment checklist (feature list)
@@ -175,8 +177,9 @@ template skeleton, and formatting conventions. Core rules:
   `CriterionId`/`CRITERIA`. Editorial criteria require an evidence-based
   `baseScore` 0–10; rubric criteria require their own typed `assessment` (never
   `baseScore`); objective criteria store their underlying data without a score.
-  For the current brand rubric, follow `src/lib/brand.ts` and the `brand`
-  assessment shape in `src/data/types.ts`. Plus the full `dossier` (headline, verdict, ~5 pros, ~5 cons, `bestFor`,
+  For the brand assessment, follow [`evaluate-brand`](../evaluate-brand/SKILL.md)
+  and the `BrandAssessment` shape in `src/data/types.ts`; `src/lib/brand.ts` is the
+  formula's source of truth. Plus the full `dossier` (headline, verdict, ~5 pros, ~5 cons, `bestFor`,
   ~6 sections), `options` (or `[]`), and `sources` with real URLs.
 - **D. Score the interior from evidence, not from the line-up.** Follow the
   [`evaluate-interior`](../evaluate-interior/SKILL.md) workflow for its absolute

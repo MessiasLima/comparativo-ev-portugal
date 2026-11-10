@@ -171,10 +171,12 @@ scope exclusions, follow [`evaluate-comfort`](../../evaluate-comfort/SKILL.md).
 ```json
 {
   "assessment": {
-    "automotiveExperience": 7,
+    "globalBrandAge": 7,
+    "portugalMarketTenure": 6,
     "portugalServiceNetwork": 9.5,
     "europeanManufacturing": 8,
     "establishedGroupSupport": 9.5,
+    "financialStability": 7,
     "portugalFactory": false
   },
   "summary": "...",
@@ -184,12 +186,7 @@ scope exclusions, follow [`evaluate-comfort`](../../evaluate-comfort/SKILL.md).
 }
 ```
 
-- Component marks are 0–10; the calculation in `src/lib/brand.ts` uses 30% automotive experience, 30% authorized workshop reach in Portugal, 25% European passenger-car manufacturing maturity, and 15% support from an established group/manufacturer.
-- `portugalFactory` is a boolean; an active Portuguese automotive factory adds 0.5 to the weighted index, capped at 10.
-- Distinguish a marque's standalone age from its parent or predecessor's history. Group history is evidence of support, not proof that a newer marque itself is equally old or reliable.
-- For network marks, count authorized workshops/repairers, not sales-only outlets. For factories, distinguish active series production from pilot output, construction and future plans; note whether the evaluated model is made there.
-- Do not infer that age, manufacturing location or affiliation guarantees reliability or shorter parts-delivery times. These are proxies for accumulated experience, service access, industrial capacity and organizational support.
-- The rubric index is then scaled relative to the best car. Do not store the final relative score in JSON.
+- For the six component marks, evidence requirements, financial-data proxies, Portugal-factory rule and score verification, follow [`evaluate-brand`](../../evaluate-brand/SKILL.md). `src/lib/brand.ts` remains the source of truth for the formula; do not store its calculated index or the final relative score in JSON.
 
 ### User satisfaction, defects and recalls (relative rubric)
 
