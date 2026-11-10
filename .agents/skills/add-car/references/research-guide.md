@@ -75,8 +75,12 @@ Work through these blocks; note the URL for everything you'll cite:
   components, financial reporting proxies and the Portuguese-factory bonus. Cite
   evidence for each component in `reviews.brand.sourceIds`; warranty and reliability
   surveys are context only, not extra sub-scores.
-- `sound`: speaker count, premium system brand (Dynaudio, Sennheiser, Harman…),
-  whether it's standard/option/included, press opinions on audio quality.
+- `sound`: identify the system actually fitted to the evaluated configuration and
+  follow [`evaluate-sound`](../../evaluate-sound/SKILL.md) for the brand/speaker/
+  opinion/RMS evidence hierarchy and the weighted `baseScore`. Never score an
+  optional premium pack that is not included. Treat a published wattage as RMS
+  unless the source states another measurement basis, and never convert a
+  peak/maximum figure into RMS.
 - `satisfaction`: follow `src/lib/satisfaction.ts`: 40% owner sentiment and
   independent long-term tests, 35% recurring user-reported defects/complaints,
   25% model-specific safety recalls. Prefer reports from owners and independent

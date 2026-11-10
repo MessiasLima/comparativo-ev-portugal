@@ -168,16 +168,17 @@
       "sourceIds": ["byd-guide", "byd-official", "byd-caetano"]
     },
     "sound": {
-      "baseScore": 8.8,
-      "summary": "Sistema Dynaudio Performance com 12 altifalantes, elogiado pela imprensa pelo equilíbrio e pela clareza. É claramente superior ao sistema de sete altifalantes do Raval e um dos pontos fortes do Seal.",
+      "baseScore": 8.3,
+      "summary": "Sistema Dynaudio Performance com 12 altifalantes, de série na versão Excellence e elogiado pela imprensa pelo equilíbrio e pela clareza. A BYD anuncia 775 W de potência máxima. Como a fonte especifica uma base de medição diferente, esse valor não é tratado como RMS e o componente de potência fica na referência neutra.",
       "pros": [
         "12 altifalantes Dynaudio",
-        "Boa definição e palco sonoro",
+        "Boa definição, equilíbrio tonal e palco sonoro",
         "Sistema de série na versão Excellence"
       ],
       "cons": [
+        "A potência anunciada de 775 W é máxima, não RMS",
         "Sem equalização avançada por utilizador",
-        "O volume máximo pode distorcer em graves extremos"
+        "Alguns proprietários descrevem o som de fábrica como plano e pouco envolvente"
       ],
       "sourceIds": ["byd-guide", "autoexpress", "byd-caetano"]
     },

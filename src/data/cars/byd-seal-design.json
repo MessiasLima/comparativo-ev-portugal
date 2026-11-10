@@ -166,16 +166,17 @@
       "sourceIds": ["byd-guide", "byd-caetano", "turbo"]
     },
     "sound": {
-      "baseScore": 8.8,
-      "summary": "Sistema Dynaudio Performance com 12 altifalantes, de série também no Design. É o mesmo sistema elogiado pela imprensa no Excellence: equilíbrio, clareza e palco sonoro muito acima do sistema do Raval.",
+      "baseScore": 8.3,
+      "summary": "Sistema Dynaudio Performance com 12 altifalantes, de série também no Design. A imprensa independente elogia o equilíbrio e a clareza, e a BYD anuncia 775 W de potência máxima. Como a fonte especifica uma base de medição diferente, esse valor não é tratado como RMS e o componente de potência fica na referência neutra.",
       "pros": [
         "12 altifalantes Dynaudio de série",
-        "Boa definição e palco sonoro",
+        "Boa definição, equilíbrio tonal e palco sonoro segundo a imprensa",
         "Mesmo sistema premium da versão Excellence"
       ],
       "cons": [
+        "A potência anunciada de 775 W é máxima, não RMS",
         "Sem equalização avançada por utilizador",
-        "O volume máximo pode distorcer em graves extremos"
+        "Alguns proprietários descrevem o som de fábrica como plano e pouco envolvente"
       ],
       "sourceIds": ["byd-guide", "byd-caetano", "autoexpress"]
     },
