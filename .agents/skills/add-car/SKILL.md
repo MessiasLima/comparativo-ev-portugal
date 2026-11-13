@@ -30,9 +30,9 @@ and verify everything. The phases must run in order, because each one feeds the 
    (`npm run validate:data`) enforces this — use it early and often.
 5. **Exhaustiveness over speed.** The user asked for exhaustive research. Cross-check
    every spec between the provided material, the official Portuguese site, and at
-   least one independent database (e.g. EV Database). When sources disagree, prefer
-   the official WLTP/PT figure and note the discrepancy in the prose (see how the
-   CUPRA Raval dossier mentions both 389 km and 384 km).
+   least one independent database (e.g. EV Database). For `specs.rangeKm`, follow
+   [`evaluate-range`](../evaluate-range/SKILL.md) to verify the exact combined WLTP
+   figure and handle source conflicts; do not duplicate its range-specific rules here.
 6. **This project runs Next.js 16**, which differs from what you may know. If you
    have to write or modify Next.js-specific code (routes, metadata, params), first
    read the relevant guide in `node_modules/next/dist/docs/` as instructed by the
@@ -64,7 +64,7 @@ and verify everything. The phases must run in order, because each one feeds the 
 | `src/data/cars/*.json` | One JSON per car **version**. Data only. |
 | `src/data/cars/index.ts` | Registry: imports every JSON and exports the `CARS` array. Order here controls the footer (first 4 entries). |
 | `src/data/equipment.ts` | `EQUIPMENT_CHECKLIST` (the normalized feature list) + `EQUIPMENT_CATEGORIES`. |
-| `src/data/criteria.ts` | The criterion definitions. Current set: 2 editorial (`comfort`, `sound` — need a human-style `baseScore`), 3 rubrics (`interior`, `brand`, `satisfaction` — need their typed `assessment`; interior is absolute, brand and satisfaction are relative), and 5 objective (`equipment`, `range`, `powerToWeight`, `efficiency`, `charging` — computed from specs). Check the live registry and `CriterionId` before preparing reviews; the `add-criteria` skill documents how the set evolves. |
+| `src/data/criteria.ts` | The criterion definitions. Current set: 2 editorial (`comfort`, `sound` — need a human-style `baseScore`), 3 rubrics (`interior`, `brand`, `satisfaction` — need their typed `assessment`; interior is absolute, brand and satisfaction are relative), and 5 objective (`equipment`, `range`, `powerToWeight`, `efficiency`, `charging` — computed from specs). Check the live registry and `CriterionId` before preparing reviews; the `add-criteria` skill documents how the set evolves. For the `range` input, follow [`evaluate-range`](../evaluate-range/SKILL.md). |
 | `src/lib/scoring.ts` | The scoring engine. `equipment` = count of checklist ids; `powerToWeight` = cv/kg; `charging` = 0.7·DC + 0.3·AC; `efficiency` = lower is better. Relative criteria rescale against the best car; interior is absolute. |
 | `src/lib/interior.ts` | Source of truth for the absolute interior rubric formula. For evidence gathering, component marks and hard-plastic classification, follow [`evaluate-interior`](../evaluate-interior/SKILL.md); never duplicate the formula in JSON or prose. |
 | `src/lib/brand.ts` | Source of truth for brand-rubric weights and `brandScore()`. For evidence, component marks and the Portugal factory bonus, follow [`evaluate-brand`](../evaluate-brand/SKILL.md); keep `scripts/validate-data.mjs` in sync. |
