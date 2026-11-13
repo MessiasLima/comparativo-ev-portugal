@@ -83,15 +83,9 @@ Work through these blocks; note the URL for everything you'll cite:
   optional premium pack that is not included. Treat a published wattage as RMS
   unless the source states another measurement basis, and never convert a
   peak/maximum figure into RMS.
-- `satisfaction`: follow `src/lib/satisfaction.ts`: 40% owner sentiment and
-  independent long-term tests, 35% recurring user-reported defects/complaints,
-  25% model-specific safety recalls. Prefer reports from owners and independent
-  outlets over brand marketing. Separate isolated anecdotes from repeated
-  corroborated patterns; research public recall records, distinguish safety
-  recalls from service campaigns, and note affected build dates/VIN limits. Never
-  divide raw complaints by nothing: counts are not incidence rates without fleet
-  size and mileage. For new models, mark evidence maturity as limited and state
-  the sample limitation explicitly; lack of reports is not proof of no defects.
+- `satisfaction`: follow
+  [`evaluate-satisfaction`](../../evaluate-satisfaction/SKILL.md) for evidence
+  gathering, component marks, evidence levels and recall handling.
 
 ### Block 8 — Press round (aim for 4–6 usable reviews)
 Typical outlets used by this project: carwow, electrifying, electrive,
