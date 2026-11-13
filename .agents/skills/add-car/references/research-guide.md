@@ -48,8 +48,9 @@ Work through these blocks; note the URL for everything you'll cite:
   seats, doors, towing.
 
 ### Block 4 — Charging
-- AC onboard power (single vs three-phase), DC peak power, 10–80% and 30–80%
-  times, connector, V2L (and its kW), V2H.
+- Follow [`evaluate-charging`](../../evaluate-charging/SKILL.md) for AC onboard
+  power, DC peak power and charging configuration. Also collect 10–80% and 30–80%
+  times, connector, V2L (and its kW), and V2H as supporting specs.
 
 ### Block 5 — Equipment (feeds Phase 2)
 - Extract the full standard equipment list for the exact evaluated version, and
