@@ -76,11 +76,9 @@ export function ScorePill({
 
 export function ScoreCell({
   score,
-  accent,
   className,
 }: {
   score: number
-  accent: "copper" | "ocean"
   className?: string
 }) {
   return (
@@ -88,7 +86,7 @@ export function ScoreCell({
       <span className="font-mono text-sm font-semibold tabular-nums">
         {formatScore(score)}
       </span>
-      <ScoreBar score={score} color={ACCENT_HEX[accent]} />
+      <ScoreBar score={score} />
     </div>
   )
 }

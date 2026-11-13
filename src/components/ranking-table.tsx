@@ -28,7 +28,7 @@ import type { CriterionDefinition, CriterionId } from "@/data/types"
 import { formatCarName, formatEuro, formatScore } from "@/lib/format"
 import { useWeights } from "@/hooks/use-weights"
 import { weightedAverage } from "@/lib/weights"
-import { ACCENT_BG, ScoreCell } from "@/components/score"
+import { ScoreCell } from "@/components/score"
 
 export interface ComparisonRow {
   id: string
@@ -497,12 +497,6 @@ export function RankingTable({
                   >
                     #{entry.rank}
                   </span>
-                  <span
-                    className={cn(
-                      "h-10 w-1 shrink-0 rounded-full",
-                      ACCENT_BG[entry.accent],
-                    )}
-                  />
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
                        <span className="whitespace-nowrap font-heading text-lg leading-tight font-semibold">
@@ -530,10 +524,7 @@ export function RankingTable({
               {CRITERIA.map((criterion) => (
                 <TableCell key={criterion.id} className="px-0.5 text-center">
                   <div className="flex justify-center">
-                    <ScoreCell
-                      score={entry.scores[criterion.id]}
-                      accent={entry.accent}
-                    />
+                    <ScoreCell score={entry.scores[criterion.id]} />
                   </div>
                 </TableCell>
               ))}
@@ -579,12 +570,6 @@ export function RankingTable({
       <WeightModal
         weights={weights}
         criteria={CRITERIA}
-        cars={rows.map((row) => ({
-          id: row.id,
-          name: formatCarName(row),
-          price: row.price,
-          scores: row.scores,
-        }))}
         onChange={applyWeights}
         onClose={() => setWeightModalOpen(false)}
       />

@@ -1,0 +1,420 @@
+{
+  "id": "tesla-model-3-standard",
+  "slug": "tesla-model-3-standard",
+  "brand": "Tesla",
+  "model": "Model 3",
+  "variant": "Standard",
+  "version": "Standard 60 kWh (tração traseira)",
+  "year": 2026,
+  "segment": "Berlina elétrica",
+  "tagline": "A porta de entrada na gama Model 3: 572 km WLTP, 283 cv e o essencial da experiência Tesla.",
+  "accent": "copper",
+  "price": {
+    "amount": 37975.17,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-11-13",
+    "note": "PVP de 36.990 € em Portugal Continental, com pintura branco pérola, jantes Prismata de 18\", interior Preto Premium Parcial, Autopilot e avaliação de 30 dias do pacote Conetividade Premium incluídos. Acrescem 980 € de despesas de documentação e transporte e 5 € de taxa para pneus, resultando em 37.975,17 € com IVA (7.101,05 €). Oferta não vinculativa válida até 13/11/2026.",
+    "sourceId": "tesla-offer-standard"
+  },
+  "specs": {
+    "powerKw": 208,
+    "powerHp": 283,
+    "torqueNm": 420,
+    "drivetrain": "Tração traseira (RWD)",
+    "acceleration0100": 6.2,
+    "topSpeedKmh": 201,
+    "batteryKwh": 64,
+    "usableBatteryKwh": 60,
+    "batteryChemistry": "LFP, 400 V (CATL 6M)",
+    "rangeKm": 572,
+    "consumptionKwh100": 12.2,
+    "weightKg": 1772,
+    "grossWeightKg": 2189,
+    "lengthMm": 4720,
+    "widthMm": 1850,
+    "heightMm": 1440,
+    "wheelbaseMm": 2875,
+    "bootL": 594,
+    "frunkL": 88,
+    "seats": 5,
+    "doors": 4,
+    "towingBrakedKg": 1000
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 175,
+    "dcTime1080Min": 24,
+    "connector": "CCS2",
+    "v2l": false,
+    "v2h": false
+  },
+  "warranty": {
+    "vehicle": "4 anos / 80.000 km",
+    "battery": "8 anos / 160.000 km (SOH ≥ 70%)",
+    "note": "Garantia básica do veículo de 4 anos ou 80.000 km e garantia da bateria e unidade de acionamento de 8 anos ou 160.000 km, o que ocorrer primeiro, com retenção mínima de 70% da capacidade. A Tesla não impõe um plano de manutenção periódica fixo; as verificações são condicionadas ao uso e comunicadas através da aplicação. Confirmar os termos aplicáveis à encomenda."
+  },
+  "equipmentIncluded": [
+    "acc",
+    "lane-keep",
+    "blind-spot",
+    "aeb",
+    "traffic-sign",
+    "driver-monitor",
+    "parking-sensors",
+    "adaptive-high-beam",
+    "heated-seats",
+    "heated-steering",
+    "climate-2zone",
+    "heat-pump",
+    "wireless-charging",
+    "large-screen",
+    "connected-services",
+    "ota",
+    "digital-key",
+    "panoramic-roof",
+    "electric-tailgate",
+    "frunk",
+    "rear-usb"
+  ],
+  "options": [],
+  "reviews": {
+    "interior": {
+      "assessment": {
+        "softTouch": 6.5,
+        "upholstery": 6,
+        "design": 8,
+        "assembly": 6.5,
+        "hardPlastic": "moderate"
+      },
+      "summary": "O interior Preto Premium Parcial mantém o tablier limpo e o ecrã central de 16\", mas troca o couro vegan perfurado das versões Premium por couro vegan com inserções têxteis nos bancos e usa plástico duro nas portas e na consola. A montagem é sólida e o ambiente é silencioso; os relatos de ruídos parasitas em unidades recentes e a ausência de iluminação ambiente e de ecrã traseiro tornam-no menos rico do que o das versões Premium.",
+      "pros": [
+        "Tablier e apoios de braço com superfícies macias",
+        "Ecrã central de 16\" rápido e bem integrado",
+        "Posição de condução fácil de encontrar e habitáculo silencioso"
+      ],
+      "cons": [
+        "Bancos com inserções têxteis e plástico duro nas portas",
+        "Sem iluminação ambiente configurável nem ecrã traseiro",
+        "Ruídos parasitas relatados por proprietários de unidades recentes"
+      ],
+      "sourceIds": ["tesla-model3", "autoexpress", "4gnews-standard", "reddit-rattles", "kbb-model3"]
+    },
+    "comfort": {
+      "baseScore": 7.1,
+      "summary": "A versão Standard usa amortecedores passivos e jantes de 18\". O acerto é firme e, em cidade, sente-se algum patter sobre juntas e asfalto remendado; nos desníveis maiores a suspensão absorve bem e o corpo assenta depressa, sem balanço. Em autoestrada mantém-se estável e composta, mas o conforto não é a prioridade desta afinação.",
+      "pros": [
+        "Bom controlo de carroçaria e estabilidade em autoestrada",
+        "Absorve bem os desníveis maiores",
+        "Assenta depressa depois dos impactos"
+      ],
+      "cons": [
+        "Acerto firme e algum patter a baixa velocidade",
+        "Piso urbano degradado transmite impactos secos",
+        "Amortecedores passivos, sem regulação"
+      ],
+      "sourceIds": ["tesla-offer-standard", "tesla-model3", "autoexpress", "4gnews-standard", "youtube-rwd-review"]
+    },
+    "brand": {
+      "assessment": {
+        "globalBrandAge": 9.5,
+        "portugalMarketTenure": 6,
+        "portugalServiceNetwork": 7,
+        "europeanManufacturing": 8,
+        "establishedGroupSupport": 8.5,
+        "financialStability": 7,
+        "portugalFactory": false
+      },
+      "summary": "A Tesla é uma marca automóvel autónoma desde 2003 e começou a vender oficialmente em Portugal em janeiro de 2017. A rede nacional inclui service centers próprios em Lisboa/Belas e no Porto, assistência móvel e oficinas de carroçaria aprovadas, mas não tem a densidade de uma rede de concessionários tradicional. A produção europeia existe na Gigafactory de Berlim, que monta o Model Y e não o Model 3. No terceiro trimestre de 2026 a Tesla registou 28,05 mil milhões de dólares de receita, 787 milhões de lucro líquido (−43% homólogo), margem operacional de 2,6% e 45,4 mil milhões de liquidez: é rentável e tem caixa, mas os resultados e a margem estão sob pressão.",
+      "pros": [
+        "Marca com mais de duas décadas e escala industrial própria",
+        "Presença oficial em Portugal desde 2017 e dois service centers próprios",
+        "Liquidez elevada e produção europeia em série"
+      ],
+      "cons": [
+        "Rede de assistência concentrada em Lisboa e no Porto",
+        "Produção europeia não inclui o Model 3",
+        "Lucro e margem operacional em queda no terceiro trimestre de 2026"
+      ],
+      "sourceIds": ["dn-tesla-2017", "dn-service-center-2018", "autofoco-porto-2022", "tesla-contact", "tesla-10q", "tesla-warranty"]
+    },
+    "equipment": {
+      "summary": "A configuração inclui Autopilot com cruise control adaptativo, manutenção de faixa, travagem automática de emergência e reconhecimento de sinais, além de assistência de estacionamento por visão, máximos automáticos, bancos dianteiros aquecidos, volante aquecido, climatização de duas zonas, bomba de calor, carregamento wireless, ecrã de 16\", serviços conectados, atualizações OTA, chave digital, teto panorâmico, porta-bagagens elétrico, frunk de 88 L e USB-C traseiras. Ficam de fora os bancos ventilados, o sistema de nove altifalantes, a iluminação ambiente configurável e o ecrã traseiro.",
+      "pros": [
+        "Autopilot e principais assistências de série",
+        "Bomba de calor, carregamento wireless e chave digital",
+        "Teto panorâmico, porta-bagagens elétrico e frunk"
+      ],
+      "cons": [
+        "Som básico de sete altifalantes",
+        "Sem bancos ventilados nem aquecimento traseiro",
+        "Sem Apple CarPlay/Android Auto e sem câmara 360º"
+      ],
+      "sourceIds": ["tesla-model3", "tslcheck", "tesla-offer-standard"]
+    },
+    "boot": {
+      "summary": "A bagageira traseira tem 594 L e o compartimento dianteiro 88 L, num total de 682 L com os cinco lugares em uso. O porta-bagagens é elétrico e o frunk tem fundo moldado, mas a abertura traseira é baixa e o piso não é regulável em altura.",
+      "pros": [
+        "594 L na bagageira traseira",
+        "88 L no frunk, útil para cabos e sacos pequenos",
+        "Porta-bagagens elétrico de série"
+      ],
+      "cons": [
+        "Abertura da bagageira é baixa para objetos altos",
+        "Piso da bagageira não é regulável em altura",
+        "Sem roda sobressalente; apenas kit de reparação"
+      ],
+      "sourceIds": ["tesla-model3", "evdb-rwd", "youtube-rwd-review"]
+    },
+    "sound": {
+      "baseScore": 3.2,
+      "summary": "O sistema de série tem sete altifalantes, sem assinatura de uma marca de áudio e sem potência publicada; a Tesla não divulga um valor em watts para esta configuração. A imprensa considera-o suficiente e bem equilibrado para o preço, mas nota falta de corpo e de extensão nos graves face ao sistema de nove altifalantes das versões Premium. Sem medição de potência, a componente de potência fica na referência neutra.",
+      "pros": [
+        "Sete altifalantes com afinação equilibrada",
+        "Equalizador de cinco bandas e som imersivo configurável",
+        "Suficiente para uso diário e para o preço da versão"
+      ],
+      "cons": [
+        "Sem marca de áudio e sem potência publicada",
+        "Falta de corpo nos graves face ao sistema de nove altifalantes",
+        "Sem subwoofer dedicado"
+      ],
+      "sourceIds": ["tesla-model3", "tslcheck", "youtube-rwd-review"]
+    },
+    "range": {
+      "summary": "A Tesla anuncia 572 km WLTP para o Model 3 de tração traseira desde agosto de 2026, quando passou a usar pneus Giti de menor resistência ao rolamento; antes, o valor era 534 km. A EV Database ainda publica 534 km e uma autonomia real de cerca de 450 km, o que ilustra a diferença entre o ciclo homologado e o uso misto. A bateria LFP de 60 kWh úteis pode ser carregada a 100% com regularidade.",
+      "pros": [
+        "572 km WLTP com apenas 60 kWh úteis",
+        "Consumo homologado de 12,2 kWh/100 km",
+        "Bateria LFP permite cargas diárias a 100%"
+      ],
+      "cons": [
+        "Autonomia real em autoestrada fica muito abaixo do WLTP",
+        "A EV Database mantém 534 km para a especificação anterior",
+        "Bateria LFP é mais sensível ao frio"
+      ],
+      "sourceIds": ["tesla-offer-standard", "tesla-model3", "evdb-rwd", "4gnews-standard"]
+    },
+    "powerToWeight": {
+      "summary": "Os 208 kW (283 cv) e 420 Nm movem 1.772 kg de tara, o que dá cerca de 160 cv/t. A Tesla anuncia 6,2 segundos dos 0 aos 100 km/h e 201 km/h de velocidade máxima; a EV Database usa 1.847 kg como peso EU, uma base que inclui condutor e bagagem e não deve ser comparada com a tara. Para uso diário, a resposta é imediata e a tração traseira gere bem o binário em piso seco.",
+      "pros": [
+        "283 cv e 420 Nm com resposta imediata",
+        "0-100 km/h em 6,2 segundos",
+        "Relação potência/peso de cerca de 160 cv/t"
+      ],
+      "cons": [
+        "Menos potência do que as versões de motor duplo",
+        "Tração traseira perde aderência em piso molhado",
+        "Massa de 1.772 kg faz-se sentir em mudanças de direção"
+      ],
+      "sourceIds": ["tesla-offer-standard", "tesla-model3", "evdb-rwd"]
+    },
+    "efficiency": {
+      "summary": "O consumo oficial é 12,2 kWh/100 km desde a atualização de pneus de agosto de 2026, contra 13,0 kWh/100 km antes. A EV Database publica 13,0 kWh/100 km no ciclo WLTP para a versão anterior e 13,3 kWh/100 km de consumo real; a diferença reflete a monta de pneus e o tipo de percurso. Em cidade, os ensaios portugueses registaram médias abaixo de 13 kWh/100 km.",
+      "pros": [
+        "12,2 kWh/100 km homologados",
+        "Pneus de baixa resistência ao rolamento reduzem perdas",
+        "Boa eficiência urbana, com médias abaixo de 13 kWh/100 km em ensaio"
+      ],
+      "cons": [
+        "Consumo real em autoestrada sobe com a velocidade",
+        "A versão anterior homologava 13,0 kWh/100 km",
+        "Pneus de baixa resistência podem ter desgaste mais rápido"
+      ],
+      "sourceIds": ["tesla-model3", "evdb-rwd", "4gnews-standard", "tslcheck"]
+    },
+    "charging": {
+      "summary": "Carrega a 11 kW em corrente alternada e até 175 kW em corrente contínua, com 10–80% em cerca de 24 minutos segundo a EV Database. A Tesla indica até 286 km adicionados em 15 minutos num Supercharger. A arquitetura é de 400 V e não há V2L nem V2H.",
+      "pros": [
+        "Até 175 kW em corrente contínua",
+        "10–80% em cerca de 24 minutos",
+        "Pré-condicionamento da bateria pela navegação"
+      ],
+      "cons": [
+        "Potência DC inferior à das versões Premium",
+        "Sem V2L nem V2H",
+        "Arquitetura de 400 V limita a potência face a sistemas de 800 V"
+      ],
+      "sourceIds": ["tesla-offer-standard", "tesla-model3", "evdb-rwd"]
+    },
+    "satisfaction": {
+      "assessment": {
+        "ownerSentiment": 8.5,
+        "reportedDefects": 6.5,
+        "recallRecord": 6.5,
+        "evidenceLevel": "broad"
+      },
+      "summary": "A satisfação dos proprietários é forte: 4,6/5 em 209 avaliações da Kelley Blue Book, com 90% a recomendar, e 82/100 de qualidade e fiabilidade na J.D. Power. Os pontos fracos recorrentes são os ruídos parasitas e a qualidade de alguns materiais interiores, com proprietários de unidades de 2026 a relatar visitas repetidas ao service center. O histórico de segurança inclui o recall 25V410000, que abrange 18 Model 3 de 2026 por fixações do encosto do banco mal apertadas, com reparação gratuita.",
+      "pros": [
+        "4,6/5 e 90% de recomendação em 209 avaliações de proprietários",
+        "82/100 de qualidade e fiabilidade na J.D. Power",
+        "Rede Supercharger e atualizações OTA muito valorizadas"
+      ],
+      "cons": [
+        "Ruídos parasitas recorrentes em unidades recentes",
+        "Qualidade dos materiais interiores é o ponto mais criticado",
+        "Recall 25V410000 em 18 Model 3 de 2026"
+      ],
+      "sourceIds": ["kbb-model3", "jdpower-model3", "nhtsa-25v410", "reddit-rattles", "autoexpress"]
+    }
+  },
+  "dossier": {
+    "headline": "O Model 3 essencial, com 572 km e a mesma base tecnológica",
+    "verdict": "O Model 3 de tração traseira é a forma mais acessível de entrar na gama: 283 cv, 572 km WLTP e 682 L de carga total, com uma eficiência que continua a ser uma referência entre as berlinas elétricas. O interior perde os bancos ventilados, a iluminação ambiente configurável e o ecrã traseiro, e fica com um som de sete altifalantes, mas mantém o essencial da experiência Tesla. É a versão a escolher por quem prioriza custo de aquisição e eficiência, aceitando um equipamento de conforto mais contido.",
+    "pros": [
+      "572 km WLTP e 12,2 kWh/100 km",
+      "283 cv, 0-100 km/h em 6,2 segundos",
+      "682 L de carga total, incluindo 88 L de frunk",
+      "Autopilot, bomba de calor e atualizações OTA de série",
+      "Preço de 37.975,17 € com IVA e despesas"
+    ],
+    "cons": [
+      "Sem bancos ventilados, aquecimento traseiro e iluminação ambiente configurável",
+      "Som de sete altifalantes sem subwoofer",
+      "Sem Apple CarPlay/Android Auto nem câmara 360º",
+      "Acabamento interior abaixo das versões Premium",
+      "Carregamento DC limitado a 175 kW"
+    ],
+    "bestFor": "Quem quer um elétrico eficiente e espaçoso para uso diário e viagens, valoriza a rede Supercharger e prefere investir menos em equipamento de conforto.",
+    "sections": [
+      {
+        "title": "Posicionamento",
+        "body": "O Model 3 de tração traseira é a versão de acesso da berlina elétrica da Tesla, com 4,72 m de comprimento e 2,875 m de distância entre eixos. Usa um motor traseiro de 208 kW (283 cv) e 420 Nm, bateria LFP de 64 kWh brutos e 60 kWh úteis, e anuncia 572 km WLTP. O preço de aquisição em Portugal é 37.975,17 € com IVA e despesas incluídas."
+      },
+      {
+        "title": "Interior e ergonomia",
+        "body": "O habitáculo segue o desenho minimalista do Highland: tablier horizontal, saídas de ar integradas e um ecrã central de 16\" que concentra quase todas as funções. Esta versão usa interior Preto Premium Parcial, com inserções têxteis nos bancos e plástico duro nas portas e na consola. Mantém o teto panorâmico, o volante aquecido e os bancos dianteiros aquecidos, mas não tem iluminação ambiente configurável, ecrã traseiro nem bancos ventilados."
+      },
+      {
+        "title": "Como se conduz",
+        "body": "Os 283 cv chegam para 6,2 segundos dos 0 aos 100 km/h e 201 km/h de velocidade máxima, com entrega imediata e precisa. A suspensão passiva e as jantes de 18\" privilegiam o controlo do corpo em autoestrada, mas sentem-se secas em piso urbano degradado. A direção é rápida e o carro esconde bem a massa de 1.772 kg; em piso molhado, a tração traseira obriga a dosear o acelerador."
+      },
+      {
+        "title": "Autonomia, eficiência e carregamento",
+        "body": "A bateria LFP de 60 kWh úteis permite 572 km WLTP e um consumo homologado de 12,2 kWh/100 km, graças também aos pneus Giti de baixa resistência ao rolamento introduzidos em agosto de 2026. Em corrente contínua aceita até 175 kW, com 10–80% em cerca de 24 minutos; em corrente alternada carrega a 11 kW. Não há V2L nem V2H."
+      },
+      {
+        "title": "Vida a bordo e tecnologia",
+        "body": "O equipamento inclui Autopilot, cruise control adaptativo, manutenção de faixa, travagem automática de emergência, reconhecimento de sinais, assistência de estacionamento por visão, máximos automáticos, carregamento wireless para dois telefones, serviços conectados, atualizações OTA e chave digital. A bagageira tem 594 L e o frunk 88 L; o porta-bagagens é elétrico. Não há Apple CarPlay, Android Auto nem câmara 360º."
+      },
+      {
+        "title": "Propriedade e assistência",
+        "body": "A garantia do veículo é de 4 anos ou 80.000 km e a da bateria e unidade de acionamento é de 8 anos ou 160.000 km, com pelo menos 70% de capacidade. A Tesla tem service centers próprios em Lisboa/Belas e no Porto, assistência móvel e oficinas de carroçaria aprovadas. A marca não impõe um plano de manutenção periódica fixo, mas a rede é mais concentrada do que a de um fabricante com concessionários em todo o país."
+      },
+      {
+        "title": "Configuração avaliada",
+        "body": "Proposta de 13/11/2026: Model 3 de tração traseira, pintura branco pérola, jantes Prismata de 18\", interior Preto Premium Parcial e Autopilot. PVP de 36.990 €, mais 980 € de documentação e transporte e 5 € de taxa para pneus, total de 37.975,17 € com IVA de 7.101,05 €. Inclui avaliação de 30 dias do pacote Conetividade Premium."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "tesla-offer-standard",
+      "label": "Proposta Tesla Model 3 tração traseira (PDF fornecido, 13/11/2026)",
+      "url": "/sources/tesla-model-3-standard-oferta.pdf",
+      "type": "pdf"
+    },
+    {
+      "id": "tesla-model3",
+      "label": "Tesla Portugal — Model 3, especificações e preços",
+      "url": "https://www.tesla.com/pt_pt/model3",
+      "type": "official"
+    },
+    {
+      "id": "tesla-warranty",
+      "label": "Tesla Portugal — Garantia do veículo e da bateria",
+      "url": "https://www.tesla.com/pt_pt/support/vehicle-warranty",
+      "type": "official"
+    },
+    {
+      "id": "tesla-contact",
+      "label": "Tesla Portugal — Contactos e assistência",
+      "url": "https://www.tesla.com/pt_pt/contact",
+      "type": "official"
+    },
+    {
+      "id": "tesla-club-oficinas",
+      "label": "Tesla Club Portugal — Service Centers e oficinas aprovadas",
+      "url": "https://teslaclubportugal.com/oficinas-e-reparacoes/",
+      "type": "owner"
+    },
+    {
+      "id": "dn-tesla-2017",
+      "label": "Diário de Notícias — entrada oficial da Tesla em Portugal (27/01/2017)",
+      "url": "https://www.dn.pt/arquivo/diario-de-noticias/finalmente-a-tesla-esta-em-portugal-5630954.html",
+      "type": "press"
+    },
+    {
+      "id": "dn-service-center-2018",
+      "label": "Diário de Notícias — primeiro Tesla Service Center em Belas (04/12/2018)",
+      "url": "https://www.dn.pt/arquivo/diario-de-noticias/ja-existe-um-tesla-service-center-em-portugal-10274206.html",
+      "type": "press"
+    },
+    {
+      "id": "autofoco-porto-2022",
+      "label": "Auto Foco — Tesla abre instalações com service center no Porto (21/09/2022)",
+      "url": "https://autofoco.pt/noticia/ver/957622",
+      "type": "press"
+    },
+    {
+      "id": "tesla-10q",
+      "label": "Tesla, Inc. — Form 10-Q do terceiro trimestre de 2026 (22/10/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm",
+      "type": "official"
+    },
+    {
+      "id": "evdb-rwd",
+      "label": "EV Database — Tesla Model 3 RWD (Highland, 2025-2026)",
+      "url": "https://ev-database.org/car/3403/Tesla-Model-3-RWD",
+      "type": "database"
+    },
+    {
+      "id": "autoexpress",
+      "label": "Auto Express — Tesla Model 3 review",
+      "url": "https://www.autoexpress.co.uk/tesla/model-3",
+      "type": "press"
+    },
+    {
+      "id": "4gnews-standard",
+      "label": "4gnews — ensaio ao Tesla Model 3 de tração traseira em Portugal",
+      "url": "https://4gnews.pt/tesla-model-3-rwd-2026-ensaio/",
+      "type": "press"
+    },
+    {
+      "id": "kbb-model3",
+      "label": "Kelley Blue Book — avaliações de proprietários do Model 3 2026",
+      "url": "https://www.kbb.com/tesla/model-3/2026/consumer-reviews/",
+      "type": "owner"
+    },
+    {
+      "id": "jdpower-model3",
+      "label": "J.D. Power — qualidade e fiabilidade do Model 3 2026",
+      "url": "https://www.jdpower.com/cars/2026/tesla/model-3",
+      "type": "database"
+    },
+    {
+      "id": "nhtsa-25v410",
+      "label": "NHTSA — recall 25V410000, fixações do encosto do banco (2025)",
+      "url": "https://www.nhtsa.gov/recalls?nhtsaId=25V410000",
+      "type": "database"
+    },
+    {
+      "id": "reddit-rattles",
+      "label": "Reddit r/TeslaModel3 — ruídos parasitas em unidades de 2026",
+      "url": "https://www.reddit.com/r/TeslaModel3/comments/1wc4vka/constant_rattles_developing_in_my_model_3/",
+      "type": "owner"
+    },
+    {
+      "id": "tslcheck",
+      "label": "TSL Check — comparação entre Model 3 base e Premium (07/11/2026)",
+      "url": "https://tslcheck.com/de/vergleiche/model-3-oder-model-3-premium/",
+      "type": "press"
+    },
+    {
+      "id": "youtube-rwd-review",
+      "label": "YouTube — ensaio ao Tesla Model 3 RWD 2026 (equipamento e som)",
+      "url": "https://www.youtube.com/watch?v=jX7CvQPiVxA",
+      "type": "press"
+    }
+  ]
+}

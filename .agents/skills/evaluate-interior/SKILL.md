@@ -52,9 +52,9 @@ they are not an invitation to calculate a second score by hand.
 The marks below are in `softTouch / upholstery / design / assembly` order. Use the
 existing dossiers as calibration examples, not as cars to reassess:
 
-- **BYD Seal Design / Excellence AWD** — `8 / 8.5 / 7.5 / 8.5`, `low`: the reviews describe soft contact areas and quality upholstery, while noting that some finishes feel less noble than they look.
+- **BYD Seal Design / Excellence AWD** — `8 / 8.5 / 7.5 / 8.5`, `moderate`: the reviews describe soft contact areas and quality upholstery, while noting hard plastic on the door panels and console and a synthetic seat covering that feels cheaper than it looks.
 - **CUPRA Raval VZ** — `4 / 6.5 / 6.5 / 7`, `high`: only the dashboard top and armrests are described as soft; most visible surfaces are hard plastic, although assembly is described as solid.
-- **Polestar 4 coupé RM Prime** — `8 / 7.8 / 8.8 / 8.5`, `moderate`: the review describes soft contact areas, a coherent restrained design and praised assembly, with MicroTech upholstery rather than leather.
+- **Polestar 4 coupé RM Prime** — `8 / 7.8 / 8.8 / 8.5`, `low`: the review describes a padded dashboard and door panels, soft material covering contact and less-touched areas, a coherent restrained design and praised assembly, with MicroTech upholstery rather than leather.
 
 These are examples of the project's current scoring, not universal thresholds or
 targets. Keep each mark defensible from the evidence for the exact configuration.

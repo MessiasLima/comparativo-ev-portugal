@@ -35,7 +35,7 @@ function SourceLinks({
   sources: Source[]
 }) {
   const byId = new Map(sources.map((source) => [source.id, source]))
-  const resolved = ids
+  const resolved = Array.from(new Set(ids))
     .map((id) => byId.get(id))
     .filter((source): source is Source => Boolean(source))
 
@@ -143,7 +143,7 @@ export function CriterionList({
             open={index === 0}
             className="group scroll-mt-28 border-b border-line last:border-b-0"
           >
-            <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-4 gap-y-3 px-4 py-4 transition-colors hover:bg-muted/40 sm:flex-nowrap sm:px-5">
+            <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-4 gap-y-3 px-4 py-4 sm:flex-nowrap sm:px-5">
               <span className="w-8 shrink-0 font-mono text-xs font-semibold text-copper">
                 {sectionNumber}.{criterion.number}
               </span>
@@ -187,7 +187,9 @@ export function CriterionList({
                 </span>
               </span>
 
-              <ChevronDown className="size-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
+              <span className="grid size-7 shrink-0 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted">
+                <ChevronDown className="size-4 transition-transform group-open:rotate-180" />
+              </span>
             </summary>
 
             <div className="px-4 pb-6 sm:px-5 sm:pl-16">
