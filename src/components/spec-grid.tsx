@@ -47,9 +47,7 @@ export function SpecGrid({ entry }: { entry: ScoredCar }) {
     { label: "Distância entre eixos", value: `${formatNumber(specs.wheelbaseMm)} mm` },
     {
       label: "Bagageira",
-      value: specs.frunkL
-        ? `${specs.bootL} L + ${specs.frunkL} L`
-        : `${specs.bootL} L`,
+      value: `${specs.bootL} L${specs.frunkL > 0 ? ` + ${specs.frunkL} L` : ""}`,
     },
     { label: "Lugares", value: `${specs.seats}` },
     { label: "Portas", value: `${specs.doors}` },

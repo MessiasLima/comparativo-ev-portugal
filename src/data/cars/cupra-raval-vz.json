@@ -36,6 +36,7 @@
     "heightMm": 1514,
     "wheelbaseMm": 2593,
     "bootL": 441,
+    "frunkL": 0,
     "seats": 5,
     "doors": 5,
     "towingBrakedKg": 1200
@@ -181,6 +182,12 @@
       ],
       "sourceIds": ["cupra-offer", "cupra-official", "cupra-specs"]
     },
+    "boot": {
+      "summary": "A bagageira traseira tem 441 L. A arquitetura de tração dianteira não deixa compartimento de carga sob o capô; a imprensa que testou o Raval confirma a ausência de frunk. A capacidade total contabilizada é, por isso, 441 L.",
+      "pros": ["441 L de bagageira traseira num automóvel de 4,05 m", "Piso duplo Varibo para organizar a carga"],
+      "cons": ["Não tem frunk para separar cabos ou objetos pequenos", "O volume depende apenas do compartimento traseiro"],
+      "sourceIds": ["cupra-specs", "cupra-raval-no-frunk"]
+    },
     "sound": {
       "baseScore": 2.5,
       "summary": "A configuração avaliada traz o sistema de série de sete altifalantes, sem assinatura de um especialista de áudio; a ficha do modelo não indica subwoofer dedicado. O Sennheiser AMBEO de 12 altifalantes e 475 W existe como opção no Raval, mas não foi incluído nesta proposta e por isso não conta para a nota. Não há potência publicada para o sistema de série nem um teste independente específico deste sistema, pelo que a avaliação fica contida.",
@@ -322,6 +329,12 @@
       "label": "CUPRA Portugal — Raval",
       "url": "https://www.cupraofficial.pt/cupra-raval/cupra-raval",
       "type": "official"
+    },
+    {
+      "id": "cupra-raval-no-frunk",
+      "label": "FDM — teste CUPRA Raval: confirma a ausência de frunk",
+      "url": "https://fdm.dk/motor/biltest/cupra-raval-koereglad-smart-elbil-med-urban-vibe",
+      "type": "press"
     },
     {
       "id": "cupra-specs",

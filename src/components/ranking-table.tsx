@@ -67,6 +67,7 @@ const compactLabels: Record<CriterionId, string> = {
   comfort: "Conforto",
   brand: "Marca",
   equipment: "Equip.",
+  boot: "Bagag.",
   sound: "Som",
   range: "Auton.",
   powerToWeight: "Pot./peso",

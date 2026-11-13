@@ -35,8 +35,8 @@
     "widthMm": 1875,
     "heightMm": 1460,
     "wheelbaseMm": 2920,
-    "bootL": 400,
-    "frunkL": 53,
+    "bootL": 485,
+    "frunkL": 72,
     "seats": 5,
     "doors": 4
   },
@@ -167,6 +167,12 @@
       ],
       "sourceIds": ["byd-guide", "byd-official", "byd-caetano"]
     },
+    "boot": {
+      "summary": "A atualização de primavera de 2026 eleva a bagageira traseira para 485 L e a dianteira para 72 L. A capacidade total contabilizada é 557 L; os valores anteriores de 400 L e 53 L pertenciam à especificação anterior do Seal.",
+      "pros": ["485 L atrás e 72 L à frente", "557 L de capacidade total distribuída por dois compartimentos"],
+      "cons": ["A medição deve ser confirmada na entrega, pois a atualização depende do ano modelo", "O frunk é pequeno para objetos volumosos"],
+      "sourceIds": ["byd-2026-boot"]
+    },
     "sound": {
       "baseScore": 8.3,
       "summary": "Sistema Dynaudio Performance com 12 altifalantes, de série na versão Excellence e elogiado pela imprensa pelo equilíbrio e pela clareza. A BYD anuncia 775 W de potência máxima. Como a fonte especifica uma base de medição diferente, esse valor não é tratado como RMS e o componente de potência fica na referência neutra.",
@@ -285,7 +291,7 @@
       },
       {
         "title": "Interior e espaço",
-        "body": "O habitáculo é amplo e luxuoso, com pele vegan, costuras em diamante e um ecrã rotativo de 15,6\" que domina a consola. Os bancos dianteiros são aquecidos, ventilados, elétricos e com memória; o condutor tem apoio lombar regulável. O espaço traseiro é de berlina executiva e a bagageira soma 400 L atrás e 53 L à frente. A qualidade percebida é alta, embora alguns materiais não sejam tão nobres ao toque como aparentam."
+        "body": "O habitáculo é amplo e luxuoso, com pele vegan, costuras em diamante e um ecrã rotativo de 15,6\" que domina a consola. Os bancos dianteiros são aquecidos, ventilados, elétricos e com memória; o condutor tem apoio lombar regulável. O espaço traseiro é de berlina executiva e, na atualização de 2026, as bagageiras passam a 485 L atrás e 72 L à frente. A qualidade percebida é alta, embora alguns materiais não sejam tão nobres ao toque como aparentam."
       },
       {
         "title": "Como se conduz",
@@ -316,6 +322,12 @@
       "id": "byd-official",
       "label": "BYD Portugal — SEAL",
       "url": "https://www.byd-auto.pt/modelos/byd-seal",
+      "type": "official"
+    },
+    {
+      "id": "byd-2026-boot",
+      "label": "BYD Portugal — atualização do SEAL: 485 L atrás e 72 L à frente",
+      "url": "https://www.byd-auto.pt/destaques/byd-seal-atualizacoes-2026-portugal",
       "type": "official"
     },
     {

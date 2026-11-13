@@ -72,6 +72,8 @@ function metricValue(car: Car, criterionId: CriterionId): number {
     }
     case "equipment":
       return equipmentCount(car)
+    case "boot":
+      return car.specs.bootL + car.specs.frunkL
     case "range":
       return car.specs.rangeKm
     case "powerToWeight":
@@ -108,6 +110,8 @@ function rawLabel(car: Car, criterionId: CriterionId): string {
     }
     case "equipment":
       return `${equipmentCount(car)}/${EQUIPMENT_CHECKLIST.length} equipamentos`
+    case "boot":
+      return `${car.specs.bootL} L atrás + ${car.specs.frunkL} L à frente = ${car.specs.bootL + car.specs.frunkL} L`
     case "range":
       return `${car.specs.rangeKm} km WLTP`
     case "powerToWeight":

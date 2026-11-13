@@ -1,5 +1,6 @@
 import {
   Armchair,
+  Briefcase,
   Gauge,
   Leaf,
   ListChecks,
@@ -71,8 +72,22 @@ export const CRITERIA: CriterionDefinition[] = [
     weight: 1,
   },
   {
-    id: "sound",
+    id: "boot",
     number: 5,
+    label: "Bagageira",
+    shortLabel: "Bagageira",
+    question: "Quantos litros de carga leva atrás e à frente?",
+    description:
+      "Capacidade total de arrumação: soma da bagageira traseira e do compartimento dianteiro (frunk), quando existe. Mais litros é melhor.",
+    icon: Briefcase,
+    kind: "objective",
+    direction: "higher",
+    scale: "relative",
+    weight: 1,
+  },
+  {
+    id: "sound",
+    number: 6,
     label: "Qualidade de som",
     shortLabel: "Som",
     question: "Sistema base ou assinado?",
@@ -86,7 +101,7 @@ export const CRITERIA: CriterionDefinition[] = [
   },
   {
     id: "range",
-    number: 6,
+    number: 7,
     label: "Autonomia WLTP",
     shortLabel: "Autonomia",
     question: "Quantos km homologados?",
@@ -100,7 +115,7 @@ export const CRITERIA: CriterionDefinition[] = [
   },
   {
     id: "powerToWeight",
-    number: 7,
+    number: 8,
     label: "Relação potência/peso",
     shortLabel: "Potência/peso",
     question: "Quanto desempenho por kg?",
@@ -114,7 +129,7 @@ export const CRITERIA: CriterionDefinition[] = [
   },
   {
     id: "efficiency",
-    number: 8,
+    number: 9,
     label: "Eficiência",
     shortLabel: "Eficiência",
     question: "Quanto gasta aos 100 km?",
@@ -127,7 +142,7 @@ export const CRITERIA: CriterionDefinition[] = [
   },
   {
     id: "charging",
-    number: 9,
+    number: 10,
     label: "Carregamento",
     shortLabel: "Carregamento",
     question: "Qual a potência máxima?",
@@ -141,7 +156,7 @@ export const CRITERIA: CriterionDefinition[] = [
   },
   {
     id: "satisfaction",
-    number: 10,
+    number: 11,
     label: "Satisfação dos utilizadores",
     shortLabel: "Satisfação",
     question: "Quem já conduz, recomenda?",

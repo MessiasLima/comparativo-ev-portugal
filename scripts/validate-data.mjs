@@ -10,6 +10,7 @@ const criteria = [
   { id: "comfort", kind: "editorial", direction: "higher" },
   { id: "brand", kind: "rubric", direction: "higher", scale: "relative" },
   { id: "equipment", kind: "objective", direction: "higher" },
+  { id: "boot", kind: "objective", direction: "higher" },
   { id: "sound", kind: "editorial", direction: "higher" },
   { id: "range", kind: "objective", direction: "higher" },
   { id: "powerToWeight", kind: "objective", direction: "higher" },
@@ -159,6 +160,13 @@ for (const { file, data: car } of cars) {
     errors.push(`${file}: price.amount tem de ser positivo`)
   }
 
+  if (!(car.specs?.bootL > 0)) {
+    errors.push(`${file}: specs.bootL tem de ser positivo`)
+  }
+  if (typeof car.specs?.frunkL !== "number" || car.specs.frunkL < 0) {
+    errors.push(`${file}: specs.frunkL tem de ser um número igual ou superior a zero`)
+  }
+
   for (const criterion of criteria) {
     if (!car.reviews?.[criterion.id]) {
       errors.push(`${file}: review em falta para "${criterion.id}"`)
@@ -290,6 +298,8 @@ function metric(car, criterionId) {
     }
     case "equipment":
       return car.equipmentIncluded.filter((id) => equipmentIds.includes(id)).length
+    case "boot":
+      return car.specs.bootL + car.specs.frunkL
     case "range":
       return car.specs.rangeKm
     case "powerToWeight":

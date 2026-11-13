@@ -180,6 +180,12 @@
       ],
       "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
     },
+    "boot": {
+      "summary": "O Polestar 4 coupé tem 526 L na bagageira traseira, incluindo o espaço sob o piso, e 15 L no compartimento dianteiro. A capacidade total contabilizada é 541 L; o volume com bancos rebatidos não entra no critério, para manter a comparação em utilização normal de cinco lugares.",
+      "pros": ["526 L de bagageira traseira com piso regulável", "15 L à frente para guardar cabos ou objetos pequenos"],
+      "cons": ["Frunk de apenas 15 L", "O volume máximo com bancos rebatidos não é comparado"],
+      "sourceIds": ["polestar-specs", "polestar-order"]
+    },
     "sound": {
       "baseScore": 7.9,
       "summary": "O Pack Plus instalado inclui o sistema Harman Kardon Premium, com 12 altifalantes e 1.320 W. Como a Polestar não indica outra base de medição, a potência é tratada como RMS ao abrigo da regra editorial. O sistema é bem equipado, mas as opiniões de proprietários sobre a afinação são divididas: há quem elogie o volume e a limpeza, e há quem considere o som pouco encorpado. As colunas nos encostos de cabeça exigem o upgrade Nappa.",
