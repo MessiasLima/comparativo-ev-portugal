@@ -81,8 +81,9 @@ prose if sources disagree), `grossWeightKg`, `lengthMm`, `widthMm`, `heightMm`,
 Rules:
 - WLTP figures, preferably from the official PT spec sheet. Note discrepancies
   between the offer PDF and the official site in the review prose.
-- `powerHp` must be consistent with `powerKw` (1 kW = 1.35962 cv) — the
-  `powerToWeight` criterion uses `powerHp / weightKg`.
+- Keep `powerHp` consistent with `powerKw` (1 kW = 1.35962 cv). For the source,
+  units and validation of `powerHp` and `weightKg`, follow
+  [`evaluate-power-to-weight`](../../evaluate-power-to-weight/SKILL.md).
 - `rangeKm` and `consumptionKwh100` drive objective scores; double-check them
   against at least two sources.
 
