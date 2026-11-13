@@ -72,8 +72,7 @@ Before writing a new file, read at least one existing dossier end-to-end
 `powerKw`, `powerHp`, `torqueNm`, `drivetrain` (pt-PT, e.g. `"Tração traseira (RWD)"`),
 `acceleration0100` (seconds), `topSpeedKmh`, `batteryKwh` (gross), `usableBatteryKwh`,
 `batteryChemistry` (e.g. `"NMC, 400 V"`, `"LFP Blade Battery"`), `rangeKm` (WLTP
-combined), `consumptionKwh100` (WLTP combined — drives the `efficiency` criterion,
-lower is better), `weightKg` (running order, without driver — state the basis in
+combined), `consumptionKwh100` (combined WLTP in kWh/100 km), `weightKg` (running order, without driver — state the basis in
 prose if sources disagree), `grossWeightKg`, `lengthMm`, `widthMm`, `heightMm`,
 `wheelbaseMm`, `bootL`, `frunkL` (optional), `seats`, `doors`, `towingBrakedKg`
 (optional).
@@ -84,8 +83,10 @@ Rules:
 - Keep `powerHp` consistent with `powerKw` (1 kW = 1.35962 cv). For the source,
   units and validation of `powerHp` and `weightKg`, follow
   [`evaluate-power-to-weight`](../../evaluate-power-to-weight/SKILL.md).
-- `rangeKm` and `consumptionKwh100` drive objective scores; double-check them
-  against at least two sources.
+- `rangeKm` and `consumptionKwh100` drive objective scores; follow
+  [`evaluate-range`](../../evaluate-range/SKILL.md) and
+  [`evaluate-efficiency`](../../evaluate-efficiency/SKILL.md) respectively for
+  source verification and units.
 
 ## `charging`
 

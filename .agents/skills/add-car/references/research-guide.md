@@ -42,7 +42,8 @@ Work through these blocks; note the URL for everything you'll cite:
 ### Block 3 — Specs (all fields of `specs`)
 - Power kW/cv, torque, drivetrain, 0–100, top speed.
 - Battery gross/usable, chemistry, voltage architecture (400 V / 800 V).
-- WLTP range (combined — note city/highway splits if available), consumption.
+- WLTP range (combined — note city/highway splits if available). For combined WLTP
+  consumption, follow [`evaluate-efficiency`](../../evaluate-efficiency/SKILL.md).
 - Weights (running order vs gross — get the basis right), dimensions, boot/frunk,
   seats, doors, towing.
 
