@@ -10,7 +10,6 @@ import {
   ArrowUpRight,
   Settings2,
   TrendingDown,
-  TriangleAlert,
   Trophy,
 } from "lucide-react"
 import { cn } from "cn"
@@ -310,17 +309,6 @@ export function RankingTable({
   return (
     <>
       <div className="overflow-hidden rounded-2xl border border-line bg-card shadow-[0_1px_0_rgba(20,32,26,0.04),0_20px_50px_-35px_rgba(20,32,26,0.25)]">
-      <p className="flex items-start gap-3 border-b border-copper/20 bg-copper/5 px-5 py-3.5 text-sm leading-6 text-copper sm:px-6">
-        <TriangleAlert
-          className="mt-1 size-4 shrink-0"
-          strokeWidth={1.8}
-          aria-hidden="true"
-        />
-        <span>
-          <span className="font-semibold">Site em desenvolvimento.</span> Os
-          dados apresentados ainda não estão completos.
-        </span>
-      </p>
       <div className="border-b border-line px-5 py-4 sm:px-6">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
           <div>
