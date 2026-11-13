@@ -73,6 +73,7 @@ and verify everything. The phases must run in order, because each one feeds the 
 | `src/lib/scoring.ts` | The scoring engine. `equipment` = count of checklist ids; `powerToWeight` = cv/kg; `charging` = 0.7·DC + 0.3·AC; `efficiency` = lower is better. Relative criteria rescale against the best car; interior is absolute. |
 | `src/lib/interior.ts` | Source of truth for the absolute interior rubric formula. For evidence gathering, component marks and hard-plastic classification, follow [`evaluate-interior`](../evaluate-interior/SKILL.md); never duplicate the formula in JSON or prose. |
 | `src/lib/brand.ts` | Source of truth for brand-rubric weights and `brandScore()`. For evidence, component marks and the Portugal factory bonus, follow [`evaluate-brand`](../evaluate-brand/SKILL.md); keep `scripts/validate-data.mjs` in sync. |
+| `src/lib/satisfaction.ts` | Source of truth for satisfaction weights, evidence-level caps and `satisfactionScore()`. For owner, defect and recall evidence, follow [`evaluate-satisfaction`](../evaluate-satisfaction/SKILL.md). |
 | `src/data/site.ts` | `SITE_UPDATED_AT` — editorial "last updated" date, shown in the footer. |
 | `scripts/validate-data.mjs` | Validator + ranking preview. Run with `npm run validate:data`. |
 | `public/sources/` | User-provided PDFs (offers, product guides), referenced from JSON as `/sources/<file>` with `type: "pdf"`. |
@@ -116,18 +117,20 @@ evidence checklist, and conflict-resolution rules. In summary:
    PT prices (IVA included, dated), full specs (WLTP), charging, warranty, equipment
     list, evidence for each editorial criterion and each rubric assessment, and
    URLs for every source.
-4. For **satisfaction**, look for press verdicts, owner forums/Facebook groups, and
-   brand-level surveys (e.g. Driver Power). For a brand new model, say so explicitly
-   in the prose, like the CUPRA dossier does.
+4. For **satisfaction**, follow
+   [`evaluate-satisfaction`](../evaluate-satisfaction/SKILL.md) for model-specific
+   owner and defect evidence, recall assessment and evidence-level selection. For a
+   brand new model, state the limited ownership sample in the pt-PT review.
 
 Do not skip evidence gathering for editorial criteria — each `baseScore` must be
 defensible from the sources you cite. For interior assessments, follow
 [`evaluate-interior`](../evaluate-interior/SKILL.md); for suspension comfort, follow
 [`evaluate-comfort`](../evaluate-comfort/SKILL.md); for sound, follow
 [`evaluate-sound`](../evaluate-sound/SKILL.md) and score the system actually fitted;
-and for the brand assessment, follow
-[`evaluate-brand`](../evaluate-brand/SKILL.md). Support each assessment with
-cited evidence.
+for the brand assessment, follow [`evaluate-brand`](../evaluate-brand/SKILL.md); and
+for user satisfaction, follow
+[`evaluate-satisfaction`](../evaluate-satisfaction/SKILL.md). Support each
+assessment with cited evidence.
 
 ## Phase 2 — Equipment checklist (feature list)
 

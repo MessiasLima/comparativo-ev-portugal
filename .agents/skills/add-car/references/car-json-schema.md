@@ -125,8 +125,10 @@ Two editorial criteria (need a justified `baseScore`): `comfort` and `sound`.
 
 Three rubric criteria (`interior`, `brand` and `satisfaction` — each needs its
 own structured `assessment`, **never a `baseScore`**; interior is absolute, while
-brand and satisfaction are relative to the list). Read `src/lib/interior.ts`,
-`src/lib/brand.ts` and `src/lib/satisfaction.ts` for the rubrics.
+brand and satisfaction are relative to the list). For their assessment workflows,
+follow [`evaluate-interior`](../../evaluate-interior/SKILL.md),
+[`evaluate-brand`](../../evaluate-brand/SKILL.md) and
+[`evaluate-satisfaction`](../../evaluate-satisfaction/SKILL.md), respectively.
 
 Five objective criteria (score computed from data — do NOT include any score):
 `equipment`, `range`, `powerToWeight`, `efficiency`, `charging`.
@@ -215,12 +217,11 @@ bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
 }
 ```
 
-- `ownerSentiment` (40%): real-owner feedback, independent surveys and long-term tests; distinguish model feedback from brand-wide survey results.
-- `reportedDefects` (35%): score recurring owner-reported problems by frequency, severity and independent corroboration. Do not treat the raw number of forum posts as an incidence rate without comparable fleet/mileage exposure.
-- `recallRecord` (25%): model-specific safety recalls, severity, known affected population/build dates and remedy status. Separate recalls from service campaigns and note when an individual VIN cannot be verified.
-- `evidenceLevel`: `limited` | `moderate` | `broad`, describing post-market exposure rather than vehicle quality. The scorer caps component scores when evidence is limited or moderate, so “no reports found” cannot earn a perfect score on a new model.
-- Read `src/lib/satisfaction.ts` for weights and evidence caps. The weighted index is then rescaled against the best car; do not store the final relative score in JSON.
-- Prioritize owner reports and independent media. Use official VIN/campaign tools or regulators to verify recall scope, not as substitutes for independent defect evidence. State the date and geographic limits of recall searches.
+- For evidence gathering, component marks, evidence levels, recall handling and
+  score verification, follow
+  [`evaluate-satisfaction`](../../evaluate-satisfaction/SKILL.md). Keep the
+  assessment shape above and do not store the calculated index or final relative
+  score in JSON.
 
 Quality bar (match the existing dossiers):
 - `baseScore` 0–10 with one decimal for the two editorial criteria. It is an
