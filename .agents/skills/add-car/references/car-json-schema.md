@@ -74,7 +74,7 @@ Before writing a new file, read at least one existing dossier end-to-end
 `batteryChemistry` (e.g. `"NMC, 400 V"`, `"LFP Blade Battery"`), `rangeKm` (WLTP
 combined), `consumptionKwh100` (combined WLTP in kWh/100 km), `weightKg` (running order, without driver — state the basis in
 prose if sources disagree), `grossWeightKg`, `lengthMm`, `widthMm`, `heightMm`,
-`wheelbaseMm`, `bootL`, `frunkL` (optional), `seats`, `doors`, `towingBrakedKg`
+`wheelbaseMm`, `bootL`, `frunkL`, `seats`, `doors`, `towingBrakedKg`
 (optional).
 
 Rules:
@@ -87,6 +87,8 @@ Rules:
   [`evaluate-range`](../../evaluate-range/SKILL.md) and
   [`evaluate-efficiency`](../../evaluate-efficiency/SKILL.md) respectively for
   source verification and units.
+- `bootL` and `frunkL` drive the Bagageira score. `frunkL: 0` requires evidence of
+  no front storage; follow [`evaluate-boot`](../../evaluate-boot/SKILL.md).
 
 ## `charging`
 
@@ -130,8 +132,8 @@ follow [`evaluate-interior`](../../evaluate-interior/SKILL.md),
 [`evaluate-brand`](../../evaluate-brand/SKILL.md) and
 [`evaluate-satisfaction`](../../evaluate-satisfaction/SKILL.md), respectively.
 
-Five objective criteria (score computed from data — do NOT include any score):
-`equipment`, `range`, `powerToWeight`, `efficiency`, `charging`.
+Six objective criteria (score computed from data — do NOT include any score):
+`equipment`, `boot`, `range`, `powerToWeight`, `efficiency`, `charging`.
 
 The set can change. Always check `src/data/types.ts`, `src/data/criteria.ts`, and
 the `add-criteria` skill before assuming the count or review shape.

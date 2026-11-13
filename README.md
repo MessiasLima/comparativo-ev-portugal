@@ -2,8 +2,8 @@
 
 Comparador de carros elétricos do mercado português, publicado em <https://comparativo-ev-portugal.appoutlet.dev>. O site tem duas vistas principais:
 
-- **Home (`/`)** — hero e uma tabela única de ranking com nota global, os dez critérios e o custo em €/ponto. Qualquer coluna pode ser usada para ordenar, com atalhos para “Melhor nota” e “Melhor custo-benefício”. O botão Pesos abre um modal para ajustar o peso de cada critério; ao mover os sliders, a nota global, o €/ponto e o ranking são recalculados em tempo real (com pré-visualização dentro do modal) e a configuração fica guardada no `localStorage` do browser. Cancelar repõe os pesos que estavam ativos ao abrir o modal.
-- **Dossiê (`/carros/[slug]`)** — visão geral, ficha técnica, critérios de avaliação (3.1 a 3.10), equipamento, informações adicionais e fontes.
+- **Home (`/`)** — hero e uma tabela única de ranking com nota global, os onze critérios e o custo em €/ponto. Qualquer coluna pode ser usada para ordenar, com atalhos para “Melhor nota” e “Melhor custo-benefício”. O botão Pesos abre um modal para ajustar o peso de cada critério; ao mover os sliders, a nota global, o €/ponto e o ranking são recalculados em tempo real (com pré-visualização dentro do modal) e a configuração fica guardada no `localStorage` do browser. Cancelar repõe os pesos que estavam ativos ao abrir o modal.
+- **Dossiê (`/carros/[slug]`)** — visão geral, ficha técnica, critérios de avaliação (3.1 a 3.11), equipamento, informações adicionais e fontes.
 
 A aplicação não assume um número fixo de carros. O registo `src/data/cars/index.ts` alimenta a home, as tabelas, o rodapé e as rotas de dossiê. Cada versão do mesmo modelo é um carro autónomo: o nome público inclui sempre a marca, o modelo e a variante (por exemplo, “BYD Seal Design” e “BYD Seal Excellence AWD”).
 
@@ -44,7 +44,7 @@ src/data/
 │   ├── byd-seal-design.json
 │   ├── byd-seal-excellence-awd.json
 │   └── polestar-4-rear-motor-prime.json
-├── criteria.ts                   # os 10 critérios
+├── criteria.ts                   # os 11 critérios
 ├── equipment.ts                  # checklist normalizada de 38 equipamentos
 ├── site.ts                       # data editorial da lista
 └── types.ts                      # tipos do modelo de dados
@@ -67,13 +67,13 @@ O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia,
 
 ### Como as notas são calculadas
 
-- **Critérios objetivos** — autonomia, potência/peso, eficiência, carregamento e quantidade de equipamento. O valor é calculado a partir dos dados do JSON.
+- **Critérios objetivos** — bagageira, autonomia, potência/peso, eficiência, carregamento e quantidade de equipamento. A Bagageira soma os litros da traseira e do frunk; `frunkL: 0` só é usado quando a ausência é confirmada. O valor é calculado a partir dos dados do JSON.
 - **Critérios editoriais** — conforto e som. Cada carro tem uma avaliação base de 0 a 10, sustentada por fontes no próprio JSON. A avaliação do som segue a [skill de avaliação do som](.agents/skills/evaluate-sound/SKILL.md): 50% marca do sistema de áudio, 20% número de altifalantes, 20% opiniões específicas e 10% potência RMS. Uma potência publicada em watts é tratada como RMS, salvo se a fonte indicar outra base de medição; sem qualquer valor de potência, usa-se a referência neutra.
 - **Marca e assistência** — rubrica relativa com seis componentes sobre idade global e presença em Portugal, rede autorizada, fabrico europeu, apoio e estabilidade financeira. A [skill de avaliação da marca](.agents/skills/evaluate-brand/SKILL.md) orienta a evidência; o cálculo e os pesos vivem em `src/lib/brand.ts`.
 - **Satisfação, defeitos e recalls** — rubrica relativa baseada em relatos de proprietários, testes de longa duração e campanhas/recalls específicos.
 - **Acabamento interno** — critério de rubrica, com nota **absoluta** (não relativa à lista). A avaliação dos componentes, do estilo e do plástico duro segue a [skill de avaliação do interior](.agents/skills/evaluate-interior/SKILL.md); a fórmula vive em `src/lib/interior.ts` e os dados de cada carro em `reviews.interior.assessment`.
 - **Relatividade** — nos restantes critérios, o melhor carro da lista recebe 10. Os restantes recebem a proporção do seu desempenho face ao líder. Se entrar um carro novo, estas notas mudam; a rubrica de acabamento não muda, porque é absoluta.
-- **Nota global** — média ponderada dos 10 critérios. Cada critério tem um peso-multiplicador float entre 0 e 2 (passo 0.1, defeito ×1): ×1 mantém o peso base, ×2 duplica-o e ×0 anula o critério. A média é normalizada pela soma dos multiplicadores, pelo que com todos a ×1 resulta na média simples. Ao alterar um slider, a nota global e o €/ponto mudam imediatamente, sem necessidade de confirmar.
+- **Nota global** — média ponderada dos 11 critérios. Cada critério tem um peso-multiplicador float entre 0 e 2 (passo 0.1, defeito ×1): ×1 mantém o peso base, ×2 duplica-o e ×0 anula o critério. A média é normalizada pela soma dos multiplicadores, pelo que com todos a ×1 resulta na média simples. Ao alterar um slider, a nota global e o €/ponto mudam imediatamente, sem necessidade de confirmar.
 - **Custo-benefício** — `preço / nota global` = euros por ponto. Quanto menor, melhor.
 - **Persistência** — os pesos são guardados em `localStorage` com a chave `comparativo-ev-portugal:weights:v2` e recuperados quando o utilizador volta ao site. A tabela e o painel de nota dos dossiês usam a mesma configuração.
 

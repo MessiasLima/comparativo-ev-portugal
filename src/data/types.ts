@@ -5,6 +5,7 @@ export type CriterionId =
   | "comfort"
   | "brand"
   | "equipment"
+  | "boot"
   | "sound"
   | "range"
   | "powerToWeight"
@@ -140,7 +141,8 @@ export interface Specs {
   heightMm: number
   wheelbaseMm: number
   bootL: number
-  frunkL?: number
+  /** Front storage capacity. Use 0 only when its absence is verified. */
+  frunkL: number
   seats: number
   doors: number
   towingBrakedKg?: number

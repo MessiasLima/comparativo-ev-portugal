@@ -144,7 +144,7 @@ Both must pass. Then, with `npm run dev`, eyeball:
   plausible scores; sorting by "Melhor custo-benefício" works; footer lists the
   right dossiers (first 4 of the registry order, plus "Ver todos" if > 4).
 - `/carros/<new-slug>` — every section renders in order: visão geral, ficha
-  técnica, critérios de avaliação (3.1 a 3.10), equipamento com o novo total,
+  técnica, critérios de avaliação (3.1 a 3.11), equipamento com o novo total,
   lista de opcionais (ou o texto genérico sem opções), informações adicionais e
   fontes. Confirme também que o nome completo inclui a variante.
 - One existing dossier — scores, prose and full name updated as intended.
