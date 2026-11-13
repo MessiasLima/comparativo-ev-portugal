@@ -246,10 +246,15 @@ for (const { file, data: car } of cars) {
 
   const sourceIds = new Set((car.sources ?? []).map((source) => source.id))
   for (const [criterionId, review] of Object.entries(car.reviews ?? {})) {
-    for (const sourceId of review.sourceIds ?? []) {
+    const cited = review.sourceIds ?? []
+    for (const sourceId of cited) {
       if (!sourceIds.has(sourceId)) {
         errors.push(`${file}: review "${criterionId}" referencia fonte desconhecida "${sourceId}"`)
       }
+    }
+    const duplicated = cited.filter((sourceId, index) => cited.indexOf(sourceId) !== index)
+    for (const sourceId of new Set(duplicated)) {
+      errors.push(`${file}: review "${criterionId}" repete a fonte "${sourceId}"`)
     }
   }
 

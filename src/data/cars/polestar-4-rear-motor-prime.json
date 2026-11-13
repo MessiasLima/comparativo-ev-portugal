@@ -113,9 +113,9 @@
         "upholstery": 7.8,
         "design": 8.8,
         "assembly": 8.5,
-        "hardPlastic": "moderate"
+        "hardPlastic": "low"
       },
-      "summary": "O interior Charcoal com decoração Zinc usa MicroTech bio-atribuído, com toque têxtil e aspeto cuidado, em vez de couro. O desenho escandinavo é limpo, há materiais macios nas zonas de contacto e a montagem recebe elogios da imprensa; os comandos táteis e a dependência do ecrã reduzem a sensação de sofisticação funcional.",
+      "summary": "O interior Charcoal com decoração Zinc usa MicroTech bio-atribuído, com toque têxtil e aspeto cuidado, em vez de couro. O desenho escandinavo é limpo, o tablier e os painéis de porta são acolchoados e os materiais macios cobrem tanto as zonas de contacto como as menos tocadas; os comandos táteis e a dependência do ecrã reduzem a sensação de sofisticação funcional.",
       "pros": [
         "MicroTech de boa qualidade e materiais macios nas zonas de contacto",
         "Design minimalista coerente, com iluminação ambiente inspirada no sistema solar",
@@ -126,7 +126,7 @@
         "A maioria das funções está concentrada no ecrã tátil",
         "A ausência de vidro traseiro obriga a usar o retrovisor digital"
       ],
-      "sourceIds": ["polestar-order", "polestar-specs", "autoexpress", "carwow"]
+      "sourceIds": ["polestar-order", "polestar-specs", "autoexpress", "carwow", "adac-polestar-4"]
     },
     "comfort": {
       "baseScore": 8.1,
@@ -400,6 +400,12 @@
       "id": "carwow",
       "label": "Carwow — Polestar 4 review",
       "url": "https://www.carwow.co.uk/polestar/4",
+      "type": "press"
+    },
+    {
+      "id": "adac-polestar-4",
+      "label": "ADAC — autoteste ao Polestar 4 Long Range Single Motor",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/AT6482-polestar-4-long-range-single-motor/polestar-4-long-range-single-motor.pdf",
       "type": "press"
     },
     {

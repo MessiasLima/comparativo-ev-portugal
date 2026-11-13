@@ -4,14 +4,13 @@ import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { Check, RotateCcw, Settings2, X, type LucideIcon } from "lucide-react"
 import type { CriterionId } from "@/data/types"
-import { formatEuro, formatScore } from "@/lib/format"
+import { formatScore } from "@/lib/format"
 import {
   DEFAULT_WEIGHTS,
   MAX_WEIGHT,
   MIN_WEIGHT,
   WEIGHT_STEP,
   isDefaultWeights,
-  weightedAverage,
   type WeightMap,
 } from "@/lib/weights"
 
@@ -21,23 +20,14 @@ export interface WeightCriterion {
   icon?: LucideIcon
 }
 
-export interface WeightPreviewCar {
-  id: string
-  name: string
-  price: number
-  scores: Record<CriterionId, number>
-}
-
 export function WeightModal({
   weights,
   criteria,
-  cars,
   onChange,
   onClose,
 }: {
   weights: WeightMap
   criteria: WeightCriterion[]
-  cars: WeightPreviewCar[]
   onChange: (weights: WeightMap) => void
   onClose: () => void
 }) {
@@ -83,17 +73,6 @@ export function WeightModal({
     0,
   )
 
-  const preview = cars
-    .map((car) => {
-      const total = weightedAverage(car.scores, draft)
-      return {
-        ...car,
-        total,
-        pricePerPoint: total > 0 ? car.price / total : 0,
-      }
-    })
-    .sort((a, b) => b.total - a.total)
-
   return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-end justify-center bg-ink/75 p-3 backdrop-blur-sm sm:items-center sm:p-6"
@@ -107,7 +86,7 @@ export function WeightModal({
         aria-labelledby="weights-modal-title"
         className="flex max-h-[92svh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-line bg-card text-card-foreground shadow-2xl"
       >
-        <div className="flex items-start justify-between gap-4 border-b border-line px-5 py-4 sm:px-6 sm:py-5">
+        <div className="flex items-start justify-between gap-4 border-b border-line px-5 py-4 sm:px-6">
           <div className="flex items-start gap-3">
             <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-forest text-lime">
               <Settings2 className="size-5" />
@@ -122,13 +101,12 @@ export function WeightModal({
               >
                 Pesos das notas
               </h2>
-              <p className="mt-1 max-w-lg text-base leading-7 text-muted-foreground">
+              <p className="mt-1 max-w-lg text-sm leading-6 text-muted-foreground">
                 Cada peso é um multiplicador da nota do critério:{" "}
-                <span className="font-medium text-foreground">×1</span> mantém o
-                peso base, <span className="font-medium text-foreground">×2</span>{" "}
-                duplica-o e <span className="font-medium text-foreground">×0</span>{" "}
-                anula o critério. A nota global é a média ponderada. Move os
-                sliders — tudo recalcula em tempo real; Cancelar repõe os pesos
+                <span className="font-medium text-foreground">×1</span> mantém,{" "}
+                <span className="font-medium text-foreground">×2</span> duplica e{" "}
+                <span className="font-medium text-foreground">×0</span> anula. A
+                nota global recalcula em tempo real; Cancelar repõe os pesos
                 anteriores.
               </p>
             </div>
@@ -163,7 +141,7 @@ export function WeightModal({
               const Icon = criterion.icon
 
               return (
-                <div key={criterion.id} className="py-3.5">
+                <div key={criterion.id} className="py-3">
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex min-w-0 items-center gap-2.5">
                       {Icon ? (
@@ -211,44 +189,6 @@ export function WeightModal({
             })}
           </div>
         </div>
-
-        {cars.length > 0 ? (
-          <div className="border-t border-line px-5 py-3.5 sm:px-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Resultado com estes pesos
-            </p>
-            <div className="mt-2 flex flex-col gap-1.5">
-              {preview.map((car, index) => (
-                <div
-                  key={car.id}
-                  className="flex items-center gap-3 rounded-lg bg-muted/50 px-3 py-2"
-                >
-                  <span className="font-mono text-xs text-muted-foreground">
-                    #{index + 1}
-                  </span>
-                  <span className="min-w-0 flex-1 truncate text-sm font-medium">
-                    {car.name}
-                  </span>
-                  <span className="font-mono text-sm text-muted-foreground">
-                    {formatEuro(car.pricePerPoint)}/ponto
-                  </span>
-                  <span
-                    className={
-                      index === 0
-                        ? "font-heading text-base font-semibold text-forest"
-                        : "font-heading text-base font-semibold text-foreground/70"
-                    }
-                  >
-                    {formatScore(car.total)}
-                    <span className="ml-0.5 text-xs font-medium text-muted-foreground">
-                      /10
-                    </span>
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : null}
 
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line bg-muted/30 px-5 py-4 sm:px-6">
           <button

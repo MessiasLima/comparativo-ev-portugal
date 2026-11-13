@@ -100,9 +100,9 @@
         "upholstery": 8.5,
         "design": 7.5,
         "assembly": 8.5,
-        "hardPlastic": "low"
+        "hardPlastic": "moderate"
       },
-      "summary": "O habitáculo é rico: pele vegan com costuras em diamante, materiais macios nas zonas de contacto, ecrã rotativo de 15,6\", cockpit de 10,25\", HUD e Dynaudio. A imprensa elogia a qualidade geral, mas nota que alguns revestimentos parecem menos nobres ao toque do que sugerem à vista.",
+      "summary": "O habitáculo é rico: pele vegan com costuras em diamante, materiais macios nas zonas de contacto, ecrã rotativo de 15,6\", cockpit de 10,25\", HUD e Dynaudio. A imprensa elogia a qualidade geral, mas nota que alguns revestimentos parecem menos nobres ao toque do que sugerem à vista, com plástico duro visível nos painéis de porta e na consola.",
       "pros": [
         "Materiais macios e acabamentos cuidados",
         "Bancos confortáveis, aquecidos, ventilados e com memória",
@@ -113,20 +113,20 @@
         "Ergonomia do infotainment demasiado dependente do ecrã",
         "Pilares A grossos e visibilidade traseira limitada"
       ],
-      "sourceIds": ["byd-guide", "byd-official", "autoexpress", "autonext", "drive"]
+      "sourceIds": ["byd-guide", "byd-official", "autoexpress", "autonext", "drive", "carwow"]
     },
     "comfort": {
-      "baseScore": 7.6,
-      "summary": "A suspensão de duplo braço à frente e multilink atrás, com amortecedores de frequência variável (FSD), dá um bom equilíbrio em cidade. Em autoestrada, o peso de 2,2 t e a afinação mais firme notam-se; em modo Comfort pode balançar, e em piso irregular o corpo segue demasiado a estrada.",
+      "baseScore": 7.9,
+      "summary": "A suspensão de duplo braço à frente e multilink atrás, com amortecedores de frequência variável (FSD), privilegia o conforto: absorve bem os buracos maiores e as imperfeições do piso em cidade, e a velocidade de autoestrada mantém-se serena. Em piso muito irregular ou em apoio rápido o corpo segue demasiado a estrada e pode balançar — é o preço de uma afinação macia.",
       "pros": [
-        "Boa absorção em cidade e a baixa velocidade",
-        "Bancos muito confortáveis e bem acolchoados",
-        "Cabine silenciosa e bem isolada"
+        "Absorção muito boa de buracos e imperfeições em cidade",
+        "Acerto claramente orientado ao conforto",
+        "Amortecedores de frequência variável (FSD)"
       ],
       "cons": [
-        "Peso elevado faz-se sentir em mudanças de direção",
-        "Pode balançar em autoestrada no modo Comfort",
-        "Jantes de 19\" e pneus desportivos endurecem o rolamento"
+        "Balanço e pouca contenção em piso muito irregular",
+        "Corpo segue demasiado a estrada em apoio rápido",
+        "Peso de 2,2 t faz-se sentir"
       ],
       "sourceIds": ["byd-guide", "byd-official", "autonext", "drive", "carwow"]
     },

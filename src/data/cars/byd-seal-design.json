@@ -98,9 +98,9 @@
         "upholstery": 8.5,
         "design": 7.5,
         "assembly": 8.5,
-        "hardPlastic": "low"
+        "hardPlastic": "moderate"
       },
-      "summary": "O habitáculo é exatamente o do Excellence: pele com costuras trabalhadas, ecrã rotativo de 15,6\", cockpit de 10,25\", carregadores wireless duplos e bancos elétricos aquecidos e ventilados. A única ausência visível é o head-up display, exclusivo do Excellence. A qualidade percebida mantém-se alta, com os mesmos reparos da imprensa a alguns revestimentos ao toque.",
+      "summary": "O habitáculo é exatamente o do Excellence: pele com costuras trabalhadas, ecrã rotativo de 15,6\", cockpit de 10,25\", carregadores wireless duplos e bancos elétricos aquecidos e ventilados. A única ausência visível é o head-up display, exclusivo do Excellence. A qualidade percebida mantém-se alta, mas há plástico duro visível nos painéis de porta e na consola, e o revestimento sintético dos bancos é descrito como menos nobre ao toque do que a vista sugere.",
       "pros": [
         "Mesmo habitáculo rico da versão Excellence",
         "Bancos dianteiros aquecidos, ventilados e com memória de série",
@@ -111,20 +111,20 @@
         "Alguns revestimentos parecem plastificados ao toque",
         "Ergonomia demasiado dependente do ecrã tátil"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "autoexpress", "turbo"]
+      "sourceIds": ["byd-guide", "byd-caetano", "autoexpress", "turbo", "carwow"]
     },
     "comfort": {
-      "baseScore": 7.5,
-      "summary": "O Design usa a mesma arquitetura de suspensão (duplo braço à frente, multibraços atrás) mas sem os amortecedores de frequência variável (FSD) do Excellence. A imprensa descreve um acerto claramente orientado ao conforto, macio em cidade e autoestrada, mas com falta de contenção de carroçaria: em piso muito irregular o eixo traseiro tende a saltitar. Os 130 kg a menos face ao AWD ajudam a agilidade.",
+      "baseScore": 7.6,
+      "summary": "O Design usa a mesma arquitetura (duplo braço à frente, multilink atrás) mas sem os amortecedores de frequência variável do Excellence. É macio e absorve bem as imperfeições comuns em cidade e autoestrada, com o eixo traseiro a saltitar em piso muito irregular e menos contenção de carroçaria do que a versão AWD.",
       "pros": [
-        "Acerto macio e silencioso em cidade e autoestrada",
-        "130 kg mais leve do que o Excellence AWD",
-        "Bancos muito confortáveis e cabine bem isolada"
+        "Acerto macio em cidade e autoestrada",
+        "Boa absorção das imperfeições comuns",
+        "130 kg mais leve do que o Excellence AWD"
       ],
       "cons": [
-        "Sem amortecedores adaptativos (FSD) do Excellence",
-        "Contenção de carroçaria limitada em piso irregular",
-        "Jantes de 19\" com perfil 45 endurecem os impactos secos"
+        "Sem os amortecedores de frequência variável do Excellence",
+        "Eixo traseiro saltita em piso muito irregular",
+        "Menos contenção de carroçaria do que a versão AWD"
       ],
       "sourceIds": ["byd-guide", "byd-caetano", "carwow", "highmotor", "evani"]
     },
