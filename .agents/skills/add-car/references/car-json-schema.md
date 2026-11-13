@@ -93,8 +93,10 @@ Rules:
 `acKw`, `dcKw`, `dcTime1080Min` (10–80% minutes), `dcTime3080Min` (optional),
 `connector` (usually `"CCS2"`), `v2l` (boolean), `v2lKw` (optional), `v2h` (boolean).
 
-The `charging` criterion score is `0.7 × dcKw + 0.3 × acKw` — verify both values.
-If the car has V2L/V2H, also make sure the corresponding equipment ids (`v2l`,
+For AC/DC power sources, optional onboard chargers, units and verification, follow
+[`evaluate-charging`](../../evaluate-charging/SKILL.md). Charging times are supporting
+specifications, not inputs to the charging index. If the car has V2L/V2H, also make
+sure the corresponding equipment ids (`v2l`,
 `v2h`) are in `equipmentIncluded` — they are checklist items too.
 
 ## `warranty`
