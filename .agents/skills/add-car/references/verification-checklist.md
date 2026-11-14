@@ -1,13 +1,14 @@
 # Verification checklist — recalculate and verify everything
 
-Why this exists: every relative score in this site (`src/lib/scoring.ts`) is
-proportional to the list: per criterion, the best car in the list gets 10 and the
-others get their proportion. Adding one car changes every car's per-criterion
-scores (except the interior), the weighted total, the ranking, the €/ponto, the
-value ranking, and the truthfulness of every comparative sentence in every
-dossier. The interior is an **absolute rubric** (`src/lib/interior.ts`): it does
-not move with the line-up, but every interior claim in the prose must still match
-its components. Work through ALL sections below, in order.
+Why this exists: most scores in this site (`src/lib/scoring.ts`) are absolute —
+conforto, som, marca, satisfação, equipamento e acabamento — and come from the
+car's own review, rubric or checklist count. Only five data criteria are relative:
+bagageira, autonomia, potência/peso, eficiência e carregamento; for those, the best
+car in the list gets 10 and the others get their proportion. Adding one car changes
+those five per-criterion scores, the weighted total, the ranking, the €/ponto, the
+value ranking, and the truthfulness of every comparative sentence in every dossier.
+Absolute scores do not move with the line-up, but every claim in their prose must
+still match the underlying assessment. Work through ALL sections below, in order.
 
 ## Section 1 — Data validation
 
@@ -35,21 +36,24 @@ and score, follow the verification steps in
 [`evaluate-interior`](../../evaluate-interior/SKILL.md) and use
 `interiorScore()` from `src/lib/interior.ts` rather than duplicating its formula.
 
-- `satisfaction` raw = `0.40·ownerSentiment + 0.35·reportedDefects +
+- `satisfaction` index = `0.40·ownerSentiment + 0.35·reportedDefects +
   0.25·recallRecord`, with component ceilings based on `evidenceLevel` in
-  `src/lib/satisfaction.ts`; it is then relative-scaled against the best car.
-- `equipment` raw = count of `equipmentIncluded` ids that exist in the checklist
+  `src/lib/satisfaction.ts`; the criterion is absolute, so the index is the score.
+- `equipment` raw = count of `equipmentIncluded` ids that exist in the checklist;
+  score = `count / checklistLength × 10`.
+- Editorial raw = `reviews.<id>.baseScore` (currently comfort and sound), used as
+  the absolute score. For sound, recompute
+  `0.50·brand + 0.20·speakers + 0.20·opinions + 0.10·RMS` as described in
+  [`evaluate-sound`](../../evaluate-sound/SKILL.md) and confirm the stored value
+  rounds to the `baseScore`.
 - `range` raw = `specs.rangeKm`
 - `powerToWeight` raw = `specs.powerHp / specs.weightKg`
 - `efficiency` raw = `specs.consumptionKwh100` (lower is better)
 - `charging` raw = `charging.dcKw × 0.7 + charging.acKw × 0.3`
-- Editorial raw = `reviews.<id>.baseScore` (currently comfort and sound). For
-  sound, recompute `0.50·brand + 0.20·speakers + 0.20·opinions + 0.10·RMS` as
-  described in [`evaluate-sound`](../../evaluate-sound/SKILL.md) and confirm the
-  stored value rounds to the `baseScore`.
-- Score per relative criterion (higher-is-better): `clamp(raw / bestRaw × 10, 0, 10)`;
-  lower-is-better (only `efficiency`): `clamp(bestRaw / raw × 10, 0, 10)`.
-- Total = weighted mean of the 10 scores → `pricePerPoint = price.amount / total`.
+- Relative score (higher-is-better): `clamp(raw / bestRaw × 10, 0, 10)`;
+  lower-is-better (only `efficiency`): `clamp(bestRaw / raw × 10, 0, 10)`. This
+  applies only to bagageira, autonomia, potência/peso, eficiência e carregamento.
+- Total = weighted mean of the 11 scores → `pricePerPoint = price.amount / total`.
 
 Pick the new car and one existing car, recompute objective criteria and inspect the
 brand/satisfaction rubric inputs as applicable, then confirm they match the
@@ -115,8 +119,8 @@ rejects duplicates.
 - If the new car is a sibling version (e.g. BYD Seal Design vs Excellence AWD),
   make sure both read as separate cars everywhere and that no link or prose calls
   them only by `brand + model`.
-- Re-read the comparative prose of both siblings; scores are relative, so their
-  mutual claims may need updating.
+- Re-read the comparative prose of both siblings; the five relative scores and the
+  ranking may shift, so their mutual claims may need updating.
 
 ## Section 5 — Equipment re-audit verification
 

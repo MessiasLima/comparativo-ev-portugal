@@ -36,11 +36,11 @@ export const CRITERIA: CriterionDefinition[] = [
     shortLabel: "Conforto",
     question: "Absorve bem os buracos? É firme demais?",
     description:
-      "Capacidade de absorver irregularidades, estabilidade a alta velocidade e equilíbrio entre conforto e controlo do corpo.",
+      "Nota editorial absoluta de 0 a 10: capacidade de absorver irregularidades, estabilidade a alta velocidade e equilíbrio entre conforto e controlo do corpo.",
     icon: Waves,
     kind: "editorial",
     direction: "higher",
-    scale: "relative",
+    scale: "absolute",
     weight: 1,
   },
   {
@@ -50,11 +50,11 @@ export const CRITERIA: CriterionDefinition[] = [
     shortLabel: "Marca/assist.",
     question: "A marca tem experiência, presença e estabilidade para apoiar os seus clientes?",
     description:
-      "Rubrica relativa com seis dimensões: idade automóvel global da marca, presença oficial contínua em Portugal, rede autorizada, maturidade do fabrico europeu, apoio de grupo/fabricante e estabilidade financeira. Uma fábrica em Portugal só acrescenta 0,5 pontos se produzir ou montar automóveis da marca avaliada, em fase-piloto ou série (máximo 10); instalações do grupo que fabriquem outra marca não contam. Idade, rede e produção são indicadores de capacidade e logística, não garantias de fiabilidade nem de rapidez na entrega de peças.",
+      "Rubrica absoluta com seis dimensões: idade automóvel global da marca, presença oficial contínua em Portugal, rede autorizada, maturidade do fabrico europeu, apoio de grupo/fabricante e estabilidade financeira. Uma fábrica em Portugal só acrescenta 0,5 pontos se produzir ou montar automóveis da marca avaliada, em fase-piloto ou série (máximo 10); instalações do grupo que fabriquem outra marca não contam. Idade, rede e produção são indicadores de capacidade e logística, não garantias de fiabilidade nem de rapidez na entrega de peças.",
     icon: ShieldCheck,
     kind: "rubric",
     direction: "higher",
-    scale: "relative",
+    scale: "absolute",
     weight: 1,
   },
   {
@@ -64,11 +64,11 @@ export const CRITERIA: CriterionDefinition[] = [
     shortLabel: "Equipamento",
     question: "Quantos equipamentos relevantes traz?",
     description:
-      `Contagem normalizada de ${EQUIPMENT_CHECKLIST.length} equipamentos de série ou incluídos na configuração, em ${EQUIPMENT_CATEGORIES.join(", ")}.`,
+      `Contagem normalizada de ${EQUIPMENT_CHECKLIST.length} equipamentos de série ou incluídos na configuração, em ${EQUIPMENT_CATEGORIES.join(", ")}, convertida numa nota absoluta de 0 a 10 face à checklist completa.`,
     icon: ListChecks,
     kind: "objective",
     direction: "higher",
-    scale: "relative",
+    scale: "absolute",
     weight: 1,
   },
   {
@@ -92,11 +92,11 @@ export const CRITERIA: CriterionDefinition[] = [
     shortLabel: "Som",
     question: "Sistema base ou assinado?",
     description:
-      "Avaliação editorial com pesos fixos: 50% marca do sistema de áudio, 20% número de altifalantes, 20% opiniões específicas sobre o som e 10% potência RMS. A marca do sistema instalado é o factor mais importante. Só conta o equipamento incluído na configuração avaliada; um upgrade premium opcional não é pontuado. Uma potência publicada em watts é tratada como RMS, salvo indicação de outra base de medição; sem valor de potência, usa-se a referência neutra.",
+      "Avaliação editorial absoluta com pesos fixos: 50% marca do sistema de áudio, 20% número de altifalantes, 20% opiniões específicas sobre o som e 10% potência RMS. A marca do sistema instalado é o factor mais importante. Só conta o equipamento incluído na configuração avaliada; um upgrade premium opcional não é pontuado. Uma potência publicada em watts é tratada como RMS, salvo indicação de outra base de medição; sem valor de potência, usa-se a referência neutra.",
     icon: Speaker,
     kind: "editorial",
     direction: "higher",
-    scale: "relative",
+    scale: "absolute",
     weight: 1,
   },
   {
@@ -161,11 +161,11 @@ export const CRITERIA: CriterionDefinition[] = [
     shortLabel: "Satisfação",
     question: "Quem já conduz, recomenda?",
     description:
-      "Rubrica relativa: 40% satisfação de proprietários e testes independentes de longa duração, 35% defeitos/reclamações recorrentes reportados por utilizadores e 25% recalls de segurança do modelo. Considere recorrência, gravidade e exposição; não compare contagens brutas sem dados de vendas/quilometragem. Evidência limitada ou moderada limita a nota máxima dos componentes para que ausência de relatos não seja tratada como prova de ausência de problemas. Campanhas de serviço não são recalls.",
+      "Rubrica absoluta: 40% satisfação de proprietários e testes independentes de longa duração, 35% defeitos/reclamações recorrentes reportados por utilizadores e 25% recalls de segurança do modelo. Considere recorrência, gravidade e exposição; não compare contagens brutas sem dados de vendas/quilometragem. Evidência limitada ou moderada limita a nota máxima dos componentes para que ausência de relatos não seja tratada como prova de ausência de problemas. Campanhas de serviço não são recalls.",
     icon: Star,
     kind: "rubric",
     direction: "higher",
-    scale: "relative",
+    scale: "absolute",
     weight: 1,
   },
 ]

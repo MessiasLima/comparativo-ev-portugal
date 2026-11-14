@@ -9,8 +9,8 @@ Use this workflow when preparing or revising `reviews.brand`. The assessment bel
 to the **marque**, not to an individual trim. Versions of the same marque should
 share the same brand assessment unless the user explicitly defines a version-specific
 reason to differ. Each component is a sourced 0–10 judgement; `brandScore()` applies
-the weighted formula, and `src/lib/scoring.ts` later scales that index relative to
-the other cars. Never store either calculated result in car JSON.
+the weighted formula, and `src/lib/scoring.ts` uses that index directly because the
+criterion is absolute. Never store the calculated result in car JSON.
 
 ## Phase 0 — Fix the entity and date
 
@@ -191,7 +191,7 @@ Populate `reviews.brand` with:
 - `sourceIds`: only IDs of sources consulted and declared in this car's `sources`;
 - `pros` and `cons`: specific, supported points on the six brand components.
 
-Do not store `brandScore()` or the final list-relative score. Avoid claims such as
+Do not store `brandScore()` or a recalculated score. Avoid claims such as
 “a melhor marca da lista”; the review must remain true if the lineup changes. For
 multiple versions of the same marque, keep the assessment, summary and source IDs
 consistent unless the evidence is genuinely version-specific.
@@ -201,13 +201,14 @@ consistent unless the evidence is genuinely version-specific.
 1. Run `npm run validate:data`; resolve invalid/out-of-range component marks and
    missing `sourceIds`.
 2. Confirm each assessment has the six numeric components and the boolean
-   `portugalFactory`, and that no calculated brand index or relative score was saved.
+   `portugalFactory`, and that no calculated brand index was saved.
 3. Obtain the raw index with `brandScore(assessment)` from `src/lib/brand.ts`; do not
    reimplement the weights or bonus. Check that the mirrored calculation in
    `scripts/validate-data.mjs` agrees and that the Portugal bonus is capped at 10.
-4. Recalculate every car's relative brand score and the overall ranking after any
-   score or weight change. Review all four dossiers, including versions sharing a
-   marque assessment; do not change other criteria unless asked.
+4. Recalculate every car's brand score and the overall ranking after any score or
+   weight change. Because the criterion is absolute, a change to one marque affects
+   only the cars of that marque. Review all four dossiers, including versions sharing
+   a marque assessment; do not change other criteria unless asked.
 5. Report missing standalone statements, stale forecasts, uncertainty about the
    Portuguese entry date or service directory, and any factory status that could not
    be verified. Do not re-evaluate cars merely because the skill document changes;

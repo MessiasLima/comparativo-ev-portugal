@@ -7,8 +7,8 @@ description: Evaluate or update the “Qualidade de som” review and editorial 
 
 Use this workflow whenever you prepare or revise `reviews.sound`. The result is an
 editorial `baseScore` from 0 to 10, built from technical facts and specific
-listening evidence. The relative display score is still calculated by
-`src/lib/scoring.ts`; never store that calculated score in the dossier.
+listening evidence. The criterion is absolute: `src/lib/scoring.ts` uses the
+`baseScore` directly; never store a recalculated score in the dossier.
 
 The evaluation applies to the **installed configuration**, not to an optional
 pack, another trim or the car's brand image. A premium system that was not
@@ -185,17 +185,16 @@ Populate `reviews.sound` with:
 - `sourceIds`: IDs of the sources that support the review, all declared in the
   car's `sources` array.
 
-Do not add a second score, a cached relative score, a ranking claim or a
-"best in the list" statement to the JSON. The displayed criterion score is
-calculated later from the `baseScore`; the review must remain true if the line-up
-changes.
+Do not add a second score, a recalculated score, a ranking claim or a
+"best in the list" statement to the JSON. The displayed criterion score is the
+`baseScore`; the review must remain true if the line-up changes.
 
 ## Phase 5 — Verify
 
 1. Run `npm run validate:data` and resolve any validation errors.
 2. Recompute the weighted result from the four component marks. Confirm that the
    stored `baseScore` is the result of the documented formula, not a hand-written
-   relative score.
+   score.
 3. Confirm that every `sourceId` resolves to a consulted source and that the
    summary, pros and cons agree with the component evidence.
 4. Check that the system described is the one actually included in the evaluated
@@ -216,6 +215,6 @@ changes.
 }
 ```
 
-Do not store the four component marks or the relative display score in the car
+Do not store the four component marks or a recalculated score in the car
 JSON; keep the calculation in the working notes and expose the final editorial
 `baseScore`. Never change `src/lib/scoring.ts` as part of a sound assessment.

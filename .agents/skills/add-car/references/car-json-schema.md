@@ -126,8 +126,8 @@ sure the corresponding equipment ids (`v2l`,
 Two editorial criteria (need a justified `baseScore`): `comfort` and `sound`.
 
 Three rubric criteria (`interior`, `brand` and `satisfaction` — each needs its
-own structured `assessment`, **never a `baseScore`**; interior is absolute, while
-brand and satisfaction are relative to the list). For their assessment workflows,
+own structured `assessment`, **never a `baseScore`**; all three are absolute). For
+their assessment workflows,
 follow [`evaluate-interior`](../../evaluate-interior/SKILL.md),
 [`evaluate-brand`](../../evaluate-brand/SKILL.md) and
 [`evaluate-satisfaction`](../../evaluate-satisfaction/SKILL.md), respectively.
@@ -180,7 +180,7 @@ bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
   absolute, not scaled against the other cars; `src/lib/interior.ts` remains the
   formula's source of truth.
 
-### Brand and assistance review (relative rubric)
+### Brand and assistance review (absolute rubric)
 
 ```json
 {
@@ -200,9 +200,9 @@ bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
 }
 ```
 
-- For the six component marks, evidence requirements, financial-data proxies, Portugal-factory rule and score verification, follow [`evaluate-brand`](../../evaluate-brand/SKILL.md). `src/lib/brand.ts` remains the source of truth for the formula; do not store its calculated index or the final relative score in JSON.
+- For the six component marks, evidence requirements, financial-data proxies, Portugal-factory rule and score verification, follow [`evaluate-brand`](../../evaluate-brand/SKILL.md). `src/lib/brand.ts` remains the source of truth for the formula; do not store its calculated index in JSON.
 
-### User satisfaction, defects and recalls (relative rubric)
+### User satisfaction, defects and recalls (absolute rubric)
 
 ```json
 {
@@ -222,13 +222,12 @@ bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
 - For evidence gathering, component marks, evidence levels, recall handling and
   score verification, follow
   [`evaluate-satisfaction`](../../evaluate-satisfaction/SKILL.md). Keep the
-  assessment shape above and do not store the calculated index or final relative
-  score in JSON.
+  assessment shape above and do not store the calculated index in JSON.
 
 Quality bar (match the existing dossiers):
 - `baseScore` 0–10 with one decimal for the two editorial criteria. It is an
-  *absolute* judgement that the site then re-scales against the best car in the
-  list, so score on merit, not to game the ranking.
+  *absolute* score used directly by the site, so score on merit, not to game the
+  ranking.
 - Follow [`evaluate-interior`](../../evaluate-interior/SKILL.md) when preparing or
   checking the interior assessment; do not duplicate its rubric guidance here.
 - `summary`: cite real numbers (km, kWh, cv/t, speaker counts, survey positions),

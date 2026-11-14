@@ -1,6 +1,6 @@
 ---
 name: add-car
-description: Add a new electric car (and each of its versions) to the Comparativo EV Portugal ranking — exhaustive research from user-provided material and the web, equipment checklist updates with re-audit of all existing cars, dossier JSON creation, UI updates, and full recalculation of all relative scores and comparative notes. Use this skill whenever the user wants to add, register, or create a dossier for a car in this project (e.g. "add the Tesla Model 3", "mete o MG4 na lista", "create the dossier for this offer"), provides car material such as a PDF offer, spec sheet, or links, or asks to update an existing car's data or re-verify the ranking after any data change.
+description: Add a new electric car (and each of its versions) to the Comparativo EV Portugal ranking — exhaustive research from user-provided material and the web, equipment checklist updates with re-audit of all existing cars, dossier JSON creation, UI updates, and full recalculation of rankings, relative scores and comparative notes. Use this skill whenever the user wants to add, register, or create a dossier for a car in this project (e.g. "add the Tesla Model 3", "mete o MG4 na lista", "create the dossier for this offer"), provides car material such as a PDF offer, spec sheet, or links, or asks to update an existing car's data or re-verify the ranking after any data change.
 ---
 
 # Add a car to Comparativo EV Portugal
@@ -20,11 +20,14 @@ and verify everything. The phases must run in order, because each one feeds the 
    rubric components in `reviews.interior.assessment`, never the resulting score.
    Comparative *prose* in reviews/dossiers is allowed (and expected), but must be
    re-verified in Phase 5.
-3. **Scoring is relative — except for the interior.** In each relative criterion the
-   best car in the list gets 10 and the others get their proportion. Adding one car
-   changes the score, rank, €/ponto and value-rank of **every** car. The interior
-   uses an absolute rubric (`src/lib/interior.ts`), so it does not move when the
-   line-up changes. Phase 5 is not optional either way.
+3. **Most criteria are absolute; five are relative.** Conforto, som, marca,
+   satisfação, equipamento e acabamento use absolute scores (`baseScore`,
+   `brandScore()`, `satisfactionScore()`, equipment count / 38 × 10 and
+   `interiorScore()`), so they do not move when the line-up changes. Bagageira,
+   autonomia, potência/peso, eficiência e carregamento are relative: the best car
+   gets 10 and the others their proportion. Adding one car changes those five
+   scores, and therefore the rank, €/ponto and value-rank of **every** car. Phase 5
+   is not optional either way.
 4. **Every claim needs a source.** Each `reviews.<criterion>.sourceIds` entry must
    reference a source declared in the same JSON's `sources` array. The validator
    (`npm run validate:data`) enforces this — use it early and often.
@@ -70,8 +73,8 @@ and verify everything. The phases must run in order, because each one feeds the 
 | `src/data/cars/*.json` | One JSON per car **version**. Data only. |
 | `src/data/cars/index.ts` | Registry: imports every JSON and exports the `CARS` array. Order here controls the footer (first 4 entries). |
 | `src/data/equipment.ts` | `EQUIPMENT_CHECKLIST` (the normalized feature list) + `EQUIPMENT_CATEGORIES`. |
-| `src/data/criteria.ts` | The criterion definitions. Current set: 2 editorial (`comfort`, `sound` — need a human-style `baseScore`), 3 rubrics (`interior`, `brand`, `satisfaction` — need their typed `assessment`; interior is absolute, brand and satisfaction are relative), and 6 objective (`equipment`, `boot`, `range`, `powerToWeight`, `efficiency`, `charging` — computed from specs). Check the live registry and `CriterionId` before preparing reviews; the `add-criteria` skill documents how the set evolves. For the `range` input, follow [`evaluate-range`](../evaluate-range/SKILL.md); for `bootL` and `frunkL`, follow [`evaluate-boot`](../evaluate-boot/SKILL.md); for `powerHp` and `weightKg`, follow [`evaluate-power-to-weight`](../evaluate-power-to-weight/SKILL.md); for `consumptionKwh100`, follow [`evaluate-efficiency`](../evaluate-efficiency/SKILL.md); for `charging.acKw` and `charging.dcKw`, follow [`evaluate-charging`](../evaluate-charging/SKILL.md). |
-| `src/lib/scoring.ts` | The scoring engine. `equipment` = count of checklist ids; `powerToWeight` = cv/kg; `charging` = 0.7·DC + 0.3·AC; `efficiency` = lower is better. Relative criteria rescale against the best car; interior is absolute. |
+| `src/data/criteria.ts` | The criterion definitions. Current set: 2 editorial (`comfort`, `sound` — need a human-style `baseScore`, both absolute), 3 rubrics (`interior`, `brand`, `satisfaction` — need their typed `assessment`, all absolute), and 6 objective (`equipment` — absolute count / checklist; `boot`, `range`, `powerToWeight`, `efficiency`, `charging` — relative, computed from specs). Check the live registry and `CriterionId` before preparing reviews; the `add-criteria` skill documents how the set evolves. For the `range` input, follow [`evaluate-range`](../evaluate-range/SKILL.md); for `bootL` and `frunkL`, follow [`evaluate-boot`](../evaluate-boot/SKILL.md); for `powerHp` and `weightKg`, follow [`evaluate-power-to-weight`](../evaluate-power-to-weight/SKILL.md); for `consumptionKwh100`, follow [`evaluate-efficiency`](../evaluate-efficiency/SKILL.md); for `charging.acKw` and `charging.dcKw`, follow [`evaluate-charging`](../evaluate-charging/SKILL.md). |
+| `src/lib/scoring.ts` | The scoring engine. `equipment` = count of checklist ids, normalised to 0–10 against the checklist; `powerToWeight` = cv/kg; `charging` = 0.7·DC + 0.3·AC; `efficiency` = lower is better. Absolute criteria use their own 0–10 index; the five relative data criteria rescale against the best car. |
 | `src/lib/interior.ts` | Source of truth for the absolute interior rubric formula. For evidence gathering, component marks and hard-plastic classification, follow [`evaluate-interior`](../evaluate-interior/SKILL.md); never duplicate the formula in JSON or prose. |
 | `src/lib/brand.ts` | Source of truth for brand-rubric weights and `brandScore()`. For evidence, component marks and the Portugal factory bonus, follow [`evaluate-brand`](../evaluate-brand/SKILL.md); keep `scripts/validate-data.mjs` in sync. |
 | `src/lib/satisfaction.ts` | Source of truth for satisfaction weights, evidence-level caps and `satisfactionScore()`. For owner, defect and recall evidence, follow [`evaluate-satisfaction`](../evaluate-satisfaction/SKILL.md). |
@@ -238,14 +241,15 @@ The essential steps:
    still numerically true and keep them scoped to those cars. Also grep each
    dossier for the names of the other cars.
 4. **Score-explanation check.** Open the new dossier's criteria section and read the
-   "Como se chega à nota" line of all ten criteria. It is generated from
+   "Como se chega à nota" line of all criteria. It is generated from
    `rawLabel`/`score`/`rank`, so it doubles as a consistency test: every relative
-   criterion where the car ranks #1 must display 10,0; the interior must say
-   "escala absoluta" and show its rubric index; lower-is-better criteria (eficiência)
-   must say "menor consumo", not "melhor valor". A mismatch means the scorer or the
-   label is wrong — fix the engine, never the copy. Also confirm the row caption reads
-   "relativa à lista" or "escala absoluta" and that the badge (`dado`/`rubrica`
-   /`editorial`) matches `criterion.kind`.
+   criterion where the car ranks #1 must display 10,0; conforto, som, marca,
+   satisfação, equipamento e acabamento must say "escala absoluta" and show their own
+   index; lower-is-better criteria (eficiência) must say "menor consumo", not
+   "melhor valor". A mismatch means the scorer or the label is wrong — fix the
+   engine, never the copy. Also confirm the row caption reads "relativa à lista" or
+   "escala absoluta" and that the badge (`dado`/`rubrica`/`editorial`) matches
+   `criterion.kind`.
 5. **Name and variant check.** Every car has a `variant` (trim) and a public name
    `brand + model + variant` rendered by `formatCarName()`. Adding a version of an
    existing model must not create a duplicate public name — the validator checks

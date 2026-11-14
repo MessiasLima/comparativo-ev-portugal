@@ -7,9 +7,9 @@ description: Evaluate or update the “Conforto de suspensão” review for a ca
 
 Use this workflow when preparing or revising `reviews.comfort`. Score the ride
 provided by the suspension in the exact evaluated configuration. This is an
-editorial criterion: `baseScore` is the input to the existing relative scorer in
-`src/lib/scoring.ts`. Do not change that model or store its calculated, list-relative
-result in the car JSON.
+editorial criterion: `baseScore` is the final 0–10 score used directly by
+`src/lib/scoring.ts`, because this criterion is absolute. Do not change that model
+or store a recalculated score in the car JSON.
 
 ## Phase 0 — Identify the evaluated setup
 
@@ -89,8 +89,8 @@ results differ, reflect the trade-off in the score and prose instead of hiding i
 
 Populate `reviews.comfort` with:
 
-- `baseScore`: the evidence-based 0–10 input mark (one decimal is the project
-  convention); this is not the final relative score shown by the site;
+- `baseScore`: the evidence-based 0–10 mark (one decimal is the project
+  convention); because the criterion is absolute, this is the score shown by the site;
 - `summary`: concise pt-PT prose describing the evaluated setup, observed suspension
   behaviour and material trade-offs;
 - `sourceIds`: IDs of consulted sources declared in the same car's `sources` array;
@@ -105,8 +105,8 @@ verified and remains true independently of the lineup.
 
 1. Run `npm run validate:data` and resolve any errors, including invalid
    `baseScore` values or unresolved `sourceIds`.
-2. Confirm the JSON stores only `baseScore`, not a manually normalized/final score;
-   `src/lib/scoring.ts` performs the relative calculation.
+2. Confirm the JSON stores only `baseScore`, not a manually normalized score;
+   `src/lib/scoring.ts` uses it directly as the absolute score.
 3. Check that the summary, pros and cons discuss suspension behaviour only and that
    each claim is supported by the cited evidence and exact configuration.
 4. Do not re-evaluate existing cars unless the user explicitly requests it. Creating

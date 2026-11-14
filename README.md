@@ -73,17 +73,18 @@ O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia,
 
 ### Como as notas são calculadas
 
-- **Critérios objetivos** — bagageira, autonomia, potência/peso, eficiência, carregamento e quantidade de equipamento. A Bagageira soma os litros da traseira e do frunk; `frunkL: 0` só é usado quando a ausência é confirmada. O valor é calculado a partir dos dados do JSON.
-- **Critérios editoriais** — conforto e som. Cada carro tem uma avaliação base de 0 a 10, sustentada por fontes no próprio JSON. A avaliação do som segue a [skill de avaliação do som](.agents/skills/evaluate-sound/SKILL.md): 50% marca do sistema de áudio, 20% número de altifalantes, 20% opiniões específicas e 10% potência RMS. Uma potência publicada em watts é tratada como RMS, salvo se a fonte indicar outra base de medição; sem qualquer valor de potência, usa-se a referência neutra.
-- **Marca e assistência** — rubrica relativa com seis componentes sobre idade global e presença em Portugal, rede autorizada, fabrico europeu, apoio e estabilidade financeira. A [skill de avaliação da marca](.agents/skills/evaluate-brand/SKILL.md) orienta a evidência; o cálculo e os pesos vivem em `src/lib/brand.ts`.
-- **Satisfação, defeitos e recalls** — rubrica relativa baseada em relatos de proprietários, testes de longa duração e campanhas/recalls específicos.
+- **Critérios objetivos com nota absoluta** — quantidade de equipamento. A contagem é feita sobre a mesma checklist de 38 itens para todos os carros e convertida para 0–10 pela proporção da checklist completa.
+- **Critérios objetivos relativos** — bagageira, autonomia, potência/peso, eficiência e carregamento. A Bagageira soma os litros da traseira e do frunk; `frunkL: 0` só é usado quando a ausência é confirmada. O valor é calculado a partir dos dados do JSON e comparado com o melhor da lista.
+- **Critérios editoriais** — conforto e som, ambos com nota **absoluta** de 0 a 10, sustentada por fontes no próprio JSON. A avaliação do som segue a [skill de avaliação do som](.agents/skills/evaluate-sound/SKILL.md): 50% marca do sistema de áudio, 20% número de altifalantes, 20% opiniões específicas e 10% potência RMS. Uma potência publicada em watts é tratada como RMS, salvo se a fonte indicar outra base de medição; sem qualquer valor de potência, usa-se a referência neutra.
+- **Marca e assistência** — rubrica **absoluta** com seis componentes sobre idade global e presença em Portugal, rede autorizada, fabrico europeu, apoio e estabilidade financeira. A [skill de avaliação da marca](.agents/skills/evaluate-brand/SKILL.md) orienta a evidência; o cálculo e os pesos vivem em `src/lib/brand.ts`.
+- **Satisfação, defeitos e recalls** — rubrica **absoluta** baseada em relatos de proprietários, testes de longa duração e campanhas/recalls específicos.
 - **Acabamento interno** — critério de rubrica, com nota **absoluta** (não relativa à lista). A avaliação dos componentes, do estilo e do plástico duro segue a [skill de avaliação do interior](.agents/skills/evaluate-interior/SKILL.md); a fórmula vive em `src/lib/interior.ts` e os dados de cada carro em `reviews.interior.assessment`.
-- **Relatividade** — nos restantes critérios, o melhor carro da lista recebe 10. Os restantes recebem a proporção do seu desempenho face ao líder. Se entrar um carro novo, estas notas mudam; a rubrica de acabamento não muda, porque é absoluta.
+- **Relatividade** — só os cinco critérios de dados (bagageira, autonomia, potência/peso, eficiência e carregamento) são relativos à lista: o melhor carro recebe 10 e os restantes a proporção do seu desempenho face ao líder. Se entrar um carro novo, só estas notas mudam; conforto, som, marca, satisfação, equipamento e acabamento mantêm-se, porque são absolutas.
 - **Nota global** — média ponderada dos 11 critérios. Cada critério tem um peso-multiplicador float entre 0 e 2 (passo 0.1, defeito ×1): ×1 mantém o peso base, ×2 duplica-o e ×0 anula o critério. A média é normalizada pela soma dos multiplicadores, pelo que com todos a ×1 resulta na média simples. Ao alterar um slider, a nota global e o €/ponto mudam imediatamente, sem necessidade de confirmar.
 - **Custo-benefício** — `preço / nota global` = euros por ponto. Quanto menor, melhor.
 - **Persistência** — os pesos são guardados em `localStorage` com a chave `comparativo-ev-portugal:weights:v2` e recuperados quando o utilizador volta ao site. A tabela e o painel de nota dos dossiês usam a mesma configuração.
 
-O carregamento é um índice composto: **70% potência DC + 30% potência AC**. A quantidade de equipamento é contada sobre a mesma checklist de 38 itens para todos os carros.
+O carregamento é um índice composto: **70% potência DC + 30% potência AC**. A quantidade de equipamento é contada sobre a mesma checklist de 38 itens para todos os carros e convertida numa nota absoluta de 0 a 10 pela proporção da checklist preenchida.
 
 ## Dados e preços
 

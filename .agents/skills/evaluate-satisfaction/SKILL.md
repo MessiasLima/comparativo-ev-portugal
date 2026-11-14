@@ -102,7 +102,7 @@ consulted source IDs to `sourceIds`; each ID must exist in that car's `sources`.
 1. Run `npm run validate:data` and resolve errors in assessment fields or sources.
 2. Call `satisfactionScore(assessment)` from `src/lib/satisfaction.ts` and confirm
    the displayed rubric index applies the configured caps and weights. Do not store
-   this calculated index or the final list-relative score in JSON.
+   this calculated index in JSON; the criterion is absolute and the index is the final score.
 3. Check that each component respects its evidence-level cap in the UI, and that the
    summary does not imply that an incomplete or geographically limited recall search
    proves a clean global record.

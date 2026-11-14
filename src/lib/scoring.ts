@@ -129,6 +129,18 @@ function clampScore(value: number): number {
   return Math.min(10, Math.max(0, value))
 }
 
+/**
+ * Converts the raw metric of an absolute criterion into a 0–10 score. Most
+ * absolute criteria already produce a 0–10 index (editorial reviews and
+ * rubrics); equipment is a count and is normalised against the full checklist.
+ */
+function absoluteScore(criterionId: CriterionId, value: number): number {
+  if (criterionId === "equipment") {
+    return (value / EQUIPMENT_CHECKLIST.length) * 10
+  }
+  return value
+}
+
 function rankValues(values: number[], higherIsBetter: boolean): number[] {
   const sorted = [...values].sort((a, b) => (higherIsBetter ? b - a : a - b))
   return values.map((value) => {
@@ -183,7 +195,7 @@ export function getComparison(): Comparison {
       if (criterion.scale === "absolute") {
         criteria[criterion.id] = {
           criterion,
-          score: clampScore(value),
+          score: clampScore(absoluteScore(criterion.id, value)),
           rawValue: value,
           rawLabel: rawLabel(car, criterion.id),
           bestRawValue: Math.max(...metrics),
