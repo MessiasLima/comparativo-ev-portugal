@@ -28,7 +28,10 @@ export interface CriterionDefinition {
   icon: LucideIcon
   kind: CriterionKind
   direction: CriterionDirection
-  /** `relative` rescales against the best car; `absolute` uses the score as-is. */
+  /**
+   * `relative` rescales against the best car; `absolute` uses the car's own 0–10
+   * index (equipment normalises its count against the full checklist).
+   */
   scale: CriterionScale
   weight: number
 }
@@ -149,7 +152,9 @@ export interface Specs {
 }
 
 export interface Charging {
+  /** AC onboard charger power. Recorded for the spec sheet; not scored. */
   acKw: number
+  /** DC peak power. This is the charging criterion's raw value. */
   dcKw: number
   dcTime1080Min: number
   dcTime3080Min?: number

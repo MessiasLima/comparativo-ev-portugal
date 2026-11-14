@@ -89,7 +89,7 @@ function ScoreExplanation({
   let explanation: string
   if (!relative) {
     explanation =
-      "Escala absoluta: a nota é o índice da rubrica, sem comparação com os outros carros."
+      "Escala absoluta: a nota de 0 a 10 é calculada a partir do valor deste carro, sem comparação com os outros."
   } else if (rank === 1) {
     explanation = lowerIsBetter
       ? "Escala relativa: tem o menor consumo da lista, por isso recebe 10,0. Os restantes carros ficam pela proporção inversa do seu consumo."
@@ -209,7 +209,7 @@ export function CriterionList({
                   criterion.id === "satisfaction" &&
                   assessment &&
                   "evidenceLevel" in assessment
-                    ? `A evidência ${SATISFACTION_EVIDENCE_LABELS[assessment.evidenceLevel]} limita cada componente da rubrica; a nota da lista compara o índice resultante com o dos outros carros.`
+                    ? `A evidência ${SATISFACTION_EVIDENCE_LABELS[assessment.evidenceLevel]} limita cada componente da rubrica; a nota final é o índice ponderado depois desses limites.`
                     : undefined
                 }
               />

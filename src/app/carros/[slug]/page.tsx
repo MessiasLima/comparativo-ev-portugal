@@ -569,7 +569,7 @@ async function CarDossier({
                 index="03"
                 eyebrow="Critérios de avaliação"
                 title="Nota a nota, com a fonte à vista."
-                description="Cada critério tem uma nota de 0 a 10 e indica se é relativa à lista ou absoluta. Nos critérios relativos, o melhor carro comparado recebe 10 e os restantes a proporção do seu desempenho; o acabamento interno usa uma rubrica absoluta de materiais. Abra 3.1 Acabamento interno para ver a decomposição, a síntese e as fontes."
+                description="Cada critério tem uma nota de 0 a 10 e indica se é absoluta ou relativa à lista. Conforto, som, marca, satisfação, equipamento e acabamento usam notas absolutas, calculadas a partir das rubricas e contagens do próprio carro. Nos cinco critérios relativos restantes, o melhor carro comparado recebe 10 e os outros a proporção do seu desempenho. Abra 3.1 Acabamento interno para ver a decomposição, a síntese e as fontes."
               />
               <CriterionList
                 entry={entry}

@@ -9,7 +9,7 @@ const steps = [
   {
     number: "02",
     title: "Notas comparáveis",
-    body: "Nos critérios relativos — de dados, editoriais e rubricas —, o melhor carro da lista recebe 10 e os restantes a proporção do seu desempenho. O acabamento interno é a exceção: usa uma rubrica absoluta — superfícies macias, estofos e couro, design contido, montagem e proporção de plástico duro —, para que uma cabine maioritariamente plástica não chegue ao topo só por ser a menos má. Se entrar um novo carro, as notas relativas recalculam-se automaticamente.",
+    body: "Conforto, som, marca, satisfação, equipamento e acabamento usam notas absolutas de 0 a 10: vêm de rubricas e contagens próprias e não dependem dos outros carros. Os critérios relativos — bagageira, autonomia, potência/peso, eficiência e carregamento — são comparados com a lista: o melhor carro da lista recebe 10 e os restantes a proporção do seu desempenho. Se entrar um novo carro, só estas cinco notas relativas se recalculam; as absolutas mantêm-se.",
   },
   {
     number: "03",

@@ -7,16 +7,16 @@ const equipmentFile = path.join(root, "src/data/equipment.ts")
 
 const criteria = [
   { id: "interior", kind: "rubric", direction: "higher", scale: "absolute" },
-  { id: "comfort", kind: "editorial", direction: "higher" },
-  { id: "brand", kind: "rubric", direction: "higher", scale: "relative" },
-  { id: "equipment", kind: "objective", direction: "higher" },
+  { id: "comfort", kind: "editorial", direction: "higher", scale: "absolute" },
+  { id: "brand", kind: "rubric", direction: "higher", scale: "absolute" },
+  { id: "equipment", kind: "objective", direction: "higher", scale: "absolute" },
   { id: "boot", kind: "objective", direction: "higher" },
-  { id: "sound", kind: "editorial", direction: "higher" },
+  { id: "sound", kind: "editorial", direction: "higher", scale: "absolute" },
   { id: "range", kind: "objective", direction: "higher" },
   { id: "powerToWeight", kind: "objective", direction: "higher" },
   { id: "efficiency", kind: "objective", direction: "lower" },
   { id: "charging", kind: "objective", direction: "higher" },
-  { id: "satisfaction", kind: "rubric", direction: "higher", scale: "relative" },
+  { id: "satisfaction", kind: "rubric", direction: "higher", scale: "absolute" },
 ]
 
 // Mantém em sincronia com src/lib/interior.ts.
@@ -301,8 +301,10 @@ function metric(car, criterionId) {
         recallRecord * satisfactionWeights.recallRecord
       return Math.round(clamp(weighted) * 100) / 100
     }
-    case "equipment":
-      return car.equipmentIncluded.filter((id) => equipmentIds.includes(id)).length
+    case "equipment": {
+      const included = new Set(car.equipmentIncluded)
+      return equipmentIds.filter((id) => included.has(id)).length
+    }
     case "boot":
       return car.specs.bootL + car.specs.frunkL
     case "range":
@@ -312,7 +314,7 @@ function metric(car, criterionId) {
     case "efficiency":
       return car.specs.consumptionKwh100
     case "charging":
-      return car.charging.dcKw * 0.7 + car.charging.acKw * 0.3
+      return car.charging.dcKw
     default:
       return car.reviews[criterionId].baseScore
   }
@@ -323,7 +325,9 @@ const scored = cars.map(({ data: car }) => {
   for (const criterion of criteria) {
     const value = metric(car, criterion.id)
     if (criterion.scale === "absolute") {
-      total += clamp(value)
+      total += clamp(
+        criterion.id === "equipment" ? (value / equipmentIds.length) * 10 : value,
+      )
       continue
     }
     const values = cars.map(({ data }) => metric(data, criterion.id))

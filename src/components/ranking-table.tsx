@@ -317,8 +317,8 @@ export function RankingTable({
               Ranking completo
             </p>
             <p className="mt-1 text-base leading-7 text-muted-foreground">
-              Clique num cabeçalho para ordenar. O líder de cada critério recebe
-              10.
+              Clique num cabeçalho para ordenar. As notas são absolutas ou
+              relativas à lista, conforme o critério.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">

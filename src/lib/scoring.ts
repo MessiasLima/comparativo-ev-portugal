@@ -81,7 +81,10 @@ function metricValue(car: Car, criterionId: CriterionId): number {
     case "efficiency":
       return car.specs.consumptionKwh100
     case "charging":
-      return car.charging.dcKw * 0.7 + car.charging.acKw * 0.3
+      // AC charging is recorded but not scored: every car in the comparison
+      // accepts the same 11 kW, so it cannot separate them. Only DC peak power
+      // changes how long a road trip stop takes.
+      return car.charging.dcKw
     default:
       return car.reviews[criterionId].baseScore ?? 0
   }
@@ -119,7 +122,7 @@ function rawLabel(car: Car, criterionId: CriterionId): string {
     case "efficiency":
       return `${formatDecimal(car.specs.consumptionKwh100)} kWh/100 km`
     case "charging":
-      return `${car.charging.dcKw} kW DC · ${car.charging.acKw} kW AC`
+      return `${car.charging.dcKw} kW DC`
     default:
       return `Avaliação editorial ${formatScore(car.reviews[criterionId].baseScore ?? 0)}/10`
   }
@@ -127,6 +130,18 @@ function rawLabel(car: Car, criterionId: CriterionId): string {
 
 function clampScore(value: number): number {
   return Math.min(10, Math.max(0, value))
+}
+
+/**
+ * Converts the raw metric of an absolute criterion into a 0–10 score. Most
+ * absolute criteria already produce a 0–10 index (editorial reviews and
+ * rubrics); equipment is a count and is normalised against the full checklist.
+ */
+function absoluteScore(criterionId: CriterionId, value: number): number {
+  if (criterionId === "equipment") {
+    return (value / EQUIPMENT_CHECKLIST.length) * 10
+  }
+  return value
 }
 
 function rankValues(values: number[], higherIsBetter: boolean): number[] {
@@ -183,7 +198,7 @@ export function getComparison(): Comparison {
       if (criterion.scale === "absolute") {
         criteria[criterion.id] = {
           criterion,
-          score: clampScore(value),
+          score: clampScore(absoluteScore(criterion.id, value)),
           rawValue: value,
           rawLabel: rawLabel(car, criterion.id),
           bestRawValue: Math.max(...metrics),
