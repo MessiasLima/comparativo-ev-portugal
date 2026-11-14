@@ -2,6 +2,9 @@ import type { Car } from "@/data/types"
 import bydSealDesign from "./byd-seal-design.json"
 import bydSeal from "./byd-seal-excellence-awd.json"
 import cupraRaval from "./cupra-raval-vz.json"
+import mazda6eHomuraPlus from "./mazda-6e-homura-plus.json"
+import mazda6eTakumiPlus from "./mazda-6e-takumi-plus.json"
+import mazda6eTakumi from "./mazda-6e-takumi.json"
 import mazdaCx6eTakumi from "./mazda-cx-6e-takumi.json"
 import mazdaCx6eTakumiPlus from "./mazda-cx-6e-takumi-plus.json"
 import polestar4RearMotorPrime from "./polestar-4-rear-motor-prime.json"
@@ -19,6 +22,9 @@ export const CARS = [
   cupraRaval,
   bydSeal,
   bydSealDesign,
+  mazda6eTakumi,
+  mazda6eTakumiPlus,
+  mazda6eHomuraPlus,
   mazdaCx6eTakumi,
   mazdaCx6eTakumiPlus,
   polestar4RearMotorPrime,
