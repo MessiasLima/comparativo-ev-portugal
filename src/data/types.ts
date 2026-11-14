@@ -152,7 +152,9 @@ export interface Specs {
 }
 
 export interface Charging {
+  /** AC onboard charger power. Recorded for the spec sheet; not scored. */
   acKw: number
+  /** DC peak power. This is the charging criterion's raw value. */
   dcKw: number
   dcTime1080Min: number
   dcTime3080Min?: number

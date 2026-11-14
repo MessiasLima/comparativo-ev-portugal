@@ -49,7 +49,7 @@ and score, follow the verification steps in
 - `range` raw = `specs.rangeKm`
 - `powerToWeight` raw = `specs.powerHp / specs.weightKg`
 - `efficiency` raw = `specs.consumptionKwh100` (lower is better)
-- `charging` raw = `charging.dcKw × 0.7 + charging.acKw × 0.3`
+- `charging` raw = `charging.dcKw` (DC peak only; AC is recorded but not scored)
 - Relative score (higher-is-better): `clamp(raw / bestRaw × 10, 0, 10)`;
   lower-is-better (only `efficiency`): `clamp(bestRaw / raw × 10, 0, 10)`. This
   applies only to bagageira, autonomia, potência/peso, eficiência e carregamento.

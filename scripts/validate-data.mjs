@@ -314,7 +314,7 @@ function metric(car, criterionId) {
     case "efficiency":
       return car.specs.consumptionKwh100
     case "charging":
-      return car.charging.dcKw * 0.7 + car.charging.acKw * 0.3
+      return car.charging.dcKw
     default:
       return car.reviews[criterionId].baseScore
   }

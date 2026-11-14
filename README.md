@@ -84,7 +84,7 @@ O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia,
 - **Custo-benefício** — `preço / nota global` = euros por ponto. Quanto menor, melhor.
 - **Persistência** — os pesos são guardados em `localStorage` com a chave `comparativo-ev-portugal:weights:v2` e recuperados quando o utilizador volta ao site. A tabela e o painel de nota dos dossiês usam a mesma configuração.
 
-O carregamento é um índice composto: **70% potência DC + 30% potência AC**. A quantidade de equipamento é contada sobre a mesma checklist de 38 itens para todos os carros e convertida numa nota absoluta de 0 a 10 pela proporção da checklist preenchida.
+O carregamento usa apenas a **potência DC de pico** (`charging.dcKw`), relativa ao melhor da lista: é o que determina o tempo de paragem numa viagem. A potência AC continua no JSON como dado do carro mas não pontua — hoje todos os carros comparados aceitam 11 kW, por isso não os distingue. A quantidade de equipamento é contada sobre a mesma checklist de 38 itens para todos os carros e convertida numa nota absoluta de 0 a 10 pela proporção da checklist preenchida.
 
 ## Dados e preços
 

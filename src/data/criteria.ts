@@ -145,9 +145,9 @@ export const CRITERIA: CriterionDefinition[] = [
     number: 10,
     label: "Carregamento",
     shortLabel: "Carregamento",
-    question: "Qual a potência máxima?",
+    question: "Com que rapidez carrega em viagem?",
     description:
-      "Índice composto: 70% potência DC + 30% potência AC. Mostra a capacidade de carregar depressa em viagem e em casa.",
+      "Potência máxima de carregamento DC (pico), em kW, relativa ao melhor carro da lista: é o que determina o tempo de paragem numa viagem. A potência AC de cada carro continua registada no dossiê, mas não entra na nota.",
     icon: Plug,
     kind: "objective",
     direction: "higher",

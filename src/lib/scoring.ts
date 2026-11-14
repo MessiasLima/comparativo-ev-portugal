@@ -81,7 +81,10 @@ function metricValue(car: Car, criterionId: CriterionId): number {
     case "efficiency":
       return car.specs.consumptionKwh100
     case "charging":
-      return car.charging.dcKw * 0.7 + car.charging.acKw * 0.3
+      // AC charging is recorded but not scored: every car in the comparison
+      // accepts the same 11 kW, so it cannot separate them. Only DC peak power
+      // changes how long a road trip stop takes.
+      return car.charging.dcKw
     default:
       return car.reviews[criterionId].baseScore ?? 0
   }
@@ -119,7 +122,7 @@ function rawLabel(car: Car, criterionId: CriterionId): string {
     case "efficiency":
       return `${formatDecimal(car.specs.consumptionKwh100)} kWh/100 km`
     case "charging":
-      return `${car.charging.dcKw} kW DC · ${car.charging.acKw} kW AC`
+      return `${car.charging.dcKw} kW DC`
     default:
       return `Avaliação editorial ${formatScore(car.reviews[criterionId].baseScore ?? 0)}/10`
   }
