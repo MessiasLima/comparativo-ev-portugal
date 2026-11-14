@@ -1,0 +1,445 @@
+{
+  "id": "mazda-6e-homura-plus",
+  "slug": "mazda-6e-homura-plus",
+  "brand": "Mazda",
+  "model": "6e",
+  "variant": "Homura Plus",
+  "version": "Homura Plus 78 kWh",
+  "year": 2026,
+  "segment": "Berlina / liftback elétrica (segmento D)",
+  "tagline": "A versão desportiva da berlina elétrica de 560 km WLTP, com bancos desportivos em pele Nappa preta e camurça com pespontos vermelhos, teto com para-sol elétrico e 200 kW DC.",
+  "accent": "ocean",
+  "price": {
+    "amount": 45558,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-11-14",
+    "note": "PVP de 45.558,00 € com IVA incluído no configurador oficial da Mazda Portugal em 14/11/2026 (ID 3HH2EKZJ1V), com pintura Crystal White Pearl sem custo e jantes de 19\". Não inclui despesas de legalização e transporte nem pintura metalizada. A campanha de financiamento em vigor aplica um desconto de 3.680,00 €, reduzindo o PVP com desconto para 41.878,00 €.",
+    "sourceId": "mazda-offer-homura-plus"
+  },
+  "specs": {
+    "powerKw": 190,
+    "powerHp": 258,
+    "torqueNm": 290,
+    "drivetrain": "Tração traseira (RWD)",
+    "acceleration0100": 7.3,
+    "topSpeedKmh": 175,
+    "batteryKwh": 77.94,
+    "usableBatteryKwh": 77,
+    "batteryChemistry": "LFP, 400 V",
+    "rangeKm": 560,
+    "consumptionKwh100": 16.1,
+    "weightKg": 2090,
+    "grossWeightKg": 2440,
+    "lengthMm": 4921,
+    "widthMm": 1890,
+    "heightMm": 1485,
+    "wheelbaseMm": 2895,
+    "bootL": 466,
+    "frunkL": 72,
+    "seats": 5,
+    "doors": 5,
+    "towingBrakedKg": 1500
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 200,
+    "dcTime1080Min": 24,
+    "dcTime3080Min": 15,
+    "connector": "CCS2",
+    "v2l": true,
+    "v2lKw": 3.3,
+    "v2h": false
+  },
+  "warranty": {
+    "vehicle": "6 anos / 150.000 km",
+    "battery": "8 anos / 160.000 km (SOH ≥ 70%)",
+    "note": "Garantia geral de fábrica Mazda de 6 anos ou 150.000 km para defeitos de material ou fabrico. A bateria de alta tensão conta com 8 anos ou 160.000 km de cobertura com retenção mínima garantida de 70%."
+  },
+  "equipmentIncluded": [
+    "acc",
+    "adaptive-high-beam",
+    "aeb",
+    "ambient-lighting",
+    "blind-spot",
+    "camera-360",
+    "carplay",
+    "climate-2zone",
+    "connected-services",
+    "digital-cockpit",
+    "digital-key",
+    "driver-monitor",
+    "electric-tailgate",
+    "front-cross-traffic",
+    "frunk",
+    "heat-pump",
+    "heated-seats",
+    "heated-steering",
+    "hud",
+    "lane-keep",
+    "large-screen",
+    "memory-seats",
+    "ota",
+    "panoramic-roof",
+    "parking-sensors",
+    "premium-audio",
+    "rear-cross-traffic",
+    "rear-usb",
+    "sport-seats",
+    "traffic-sign",
+    "v2l",
+    "ventilated-seats",
+    "wheels-19",
+    "wireless-charging"
+  ],
+  "options": [],
+  "reviews": {
+    "interior": {
+      "assessment": {
+        "softTouch": 8.5,
+        "upholstery": 9,
+        "design": 8.7,
+        "assembly": 8.5,
+        "hardPlastic": "moderate"
+      },
+      "summary": "A versão Homura Plus confere um carácter desportivo ao Mazda 6e com estofos em pele Nappa preta premium combinada com camurça sintética e pespontos vermelhos contrastantes. Os bancos dianteiros desportivos têm regulação elétrica de inclinação com memórias, apoio lombar, aquecimento e ventilação ativa integrada. O habitáculo recebe elementos decorativos com padrão de madeira escura brilhante e almofadas pespontadas no tablier e painéis de porta. O teto panorâmico dispõe de cortina para-sol elétrica de série.",
+      "pros": [
+        "Bancos desportivos em pele Nappa preta e camurça com pespontos vermelhos",
+        "Ventilação e aquecimento de bancos com memórias elétricas de série",
+        "Teto panorâmico com cortina para-sol elétrica e ambiente envolvente"
+      ],
+      "cons": [
+        "Ambiente predominantemente escuro que reduz a luminosidade percebida",
+        "Plásticos rígidos mantêm-se nas zonas inferiores das portas e consola",
+        "Costuras vermelhas são elemento estético fixo sem opção alternativa neste nível"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "mazda-pt-official",
+        "razaoautomovel",
+        "observador"
+      ]
+    },
+    "comfort": {
+      "baseScore": 7.2,
+      "summary": "Partilhando a suspensão passiva com eixo dianteiro MacPherson e traseiro multibraço e as jantes de 19\" com pneus 245/45 R19, o Homura Plus assegura um andamento suave e bem insonorizado a velocidade de autoestrada. O apoio lateral aprimorado dos bancos desportivos dianteiros favorece o conforto postural em traçados sinuosos. Mantém-se o amortecimento de afinação macia que origina ligeiro bamboleio e oscilações verticais em estradas de piso degradado.",
+      "pros": [
+        "Bancos desportivos com excelente suporte lateral, ventilação e aquecimento",
+        "Excelente serenidade de rolamento e insonorização em autoestrada",
+        "Jantes de 19\" com perfil 45 que preservam a capacidade de filtragem"
+      ],
+      "cons": [
+        "Afinação da suspensão passiva não é endurecida para acompanhar a estética desportiva",
+        "Oscilações verticais em lombas e desníveis pronunciados",
+        "Sem regulação adaptativa da firmeza do amortecimento"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "razaoautomovel",
+        "observador",
+        "whatcar"
+      ]
+    },
+    "brand": {
+      "assessment": {
+        "globalBrandAge": 10,
+        "portugalMarketTenure": 9.5,
+        "portugalServiceNetwork": 8.5,
+        "europeanManufacturing": 0,
+        "establishedGroupSupport": 8,
+        "financialStability": 6.5,
+        "portugalFactory": false
+      },
+      "summary": "A Mazda foi fundada em 1920 e iniciou a produção de automóveis de passageiros em 1960. A filial oficial Mazda Motor de Portugal opera desde 1995, dispondo de uma rede consolidada de cerca de 23 concessionários e reparadores autorizados no país. O Mazda 6e é produzido em Nanjing, na China, através da parceria estratégica com a Changan. No exercício financeiro encerrado em março de 2026, a marca registou 4.918,2 mil milhões de ienes de faturação e manteve uma sólida posição de caixa líquida de 443 mil milhões de ienes, apesar da pressão sobre margens operacionais globais.",
+      "pros": [
+        "Marca centenária com presença oficial contínua em Portugal desde 1995",
+        "Rede oficial com 23 pontos de assistência técnica e garantia de fábrica de 6 anos",
+        "Balanço com 443 mil milhões de ienes de caixa líquida"
+      ],
+      "cons": [
+        "Produção do modelo localizada na China sem fábrica de automóveis na Europa",
+        "Rede de assistência menor do que a das marcas generalistas europeias",
+        "Margens operacionais do grupo pressionadas no exercício recente"
+      ],
+      "sourceIds": [
+        "mazda-pt-1995",
+        "mazda-history",
+        "mazda-dealers",
+        "mazda-facilities",
+        "mazda-results-fy26"
+      ]
+    },
+    "equipment": {
+      "summary": "O Homura Plus partilha com o Takumi Plus o pacote de topo que inclui bancos dianteiros em pele Nappa e camurça com memórias, aquecimento, ventilação e suporte lombar elétrico, além do teto panorâmico com cortina para-sol elétrica. Diferencia-se pela conceção desportiva dos bancos dianteiros com pespontos vermelhos. Integra ainda todo o ecossistema tecnológico: cockpit digital de 10,2\", ecrã tátil de 14,6\", HUD, sistema Sony de 14 colunas, câmara 360º, portão elétrico, bomba de calor e V2L de 3,3 kW.",
+      "pros": [
+        "Bancos desportivos dianteiros com aquecimento, ventilação e memórias",
+        "Teto panorâmico com cortina para-sol elétrica comandada por ecrã",
+        "Cockpit digital, ecrã de 14,6\", HUD e câmara 360º integrados de série"
+      ],
+      "cons": [
+        "Bancos traseiros sem aquecimento integrado",
+        "Sem suspensão desportiva rebaixada ou amortecedores eletrónicos",
+        "Sem função de estacionamento remoto"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "mazda-pt-official",
+        "razaoautomovel"
+      ]
+    },
+    "boot": {
+      "summary": "A carroçaria liftback de cinco portas oferece 466 litros de capacidade total no compartimento traseiro com o subcompartimento inferior incluído (337 litros medidos até à chapeleira em configuração de 5 lugares). Com os bancos rebatidos em 60/40, a arrumação ascende a 1.074 litros até ao teto. Na dianteira, dispõe de uma bagageira frontal (frunk) de 72 litros com amortecedor telescópico na tampa, somando 538 litros de arrumação combinada.",
+      "pros": [
+        "Portão liftback de abertura ampla com fecho elétrico de série",
+        "Bagageira dianteira (frunk) de 72 litros com amortecedor na tampa",
+        "538 litros de capacidade útil combinada (466 L atrás + 72 L à frente)"
+      ],
+      "cons": [
+        "Capacidade até à chapeleira limitada a 337 litros se o piso inferior for ocupado",
+        "Rebatimento 60/40 sem abertura dedicada para esquis ao centro",
+        "Ligeiro degrau no piso com as costas dos bancos posteriores rebatidas"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "mazda-pt-official",
+        "ev-database"
+      ]
+    },
+    "sound": {
+      "baseScore": 6.5,
+      "summary": "O sistema de áudio Sony incorpora 14 altifalantes distribuídos pelo habitáculo, incluindo um altifalante externo frontal embutido no para-choques para avisos e entretenimento. A afinação sonora oferece agudos nítidos e vozes límpidas no modo surround, embora as frequências médias e graves ganhem com ajuste manual no equalizador gráfico para alcançar maior corpo musical. A marca não publica a potência RMS declarada do amplificador.",
+      "pros": [
+        "14 altifalantes Sony com distribuição surround ampla",
+        "Altifalante externo frontal integrado para entretenimento exterior",
+        "Boa definição em frequências agudas e diálogo cristalino"
+      ],
+      "cons": [
+        "Potência nominal RMS do conjunto não comunicada nas fichas técnicas",
+        "Graves beneficiam de equalização manual para evitar perda de impacto",
+        "Sem perfis de som de estúdio avançados configuráveis"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "mazda-pt-official",
+        "razaoautomovel"
+      ]
+    },
+    "range": {
+      "summary": "Equipado com a bateria de 77,94 kWh de capacidade bruta, o Mazda 6e Homura Plus atinge uma autonomia homologada de 560 km em ciclo combinado WLTP, alcançando até 703 km no ciclo urbano WLTP. A aerodinâmica apurada da silhueta de cinco portas (coeficiente aerodinâmico reduzido) favorece a estabilidade do alcance em autoestrada a velocidades estabilizadas.",
+      "pros": [
+        "560 km de autonomia combinada WLTP com jantes de 19 polegadas",
+        "Até 703 km homologados em ambiente estritamente urbano WLTP",
+        "Eficiência aerodinâmica de berlina que mitiga o arrasto a 120 km/h"
+      ],
+      "cons": [
+        "Química LFP pode acusar maior quebra de rendimento em temperaturas negativas prolongadas",
+        "Autonomia real estimada em autoestrada situa-se entre 380 km e 410 km",
+        "Sem variante de bateria com mais de 85 kWh para autonomias superiores a 600 km"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "mazda-pt-official",
+        "ev-database"
+      ]
+    },
+    "powerToWeight": {
+      "summary": "O motor elétrico traseiro debita 190 kW (258 cv) e 290 Nm de binário máximo para um peso em vazio de 2.090 kg (com condutor incluído), o que se traduz numa relação de cerca de 123 cv/t. A aceleração anunciada dos 0 aos 100 km/h cumpre-se em 7,3 segundos, com velocidade de ponta regulada a 175 km/h. A resposta ao pedal direito é viva em arranques e ultrapassagens, mantendo uma progressividade fácil de controlar.",
+      "pros": [
+        "258 cv com resposta instantânea e 0-100 km/h em 7,3 segundos",
+        "Tração traseira com boa motricidade e entrega suave de potência",
+        "Binário de 290 Nm suficiente para retomas céleres"
+      ],
+      "cons": [
+        "Relação de 123 cv/t discreta para uma berlina elétrica de cariz dinâmico",
+        "Peso de 2.090 kg com impacto sensível nas travagens fortes",
+        "Velocidade máxima limitada a 175 km/h"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "mazda-pt-official",
+        "ev-database",
+        "razaoautomovel"
+      ]
+    },
+    "efficiency": {
+      "summary": "O consumo energético homologado é de 16,1 kWh/100 km em ciclo combinado WLTP e de 12,4 kWh/100 km em ciclo urbano WLTP. A presença de bomba de calor de série e a baixa área frontal da berlina ajudam a conter o consumo médio em percursos mistos e invernais.",
+      "pros": [
+        "Consumo combinado de 16,1 kWh/100 km homologado em WLTP",
+        "Excelente registo urbano de 12,4 kWh/100 km potenciado pela regeneração",
+        "Bomba de calor incluída de série sem recurso a opcionais pagos"
+      ],
+      "cons": [
+        "Em autoestrada sustentada a 120 km/h o consumo sobe para os 19-20 kWh/100 km",
+        "Tara elevada de 2.090 kg aumenta a procura energética em percursos de montanha",
+        "Ausência de modo One-Pedal integral até à imobilização total sem tocar no travão"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "mazda-pt-official",
+        "ev-database"
+      ]
+    },
+    "charging": {
+      "summary": "A potência máxima de carregamento rápido em corrente contínua (DC) é de 200 kW com tomada CCS2, permitindo ir dos 10% aos 80% em 24 minutos (ou dos 30% aos 80% em 15 minutos). O carregador de bordo AC trifásico admite até 11 kW, precisando de 7,88 horas para uma carga completa dos 0 aos 100%. Conta ainda com tecnologia V2L (Vehicle-to-Load) com saída externa até 3,3 kW.",
+      "pros": [
+        "Potência de pico de 200 kW em postos rápidos DC",
+        "Recuperação de 10% a 80% em 24 minutos em condições ideais",
+        "Tomada bidirecional V2L de 3,3 kW incluída para aparelhos elétricos"
+      ],
+      "cons": [
+        "Carregador de bordo interno limitado a 11 kW AC",
+        "Sem suporte bidirecional V2H para abastecer habitações",
+        "Curva de carregamento DC com quebra típica acima dos 80% de estado de carga"
+      ],
+      "sourceIds": [
+        "mazda-offer-homura-plus",
+        "mazda-pt-official",
+        "ev-database"
+      ]
+    },
+    "satisfaction": {
+      "assessment": {
+        "ownerSentiment": 7.2,
+        "reportedDefects": 6,
+        "recallRecord": 7,
+        "evidenceLevel": "limited"
+      },
+      "summary": "O modelo estreou-se comercialmente em 2026/2027 com produção concentrada na fábrica sino-japonesa da Changan Mazda. A base de proprietários no mercado europeu é ainda reduzida, justificando o nível de evidência limitado. Os primeiros ensaios e relatos elogiam a qualidade de acabamento e a insonorização, apontando pequenos reparos à resposta tátil de alguns menus e à estabilidade da chave digital. A plataforma europeia de segurança e recalls não regista alertas estruturais graves na especificação europeia.",
+      "pros": [
+        "Sem registo de campanhas de segurança críticas na homologação europeia",
+        "Bom acolhimento inicial quanto à robustez de montagem e conforto geral",
+        "Acesso à verificação de campanhas oficiais através do portal europeu da Mazda"
+      ],
+      "cons": [
+        "Histórico europeu recente com amostragem de frotas e proprietários limitada",
+        "Registo de pequenas lentidões ocasionais na ligação da aplicação remota",
+        "Quase total ausência de botões físicos para comandos de climatização"
+      ],
+      "sourceIds": [
+        "mazda-pt-official",
+        "mazda-eu-recalls",
+        "razaoautomovel",
+        "whatcar"
+      ]
+    }
+  },
+  "dossier": {
+    "headline": "A versão desportiva da berlina elétrica de 560 km WLTP, com bancos desportivos em pele Nappa e camurça com pespontos vermelhos.",
+    "verdict": "O Mazda 6e Homura Plus direciona os argumentos da gama 6e para uma postura mais desportiva e arrojada. Pelo mesmo valor de 45.558 € (41.878 € com campanha de financiamento) do Takumi Plus, substitui o ambiente claro por bancos desportivos em pele Nappa preta e camurça com pespontos vermelhos evocativos, mantendo a ventilação e o aquecimento de bancos, o teto com para-sol elétrico, os 560 km de alcance WLTP e os 466 L de bagageira liftback.",
+    "pros": [
+      "Bancos desportivos envolventes em pele Nappa preta e camurça com pespontos vermelhos",
+      "Ventilação e aquecimento de bancos dianteiros com memória de série",
+      "Teto panorâmico com cortina para-sol de acionamento elétrico",
+      "560 km de autonomia combinada homologada em ciclo WLTP",
+      "Praticidade do portão liftback com 466 L atrás e frunk de 72 L"
+    ],
+    "cons": [
+      "Mesmo acerto de suspensão passiva das restantes versões, sem afinação desportiva específica",
+      "123 cv/t é um valor modesto face aos rivais elétricos de tração integral",
+      "Velocidade máxima regulada nos 175 km/h",
+      "Sem aquecimento para os lugares traseiros",
+      "Plásticos rígidos nas zonas inferiores do habitáculo"
+    ],
+    "bestFor": "Quem aprecia uma estética interior desportiva e escura com pespontos vermelhos contrastantes e bancos desportivos ventilados, aliada à versatilidade liftback e à autonomia de 560 km.",
+    "sections": [
+      {
+        "title": "Identidade e posicionamento",
+        "body": "A assinatura Homura é tradicionalmente associada ao dinamismo e emoção visual na Mazda. No 6e Homura Plus, a berlina de cinco portas ganha uma personalidade mais assertiva através do habitáculo escurecido com detalhes vermelhos evocativos, posicionando-se como alternativa para condutores que valorizam estética desportiva com o mesmo nível de equipamento de luxo da versão Takumi Plus."
+      },
+      {
+        "title": "Bateria, autonomia e carregamento",
+        "body": "Partilha integralmente a cadeia cinemática da gama: bateria de 77,94 kWh (química LFP), autonomia WLTP combinada de 560 km e carregamento DC de 200 kW de pico, permitindo recuperar dos 10% aos 80% em 24 minutos. O carregador AC trifásico integrado opera a 11 kW e a tomada bidirecional V2L debita até 3,3 kW."
+      },
+      {
+        "title": "Habitáculo e vida a bordo",
+        "body": "O habitáculo Homura Plus destaca-se pelos bancos desportivos de excelente suporte lateral em pele Nappa preta e camurça, rematados por pespontos vermelhos que se estendem às almofadas do tablier e portas. Integra aquecimento, ventilação ativa e memórias elétricas de ajuste nos assentos da frente. O teto panorâmico inclui persiana elétrica e o centro multimédia combina ecrã tátil de 14,6\", cockpit de 10,2\", HUD e áudio Sony de 14 colunas."
+      },
+      {
+        "title": "Bagageira e versatilidade",
+        "body": "O formato de cinco portas com abertura liftback integral assegura 466 litros de capacidade no compartimento de carga traseiro (337 L medidos até à chapeleira), expansíveis a 1.074 litros com os bancos rebatidos. A bagageira dianteira de 72 litros sob o capot acomoda comodamente os cabos de carregamento e acessórios, totalizando 538 litros utilizáveis."
+      },
+      {
+        "title": "Dinâmica e condução",
+        "body": "O motor traseiro de 258 cv e 290 Nm confere acelerações lineares com 0 a 100 km/h em 7,3 segundos. Apesar do visual desportivo, a afinação do chassis e da suspensão passiva com jantes de 19\" mantém a mesma calibração suave orientada para o conforto das restantes variantes, com boa estabilidade direcional mas sem firmeza desportiva acrescida."
+      },
+      {
+        "title": "Garantia e assistência",
+        "body": "Inclui garantia contratual oficial de 6 anos ou 150.000 km para o veículo e 8 anos ou 160.000 km para a bateria de tração (capacidade mínima de 70%), com suporte em território nacional pela rede de assistência da Mazda Motor de Portugal."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "mazda-offer-homura-plus",
+      "label": "Mazda Car Configurator — Proposta Mazda 6e Homura Plus (ID 3HH2EKZJ1V, 14/11/2026)",
+      "url": "/sources/mazda-6e-homura-plus.pdf",
+      "type": "pdf"
+    },
+    {
+      "id": "mazda-pt-official",
+      "label": "Mazda Portugal — especificações oficiais do Mazda6e",
+      "url": "https://www.mazda.pt",
+      "type": "official"
+    },
+    {
+      "id": "razaoautomovel",
+      "label": "Razão Automóvel — ensaio ao Mazda 6e",
+      "url": "https://www.razaoautomovel.com",
+      "type": "press"
+    },
+    {
+      "id": "observador",
+      "label": "Observador — teste ao novo Mazda 6e elétrico",
+      "url": "https://observador.pt",
+      "type": "press"
+    },
+    {
+      "id": "whatcar",
+      "label": "What Car? — Mazda 6e review",
+      "url": "https://www.whatcar.com",
+      "type": "press"
+    },
+    {
+      "id": "ev-database",
+      "label": "EV Database — Mazda 6e 78 kWh",
+      "url": "https://ev-database.org",
+      "type": "database"
+    },
+    {
+      "id": "mazda-dealers",
+      "label": "Mazda Portugal — rede de concessionários e reparadores autorizados",
+      "url": "https://www.mazda.pt/formularios/localizar-um-concessionario/",
+      "type": "official"
+    },
+    {
+      "id": "mazda-pt-1995",
+      "label": "Mazda Motor de Portugal — historial e presença nacional",
+      "url": "https://news.cision.com/pt/mazda-motor-de-portugal/r/mazda-motor-de-portugal-tem-nova-sede-em-lisboa,c638140374050000000",
+      "type": "press"
+    },
+    {
+      "id": "mazda-history",
+      "label": "Mazda — história da marca",
+      "url": "https://www.mazda.com/en/about/history/1920-1979/",
+      "type": "official"
+    },
+    {
+      "id": "mazda-facilities",
+      "label": "Mazda — centros de produção globais",
+      "url": "https://www.mazda.com/en/about/facilities/",
+      "type": "official"
+    },
+    {
+      "id": "mazda-results-fy26",
+      "label": "Mazda — relatório e contas do exercício financeiro de 2026",
+      "url": "https://www.insidemazda.co.uk/2026/05/12/mazda-reports-full-year-results-with-improved-performance-and-positive-outlook/",
+      "type": "official"
+    },
+    {
+      "id": "mazda-eu-recalls",
+      "label": "Mazda Europa — campanhas de serviço e recalls",
+      "url": "https://www.mazda.eu/en/recall-information/",
+      "type": "official"
+    }
+  ]
+}

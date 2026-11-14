@@ -44,6 +44,9 @@ src/data/
 │   ├── byd-seal-design.json
 │   ├── byd-seal-excellence-awd.json
 │   ├── polestar-4-rear-motor-prime.json
+│   ├── mazda-6e-takumi.json
+│   ├── mazda-6e-takumi-plus.json
+│   ├── mazda-6e-homura-plus.json
 │   ├── mazda-cx-6e-takumi.json
 │   ├── mazda-cx-6e-takumi-plus.json
 │   ├── tesla-model-3-standard.json
@@ -92,6 +95,7 @@ O carregamento usa apenas a **potência DC de pico** (`charging.dcKw`), relativa
 - CUPRA Raval VZ: proposta `C84TSZ1`, com opcionais, fornecida pelo utilizador. O PDF original está em `public/sources/`.
 - BYD Seal Excellence AWD: PVP de referência da Caetano (concessionário oficial BYD). O guia do produto está em `public/sources/`.
 - Polestar 4 coupé RM Prime: configuração fornecida pelo utilizador, encomendada em 03/11/2026 com entrega prevista para março–abril de 2027. O total de 56.800 € inclui IVA, legalização, transporte e a oferta indicada no PDF; a versão e o equipamento foram cruzados com a ficha MY27 da Polestar.
+- Mazda 6e Takumi, Takumi Plus e Homura Plus: configurações de 14/11/2026 fornecidas pelo utilizador, com PVP de 43.608,00 € (Takumi) e 45.558,00 € (Takumi Plus e Homura Plus) com IVA, sem despesas de legalização e transporte nem pintura metalizada. Os PDF originais estão em `public/sources/`; as especificações foram cruzadas com a Mazda Portugal, a EV Database e a imprensa especializada. A campanha de financiamento baixa os preços para 39.928,00 € e 41.878,00 €.
 - Mazda CX-6e Takumi e Takumi Plus: configurações de 13/11/2026 fornecidas pelo utilizador, com PVPR de 44.987,55 € e 47.987,55 € com IVA, sem despesas de legalização e transporte nem pintura metalizada. Os PDF originais estão em `public/sources/`; as especificações foram cruzadas com a Mazda Portugal, a EV Database, a ficha técnica alemã e a imprensa. A campanha até 31/12/2026 baixa os preços para 41.543,55 € e 44.543,55 €.
 - Tesla Model 3 Standard, Premium Long Range RWD, Premium Long Range AWD e Performance: propostas de 13/11/2026 fornecidas pelo utilizador, com preço de aquisição que inclui IVA, despesas de documentação e transporte e taxa para pneus. Os PDF originais estão em `public/sources/`; as especificações foram cruzadas com a Tesla Portugal, a EV Database e a Model3.info.
 - Autonomia e consumo são **WLTP**. Os valores reais variam com percurso, clima, carga e estilo de condução.
@@ -107,7 +111,7 @@ O carregamento usa apenas a **potência DC de pico** (`charging.dcKw`), relativa
 | `/sitemap.xml` | Sitemap com home, dossiês e imagens sociais |
 | `/robots.txt` | Regras de indexação + referência ao sitemap |
 
-Rotas atuais: `/carros/cupra-raval-vz`, `/carros/byd-seal-design`, `/carros/byd-seal-excellence-awd`, `/carros/polestar-4-rear-motor-prime`, `/carros/mazda-cx-6e-takumi`, `/carros/mazda-cx-6e-takumi-plus`, `/carros/tesla-model-3-standard`, `/carros/tesla-model-3-premium-long-range-rwd`, `/carros/tesla-model-3-premium-long-range-awd` e `/carros/tesla-model-3-performance`.
+Rotas atuais: `/carros/cupra-raval-vz`, `/carros/byd-seal-design`, `/carros/byd-seal-excellence-awd`, `/carros/polestar-4-rear-motor-prime`, `/carros/mazda-6e-takumi`, `/carros/mazda-6e-takumi-plus`, `/carros/mazda-6e-homura-plus`, `/carros/mazda-cx-6e-takumi`, `/carros/mazda-cx-6e-takumi-plus`, `/carros/tesla-model-3-standard`, `/carros/tesla-model-3-premium-long-range-rwd`, `/carros/tesla-model-3-premium-long-range-awd` e `/carros/tesla-model-3-performance`.
 
 ## SEO
 
