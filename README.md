@@ -44,6 +44,8 @@ src/data/
 │   ├── byd-seal-design.json
 │   ├── byd-seal-excellence-awd.json
 │   ├── polestar-4-rear-motor-prime.json
+│   ├── mazda-cx-6e-takumi.json
+│   ├── mazda-cx-6e-takumi-plus.json
 │   ├── tesla-model-3-standard.json
 │   ├── tesla-model-3-premium-long-range-rwd.json
 │   ├── tesla-model-3-premium-long-range-awd.json
@@ -89,6 +91,7 @@ O carregamento é um índice composto: **70% potência DC + 30% potência AC**. 
 - CUPRA Raval VZ: proposta `C84TSZ1`, com opcionais, fornecida pelo utilizador. O PDF original está em `public/sources/`.
 - BYD Seal Excellence AWD: PVP de referência da Caetano (concessionário oficial BYD). O guia do produto está em `public/sources/`.
 - Polestar 4 coupé RM Prime: configuração fornecida pelo utilizador, encomendada em 03/11/2026 com entrega prevista para março–abril de 2027. O total de 56.800 € inclui IVA, legalização, transporte e a oferta indicada no PDF; a versão e o equipamento foram cruzados com a ficha MY27 da Polestar.
+- Mazda CX-6e Takumi e Takumi Plus: configurações de 13/11/2026 fornecidas pelo utilizador, com PVPR de 44.987,55 € e 47.987,55 € com IVA, sem despesas de legalização e transporte nem pintura metalizada. Os PDF originais estão em `public/sources/`; as especificações foram cruzadas com a Mazda Portugal, a EV Database, a ficha técnica alemã e a imprensa. A campanha até 31/12/2026 baixa os preços para 41.543,55 € e 44.543,55 €.
 - Tesla Model 3 Standard, Premium Long Range RWD, Premium Long Range AWD e Performance: propostas de 13/11/2026 fornecidas pelo utilizador, com preço de aquisição que inclui IVA, despesas de documentação e transporte e taxa para pneus. Os PDF originais estão em `public/sources/`; as especificações foram cruzadas com a Tesla Portugal, a EV Database e a Model3.info.
 - Autonomia e consumo são **WLTP**. Os valores reais variam com percurso, clima, carga e estilo de condução.
 - As avaliações editoriais são uma síntese de imprensa especializada, dados oficiais e testemunhos de proprietários. As fontes estão listadas em cada dossiê.
@@ -103,7 +106,7 @@ O carregamento é um índice composto: **70% potência DC + 30% potência AC**. 
 | `/sitemap.xml` | Sitemap com home, dossiês e imagens sociais |
 | `/robots.txt` | Regras de indexação + referência ao sitemap |
 
-Rotas atuais: `/carros/cupra-raval-vz`, `/carros/byd-seal-design`, `/carros/byd-seal-excellence-awd`, `/carros/polestar-4-rear-motor-prime`, `/carros/tesla-model-3-standard`, `/carros/tesla-model-3-premium-long-range-rwd`, `/carros/tesla-model-3-premium-long-range-awd` e `/carros/tesla-model-3-performance`.
+Rotas atuais: `/carros/cupra-raval-vz`, `/carros/byd-seal-design`, `/carros/byd-seal-excellence-awd`, `/carros/polestar-4-rear-motor-prime`, `/carros/mazda-cx-6e-takumi`, `/carros/mazda-cx-6e-takumi-plus`, `/carros/tesla-model-3-standard`, `/carros/tesla-model-3-premium-long-range-rwd`, `/carros/tesla-model-3-premium-long-range-awd` e `/carros/tesla-model-3-performance`.
 
 ## SEO
 
