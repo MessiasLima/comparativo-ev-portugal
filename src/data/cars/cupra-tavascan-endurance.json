@@ -1,0 +1,570 @@
+{
+  "id": "cupra-tavascan-endurance",
+  "slug": "cupra-tavascan-endurance",
+  "brand": "CUPRA",
+  "model": "Tavascan",
+  "variant": "Endurance",
+  "version": "Endurance 77 kWh",
+  "year": 2026,
+  "segment": "SUV-coupé desportivo",
+  "tagline": "A combinação mais equilibrada: 286 cv, 555 km e o equipamento do Drive.",
+  "accent": "copper",
+  "price": {
+    "amount": 51075.91,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-11-15",
+    "note": "Proposta J5JUMN1, configurada em 15.11.2026. Inclui pintura Deserto Atacama e jantes 19\" VULCANO sem custo. Preço com IVA incluído; não inclui despesas administrativas nem de transporte.",
+    "sourceId": "cupra-offer"
+  },
+  "specs": {
+    "powerKw": 210,
+    "powerHp": 286,
+    "torqueNm": 545,
+    "drivetrain": "Tração traseira (RWD)",
+    "acceleration0100": 6.8,
+    "topSpeedKmh": 180,
+    "batteryKwh": 82,
+    "usableBatteryKwh": 77,
+    "batteryChemistry": "NMC, 400 V",
+    "rangeKm": 555,
+    "consumptionKwh100": 15.68,
+    "weightKg": 2189,
+    "grossWeightKg": 2695,
+    "lengthMm": 4644,
+    "widthMm": 1861,
+    "heightMm": 1597,
+    "wheelbaseMm": 2766,
+    "bootL": 540,
+    "frunkL": 0,
+    "seats": 5,
+    "doors": 5,
+    "towingBrakedKg": 1000
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 135,
+    "dcTime1080Min": 29,
+    "connector": "CCS2",
+    "v2l": true,
+    "v2lKw": 3.6,
+    "v2h": true
+  },
+  "warranty": {
+    "vehicle": "3 anos (garantia legal em Portugal, extensível)",
+    "battery": "8 anos / 160.000 km",
+    "note": "A CUPRA disponibiliza extensões de garantia. Confirme condições e limites no concessionário."
+  },
+  "equipmentIncluded": [
+    "acc",
+    "lane-keep",
+    "blind-spot",
+    "rear-cross-traffic",
+    "front-cross-traffic",
+    "aeb",
+    "traffic-sign",
+    "driver-monitor",
+    "parking-sensors",
+    "wireless-charging",
+    "carplay",
+    "digital-cockpit",
+    "large-screen",
+    "connected-services",
+    "ota",
+    "wheels-19",
+    "sport-seats",
+    "ambient-lighting",
+    "rear-usb",
+    "remote-park",
+    "adaptive-high-beam",
+    "heated-steering",
+    "climate-2zone",
+    "digital-key",
+    "v2l",
+    "electric-tailgate",
+    "v2h"
+  ],
+  "options": [],
+  "reviews": {
+    "interior": {
+      "assessment": {
+        "softTouch": 5.5,
+        "upholstery": 6,
+        "design": 7.5,
+        "assembly": 7.5,
+        "hardPlastic": "high"
+      },
+      "summary": "O desenho é o melhor argumento: a espinha central em Y, as saídas de ar finas e os detalhes em cobre dão personalidade a um habitáculo que, ao toque, fica abaixo do preço. Só o topo do tablier e os apoios de braço são macios; os painéis de porta, a zona inferior e a consola são de plástico duro. Os bancos em tecido Preto Soul são firmes e bem montados, mas simples. A montagem é sólida, com ruídos pontuais na consola central.",
+      "pros": [
+        "Desenho interior distintivo, com espinha central e detalhes em cobre",
+        "Boa posição de condução e espaço traseiro para adultos",
+        "Montagem sólida e cabine bem isolada"
+      ],
+      "cons": [
+        "Maioria das superfícies visíveis é plástico duro",
+        "Bancos em tecido simples para o preço",
+        "Ruídos pontuais na consola central"
+      ],
+      "sourceIds": [
+        "cupra-tavascan-official",
+        "carexpert",
+        "eevee",
+        "drive-co-uk",
+        "motaclarity",
+        "autonext"
+      ]
+    },
+    "comfort": {
+      "assessment": {
+        "suspension": 7.7,
+        "seats": 7.9,
+        "acoustics": 8.6,
+        "drivetrainCalibration": 7.6
+      },
+      "summary": "Com suspensão passiva e jantes de 19\", o Tavascan absorve bem as juntas e mantém-se estável em autoestrada. O ADAC mediu 1,9 na Federung, 2,4 na Sitze e 65,1 dB(A) a 130 km/h no carro de teste, que tinha DCC e 21\"; nas 19\" o flanco mais alto suaviza os impactos, mas perde-se algum controlo de carroçaria. Os bancos desportivos são firmes, com bom apoio lateral, mas os encostos de cabeça são fixos e não há apoio lombar elétrico. A entrega é linear e a regeneração tem cinco níveis por patilhas, sem solavancos.",
+      "pros": [
+        "Boa absorção de juntas e compostura em autoestrada",
+        "Bancos desportivos com apoio lateral competente",
+        "Cabine silenciosa: 65,1 dB(A) a 130 km/h no protocolo ADAC"
+      ],
+      "cons": [
+        "Sem DCC, o controlo do corpo é inferior ao das versões adaptativas",
+        "Encostos de cabeça fixos e sem apoio lombar elétrico",
+        "Peso de 2,1 t sente-se em compressões rápidas"
+      ],
+      "sourceIds": [
+        "adac",
+        "carwow",
+        "eevee",
+        "rivervale",
+        "electrifying"
+      ]
+    },
+    "brand": {
+      "assessment": {
+        "globalBrandAge": 5.5,
+        "portugalMarketTenure": 5.5,
+        "portugalServiceNetwork": 7.5,
+        "europeanManufacturing": 10,
+        "establishedGroupSupport": 9,
+        "financialStability": 5.5,
+        "portugalFactory": false
+      },
+      "summary": "A CUPRA foi lançada como marca automóvel autónoma em fevereiro de 2018 e a sua presença oficial em Portugal está documentada desde dezembro desse ano. A rede CUPRA inclui oficinas autorizadas em várias regiões; a marca produz em série em vários centros europeus, mas o Tavascan é fabricado na fábrica da Volkswagen Anhui, em Hefei, na China. Como a marca não publica contas autónomas, a estabilidade financeira usa dados da SEAT S.A./SEAT & CUPRA como proxy: a empresa registou um resultado operacional de €6 milhões nos primeiros nove meses de 2026 e alertou para baixa rentabilidade e geração de caixa; as vendas da CUPRA ultrapassaram 250 mil unidades no período. A ambição de 6% de margem operacional até 2030 é um objetivo, não um resultado.",
+      "pros": [
+        "A marca integra o grupo Volkswagen e dispõe de apoio industrial e técnico da SEAT S.A.",
+        "Oficinas autorizadas CUPRA estão distribuídas por várias regiões de Portugal",
+        "Modelos CUPRA têm produção em série em vários centros europeus"
+      ],
+      "cons": [
+        "A marca autónoma e a presença oficial portuguesa contam menos de uma década",
+        "O resultado operacional da SEAT & CUPRA foi de apenas €6 milhões nos primeiros nove meses de 2026",
+        "O Tavascan é produzido na China; a produção europeia da marca não cobre este modelo"
+      ],
+      "sourceIds": [
+        "cupra-brand-launch",
+        "cupra-portugal-entry",
+        "cupra-dealers",
+        "cupra-production-sites",
+        "cupra-tavascan-production",
+        "cupra-financial-q3-2026",
+        "cupra-financial-outlook-2030",
+        "cupra-report-2025",
+        "autoeuropa-models"
+      ]
+    },
+    "equipment": {
+      "summary": "Repete o equipamento do Drive e acrescenta V2H, que permite alimentar a casa a partir da bateria. Mantém a chave digital, a climatização de três zonas, o volante aquecido, o porta-bagagens elétrico, o estacionamento remoto, os máximos automáticos, o V2L de 3,6 kW, o ecrã de 15\", o cockpit digital e as jantes de 19\". Continuam de fora a câmara 360, o HUD, o som Sennheiser, os bancos aquecidos, o teto panorâmico, a suspensão adaptativa e a bomba de calor.",
+      "pros": [
+        "V2L e V2H de série",
+        "Chave digital, climatização de três zonas e volante aquecido",
+        "Porta-bagagens elétrico e estacionamento remoto"
+      ],
+      "cons": [
+        "Sem câmara 360, HUD ou som premium",
+        "Bancos aquecidos e teto panorâmico não incluídos",
+        "Sem suspensão adaptativa nem bomba de calor"
+      ],
+      "sourceIds": [
+        "cupra-offer",
+        "cupra-tavascan-official",
+        "cupra-tavascan-versions",
+        "cupra-tavascan-catalogue",
+        "cupra-ota"
+      ]
+    },
+    "boot": {
+      "summary": "A bagageira traseira tem 540 L e não há compartimento de carga sob o capô. A imprensa que testou o Tavascan confirma a ausência de frunk; a capacidade total contabilizada é, por isso, 540 L.",
+      "pros": [
+        "540 L de bagageira traseira num SUV-coupé de 4,64 m",
+        "Formas regulares e acesso amplo",
+        "Porta-bagagens elétrico com pedal virtual nas versões Drive e superiores"
+      ],
+      "cons": [
+        "Não tem frunk para separar cabos ou objetos pequenos",
+        "A capacidade depende apenas do compartimento traseiro",
+        "A linha de tejadilho limita objetos altos"
+      ],
+      "sourceIds": [
+        "cupra-tavascan-official",
+        "cupra-tavascan-catalogue",
+        "eevee",
+        "carexpert"
+      ]
+    },
+    "sound": {
+      "baseScore": 2.5,
+      "summary": "A configuração traz o sistema de série com sete altifalantes, sem assinatura de um especialista de áudio e sem potência publicada. Não há teste independente específico a este sistema, pelo que a avaliação fica contida. O Sennheiser AMBEO de 12 altifalantes e 475 W existe como opção, mas não foi incluído nesta configuração e por isso não conta para a nota.",
+      "pros": [
+        "Sete altifalantes, distribuídos pela zona frontal e traseira",
+        "O Tavascan pode receber o Sennheiser AMBEO de 12 altifalantes e 475 W"
+      ],
+      "cons": [
+        "Sistema de série sem marca especialista nem subwoofer dedicado",
+        "O upgrade Sennheiser não faz parte desta configuração",
+        "Sem potência publicada e sem teste independente ao sistema base"
+      ],
+      "sourceIds": [
+        "cupra-offer",
+        "cupra-tavascan-catalogue",
+        "sennheiser",
+        "eevee"
+      ]
+    },
+    "range": {
+      "summary": "555 km de autonomia combinada WLTP e 15,68 kWh/100 km, com bateria NMC de 77 kWh úteis (82 kWh brutos). A página oficial da CUPRA indica 556 km e a proposta 555 km; a diferença é de homologação e não altera a ordem de grandeza. Em autoestrada, contar com 380–420 km em condições amenas. A autonomia extra face ao Drive custa €5.047,15.",
+      "pros": [
+        "555 km WLTP",
+        "Bateria NMC de 77 kWh úteis",
+        "Consumo de 15,68 kWh/100 km"
+      ],
+      "cons": [
+        "Arquitetura de 400 V",
+        "Peso de 2.189 kg",
+        "Autonomia cai com frio e autoestrada"
+      ],
+      "sourceIds": [
+        "cupra-tavascan-official",
+        "cupra-tavascan-catalogue",
+        "cupra-offer",
+        "ev-database"
+      ]
+    },
+    "powerToWeight": {
+      "summary": "286 cv para 2.189 kg dão 130,7 cv/t. O 0-100 km/h faz-se em 6,8 s e a velocidade máxima sobe para 180 km/h. É um salto claro face aos 190 cv, com margem para ultrapassagens e para manter ritmos altos sem esforço aparente.",
+      "pros": [
+        "286 cv e 545 Nm",
+        "0-100 km/h em 6,8 s",
+        "130,7 cv/t"
+      ],
+      "cons": [
+        "2.189 kg",
+        "Velocidade máxima de 180 km/h",
+        "Tração traseira limita motricidade em piso molhado"
+      ],
+      "sourceIds": [
+        "cupra-tavascan-official",
+        "cupra-tavascan-catalogue",
+        "cupra-offer",
+        "ev-database"
+      ]
+    },
+    "efficiency": {
+      "summary": "15,68 kWh/100 km em ciclo combinado WLTP. A bateria NMC de 77 kWh acrescenta peso, mas a eficiência mantém-se próxima das versões de 58 kWh. Em autoestrada, contar com 18–20 kWh/100 km; em cidade, 14–16. A ausência de bomba de calor penaliza o inverno.",
+      "pros": [
+        "15,68 kWh/100 km WLTP",
+        "Eficiência próxima das versões de 58 kWh",
+        "Bateria NMC de 77 kWh"
+      ],
+      "cons": [
+        "Sem bomba de calor",
+        "Consumo sobe em autoestrada",
+        "Peso de 2,1 t"
+      ],
+      "sourceIds": [
+        "cupra-tavascan-official",
+        "cupra-tavascan-catalogue",
+        "cupra-offer",
+        "ev-database"
+      ]
+    },
+    "charging": {
+      "summary": "11 kW em AC e 135 kW em DC, com 10-80% em 29 minutos. A bateria de 82 kWh brutos beneficia de pré-condicionamento e a curva mantém-se estável até cerca de 60%. Esta versão tem V2L e V2H de série.",
+      "pros": [
+        "135 kW DC",
+        "10-80% em 29 minutos",
+        "V2L e V2H de série"
+      ],
+      "cons": [
+        "Sem arquitetura de 800 V",
+        "AC limitado a 11 kW",
+        "Curva cai após 60%"
+      ],
+      "sourceIds": [
+        "cupra-tavascan-catalogue",
+        "cupra-offer",
+        "ev-database"
+      ]
+    },
+    "satisfaction": {
+      "assessment": {
+        "ownerSentiment": 7,
+        "reportedDefects": 6,
+        "recallRecord": 5,
+        "evidenceLevel": "moderate"
+      },
+      "summary": "O Tavascan está no mercado desde 2024, mas a base de proprietários com quilometragem elevada ainda é curta e não existe um inquérito independente específico ao modelo. Os relatos conhecidos apontam sobretudo para software: bugs do sistema, ligação CarPlay, chave digital e avisos de serviços online. A campanha de segurança 94S9, publicada pela DVSA em 28/07/2026 com 3.939 unidades no Reino Unido, corrige a calibração dos máximos matriciais por software; o mesmo código surge em registos da Austrália (318 unidades, 2024–2026) e da Nova Zelândia. É uma correção de software, mas conta como recall. Confirmar o VIN de uma unidade concreta.",
+      "pros": [
+        "Modelo em produção desde 2024, com histórico suficiente para uma avaliação inicial",
+        "A campanha 94S9 resolve-se por atualização de software, sem substituição de hardware",
+        "A CUPRA disponibiliza consulta de campanhas pelo VIN"
+      ],
+      "cons": [
+        "Recall 94S9 para calibração dos máximos matriciais, com 3.939 unidades no registo britânico",
+        "Relatos de bugs de software, CarPlay e chave digital sem taxa pública de incidência",
+        "Amostra de proprietários ainda curta para avaliar a fiabilidade a longo prazo"
+      ],
+      "sourceIds": [
+        "carwow",
+        "eevee",
+        "tavascan-forum",
+        "recallscope",
+        "vehiclerecalls-au",
+        "cupra-tavascan-official"
+      ]
+    }
+  },
+  "dossier": {
+    "headline": "A versão de longo curso",
+    "verdict": "O Endurance troca a bateria LFP de 58 kWh por uma NMC de 77 kWh e sobe para 286 cv, 555 km e 135 kW de carga DC. Mantém o equipamento do Drive e acrescenta V2H. Por €5.047,15 acima do Drive, compra autonomia e potência sem entrar no território de preço do Adrenaline. É a versão mais coerente para quem faz muitos km.",
+    "pros": [
+      "Preço de €51.075,91 com IVA",
+      "555 km WLTP e 286 cv",
+      "135 kW DC e 10-80% em 29 minutos",
+      "V2L e V2H de série",
+      "Equipamento do Drive incluído"
+    ],
+    "cons": [
+      "Sem câmara 360, HUD ou som premium",
+      "Bancos aquecidos e teto panorâmico não incluídos",
+      "Sem suspensão adaptativa nem bomba de calor",
+      "Interior com muito plástico duro",
+      "Peso de 2.189 kg"
+    ],
+    "bestFor": "Quem faz muitos quilómetros e quer autonomia, potência e equipamento de viagem sem pagar o pacote de topo.",
+    "sections": [
+      {
+        "title": "Posicionamento",
+        "body": "O Endurance troca a LFP de 58 kWh por uma NMC de 77 kWh e sobe para 286 cv e 555 km. Mantém o equipamento do Drive e acrescenta V2H, que permite alimentar a casa a partir da bateria. É a versão mais orientada para viagens longas, com 2.189 kg e tração traseira."
+      },
+      {
+        "title": "Interior e ergonomia",
+        "body": "Mantém o tecido Preto Soul, a espinha central em Y e os detalhes em cobre. O espaço e a bagageira de 540 L são os mesmos, assim como o plástico duro nos painéis de porta e na consola. A montagem é sólida e a posição de condução funciona bem em viagens longas."
+      },
+      {
+        "title": "Como se conduz",
+        "body": "286 cv, 6,8 s e 180 km/h. A suspensão passiva com jantes de 19\" absorve bem as irregularidades; o ADAC deu 1,9 à Federung no carro de teste com DCC e 21\", pelo que esta configuração não fica atrás em absorção, mas perde algum controlo de carroçaria. O peso de 2.189 kg sente-se em apoio rápido."
+      },
+      {
+        "title": "Vida a bordo",
+        "body": "Climatização de três zonas, chave digital, V2L e V2H, ecrã de 15\", cockpit digital e CarPlay sem fios. O som tem sete altifalantes e o porta-bagagens é elétrico. Não há câmara 360, HUD, teto panorâmico nem bancos aquecidos."
+      },
+      {
+        "title": "Propriedade e rede",
+        "body": "Garantia de 3 anos (extensível) e bateria de 8 anos ou 160.000 km. A rede CUPRA está consolidada em Portugal, mas o Tavascan é produzido na China. A campanha 94S9 corrige por software a calibração dos máximos matriciais; confirmar o VIN."
+      },
+      {
+        "title": "Configuração avaliada",
+        "body": "Proposta J5JUMN1, configurada em 15.11.2026. Pintura Deserto Atacama e jantes de 19\" VULCANO incluídas sem custo. O total é €51.075,91 com IVA, sem despesas administrativas e de transporte. A proposta indica 2.771 mm de distância entre eixos; a ficha oficial indica 2.766 mm."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "cupra-tavascan-official",
+      "label": "CUPRA Portugal — Tavascan",
+      "url": "https://www.cupraofficial.pt/cupra-tavascan/cupra-tavascan",
+      "type": "official"
+    },
+    {
+      "id": "cupra-tavascan-versions",
+      "label": "CUPRA Portugal — Tavascan: versões e equipamento",
+      "url": "https://www.cupraofficial.pt/cupra-tavascan/versoes-e-equipamento",
+      "type": "official"
+    },
+    {
+      "id": "cupra-tavascan-catalogue",
+      "label": "CUPRA — catálogo técnico Tavascan (08/2026)",
+      "url": "https://www.cupra.com/content/dam/public/cupra-website/cars/tavascan-new/pdf/cupra-tavascan-catalogue-august-2026.pdf",
+      "type": "official"
+    },
+    {
+      "id": "cupra-offer",
+      "label": "Proposta CUPRA J5JUMN1 (PDF fornecido)",
+      "url": "/sources/cupra-tavascan-endurance-oferta.pdf",
+      "type": "pdf"
+    },
+    {
+      "id": "cupra-warranty",
+      "label": "CUPRA Portugal — Garantia dos consumidores",
+      "url": "https://www.cupraofficial.pt/garantia-dos-consumidores",
+      "type": "official"
+    },
+    {
+      "id": "cupra-dealers",
+      "label": "CUPRA Portugal — Rede de concessionários",
+      "url": "https://www.cupraofficial.pt/o-seu-cupra/concessionarios",
+      "type": "official"
+    },
+    {
+      "id": "cupra-tavascan-production",
+      "label": "CUPRA Media Center — Tavascan produzido em Anhui, China",
+      "url": "https://www.seat-cupra-mediacenter.com/CUPRA-Brand/presskits/cupra-tavascan/key-messages",
+      "type": "official"
+    },
+    {
+      "id": "cupra-brand-launch",
+      "label": "SEAT — lançamento da CUPRA como marca automóvel autónoma (22/02/2018)",
+      "url": "https://www.seat.com/company/news/cars/cupra-sports-car-launch",
+      "type": "official"
+    },
+    {
+      "id": "cupra-portugal-entry",
+      "label": "Observador — presença comercial da CUPRA em Lisboa (11/12/2018)",
+      "url": "https://observador.pt/2018/12/11/nova-marca-cupra-ja-tem-espaco-proprio-em-lisboa/",
+      "type": "press"
+    },
+    {
+      "id": "cupra-production-sites",
+      "label": "SEAT S.A. — instalações de produção e modelos CUPRA por localização",
+      "url": "https://www.seat-cupra-mediacenter.com/SEAT-sa/about-seat-sa/production-facilities",
+      "type": "official"
+    },
+    {
+      "id": "cupra-financial-q3-2026",
+      "label": "SEAT & CUPRA — resultados operacionais dos primeiros nove meses de 2026 (30/10/2026)",
+      "url": "https://www.seat-cupra-mediacenter.com/SEAT-sa/seat-sa-news/company/2026/seat-cupra-adapts-market-shifts-intensified-external-pressures-q3",
+      "type": "official"
+    },
+    {
+      "id": "cupra-financial-outlook-2030",
+      "label": "SEAT & CUPRA — objetivo de margem operacional de 6% em 2030 (12/03/2026)",
+      "url": "https://www.seat-cupra-mediacenter.com/SEAT-sa/seat-sa-news/company/2026/seat-cupra-completes-a-year-of-resilience-transformation-outlines-clear-roadmap-for-sustainable-growth-starting-with-launch-of-cupra-raval",
+      "type": "official"
+    },
+    {
+      "id": "cupra-report-2025",
+      "label": "SEAT S.A. — Relatório anual 2025",
+      "url": "https://www.seat-cupra-mediacenter.com/content/dam/seat-media-center/homepage/anual-report/annual-report-2025.pdf",
+      "type": "official"
+    },
+    {
+      "id": "autoeuropa-models",
+      "label": "Volkswagen Newsroom — modelos produzidos na Autoeuropa (dados de 04/2025)",
+      "url": "https://www.volkswagen-newsroom.com/en/volkswagen-autoeuropa-lda-3731",
+      "type": "official"
+    },
+    {
+      "id": "ev-database",
+      "label": "EV Database — CUPRA Tavascan",
+      "url": "https://ev-database.org/car/3608/CUPRA-Tavascan-140-kW---58-kWh",
+      "type": "database"
+    },
+    {
+      "id": "adac",
+      "label": "ADAC — Autotest CUPRA Tavascan Endurance (12/2025)",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/AT6574-cupra-tavascan-endurance/cupra-tavascan-endurance.pdf",
+      "type": "database"
+    },
+    {
+      "id": "autobild",
+      "label": "Auto Bild — teste CUPRA Tavascan VZ 4Drive",
+      "url": "https://www.autobild.de/artikel/_cupra-tavascan-vz-4drive-test-27707181.html",
+      "type": "press"
+    },
+    {
+      "id": "carwow",
+      "label": "Carwow — CUPRA Tavascan review",
+      "url": "https://www.carwow.co.uk/cupra/tavascan",
+      "type": "press"
+    },
+    {
+      "id": "carexpert",
+      "label": "CarExpert — CUPRA Tavascan review",
+      "url": "https://www.carexpert.com.au/car-reviews/2026-cupra-tavascan-review-barcelona-blast-645526",
+      "type": "press"
+    },
+    {
+      "id": "drive-com-au",
+      "label": "Drive — CUPRA Tavascan review",
+      "url": "https://www.drive.com.au/reviews/2025-cupra-tavascan-review",
+      "type": "press"
+    },
+    {
+      "id": "drive-co-uk",
+      "label": "Drive.co.uk — CUPRA Tavascan review",
+      "url": "https://drive.co.uk/cars/cupra/tavascan/review",
+      "type": "press"
+    },
+    {
+      "id": "electrifying",
+      "label": "Electrifying — CUPRA Tavascan review",
+      "url": "https://www.electrifying.com/reviews/cupra-reviews/tavascan/review",
+      "type": "press"
+    },
+    {
+      "id": "rivervale",
+      "label": "Rivervale — CUPRA Tavascan review",
+      "url": "https://www.rivervale.co.uk/content-hub/vehicle-reviews-news/cupra-tavascan",
+      "type": "press"
+    },
+    {
+      "id": "eevee",
+      "label": "Eevee — CUPRA Tavascan review",
+      "url": "https://eevee.sg/reviews/cupra-tavascan.html",
+      "type": "press"
+    },
+    {
+      "id": "autonext",
+      "label": "AutoNext — CUPRA Tavascan VZ Extreme testado",
+      "url": "https://www.autonext.co/reviews/cupra/2025-cupra-tavascan-vz-extreme",
+      "type": "press"
+    },
+    {
+      "id": "motaclarity",
+      "label": "Motaclarity — CUPRA Tavascan review",
+      "url": "https://www.motaclarity.co.uk/news/new-cupra-tavascan-review",
+      "type": "press"
+    },
+    {
+      "id": "sennheiser",
+      "label": "SEAT & CUPRA — CUPRA x Sennheiser, sistema de 12 altifalantes",
+      "url": "https://www.seat-cupra-mediacenter.com/CUPRA-Brand/cupra-news/2024/CUPRA-x-Sennheiser-a-unique-sound-experience",
+      "type": "official"
+    },
+    {
+      "id": "cupra-ota",
+      "label": "CUPRA — atualizações OTA dos modelos elétricos",
+      "url": "https://www.cupra.com/en/owners/ota-updates/updates-electric-vehicles",
+      "type": "official"
+    },
+    {
+      "id": "recallscope",
+      "label": "RecallScope — campanha DVSA R-2026-311 (94S9) do Tavascan",
+      "url": "https://recallscope.com/uk/recall/cupra-reprogramming-matrix-beam-headlights-dvsa-r-2026-311",
+      "type": "database"
+    },
+    {
+      "id": "vehiclerecalls-au",
+      "label": "Vehicle Recalls Australia — campanha REC-006687 do CUPRA Tavascan",
+      "url": "https://www.vehiclerecalls.gov.au/recalls/rec-006687",
+      "type": "database"
+    },
+    {
+      "id": "tavascan-forum",
+      "label": "Tavascan Forum — software, aplicações e atualizações OTA",
+      "url": "https://www.tavascan-forum.de/forum/board/9-software-apps-ota-over-the-air-updates-tavascan-forum",
+      "type": "owner"
+    }
+  ]
+}

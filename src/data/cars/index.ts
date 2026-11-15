@@ -2,6 +2,11 @@ import type { Car } from "@/data/types"
 import bydSealDesign from "./byd-seal-design.json"
 import bydSeal from "./byd-seal-excellence-awd.json"
 import cupraRaval from "./cupra-raval-vz.json"
+import cupraTavascanDrive from "./cupra-tavascan-drive.json"
+import cupraTavascanBase from "./cupra-tavascan-base.json"
+import cupraTavascanEndurance from "./cupra-tavascan-endurance.json"
+import cupraTavascanAdrenaline from "./cupra-tavascan-adrenaline.json"
+import cupraTavascanVz from "./cupra-tavascan-vz.json"
 import mazda6eHomuraPlus from "./mazda-6e-homura-plus.json"
 import mazda6eTakumiPlus from "./mazda-6e-takumi-plus.json"
 import mazda6eTakumi from "./mazda-6e-takumi.json"
@@ -20,6 +25,11 @@ import teslaModel3Performance from "./tesla-model-3-performance.json"
  */
 export const CARS = [
   cupraRaval,
+  cupraTavascanDrive,
+  cupraTavascanBase,
+  cupraTavascanEndurance,
+  cupraTavascanAdrenaline,
+  cupraTavascanVz,
   bydSeal,
   bydSealDesign,
   mazda6eTakumi,
