@@ -126,22 +126,41 @@
         "A maioria das funções está concentrada no ecrã tátil",
         "A ausência de vidro traseiro obriga a usar o retrovisor digital"
       ],
-      "sourceIds": ["polestar-order", "polestar-specs", "autoexpress", "carwow", "adac-polestar-4"]
+      "sourceIds": [
+        "polestar-order",
+        "polestar-specs",
+        "autoexpress",
+        "carwow",
+        "adac-polestar-4"
+      ]
     },
     "comfort": {
-      "baseScore": 8.1,
-      "summary": "A configuração Rear motor usa chassis passivo, molas helicoidais e jantes Aero de 20 polegadas; a imprensa descreve boa absorção das irregularidades, habitáculo silencioso e comportamento composto em autoestrada. O Pack Comfort acrescenta bancos dianteiros de 12 posições e volante aquecido; a largura de quase dois metros e a massa de 2.230 kg fazem-se notar em cidade e em mudanças de direção.",
+      "assessment": {
+        "suspension": 7.4,
+        "seats": 8.5,
+        "acoustics": 8.7,
+        "drivetrainCalibration": 8.0
+      },
+      "summary": "A configuração Rear motor usa chassis passivo com molas helicoidais e jantes Aero de 20\". O corpo é bem controlado e o pisar é suave na maior parte do tempo, mas por baixo há rigidez: o ADAC, que testou o carro com jantes de 21\", atribui 2,3 à Federung e nota que o conforto sofre em cidade e nos obstáculos isolados, com as juntas a provocarem um tremor visível no habitáculo. Os bancos dianteiros do Pack Comfort, de 12 posições, são macios e muito suportivos (Sitze 1,9), e o banco traseiro reclinado melhora a postura em viagens longas. O habitáculo é dos mais silenciosos do mercado — 64,4 dB(A) a 130 km/h no mesmo protocolo, mesmo sem vidros laterais duplos — com apenas algum ruído de vento junto à coluna B. A entrega é linear e a regeneração bem calibrada, embora o one-pedal possa parecer agarrar em manobras.",
       "pros": [
-        "Suspensão confortável em piso degradado e estável em autoestrada",
-        "Bancos dianteiros elétricos de 12 posições e traseiros reclináveis",
-        "Habitáculo silencioso em andamento"
+        "Bancos dianteiros de 12 posições, macios e suportivos (ADAC 1,9)",
+        "Habitáculo dos mais silenciosos: 64,4 dB(A) a 130 km/h",
+        "Acelerador linear e regeneração bem calibrada"
       ],
       "cons": [
-        "Dimensões largas complicam ruas e parques apertados",
-        "A massa elevada sente-se em condução mais empenhada",
-        "Ruído aerodinâmico dos retrovisores em velocidade, segundo a imprensa"
+        "Rigidez e tremor nas juntas, sobretudo com jantes grandes",
+        "One-pedal pode parecer agarrar a baixa velocidade",
+        "Largura e massa fazem-se notar em cidade"
       ],
-      "sourceIds": ["polestar-order", "polestar-specs", "autoexpress", "carwow", "electrifying"]
+      "sourceIds": [
+        "polestar-order",
+        "polestar-specs",
+        "adac-polestar-4",
+        "autocar-polestar4",
+        "rac-polestar4",
+        "roadandtrack-polestar4",
+        "insideevs-polestar4"
+      ]
     },
     "brand": {
       "assessment": {
@@ -164,7 +183,16 @@
         "Não há produção europeia atual; a fábrica eslovaca para o Polestar 7 está prevista para 2028",
         "Prejuízos e fluxos de caixa operacionais negativos persistem, com dúvida material sobre a continuidade nas contas de H1 2026"
       ],
-      "sourceIds": ["polestar-global-launch", "polestar-portugal-entry", "polestar-market-expansion-2022", "polestar-service", "polestar-q3-2026-update", "polestar-europe-plan", "polestar-financial-h1-2026", "polestar-shareholder-support-2026"]
+      "sourceIds": [
+        "polestar-global-launch",
+        "polestar-portugal-entry",
+        "polestar-market-expansion-2022",
+        "polestar-service",
+        "polestar-q3-2026-update",
+        "polestar-europe-plan",
+        "polestar-financial-h1-2026",
+        "polestar-shareholder-support-2026"
+      ]
     },
     "equipment": {
       "summary": "A configuração acrescenta o Pack Prime, que reúne Pilot, Plus e Comfort: HUD, Harman Kardon de 12 altifalantes, assistências ao condutor, bancos dianteiros e traseiros aquecidos, volante aquecido, climatização de três zonas e porta-bagagens elétrico. Inclui também teto panorâmico, câmara 360º, bomba de calor, carregamento wireless, V2L até 3,3 kW e cabo CA de 11 kW.",
@@ -178,13 +206,26 @@
         "Sem ventilação ou massagem nos bancos, reservadas ao upgrade Nappa",
         "Sem V2H e sem carregador CA de 22 kW nesta configuração"
       ],
-      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
+      "sourceIds": [
+        "polestar-order",
+        "polestar-specs",
+        "evdb-my27"
+      ]
     },
     "boot": {
       "summary": "O Polestar 4 coupé tem 526 L na bagageira traseira, incluindo o espaço sob o piso, e 15 L no compartimento dianteiro. A capacidade total contabilizada é 541 L; o volume com bancos rebatidos não entra no critério, para manter a comparação em utilização normal de cinco lugares.",
-      "pros": ["526 L de bagageira traseira com piso regulável", "15 L à frente para guardar cabos ou objetos pequenos"],
-      "cons": ["Frunk de apenas 15 L", "O volume máximo com bancos rebatidos não é comparado"],
-      "sourceIds": ["polestar-specs", "polestar-order"]
+      "pros": [
+        "526 L de bagageira traseira com piso regulável",
+        "15 L à frente para guardar cabos ou objetos pequenos"
+      ],
+      "cons": [
+        "Frunk de apenas 15 L",
+        "O volume máximo com bancos rebatidos não é comparado"
+      ],
+      "sourceIds": [
+        "polestar-specs",
+        "polestar-order"
+      ]
     },
     "sound": {
       "baseScore": 7.9,
@@ -199,7 +240,11 @@
         "O equalizador é pouco configurável, segundo alguns proprietários",
         "As colunas nos encostos de cabeça exigem o upgrade Nappa"
       ],
-      "sourceIds": ["polestar-specs", "harman-owner-review", "reddit-audio"]
+      "sourceIds": [
+        "polestar-specs",
+        "harman-owner-review",
+        "reddit-audio"
+      ]
     },
     "range": {
       "summary": "A encomenda indica até 620 km WLTP com a bateria de 100 kWh (94 kWh úteis). A Polestar e a EV Database confirmam esse valor para a versão Rear motor; a estimativa de autonomia real da EV Database é de cerca de 495 km e varia bastante com temperatura, velocidade e percurso.",
@@ -213,7 +258,11 @@
         "A massa de 2.230 kg é elevada para um veículo de tração traseira",
         "O valor WLTP depende da configuração e das jantes escolhidas"
       ],
-      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
+      "sourceIds": [
+        "polestar-order",
+        "polestar-specs",
+        "evdb-my27"
+      ]
     },
     "powerToWeight": {
       "summary": "Os 272 cv e a tara de 2.230 kg indicada na encomenda correspondem a cerca de 122 cv por tonelada. A EV Database publica 2.305 kg como peso EU, uma base de medição diferente. O motor traseiro entrega 343 Nm e acelera dos 0 aos 100 km/h em 7,1 segundos: resposta suficiente para ultrapassagens e condução diária, sem a prioridade de prestações das versões Dual motor.",
@@ -227,7 +276,12 @@
         "Sem a aceleração e tração integral da versão Dual motor",
         "A massa nota-se quando se aumenta o ritmo em curva"
       ],
-      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27", "euroncap"]
+      "sourceIds": [
+        "polestar-order",
+        "polestar-specs",
+        "evdb-my27",
+        "euroncap"
+      ]
     },
     "efficiency": {
       "summary": "O configurador indica 17,8 kWh/100 km WLTP para esta configuração; a EV Database confirma 17,8 kWh/100 km no ciclo TEL e 18,4 no TEH, consoante a variante de homologação. A bomba de calor é de série, mas a carroçaria larga e a massa elevada podem aumentar o consumo real, sobretudo em autoestrada.",
@@ -241,7 +295,11 @@
         "Consumo real sensível à velocidade e à temperatura",
         "A massa de 2.230 kg penaliza a eficiência em utilização urbana e rápida"
       ],
-      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
+      "sourceIds": [
+        "polestar-order",
+        "polestar-specs",
+        "evdb-my27"
+      ]
     },
     "charging": {
       "summary": "Carregador de bordo de 11 kW CA e potência máxima de 200 kW CC. A Polestar indica 30 minutos dos 10 aos 80%; a EV Database mede uma média de cerca de 135 kW e aproximadamente 31 minutos nesse intervalo. A encomenda inclui um cabo CA de 11 kW; o carregador de bordo opcional de 22 kW não foi selecionado.",
@@ -255,7 +313,11 @@
         "Sem carregador CA opcional de 22 kW",
         "Não suporta V2H"
       ],
-      "sourceIds": ["polestar-order", "polestar-specs", "evdb-my27"]
+      "sourceIds": [
+        "polestar-order",
+        "polestar-specs",
+        "evdb-my27"
+      ]
     },
     "satisfaction": {
       "assessment": {
@@ -275,7 +337,14 @@
         "Controlos táteis, ligação do CarPlay e câmara traseira apresentaram falhas/intermitências",
         "A experiência de um único carro não permite estimar a incidência na frota, sobretudo na versão MY27"
       ],
-      "sourceIds": ["electrifying", "autoexpress", "polestar-owner-forum", "polestar-owner-early-failure", "polestar-owner-after-update", "dvsa-recalls"]
+      "sourceIds": [
+        "electrifying",
+        "autoexpress",
+        "polestar-owner-forum",
+        "polestar-owner-early-failure",
+        "polestar-owner-after-update",
+        "dvsa-recalls"
+      ]
     }
   },
   "dossier": {
@@ -404,7 +473,7 @@
     },
     {
       "id": "adac-polestar-4",
-      "label": "ADAC — autoteste ao Polestar 4 Long Range Single Motor",
+      "label": "ADAC — autoteste ao Polestar 4 Long Range Single Motor (Federung 2,3 · Sitze 1,9 · Innengeräusch 1,9 · 64,4 dB(A) a 130 km/h)",
       "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/AT6482-polestar-4-long-range-single-motor/polestar-4-long-range-single-motor.pdf",
       "type": "press"
     },
@@ -491,6 +560,30 @@
       "label": "Polestar — conversão e extensão de empréstimos de acionistas (31/03/2026)",
       "url": "https://www.sec.gov/Archives/edgar/data/1884082/000110465926037200/tm2610648d1_ex99-1.htm",
       "type": "official"
+    },
+    {
+      "id": "autocar-polestar4",
+      "label": "Autocar — Polestar 4 review",
+      "url": "https://www.autocar.co.uk/car-review/polestar/4",
+      "type": "press"
+    },
+    {
+      "id": "rac-polestar4",
+      "label": "RAC — Polestar 4 review",
+      "url": "https://www.rac.co.uk/drive/car-reviews/polestar/4/4",
+      "type": "press"
+    },
+    {
+      "id": "roadandtrack-polestar4",
+      "label": "Road & Track — 2026 Polestar 4 review",
+      "url": "https://www.roadandtrack.com/reviews/a69230179/2026-polestar-4-drive-review/",
+      "type": "press"
+    },
+    {
+      "id": "insideevs-polestar4",
+      "label": "InsideEVs — 2026 Polestar 4 review",
+      "url": "https://insideevs.com/reviews/786314/2026-polestar-4-review",
+      "type": "press"
     }
   ]
 }

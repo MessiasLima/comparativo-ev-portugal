@@ -22,7 +22,7 @@
     "powerHp": 498,
     "torqueNm": 493,
     "drivetrain": "Tração integral (AWD)",
-    "acceleration0100": 4.0,
+    "acceleration0100": 4,
     "topSpeedKmh": 201,
     "batteryKwh": 82,
     "usableBatteryKwh": 79,
@@ -103,22 +103,44 @@
         "Ruídos parasitas relatados em unidades recentes",
         "Sem painel de instrumentos à frente do condutor"
       ],
-      "sourceIds": ["tesla-model3", "tslcheck", "model3info", "autoexpress", "reddit-rattles", "kbb-model3"]
+      "sourceIds": [
+        "tesla-model3",
+        "tslcheck",
+        "model3info",
+        "autoexpress",
+        "reddit-rattles",
+        "kbb-model3"
+      ]
     },
     "comfort": {
-      "baseScore": 7.5,
-      "summary": "A tração integral usa os mesmos amortecedores dependentes da frequência da versão RWD, com jantes Photon de 18\". O acerto filtra razoavelmente as juntas e mantém a carroçaria controlada, mas continua firme: em piso urbano degradado sente-se patter e os impactos curtos chegam secos. Em autoestrada é estável e composta; o peso adicional do segundo motor (1.824 kg de tara) não altera o comportamento da suspensão de forma significativa.",
+      "assessment": {
+        "suspension": 7.2,
+        "seats": 7.6,
+        "acoustics": 7.9,
+        "drivetrainCalibration": 8.5
+      },
+      "summary": "A tração integral usa os mesmos amortecedores dependentes da frequência da versão RWD, com jantes Photon de 18\". O acerto filtra razoavelmente as juntas e mantém a carroçaria controlada, mas continua firme: no Highland o ADAC deu 2,5 à Federung, com patter em piso urbano degradado e impactos curtos secos. Em autoestrada é estável e composto, e o peso adicional do segundo motor (1.824 kg de tara) não altera o comportamento da suspensão de forma significativa. Os bancos dianteiros, ventilados e aquecidos, são confortáveis, mas o piso elevado e o banco traseiro pouco generoso limitam o conforto atrás. A insonorização vale 66,2 dB(A) a 130 km/h no autoteste de 2026, com vidros acústicos laminados em todas as janelas, e o one-pedal é suave e previsível.",
       "pros": [
-        "Amortecedores dependentes da frequência",
-        "Bom controlo de carroçaria com 1.824 kg",
-        "Estável e composta em autoestrada"
+        "Amortecedores dependentes da frequência e vidros acústicos laminados",
+        "Bancos dianteiros ventilados e aquecidos",
+        "One-pedal muito bem calibrado"
       ],
       "cons": [
-        "Acerto firme e patter em piso urbano degradado",
-        "Impactos curtos sentem-se secos",
-        "Sem suspensão eletrónica regulável, reservada à Performance"
+        "Patter em piso urbano degradado e arestas duras percetíveis",
+        "Piso elevado e banco traseiro pouco generoso",
+        "Regeneração sem níveis ajustáveis"
       ],
-      "sourceIds": ["tesla-offer-premium-awd", "tesla-model3", "tslcheck", "model3info", "autoexpress"]
+      "sourceIds": [
+        "tesla-offer-premium-awd",
+        "tesla-model3",
+        "tslcheck",
+        "model3info",
+        "adac-model3-premium",
+        "autoexpress",
+        "thinkev-model3",
+        "evpulse-model3",
+        "motortrend-model3"
+      ]
     },
     "brand": {
       "assessment": {
@@ -141,7 +163,14 @@
         "Produção europeia não inclui o Model 3",
         "Lucro e margem operacional em queda no terceiro trimestre de 2026"
       ],
-      "sourceIds": ["dn-tesla-2017", "dn-service-center-2018", "autofoco-porto-2022", "tesla-contact", "tesla-10q", "tesla-warranty"]
+      "sourceIds": [
+        "dn-tesla-2017",
+        "dn-service-center-2018",
+        "autofoco-porto-2022",
+        "tesla-contact",
+        "tesla-10q",
+        "tesla-warranty"
+      ]
     },
     "equipment": {
       "summary": "Esta versão acrescenta ao Premium Long Range RWD o sistema de som de 17 altifalantes, com 15 altifalantes e dois subwoofers. Mantém os bancos ventilados, aquecidos e com memória, o ecrã traseiro de 8\", a iluminação ambiente, o Autopilot, a bomba de calor, o carregamento wireless, o ecrã central de 16\", os serviços conectados, as atualizações OTA, a chave digital, o teto panorâmico, o porta-bagagens elétrico e o frunk de 88 L. Continuam a faltar Apple CarPlay/Android Auto, câmara 360º e V2L/V2H.",
@@ -155,7 +184,12 @@
         "Sem V2L nem V2H",
         "Jantes de 19\" e pinturas opcionais acrescem ao preço"
       ],
-      "sourceIds": ["tesla-model3", "tslcheck", "model3info", "tesla-offer-premium-awd"]
+      "sourceIds": [
+        "tesla-model3",
+        "tslcheck",
+        "model3info",
+        "tesla-offer-premium-awd"
+      ]
     },
     "boot": {
       "summary": "A bagageira traseira tem 594 L e o compartimento dianteiro 88 L, num total de 682 L com os cinco lugares em uso. O porta-bagagens é elétrico e o frunk tem fundo moldado, mas a abertura traseira é baixa e o piso não é regulável em altura. O segundo motor não reduz o volume disponível face às restantes versões.",
@@ -169,7 +203,11 @@
         "Piso da bagageira não é regulável em altura",
         "Sem roda sobressalente; apenas kit de reparação"
       ],
-      "sourceIds": ["tesla-model3", "evdb-premium-awd", "youtube-rwd-review"]
+      "sourceIds": [
+        "tesla-model3",
+        "evdb-premium-awd",
+        "youtube-rwd-review"
+      ]
     },
     "sound": {
       "baseScore": 4.5,
@@ -184,7 +222,12 @@
         "Afinação de fábrica menos refinada do que sistemas premium dedicados",
         "Sem controlo avançado de palco sonoro"
       ],
-      "sourceIds": ["tesla-model3", "tslcheck", "model3info", "autoexpress"]
+      "sourceIds": [
+        "tesla-model3",
+        "tslcheck",
+        "model3info",
+        "autoexpress"
+      ]
     },
     "range": {
       "summary": "Com 79 kWh úteis e jantes de 18\", a Tesla anuncia 660 km WLTP, 90 km menos do que a versão RWD com a mesma bateria. A EV Database estima uma autonomia real combinada de cerca de 555 km e 650 km em condições amenas. A bateria NMC deve ser carregada habitualmente até 80% para preservar a longevidade; a carga a 100% fica reservada para viagens.",
@@ -198,7 +241,12 @@
         "Carga diária recomendada até 80%",
         "Consumo superior ao da versão de tração traseira"
       ],
-      "sourceIds": ["tesla-offer-premium-awd", "tesla-model3", "evdb-premium-awd", "model3info"]
+      "sourceIds": [
+        "tesla-offer-premium-awd",
+        "tesla-model3",
+        "evdb-premium-awd",
+        "model3info"
+      ]
     },
     "powerToWeight": {
       "summary": "Os 366 kW (498 cv) e 493 Nm movem 1.824 kg de tara, o que dá cerca de 273 cv/t. A Tesla anuncia 4,0 segundos dos 0 aos 100 km/h e 201 km/h de velocidade máxima; a EV Database publica 4,4 segundos, uma diferença que reflete métodos de medição distintos. A tração integral melhora a motricidade em piso molhado e a resposta é imediata, sem o drama de um desportivo puro.",
@@ -212,7 +260,11 @@
         "Menos potência do que a Performance",
         "Peso adicional face à versão RWD"
       ],
-      "sourceIds": ["tesla-offer-premium-awd", "tesla-model3", "evdb-premium-awd"]
+      "sourceIds": [
+        "tesla-offer-premium-awd",
+        "tesla-model3",
+        "evdb-premium-awd"
+      ]
     },
     "efficiency": {
       "summary": "O consumo combinado WLTP é 14,3 kWh/100 km, 1,8 kWh acima da versão RWD com a mesma bateria. A EV Database estima 14,2 kWh/100 km em uso real combinado e 14,8 kWh/100 km em autoestrada a 110 km/h. A tração integral e o peso adicional explicam a diferença face à versão de tração traseira, que continua a ser a mais eficiente da gama.",
@@ -226,7 +278,12 @@
         "Consumo real em autoestrada sobe com a velocidade",
         "Jantes de 19\" opcionais agravam o consumo"
       ],
-      "sourceIds": ["tesla-model3", "evdb-premium-awd", "model3info", "tslcheck"]
+      "sourceIds": [
+        "tesla-model3",
+        "evdb-premium-awd",
+        "model3info",
+        "tslcheck"
+      ]
     },
     "charging": {
       "summary": "Carrega a 11 kW em corrente alternada e até 250 kW em corrente contínua, com 10–80% em cerca de 28 minutos segundo a EV Database. A Tesla indica até 275 km adicionados em 15 minutos num Supercharger. A arquitetura é de 400 V, o pré-condicionamento da bateria é ativado pela navegação e não há V2L nem V2H.",
@@ -240,7 +297,12 @@
         "Arquitetura de 400 V limita a potência face a sistemas de 800 V",
         "Potência média em DC fica nos 125 kW entre 10% e 80%"
       ],
-      "sourceIds": ["tesla-offer-premium-awd", "tesla-model3", "evdb-premium-awd", "model3info"]
+      "sourceIds": [
+        "tesla-offer-premium-awd",
+        "tesla-model3",
+        "evdb-premium-awd",
+        "model3info"
+      ]
     },
     "satisfaction": {
       "assessment": {
@@ -260,7 +322,13 @@
         "Qualidade dos materiais interiores é o ponto mais criticado",
         "Recall 25V410000 em 18 Model 3 de 2026"
       ],
-      "sourceIds": ["kbb-model3", "jdpower-model3", "nhtsa-25v410", "reddit-rattles", "autoexpress"]
+      "sourceIds": [
+        "kbb-model3",
+        "jdpower-model3",
+        "nhtsa-25v410",
+        "reddit-rattles",
+        "autoexpress"
+      ]
     }
   },
   "dossier": {
@@ -413,6 +481,30 @@
       "id": "youtube-rwd-review",
       "label": "YouTube — comparação e ensaio do Model 3 Long Range RWD 2026",
       "url": "https://www.youtube.com/watch?v=jX7CvQPiVxA",
+      "type": "press"
+    },
+    {
+      "id": "thinkev-model3",
+      "label": "ThinkEV — Tesla Model 3 Highland review",
+      "url": "https://thinkev.ca/blog/tesla-model-3-highland-canada-review-2026",
+      "type": "press"
+    },
+    {
+      "id": "evpulse-model3",
+      "label": "EV Pulse — 2026 Tesla Model 3 Highland review",
+      "url": "https://evpulse.net/tesla-model-3-highland-review-2026-range-charging-value-tested",
+      "type": "press"
+    },
+    {
+      "id": "motortrend-model3",
+      "label": "MotorTrend — Tesla Model 3 Highland interior review",
+      "url": "https://www.motortrend.com/reviews/2024-tesla-model-3-highland-interior-review",
+      "type": "press"
+    },
+    {
+      "id": "adac-model3-premium",
+      "label": "ADAC — Tesla Model 3 Premium Maximale Reichweite im Autotest 2026 (Federung 3,0 · Sitze 2,3 · Innengeräusch 2,3 · 66,2 dB(A) a 130 km/h)",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/AT6648-tesla-model-3-premium-maximale-reichweite/tesla-model-3-premium-maximale-reichweite.pdf",
       "type": "press"
     }
   ]

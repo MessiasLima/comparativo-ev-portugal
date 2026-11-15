@@ -113,22 +113,43 @@
         "Ergonomia do infotainment demasiado dependente do ecrã",
         "Pilares A grossos e visibilidade traseira limitada"
       ],
-      "sourceIds": ["byd-guide", "byd-official", "autoexpress", "autonext", "drive", "carwow"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-official",
+        "autoexpress",
+        "autonext",
+        "drive",
+        "carwow"
+      ]
     },
     "comfort": {
-      "baseScore": 7.9,
-      "summary": "A suspensão de duplo braço à frente e multilink atrás, com amortecedores de frequência variável (FSD), privilegia o conforto: absorve bem os buracos maiores e as imperfeições do piso em cidade, e a velocidade de autoestrada mantém-se serena. Em piso muito irregular ou em apoio rápido o corpo segue demasiado a estrada e pode balançar — é o preço de uma afinação macia.",
+      "assessment": {
+        "suspension": 7.5,
+        "seats": 8.0,
+        "acoustics": 8.7,
+        "drivetrainCalibration": 7.0
+      },
+      "summary": "O Excellence AWD usa a mesma arquitetura de suspensão do Design, mas com amortecedores de frequência variável (FSD) e mais 130 kg. Absorve melhor os buracos maiores em cidade, com um pisar mais flutuante; em piso ondulado e em apoio rápido o corpo segue mais a estrada do que no Design. Os bancos desportivos, aquecidos e ventilados, dão excelente apoio e o habitáculo mantém boa serenidade: no Design testado pelo ADAC, com os mesmos vidros laterais laminados, mediu 64,4 dB(A) a 130 km/h, com ruído de rolamento apenas em asfalto áspero. A entrega dos dois motores é suave, mas mantém-se o atraso inicial do acelerador e a travagem regenerativa pouco modulável, sem one-pedal.",
       "pros": [
-        "Absorção muito boa de buracos e imperfeições em cidade",
-        "Acerto claramente orientado ao conforto",
-        "Amortecedores de frequência variável (FSD)"
+        "Amortecedores de frequência variável (FSD)",
+        "Bancos desportivos aquecidos e ventilados",
+        "Insonorização de referência, com vidros laterais laminados"
       ],
       "cons": [
-        "Balanço e pouca contenção em piso muito irregular",
-        "Corpo segue demasiado a estrada em apoio rápido",
-        "Peso de 2,2 t faz-se sentir"
+        "Balanço e pouca contenção em piso ondulado",
+        "Peso de 2,2 t sente-se nas mudanças de direção",
+        "Regeneração pouco modulável e mordida abrupta a baixa velocidade"
       ],
-      "sourceIds": ["byd-guide", "byd-official", "autonext", "drive", "carwow"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-official",
+        "autonext",
+        "drive",
+        "adac-seal",
+        "carwow",
+        "autoexpress",
+        "cinch-seal"
+      ]
     },
     "brand": {
       "assessment": {
@@ -151,7 +172,19 @@
         "A produção em série em Szeged ainda não estava confirmada nas fontes consultadas em novembro de 2026",
         "O lucro acumulado e as vendas de automóveis de passageiros recuaram em 2026, com redução do saldo de caixa"
       ],
-      "sourceIds": ["byd-history", "byd-portugal-entry", "byd-dealers", "byd-hungary-factory", "byd-szeged-pilot", "byd-szeged-q4-target", "byd-szeged-status", "byd-sales-2026-sep", "byd-q3-2026-financials", "byd-sales-2026-oct", "byd-analyst-forecast-2026"]
+      "sourceIds": [
+        "byd-history",
+        "byd-portugal-entry",
+        "byd-dealers",
+        "byd-hungary-factory",
+        "byd-szeged-pilot",
+        "byd-szeged-q4-target",
+        "byd-szeged-status",
+        "byd-sales-2026-sep",
+        "byd-q3-2026-financials",
+        "byd-sales-2026-oct",
+        "byd-analyst-forecast-2026"
+      ]
     },
     "equipment": {
       "summary": "Dotação quase completa: HUD, Dynaudio de 12 altifalantes, bancos aquecidos/ventilados com memória, volante aquecido, bomba de calor, teto panorâmico, porta-bagagens elétrico, frunk e V2L. Só faltam estacionamento remoto, V2H e bancos traseiros aquecidos.",
@@ -165,13 +198,25 @@
         "Sem V2H",
         "Sem aquecimento nos bancos traseiros"
       ],
-      "sourceIds": ["byd-guide", "byd-official", "byd-caetano"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-official",
+        "byd-caetano"
+      ]
     },
     "boot": {
       "summary": "A atualização de primavera de 2026 eleva a bagageira traseira para 485 L e a dianteira para 72 L. A capacidade total contabilizada é 557 L; os valores anteriores de 400 L e 53 L pertenciam à especificação anterior do Seal.",
-      "pros": ["485 L atrás e 72 L à frente", "557 L de capacidade total distribuída por dois compartimentos"],
-      "cons": ["A medição deve ser confirmada na entrega, pois a atualização depende do ano modelo", "O frunk é pequeno para objetos volumosos"],
-      "sourceIds": ["byd-2026-boot"]
+      "pros": [
+        "485 L atrás e 72 L à frente",
+        "557 L de capacidade total distribuída por dois compartimentos"
+      ],
+      "cons": [
+        "A medição deve ser confirmada na entrega, pois a atualização depende do ano modelo",
+        "O frunk é pequeno para objetos volumosos"
+      ],
+      "sourceIds": [
+        "byd-2026-boot"
+      ]
     },
     "sound": {
       "baseScore": 8.3,
@@ -186,7 +231,11 @@
         "Sem equalização avançada por utilizador",
         "Alguns proprietários descrevem o som de fábrica como plano e pouco envolvente"
       ],
-      "sourceIds": ["byd-guide", "autoexpress", "byd-caetano"]
+      "sourceIds": [
+        "byd-guide",
+        "autoexpress",
+        "byd-caetano"
+      ]
     },
     "range": {
       "summary": "520 km de autonomia combinada WLTP com a bateria Blade de 82,5 kWh. A bateria de 82,5 kWh e o peso de 2.185 kg explicam porque fica atrás do Design em autonomia. Em autoestrada, a autonomia real cai de forma significativa.",
@@ -200,7 +249,12 @@
         "Autonomia real abaixo da homologada em condições frias",
         "Bateria grande e pesada"
       ],
-      "sourceIds": ["byd-guide", "byd-official", "byd-caetano", "autonext"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-official",
+        "byd-caetano",
+        "autonext"
+      ]
     },
     "powerToWeight": {
       "summary": "530 cv para 2.185 kg dão 243 cv/t, quase o dobro do Raval. Os 0-100 km/h em 3,8 s e os 670 Nm explicam a aceleração, apesar do peso.",
@@ -214,7 +268,12 @@
         "Pneus e travões mais caros de substituir",
         "Potência difícil de explorar no dia a dia"
       ],
-      "sourceIds": ["byd-guide", "byd-official", "byd-caetano", "ev-database"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-official",
+        "byd-caetano",
+        "ev-database"
+      ]
     },
     "efficiency": {
       "summary": "18,2 kWh/100 km WLTP, consequência do peso, da tração integral e da bateria grande. Em contrapartida, a bomba de calor ajuda no inverno e a bateria LFP é mais tolerante a ciclos frequentes.",
@@ -228,7 +287,11 @@
         "Peso de 2.185 kg",
         "Aerodinâmica boa, mas insuficiente para compensar o peso"
       ],
-      "sourceIds": ["byd-guide", "byd-official", "byd-caetano"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-official",
+        "byd-caetano"
+      ]
     },
     "charging": {
       "summary": "150 kW em DC e 11 kW em AC, com 30-80% em 26 minutos e 10-80% em 37 minutos. Mantém a potência DC apesar de a bateria ser o dobro da do Raval. Tem V2L de 3 kW, mas não V2H.",
@@ -241,7 +304,11 @@
         "Sem V2H",
         "Curva de carga dependente da temperatura da bateria"
       ],
-      "sourceIds": ["byd-guide", "byd-official", "byd-caetano"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-official",
+        "byd-caetano"
+      ]
     },
     "satisfaction": {
       "assessment": {
@@ -261,7 +328,16 @@
         "Queixas sobre assistentes de condução intrusivos e pós-venda inconsistente",
         "Sem denominador público de frota/quilometragem para estimar a incidência dos problemas reportados"
       ],
-      "sourceIds": ["reddit-18m", "reddit-uk", "carwow", "autoexpress", "thecarexpert", "evguide", "byd-recall-campaigns", "dvsa-recalls"]
+      "sourceIds": [
+        "reddit-18m",
+        "reddit-uk",
+        "carwow",
+        "autoexpress",
+        "thecarexpert",
+        "evguide",
+        "byd-recall-campaigns",
+        "dvsa-recalls"
+      ]
     }
   },
   "dossier": {
@@ -421,6 +497,12 @@
       "type": "press"
     },
     {
+      "id": "adac-seal",
+      "label": "ADAC — BYD Seal Design im Autotest (Federung 2,4 · Sitze 2,3 · Innengeräusch 1,6 · 64,4 dB(A) a 130 km/h)",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/byd/seal/1generation/328021",
+      "type": "press"
+    },
+    {
       "id": "evguide",
       "label": "EV Guide — BYD Seal Design 2026 review Portugal",
       "url": "https://evguide.pt/cars/byd-seal",
@@ -473,6 +555,12 @@
       "label": "BYD Company Limited — produção e vendas de outubro de 2026 (01/11/2026)",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1101/2026110100043.pdf",
       "type": "official"
+    },
+    {
+      "id": "cinch-seal",
+      "label": "cinch — BYD SEAL review (2026)",
+      "url": "https://www.cinch.co.uk/used-cars/byd/seal/review",
+      "type": "press"
     }
   ]
 }

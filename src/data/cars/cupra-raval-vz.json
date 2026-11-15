@@ -89,12 +89,12 @@
   "options": [
     {
       "name": "Drive Pack",
-      "price": 545.0,
+      "price": 545,
       "description": "Travel Assist 3.0, Intelligent Park Assist, Remote Park Assist e câmara 360º."
     },
     {
       "name": "PVC Vegan",
-      "price": 800.0,
+      "price": 800,
       "description": "Bancos elétricos com memória para o condutor, apoio lombar elétrico e espelhos com memória."
     },
     {
@@ -128,22 +128,41 @@
         "Climatização em sliders táteis",
         "Poucos materiais nobres para o preço pedido"
       ],
-      "sourceIds": ["cupra-official", "autonext", "selectcarleasing", "electrive", "carmagazine"]
+      "sourceIds": [
+        "cupra-official",
+        "autonext",
+        "selectcarleasing",
+        "electrive",
+        "carmagazine"
+      ]
     },
     "comfort": {
-      "baseScore": 6.8,
-      "summary": "O Raval VZ é firme por natureza. O DCC ajuda a suavizar, mas nunca transforma o carro num cruiser macio; com jantes de 19\" e suspensão desportiva, os buracos sentem-se. Em estradas boas, o controlo do corpo é excelente.",
+      "assessment": {
+        "suspension": 6.9,
+        "seats": 7.4,
+        "acoustics": 7.9,
+        "drivetrainCalibration": 7.2
+      },
+      "summary": "O Raval VZ combina suspensão desportiva, amortecedores adaptativos (DCC) com 15 níveis e jantes de 19\" com pneus 235/40. O modo Comfort suaviza o suficiente para o uso urbano, mas o acerto continua firme e os buracos sentem-se com secura, sobretudo em Sport; em troca, o controlo de carroçaria é exemplar. A km77, que o comparou diretamente com o VW ID. Polo, conclui que o Raval é o mais firme dos dois e que o alemão isola melhor as irregularidades. Os bancos tipo baquet seguram muito bem o condutor, penalizando quem é de maior corpulência, e o banco traseiro é apertado e de costas duras. A insonorização surpreende pela positiva, com o habitáculo sereno a velocidade de autoestrada e apenas algum ruído de pneus; o acelerador é progressivo e a travagem bem conjugada, embora a mordida inicial seja forte e o one-pedal possa sacudir a velocidades mais altas.",
       "pros": [
-        "DCC com diferenças percetíveis entre modos",
-        "Corpo controlado e pouca inclinação em curva",
-        "Bom isolamento de ruído de rolamento"
+        "DCC com modos claramente distintos",
+        "Controlo de carroçaria excelente em curva",
+        "Insonorização muito boa para o segmento"
       ],
       "cons": [
         "Suspensão firme em cidade e piso degradado",
-        "Jantes de 19\" penalizam o conforto",
-        "Não é a escolha ideal para quem procura máximo conforto"
+        "Banco traseiro apertado e com costas duras",
+        "Mordida inicial do travão e one-pedal abrupto a alta velocidade"
       ],
-      "sourceIds": ["carwow", "electrive", "electrifying", "autonext"]
+      "sourceIds": [
+        "carwow",
+        "electrive",
+        "electrifying",
+        "autonext",
+        "acl-autotouring",
+        "chasingcars-raval",
+        "km77-raval"
+      ]
     },
     "brand": {
       "assessment": {
@@ -166,7 +185,18 @@
         "O resultado operacional da SEAT & CUPRA foi de apenas €6 milhões nos primeiros nove meses de 2026, com alerta sobre margens e geração de caixa",
         "Não foi confirmada produção ou montagem de veículos CUPRA numa fábrica em Portugal"
       ],
-      "sourceIds": ["cupra-brand-launch", "cupra-portugal-entry", "cupra-dealers", "cupra-dealer-directory-feed", "cupra-production-sites", "cupra-financial-q3-2026", "cupra-financial-outlook-2030", "cupra-report-2025", "autoeuropa-models", "cupra-raval-production"]
+      "sourceIds": [
+        "cupra-brand-launch",
+        "cupra-portugal-entry",
+        "cupra-dealers",
+        "cupra-dealer-directory-feed",
+        "cupra-production-sites",
+        "cupra-financial-q3-2026",
+        "cupra-financial-outlook-2030",
+        "cupra-report-2025",
+        "autoeuropa-models",
+        "cupra-raval-production"
+      ]
     },
     "equipment": {
       "summary": "A dotação, contando com os opcionais incluídos nesta configuração, é forte em ADAS, mas faltam itens de conforto e tecnologia que os Seal trazem de série: HUD, som premium, bancos aquecidos/ventilados, bomba de calor e porta-bagagens elétrico.",
@@ -180,13 +210,26 @@
         "Sem sistema de som premium nesta configuração",
         "Sem bancos aquecidos, ventilados ou bomba de calor"
       ],
-      "sourceIds": ["cupra-offer", "cupra-official", "cupra-specs"]
+      "sourceIds": [
+        "cupra-offer",
+        "cupra-official",
+        "cupra-specs"
+      ]
     },
     "boot": {
       "summary": "A bagageira traseira tem 441 L. A arquitetura de tração dianteira não deixa compartimento de carga sob o capô; a imprensa que testou o Raval confirma a ausência de frunk. A capacidade total contabilizada é, por isso, 441 L.",
-      "pros": ["441 L de bagageira traseira num automóvel de 4,05 m", "Piso duplo Varibo para organizar a carga"],
-      "cons": ["Não tem frunk para separar cabos ou objetos pequenos", "O volume depende apenas do compartimento traseiro"],
-      "sourceIds": ["cupra-specs", "cupra-raval-no-frunk"]
+      "pros": [
+        "441 L de bagageira traseira num automóvel de 4,05 m",
+        "Piso duplo Varibo para organizar a carga"
+      ],
+      "cons": [
+        "Não tem frunk para separar cabos ou objetos pequenos",
+        "O volume depende apenas do compartimento traseiro"
+      ],
+      "sourceIds": [
+        "cupra-specs",
+        "cupra-raval-no-frunk"
+      ]
     },
     "sound": {
       "baseScore": 2.5,
@@ -200,7 +243,12 @@
         "O upgrade Sennheiser não faz parte desta configuração",
         "Sem potência publicada para o sistema de série e sem teste independente específico ao sistema base"
       ],
-      "sourceIds": ["cupra-offer", "cupra-specs", "sennheiser", "electrifying"]
+      "sourceIds": [
+        "cupra-offer",
+        "cupra-specs",
+        "sennheiser",
+        "electrifying"
+      ]
     },
     "range": {
       "summary": "389 km de autonomia combinada WLTP na ficha oficial atual. A proposta que acompanha este dossiê indica 384 km, uma diferença de homologação. A bateria de 55 kWh explica a autonomia contida.",
@@ -214,7 +262,11 @@
         "Autonomia real em autoestrada ficará abaixo dos 300 km em condições adversas",
         "Bateria NMC de 400 V, sem ultra-fast charging"
       ],
-      "sourceIds": ["cupra-official", "cupra-offer", "ev-database"]
+      "sourceIds": [
+        "cupra-official",
+        "cupra-offer",
+        "ev-database"
+      ]
     },
     "powerToWeight": {
       "summary": "226 cv para 1.658 kg dão 136 cv/t. Não é lento — 0-100 km/h em 6,8 s — mas fica muito atrás do Seal, que tem quase o dobro da relação potência/peso.",
@@ -228,7 +280,11 @@
         "Velocidade máxima limitada a 175 km/h",
         "A tração dianteira limita a motricidade em piso molhado"
       ],
-      "sourceIds": ["cupra-official", "cupra-offer", "ev-database"]
+      "sourceIds": [
+        "cupra-official",
+        "cupra-offer",
+        "ev-database"
+      ]
     },
     "efficiency": {
       "summary": "15,79 kWh/100 km WLTP. A proposta que acompanha este dossiê indica 15,99 kWh/100 km. A combinação de peso contido, aerodinâmica e bateria NMC traduz-se num consumo baixo em ciclo homologado. Em testes reais, a imprensa registou valores entre 14 e 17 kWh/100 km.",
@@ -241,7 +297,12 @@
         "Eficiência real varia muito com autoestrada e temperatura",
         "Sem bomba de calor nesta configuração, perde eficiência no inverno"
       ],
-      "sourceIds": ["cupra-official", "cupra-offer", "ev-database", "autonext"]
+      "sourceIds": [
+        "cupra-official",
+        "cupra-offer",
+        "ev-database",
+        "autonext"
+      ]
     },
     "charging": {
       "summary": "Carrega a 11 kW em AC e até 105 kW em DC, com 10-80% em cerca de 24 minutos. A potência DC é modesta, mas a bateria pequena compensa em tempo de paragem. Tem V2L e V2H.",
@@ -255,7 +316,11 @@
         "Sem arquitetura de 800 V",
         "A curva de carga cai cedo após os 60%"
       ],
-      "sourceIds": ["cupra-official", "cupra-offer", "ev-database"]
+      "sourceIds": [
+        "cupra-official",
+        "cupra-offer",
+        "ev-database"
+      ]
     },
     "satisfaction": {
       "assessment": {
@@ -275,7 +340,17 @@
         "Amostra curta de proprietários e pouca exposição em quilometragem",
         "Relatos de avisos eletrónicos ainda não permitem distinguir falhas isoladas de padrão recorrente"
       ],
-      "sourceIds": ["carwow", "autonext", "electrive", "evpowered", "cupra-owners", "cupra-raval-owner-warning", "cupra-seatbelt-recall", "cupra-recall-check", "dvsa-recalls"]
+      "sourceIds": [
+        "carwow",
+        "autonext",
+        "electrive",
+        "evpowered",
+        "cupra-owners",
+        "cupra-raval-owner-warning",
+        "cupra-seatbelt-recall",
+        "cupra-recall-check",
+        "dvsa-recalls"
+      ]
     }
   },
   "dossier": {
@@ -503,6 +578,24 @@
       "label": "CUPRA Portugal — dados oficiais de vendas e oficinas autorizadas (consulta 10/11/2026)",
       "url": "https://groupcms-services-api.porsche-holding.com/v3/dealers/pt/R",
       "type": "official"
+    },
+    {
+      "id": "acl-autotouring",
+      "label": "ACL Autotouring — Cupra Raval VZ",
+      "url": "https://autotouring.acl.lu/en/cupra-raval-vz",
+      "type": "press"
+    },
+    {
+      "id": "chasingcars-raval",
+      "label": "Chasing Cars — Cupra Raval VZ 2027 review",
+      "url": "https://www.chasingcars.com.au/reviews/small-cars/cupra-raval-vz-2027-review-international-first-drive",
+      "type": "press"
+    },
+    {
+      "id": "km77-raval",
+      "label": "km77 — CUPRA Raval (2026): información general y comparación con el VW ID. Polo",
+      "url": "https://www.km77.com/coches/cupra/raval/2026/estandar/informacion",
+      "type": "press"
     }
   ]
 }

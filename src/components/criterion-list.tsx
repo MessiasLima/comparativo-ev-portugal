@@ -4,6 +4,7 @@ import { CRITERIA } from "@/data/criteria"
 import type { Source } from "@/data/types"
 import type {
   BrandAssessment,
+  ComfortAssessment,
   InteriorAssessment,
   SatisfactionAssessment,
 } from "@/data/types"
@@ -18,6 +19,7 @@ import {
   INTERIOR_COMPONENTS,
   interiorScore,
 } from "@/lib/interior"
+import { COMFORT_COMPONENTS, comfortScore } from "@/lib/comfort"
 import { BRAND_COMPONENTS, brandScore, PORTUGAL_FACTORY_BONUS } from "@/lib/brand"
 import {
   SATISFACTION_COMPONENTS,
@@ -270,6 +272,45 @@ export function CriterionList({
                       ? `Desconta ${formatScore(HARD_PLASTIC_PENALTY[(assessment as InteriorAssessment).hardPlastic])} pontos e limita a nota a ${formatScore(HARD_PLASTIC_CAP[(assessment as InteriorAssessment).hardPlastic])}/10.`
                       : "Sem desconto na nota."}
                   </p>
+                </div>
+              ) : null}
+
+              {criterion.id === "comfort" && assessment && "suspension" in assessment ? (
+                <div className="mt-3 rounded-xl border border-line bg-background px-3.5 py-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Rubrica de conforto geral
+                    </p>
+                    <p className="font-mono text-xs text-muted-foreground">
+                      Índice {formatScore(comfortScore(assessment as ComfortAssessment))}/10
+                    </p>
+                  </div>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    {COMFORT_COMPONENTS.map((component) => {
+                      const value = (assessment as ComfortAssessment)[component.key]
+                      return (
+                        <div key={component.key} title={component.description}>
+                          <div className="flex items-baseline justify-between gap-2 text-xs">
+                            <span className="text-muted-foreground">
+                              {component.label}
+                              <span className="text-muted-foreground">
+                                {" "}
+                                · {Math.round(component.weight * 100)}%
+                              </span>
+                            </span>
+                            <span className="font-mono font-medium">
+                              {formatScore(value)}
+                            </span>
+                          </div>
+                          <ScoreBar
+                            score={value}
+                            color={ACCENT_HEX[entry.car.accent]}
+                            className="mt-1.5"
+                          />
+                        </div>
+                      )
+                    })}
+                  </div>
                 </div>
               ) : null}
 

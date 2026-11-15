@@ -4,6 +4,7 @@ import { EQUIPMENT_CHECKLIST } from "@/data/equipment"
 import { SITE_UPDATED_AT } from "@/data/site"
 import type {
   Car,
+  ComfortAssessment,
   CriterionDefinition,
   CriterionId,
   EditorialReview,
@@ -13,6 +14,7 @@ import {
   HARD_PLASTIC_LABELS,
   interiorScore,
 } from "@/lib/interior"
+import { comfortScore } from "@/lib/comfort"
 import { brandScore } from "@/lib/brand"
 import { satisfactionScore } from "@/lib/satisfaction"
 
@@ -58,6 +60,12 @@ function metricValue(car: Car, criterionId: CriterionId): number {
         ? interiorScore(assessment)
         : 0
     }
+    case "comfort": {
+      const assessment = car.reviews.comfort.assessment
+      return assessment && "suspension" in assessment
+        ? comfortScore(assessment as ComfortAssessment)
+        : 0
+    }
     case "brand": {
       const assessment = car.reviews.brand.assessment
       return assessment && "globalBrandAge" in assessment
@@ -98,6 +106,12 @@ function rawLabel(car: Car, criterionId: CriterionId): string {
         return "Rubrica de acabamento em falta"
       }
       return `Rubrica ${formatScore(interiorScore(assessment))}/10 · ${HARD_PLASTIC_LABELS[assessment.hardPlastic]}`
+    }
+    case "comfort": {
+      const assessment = car.reviews.comfort.assessment
+      return assessment && "suspension" in assessment
+        ? `Rubrica ${formatScore(comfortScore(assessment as ComfortAssessment))}/10`
+        : "Rubrica de conforto em falta"
     }
     case "brand": {
       const assessment = car.reviews.brand.assessment

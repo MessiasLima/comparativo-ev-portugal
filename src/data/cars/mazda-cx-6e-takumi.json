@@ -110,21 +110,42 @@
         "Plástico duro na zona inferior da consola e dos painéis de porta",
         "Sem painel de instrumentos tradicional; informação dispersa pelo ecrã e pelo HUD"
       ],
-      "sourceIds": ["mazda-offer-takumi", "mazda-de-brochure", "carboratory", "razaoautomovel", "automonitor", "parkers"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "mazda-de-brochure",
+        "carboratory",
+        "razaoautomovel",
+        "automonitor",
+        "parkers"
+      ]
     },
     "comfort": {
-      "baseScore": 7.3,
-      "summary": "A suspensão é passiva e as jantes de 19\" com pneus 235/55 são a montagem mais complacente da gama. Em autoestrada o CX-6e é estável e composto, mas em cidade a suspensão reage com firmeza a juntas, tampas de esgoto e asfalto degradado; a Parkers descreve oscilações constantes mesmo com as jantes de 19\", e a Carboratory considera o acerto demasiado firme para um SUV familiar. Não há amortecedores adaptativos. Face ao Takumi Plus, de 21\", ganha margem de conforto, mas não transforma o carro num cruiser macio.",
+      "assessment": {
+        "suspension": 7.2,
+        "seats": 8.0,
+        "acoustics": 8.4,
+        "drivetrainCalibration": 7.1
+      },
+      "summary": "Suspensão passiva e jantes de 19\" com pneus 235/55, a montagem mais complacente da gama. Em autoestrada é estável e refinado, mas em cidade o acerto é firme e nervoso sobre juntas, tampas de esgoto e asfalto degradado, com pequenas oscilações mesmo com esta montagem; o ADAC, na primeira tomada de contacto, critica o chassis por ser desnecessariamente duro. Os bancos dianteiros são firmes e bem conformados, com apoio lombar ajustável, e o espaço traseiro é generoso; condutores altos podem achar a posição demasiado elevada. A insonorização é excelente, com vidros dianteiros laminados e retrovisores digitais que reduzem o ruído aerodinâmico. O acelerador é suave e o travão progressivo, embora a regeneração se ajuste no ecrã e não haja one-pedal.",
       "pros": [
-        "Estável e composto a velocidade de autoestrada",
-        "Pneus 235/55 R19 dão mais margem sobre piso degradado do que os 21\""
+        "Insonorização excelente, com vidros dianteiros laminados",
+        "Bancos firmes com apoio lombar ajustável e boa habitabilidade traseira",
+        "Acelerador suave e travagem progressiva"
       ],
       "cons": [
-        "Acerto firme a baixa velocidade, com impactos secos",
-        "Oscilações repetidas em juntas e tampas de esgoto",
-        "Sem suspensão adaptativa"
+        "Acerto firme e nervoso a baixa velocidade",
+        "Regeneração ajustada no ecrã, sem one-pedal",
+        "Posição de condução elevada para condutores altos"
       ],
-      "sourceIds": ["mazda-offer-takumi", "razaoautomovel", "parkers", "carboratory", "whatcar"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "whatcar",
+        "autoexpress-cx6e",
+        "carexpert-cx6e",
+        "razaoautomovel",
+        "parkers",
+        "adac-cx-6e"
+      ]
     },
     "brand": {
       "assessment": {
@@ -147,7 +168,13 @@
         "Sem produção de automóveis na Europa",
         "Rede de 23 pontos, inferior à das marcas generalistas"
       ],
-      "sourceIds": ["mazda-pt-1995", "mazda-history", "mazda-dealers", "mazda-facilities", "mazda-results-fy26"]
+      "sourceIds": [
+        "mazda-pt-1995",
+        "mazda-history",
+        "mazda-dealers",
+        "mazda-facilities",
+        "mazda-results-fy26"
+      ]
     },
     "equipment": {
       "summary": "A dotação é extensa: cruise control adaptativo com Stop & Go, câmara 360º, sensores dianteiros e traseiros, travagem automática frontal e traseira, reconhecimento de sinais, monitorização do condutor, bancos dianteiros aquecidos e ventilados com memória, volante aquecido, climatização de duas zonas, bomba de calor, head-up display de grande formato, sistema de 23 altifalantes, carregamento wireless, Apple CarPlay e Android Auto sem fios, ecrã de 26,45\", serviços conectados, atualizações OTA, chave digital, teto panorâmico, V2L de 3,3 kW, porta-bagagens elétrico, frunk e jantes de 19\". Ficam de fora o estacionamento remoto, o alerta de tráfego cruzado dianteiro, o V2H, a suspensão adaptativa e os bancos traseiros aquecidos, que só existem no Takumi Plus.",
@@ -161,7 +188,11 @@
         "Bancos traseiros aquecidos reservados ao Takumi Plus",
         "Sem cockpit digital tradicional nem suspensão adaptativa"
       ],
-      "sourceIds": ["mazda-offer-takumi", "mazda-de-brochure", "mazda-press-launch"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "mazda-de-brochure",
+        "mazda-press-launch"
+      ]
     },
     "boot": {
       "summary": "A bagageira tem 468 L medidos até ao tejadilho e 363 L até à cobertura, mais 80 L de frunk, num total de 548 L com os cinco lugares em uso. A Mazda Alemanha indica 80 L com a divisória e 83 L sem ela, e o configurador português publica os 83 L; usamos o valor VDA de 80 L, coerente com os 468 L da bagageira. O piso é plano e há um subcompartimento sob o piso, mas os 363 L até à cobertura ficam aquém do que os 4,85 m de comprimento sugerem. O frunk de 80 L é útil para cabos e sacos pequenos.",
@@ -174,7 +205,11 @@
         "Apenas 363 L até à cobertura",
         "468 L até ao tejadilho é pouco para um SUV de 4,85 m"
       ],
-      "sourceIds": ["mazda-offer-takumi", "razaoautomovel", "ev-database"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "razaoautomovel",
+        "ev-database"
+      ]
     },
     "sound": {
       "baseScore": 5.3,
@@ -189,7 +224,13 @@
         "Graves aquém do esperado para o preço, segundo proprietários",
         "Sem medição RMS independente"
       ],
-      "sourceIds": ["mazda-offer-takumi", "mazda-press-launch", "mazda-australia", "carboratory", "cx6e-forum"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "mazda-press-launch",
+        "mazda-australia",
+        "carboratory",
+        "cx6e-forum"
+      ]
     },
     "range": {
       "summary": "A autonomia combinada WLTP é de 484 km, com 610 km no ciclo urbano, graças à bateria LFP de 78 kWh brutos e 77 kWh úteis. A EV Database publica 484 km e uma autonomia real próxima dos 420 km em uso misto. A bateria LFP pode ser carregada a 100% com regularidade, o que ajuda no uso diário. A versão Takumi Plus, com jantes de 21\" e pneus 255/40, homologa 468 km e 19,4 kWh/100 km.",
@@ -203,7 +244,12 @@
         "Autonomia real em autoestrada fica abaixo dos 400 km em condições adversas",
         "Peso de 2.130 kg penaliza o consumo fora da cidade"
       ],
-      "sourceIds": ["mazda-offer-takumi", "mazda-press-launch", "ev-database", "razaoautomovel"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "mazda-press-launch",
+        "ev-database",
+        "razaoautomovel"
+      ]
     },
     "powerToWeight": {
       "summary": "Os 190 kW (258 cv) e 290 Nm movem 2.130 kg de tara, o que dá cerca de 121 cv/t. A Mazda anuncia 7,9 segundos dos 0 aos 100 km/h e 185 km/h de velocidade máxima; a Razão Automóvel refere 8,1 segundos no Takumi Plus que ensaiou. Não é um SUV rápido, mas a resposta do motor traseiro é imediata e fácil de dosear. O peso elevado faz-se sentir nas mudanças de direção e nas travagens mais fortes.",
@@ -217,7 +263,12 @@
         "2.130 kg de tara fazem-se sentir em curva",
         "Velocidade máxima limitada a 185 km/h"
       ],
-      "sourceIds": ["mazda-offer-takumi", "mazda-de-brochure", "ev-database", "razaoautomovel"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "mazda-de-brochure",
+        "ev-database",
+        "razaoautomovel"
+      ]
     },
     "efficiency": {
       "summary": "O consumo combinado WLTP é de 18,9 kWh/100 km, o valor mais baixo da gama CX-6e, conseguido com as jantes de 19\". A Takumi Plus, com jantes de 21\" e pneus 255/40, homologa 19,4 kWh/100 km; no ensaio dessa versão, a Razão Automóvel registou médias entre 18 e 20 kWh/100 km, com 20,5 kWh/100 km no final. A eficiência não é o ponto forte face a um Tesla Model 3, mas é competitiva para um SUV de 2,1 t com bateria LFP.",
@@ -231,7 +282,12 @@
         "Peso e altura penalizam a autoestrada",
         "Eficiência abaixo da de um sedan como o Model 3"
       ],
-      "sourceIds": ["mazda-offer-takumi", "mazda-press-launch", "ev-database", "razaoautomovel"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "mazda-press-launch",
+        "ev-database",
+        "razaoautomovel"
+      ]
     },
     "charging": {
       "summary": "Carrega a 11 kW em corrente alternada e até 200 kW em corrente contínua, com 10–80% em cerca de 24 minutos e 30–80% em 15 minutos. A arquitetura é de 400 V. O comunicado de lançamento e o configurador indicam 200 kW; a ficha técnica alemã indica 195 kW e o comunicado de pré-lançamento de maio referia 165 kW, valores que a Mazda atualizou. A EV Database calcula 135 kW de potência média e 25 minutos, o que mostra que o pico é breve. Tem V2L de 3,3 kW, mas não anuncia V2H.",
@@ -245,7 +301,14 @@
         "Potência média em DC de cerca de 135 kW segundo a EV Database",
         "Arquitetura de 400 V, sem a curva de carga de um sistema de 800 V"
       ],
-      "sourceIds": ["mazda-offer-takumi", "mazda-press-launch", "mazda-press-prelaunch", "mazda-de-brochure", "ev-database", "razaoautomovel"]
+      "sourceIds": [
+        "mazda-offer-takumi",
+        "mazda-press-launch",
+        "mazda-press-prelaunch",
+        "mazda-de-brochure",
+        "ev-database",
+        "razaoautomovel"
+      ]
     },
     "satisfaction": {
       "assessment": {
@@ -265,7 +328,15 @@
         "Relatos de falhas de chave digital e ligação da app no fórum do modelo",
         "Graves do sistema de áudio criticados por alguns proprietários"
       ],
-      "sourceIds": ["cx6e-forum", "cx6e-software", "recallerbook", "mazda-eu-recalls", "parkers", "autocar", "whatcar"]
+      "sourceIds": [
+        "cx6e-forum",
+        "cx6e-software",
+        "recallerbook",
+        "mazda-eu-recalls",
+        "parkers",
+        "autocar",
+        "whatcar"
+      ]
     }
   },
   "dossier": {
@@ -397,6 +468,12 @@
       "type": "press"
     },
     {
+      "id": "adac-cx-6e",
+      "label": "ADAC — Fahrbericht Mazda CX-6e (chassis unnötig hart, sobretudo com jantes de 21 polegadas)",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mazda/mazda-cx-6e-fahrbericht/",
+      "type": "press"
+    },
+    {
       "id": "autocar",
       "label": "Autocar — Mazda CX-6e review",
       "url": "https://www.autocar.co.uk/car-review/mazda/cx-6e",
@@ -449,6 +526,18 @@
       "label": "Recallerbook — base de recalls Mazda",
       "url": "https://recallerbook.com/recalls/mazda",
       "type": "database"
+    },
+    {
+      "id": "autoexpress-cx6e",
+      "label": "Auto Express — Mazda CX-6e review",
+      "url": "https://www.autoexpress.co.uk/mazda/cx-6e/370365/new-mazda-cx-6e-2026-review-trails-rivals-range-and-charging",
+      "type": "press"
+    },
+    {
+      "id": "carexpert-cx6e",
+      "label": "CarExpert — 2027 Mazda CX-6e review",
+      "url": "https://www.carexpert.com.au/car-reviews/2027-mazda-cx-6e-review-quick-drive",
+      "type": "press"
     }
   ]
 }

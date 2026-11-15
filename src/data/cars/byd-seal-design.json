@@ -111,22 +111,41 @@
         "Alguns revestimentos parecem plastificados ao toque",
         "Ergonomia demasiado dependente do ecrã tátil"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "autoexpress", "turbo", "carwow"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-caetano",
+        "autoexpress",
+        "turbo",
+        "carwow"
+      ]
     },
     "comfort": {
-      "baseScore": 7.6,
-      "summary": "O Design usa a mesma arquitetura (duplo braço à frente, multilink atrás) mas sem os amortecedores de frequência variável do Excellence. É macio e absorve bem as imperfeições comuns em cidade e autoestrada, com o eixo traseiro a saltitar em piso muito irregular e menos contenção de carroçaria do que a versão AWD.",
+      "assessment": {
+        "suspension": 7.4,
+        "seats": 8.0,
+        "acoustics": 8.7,
+        "drivetrainCalibration": 6.8
+      },
+      "summary": "O Design usa suspensão passiva (duplo braço à frente, multilink atrás) e jantes de 19\". No protocolo do ADAC, o conforto de suspensão vale 2,4: absorve bem juntas e mau piso fora da cidade e mantém o corpo assente, mas em cidade e nos obstáculos isolados o ataque podia ser mais sensível e a traseira ainda salta um pouco em apoio rápido. Os bancos desportivos, aquecidos e ventilados, dão bom apoio, embora as costas largas e os encostos de cabeça fixos limitem o ajuste. O habitáculo é dos mais silenciosos do segmento: no Seal Design testado pelo ADAC mediu 64,4 dB(A) a 130 km/h, com vidros laterais laminados, ainda que o ruído de rolamento apareça em asfalto rugoso. A entrega de binário é linear, mas o acelerador tem algum atraso e a regeneração é subtil, sem verdadeiro one-pedal.",
       "pros": [
-        "Acerto macio em cidade e autoestrada",
-        "Boa absorção das imperfeições comuns",
-        "130 kg mais leve do que o Excellence AWD"
+        "Bancos desportivos confortáveis, aquecidos e ventilados",
+        "Insonorização de referência: 64,4 dB(A) a 130 km/h e vidros laterais laminados",
+        "Suspensão passiva bem acertada fora da cidade (ADAC 2,4)"
       ],
       "cons": [
-        "Sem os amortecedores de frequência variável do Excellence",
-        "Eixo traseiro saltita em piso muito irregular",
-        "Menos contenção de carroçaria do que a versão AWD"
+        "Ataque seco em cidade e nos obstáculos isolados",
+        "Traseira inquieta em apoio rápido e encostos de cabeça fixos",
+        "Acelerador com atraso e regeneração sem one-pedal"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "carwow", "highmotor", "evani"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-caetano",
+        "adac-seal",
+        "carwow",
+        "autoexpress",
+        "cinch-seal",
+        "carexpert-seal"
+      ]
     },
     "brand": {
       "assessment": {
@@ -149,7 +168,19 @@
         "A produção em série em Szeged ainda não estava confirmada nas fontes consultadas em novembro de 2026",
         "O lucro acumulado e as vendas de automóveis de passageiros recuaram em 2026, com redução do saldo de caixa"
       ],
-      "sourceIds": ["byd-history", "byd-portugal-entry", "byd-dealers", "byd-hungary-factory", "byd-szeged-pilot", "byd-szeged-q4-target", "byd-szeged-status", "byd-sales-2026-sep", "byd-q3-2026-financials", "byd-sales-2026-oct", "byd-analyst-forecast-2026"]
+      "sourceIds": [
+        "byd-history",
+        "byd-portugal-entry",
+        "byd-dealers",
+        "byd-hungary-factory",
+        "byd-szeged-pilot",
+        "byd-szeged-q4-target",
+        "byd-szeged-status",
+        "byd-sales-2026-sep",
+        "byd-q3-2026-financials",
+        "byd-sales-2026-oct",
+        "byd-analyst-forecast-2026"
+      ]
     },
     "equipment": {
       "summary": "O Design tem o mesmo equipamento do Excellence — Dynaudio de 12 altifalantes, bancos aquecidos/ventilados com memória, volante aquecido, bomba de calor, teto panorâmico, porta-bagagens elétrico, frunk, V2L e câmara 360º — menos duas peças: head-up display e suspensão com amortecimento variável. Faltam ainda, como no Excellence, estacionamento remoto, V2H e bancos traseiros aquecidos.",
@@ -163,13 +194,25 @@
         "Sem suspensão adaptativa (só no Excellence)",
         "Sem estacionamento remoto, V2H ou bancos traseiros aquecidos"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "turbo"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-caetano",
+        "turbo"
+      ]
     },
     "boot": {
       "summary": "A atualização de primavera de 2026 eleva a bagageira traseira para 485 L e a dianteira para 72 L. A capacidade total contabilizada é 557 L; os valores anteriores de 400 L e 53 L pertenciam à especificação anterior do Seal.",
-      "pros": ["485 L atrás e 72 L à frente", "557 L de capacidade total distribuída por dois compartimentos"],
-      "cons": ["A medição deve ser confirmada na entrega, pois a atualização depende do ano modelo", "O frunk é pequeno para objetos volumosos"],
-      "sourceIds": ["byd-2026-boot"]
+      "pros": [
+        "485 L atrás e 72 L à frente",
+        "557 L de capacidade total distribuída por dois compartimentos"
+      ],
+      "cons": [
+        "A medição deve ser confirmada na entrega, pois a atualização depende do ano modelo",
+        "O frunk é pequeno para objetos volumosos"
+      ],
+      "sourceIds": [
+        "byd-2026-boot"
+      ]
     },
     "sound": {
       "baseScore": 8.3,
@@ -184,7 +227,11 @@
         "Sem equalização avançada por utilizador",
         "Alguns proprietários descrevem o som de fábrica como plano e pouco envolvente"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "autoexpress"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-caetano",
+        "autoexpress"
+      ]
     },
     "range": {
       "summary": "570 km de autonomia combinada WLTP (690 km em cidade) com a mesma bateria Blade de 82,5 kWh, graças ao motor único e ao consumo de 16,6 kWh/100 km. O EV Database estima cerca de 475 km de autonomia real combinada; em autoestrada e no inverno fica perto dos 400 km.",
@@ -198,7 +245,12 @@
         "Em autoestrada e no inverno cai para perto de 400 km",
         "Bateria grande e pesada (2.055 kg de tara)"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "ev-database", "highmotor"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-caetano",
+        "ev-database",
+        "highmotor"
+      ]
     },
     "powerToWeight": {
       "summary": "313 cv para 2.055 kg dão 152 cv/t: menos de dois terços do Excellence AWD, mas suficiente para 0-100 km/h em 5,9 s e uma entrega linear e utilizável do motor traseiro de 360 Nm. É um sedan rápido, não um desportivo de cronómetro.",
@@ -212,7 +264,12 @@
         "Sem tração integral: menos tração em piso molhado",
         "Potência difícil de explorar no dia a dia"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "ev-database", "turbo"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-caetano",
+        "ev-database",
+        "turbo"
+      ]
     },
     "efficiency": {
       "summary": "16,6 kWh/100 km WLTP combinados e 13,8 kWh/100 km em cidade: claramente melhor do que os 18,2 do Excellence, graças ao motor único e ao peso inferior, mas ainda acima do CUPRA Raval. A bomba de calor de série ajuda a manter o consumo no inverno.",
@@ -226,7 +283,12 @@
         "2.055 kg limitam a eficiência em autoestrada",
         "Consumo real estimado pelo EV Database em ~17,4 kWh/100 km"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "ev-database", "highmotor"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-caetano",
+        "ev-database",
+        "highmotor"
+      ]
     },
     "charging": {
       "summary": "Idêntico ao Excellence: 11 kW em AC trifásico e 150 kW em DC, com 30-80% em 26 minutos e 10-80% em 37 minutos, além de V2L de 3 kW. Com a mesma bateria de 82,5 kWh, carrega depressa em potência absoluta.",
@@ -239,7 +301,11 @@
         "Sem V2H",
         "Curva de carga dependente da temperatura da bateria"
       ],
-      "sourceIds": ["byd-guide", "byd-caetano", "ev-database"]
+      "sourceIds": [
+        "byd-guide",
+        "byd-caetano",
+        "ev-database"
+      ]
     },
     "satisfaction": {
       "assessment": {
@@ -259,7 +325,14 @@
         "Queixas sobre assistentes de condução intrusivos e pós-venda inconsistente",
         "Sem denominador público de frota/quilometragem para estimar a incidência dos problemas reportados"
       ],
-      "sourceIds": ["reddit-18m", "reddit-uk", "carwow", "autoexpress", "byd-recall-campaigns", "dvsa-recalls"]
+      "sourceIds": [
+        "reddit-18m",
+        "reddit-uk",
+        "carwow",
+        "autoexpress",
+        "byd-recall-campaigns",
+        "dvsa-recalls"
+      ]
     }
   },
   "dossier": {
@@ -465,6 +538,24 @@
       "label": "BYD Company Limited — produção e vendas de outubro de 2026 (01/11/2026)",
       "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1101/2026110100043.pdf",
       "type": "official"
+    },
+    {
+      "id": "cinch-seal",
+      "label": "cinch — BYD SEAL review (2026)",
+      "url": "https://www.cinch.co.uk/used-cars/byd/seal/review",
+      "type": "press"
+    },
+    {
+      "id": "carexpert-seal",
+      "label": "CarExpert — 2026 BYD Seal review",
+      "url": "https://www.carexpert.com.au/car-reviews/2026-byd-seal-review",
+      "type": "press"
+    },
+    {
+      "id": "adac-seal",
+      "label": "ADAC — BYD Seal Design im Autotest (Federung 2,4 · Sitze 2,3 · Innengeräusch 1,6 · 64,4 dB(A) a 130 km/h)",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/byd/seal/1generation/328021",
+      "type": "press"
     }
   ]
 }
