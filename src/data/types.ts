@@ -105,11 +105,26 @@ export interface SatisfactionAssessment {
   evidenceLevel: SatisfactionEvidenceLevel
 }
 
+export interface ComfortAssessment {
+  /** Absorção de irregularidades, buracos e controlo de carroçaria (30%). */
+  suspension: number
+  /** Ergonomia, acolchoamento, apoio lombar e conforto em viagens longas (30%). */
+  seats: number
+  /** Insonorização face a ruído de rolamento, vento e vidros duplos acústicos (30%). */
+  acoustics: number
+  /** Suavidade do acelerador, modulação da regeneração e ausência de solavancos (10%). */
+  drivetrainCalibration: number
+}
+
 export interface EditorialReview {
   /** Only used for editorial criteria. Objective criteria are calculated from specs. */
   baseScore?: number
   /** Required for rubric criteria; replaces `baseScore`. */
-  assessment?: InteriorAssessment | BrandAssessment | SatisfactionAssessment
+  assessment?:
+    | InteriorAssessment
+    | BrandAssessment
+    | SatisfactionAssessment
+    | ComfortAssessment
   summary: string
   pros?: string[]
   cons?: string[]

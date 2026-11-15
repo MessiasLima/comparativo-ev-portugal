@@ -36,12 +36,16 @@ and score, follow the verification steps in
 [`evaluate-interior`](../../evaluate-interior/SKILL.md) and use
 `interiorScore()` from `src/lib/interior.ts` rather than duplicating its formula.
 
+- `comfort` rubric = `0.30·suspension + 0.30·seats + 0.30·acoustics + 0.10·drivetrainCalibration`
+  from `reviews.comfort.assessment`, via `comfortScore()` in `src/lib/comfort.ts`;
+  the criterion is absolute, so this index is the score. Confirm that
+  `reviews.comfort` has no `baseScore` field.
 - `satisfaction` index = `0.40·ownerSentiment + 0.35·reportedDefects +
   0.25·recallRecord`, with component ceilings based on `evidenceLevel` in
   `src/lib/satisfaction.ts`; the criterion is absolute, so the index is the score.
 - `equipment` raw = count of `equipmentIncluded` ids that exist in the checklist;
   score = `count / checklistLength × 10`.
-- Editorial raw = `reviews.<id>.baseScore` (currently comfort and sound), used as
+- Editorial raw = `reviews.<id>.baseScore` (currently sound only), used as
   the absolute score. For sound, recompute
   `0.50·brand + 0.20·speakers + 0.20·opinions + 0.10·RMS` as described in
   [`evaluate-sound`](../../evaluate-sound/SKILL.md) and confirm the stored value

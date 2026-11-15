@@ -120,23 +120,35 @@
       ]
     },
     "comfort": {
-      "baseScore": 7.2,
-      "summary": "Com a mesma suspensão passiva (MacPherson dianteira e multibraço traseira) e jantes de 19\" com pneus 245/45 R19 da gama, o Takumi Plus assegura um pisar confortável em vias rápidas e autoestrada. Os bancos dianteiros ventilados e aquecidos aumentam substancialmente o conforto térmico e postural em viagens longas. Persiste a tendência para oscilações verticais e adornar em ressaltos e lombas pronunciadas, fruto da afinação orientada para o conforto suave.",
+      "assessment": {
+        "suspension": 7.4,
+        "seats": 7.8,
+        "acoustics": 8.6,
+        "drivetrainCalibration": 7.2
+      },
+      "summary": "A especificação europeia usa suspensão passiva MacPherson/multibraço e pneus 245/45 R19, com um acerto firme mas absorvente: o ADAC classifica o conforto de suspensão como bom e a imprensa portuguesa destaca a boa absorção das irregularidades, ainda que a britânica critique oscilações em estradas degradadas. Os bancos dianteiros, ventilados, aquecidos e com memória, reforçam o conforto em viagens longas, mas a posição de condução é elevada e, atrás, o piso alto levanta os joelhos. A insonorização é o ponto mais forte — 65,1 dB(A) a 130 km/h no ADAC — com pouco ruído de vento e de rolamento. A regeneração tem quatro níveis, mas não há verdadeiro one-pedal, e a transição para o travão é suave.",
       "pros": [
-        "Bancos ventilados e aquecidos com excelente suporte lombar e memórias",
-        "Excelente insonorização a velocidade de cruzeiro em autoestrada",
-        "Pneus 245/45 R19 que mantêm bom compromisso de absorção"
+        "Insonorização de topo: 65,1 dB(A) a 130 km/h",
+        "Bancos ventilados e aquecidos com memória",
+        "Suspensão absorvente na especificação europeia"
       ],
       "cons": [
-        "Comportamento hesitante da suspensão passiva em piso muito ondulado",
-        "Sem amortecimento adaptativo ou controlo ativo de nivelamento",
-        "Oscilação percetível de carroçaria após lombas urbanas"
+        "Sem verdadeiro modo one-pedal",
+        "Posição elevada e piso traseiro alto",
+        "Oscilações em estradas muito degradadas, segundo a imprensa britânica"
       ],
       "sourceIds": [
         "mazda-offer-takumi-plus",
+        "whatcar-6e",
+        "rac-6e",
+        "autoexpress-6e",
         "razaoautomovel",
         "observador",
-        "whatcar"
+        "adac-6e",
+        "revistacarros-6e",
+        "radar-6e",
+        "whatcar-6e-vs-model3",
+        "insideevs-6e"
       ]
     },
     "brand": {
@@ -439,6 +451,54 @@
       "label": "Mazda Europa — campanhas de serviço e recalls",
       "url": "https://www.mazda.eu/en/recall-information/",
       "type": "official"
+    },
+    {
+      "id": "whatcar-6e",
+      "label": "What Car? — Mazda 6e review",
+      "url": "https://www.whatcar.com/mazda/6e/saloon/review/n27923",
+      "type": "press"
+    },
+    {
+      "id": "rac-6e",
+      "label": "RAC — Mazda 6e review",
+      "url": "https://www.rac.co.uk/drive/car-reviews/mazda/6e/6e",
+      "type": "press"
+    },
+    {
+      "id": "autoexpress-6e",
+      "label": "Auto Express — Mazda 6e review",
+      "url": "https://www.autoexpress.co.uk/mazda/6/6e",
+      "type": "press"
+    },
+    {
+      "id": "adac-6e",
+      "label": "ADAC — Mazda 6e 258 Takumi Plus im Test",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/mazda/mazda-6e",
+      "type": "press"
+    },
+    {
+      "id": "revistacarros-6e",
+      "label": "Revistacarros — Mazda 6e Long Range 245 cv Takumi Plus",
+      "url": "https://www.revistacarros.pt/teste-mazda-6e-long-range-245-cv-rwd-takumi-plus-ritmos-de-fusao",
+      "type": "press"
+    },
+    {
+      "id": "radar-6e",
+      "label": "Radar Automóvel — Mazda 6e Long Range Takumi Plus",
+      "url": "https://radarautomovel.com/mazda6e-ev-ensaio-autonomia-preco",
+      "type": "press"
+    },
+    {
+      "id": "whatcar-6e-vs-model3",
+      "label": "What Car? — Mazda 6e vs Tesla Model 3",
+      "url": "https://www.whatcar.com/news/new-mazda-6e-vs-tesla-model-3",
+      "type": "press"
+    },
+    {
+      "id": "insideevs-6e",
+      "label": "InsideEVs — Mazda 6e European driving review",
+      "url": "https://insideevs.com/reviews/774929/mazda-6e-driving-review-europe",
+      "type": "press"
     }
   ]
 }

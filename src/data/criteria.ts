@@ -32,13 +32,13 @@ export const CRITERIA: CriterionDefinition[] = [
   {
     id: "comfort",
     number: 2,
-    label: "Conforto de suspensão",
+    label: "Conforto geral",
     shortLabel: "Conforto",
-    question: "Absorve bem os buracos? É firme demais?",
+    question: "Suspensão macia, bancos ergonómicos, cabine silenciosa e condução sem solavancos?",
     description:
-      "Nota editorial absoluta de 0 a 10: capacidade de absorver irregularidades, estabilidade a alta velocidade e equilíbrio entre conforto e controlo do corpo.",
+      "Rubrica absoluta de 0 a 10 com 4 dimensões: 30% absorção da suspensão e irregularidades na via, 30% conforto dos bancos e ergonomia para viagens longas, 30% insonorização acústica (ruído de rolamento, vento e vidros duplos) e 10% calibração da aceleração e regeneração sem solavancos.",
     icon: Waves,
-    kind: "editorial",
+    kind: "rubric",
     direction: "higher",
     scale: "absolute",
     weight: 1,

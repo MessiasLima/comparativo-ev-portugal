@@ -106,22 +106,43 @@
         "Ruídos parasitas relatados em unidades recentes",
         "Bancos desportivos mais firmes em viagens muito longas"
       ],
-      "sourceIds": ["tesla-model3", "model3info", "autoexpress", "reddit-rattles", "kbb-model3"]
+      "sourceIds": [
+        "tesla-model3",
+        "model3info",
+        "autoexpress",
+        "reddit-rattles",
+        "kbb-model3"
+      ]
     },
     "comfort": {
-      "baseScore": 7.8,
-      "summary": "A Performance usa amortecedores eletrónicos de válvula contínua e é, segundo a imprensa, o Model 3 com a suspensão mais resolvida: controlada e composta, absorve desníveis que fazem tremer as outras versões. Não é mole — as jantes Warp de 20\" e os pneus desportivos tornam os impactos curtos mais presentes — mas o corpo assenta depressa e não balança em autoestrada.",
+      "assessment": {
+        "suspension": 7.7,
+        "seats": 7.7,
+        "acoustics": 7.9,
+        "drivetrainCalibration": 8.6
+      },
+      "summary": "A Performance usa amortecedores eletrónicos de válvula contínua e jantes Warp de 20\", e é o Model 3 com a suspensão mais resolvida: controlada e composta, absorve desníveis que fazem tremer as outras versões, que no ADAC ficam em 2,5 na Federung. Não é mole — os pneus desportivos tornam os impactos curtos mais presentes — mas o corpo assenta depressa e não balança em autoestrada. Os bancos desportivos, ventilados e aquecidos, seguram bem o corpo, com apoio lateral firme que alguns condutores acham excessivo. A insonorização acompanha as restantes versões, com 66,2 dB(A) a 130 km/h no autoteste de 2026 e vidros acústicos laminados em todas as janelas, e o one-pedal é suave e previsível.",
       "pros": [
-        "Amortecedores eletrónicos com regulação contínua",
+        "Amortecedores eletrónicos de válvula contínua",
         "Melhor controlo de impactos da gama, segundo a imprensa",
-        "Corpo composto e sem balanço em autoestrada"
+        "One-pedal suave e previsível"
       ],
       "cons": [
         "Jantes de 20\" e pneus desportivos endurecem os impactos",
-        "Acerto globalmente firme",
-        "Não é uma afinação orientada ao conforto mole"
+        "Apoio lateral firme pode ser excessivo para alguns",
+        "Regeneração sem níveis ajustáveis"
       ],
-      "sourceIds": ["tesla-offer-performance", "tesla-model3", "model3info", "autoexpress"]
+      "sourceIds": [
+        "tesla-offer-performance",
+        "tesla-model3",
+        "model3info",
+        "tslcheck",
+        "adac-model3-premium",
+        "autoexpress",
+        "thinkev-model3",
+        "evpulse-model3",
+        "motortrend-model3"
+      ]
     },
     "brand": {
       "assessment": {
@@ -144,7 +165,14 @@
         "Produção europeia não inclui o Model 3",
         "Lucro e margem operacional em queda no terceiro trimestre de 2026"
       ],
-      "sourceIds": ["dn-tesla-2017", "dn-service-center-2018", "autofoco-porto-2022", "tesla-contact", "tesla-10q", "tesla-warranty"]
+      "sourceIds": [
+        "dn-tesla-2017",
+        "dn-service-center-2018",
+        "autofoco-porto-2022",
+        "tesla-contact",
+        "tesla-10q",
+        "tesla-warranty"
+      ]
     },
     "equipment": {
       "summary": "A Performance acrescenta ao Premium Long Range AWD os bancos desportivos, a suspensão eletrónica adaptativa e as jantes forjadas Warp de 20\", além do sistema de som de 17 altifalantes, dos bancos ventilados e aquecidos, do ecrã traseiro de 8\", da iluminação ambiente, do Autopilot, da bomba de calor, do carregamento wireless, do ecrã central de 16\", dos serviços conectados, das atualizações OTA, da chave digital, do teto panorâmico, do porta-bagagens elétrico e do frunk de 88 L. Continuam a faltar Apple CarPlay/Android Auto, câmara 360º e V2L/V2H.",
@@ -158,7 +186,12 @@
         "Sem V2L nem V2H",
         "Pneus de 20\" são mais caros de substituir"
       ],
-      "sourceIds": ["tesla-model3", "model3info", "tslcheck", "tesla-offer-performance"]
+      "sourceIds": [
+        "tesla-model3",
+        "model3info",
+        "tslcheck",
+        "tesla-offer-performance"
+      ]
     },
     "boot": {
       "summary": "A bagageira traseira tem 594 L e o compartimento dianteiro 88 L, num total de 682 L com os cinco lugares em uso. O porta-bagagens é elétrico e o frunk tem fundo moldado, mas a abertura traseira é baixa e o piso não é regulável em altura. A capacidade de reboque é inferior à das outras versões: 500 kg travados, contra 1.000 kg.",
@@ -172,7 +205,11 @@
         "Piso da bagageira não é regulável em altura",
         "Capacidade de reboque limitada a 500 kg travados"
       ],
-      "sourceIds": ["tesla-model3", "evdb-performance", "model3info"]
+      "sourceIds": [
+        "tesla-model3",
+        "evdb-performance",
+        "model3info"
+      ]
     },
     "sound": {
       "baseScore": 4.5,
@@ -187,7 +224,12 @@
         "Afinação de fábrica menos refinada do que sistemas premium dedicados",
         "Sem controlo avançado de palco sonoro"
       ],
-      "sourceIds": ["tesla-model3", "model3info", "tslcheck", "autoexpress"]
+      "sourceIds": [
+        "tesla-model3",
+        "model3info",
+        "tslcheck",
+        "autoexpress"
+      ]
     },
     "range": {
       "summary": "Com 79 kWh úteis e jantes Warp de 20\", a Tesla anuncia 600 km WLTP, 60 km menos do que o Premium Long Range AWD com a mesma bateria. A EV Database estima uma autonomia real combinada de cerca de 525 km e 615 km em condições amenas. A bateria NMC deve ser carregada habitualmente até 80% para preservar a longevidade; a carga a 100% fica reservada para viagens.",
@@ -201,7 +243,12 @@
         "Carga diária recomendada até 80%",
         "Jantes de 20\" penalizam a autonomia face às de 18\""
       ],
-      "sourceIds": ["tesla-offer-performance", "tesla-model3", "evdb-performance", "model3info"]
+      "sourceIds": [
+        "tesla-offer-performance",
+        "tesla-model3",
+        "evdb-performance",
+        "model3info"
+      ]
     },
     "powerToWeight": {
       "summary": "Os 461 kW (627 cv) e 741 Nm movem 1.851 kg de tara, o que dá cerca de 339 cv/t. A Tesla anuncia 3,1 segundos dos 0 aos 100 km/h e 262 km/h de velocidade máxima; a EV Database estima 3,4 segundos sem a dedução do rollout, um método que a própria base de dados considera necessário para comparar com outros carros. A tração integral e os pneus desportivos permitem explorar a potência em piso seco, e o Track Mode ajusta a repartição de binário.",
@@ -215,7 +262,12 @@
         "Pneus de 20\" desgastam-se mais depressa",
         "Potência máxima disponível depende do estado da bateria"
       ],
-      "sourceIds": ["tesla-offer-performance", "tesla-model3", "evdb-performance", "model3info"]
+      "sourceIds": [
+        "tesla-offer-performance",
+        "tesla-model3",
+        "evdb-performance",
+        "model3info"
+      ]
     },
     "efficiency": {
       "summary": "O consumo combinado WLTP é 15,8 kWh/100 km, 1,5 kWh acima do Premium Long Range AWD, sobretudo por causa das jantes de 20\" e dos pneus desportivos. A EV Database estima 15,0 kWh/100 km em uso real combinado e 15,8 kWh/100 km em autoestrada a 110 km/h. É um valor contido para 627 cv, mas longe da eficiência das versões com jantes de 18\".",
@@ -229,7 +281,12 @@
         "Pneus desportivos aumentam o consumo",
         "Autonomia reduzida em condução rápida"
       ],
-      "sourceIds": ["tesla-model3", "evdb-performance", "model3info", "tslcheck"]
+      "sourceIds": [
+        "tesla-model3",
+        "evdb-performance",
+        "model3info",
+        "tslcheck"
+      ]
     },
     "charging": {
       "summary": "Carrega a 11 kW em corrente alternada e até 250 kW em corrente contínua, com 10–80% em cerca de 28 minutos segundo a EV Database. A Tesla indica até 237 km adicionados em 15 minutos num Supercharger. A arquitetura é de 400 V, o pré-condicionamento da bateria é ativado pela navegação e não há V2L nem V2H.",
@@ -243,7 +300,12 @@
         "Arquitetura de 400 V limita a potência face a sistemas de 800 V",
         "Potência média em DC fica nos 125 kW entre 10% e 80%"
       ],
-      "sourceIds": ["tesla-offer-performance", "tesla-model3", "evdb-performance", "model3info"]
+      "sourceIds": [
+        "tesla-offer-performance",
+        "tesla-model3",
+        "evdb-performance",
+        "model3info"
+      ]
     },
     "satisfaction": {
       "assessment": {
@@ -263,7 +325,13 @@
         "Qualidade dos materiais interiores é o ponto mais criticado",
         "Recall 25V410000 em 18 Model 3 de 2026"
       ],
-      "sourceIds": ["kbb-model3", "jdpower-model3", "nhtsa-25v410", "reddit-rattles", "autoexpress"]
+      "sourceIds": [
+        "kbb-model3",
+        "jdpower-model3",
+        "nhtsa-25v410",
+        "reddit-rattles",
+        "autoexpress"
+      ]
     }
   },
   "dossier": {
@@ -411,6 +479,30 @@
       "label": "Reddit r/TeslaModel3 — ruídos parasitas em unidades de 2026",
       "url": "https://www.reddit.com/r/TeslaModel3/comments/1wc4vka/constant_rattles_developing_in_my_model_3/",
       "type": "owner"
+    },
+    {
+      "id": "thinkev-model3",
+      "label": "ThinkEV — Tesla Model 3 Highland review",
+      "url": "https://thinkev.ca/blog/tesla-model-3-highland-canada-review-2026",
+      "type": "press"
+    },
+    {
+      "id": "evpulse-model3",
+      "label": "EV Pulse — 2026 Tesla Model 3 Highland review",
+      "url": "https://evpulse.net/tesla-model-3-highland-review-2026-range-charging-value-tested",
+      "type": "press"
+    },
+    {
+      "id": "motortrend-model3",
+      "label": "MotorTrend — Tesla Model 3 Highland interior review",
+      "url": "https://www.motortrend.com/reviews/2024-tesla-model-3-highland-interior-review",
+      "type": "press"
+    },
+    {
+      "id": "adac-model3-premium",
+      "label": "ADAC — Tesla Model 3 Premium Maximale Reichweite im Autotest 2026 (Federung 3,0 · Sitze 2,3 · Innengeräusch 2,3 · 66,2 dB(A) a 130 km/h)",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/AT6648-tesla-model-3-premium-maximale-reichweite/tesla-model-3-premium-maximale-reichweite.pdf",
+      "type": "press"
     }
   ]
 }

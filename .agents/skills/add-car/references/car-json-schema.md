@@ -123,12 +123,13 @@ sure the corresponding equipment ids (`v2l`,
 
 ## `reviews` — all current criteria, no exceptions
 
-Two editorial criteria (need a justified `baseScore`): `comfort` and `sound`.
+One editorial criterion (needs a justified `baseScore`): `sound`.
 
-Three rubric criteria (`interior`, `brand` and `satisfaction` — each needs its
-own structured `assessment`, **never a `baseScore`**; all three are absolute). For
+Four rubric criteria (`interior`, `comfort`, `brand` and `satisfaction` — each needs its
+own structured `assessment`, **never a `baseScore`**; all four are absolute). For
 their assessment workflows,
 follow [`evaluate-interior`](../../evaluate-interior/SKILL.md),
+[`evaluate-comfort`](../../evaluate-comfort/SKILL.md),
 [`evaluate-brand`](../../evaluate-brand/SKILL.md) and
 [`evaluate-satisfaction`](../../evaluate-satisfaction/SKILL.md), respectively.
 
@@ -150,11 +151,31 @@ the `add-criteria` skill before assuming the count or review shape.
 }
 ```
 
-For the `comfort` review's suspension-specific evidence, `baseScore` guidance and
-scope exclusions, follow [`evaluate-comfort`](../../evaluate-comfort/SKILL.md).
 For the `sound` review's installed-system identification, 50/20/20/10 weighted
 components (brand, speaker count, specific opinions, RMS power) and `baseScore`
 bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
+
+### Comfort review (absolute rubric)
+
+```json
+{
+  "assessment": {
+    "suspension": 7.5,
+    "seats": 8.0,
+    "acoustics": 7.0,
+    "drivetrainCalibration": 8.5
+  },
+  "summary": "...",
+  "pros": ["…", "…"],
+  "cons": ["…", "…"],
+  "sourceIds": ["press-review", "owner-report"]
+}
+```
+
+- For evidence gathering across the 4 dimensions (suspension 30%, seats 30%,
+  acoustics 30%, drivetrain calibration 10%) and score verification, follow
+  [`evaluate-comfort`](../../evaluate-comfort/SKILL.md). `src/lib/comfort.ts`
+  remains the formula's source of truth; do not store a calculated score in JSON.
 
 ### Interior review (rubric)
 
@@ -225,7 +246,7 @@ bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
   assessment shape above and do not store the calculated index in JSON.
 
 Quality bar (match the existing dossiers):
-- `baseScore` 0–10 with one decimal for the two editorial criteria. It is an
+- `baseScore` 0–10 with one decimal for the one editorial criterion (`sound`). It is an
   *absolute* score used directly by the site, so score on merit, not to game the
   ranking.
 - Follow [`evaluate-interior`](../../evaluate-interior/SKILL.md) when preparing or

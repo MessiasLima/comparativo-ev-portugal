@@ -98,22 +98,42 @@
         "Sem iluminação ambiente configurável nem ecrã traseiro",
         "Ruídos parasitas relatados por proprietários de unidades recentes"
       ],
-      "sourceIds": ["tesla-model3", "autoexpress", "4gnews-standard", "reddit-rattles", "kbb-model3"]
+      "sourceIds": [
+        "tesla-model3",
+        "autoexpress",
+        "4gnews-standard",
+        "reddit-rattles",
+        "kbb-model3"
+      ]
     },
     "comfort": {
-      "baseScore": 7.1,
-      "summary": "A versão Standard usa amortecedores passivos e jantes de 18\". O acerto é firme e, em cidade, sente-se algum patter sobre juntas e asfalto remendado; nos desníveis maiores a suspensão absorve bem e o corpo assenta depressa, sem balanço. Em autoestrada mantém-se estável e composta, mas o conforto não é a prioridade desta afinação.",
+      "assessment": {
+        "suspension": 7.1,
+        "seats": 7.4,
+        "acoustics": 7.8,
+        "drivetrainCalibration": 8.4
+      },
+      "summary": "A Standard usa amortecedores passivos e jantes de 18\". O acerto é firme: o Highland absorve melhor as juntas do que a geração anterior, mas o autoteste de 2026 ao modelo base dá 3,1 à Federung, com patter e impactos curtos em piso degradado, ainda que o corpo assente depressa e sem balanço em autoestrada. Os bancos dianteiros são confortáveis e aquecidos, mas perdem a memória e a ventilação do Premium e têm regulação mais limitada (Sitze 2,9 no mesmo teste), com o piso elevado e o banco traseiro pouco generoso a limitarem quem vai atrás. A insonorização beneficia de vidros acústicos laminados em todas as janelas e de cerca de 67 dB a 113 km/h, com o ruído de pneus a dominar em asfalto rugoso. O one-pedal é suave e previsível, mas a intensidade da regeneração não é ajustável.",
       "pros": [
-        "Bom controlo de carroçaria e estabilidade em autoestrada",
-        "Absorve bem os desníveis maiores",
-        "Assenta depressa depois dos impactos"
+        "Vidros acústicos laminados em todas as janelas",
+        "One-pedal suave e previsível",
+        "Bancos dianteiros aquecidos e mais almofadados"
       ],
       "cons": [
-        "Acerto firme e algum patter a baixa velocidade",
-        "Piso urbano degradado transmite impactos secos",
-        "Amortecedores passivos, sem regulação"
+        "Acerto firme, com patter em piso degradado",
+        "Bancos com menos regulação e sem ventilação",
+        "Ruído de rolamento em asfalto rugoso"
       ],
-      "sourceIds": ["tesla-offer-standard", "tesla-model3", "autoexpress", "4gnews-standard", "youtube-rwd-review"]
+      "sourceIds": [
+        "tesla-offer-standard",
+        "tesla-model3",
+        "adac-model3-base",
+        "autoexpress",
+        "4gnews-standard",
+        "thinkev-model3",
+        "evpulse-model3",
+        "motortrend-model3"
+      ]
     },
     "brand": {
       "assessment": {
@@ -136,7 +156,14 @@
         "Produção europeia não inclui o Model 3",
         "Lucro e margem operacional em queda no terceiro trimestre de 2026"
       ],
-      "sourceIds": ["dn-tesla-2017", "dn-service-center-2018", "autofoco-porto-2022", "tesla-contact", "tesla-10q", "tesla-warranty"]
+      "sourceIds": [
+        "dn-tesla-2017",
+        "dn-service-center-2018",
+        "autofoco-porto-2022",
+        "tesla-contact",
+        "tesla-10q",
+        "tesla-warranty"
+      ]
     },
     "equipment": {
       "summary": "A configuração inclui Autopilot com cruise control adaptativo, manutenção de faixa, travagem automática de emergência e reconhecimento de sinais, além de assistência de estacionamento por visão, máximos automáticos, bancos dianteiros aquecidos, volante aquecido, climatização de duas zonas, bomba de calor, carregamento wireless, ecrã de 16\", serviços conectados, atualizações OTA, chave digital, teto panorâmico, porta-bagagens elétrico, frunk de 88 L e USB-C traseiras. Ficam de fora os bancos ventilados, o sistema de nove altifalantes, a iluminação ambiente configurável e o ecrã traseiro.",
@@ -150,7 +177,11 @@
         "Sem bancos ventilados nem aquecimento traseiro",
         "Sem Apple CarPlay/Android Auto e sem câmara 360º"
       ],
-      "sourceIds": ["tesla-model3", "tslcheck", "tesla-offer-standard"]
+      "sourceIds": [
+        "tesla-model3",
+        "tslcheck",
+        "tesla-offer-standard"
+      ]
     },
     "boot": {
       "summary": "A bagageira traseira tem 594 L e o compartimento dianteiro 88 L, num total de 682 L com os cinco lugares em uso. O porta-bagagens é elétrico e o frunk tem fundo moldado, mas a abertura traseira é baixa e o piso não é regulável em altura.",
@@ -164,7 +195,11 @@
         "Piso da bagageira não é regulável em altura",
         "Sem roda sobressalente; apenas kit de reparação"
       ],
-      "sourceIds": ["tesla-model3", "evdb-rwd", "youtube-rwd-review"]
+      "sourceIds": [
+        "tesla-model3",
+        "evdb-rwd",
+        "youtube-rwd-review"
+      ]
     },
     "sound": {
       "baseScore": 3.2,
@@ -179,7 +214,11 @@
         "Falta de corpo nos graves face ao sistema de nove altifalantes",
         "Sem subwoofer dedicado"
       ],
-      "sourceIds": ["tesla-model3", "tslcheck", "youtube-rwd-review"]
+      "sourceIds": [
+        "tesla-model3",
+        "tslcheck",
+        "youtube-rwd-review"
+      ]
     },
     "range": {
       "summary": "A Tesla anuncia 572 km WLTP para o Model 3 de tração traseira desde agosto de 2026, quando passou a usar pneus Giti de menor resistência ao rolamento; antes, o valor era 534 km. A EV Database ainda publica 534 km e uma autonomia real de cerca de 450 km, o que ilustra a diferença entre o ciclo homologado e o uso misto. A bateria LFP de 60 kWh úteis pode ser carregada a 100% com regularidade.",
@@ -193,7 +232,12 @@
         "A EV Database mantém 534 km para a especificação anterior",
         "Bateria LFP é mais sensível ao frio"
       ],
-      "sourceIds": ["tesla-offer-standard", "tesla-model3", "evdb-rwd", "4gnews-standard"]
+      "sourceIds": [
+        "tesla-offer-standard",
+        "tesla-model3",
+        "evdb-rwd",
+        "4gnews-standard"
+      ]
     },
     "powerToWeight": {
       "summary": "Os 208 kW (283 cv) e 420 Nm movem 1.772 kg de tara, o que dá cerca de 160 cv/t. A Tesla anuncia 6,2 segundos dos 0 aos 100 km/h e 201 km/h de velocidade máxima; a EV Database usa 1.847 kg como peso EU, uma base que inclui condutor e bagagem e não deve ser comparada com a tara. Para uso diário, a resposta é imediata e a tração traseira gere bem o binário em piso seco.",
@@ -207,7 +251,11 @@
         "Tração traseira perde aderência em piso molhado",
         "Massa de 1.772 kg faz-se sentir em mudanças de direção"
       ],
-      "sourceIds": ["tesla-offer-standard", "tesla-model3", "evdb-rwd"]
+      "sourceIds": [
+        "tesla-offer-standard",
+        "tesla-model3",
+        "evdb-rwd"
+      ]
     },
     "efficiency": {
       "summary": "O consumo oficial é 12,2 kWh/100 km desde a atualização de pneus de agosto de 2026, contra 13,0 kWh/100 km antes. A EV Database publica 13,0 kWh/100 km no ciclo WLTP para a versão anterior e 13,3 kWh/100 km de consumo real; a diferença reflete a monta de pneus e o tipo de percurso. Em cidade, os ensaios portugueses registaram médias abaixo de 13 kWh/100 km.",
@@ -221,7 +269,12 @@
         "A versão anterior homologava 13,0 kWh/100 km",
         "Pneus de baixa resistência podem ter desgaste mais rápido"
       ],
-      "sourceIds": ["tesla-model3", "evdb-rwd", "4gnews-standard", "tslcheck"]
+      "sourceIds": [
+        "tesla-model3",
+        "evdb-rwd",
+        "4gnews-standard",
+        "tslcheck"
+      ]
     },
     "charging": {
       "summary": "Carrega a 11 kW em corrente alternada e até 175 kW em corrente contínua, com 10–80% em cerca de 24 minutos segundo a EV Database. A Tesla indica até 286 km adicionados em 15 minutos num Supercharger. A arquitetura é de 400 V e não há V2L nem V2H.",
@@ -235,7 +288,11 @@
         "Sem V2L nem V2H",
         "Arquitetura de 400 V limita a potência face a sistemas de 800 V"
       ],
-      "sourceIds": ["tesla-offer-standard", "tesla-model3", "evdb-rwd"]
+      "sourceIds": [
+        "tesla-offer-standard",
+        "tesla-model3",
+        "evdb-rwd"
+      ]
     },
     "satisfaction": {
       "assessment": {
@@ -255,7 +312,13 @@
         "Qualidade dos materiais interiores é o ponto mais criticado",
         "Recall 25V410000 em 18 Model 3 de 2026"
       ],
-      "sourceIds": ["kbb-model3", "jdpower-model3", "nhtsa-25v410", "reddit-rattles", "autoexpress"]
+      "sourceIds": [
+        "kbb-model3",
+        "jdpower-model3",
+        "nhtsa-25v410",
+        "reddit-rattles",
+        "autoexpress"
+      ]
     }
   },
   "dossier": {
@@ -414,6 +477,30 @@
       "id": "youtube-rwd-review",
       "label": "YouTube — ensaio ao Tesla Model 3 RWD 2026 (equipamento e som)",
       "url": "https://www.youtube.com/watch?v=jX7CvQPiVxA",
+      "type": "press"
+    },
+    {
+      "id": "thinkev-model3",
+      "label": "ThinkEV — Tesla Model 3 Highland review",
+      "url": "https://thinkev.ca/blog/tesla-model-3-highland-canada-review-2026",
+      "type": "press"
+    },
+    {
+      "id": "evpulse-model3",
+      "label": "EV Pulse — 2026 Tesla Model 3 Highland review",
+      "url": "https://evpulse.net/tesla-model-3-highland-review-2026-range-charging-value-tested",
+      "type": "press"
+    },
+    {
+      "id": "motortrend-model3",
+      "label": "MotorTrend — Tesla Model 3 Highland interior review",
+      "url": "https://www.motortrend.com/reviews/2024-tesla-model-3-highland-interior-review",
+      "type": "press"
+    },
+    {
+      "id": "adac-model3-base",
+      "label": "ADAC — Tesla Model 3 (ab 12/25) im Autotest 2026 (Federung 3,1 · Sitze 2,9 · Innengeräusch 2,3)",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/tesla/model-3/1generation-facelift/347729",
       "type": "press"
     }
   ]

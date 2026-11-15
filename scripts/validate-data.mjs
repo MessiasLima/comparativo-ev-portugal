@@ -7,7 +7,7 @@ const equipmentFile = path.join(root, "src/data/equipment.ts")
 
 const criteria = [
   { id: "interior", kind: "rubric", direction: "higher", scale: "absolute" },
-  { id: "comfort", kind: "editorial", direction: "higher", scale: "absolute" },
+  { id: "comfort", kind: "rubric", direction: "higher", scale: "absolute" },
   { id: "brand", kind: "rubric", direction: "higher", scale: "absolute" },
   { id: "equipment", kind: "objective", direction: "higher", scale: "absolute" },
   { id: "boot", kind: "objective", direction: "higher" },
@@ -39,6 +39,12 @@ const hardPlasticCap = {
   extensive: 5.5,
 }
 const hardPlasticLevels = Object.keys(hardPlasticPenalty)
+const comfortWeights = {
+  suspension: 0.3,
+  seats: 0.3,
+  acoustics: 0.3,
+  drivetrainCalibration: 0.1,
+}
 const brandWeights = {
   globalBrandAge: 0.1,
   portugalMarketTenure: 0.2,
@@ -70,6 +76,15 @@ function interiorScore(assessment) {
   const penalised = core - hardPlasticPenalty[assessment.hardPlastic]
   const capped = Math.min(penalised, hardPlasticCap[assessment.hardPlastic])
   return Math.round(Math.min(10, Math.max(0, capped)) * 100) / 100
+}
+
+function comfortScore(assessment) {
+  const weighted =
+    assessment.suspension * comfortWeights.suspension +
+    assessment.seats * comfortWeights.seats +
+    assessment.acoustics * comfortWeights.acoustics +
+    assessment.drivetrainCalibration * comfortWeights.drivetrainCalibration
+  return Math.round(clamp(weighted) * 100) / 100
 }
 
 function clamp(value) {
@@ -200,6 +215,23 @@ for (const { file, data: car } of cars) {
         }
       }
     }
+    if (criterion.id === "comfort") {
+      const review = car.reviews.comfort
+      const assessment = review.assessment
+      if (review.baseScore !== undefined) {
+        errors.push(`${file}: "comfort" usa assessment e não baseScore`)
+      }
+      if (!assessment || typeof assessment !== "object") {
+        errors.push(`${file}: "comfort" exige um objeto assessment`)
+      } else {
+        for (const key of Object.keys(comfortWeights)) {
+          const value = assessment[key]
+          if (typeof value !== "number" || value < 0 || value > 10) {
+            errors.push(`${file}: assessment.${key} de "comfort" tem de estar entre 0 e 10`)
+          }
+        }
+      }
+    }
     if (criterion.id === "brand") {
       const review = car.reviews.brand
       const assessment = review.assessment
@@ -276,6 +308,8 @@ function metric(car, criterionId) {
   switch (criterionId) {
     case "interior":
       return interiorScore(car.reviews.interior.assessment)
+    case "comfort":
+      return comfortScore(car.reviews.comfort.assessment)
     case "brand": {
       const assessment = car.reviews.brand.assessment
       const weighted =
