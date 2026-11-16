@@ -14,7 +14,7 @@ const steps = [
   {
     number: "03",
     title: "Ranking e custo por ponto",
-    body: `A nota global é a média ponderada dos ${CRITERIA.length} critérios. Por defeito, todos pesam o mesmo; no ranking, o botão Ajustar prioridades deixa-te escolher quanto te importa cada critério, de «Não me importa» (×0) a «Extremamente importante» (×3). Esse valor é o peso do critério na média, que é normalizada pela soma dos pesos. Com a mesma nota global, fica à frente o carro mais barato. O custo-benefício divide o preço pela nota global: quanto menos euros por ponto, melhor o negócio.`,
+    body: `A nota global é a média ponderada dos ${CRITERIA.length} critérios. Por defeito, acabamento e conforto contam «muito», bagageira e som «pouco» e os restantes critérios «moderadamente»; no ranking, o botão Ajustar prioridades deixa-te escolher quanto te importa cada critério, de «Não me importa» (×0) a «Extremamente importante» (×3). Esse valor é o peso do critério na média, que é normalizada pela soma dos pesos. Com a mesma nota global, fica à frente o carro mais barato. O custo-benefício divide o preço pela nota global: quanto menos euros por ponto, melhor o negócio.`,
   },
 ]
 

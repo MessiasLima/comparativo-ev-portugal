@@ -2,7 +2,7 @@ import { CRITERIA } from "@/data/criteria"
 import type { CriterionId } from "@/data/types"
 
 export const WEIGHTS_STORAGE_KEY = "comparativo-ev-portugal:weights:v3"
-export const DEFAULT_WEIGHT = 1
+export const MODERATE_WEIGHT = 1
 
 export interface WeightLevel {
   value: number
@@ -22,8 +22,16 @@ export type WeightMap = Record<CriterionId, number>
 
 export const CRITERION_IDS = CRITERIA.map((criterion) => criterion.id)
 
+/** Prioridades iniciais: acabamento e conforto «muito», bagageira e som «pouco», o resto «moderadamente». */
+const DEFAULT_WEIGHT_OVERRIDES: Partial<Record<CriterionId, number>> = {
+  interior: 2,
+  comfort: 2,
+  boot: 0.5,
+  sound: 0.5,
+}
+
 export const DEFAULT_WEIGHTS = Object.fromEntries(
-  CRITERION_IDS.map((id) => [id, DEFAULT_WEIGHT]),
+  CRITERION_IDS.map((id) => [id, DEFAULT_WEIGHT_OVERRIDES[id] ?? MODERATE_WEIGHT]),
 ) as WeightMap
 
 function isWeightLevel(value: unknown): value is number {
@@ -66,7 +74,7 @@ export function saveWeights(weights: WeightMap): void {
 
 // Cada peso é um multiplicador da nota do critério (um dos WEIGHT_LEVELS):
 // 1 mantém o peso base, 3 triplica-o e 0 anula o critério. A média ponderada normaliza pela
-// soma dos multiplicadores, pelo que com todos a 1 resulta na média simples.
+// soma dos multiplicadores, pelo que com todos iguais resulta na média simples.
 export function weightedAverage(
   scores: Record<CriterionId, number>,
   weights: WeightMap,
@@ -88,7 +96,7 @@ export function weightedAverage(
 
 export function isDefaultWeights(weights: WeightMap): boolean {
   return CRITERION_IDS.every(
-    (criterionId) => weights[criterionId] === DEFAULT_WEIGHT,
+    (criterionId) => weights[criterionId] === DEFAULT_WEIGHTS[criterionId],
   )
 }
 

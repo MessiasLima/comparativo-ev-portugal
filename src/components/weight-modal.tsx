@@ -95,7 +95,7 @@ export function WeightModal({
 
   if (typeof document === "undefined") return null
 
-  const allEqual = isDefaultWeights(draft)
+  const isDefault = isDefaultWeights(draft)
   const pending = CRITERION_IDS.some((id) => draft[id] !== weights[id])
 
   return createPortal(
@@ -147,8 +147,8 @@ export function WeightModal({
         <div className="overflow-y-auto px-5 py-3 sm:px-6 sm:py-4">
           <div className="flex items-center justify-between gap-3 border-b border-line pb-3 text-sm text-muted-foreground">
             <span>
-              {allEqual
-                ? "Todos os critérios contam igual"
+              {isDefault
+                ? "Prioridades por defeito"
                 : "Prioridades personalizadas"}
             </span>
             {pending ? (
@@ -238,7 +238,7 @@ export function WeightModal({
             className="inline-flex h-10 items-center gap-2 rounded-full border border-line bg-card px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <RotateCcw className="size-3.5" />
-            Repor iguais
+            Repor defeito
           </button>
           <div className="flex flex-wrap gap-2">
             <button
