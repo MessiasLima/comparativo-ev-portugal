@@ -27,9 +27,10 @@ import { CRITERIA } from "@/data/criteria"
 import type { CriterionDefinition, CriterionId } from "@/data/types"
 import { formatCarName, formatEuro, formatScore } from "@/lib/format"
 import { useWeights } from "@/hooks/use-weights"
-import { rankByTotal } from "@/lib/ranking"
+import { idealPrices, rankByTotal } from "@/lib/ranking"
 import { weightedAverage } from "@/lib/weights"
 import { ScoreCell } from "@/components/score"
+import { IdealPriceInfo } from "@/components/ideal-price-info"
 
 export interface ComparisonRow {
   id: string
@@ -46,6 +47,7 @@ export interface ComparisonRow {
 interface WeightedRow extends ComparisonRow {
   total: number
   pricePerPoint: number
+  idealPrice: number | null
   rank: number
   valueRank: number
 }
@@ -227,14 +229,17 @@ export function RankingTable({
         ...row,
         total,
         pricePerPoint: total > 0 ? row.price / total : 0,
+        idealPrice: null as number | null,
         rank: 1,
         valueRank: 1,
       }
     })
 
     const ranks = rankByTotal(scored, (row) => row)
+    const ideal = idealPrices(scored, (row) => row)
     scored.forEach((row) => {
       row.rank = ranks.get(row) ?? scored.length
+      row.idealPrice = ideal.get(row) ?? null
     })
 
     const byValue = [...scored].sort(
@@ -426,7 +431,7 @@ export function RankingTable({
                     : "descending"
                   : "none"
               }
-              className="min-w-[92px] text-right text-sm"
+              className="min-w-[112px] text-right text-sm"
             >
               <SortHeader
                 label="Preço"
@@ -526,8 +531,18 @@ export function RankingTable({
                 </TableCell>
               ))}
               <TableCell className="text-right">
-                <span className="font-mono text-sm">
-                  {formatEuro(entry.price)}
+                <span className="inline-flex items-center justify-end gap-1">
+                  <span className="font-mono text-sm">
+                    {formatEuro(entry.price)}
+                  </span>
+                  {entry.idealPrice !== null ? (
+                    <IdealPriceInfo
+                      price={entry.price}
+                      idealPrice={entry.idealPrice}
+                      isBestValue={entry.valueRank === 1}
+                      customized={customized}
+                    />
+                  ) : null}
                 </span>
               </TableCell>
               <TableCell className="text-right">
@@ -556,7 +571,9 @@ export function RankingTable({
           <span className="font-medium text-foreground">€/ponto</span> = preço ÷
           nota global · o{" "}
           <span className="font-medium text-foreground">#</span> é a posição na
-          nota global. Passa o rato sobre um critério para ver o que mede.
+          nota global. Passa o rato sobre um critério para ver o que mede, ou
+          sobre o ícone junto ao preço para ver o preço a que o carro seria o
+          melhor custo-benefício.
         </p>
         <p className="shrink-0 text-xs tracking-[0.14em] whitespace-nowrap uppercase">
           Atualizado a {updatedAt}

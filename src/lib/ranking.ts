@@ -15,6 +15,44 @@ export function compareByTotal(a: RankableTotal, b: RankableTotal): number {
 }
 
 /**
+ * Preço a partir do qual cada item passa a ter o menor €/ponto da lista:
+ * nota global × menor €/ponto entre os restantes. Para o atual melhor
+ * custo-benefício é o preço máximo até ao qual continua a sê-lo. Arredonda
+ * para baixo ao euro, para que nesse preço o item fique à frente ou empatado.
+ */
+export function idealPrices<T>(
+  items: T[],
+  toRankable: (item: T) => RankableTotal,
+): Map<T, number | null> {
+  let lowest = Infinity
+  let secondLowest = Infinity
+  let lowestItem: T | undefined
+  items.forEach((item) => {
+    const { total, price } = toRankable(item)
+    if (total <= 0) return
+    const pricePerPoint = price / total
+    if (pricePerPoint < lowest) {
+      secondLowest = lowest
+      lowest = pricePerPoint
+      lowestItem = item
+    } else if (pricePerPoint < secondLowest) {
+      secondLowest = pricePerPoint
+    }
+  })
+
+  const prices = new Map<T, number | null>()
+  items.forEach((item) => {
+    const { total } = toRankable(item)
+    const target = item === lowestItem ? secondLowest : lowest
+    prices.set(
+      item,
+      total > 0 && Number.isFinite(target) ? Math.floor(total * target) : null,
+    )
+  })
+  return prices
+}
+
+/**
  * Posição de cada item no ranking geral. Só partilham posição os carros com a
  * mesma nota global e o mesmo preço.
  */

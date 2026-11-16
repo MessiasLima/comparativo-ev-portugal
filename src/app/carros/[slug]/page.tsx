@@ -14,6 +14,7 @@ import {
   X,
   Zap,
 } from "lucide-react"
+import { CarPriceBadge } from "@/components/car-price-badge"
 import { CriterionList } from "@/components/criterion-list"
 import { EquipmentChecklist } from "@/components/equipment-checklist"
 import { SpecGrid } from "@/components/spec-grid"
@@ -26,7 +27,6 @@ import type { CriterionId, Source } from "@/data/types"
 import {
   formatCarName,
   formatDatePt,
-  formatEuro,
   formatNumber,
   formatScore,
   truncateText,
@@ -385,9 +385,7 @@ async function CarDossier({
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-2">
-                <span className="rounded-full border border-lime/25 bg-lime/10 px-3 py-1.5 font-mono text-sm font-medium text-lime">
-                  {formatEuro(car.price.amount)}
-                </span>
+                <CarPriceBadge cars={scoreCars} carId={car.id} />
                 <span className="rounded-full border border-white/15 px-3 py-1.5 text-xs text-white/70">
                   Garantia: {car.warranty.vehicle}
                 </span>
