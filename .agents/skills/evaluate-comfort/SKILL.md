@@ -41,13 +41,14 @@ Add all consulted sources to the car's `sources` array and cite them through `re
 
 ## Phase 2 — Evaluate the 4 components (0–10 each)
 
-Give each component an evidence-based mark from 0 to 10.
+Give `seats`, `acoustics` and `drivetrainCalibration` an evidence-based mark from 0 to 10. `suspension` is **not** written by hand: it is calculated from `reviews.comfort.suspensionBasis` (see “Escala única de suspensão” below).
 
 ### 1. `suspension` (30%) — Suspensão e piso
+What the reference grade (measured or estimated) must reflect:
 - **City Absorption:** How the car absorbs sharp joints, manhole covers, potholes, speed humps, and cobblestones. Does it crash through or filter progressively?
 - **Motorway Composure:** Stability and settlement over long-wave undulations at 100–120 km/h. Does the car bounce, float, or pogo?
 - **Body Control:** Prompt rebound settling without secondary vertical oscillation or excessive body roll.
-- **Wheel Impact:** Factor in tyre profile — larger wheels with thin sidewalls naturally communicate more sharp ridges, but the chassis should still cope adequately.
+- **Wheel Impact:** handled by the formula through `wheelInches`; do not double-count it in the reference grade.
 
 ### 2. `seats` (30%) — Bancos e ergonomia
 - **Anatomical Shape & Foam:** Balanced foam density — neither rock-hard wooden boards nor overly soft cushions that collapse and cause spinal fatigue after 2 hours.
@@ -81,25 +82,44 @@ Give each component an evidence-based mark from 0 to 10.
 
 A escala é absoluta, mas a diferença entre carros tem de ser coerente com medições feitas no mesmo protocolo. O ADAC mede o ruído a 130 km/h e publica notas de Federung, Sitze e Innengeräusch (0,6–5,5), sendo o melhor denominador comum entre marcas. Referências já verificadas:
 
-| Carro | Teste | Federung | Sitze | Innengeräusch | dB(A) a 130 km/h |
-| --- | --- | ---: | ---: | ---: | ---: |
-| BYD Seal Design (19") | 11/2024 | 2,4 | 2,3 | 1,6 | 64,4 |
-| Polestar 4 LRSM (21") | 04/2025 | 2,3 | 1,9 | 1,9 | 64,4 |
-| Mazda 6e 258 Takumi Plus (19") | 12/2025 | 2,3 | 2,7 | 1,8 | 65,1 |
-| Tesla Model 3 Highland (18") | 02/2024 | 2,5 | 2,5 | 2,2 | 66,2 |
+| Carro (montagem testada) | Protocolo | Teste | Federung | Sitze | Innengeräusch | dB(A) a 130 km/h |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| CUPRA Tavascan Endurance, DCC opcional (21") | 2019 | 12/2025 | 1,9 | 2,4 | 1,9 | 65,1 |
+| Polestar 4 LRSM, ZF adaptativos (21") | 2019 | 04/2025 | 2,3 | 1,9 | 1,9 | 64,4 |
+| Mazda 6e 258 Takumi Plus (19") | 2019 | 12/2025 | 2,3 | 2,7 | 1,8 | 65,1 |
+| BYD Seal Design (19") | 2019 | 11/2024 | 2,4 | 2,3 | 1,6 | 64,4 |
+| Tesla Model 3 Max. Reichweite AWD, FSD (19") | 2019 | 05/2024 | 2,5 | 2,5 | 2,2 | 66,1 |
+| Tesla Model Y Premium Max. Reichweite, FSD (20") | 2019 | 2025 | 2,8 | 2,7 | 1,8 | 64,6 |
+| XPENG G6 Long Range, pré-facelift (20") | 2019 | 05/2025 | 3,0 | 2,3 | 2,0 | 65 |
+| Tesla Model Y Standard, passivos (18") | 2026 | 08/2026 | 2,8 | 3,1 | 2,1 | 65,2 |
+| Tesla Model 3 Premium Max. Reichweite, FSD (18") | 2026 | 2026 | 3,0 | 2,3 | 2,3 | 66,2 |
+| Tesla Model 3 Standard, passivos (18") | 2026 | 2026 | 3,1 | 2,9 | 2,3 | 65,9 |
 
-1. **Compara apenas testes do mesmo protocolo.** O ADAC mudou o protocolo em 01/02/2026 e os testes novos não são comparáveis com os antigos; dB(A) e outros valores medidos continuam comparáveis.
-2. **Respeita a ordem relativa** das notas de Federung/Sitze. Uma diferença de 0,2 na nota do ADAC não deve valer mais de 0,3 pontos na escala 0–10; duas notas iguais não podem originar mais de 0,2 pontos de diferença sem justificação explícita (jantes/pneus diferentes, prosa muito divergente, equipamento de série distinto).
-3. **Usa o dB(A) para ordenar, não para dimensionar.** A diferença de pontos é editorial; a ordem (mais silencioso → mais ruidoso) tem de bater com a medição e com a nota de Innengeräusch.
-4. **Confirma a montagem da versão portuguesa.** Se o carro testado tinha jantes maiores do que a configuração avaliada (ex.: Polestar 4 testado em 21", vendido em 20"), ajusta no máximo ±0,2 e explica no texto.
-5. **A imprensa britânica pode refletir uma afinação de mercado.** Mantém a crítica nos `cons`, mas não a deixes anular medições europeias do mesmo protocolo.
+### Escala única de suspensão
+
+A nota de suspensão é calculada em `src/lib/comfort.ts` (`suspensionScore`) a partir de `reviews.comfort.suspensionBasis`, para que carros testados em protocolos ou montagens diferentes fiquem na mesma escala:
+
+1. **Protocolo.** Cada referência é convertida para o protocolo ADAC de 2019. O de 2026 é mais severo: as duas pontes disponíveis dão +0,6 (Model 3) e +0,1 (Model Y, depois de corrigir jantes e amortecedores); usa-se a média, **+0,35**. Quando houver um novo carro testado nos dois protocolos, acrescenta-o como ponte e revê o valor.
+2. **Amortecedores.** Passivos 0; dependentes da frequência **-0,1** (Model 3 Premium 3,0 vs Standard 3,1 no mesmo protocolo); adaptativos **-0,4**.
+3. **Jantes.** **+0,1 por polegada** acima da montagem testada.
+4. **Várias referências** (ex.: Model 3 com três autotestes) entram pela média.
+5. **Escala.** Nota equivalente 2,3 → 7,4 pontos; cada 0,1 de nota vale 0,125 pontos.
+6. **Sem autoteste,** usa uma referência `estimate` com a nota ADAC que a imprensa justifica e explica-a em `note`; ancora-a a carros medidos (ex.: “mais confortável do que o Model Y, que vale 2,6”).
+7. **`adjustment`** (±0,3, com `adjustmentNote`) só para diferenças de afinação que o equipamento não explica (ex.: Polestar 4 testado com amortecedores que já não se vendem; G6 testado antes do facelift).
+8. **Mesmo modelo, mesma base.** Todas as versões de um modelo partilham `references` e `adjustment`; só `dampers` e `wheelInches` mudam. O validador recusa dados em que uma versão com amortecedores iguais ou melhores e jantes que não pesem mais fique abaixo de outra.
+
+Regras para os restantes componentes:
+1. **Respeita a ordem relativa** das notas de Sitze dentro do mesmo protocolo. Uma diferença de 0,2 na nota do ADAC não deve valer mais de 0,3 pontos; duas notas iguais não podem originar mais de 0,2 pontos de diferença sem justificação explícita.
+2. **Usa o dB(A) para ordenar, não para dimensionar.** O dB(A) é comparável entre protocolos; a ordem (mais silencioso → mais ruidoso) tem de bater com a medição.
+3. **A imprensa britânica pode refletir uma afinação de mercado.** Mantém a crítica nos `cons`, mas não a deixes anular medições europeias.
 
 ---
 
 ## Phase 4 — Write the review
 
 Populate `reviews.comfort` with:
-- `assessment`: object with finite numbers (0 to 10, one decimal convention) for `suspension`, `seats`, `acoustics`, and `drivetrainCalibration`.
+- `assessment`: object with finite numbers (0 to 10, one decimal convention) for `seats`, `acoustics`, and `drivetrainCalibration`. Do not write `suspension`.
+- `suspensionBasis`: `dampers` (`passive` | `frequency-selective` | `adaptive`) and `wheelInches` of the evaluated configuration, plus `references` (each with `protocol`, `federung`, `dampers`, `wheelInches` of the tested car and `sourceId`; `note` for estimates) and, if needed, `adjustment` + `adjustmentNote`.
 - `summary`: concise pt-PT prose describing the evaluated setup, suspension behaviour, seat ergonomics, cabin quietness (noting acoustic glass), and throttle/regen calibration.
 - `pros` and `cons`: balanced, specific points covering suspension, seats, noise, and drivability.
 - `sourceIds`: array of valid IDs declared in the same car's `sources`.
@@ -111,6 +131,6 @@ Do not write list-relative claims such as “o mais confortável da lista”. Ke
 ## Phase 5 — Verify
 
 1. Run `npm run validate:data` and confirm that all checks pass.
-2. Verify that `reviews.comfort` does NOT contain `baseScore` and contains all 4 assessment keys.
+2. Verify that `reviews.comfort` does NOT contain `baseScore` or `assessment.suspension`, and that `suspensionBasis` shares its `references` with the other versions of the same model.
 3. Check that every cited `sourceId` exists in `sources`.
 4. Run `npm run build` to confirm static generation succeeds.

@@ -138,16 +138,30 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.2,
         "seats": 7.8,
-        "acoustics": 8,
-        "drivetrainCalibration": 7.3
+        "acoustics": 7.7,
+        "drivetrainCalibration": 7.5
       },
-      "summary": "A XPENG recalibrou a suspensão para a Europa no facelift, mas não há amortecedores adaptativos (electrive) e os ensaios dividem-se. A Car Enthusiast considera-a das melhores que encontrou num carro chinês, o FDM achou-o surpreendentemente confortável e a M3 mais macio do que um Model Y; em contrapartida, o EV Powered, a Complete Car e a Futura-Sciences descrevem um rolamento firme e agitado a baixa velocidade, o Electrifying nota balanço da carroçaria e pancadas secas em buracos com as jantes de 20\", e o electrive acha-o demasiado macio em autoestrada. Os bancos dianteiros são aquecidos, ventilados e com memória, mas sem a massagem das versões de 80,8 kWh; o Autohaus e a Futura-Sciences apontam pouco apoio lateral. Atrás, os bancos são aquecidos e o encosto reclina até 11,4°. A Futura-Sciences mediu 67 dB a 130 km/h e o AutoScout24 elogia a insonorização, embora o electrive note ruído aerodinâmico a partir dos 110 km/h. A entrega de potência é suave e a transição entre regeneração e travões é \"perfeita\" para a Car Enthusiast, mas os níveis de regeneração só se ajustam no ecrã e as fontes divergem sobre a existência de um modo one-pedal.",
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 20,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 3.0,
+            "dampers": "passive",
+            "wheelInches": 20,
+            "sourceId": "adac-g6-pre"
+          }
+        ],
+        "adjustment": -0.3,
+        "adjustmentNote": "O teste do ADAC é anterior ao facelift. A XPENG recalibrou a suspensão para a Europa e a M3, que o compara diretamente com o Model Y atual, acha o G6 mais macio; Car Enthusiast, FDM e AutoScout24 também elogiam o conforto. Em sentido contrário, a Elektroauto-News acha o novo acerto mais firme do que o anterior e Electrifying, EV Powered e Futura-Sciences continuam a apontar firmeza a baixa velocidade."
+      },
+      "summary": "A XPENG recalibrou a suspensão para a Europa no facelift, mas não há amortecedores adaptativos (electrive) e os ensaios dividem-se. Antes do facelift, o ADAC deu 3,0 à Federung com as mesmas jantes de 20\", criticando a resposta seca a juntas e empedrado. A Car Enthusiast considera-a das melhores que encontrou num carro chinês, o FDM achou-o surpreendentemente confortável e a M3 mais macio do que um Model Y; em contrapartida, a Elektroauto-News acha o novo acerto mais firme e preciso do que o anterior e o EV Powered, a Complete Car e a Futura-Sciences descrevem um rolamento firme e agitado a baixa velocidade, o Electrifying nota balanço da carroçaria e pancadas secas em buracos com as jantes de 20\", e o electrive acha-o demasiado macio em autoestrada. Os bancos dianteiros são aquecidos, ventilados e com memória, mas sem a massagem das versões de 80,8 kWh; o Autohaus e a Futura-Sciences apontam pouco apoio lateral. Atrás, os bancos são aquecidos e o encosto reclina até 11,4°. Antes do facelift o ADAC mediu 65 dB(A) a 130 km/h, um pouco acima dos 64,6 dB(A) do Model Y Premium no mesmo protocolo; no facelift a Futura-Sciences mediu 67 dB com outro método. O AutoScout24 e a M3 elogiam a insonorização, embora o electrive note ruído aerodinâmico a partir dos 110 km/h. A entrega de potência é suave e a transição entre regeneração e travões é \"perfeita\" para a Car Enthusiast e sem costuras para a CarExpert. O modo X-Pedal aproxima-se do one-pedal, embora não imobilize o carro sem o travão, mas os quatro níveis só se ajustam no ecrã e a Driven nota um salto brusco entre o mais suave e o intermédio.",
       "pros": [
         "Suspensão confortável em estrada segundo a Car Enthusiast, o FDM e a M3",
         "Bancos dianteiros ventilados e traseiros aquecidos e reclináveis",
-        "67 dB a 130 km/h medidos pela Futura-Sciences"
+        "65 dB(A) a 130 km/h no ADAC e insonorização elogiada pela M3 e pelo AutoScout24"
       ],
       "cons": [
         "Rolamento firme e agitado a baixa velocidade, sem amortecedores adaptativos",
@@ -168,7 +182,11 @@
         "autohaus-g6",
         "autoscout24-g6",
         "wheelsalive-g6",
-        "thecarexpert-g6"
+        "thecarexpert-g6",
+        "adac-g6-pre",
+        "carexpert-g6",
+        "driven-g6",
+        "elektroautonews-g6"
       ]
     },
     "brand": {
@@ -469,7 +487,7 @@
     },
     {
       "id": "adac-g6-pre",
-      "label": "ADAC — XPENG G6 (teste da versão anterior ao facelift, 21/05/2025)",
+      "label": "ADAC — XPENG G6 Long Range no Autotest de 05/2025, antes do facelift (Federung 3,0 · Sitze 2,3 · Innengeräusch 2,0 · 65 dB(A) a 130 km/h, com jantes de 20\")",
       "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/xpeng/xpeng-g6/",
       "type": "press"
     },
@@ -670,6 +688,18 @@
       "label": "Caetano — oficinas XPENG em Portugal",
       "url": "https://caetano.pt/xpeng/oficinas/",
       "type": "official"
+    },
+    {
+      "id": "carexpert-g6",
+      "label": "CarExpert — ensaio ao XPENG G6 2025 (afinação europeia com amortecedores Sachs)",
+      "url": "https://www.carexpert.com.au/car-reviews/2025-xpeng-g6-review",
+      "type": "press"
+    },
+    {
+      "id": "driven-g6",
+      "label": "Driven — ensaio ao XPENG G6 2026 (níveis de regeneração e modo X-Pedal)",
+      "url": "https://driven.site/words/2026-xpeng-g6-review",
+      "type": "press"
     }
   ]
 }

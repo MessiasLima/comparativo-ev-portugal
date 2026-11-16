@@ -160,10 +160,22 @@ bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
 ```json
 {
   "assessment": {
-    "suspension": 7.5,
     "seats": 8.0,
     "acoustics": 7.0,
     "drivetrainCalibration": 8.5
+  },
+  "suspensionBasis": {
+    "dampers": "frequency-selective",
+    "wheelInches": 19,
+    "references": [
+      {
+        "protocol": "adac-2019",
+        "federung": 2.8,
+        "dampers": "frequency-selective",
+        "wheelInches": 20,
+        "sourceId": "adac-autotest"
+      }
+    ]
   },
   "summary": "...",
   "pros": ["…", "…"],
@@ -176,6 +188,9 @@ bands, follow [`evaluate-sound`](../../evaluate-sound/SKILL.md).
   acoustics 30%, drivetrain calibration 10%) and score verification, follow
   [`evaluate-comfort`](../../evaluate-comfort/SKILL.md). `src/lib/comfort.ts`
   remains the formula's source of truth; do not store a calculated score in JSON.
+- `assessment.suspension` is calculated from `suspensionBasis`; versions of the
+  same model must share the same `references` (see “Escala única de suspensão”
+  in `evaluate-comfort`).
 
 ### Interior review (rubric)
 

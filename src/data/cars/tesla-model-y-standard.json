@@ -108,12 +108,31 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.2,
         "seats": 7.2,
         "acoustics": 7.6,
         "drivetrainCalibration": 8.4
       },
-      "summary": "A Standard usa amortecedores passivos e jantes Aperture de 18\". O acerto é firme: controla bem o corpo em autoestrada, mas sente-se seco em piso urbano degradado, com impactos curtos e algum patter. Os bancos dianteiros são aquecidos, mas têm regulação mais limitada e não têm memória nem ventilação; o banco traseiro é pouco generoso em apoio e o piso é elevado. A insonorização é boa para o segmento, com 65,2 dB(A) a 130 km/h no autoteste do ADAC, ainda que o ruído de rolamento apareça em asfalto rugoso. O one-pedal é suave e previsível, mas a regeneração não tem níveis ajustáveis.",
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 18,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.8,
+            "dampers": "frequency-selective",
+            "wheelInches": 20,
+            "sourceId": "adac-modely-premium"
+          },
+          {
+            "protocol": "adac-2026",
+            "federung": 2.8,
+            "dampers": "passive",
+            "wheelInches": 18,
+            "sourceId": "adac-modely-standard"
+          }
+        ]
+      },
+      "summary": "A Standard usa amortecedores passivos e jantes Aperture de 18\". O acerto é firme: no autoteste de 2026 o ADAC deu 2,8 à Federung, contra 3,0 do Model 3 Premium no mesmo protocolo, e notou que os pneus de flanco mais alto fazem esta versão quase não perder para a Premium, que tem amortecedores dependentes da frequência. O corpo está bem controlado em autoestrada, mas em cidade o carro é por vezes seco e as tampas de esgoto sentem-se com nitidez. Os bancos dianteiros são aquecidos, mas têm regulação mais limitada e não têm memória nem ventilação; o banco traseiro é pouco generoso em apoio e o piso é elevado. A insonorização é boa para o segmento, com 65,2 dB(A) a 130 km/h no autoteste do ADAC, ainda que o ruído de rolamento apareça em asfalto rugoso. O one-pedal é suave e previsível, mas a regeneração não tem níveis ajustáveis.",
       "pros": [
         "Amortecedores passivos com bom controlo de carroçaria",
         "65,2 dB(A) a 130 km/h no autoteste do ADAC",
@@ -130,7 +149,8 @@
         "adac-modely-standard",
         "4gnews-modely",
         "reddit-suspension",
-        "tslcheck"
+        "tslcheck",
+        "adac-modely-premium"
       ]
     },
     "brand": {
@@ -429,7 +449,7 @@
     },
     {
       "id": "adac-modely-standard",
-      "label": "ADAC — Tesla Model Y Standard no Autotest 2026 (220 kW/299 PS · 420 Nm · 13,4 kWh/100 km WLTP · 16,4 kWh/100 km no ciclo ADAC · 438 km · 65,2 dB(A) a 130 km/h)",
+      "label": "ADAC — Tesla Model Y Standard no Autotest 2026 (Federung 2,8 · Sitze 3,1 · Innengeräusch 2,1 · 65,2 dB(A) a 130 km/h, com jantes de 18\" · 220 kW/299 PS · 16,4 kWh/100 km no ciclo ADAC)",
       "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/tesla/tesla-model-y-test/",
       "type": "press"
     },
@@ -479,6 +499,12 @@
       "id": "abstractocean",
       "label": "Abstract Ocean — diferenças de equipamento do Model Y Standard",
       "url": "https://www.abstractocean.com/blogs/news/model-y-standard-equipment-differences",
+      "type": "press"
+    },
+    {
+      "id": "adac-modely-premium",
+      "label": "ADAC — Tesla Model Y Premium Maximale Reichweite im Autotest (Federung 2,8 · Sitze 2,7 · Innengeräusch 1,8 · 64,6 dB(A) a 130 km/h, com jantes de 20\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6542-tesla-model-y-maximum-range/tesla-model-y-maximum-range.pdf",
       "type": "press"
     }
   ]

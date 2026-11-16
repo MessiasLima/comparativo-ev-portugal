@@ -116,10 +116,36 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.7,
         "seats": 7.7,
         "acoustics": 7.9,
         "drivetrainCalibration": 8.6
+      },
+      "suspensionBasis": {
+        "dampers": "adaptive",
+        "wheelInches": 20,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.5,
+            "dampers": "frequency-selective",
+            "wheelInches": 19,
+            "sourceId": "adac-model3-awd-2024"
+          },
+          {
+            "protocol": "adac-2026",
+            "federung": 3.0,
+            "dampers": "frequency-selective",
+            "wheelInches": 18,
+            "sourceId": "adac-model3-premium"
+          },
+          {
+            "protocol": "adac-2026",
+            "federung": 3.1,
+            "dampers": "passive",
+            "wheelInches": 18,
+            "sourceId": "adac-model3-base"
+          }
+        ]
       },
       "summary": "A Performance usa amortecedores eletrónicos de válvula contínua e jantes Warp de 20\", e é o Model 3 com a suspensão mais resolvida: controlada e composta, absorve desníveis que fazem tremer as outras versões, que no ADAC ficam em 2,5 na Federung. Não é mole — os pneus desportivos tornam os impactos curtos mais presentes — mas o corpo assenta depressa e não balança em autoestrada. Os bancos desportivos, ventilados e aquecidos, seguram bem o corpo, com apoio lateral firme que alguns condutores acham excessivo. A insonorização acompanha as restantes versões, com 66,2 dB(A) a 130 km/h no autoteste de 2026 e vidros acústicos laminados em todas as janelas, e o one-pedal é suave e previsível.",
       "pros": [
@@ -141,7 +167,9 @@
         "autoexpress",
         "thinkev-model3",
         "evpulse-model3",
-        "motortrend-model3"
+        "motortrend-model3",
+        "adac-model3-awd-2024",
+        "adac-model3-base"
       ]
     },
     "brand": {
@@ -500,8 +528,20 @@
     },
     {
       "id": "adac-model3-premium",
-      "label": "ADAC — Tesla Model 3 Premium Maximale Reichweite im Autotest 2026 (Federung 3,0 · Sitze 2,3 · Innengeräusch 2,3 · 66,2 dB(A) a 130 km/h)",
+      "label": "ADAC — Tesla Model 3 Premium Maximale Reichweite im Autotest 2026 (Federung 3,0 · Sitze 2,3 · Innengeräusch 2,3 · 66,2 dB(A) a 130 km/h, com jantes de 18\")",
       "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/AT6648-tesla-model-3-premium-maximale-reichweite/tesla-model-3-premium-maximale-reichweite.pdf",
+      "type": "press"
+    },
+    {
+      "id": "adac-model3-awd-2024",
+      "label": "ADAC — Tesla Model 3 Maximale Reichweite AWD im Autotest (05/2024, protocolo de 2019: Federung 2,5 · Sitze 2,5 · Innengeräusch 2,2 · 66,1 dB(A) a 130 km/h, com jantes de 19\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6405-tesla-model-3-maximale-reichweite-awd/tesla-model-3-maximale-reichweite-awd.pdf",
+      "type": "press"
+    },
+    {
+      "id": "adac-model3-base",
+      "label": "ADAC — Tesla Model 3 (ab 12/25) im Autotest 2026 (Federung 3,1 · Sitze 2,9 · Innengeräusch 2,3 · 65,9 dB(A) a 130 km/h, com jantes de 18\")",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/tesla/model-3/1generation-facelift/347729",
       "type": "press"
     }
   ]

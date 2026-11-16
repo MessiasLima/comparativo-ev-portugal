@@ -121,10 +121,22 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.4,
         "seats": 8.0,
         "acoustics": 8.7,
         "drivetrainCalibration": 6.8
+      },
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.4,
+            "dampers": "passive",
+            "wheelInches": 19,
+            "sourceId": "adac-seal"
+          }
+        ]
       },
       "summary": "O Design usa suspensão passiva (duplo braço à frente, multilink atrás) e jantes de 19\". No protocolo do ADAC, o conforto de suspensão vale 2,4: absorve bem juntas e mau piso fora da cidade e mantém o corpo assente, mas em cidade e nos obstáculos isolados o ataque podia ser mais sensível e a traseira ainda salta um pouco em apoio rápido. Os bancos desportivos, aquecidos e ventilados, dão bom apoio, embora as costas largas e os encostos de cabeça fixos limitem o ajuste. O habitáculo é dos mais silenciosos do segmento: no Seal Design testado pelo ADAC mediu 64,4 dB(A) a 130 km/h, com vidros laterais laminados, ainda que o ruído de rolamento apareça em asfalto rugoso. A entrega de binário é linear, mas o acelerador tem algum atraso e a regeneração é subtil, sem verdadeiro one-pedal.",
       "pros": [

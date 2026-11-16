@@ -114,12 +114,31 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.9,
         "seats": 7.9,
         "acoustics": 7.8,
         "drivetrainCalibration": 8.5
       },
-      "summary": "A tração integral usa os mesmos amortecedores dependentes da frequência e jantes Crossflow de 19\" da versão Premium RWD. O acerto filtra as juntas e mantém a carroçaria controlada, mas continua firme em piso urbano degradado. O peso adicional do segundo motor (1.997 kg de tara) não altera o comportamento da suspensão de forma significativa. Os bancos dianteiros são ventilados, aquecidos e com memória, e os traseiros são aquecidos; o piso elevado e o banco traseiro pouco generoso limitam quem vai atrás. A insonorização beneficia de vidros acústicos laminados; no autoteste do ADAC à versão Standard o modelo registou 65,2 dB(A) a 130 km/h. O one-pedal é suave e previsível.",
+      "suspensionBasis": {
+        "dampers": "frequency-selective",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.8,
+            "dampers": "frequency-selective",
+            "wheelInches": 20,
+            "sourceId": "adac-modely-premium"
+          },
+          {
+            "protocol": "adac-2026",
+            "federung": 2.8,
+            "dampers": "passive",
+            "wheelInches": 18,
+            "sourceId": "adac-modely-standard"
+          }
+        ]
+      },
+      "summary": "A tração integral usa os mesmos amortecedores dependentes da frequência e jantes Crossflow de 19\" da versão Premium RWD. O acerto mantém a carroçaria controlada em autoestrada, mas é firme: no autoteste do ADAC à Premium, com jantes opcionais de 20\", a Federung ficou em 2,8, com o carro a transmitir as irregularidades em cidade e as tampas de esgoto a sentirem-se com nitidez; as 19\" de série suavizam um pouco as arestas. O peso adicional do segundo motor (1.997 kg de tara) não altera o comportamento da suspensão de forma significativa. Os bancos dianteiros são ventilados, aquecidos e com memória, e os traseiros são aquecidos; o piso elevado e o banco traseiro pouco generoso limitam quem vai atrás. A insonorização beneficia de vidros acústicos laminados; no autoteste do ADAC à versão Standard o modelo registou 65,2 dB(A) a 130 km/h. O one-pedal é suave e previsível.",
       "pros": [
         "Amortecedores dependentes da frequência e vidros acústicos laminados",
         "Bancos dianteiros ventilados, aquecidos e com memória",
@@ -136,7 +155,8 @@
         "tslcheck",
         "adac-modely-standard",
         "4gnews-modely",
-        "reddit-suspension"
+        "reddit-suspension",
+        "adac-modely-premium"
       ]
     },
     "brand": {
@@ -430,7 +450,7 @@
     },
     {
       "id": "adac-modely-standard",
-      "label": "ADAC — Tesla Model Y Standard no Autotest 2026 (220 kW/299 PS · 420 Nm · 13,4 kWh/100 km WLTP · 16,4 kWh/100 km no ciclo ADAC · 438 km · 65,2 dB(A) a 130 km/h)",
+      "label": "ADAC — Tesla Model Y Standard no Autotest 2026 (Federung 2,8 · Sitze 3,1 · Innengeräusch 2,1 · 65,2 dB(A) a 130 km/h, com jantes de 18\" · 220 kW/299 PS · 16,4 kWh/100 km no ciclo ADAC)",
       "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/tesla/tesla-model-y-test/",
       "type": "press"
     },
@@ -480,6 +500,12 @@
       "id": "abstractocean",
       "label": "Abstract Ocean — diferenças de equipamento do Model Y Standard",
       "url": "https://www.abstractocean.com/blogs/news/model-y-standard-equipment-differences",
+      "type": "press"
+    },
+    {
+      "id": "adac-modely-premium",
+      "label": "ADAC — Tesla Model Y Premium Maximale Reichweite im Autotest (Federung 2,8 · Sitze 2,7 · Innengeräusch 1,8 · 64,6 dB(A) a 130 km/h, com jantes de 20\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6542-tesla-model-y-maximum-range/tesla-model-y-maximum-range.pdf",
       "type": "press"
     }
   ]

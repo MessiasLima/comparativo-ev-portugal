@@ -129,10 +129,23 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.8,
         "seats": 8,
         "acoustics": 7.6,
         "drivetrainCalibration": 6.9
+      },
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 18,
+        "references": [
+          {
+            "protocol": "estimate",
+            "federung": 2.3,
+            "dampers": "passive",
+            "wheelInches": 20,
+            "sourceId": "motor1-de",
+            "note": "Sem autoteste. Motor1, ÖAMTC e Complete Car descrevem um acerto muito macio, que absorve bem as irregularidades mesmo com jantes de 20\" e que a Motor1 considera mais confortável do que o Model Y; o balanço da carroçaria e o saltitar em compressões seguidas impedem uma nota de topo."
+          }
+        ]
       },
       "summary": "Os ensaios à Performance Ultra convergem numa afinação claramente orientada para o conforto: a Motor1 Alemanha descreve uma suspensão muito macia que absorve as irregularidades com segurança, o ÖAMTC fala de um chassis muito confortável e a Complete Car diz que roda com conforto mesmo nas jantes de 20\". Em contrapartida, a carroçaria inclina e baloiça em curva, em aceleração e em travagem (a Motor1 fala de \"um pouco de barco\"), e a Complete Car nota que a suspensão fica saltitante numa sequência de compressões fortes. Estes ensaios foram feitos com a Ultra; esta versão usa jantes de 18\", que tendem a filtrar melhor as arestas do piso, e o carwow descreve o mesmo acerto confortável na Standard Range. Os bancos dianteiros são descritos como muito confortáveis e com apoio lateral suficiente (Motor1, electrive, EV Powered) e o ÖAMTC considera \"sensacionais\" o apoio das coxas e o espaço para os joelhos atrás; o banco traseiro não é aquecido nem ventilado. Os bancos dianteiros são aquecidos, ventilados, elétricos e com memória, mas sem massagem. A Motor1 considera o isolamento acústico notavelmente bom apesar dos vidros sem caixilho e o carwow diz que quase não se ouve o motor, mas esta versão não tem o cancelamento ativo de ruído da Ultra, a Complete Car nota algum ruído de rolamento a velocidade elevada e o electrive acha o L03 mais ruidoso do que os rivais alemães. Não há medições em dB(A). O acelerador é progressivo, mas a regeneração não tem um verdadeiro modo one-pedal e entra com atraso depois de levantar o pé, segundo a Motor1.",
       "pros": [

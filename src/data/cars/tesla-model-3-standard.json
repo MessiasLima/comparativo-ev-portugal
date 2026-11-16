@@ -108,10 +108,36 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.1,
         "seats": 7.4,
         "acoustics": 7.8,
         "drivetrainCalibration": 8.4
+      },
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 18,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.5,
+            "dampers": "frequency-selective",
+            "wheelInches": 19,
+            "sourceId": "adac-model3-awd-2024"
+          },
+          {
+            "protocol": "adac-2026",
+            "federung": 3.0,
+            "dampers": "frequency-selective",
+            "wheelInches": 18,
+            "sourceId": "adac-model3-premium"
+          },
+          {
+            "protocol": "adac-2026",
+            "federung": 3.1,
+            "dampers": "passive",
+            "wheelInches": 18,
+            "sourceId": "adac-model3-base"
+          }
+        ]
       },
       "summary": "A Standard usa amortecedores passivos e jantes de 18\". O acerto é firme: o Highland absorve melhor as juntas do que a geração anterior, mas o autoteste de 2026 ao modelo base dá 3,1 à Federung, com patter e impactos curtos em piso degradado, ainda que o corpo assente depressa e sem balanço em autoestrada. Os bancos dianteiros são confortáveis e aquecidos, mas perdem a memória e a ventilação do Premium e têm regulação mais limitada (Sitze 2,9 no mesmo teste), com o piso elevado e o banco traseiro pouco generoso a limitarem quem vai atrás. A insonorização beneficia de vidros acústicos laminados em todas as janelas e de cerca de 67 dB a 113 km/h, com o ruído de pneus a dominar em asfalto rugoso. O one-pedal é suave e previsível, mas a intensidade da regeneração não é ajustável.",
       "pros": [
@@ -132,7 +158,9 @@
         "4gnews-standard",
         "thinkev-model3",
         "evpulse-model3",
-        "motortrend-model3"
+        "motortrend-model3",
+        "adac-model3-awd-2024",
+        "adac-model3-premium"
       ]
     },
     "brand": {
@@ -499,8 +527,20 @@
     },
     {
       "id": "adac-model3-base",
-      "label": "ADAC — Tesla Model 3 (ab 12/25) im Autotest 2026 (Federung 3,1 · Sitze 2,9 · Innengeräusch 2,3)",
+      "label": "ADAC — Tesla Model 3 (ab 12/25) im Autotest 2026 (Federung 3,1 · Sitze 2,9 · Innengeräusch 2,3 · 65,9 dB(A) a 130 km/h, com jantes de 18\")",
       "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/tesla/model-3/1generation-facelift/347729",
+      "type": "press"
+    },
+    {
+      "id": "adac-model3-awd-2024",
+      "label": "ADAC — Tesla Model 3 Maximale Reichweite AWD im Autotest (05/2024, protocolo de 2019: Federung 2,5 · Sitze 2,5 · Innengeräusch 2,2 · 66,1 dB(A) a 130 km/h, com jantes de 19\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6405-tesla-model-3-maximale-reichweite-awd/tesla-model-3-maximale-reichweite-awd.pdf",
+      "type": "press"
+    },
+    {
+      "id": "adac-model3-premium",
+      "label": "ADAC — Tesla Model 3 Premium Maximale Reichweite im Autotest 2026 (Federung 3,0 · Sitze 2,3 · Innengeräusch 2,3 · 66,2 dB(A) a 130 km/h, com jantes de 18\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/AT6648-tesla-model-3-premium-maximale-reichweite/tesla-model-3-premium-maximale-reichweite.pdf",
       "type": "press"
     }
   ]

@@ -106,7 +106,10 @@ export interface SatisfactionAssessment {
 }
 
 export interface ComfortAssessment {
-  /** Absorção de irregularidades, buracos e controlo de carroçaria (30%). */
+  /**
+   * Absorção de irregularidades, buracos e controlo de carroçaria (30%). Calculada a
+   * partir de `suspensionBasis` ao carregar os carros; não se escreve no JSON.
+   */
   suspension: number
   /** Ergonomia, acolchoamento, apoio lombar e conforto em viagens longas (30%). */
   seats: number
@@ -114,6 +117,38 @@ export interface ComfortAssessment {
   acoustics: number
   /** Suavidade do acelerador, modulação da regeneração e ausência de solavancos (10%). */
   drivetrainCalibration: number
+}
+
+export type DamperType = "passive" | "frequency-selective" | "adaptive"
+
+/**
+ * `adac-2019` e `adac-2026` são notas Federung medidas pelo ADAC em cada protocolo;
+ * `estimate` é uma nota equivalente estimada a partir da imprensa, quando não há teste.
+ */
+export type SuspensionProtocol = "adac-2019" | "adac-2026" | "estimate"
+
+/** Nota de suspensão de referência (escala ADAC, 1 = melhor) e o carro a que se refere. */
+export interface SuspensionReference {
+  protocol: SuspensionProtocol
+  federung: number
+  dampers: DamperType
+  wheelInches: number
+  sourceId: string
+  /** Obrigatória em estimativas: porque é que a nota é esta. */
+  note?: string
+}
+
+/**
+ * Base de cálculo da nota de suspensão. Todas as versões do mesmo modelo partilham as
+ * mesmas referências, para que só os amortecedores e as jantes as distingam.
+ */
+export interface SuspensionBasis {
+  dampers: DamperType
+  wheelInches: number
+  references: SuspensionReference[]
+  /** Correção editorial na escala ADAC (negativa = mais confortável), até ±0,3. */
+  adjustment?: number
+  adjustmentNote?: string
 }
 
 export interface EditorialReview {
@@ -125,6 +160,8 @@ export interface EditorialReview {
     | BrandAssessment
     | SatisfactionAssessment
     | ComfortAssessment
+  /** Só no conforto: a nota `assessment.suspension` é calculada a partir daqui. */
+  suspensionBasis?: SuspensionBasis
   summary: string
   pros?: string[]
   cons?: string[]

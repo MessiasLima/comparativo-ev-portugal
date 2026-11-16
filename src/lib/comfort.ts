@@ -1,4 +1,10 @@
-import type { ComfortAssessment } from "@/data/types"
+import type {
+  Car,
+  ComfortAssessment,
+  DamperType,
+  SuspensionBasis,
+  SuspensionProtocol,
+} from "@/data/types"
 
 /**
  * Rubrica de conforto geral.
@@ -63,6 +69,83 @@ export function comfortScore(assessment: ComfortAssessment): number {
     assessment.drivetrainCalibration * COMFORT_WEIGHTS.drivetrainCalibration
 
   return Math.round(clamp(weighted) * 100) / 100
+}
+
+/**
+ * Nota de suspensão numa escala única.
+ *
+ * Todas as referências são convertidas para a nota Federung do ADAC no protocolo de 2019
+ * (1 = melhor), na configuração amortecedores passivos + jantes da versão avaliada:
+ * - Protocolo: o ADAC de 2026 é mais severo. As duas pontes disponíveis dão +0,6
+ *   (Model 3: 2,5 em 19" no teste de 2024 → 3,0 em 18" no de 2026) e +0,1 (Model Y:
+ *   Premium de 20" com 2,8 em 2025 → Standard de 18" com 2,8 em 2026, que o ADAC diz
+ *   quase não perder para o Premium); usa-se a média, +0,35.
+ * - Amortecedores: dependentes da frequência valem -0,1 face aos passivos (Model 3
+ *   Premium 3,0 vs Standard 3,1 no mesmo protocolo); adaptativos valem -0,4.
+ * - Jantes: +0,1 por polegada acima da referência.
+ * Com várias referências usa-se a média. A nota final converte-se em pontos com
+ * 2,3 → 7,4 e 1,25 pontos por unidade de nota.
+ */
+export const SUSPENSION_PROTOCOL_OFFSET: Record<SuspensionProtocol, number> = {
+  "adac-2019": 0,
+  "adac-2026": 0.35,
+  estimate: 0,
+}
+
+export const DAMPER_GRADE: Record<DamperType, number> = {
+  passive: 0,
+  "frequency-selective": -0.1,
+  adaptive: -0.4,
+}
+
+export const WHEEL_GRADE_PER_INCH = 0.1
+export const MAX_SUSPENSION_ADJUSTMENT = 0.3
+
+const ANCHOR_GRADE = 2.3
+const ANCHOR_SCORE = 7.4
+const POINTS_PER_GRADE = 1.25
+
+/** Peso do equipamento na nota: quanto menor, mais confortável. */
+export function suspensionHardwareGrade(chassis: { dampers: DamperType; wheelInches: number }): number {
+  return DAMPER_GRADE[chassis.dampers] + chassis.wheelInches * WHEEL_GRADE_PER_INCH
+}
+
+/** Nota Federung equivalente (protocolo ADAC 2019) para a configuração avaliada. */
+export function suspensionGrade(basis: SuspensionBasis): number {
+  const target = suspensionHardwareGrade(basis)
+  const grades = basis.references.map(
+    (reference) =>
+      reference.federung -
+      SUSPENSION_PROTOCOL_OFFSET[reference.protocol] -
+      suspensionHardwareGrade(reference) +
+      target,
+  )
+  const mean = grades.reduce((sum, grade) => sum + grade, 0) / grades.length
+  return mean + (basis.adjustment ?? 0)
+}
+
+export function suspensionScore(basis: SuspensionBasis): number {
+  const score = ANCHOR_SCORE - (suspensionGrade(basis) - ANCHOR_GRADE) * POINTS_PER_GRADE
+  return Math.round(clamp(score) * 10 + 1e-9) / 10
+}
+
+/** Preenche `assessment.suspension` a partir de `suspensionBasis`. */
+export function withSuspensionScore(car: Car): Car {
+  const comfort = car.reviews.comfort
+  if (!comfort.suspensionBasis) return car
+  return {
+    ...car,
+    reviews: {
+      ...car.reviews,
+      comfort: {
+        ...comfort,
+        assessment: {
+          ...(comfort.assessment as ComfortAssessment),
+          suspension: suspensionScore(comfort.suspensionBasis),
+        },
+      },
+    },
+  }
 }
 
 export function isComfortAssessment(value: unknown): value is ComfortAssessment {

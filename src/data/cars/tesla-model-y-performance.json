@@ -116,12 +116,31 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 8,
         "seats": 8,
         "acoustics": 7.7,
         "drivetrainCalibration": 8.6
       },
-      "summary": "A Performance usa suspensão adaptativa, que lhe permite absorver melhor as irregularidades do que as versões com amortecedores passivos ou dependentes da frequência, sobretudo nos modos mais confortáveis. As jantes de 21\" e os pneus de baixo perfil introduzem, ainda assim, impactos secos em piso degradado e mais ruído de rolamento; no autoteste do ADAC à versão Standard o Model Y registou 65,2 dB(A) a 130 km/h, e as 21\" desta versão tendem a piorar esse valor. Os bancos desportivos são firmes, com bom apoio lateral e regulação elétrica com memória, e os traseiros são aquecidos. O one-pedal é suave e previsível, mas a regeneração não tem níveis ajustáveis.",
+      "suspensionBasis": {
+        "dampers": "adaptive",
+        "wheelInches": 21,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.8,
+            "dampers": "frequency-selective",
+            "wheelInches": 20,
+            "sourceId": "adac-modely-premium"
+          },
+          {
+            "protocol": "adac-2026",
+            "federung": 2.8,
+            "dampers": "passive",
+            "wheelInches": 18,
+            "sourceId": "adac-modely-standard"
+          }
+        ]
+      },
+      "summary": "A Performance usa suspensão adaptativa, que absorve melhor as irregularidades do que os amortecedores dependentes da frequência das Premium — a que o ADAC deu 2,8 na Federung com jantes de 20\" —, sobretudo no modo mais confortável. As jantes de 21\" e os pneus de baixo perfil introduzem, ainda assim, impactos secos em piso degradado e mais ruído de rolamento; no autoteste do ADAC à versão Standard o Model Y registou 65,2 dB(A) a 130 km/h, e as 21\" desta versão tendem a piorar esse valor. Os bancos desportivos são firmes, com bom apoio lateral e regulação elétrica com memória, e os traseiros são aquecidos. O one-pedal é suave e previsível, mas a regeneração não tem níveis ajustáveis.",
       "pros": [
         "Suspensão adaptativa com bom controlo de carroçaria",
         "Bancos desportivos com apoio lateral e memória",
@@ -137,7 +156,8 @@
         "tesla-modely",
         "tslcheck",
         "adac-modely-standard",
-        "reddit-suspension"
+        "reddit-suspension",
+        "adac-modely-premium"
       ]
     },
     "brand": {
@@ -431,7 +451,7 @@
     },
     {
       "id": "adac-modely-standard",
-      "label": "ADAC — Tesla Model Y Standard no Autotest 2026 (220 kW/299 PS · 420 Nm · 13,4 kWh/100 km WLTP · 16,4 kWh/100 km no ciclo ADAC · 438 km · 65,2 dB(A) a 130 km/h)",
+      "label": "ADAC — Tesla Model Y Standard no Autotest 2026 (Federung 2,8 · Sitze 3,1 · Innengeräusch 2,1 · 65,2 dB(A) a 130 km/h, com jantes de 18\" · 220 kW/299 PS · 16,4 kWh/100 km no ciclo ADAC)",
       "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/tesla/tesla-model-y-test/",
       "type": "press"
     },
@@ -475,6 +495,12 @@
       "id": "abstractocean",
       "label": "Abstract Ocean — diferenças de equipamento do Model Y Standard",
       "url": "https://www.abstractocean.com/blogs/news/model-y-standard-equipment-differences",
+      "type": "press"
+    },
+    {
+      "id": "adac-modely-premium",
+      "label": "ADAC — Tesla Model Y Premium Maximale Reichweite im Autotest (Federung 2,8 · Sitze 2,7 · Innengeräusch 1,8 · 64,6 dB(A) a 130 km/h, com jantes de 20\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6542-tesla-model-y-maximum-range/tesla-model-y-maximum-range.pdf",
       "type": "press"
     }
   ]

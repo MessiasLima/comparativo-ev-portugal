@@ -116,12 +116,24 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.4,
         "seats": 7.9,
         "acoustics": 8.6,
         "drivetrainCalibration": 7.6
       },
-      "summary": "Com suspensão passiva e jantes de 19\", o Tavascan absorve bem as juntas e mantém-se estável em autoestrada. O ADAC mediu 1,9 na Federung, 2,4 na Sitze e 65,1 dB(A) a 130 km/h no carro de teste, que tinha DCC e 21\"; nas 19\" o flanco mais alto suaviza os impactos, mas perde-se algum controlo de carroçaria. Os bancos desportivos são firmes, com bom apoio lateral, mas os encostos de cabeça são fixos e não há apoio lombar elétrico. A entrega é linear e a regeneração tem cinco níveis por patilhas, sem solavancos.",
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 1.9,
+            "dampers": "adaptive",
+            "wheelInches": 21,
+            "sourceId": "adac"
+          }
+        ]
+      },
+      "summary": "Com suspensão passiva e jantes de 19\", o Tavascan absorve bem as juntas e mantém-se estável em autoestrada. O ADAC mediu 1,9 na Federung, 2,4 na Sitze e 65,1 dB(A) a 130 km/h no carro de teste, que tinha DCC e 21\"; o mesmo teste nota que a versão de série usa um chassis desportivo passivo, visivelmente mais firme do que o dos ID.5 e Enyaq, e recomenda o DCC a quem procura conforto; nas 19\" o flanco mais alto suaviza os impactos curtos. Os bancos desportivos são firmes, com bom apoio lateral, mas os encostos de cabeça são fixos e não há apoio lombar elétrico. A entrega é linear e a regeneração tem cinco níveis por patilhas, sem solavancos.",
       "pros": [
         "Boa absorção de juntas e compostura em autoestrada",
         "Bancos desportivos com apoio lateral competente",

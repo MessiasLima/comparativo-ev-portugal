@@ -122,10 +122,22 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.4,
         "seats": 7.7,
         "acoustics": 8.6,
         "drivetrainCalibration": 7.2
+      },
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.3,
+            "dampers": "passive",
+            "wheelInches": 19,
+            "sourceId": "adac-6e"
+          }
+        ]
       },
       "summary": "A especificação europeia usa suspensão passiva MacPherson/multibraço e pneus 245/45 R19, com um acerto firme mas absorvente: o ADAC classifica o conforto de suspensão como bom e a imprensa portuguesa destaca a boa absorção das irregularidades, ainda que a britânica critique oscilações em estradas degradadas. Os bancos desportivos dianteiros, ventilados e aquecidos, dão forte apoio lateral, o que ajuda em traçados sinuosos, mas a posição de condução é elevada e, atrás, o piso alto levanta os joelhos. A insonorização é o ponto mais forte — 65,1 dB(A) a 130 km/h no ADAC — com pouco ruído de vento e de rolamento. A regeneração tem quatro níveis, mas não há verdadeiro one-pedal, e a transição para o travão é suave.",
       "pros": [

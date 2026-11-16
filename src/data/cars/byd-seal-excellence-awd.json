@@ -124,10 +124,22 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.5,
         "seats": 8.0,
         "acoustics": 8.7,
         "drivetrainCalibration": 7.0
+      },
+      "suspensionBasis": {
+        "dampers": "frequency-selective",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.4,
+            "dampers": "passive",
+            "wheelInches": 19,
+            "sourceId": "adac-seal"
+          }
+        ]
       },
       "summary": "O Excellence AWD usa a mesma arquitetura de suspensão do Design, mas com amortecedores de frequência variável (FSD) e mais 130 kg. Absorve melhor os buracos maiores em cidade, com um pisar mais flutuante; em piso ondulado e em apoio rápido o corpo segue mais a estrada do que no Design. Os bancos desportivos, aquecidos e ventilados, dão excelente apoio e o habitáculo mantém boa serenidade: no Design testado pelo ADAC, com os mesmos vidros laterais laminados, mediu 64,4 dB(A) a 130 km/h, com ruído de rolamento apenas em asfalto áspero. A entrega dos dois motores é suave, mas mantém-se o atraso inicial do acelerador e a travagem regenerativa pouco modulável, sem one-pedal.",
       "pros": [

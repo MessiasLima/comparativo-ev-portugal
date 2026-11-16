@@ -91,6 +91,71 @@ function clamp(value) {
   return Math.min(10, Math.max(0, value))
 }
 
+// Mantém em sincronia com src/lib/comfort.ts.
+const suspensionProtocolOffset = { "adac-2019": 0, "adac-2026": 0.35, estimate: 0 }
+const damperGrade = { passive: 0, "frequency-selective": -0.1, adaptive: -0.4 }
+const wheelGradePerInch = 0.1
+const maxSuspensionAdjustment = 0.3
+
+function suspensionHardwareGrade(chassis) {
+  return damperGrade[chassis.dampers] + chassis.wheelInches * wheelGradePerInch
+}
+
+function suspensionScore(basis) {
+  const target = suspensionHardwareGrade(basis)
+  const grades = basis.references.map(
+    (reference) =>
+      reference.federung -
+      suspensionProtocolOffset[reference.protocol] -
+      suspensionHardwareGrade(reference) +
+      target,
+  )
+  const grade =
+    grades.reduce((sum, value) => sum + value, 0) / grades.length + (basis.adjustment ?? 0)
+  return Math.round(clamp(7.4 - (grade - 2.3) * 1.25) * 10 + 1e-9) / 10
+}
+
+function suspensionBasisErrors(basis, sourceIds) {
+  const errors = []
+  if (!basis || typeof basis !== "object") return ["exige suspensionBasis"]
+  const chassisErrors = (chassis, label) => [
+    ...(damperGrade[chassis.dampers] === undefined
+      ? [`${label}.dampers tem de ser ${Object.keys(damperGrade).join(", ")}`]
+      : []),
+    ...(typeof chassis.wheelInches !== "number" || chassis.wheelInches < 14 || chassis.wheelInches > 23
+      ? [`${label}.wheelInches tem de ser um número entre 14 e 23`]
+      : []),
+  ]
+  errors.push(...chassisErrors(basis, "suspensionBasis"))
+  if (!Array.isArray(basis.references) || basis.references.length === 0) {
+    errors.push("suspensionBasis.references exige pelo menos uma referência")
+    return errors
+  }
+  for (const [index, reference] of basis.references.entries()) {
+    const label = `suspensionBasis.references[${index}]`
+    errors.push(...chassisErrors(reference, label))
+    if (suspensionProtocolOffset[reference.protocol] === undefined) {
+      errors.push(`${label}.protocol tem de ser ${Object.keys(suspensionProtocolOffset).join(", ")}`)
+    }
+    if (typeof reference.federung !== "number" || reference.federung < 0.6 || reference.federung > 5.5) {
+      errors.push(`${label}.federung tem de estar entre 0,6 e 5,5`)
+    }
+    if (!sourceIds.has(reference.sourceId)) {
+      errors.push(`${label} referencia fonte desconhecida "${reference.sourceId}"`)
+    }
+    if (reference.protocol === "estimate" && !reference.note) {
+      errors.push(`${label} é uma estimativa e exige note`)
+    }
+  }
+  if (basis.adjustment !== undefined) {
+    if (typeof basis.adjustment !== "number" || Math.abs(basis.adjustment) > maxSuspensionAdjustment) {
+      errors.push(`suspensionBasis.adjustment tem de estar entre -${maxSuspensionAdjustment} e ${maxSuspensionAdjustment}`)
+    }
+    if (!basis.adjustmentNote) errors.push("suspensionBasis.adjustment exige adjustmentNote")
+  }
+  return errors
+}
+
 const requiredFields = [
   "id",
   "slug",
@@ -221,9 +286,19 @@ for (const { file, data: car } of cars) {
       if (review.baseScore !== undefined) {
         errors.push(`${file}: "comfort" usa assessment e não baseScore`)
       }
+      const basisErrors = suspensionBasisErrors(
+        review.suspensionBasis,
+        new Set((car.sources ?? []).map((source) => source.id)),
+      )
+      for (const error of basisErrors) errors.push(`${file}: "comfort" ${error}`)
       if (!assessment || typeof assessment !== "object") {
         errors.push(`${file}: "comfort" exige um objeto assessment`)
+      } else if ("suspension" in assessment) {
+        errors.push(`${file}: assessment.suspension é calculado a partir de suspensionBasis; remove-o do JSON`)
       } else {
+        if (basisErrors.length === 0) {
+          assessment.suspension = suspensionScore(review.suspensionBasis)
+        }
         for (const key of Object.keys(comfortWeights)) {
           const value = assessment[key]
           if (typeof value !== "number" || value < 0 || value > 10) {
@@ -294,6 +369,40 @@ for (const { file, data: car } of cars) {
   for (const equipmentId of equipment) {
     if (!equipmentIds.includes(equipmentId)) {
       errors.push(`${file}: equipamento desconhecido "${equipmentId}"`)
+    }
+  }
+}
+
+// Versões do mesmo modelo partilham as referências de suspensão, e uma versão com
+// amortecedores iguais ou melhores e jantes que não pesem mais nunca fica atrás.
+const families = Map.groupBy(
+  cars.filter(({ data }) => data.reviews?.comfort?.assessment?.suspension !== undefined),
+  ({ data }) => `${data.brand} ${data.model}`,
+)
+for (const [family, members] of families) {
+  const [first, ...rest] = members
+  const shared = (car) => {
+    const { references, adjustment = 0 } = car.reviews.comfort.suspensionBasis
+    return JSON.stringify({ references, adjustment })
+  }
+  for (const { file, data } of rest) {
+    if (shared(data) !== shared(first.data)) {
+      errors.push(
+        `${file}: as referências e o ajuste de suspensão têm de ser iguais aos de ${first.file} (${family})`,
+      )
+    }
+  }
+  for (const a of members) {
+    for (const b of members) {
+      const basisA = a.data.reviews.comfort.suspensionBasis
+      const basisB = b.data.reviews.comfort.suspensionBasis
+      const scoreA = a.data.reviews.comfort.assessment.suspension
+      const scoreB = b.data.reviews.comfort.assessment.suspension
+      if (suspensionHardwareGrade(basisA) <= suspensionHardwareGrade(basisB) + 1e-9 && scoreA < scoreB) {
+        errors.push(
+          `${a.file}: suspensão ${scoreA} abaixo de ${b.file} (${scoreB}) apesar de amortecedores e jantes iguais ou melhores`,
+        )
+      }
     }
   }
 }

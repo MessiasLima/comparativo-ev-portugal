@@ -136,12 +136,26 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.4,
         "seats": 8.5,
         "acoustics": 8.7,
         "drivetrainCalibration": 8.0
       },
-      "summary": "A configuração Rear motor usa chassis passivo com molas helicoidais e jantes Aero de 20\". O corpo é bem controlado e o pisar é suave na maior parte do tempo, mas por baixo há rigidez: o ADAC, que testou o carro com jantes de 21\", atribui 2,3 à Federung e nota que o conforto sofre em cidade e nos obstáculos isolados, com as juntas a provocarem um tremor visível no habitáculo. Os bancos dianteiros do Pack Comfort, de 12 posições, são macios e muito suportivos (Sitze 1,9), e o banco traseiro reclinado melhora a postura em viagens longas. O habitáculo é dos mais silenciosos do mercado — 64,4 dB(A) a 130 km/h no mesmo protocolo, mesmo sem vidros laterais duplos — com apenas algum ruído de vento junto à coluna B. A entrega é linear e a regeneração bem calibrada, embora o one-pedal possa parecer agarrar em manobras.",
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 20,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.3,
+            "dampers": "adaptive",
+            "wheelInches": 21,
+            "sourceId": "adac-polestar-4"
+          }
+        ],
+        "adjustment": -0.2,
+        "adjustmentNote": "O carro do ADAC tinha os amortecedores ZF adaptativos dos primeiros Single Motor; o Rear motor atual usa amortecedores passivos de alta capacidade, com batentes de poliuretano e molas e barras revistas, e a Autotrader considera o conforto muito bom mesmo com a suspensão de série."
+      },
+      "summary": "A configuração Rear motor usa chassis passivo com molas helicoidais e jantes Aero de 20\". O corpo é bem controlado e o pisar é suave na maior parte do tempo, mas por baixo há rigidez: o ADAC, que testou um Single Motor anterior com amortecedores ZF adaptativos e jantes de 21\", atribui 2,3 à Federung e nota que o conforto sofre em cidade e nos obstáculos isolados, com as juntas a provocarem um tremor visível no habitáculo. Os bancos dianteiros do Pack Comfort, de 12 posições, são macios e muito suportivos (Sitze 1,9), e o banco traseiro reclinado melhora a postura em viagens longas. O habitáculo é dos mais silenciosos do mercado — 64,4 dB(A) a 130 km/h no mesmo protocolo, mesmo sem vidros laterais duplos — com apenas algum ruído de vento junto à coluna B. A entrega é linear e a regeneração bem calibrada, embora o one-pedal possa parecer agarrar em manobras.",
       "pros": [
         "Bancos dianteiros de 12 posições, macios e suportivos (ADAC 1,9)",
         "Habitáculo dos mais silenciosos: 64,4 dB(A) a 130 km/h",
@@ -159,7 +173,8 @@
         "autocar-polestar4",
         "rac-polestar4",
         "roadandtrack-polestar4",
-        "insideevs-polestar4"
+        "insideevs-polestar4",
+        "autotrader-polestar4"
       ]
     },
     "brand": {
@@ -473,7 +488,7 @@
     },
     {
       "id": "adac-polestar-4",
-      "label": "ADAC — autoteste ao Polestar 4 Long Range Single Motor (Federung 2,3 · Sitze 1,9 · Innengeräusch 1,9 · 64,4 dB(A) a 130 km/h)",
+      "label": "ADAC — autoteste ao Polestar 4 Long Range Single Motor (Federung 2,3 · Sitze 1,9 · Innengeräusch 1,9 · 64,4 dB(A) a 130 km/h, com amortecedores ZF adaptativos e jantes de 21\")",
       "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/AT6482-polestar-4-long-range-single-motor/polestar-4-long-range-single-motor.pdf",
       "type": "press"
     },
@@ -583,6 +598,12 @@
       "id": "insideevs-polestar4",
       "label": "InsideEVs — 2026 Polestar 4 review",
       "url": "https://insideevs.com/reviews/786314/2026-polestar-4-review",
+      "type": "press"
+    },
+    {
+      "id": "autotrader-polestar4",
+      "label": "Autotrader — Polestar 4 SUV review (2026)",
+      "url": "https://www.autotrader.co.uk/content/car-reviews/polestar-4-suv-review-2026",
       "type": "press"
     }
   ]

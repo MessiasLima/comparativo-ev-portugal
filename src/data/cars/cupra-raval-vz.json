@@ -138,10 +138,23 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 6.9,
         "seats": 7.4,
         "acoustics": 7.9,
         "drivetrainCalibration": 7.2
+      },
+      "suspensionBasis": {
+        "dampers": "adaptive",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "estimate",
+            "federung": 2.7,
+            "dampers": "adaptive",
+            "wheelInches": 19,
+            "sourceId": "km77-raval",
+            "note": "Sem autoteste. Acerto desportivo com DCC e pneus 235/40 R19: a km77 considera-o mais firme do que o VW ID. Polo e a imprensa aponta secura em cidade mesmo em Comfort, apesar do controlo de carroçaria exemplar."
+          }
+        ]
       },
       "summary": "O Raval VZ combina suspensão desportiva, amortecedores adaptativos (DCC) com 15 níveis e jantes de 19\" com pneus 235/40. O modo Comfort suaviza o suficiente para o uso urbano, mas o acerto continua firme e os buracos sentem-se com secura, sobretudo em Sport; em troca, o controlo de carroçaria é exemplar. A km77, que o comparou diretamente com o VW ID. Polo, conclui que o Raval é o mais firme dos dois e que o alemão isola melhor as irregularidades. Os bancos tipo baquet seguram muito bem o condutor, penalizando quem é de maior corpulência, e o banco traseiro é apertado e de costas duras. A insonorização surpreende pela positiva, com o habitáculo sereno a velocidade de autoestrada e apenas algum ruído de pneus; o acelerador é progressivo e a travagem bem conjugada, embora a mordida inicial seja forte e o one-pedal possa sacudir a velocidades mais altas.",
       "pros": [

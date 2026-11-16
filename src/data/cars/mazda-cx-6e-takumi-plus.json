@@ -122,10 +122,23 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 6.6,
         "seats": 8.0,
         "acoustics": 8.5,
         "drivetrainCalibration": 7.1
+      },
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 21,
+        "references": [
+          {
+            "protocol": "estimate",
+            "federung": 2.6,
+            "dampers": "passive",
+            "wheelInches": 19,
+            "sourceId": "adac-cx-6e",
+            "note": "Sem autoteste. Parte do Mazda 6e (2,3 no ADAC, mesma plataforma e jantes de 19\") e penaliza 0,3 porque o ADAC, no primeiro contacto, considera o chassis do CX-6e desnecessariamente duro."
+          }
+        ]
       },
       "summary": "As jantes de 21\" com pneus 255/40 são a montagem mais desportiva da gama e a que mais penaliza o conforto. O ADAC, na primeira tomada de contacto, considera o chassis desnecessariamente duro e nota que são precisamente estas jantes que transmitem as irregularidades com mais nitidez. Em autoestrada o CX-6e mantém-se estável, mas em cidade a suspensão passiva reage com secura a juntas, tampas de esgoto e asfalto degradado, com impactos curtos e mais ruído de rolamento. Os bancos são firmes e bem conformados, com apoio lombar ajustável e aquecimento também atrás; condutores altos podem achar a posição demasiado elevada. A insonorização continua excelente, com vidros dianteiros laminados e retrovisores digitais. O acelerador é suave e o travão progressivo, mas a regeneração ajusta-se no ecrã e não há one-pedal.",
       "pros": [

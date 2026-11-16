@@ -1,4 +1,5 @@
 import type { Car } from "@/data/types"
+import { withSuspensionScore } from "@/lib/comfort"
 import bydSealDesign from "./byd-seal-design.json"
 import bydSeal from "./byd-seal-excellence-awd.json"
 import cupraRaval from "./cupra-raval-vz.json"
@@ -35,7 +36,7 @@ import xpengG6AwdPerformanceBlackEdition from "./xpeng-g6-awd-performance-black-
  * Para adicionar um carro: criar o JSON nesta pasta e importá-lo aqui.
  * As notas, o ranking e o custo por ponto são calculados automaticamente.
  */
-export const CARS = [
+export const CARS = ([
   cupraRaval,
   cupraTavascanDrive,
   cupraTavascanBase,
@@ -66,4 +67,4 @@ export const CARS = [
   xpengG6RwdLongRange,
   xpengG6AwdPerformance,
   xpengG6AwdPerformanceBlackEdition,
-] as unknown as Car[]
+] as unknown as Car[]).map(withSuspensionScore)
