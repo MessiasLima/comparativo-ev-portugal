@@ -103,10 +103,10 @@
   "reviews": {
     "interior": {
       "assessment": {
-        "softTouch": 7.8,
-        "upholstery": 6.8,
+        "softTouch": 8,
+        "upholstery": 7.3,
         "design": 7.8,
-        "assembly": 8.3,
+        "assembly": 8.2,
         "hardPlastic": "moderate"
       },
       "summary": "A XPENG diz ter retrabalhado cerca de 60% das superfícies do habitáculo no facelift e os ensaios confirmam a melhoria: a Auto Express diz que o tablier usa materiais melhores, a Auto Zeitung não encontra grandes áreas de plástico duro e o Wheels Alive descreve superfícies macias e um acabamento de qualidade muito alta, sem ruídos. A montagem é elogiada pelo electrive (\"todas as peças muito bem encaixadas\") e o ADAC já classificava a versão anterior como impecável, com plástico duro apenas nos bolsos inferiores das portas. Há críticas: o electrive diz que o friso imitação madeira soa a plástico barato, a Futura-Sciences nota que alguns plásticos continuam frágeis, o EV Powered aponta um inserto do tablier pouco sólido e não há porta-luvas. Nesta versão o configurador indica bancos \"em pele\", que o TopGear.nl e o Electrifying descrevem como pele sintética nas versões de entrada; a napa e a massagem ficam reservadas à Long Range e à AWD. O tejadilho é forrado a camurça sintética e há iluminação ambiente.",
@@ -138,8 +138,8 @@
     },
     "comfort": {
       "assessment": {
-        "suspension": 7.1,
-        "seats": 7.5,
+        "suspension": 7.2,
+        "seats": 7.8,
         "acoustics": 8,
         "drivetrainCalibration": 7.3
       },
