@@ -3,9 +3,20 @@ import type { CriterionId } from "@/data/types"
 
 export const WEIGHTS_STORAGE_KEY = "comparativo-ev-portugal:weights:v2"
 export const DEFAULT_WEIGHT = 1
-export const MIN_WEIGHT = 0
-export const MAX_WEIGHT = 2
-export const WEIGHT_STEP = 0.1
+
+export interface WeightLevel {
+  value: number
+  label: string
+}
+
+/** Únicos pesos que o utilizador pode escolher, do menos ao mais importante. */
+export const WEIGHT_LEVELS: WeightLevel[] = [
+  { value: 0, label: "Não me importa" },
+  { value: 0.5, label: "Importa-me pouco" },
+  { value: 1, label: "Importa-me moderadamente" },
+  { value: 2, label: "Importa-me muito" },
+  { value: 3, label: "Extremamente importante. Indispensável" },
+]
 
 export type WeightMap = Record<CriterionId, number>
 
@@ -15,9 +26,16 @@ export const DEFAULT_WEIGHTS = Object.fromEntries(
   CRITERION_IDS.map((id) => [id, DEFAULT_WEIGHT]),
 ) as WeightMap
 
-export function clampWeight(value: number): number {
-  const rounded = Math.round(value * 10) / 10
-  return Math.min(MAX_WEIGHT, Math.max(MIN_WEIGHT, rounded))
+/**
+ * Aproxima um peso ao nível mais próximo. Converte os pesos guardados com o
+ * slider antigo (0 a 2, passo 0.1) sem perder a personalização.
+ */
+export function snapWeight(value: number): number {
+  return WEIGHT_LEVELS.reduce((closest, level) =>
+    Math.abs(level.value - value) < Math.abs(closest.value - value)
+      ? level
+      : closest,
+  ).value
 }
 
 export function loadWeights(): WeightMap {
@@ -35,7 +53,7 @@ export function loadWeights(): WeightMap {
     for (const id of CRITERION_IDS) {
       const value = parsed?.[id]
       if (typeof value === "number" && Number.isFinite(value)) {
-        weights[id] = clampWeight(value)
+        weights[id] = snapWeight(value)
       }
     }
 
@@ -55,8 +73,8 @@ export function saveWeights(weights: WeightMap): void {
   }
 }
 
-// Cada peso é um multiplicador (0–2) da nota do critério: 1 mantém o peso
-// base, 2 duplica-o e 0 anula o critério. A média ponderada normaliza pela
+// Cada peso é um multiplicador da nota do critério (um dos WEIGHT_LEVELS):
+// 1 mantém o peso base, 3 triplica-o e 0 anula o critério. A média ponderada normaliza pela
 // soma dos multiplicadores, pelo que com todos a 1 resulta na média simples.
 export function weightedAverage(
   scores: Record<CriterionId, number>,
