@@ -1,7 +1,7 @@
 import { CRITERIA } from "@/data/criteria"
 import type { CriterionId } from "@/data/types"
 
-export const WEIGHTS_STORAGE_KEY = "comparativo-ev-portugal:weights:v2"
+export const WEIGHTS_STORAGE_KEY = "comparativo-ev-portugal:weights:v3"
 export const DEFAULT_WEIGHT = 1
 
 export interface WeightLevel {
@@ -26,16 +26,8 @@ export const DEFAULT_WEIGHTS = Object.fromEntries(
   CRITERION_IDS.map((id) => [id, DEFAULT_WEIGHT]),
 ) as WeightMap
 
-/**
- * Aproxima um peso ao nível mais próximo. Converte os pesos guardados com o
- * slider antigo (0 a 2, passo 0.1) sem perder a personalização.
- */
-export function snapWeight(value: number): number {
-  return WEIGHT_LEVELS.reduce((closest, level) =>
-    Math.abs(level.value - value) < Math.abs(closest.value - value)
-      ? level
-      : closest,
-  ).value
+function isWeightLevel(value: unknown): value is number {
+  return WEIGHT_LEVELS.some((level) => level.value === value)
 }
 
 export function loadWeights(): WeightMap {
@@ -52,9 +44,8 @@ export function loadWeights(): WeightMap {
 
     for (const id of CRITERION_IDS) {
       const value = parsed?.[id]
-      if (typeof value === "number" && Number.isFinite(value)) {
-        weights[id] = snapWeight(value)
-      }
+      // Um valor que não seja um dos níveis fica no peso por defeito.
+      if (isWeightLevel(value)) weights[id] = value
     }
 
     return weights
