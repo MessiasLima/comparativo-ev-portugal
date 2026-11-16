@@ -21,6 +21,14 @@ import teslaModelYStandard from "./tesla-model-y-standard.json"
 import teslaModelYPremiumLongRangeRwd from "./tesla-model-y-premium-long-range-rwd.json"
 import teslaModelYPremiumLongRangeAwd from "./tesla-model-y-premium-long-range-awd.json"
 import teslaModelYPerformance from "./tesla-model-y-performance.json"
+import xpengL03RwdStandardRange from "./xpeng-l03-rwd-standard-range.json"
+import xpengL03RwdLongRange from "./xpeng-l03-rwd-long-range.json"
+import xpengL03RwdLongRangeUltra from "./xpeng-l03-rwd-long-range-ultra.json"
+import xpengL03AwdPerformanceUltra from "./xpeng-l03-awd-performance-ultra.json"
+import xpengG6RwdStandardRange from "./xpeng-g6-rwd-standard-range.json"
+import xpengG6RwdLongRange from "./xpeng-g6-rwd-long-range.json"
+import xpengG6AwdPerformance from "./xpeng-g6-awd-performance.json"
+import xpengG6AwdPerformanceBlackEdition from "./xpeng-g6-awd-performance-black-edition.json"
 
 /**
  * Registo dos carros do comparativo.
@@ -50,4 +58,12 @@ export const CARS = [
   teslaModelYPremiumLongRangeRwd,
   teslaModelYPremiumLongRangeAwd,
   teslaModelYPerformance,
+  xpengL03RwdStandardRange,
+  xpengL03RwdLongRange,
+  xpengL03RwdLongRangeUltra,
+  xpengL03AwdPerformanceUltra,
+  xpengG6RwdStandardRange,
+  xpengG6RwdLongRange,
+  xpengG6AwdPerformance,
+  xpengG6AwdPerformanceBlackEdition,
 ] as unknown as Car[]
