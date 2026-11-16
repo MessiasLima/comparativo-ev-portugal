@@ -10,6 +10,7 @@ import type {
   EditorialReview,
 } from "@/data/types"
 import { formatDecimal, formatScore } from "@/lib/format"
+import { rankByTotal } from "@/lib/ranking"
 import {
   HARD_PLASTIC_LABELS,
   interiorScore,
@@ -167,13 +168,12 @@ function rankValues(values: number[], higherIsBetter: boolean): number[] {
 }
 
 function rankTotals(cars: ScoredCar[]): void {
-  const sorted = [...cars].sort((a, b) => b.total - a.total)
-  let rank = 1
-  sorted.forEach((car, index) => {
-    if (index > 0 && sorted[index - 1].total - car.total > 0.000001) {
-      rank = index + 1
-    }
-    car.rank = rank
+  const ranks = rankByTotal(cars, (car) => ({
+    total: car.total,
+    price: car.car.price.amount,
+  }))
+  cars.forEach((car) => {
+    car.rank = ranks.get(car) ?? cars.length
   })
 }
 

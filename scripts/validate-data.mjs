@@ -377,7 +377,12 @@ const scored = cars.map(({ data: car }) => {
   return { car, score, pricePerPoint: car.price.amount / score }
 })
 
-const byScore = [...scored].sort((a, b) => b.score - a.score)
+// Mesmo desempate de src/lib/ranking.ts: com a mesma nota, o mais barato fica à frente.
+const byScore = [...scored].sort((a, b) =>
+  Math.abs(a.score - b.score) > 0.000001
+    ? b.score - a.score
+    : a.car.price.amount - b.car.price.amount,
+)
 const byValue = [...scored].sort((a, b) => a.pricePerPoint - b.pricePerPoint)
 
 console.log(`\nDados válidos: ${cars.length} carros, ${equipmentIds.length} equipamentos.\n`)

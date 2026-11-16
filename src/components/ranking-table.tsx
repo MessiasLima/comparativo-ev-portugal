@@ -27,6 +27,7 @@ import { CRITERIA } from "@/data/criteria"
 import type { CriterionDefinition, CriterionId } from "@/data/types"
 import { formatCarName, formatEuro, formatScore } from "@/lib/format"
 import { useWeights } from "@/hooks/use-weights"
+import { rankByTotal } from "@/lib/ranking"
 import { weightedAverage } from "@/lib/weights"
 import { ScoreCell } from "@/components/score"
 
@@ -231,13 +232,9 @@ export function RankingTable({
       }
     })
 
-    const byTotal = [...scored].sort((a, b) => b.total - a.total)
-    let rank = 1
-    byTotal.forEach((row, index) => {
-      if (index > 0 && byTotal[index - 1].total - row.total > 0.000001) {
-        rank = index + 1
-      }
-      row.rank = rank
+    const ranks = rankByTotal(scored, (row) => row)
+    scored.forEach((row) => {
+      row.rank = ranks.get(row) ?? scored.length
     })
 
     const byValue = [...scored].sort(
@@ -259,22 +256,22 @@ export function RankingTable({
 
   const sortedRows = useMemo(() => {
     return [...weightedRows].sort((a, b) => {
+      if (sort.key === "total") {
+        // A posição já inclui o desempate pelo preço.
+        return sort.direction === "desc" ? a.rank - b.rank : b.rank - a.rank
+      }
       const aValue =
-        sort.key === "total"
-          ? a.total
-          : sort.key === "price"
-            ? a.price
-            : sort.key === "pricePerPoint"
-              ? a.pricePerPoint
-              : a.scores[sort.key]
+        sort.key === "price"
+          ? a.price
+          : sort.key === "pricePerPoint"
+            ? a.pricePerPoint
+            : a.scores[sort.key]
       const bValue =
-        sort.key === "total"
-          ? b.total
-          : sort.key === "price"
-            ? b.price
-            : sort.key === "pricePerPoint"
-              ? b.pricePerPoint
-              : b.scores[sort.key]
+        sort.key === "price"
+          ? b.price
+          : sort.key === "pricePerPoint"
+            ? b.pricePerPoint
+            : b.scores[sort.key]
 
       return sort.direction === "asc" ? aValue - bValue : bValue - aValue
     })

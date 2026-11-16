@@ -6,6 +6,7 @@ import { EQUIPMENT_CHECKLIST } from "@/data/equipment"
 import type { CriterionId } from "@/data/types"
 import { formatEuro, formatScore } from "@/lib/format"
 import { useWeights } from "@/hooks/use-weights"
+import { rankByTotal } from "@/lib/ranking"
 import { weightedAverage } from "@/lib/weights"
 
 export interface ScoreCar {
@@ -35,12 +36,11 @@ export function WeightedScorePanel({
       pricePerPoint: total > 0 ? car.price / total : 0,
     }
   })
-  const byTotal = [...scored].sort((a, b) => b.total - a.total)
   const byValue = [...scored].sort(
     (a, b) => a.pricePerPoint - b.pricePerPoint,
   )
   const current = scored.find((car) => car.id === carId) ?? scored[0]
-  const rank = byTotal.findIndex((car) => car.id === carId) + 1
+  const rank = rankByTotal(scored, (car) => car).get(current) ?? scored.length
   const valueRank = byValue.findIndex((car) => car.id === carId) + 1
 
   return (
