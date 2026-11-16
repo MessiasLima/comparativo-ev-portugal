@@ -165,7 +165,7 @@
         "financialStability": 5,
         "portugalFactory": false
       },
-      "summary": "A XPENG foi fundada em 2014 e o primeiro modelo de série, o G3, entrou em produção em novembro de 2018, o que dá cerca de oito anos como marca automóvel autónoma. Está em Portugal desde setembro de 2024, através da Salvador Caetano, e a rede indicada em janeiro de 2026 tinha 13 pontos de venda; a Caetano disponibiliza marcação de oficinas XPENG, mas o diretório consultado não lista os locais nem permite contar as oficinas autorizadas. Na Europa, o G6, o G9 e o P7+ são montados em regime SKD na Magna Steyr, em Graz, mas as fontes indicam produção do L03 na China (Zhaoqing) e na Indonésia. Não tem empresa-mãe: He Xiaopeng é o acionista de controlo, a Volkswagen detém 4,99% e licencia tecnologia à marca. A XPENG fechou 2025 com receita de 76,72 mil milhões de yuan e prejuízo líquido de 1,14 mil milhões, sendo o 4.º trimestre de 2025 o primeiro com lucro líquido; seguiram-se prejuízos de 1,78 mil milhões no 1.º trimestre e 1,34 mil milhões no 2.º trimestre de 2026, com margem automóvel de 12,1%. Os resultados do 3.º trimestre de 2026 estavam agendados para 16/11/2026 e não foram consultados.",
+      "summary": "A XPENG foi fundada em 2014 e o primeiro modelo de série, o G3, entrou em produção em novembro de 2018, o que dá cerca de oito anos como marca automóvel autónoma. Está em Portugal desde setembro de 2024, através da Salvador Caetano, e a rede chegou a 15 pontos de venda em abril de 2026; a Caetano disponibiliza marcação de oficinas XPENG, mas o diretório consultado não lista os locais nem permite contar as oficinas autorizadas. Na Europa, o G6, o G9 e o P7+ são montados em regime SKD na Magna Steyr, em Graz, mas as fontes indicam produção do L03 na China (Zhaoqing) e na Indonésia. Não tem empresa-mãe: He Xiaopeng é o acionista de controlo, a Volkswagen detém 4,99% e licencia tecnologia à marca. A XPENG fechou 2025 com receita de 76,72 mil milhões de yuan e prejuízo líquido de 1,14 mil milhões, sendo o 4.º trimestre de 2025 o primeiro com lucro líquido; seguiram-se prejuízos de 1,78 mil milhões no 1.º trimestre e 1,34 mil milhões no 2.º trimestre de 2026, com margem automóvel de 12,1%. No 3.º trimestre de 2026, a receita subiu para 24,28 mil milhões de yuan, com margem automóvel de 13,1%, e o prejuízo líquido desceu para 0,87 mil milhões.",
       "pros": [
         "Mais de 429.000 veículos entregues em 2025, com escala industrial própria",
         "Montagem europeia em série na Magna Steyr, em Graz, para outros modelos da marca",
@@ -173,7 +173,7 @@
       ],
       "cons": [
         "Presença oficial em Portugal desde setembro de 2024",
-        "Prejuízos líquidos nos 1.º e 2.º trimestres de 2026 (1,78 e 1,34 mil milhões de yuan)",
+        "Prejuízos líquidos nos três primeiros trimestres de 2026 (1,78, 1,34 e 0,87 mil milhões de yuan)",
         "Rede de oficinas autorizadas por confirmar: o diretório consultado não as lista"
       ],
       "sourceIds": [
@@ -182,7 +182,9 @@
         "electrive-magna",
         "cnevpost-xpeng",
         "caetano-oficinas",
-        "caetano-l03"
+        "caetano-l03",
+        "automonitor-xpeng-2026",
+        "sec-xpeng-q3-2026"
       ]
     },
     "equipment": {
@@ -398,7 +400,7 @@
       },
       {
         "title": "Propriedade e assistência",
-        "body": "A garantia do veículo é de 5 anos ou 120.000 km e a da bateria de alta tensão de 8 anos ou 160.000 km. A XPENG está em Portugal desde setembro de 2024, através da Salvador Caetano, com 13 pontos de venda indicados em janeiro de 2026. As fontes indicam produção do L03 na China (Zhaoqing) e na Indonésia, sem confirmar montagem europeia em Graz, que a marca usa para outros modelos. Ainda não há avaliação Euro NCAP do L03."
+        "body": "A garantia do veículo é de 5 anos ou 120.000 km e a da bateria de alta tensão de 8 anos ou 160.000 km. A XPENG está em Portugal desde setembro de 2024, através da Salvador Caetano, com 15 pontos de venda em abril de 2026. As fontes indicam produção do L03 na China (Zhaoqing) e na Indonésia, sem confirmar montagem europeia em Graz, que a marca usa para outros modelos. Ainda não há avaliação Euro NCAP do L03."
       },
       {
         "title": "Configuração avaliada",
@@ -556,6 +558,18 @@
       "label": "CnEVPost — XPENG: resultados do 2.º trimestre de 2026 e calendário do 3.º trimestre",
       "url": "https://cnevpost.com/2026/11/02/xpeng-q3-2026-results-nov-16/",
       "type": "press"
+    },
+    {
+      "id": "automonitor-xpeng-2026",
+      "label": "Automonitor — XPENG abre novo espaço em Cascais e chega a 15 pontos de venda (17/04/2026)",
+      "url": "https://automonitor.pt/ha-uma-marca-eletrica-a-ganhar-forca-em-portugal-e-acaba-de-dar-novo-passo/",
+      "type": "press"
+    },
+    {
+      "id": "sec-xpeng-q3-2026",
+      "label": "XPENG — resultados do 3.º trimestre de 2026 (formulário 6-K, 16/11/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001810997/000119312526461897/d182197dex991.htm",
+      "type": "official"
     }
   ]
 }
