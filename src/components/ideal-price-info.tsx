@@ -70,8 +70,8 @@ function IdealPriceTooltip({
       </p>
       <p className="mt-2 text-xs text-muted-foreground">
         {customized
-          ? "Calculado com os seus pesos personalizados."
-          : "Calculado com pesos iguais."}
+          ? "Calculado com as suas prioridades."
+          : "Calculado com todos os critérios a contar igual."}
       </p>
     </div>,
     document.body,

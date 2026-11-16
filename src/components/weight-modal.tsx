@@ -13,6 +13,38 @@ import {
   type WeightMap,
 } from "@/lib/weights"
 
+// Uma cor por nível, por ordem de WEIGHT_LEVELS. "Não me importa" é cinzento
+// (desligado); daí em diante é o verde da marca cada vez mais intenso, para
+// que mais importância se leia como "mais", nunca como alerta.
+// `dot` marca os botões não escolhidos.
+const LEVEL_STYLES = [
+  {
+    selected: "border-stone-400 bg-stone-200 text-stone-700",
+    hover: "hover:border-stone-400",
+    dot: "bg-stone-300 ring-1 ring-stone-400",
+  },
+  {
+    selected: "border-forest/25 bg-lime/35 text-forest",
+    hover: "hover:border-forest/40",
+    dot: "bg-lime/60 ring-1 ring-forest/30",
+  },
+  {
+    selected: "border-forest/40 bg-lime text-ink",
+    hover: "hover:border-forest/60",
+    dot: "bg-lime ring-1 ring-forest/40",
+  },
+  {
+    selected: "border-emerald-700 bg-emerald-700 text-white",
+    hover: "hover:border-emerald-700",
+    dot: "bg-emerald-700",
+  },
+  {
+    selected: "border-forest bg-forest text-lime",
+    hover: "hover:border-forest",
+    dot: "bg-forest",
+  },
+]
+
 export interface WeightCriterion {
   id: CriterionId
   label: string
@@ -86,13 +118,13 @@ export function WeightModal({
             </span>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-copper">
-                Configuração
+                Prioridades
               </p>
               <h2
                 id="weights-modal-title"
                 className="mt-1 font-heading text-xl font-semibold tracking-[-0.02em]"
               >
-                Pesos das notas
+                O que é importante para si?
               </h2>
               <p className="mt-1 max-w-lg text-sm leading-6 text-muted-foreground">
                 Escolha quanto lhe importa cada critério. A nota global, o
@@ -105,7 +137,7 @@ export function WeightModal({
             ref={closeButtonRef}
             type="button"
             onClick={cancel}
-            aria-label="Fechar configuração de pesos"
+            aria-label="Fechar sem aplicar"
             className="grid size-9 shrink-0 place-items-center rounded-full border border-line text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <X className="size-4" />
@@ -116,8 +148,8 @@ export function WeightModal({
           <div className="flex items-center justify-between gap-3 border-b border-line pb-3 text-sm text-muted-foreground">
             <span>
               {allEqual
-                ? "Pesos iguais em todos os critérios"
-                : "Pesos personalizados"}
+                ? "Todos os critérios contam igual"
+                : "Prioridades personalizadas"}
             </span>
             {pending ? (
               <span className="text-xs font-medium uppercase tracking-[0.14em] text-copper">
@@ -154,6 +186,7 @@ export function WeightModal({
                   >
                     {WEIGHT_LEVELS.map((level, index) => {
                       const selected = value === level.value
+                      const style = LEVEL_STYLES[index]
                       return (
                         <button
                           key={level.value}
@@ -167,14 +200,26 @@ export function WeightModal({
                             }))
                           }
                           className={cn(
-                            "min-h-9 rounded-xl border px-2 py-1.5 text-xs leading-snug font-medium transition-colors",
+                            "inline-flex min-h-9 items-center justify-center gap-1.5 rounded-xl border px-2 py-1.5 text-xs leading-snug font-medium transition-colors",
                             index === WEIGHT_LEVELS.length - 1 &&
                               "col-span-2 sm:col-span-1",
                             selected
-                              ? "border-forest bg-forest text-paper"
-                              : "border-line bg-card text-muted-foreground hover:bg-muted hover:text-foreground",
+                              ? style.selected
+                              : cn(
+                                  "border-line bg-card text-muted-foreground hover:text-foreground",
+                                  style.hover,
+                                ),
                           )}
                         >
+                          {selected ? null : (
+                            <span
+                              aria-hidden="true"
+                              className={cn(
+                                "size-2 shrink-0 rounded-full",
+                                style.dot,
+                              )}
+                            />
+                          )}
                           {level.label}
                         </button>
                       )

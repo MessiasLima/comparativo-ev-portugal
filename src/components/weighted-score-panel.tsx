@@ -66,7 +66,7 @@ export function WeightedScorePanel({
         </p>
         {customized ? (
           <p className="mt-2 text-xs font-medium uppercase tracking-[0.16em] text-lime/90">
-            Pesos personalizados
+            Prioridades personalizadas
           </p>
         ) : null}
       </div>

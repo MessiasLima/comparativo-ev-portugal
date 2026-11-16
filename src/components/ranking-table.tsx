@@ -367,8 +367,7 @@ export function RankingTable({
             <button
               type="button"
               onClick={() => setWeightModalOpen(true)}
-              aria-label="Configurar pesos das notas"
-              title="Configurar pesos das notas"
+              title="Escolher quanto importa cada critério na nota global"
               className={cn(
                 "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-colors",
                 customized
@@ -377,7 +376,7 @@ export function RankingTable({
               )}
             >
               <Settings2 className="size-4" />
-              Pesos
+              Ajustar prioridades
               {customized ? (
                 <span className="size-1.5 rounded-full bg-forest" />
               ) : null}
@@ -392,7 +391,11 @@ export function RankingTable({
             · {directionLabel}
           </span>
           <span className="text-line">/</span>
-          <span>{customized ? "Pesos personalizados" : "Pesos iguais"}</span>
+          <span>
+            {customized
+              ? "Prioridades personalizadas"
+              : "Todos os critérios contam igual"}
+          </span>
           <span className="text-line">/</span>
           <span className="xl:hidden">Deslize para ver todas as colunas →</span>
         </div>
@@ -567,7 +570,7 @@ export function RankingTable({
         <p>
           <span className="font-medium text-foreground">Nota global</span> = média
           ponderada dos {CRITERIA.length} critérios, ajustável em{" "}
-          <span className="font-medium text-foreground">Pesos</span> ·{" "}
+          <span className="font-medium text-foreground">Ajustar prioridades</span> ·{" "}
           <span className="font-medium text-foreground">€/ponto</span> = preço ÷
           nota global · o{" "}
           <span className="font-medium text-foreground">#</span> é a posição na

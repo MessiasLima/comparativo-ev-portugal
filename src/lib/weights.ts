@@ -15,7 +15,7 @@ export const WEIGHT_LEVELS: WeightLevel[] = [
   { value: 0.5, label: "Importa-me pouco" },
   { value: 1, label: "Importa-me moderadamente" },
   { value: 2, label: "Importa-me muito" },
-  { value: 3, label: "Extremamente importante. Indispensável" },
+  { value: 3, label: "Extremamente importante" },
 ]
 
 export type WeightMap = Record<CriterionId, number>
