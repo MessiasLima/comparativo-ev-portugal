@@ -1,0 +1,485 @@
+{
+  "id": "tesla-model-y-standard",
+  "slug": "tesla-model-y-standard",
+  "brand": "Tesla",
+  "model": "Model Y",
+  "variant": "Standard",
+  "version": "Standard 60 kWh (tração traseira)",
+  "year": 2026,
+  "segment": "SUV elétrico",
+  "tagline": "A porta de entrada no Model Y: 525 km WLTP, 299 cv e 952 L de carga total, com o essencial da experiência Tesla.",
+  "accent": "copper",
+  "price": {
+    "amount": 41975.18,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-11-16",
+    "note": "PVP de 40.990 € em Portugal Continental, com pintura Cinzento Furtivo, jantes Aperture de 18\", interior totalmente preto, cinco lugares, Autopilot e avaliação de 30 dias do pacote Conetividade Premium incluídos. Acrescem 980 € de despesas de documentação e transporte e 5 € de taxa para pneus, resultando em 41.975,18 € com IVA (7.849,02 €). Oferta não vinculativa válida até 16/11/2026.",
+    "sourceId": "tesla-offer-standard"
+  },
+  "specs": {
+    "powerKw": 220,
+    "powerHp": 299,
+    "torqueNm": 420,
+    "drivetrain": "Tração traseira (RWD)",
+    "acceleration0100": 7.2,
+    "topSpeedKmh": 201,
+    "batteryKwh": 64,
+    "usableBatteryKwh": 60,
+    "batteryChemistry": "LFP, 400 V (CATL 6M)",
+    "rangeKm": 525,
+    "consumptionKwh100": 14,
+    "weightKg": 1906,
+    "grossWeightKg": 2416,
+    "lengthMm": 4794,
+    "widthMm": 1982,
+    "heightMm": 1621,
+    "wheelbaseMm": 2890,
+    "bootL": 835,
+    "frunkL": 117,
+    "seats": 5,
+    "doors": 5,
+    "towingBrakedKg": 1600
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 175,
+    "dcTime1080Min": 24,
+    "connector": "CCS2",
+    "v2l": false,
+    "v2h": false
+  },
+  "warranty": {
+    "vehicle": "4 anos / 80.000 km",
+    "battery": "8 anos / 160.000 km (SOH ≥ 70%)",
+    "note": "Garantia básica do veículo de 4 anos ou 80.000 km e garantia da bateria e unidade de acionamento de 8 anos ou 160.000 km, o que ocorrer primeiro, com retenção mínima de 70% da capacidade. A Tesla não impõe um plano de manutenção periódica fixo; as verificações são condicionadas ao uso e comunicadas através da aplicação. Confirmar os termos aplicáveis à encomenda."
+  },
+  "equipmentIncluded": [
+    "acc",
+    "lane-keep",
+    "blind-spot",
+    "aeb",
+    "traffic-sign",
+    "driver-monitor",
+    "parking-sensors",
+    "adaptive-high-beam",
+    "heated-seats",
+    "heated-steering",
+    "climate-2zone",
+    "heat-pump",
+    "wireless-charging",
+    "large-screen",
+    "connected-services",
+    "ota",
+    "digital-key",
+    "electric-tailgate",
+    "frunk",
+    "rear-usb"
+  ],
+  "options": [],
+  "reviews": {
+    "interior": {
+      "assessment": {
+        "softTouch": 5.5,
+        "upholstery": 5,
+        "design": 7.5,
+        "assembly": 6.5,
+        "hardPlastic": "moderate"
+      },
+      "summary": "O interior totalmente preto é a cabine mais simples da gama Model Y: bancos com revestimento têxtil, forro rígido no lugar do teto panorâmico, plásticos duros nas portas e na parte inferior da consola, e ausência de ecrã traseiro e de iluminação ambiente. O ecrã central de 16\" concentra quase todas as funções e o desenho mantém a limpeza habitual da Tesla, mas o ambiente é claramente menos rico do que o das versões Premium. A montagem é sólida; ainda assim, proprietários de unidades recentes relatam ruídos parasitas no tablier e nos painéis das portas.",
+      "pros": [
+        "Tablier e apoios de braço com superfícies macias",
+        "Ecrã central de 16\" rápido e bem integrado",
+        "Posição de condução fácil de encontrar e habitáculo silencioso"
+      ],
+      "cons": [
+        "Bancos com revestimento têxtil e plástico duro nas portas",
+        "Sem teto panorâmico, iluminação ambiente e ecrã traseiro",
+        "Ruídos parasitas relatados em unidades recentes"
+      ],
+      "sourceIds": [
+        "tesla-modely",
+        "adac-modely-standard",
+        "tslcheck",
+        "abstractocean",
+        "reddit-suspension",
+        "kbb-modely"
+      ]
+    },
+    "comfort": {
+      "assessment": {
+        "suspension": 7.2,
+        "seats": 7.2,
+        "acoustics": 7.6,
+        "drivetrainCalibration": 8.4
+      },
+      "summary": "A Standard usa amortecedores passivos e jantes Aperture de 18\". O acerto é firme: controla bem o corpo em autoestrada, mas sente-se seco em piso urbano degradado, com impactos curtos e algum patter. Os bancos dianteiros são aquecidos, mas têm regulação mais limitada e não têm memória nem ventilação; o banco traseiro é pouco generoso em apoio e o piso é elevado. A insonorização é boa para o segmento, com 65,2 dB(A) a 130 km/h no autoteste do ADAC, ainda que o ruído de rolamento apareça em asfalto rugoso. O one-pedal é suave e previsível, mas a regeneração não tem níveis ajustáveis.",
+      "pros": [
+        "Amortecedores passivos com bom controlo de carroçaria",
+        "65,2 dB(A) a 130 km/h no autoteste do ADAC",
+        "One-pedal suave e previsível"
+      ],
+      "cons": [
+        "Acerto firme, com impactos secos em piso degradado",
+        "Bancos sem memória nem ventilação",
+        "Ruído de rolamento em asfalto rugoso"
+      ],
+      "sourceIds": [
+        "tesla-offer-standard",
+        "tesla-modely",
+        "adac-modely-standard",
+        "4gnews-modely",
+        "reddit-suspension",
+        "tslcheck"
+      ]
+    },
+    "brand": {
+      "assessment": {
+        "globalBrandAge": 9.5,
+        "portugalMarketTenure": 6,
+        "portugalServiceNetwork": 7,
+        "europeanManufacturing": 8,
+        "establishedGroupSupport": 8.5,
+        "financialStability": 7,
+        "portugalFactory": false
+      },
+      "summary": "A Tesla é uma marca automóvel autónoma desde 2003 e começou a vender oficialmente em Portugal em janeiro de 2017. A rede nacional inclui service centers próprios em Lisboa/Belas e no Porto, assistência móvel e oficinas de carroçaria aprovadas, mas não tem a densidade de uma rede de concessionários tradicional. A produção europeia existe na Gigafactory de Berlim, que monta o Model Y. No terceiro trimestre de 2026 a Tesla registou 28,05 mil milhões de dólares de receita, 787 milhões de lucro líquido (−43% homólogo), margem operacional de 2,6% e 45,4 mil milhões de liquidez: é rentável e tem caixa, mas os resultados e a margem estão sob pressão.",
+      "pros": [
+        "Marca com mais de duas décadas e escala industrial própria",
+        "Presença oficial em Portugal desde 2017 e dois service centers próprios",
+        "Model Y produzido na Europa, na Gigafactory de Berlim"
+      ],
+      "cons": [
+        "Rede de assistência concentrada em Lisboa e no Porto",
+        "Lucro e margem operacional em queda no terceiro trimestre de 2026",
+        "Rede de concessionários menos densa do que a das marcas tradicionais"
+      ],
+      "sourceIds": [
+        "dn-tesla-2017",
+        "dn-service-center-2018",
+        "autofoco-porto-2022",
+        "tesla-contact",
+        "tesla-10q",
+        "tesla-warranty"
+      ]
+    },
+    "equipment": {
+      "summary": "A configuração inclui Autopilot com cruise control adaptativo, manutenção de faixa, travagem automática de emergência e reconhecimento de sinais, além de assistência de estacionamento por visão, máximos automáticos, bancos dianteiros aquecidos, volante aquecido, climatização de duas zonas, bomba de calor, carregamento wireless, ecrã central de 16\", serviços conectados, atualizações OTA, chave digital, porta-bagagens elétrico, frunk de 117 L e USB-C traseiras. Ficam de fora o teto panorâmico, os bancos ventilados, com memória e aquecidos atrás, a iluminação ambiente, o ecrã traseiro, o sistema de som premium e as jantes de 19\".",
+      "pros": [
+        "Autopilot e principais assistências de série",
+        "Bomba de calor, carregamento wireless e chave digital",
+        "Porta-bagagens elétrico e frunk de 117 L"
+      ],
+      "cons": [
+        "Sem teto panorâmico nem iluminação ambiente",
+        "Sem bancos ventilados, com memória ou aquecidos atrás",
+        "Som básico de sete altifalantes e jantes de 18\""
+      ],
+      "sourceIds": [
+        "tesla-modely",
+        "tslcheck",
+        "abstractocean",
+        "tesla-offer-standard"
+      ]
+    },
+    "boot": {
+      "summary": "A bagageira traseira tem 835 L e o compartimento dianteiro 117 L, num total de 952 L com os cinco lugares em uso. O porta-bagagens é elétrico e o frunk tem fundo moldado, mas a abertura traseira é baixa e o piso não é regulável em altura. A Tesla anuncia 835 L medidos até ao teto; o ADAC, com o método VDA e até à linha da janela, mede 420 L, pelo que os dois valores não são diretamente comparáveis.",
+      "pros": [
+        "835 L na bagageira traseira",
+        "117 L no frunk, útil para cabos e sacos pequenos",
+        "Porta-bagagens elétrico de série"
+      ],
+      "cons": [
+        "Abertura da bagageira é baixa para objetos altos",
+        "Piso da bagageira não é regulável em altura",
+        "Sem roda sobressalente; apenas kit de reparação"
+      ],
+      "sourceIds": [
+        "tesla-modely",
+        "evdb-standard",
+        "adac-modely-standard"
+      ]
+    },
+    "sound": {
+      "baseScore": 3,
+      "summary": "O sistema de série tem sete altifalantes, sem assinatura de uma marca de áudio e sem potência publicada; a Tesla não divulga um valor em watts para esta configuração. A imprensa considera-o suficiente e bem equilibrado para o preço, mas nota falta de corpo e de extensão nos graves face ao sistema de 15 altifalantes e um subwoofer das versões Premium. Sem medição de potência, a componente de potência fica na referência neutra.",
+      "pros": [
+        "Sete altifalantes com afinação equilibrada",
+        "Equalizador e som imersivo configuráveis",
+        "Suficiente para uso diário e para o preço da versão"
+      ],
+      "cons": [
+        "Sem marca de áudio e sem potência publicada",
+        "Falta de corpo nos graves face ao sistema Premium",
+        "Sem subwoofer dedicado"
+      ],
+      "sourceIds": [
+        "tesla-modely",
+        "tslcheck",
+        "abstractocean"
+      ]
+    },
+    "range": {
+      "summary": "A Tesla anuncia 525 km WLTP e 14,0 kWh/100 km para a versão de acesso, com bateria LFP de 64 kWh brutos e 60 kWh úteis que pode ser carregada a 100% com regularidade. A EV Database publica 525 km no ciclo TEL e 13,4 kWh/100 km, enquanto o autoteste do ADAC registou 16,4 kWh/100 km e 438 km de autonomia em condições reais. A diferença entre o homologado e o uso real é a habitual num SUV deste tamanho.",
+      "pros": [
+        "525 km WLTP com apenas 60 kWh úteis",
+        "Bateria LFP permite cargas diárias a 100%",
+        "Consumo homologado de 14,0 kWh/100 km"
+      ],
+      "cons": [
+        "Autonomia real em autoestrada fica abaixo do WLTP",
+        "O ADAC mediu 16,4 kWh/100 km e 438 km",
+        "Bateria LFP é mais sensível ao frio"
+      ],
+      "sourceIds": [
+        "tesla-offer-standard",
+        "tesla-modely",
+        "evdb-standard",
+        "adac-modely-standard",
+        "4gnews-modely"
+      ]
+    },
+    "powerToWeight": {
+      "summary": "Os 220 kW (299 cv) e 420 Nm movem 1.906 kg de tara, o que dá cerca de 157 cv/t. A Tesla anuncia 7,2 segundos dos 0 aos 100 km/h e 201 km/h de velocidade máxima; a EV Database confirma os 7,2 s, mas publica 227 kW (309 cv) para esta versão, um valor que o autoteste do ADAC não confirma e que aqui não é usado. O binário está disponível de imediato, mas esta é a versão menos rápida da gama e a tração traseira obriga a dosear o acelerador em piso molhado. O peso de 1.906 kg nota-se nas mudanças de direção.",
+      "pros": [
+        "299 cv e 420 Nm com resposta imediata",
+        "0-100 km/h em 7,2 segundos",
+        "Relação potência/peso de cerca de 157 cv/t"
+      ],
+      "cons": [
+        "Versão menos rápida da gama Model Y",
+        "Tração traseira perde aderência em piso molhado",
+        "Massa de 1.906 kg faz-se sentir em mudanças de direção"
+      ],
+      "sourceIds": [
+        "tesla-offer-standard",
+        "tesla-modely",
+        "evdb-standard",
+        "adac-modely-standard"
+      ]
+    },
+    "efficiency": {
+      "summary": "O consumo combinado WLTP é 14,0 kWh/100 km. A EV Database publica 13,4 kWh/100 km no ciclo TEL para a mesma versão e 15,8 kWh/100 km de consumo real combinado, enquanto o ADAC mediu 16,4 kWh/100 km no seu percurso de teste. As jantes de 18\" e a bateria LFP ajudam a conter o consumo em cidade, mas a altura da carroçaria penaliza a autoestrada.",
+      "pros": [
+        "14,0 kWh/100 km homologados",
+        "Jantes de 18\" de menor resistência ao rolamento",
+        "Boa eficiência urbana para um SUV de 1.906 kg"
+      ],
+      "cons": [
+        "Consumo real em autoestrada sobe com a velocidade",
+        "O ADAC mediu 16,4 kWh/100 km",
+        "Bateria LFP perde eficiência com frio intenso"
+      ],
+      "sourceIds": [
+        "tesla-modely",
+        "evdb-standard",
+        "adac-modely-standard",
+        "4gnews-modely"
+      ]
+    },
+    "charging": {
+      "summary": "Carrega a 11 kW em corrente alternada e até 175 kW em corrente contínua, com 10–80% em cerca de 24 minutos segundo a EV Database. A potência média entre 10% e 80% fica nos 110 kW. A arquitetura é de 400 V, o pré-condicionamento da bateria é ativado pela navegação e não há V2L nem V2H.",
+      "pros": [
+        "Até 175 kW em corrente contínua",
+        "10–80% em cerca de 24 minutos",
+        "Pré-condicionamento da bateria pela navegação"
+      ],
+      "cons": [
+        "Potência DC inferior à das versões Premium",
+        "Sem V2L nem V2H",
+        "Arquitetura de 400 V limita a potência face a sistemas de 800 V"
+      ],
+      "sourceIds": [
+        "tesla-offer-standard",
+        "tesla-modely",
+        "evdb-standard"
+      ]
+    },
+    "satisfaction": {
+      "assessment": {
+        "ownerSentiment": 7.9,
+        "reportedDefects": 5.8,
+        "recallRecord": 6.5,
+        "evidenceLevel": "broad"
+      },
+      "summary": "A satisfação dos proprietários é boa, mas contida: 4,2/5 em 89 avaliações da Kelley Blue Book para o Model Y 2026, com 80% a recomendar. Os problemas recorrentes são ruídos parasitas no tablier e nos painéis das portas, além de um ruído na suspensão dianteira relatado em unidades Juniper. O histórico de segurança inclui o recall 26V315, que abrange 14.575 Model Y por falta de etiqueta de certificação com os pesos, e o 25V658, em 260 veículos, por luz de marcha-atrás inoperativa; ambos com reparação gratuita.",
+      "pros": [
+        "4,2/5 e 80% de recomendação em 89 avaliações de proprietários",
+        "Rede Supercharger e atualizações OTA muito valorizadas",
+        "Recall 26V315 resolve-se com a colocação de uma etiqueta"
+      ],
+      "cons": [
+        "Ruídos parasitas recorrentes em unidades recentes",
+        "Ruído na suspensão dianteira relatado em Model Y Juniper",
+        "Dois recalls recentes, incluindo 14.575 veículos por falta de etiqueta"
+      ],
+      "sourceIds": [
+        "kbb-modely",
+        "nhtsa-26v315",
+        "nhtsa-25v658",
+        "tesla-recall-lamp",
+        "reddit-suspension",
+        "adac-modely-standard"
+      ]
+    }
+  },
+  "dossier": {
+    "headline": "O Model Y essencial: 525 km, 952 L de carga e 299 cv",
+    "verdict": "O Model Y de tração traseira é a forma mais acessível de entrar no SUV elétrico da Tesla: 299 cv, 525 km WLTP e 952 L de carga total, com uma eficiência competitiva e o essencial da experiência Tesla. O interior perde o teto panorâmico, os bancos ventilados e com memória, o ecrã traseiro e o sistema de som premium, e o carregamento DC fica-se pelos 175 kW. É a versão a escolher por quem prioriza preço, espaço e eficiência, aceitando um equipamento de conforto mais contido.",
+    "pros": [
+      "525 km WLTP e 14,0 kWh/100 km",
+      "299 cv e 0-100 km/h em 7,2 segundos",
+      "952 L de carga total, incluindo 117 L de frunk",
+      "Autopilot, bomba de calor e atualizações OTA de série",
+      "Preço de 41.975,18 € com IVA e despesas"
+    ],
+    "cons": [
+      "Sem teto panorâmico, bancos ventilados, memória e aquecimento traseiro",
+      "Som de sete altifalantes sem subwoofer",
+      "Sem ecrã traseiro nem iluminação ambiente",
+      "Carregamento DC limitado a 175 kW",
+      "Interior com revestimento têxtil e plásticos duros"
+    ],
+    "bestFor": "Quem quer um SUV elétrico espaçoso e eficiente para a família, valoriza a rede Supercharger e prefere investir menos em equipamento de conforto.",
+    "sections": [
+      {
+        "title": "Posicionamento",
+        "body": "O Model Y de tração traseira é a versão de acesso do SUV elétrico da Tesla, com 4,794 m de comprimento e 2,890 m de distância entre eixos. Usa um motor traseiro de 220 kW (299 cv) e 420 Nm, bateria LFP de 64 kWh brutos e 60 kWh úteis, e anuncia 525 km WLTP. O preço de aquisição em Portugal é 41.975,18 € com IVA e despesas incluídas."
+      },
+      {
+        "title": "Interior e ergonomia",
+        "body": "O habitáculo segue o desenho minimalista da geração Juniper: tablier horizontal, saídas de ar integradas e um ecrã central de 16\" que concentra quase todas as funções. Esta versão usa interior totalmente preto, com bancos em revestimento têxtil, forro rígido no lugar do teto panorâmico e plásticos duros nas portas e na consola inferior. Mantém o volante aquecido e os bancos dianteiros aquecidos, mas não tem iluminação ambiente, ecrã traseiro, bancos ventilados, com memória ou aquecidos atrás."
+      },
+      {
+        "title": "Como se conduz",
+        "body": "Os 299 cv chegam para 7,2 segundos dos 0 aos 100 km/h e 201 km/h de velocidade máxima, com entrega imediata e precisa. A suspensão passiva e as jantes de 18\" privilegiam o controlo do corpo em autoestrada, mas sentem-se secas em piso urbano degradado. A direção é rápida e o carro esconde razoavelmente a massa de 1.906 kg; em piso molhado, a tração traseira obriga a dosear o acelerador."
+      },
+      {
+        "title": "Autonomia, eficiência e carregamento",
+        "body": "A bateria LFP de 60 kWh úteis permite 525 km WLTP e um consumo homologado de 14,0 kWh/100 km. Em corrente contínua aceita até 175 kW, com 10–80% em cerca de 24 minutos; em corrente alternada carrega a 11 kW. O autoteste do ADAC registou 16,4 kWh/100 km e 438 km de autonomia em condições reais, um desvio habitual face ao ciclo homologado. Não há V2L nem V2H."
+      },
+      {
+        "title": "Vida a bordo e tecnologia",
+        "body": "O equipamento inclui Autopilot, cruise control adaptativo, manutenção de faixa, travagem automática de emergência, reconhecimento de sinais, assistência de estacionamento por visão, máximos automáticos, carregamento wireless para dois telefones, serviços conectados, atualizações OTA e chave digital. A bagageira tem 835 L e o frunk 117 L; o porta-bagagens é elétrico. Não há Apple CarPlay, Android Auto nem câmara 360º."
+      },
+      {
+        "title": "Propriedade e assistência",
+        "body": "A garantia do veículo é de 4 anos ou 80.000 km e a da bateria e unidade de acionamento é de 8 anos ou 160.000 km, com pelo menos 70% de capacidade. O Model Y é montado na Gigafactory de Berlim, o que aproxima a produção do mercado português. A Tesla tem service centers próprios em Lisboa/Belas e no Porto, assistência móvel e oficinas de carroçaria aprovadas, mas a rede é mais concentrada do que a de um fabricante com concessionários em todo o país."
+      },
+      {
+        "title": "Configuração avaliada",
+        "body": "Proposta de 16/11/2026: Model Y de tração traseira, pintura Cinzento Furtivo, jantes Aperture de 18\", interior totalmente preto e cinco lugares, com Autopilot. PVP de 40.990 €, mais 980 € de documentação e transporte e 5 € de taxa para pneus, total de 41.975,18 € com IVA de 7.849,02 €. Inclui avaliação de 30 dias do pacote Conetividade Premium."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "tesla-offer-standard",
+      "label": "Proposta Tesla Model Y tração traseira (PDF fornecido, 16/11/2026)",
+      "url": "/sources/tesla-model-y-standard-oferta.pdf",
+      "type": "pdf"
+    },
+    {
+      "id": "tesla-modely",
+      "label": "Tesla Portugal — Model Y, especificações e preços",
+      "url": "https://www.tesla.com/pt_pt/modely",
+      "type": "official"
+    },
+    {
+      "id": "tesla-warranty",
+      "label": "Tesla Portugal — Garantia do veículo e da bateria",
+      "url": "https://www.tesla.com/pt_pt/support/vehicle-warranty",
+      "type": "official"
+    },
+    {
+      "id": "tesla-contact",
+      "label": "Tesla Portugal — Contactos e assistência",
+      "url": "https://www.tesla.com/pt_pt/contact",
+      "type": "official"
+    },
+    {
+      "id": "dn-tesla-2017",
+      "label": "Diário de Notícias — entrada oficial da Tesla em Portugal (27/01/2017)",
+      "url": "https://www.dn.pt/arquivo/diario-de-noticias/finalmente-a-tesla-esta-em-portugal-5630954.html",
+      "type": "press"
+    },
+    {
+      "id": "dn-service-center-2018",
+      "label": "Diário de Notícias — primeiro Tesla Service Center em Belas (04/12/2018)",
+      "url": "https://www.dn.pt/arquivo/diario-de-noticias/ja-existe-um-tesla-service-center-em-portugal-10274206.html",
+      "type": "press"
+    },
+    {
+      "id": "autofoco-porto-2022",
+      "label": "Auto Foco — Tesla abre instalações com service center no Porto (21/09/2022)",
+      "url": "https://autofoco.pt/noticia/ver/957622",
+      "type": "press"
+    },
+    {
+      "id": "tesla-10q",
+      "label": "Tesla, Inc. — Form 10-Q do terceiro trimestre de 2026 (22/10/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm",
+      "type": "official"
+    },
+    {
+      "id": "evdb-standard",
+      "label": "EV Database — Tesla Model Y RWD (Juniper, 2026)",
+      "url": "https://ev-database.org/car/3741/Tesla-Model-Y-RWD",
+      "type": "database"
+    },
+    {
+      "id": "adac-modely-standard",
+      "label": "ADAC — Tesla Model Y Standard no Autotest 2026 (220 kW/299 PS · 420 Nm · 13,4 kWh/100 km WLTP · 16,4 kWh/100 km no ciclo ADAC · 438 km · 65,2 dB(A) a 130 km/h)",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/tesla/tesla-model-y-test/",
+      "type": "press"
+    },
+    {
+      "id": "kbb-modely",
+      "label": "Kelley Blue Book — avaliações de proprietários do Model Y 2026",
+      "url": "https://www.kbb.com/tesla/model-y/2026/consumer-reviews/",
+      "type": "owner"
+    },
+    {
+      "id": "nhtsa-26v315",
+      "label": "NHTSA — recall 26V315000, etiqueta de certificação com os pesos em falta (2026)",
+      "url": "https://www.nhtsa.gov/recalls?nhtsaId=26V315000",
+      "type": "database"
+    },
+    {
+      "id": "nhtsa-25v658",
+      "label": "NHTSA — recall 25V658000, luz de marcha-atrás inoperativa (2025)",
+      "url": "https://www.nhtsa.gov/recalls?nhtsaId=25V658000",
+      "type": "database"
+    },
+    {
+      "id": "tesla-recall-lamp",
+      "label": "Tesla — campanha de recall da luz de marcha-atrás",
+      "url": "https://www.tesla.com/support/recall-inoperable-reverse-lamp",
+      "type": "official"
+    },
+    {
+      "id": "reddit-suspension",
+      "label": "Reddit r/TeslaModelY — ruído na suspensão dianteira em Model Y Juniper",
+      "url": "https://www.reddit.com/r/TeslaModelY/comments/1sl1hun/model_y_juniper_front_suspension_rattle/",
+      "type": "owner"
+    },
+    {
+      "id": "4gnews-modely",
+      "label": "4gnews — ensaio ao Tesla Model Y RWD Standard em Portugal",
+      "url": "https://4gnews.pt/tesla-model-y-rwd-standard-ensaio/",
+      "type": "press"
+    },
+    {
+      "id": "tslcheck",
+      "label": "TSL Check — comparação entre Model Y Standard e Premium",
+      "url": "https://tslcheck.com/compare/model-y-standard-vs-premium/",
+      "type": "press"
+    },
+    {
+      "id": "abstractocean",
+      "label": "Abstract Ocean — diferenças de equipamento do Model Y Standard",
+      "url": "https://www.abstractocean.com/blogs/news/model-y-standard-equipment-differences",
+      "type": "press"
+    }
+  ]
+}

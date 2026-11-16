@@ -17,6 +17,10 @@ import teslaModel3Standard from "./tesla-model-3-standard.json"
 import teslaModel3PremiumLongRangeRwd from "./tesla-model-3-premium-long-range-rwd.json"
 import teslaModel3PremiumLongRangeAwd from "./tesla-model-3-premium-long-range-awd.json"
 import teslaModel3Performance from "./tesla-model-3-performance.json"
+import teslaModelYStandard from "./tesla-model-y-standard.json"
+import teslaModelYPremiumLongRangeRwd from "./tesla-model-y-premium-long-range-rwd.json"
+import teslaModelYPremiumLongRangeAwd from "./tesla-model-y-premium-long-range-awd.json"
+import teslaModelYPerformance from "./tesla-model-y-performance.json"
 
 /**
  * Registo dos carros do comparativo.
@@ -42,4 +46,8 @@ export const CARS = [
   teslaModel3PremiumLongRangeRwd,
   teslaModel3PremiumLongRangeAwd,
   teslaModel3Performance,
+  teslaModelYStandard,
+  teslaModelYPremiumLongRangeRwd,
+  teslaModelYPremiumLongRangeAwd,
+  teslaModelYPerformance,
 ] as unknown as Car[]
