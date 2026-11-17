@@ -160,7 +160,7 @@ Além das visitas, o site envia eventos personalizados. Os elementos clicáveis 
 | `prioridades-cancelar` | Fechar o modal sem aplicar | `via` (`cancelar`, `fechar`, `escape`, `fora`), `alteracoes` |
 | `prioridades-repor` | «Repor defeito» no modal | — |
 | `abrir-dossie` | Abrir o dossiê de um carro | `carro`, `origem` (`ranking-tabela`, `ranking-cartao`, `rodape`), `posicao` e `ordem` no ranking |
-| `preco-ideal-ver` | Primeiro tooltip do preço ideal de cada ícone | `carro`, `origem`, `melhorValor`, `personalizadas` |
+| `preco-ideal-ver` | Primeiro tooltip do preço ideal de cada ícone (no ranking, o ícone só aparece ao ordenar por melhor custo-benefício) | `carro`, `origem`, `melhorValor`, `personalizadas` |
 | `criterio-explicacao-ver` | Tooltip de um critério no cabeçalho da tabela | `criterio` |
 | `navegar` | Links internos (cabeçalho, hero, rodapé, voltar, 404) | `destino`, `origem`, `carro` quando vem de um dossiê |
 | `dossie-secao` | Atalhos para secções do dossiê | `carro`, `secao`, `origem` |

@@ -232,10 +232,12 @@ function RankingCard({
   entry,
   sortKey,
   customized,
+  showIdealPrice,
 }: {
   entry: WeightedRow
   sortKey: SortKey
   customized: boolean
+  showIdealPrice: boolean
 }) {
   return (
     <li className="rounded-xl border border-line bg-card p-4">
@@ -293,7 +295,7 @@ function RankingCard({
           >
             {formatEuro(entry.price)}
           </span>
-          {entry.idealPrice !== null ? (
+          {showIdealPrice && entry.idealPrice !== null ? (
             <IdealPriceInfo
               price={entry.price}
               idealPrice={entry.idealPrice}
@@ -605,6 +607,7 @@ export function RankingTable({
             entry={entry}
             sortKey={sort.key}
             customized={customized}
+            showIdealPrice={bestValueActive}
           />
         ))}
       </ol>
@@ -743,7 +746,7 @@ export function RankingTable({
                   <span className="font-mono text-sm">
                     {formatEuro(entry.price)}
                   </span>
-                  {entry.idealPrice !== null ? (
+                  {bestValueActive && entry.idealPrice !== null ? (
                     <IdealPriceInfo
                       price={entry.price}
                       idealPrice={entry.idealPrice}
@@ -781,9 +784,13 @@ export function RankingTable({
           <span className="font-medium text-foreground">€/ponto</span> = preço ÷
           nota global · o{" "}
           <span className="font-medium text-foreground">#</span> é a posição na
-          nota global. Passa o rato sobre um critério para ver o que mede, ou
-          sobre o ícone junto ao preço para ver o preço a que o carro seria o
-          melhor custo-benefício.
+          nota global. Passa o rato sobre um critério para ver o que mede. Ao
+          ordenar por{" "}
+          <span className="font-medium text-foreground">
+            Melhor custo-benefício
+          </span>
+          , o ícone junto ao preço mostra o preço a que o carro seria o melhor
+          custo-benefício.
         </p>
         <p className="shrink-0 text-xs tracking-[0.14em] whitespace-nowrap uppercase">
           Atualizado a {updatedAt}
