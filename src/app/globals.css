@@ -18,6 +18,9 @@
   /* Versões para fundos escuros e para o verde de «abaixo da média» em fundos claros. */
   --color-copper-light: #e8946b;
   --color-saving: #2a7046;
+  /* Extremos das barras de nota. */
+  --color-score-low: #e8281c;
+  --color-score-high: #1fbf4f;
   --color-ocean: #2f5f8f;
   --color-sand: #e6dfd0;
   --color-line: #d8d2c3;

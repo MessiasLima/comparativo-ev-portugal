@@ -16,6 +16,12 @@ export const ACCENT_BG = {
   ocean: "bg-ocean",
 } as const
 
+/** Cor da barra para a nota: vermelho no 0, verde no 10, misturada pelo meio. */
+export function scoreColor(score: number) {
+  const green = Math.round(Math.max(0, Math.min(10, score)) * 10)
+  return `color-mix(in oklab, var(--color-score-high) ${green}%, var(--color-score-low))`
+}
+
 export function ScoreBar({
   score,
   color,
@@ -86,7 +92,7 @@ export function ScoreCell({
       <span className="font-mono text-sm font-semibold tabular-nums">
         {formatScore(score)}
       </span>
-      <ScoreBar score={score} />
+      <ScoreBar score={score} color={scoreColor(score)} />
     </div>
   )
 }

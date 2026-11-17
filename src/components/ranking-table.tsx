@@ -38,7 +38,7 @@ import { trackAttributes, trackEvent } from "@/lib/analytics"
 import { compareByGap, fairPrices } from "@/lib/fair-price"
 import { rankByTotal } from "@/lib/ranking"
 import { weightedAverage } from "@/lib/weights"
-import { ScoreBar, ScoreCell } from "@/components/score"
+import { ScoreBar, ScoreCell, scoreColor } from "@/components/score"
 import { FairPriceInfo, differenceTextClass } from "@/components/fair-price-info"
 
 export interface ComparisonRow {
@@ -372,7 +372,7 @@ function RankingCard({
               </dd>
               <ScoreBar
                 score={entry.scores[criterion.id]}
-                color={active ? "var(--color-copper)" : undefined}
+                color={scoreColor(entry.scores[criterion.id])}
                 className="col-span-2 mt-1"
               />
             </div>
