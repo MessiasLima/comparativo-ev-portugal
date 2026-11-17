@@ -15,6 +15,9 @@ import {
 
 const UMAMI_SCRIPT_URL = "https://umami.appoutlet.dev/script.js"
 const UMAMI_WEBSITE_ID = "8a02495b-916b-4a40-a014-08eb3a060c3e"
+// O Umami só envia visitas e eventos neste domínio; em localhost (dev ou build
+// servida localmente) o script carrega mas não regista nada.
+const UMAMI_DOMAINS = new URL(SITE_URL).hostname
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -116,6 +119,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           defer
           src={UMAMI_SCRIPT_URL}
           data-website-id={UMAMI_WEBSITE_ID}
+          data-domains={UMAMI_DOMAINS}
         />
       </head>
       <body className="flex min-h-svh flex-col">

@@ -148,7 +148,7 @@ Rotas atuais: `/carros/cupra-raval-vz`, `/carros/cupra-tavascan-base`, `/carros/
 
 ## Analytics
 
-O site usa **Umami** (analytics sem cookies) através de um `<script defer>` no `<head>` do layout raiz, identificado pelo website ID `8a02495b-916b-4a40-a014-08eb3a060c3e`. Carrega em todas as páginas, não bloqueia o render e acrescenta cerca de 3 KB ao total transferido; não afeta as métricas de Lighthouse (desempenho mantém-se em 96).
+O site usa **Umami** (analytics sem cookies) através de um `<script defer>` no `<head>` do layout raiz, identificado pelo website ID `8a02495b-916b-4a40-a014-08eb3a060c3e`. Carrega em todas as páginas, não bloqueia o render e acrescenta cerca de 3 KB ao total transferido; não afeta as métricas de Lighthouse (desempenho mantém-se em 96). O atributo `data-domains` limita o registo ao domínio de `SITE_URL`: em `localhost` (dev ou build servida localmente) o script carrega mas não envia visitas nem eventos.
 
 Além das visitas, o site envia eventos personalizados. Os elementos clicáveis levam `data-track="<evento>"` e `data-track-<chave>="<valor>"` (gerados por `trackAttributes` em `src/lib/analytics.ts`, também em Server Components) e o `AnalyticsListener` montado no layout envia-os com `umami.track`. As ações que dependem de estado chamam `trackEvent` diretamente. Não se usa `data-umami-event`, porque em links internos o script do Umami cancela o clique e força um reload completo, o que estraga a navegação do Next.
 
