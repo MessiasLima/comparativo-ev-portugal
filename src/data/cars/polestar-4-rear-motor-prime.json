@@ -179,24 +179,24 @@
     },
     "brand": {
       "assessment": {
-        "globalBrandAge": 5.5,
+        "globalBrandAge": 6,
         "portugalMarketTenure": 3.5,
-        "portugalServiceNetwork": 7,
+        "portugalServiceNetwork": 7.5,
         "europeanManufacturing": 2,
         "establishedGroupSupport": 9,
         "financialStability": 2,
         "portugalFactory": false
       },
-      "summary": "A Polestar lançou-se como marca autónoma de automóveis elétricos em 2017 e iniciou vendas oficiais em Portugal em maio de 2022. A assistência nacional recorre a oficinas autorizadas Polestar na rede Volvo Car; a produção atual está na Ásia e América do Norte, enquanto a produção europeia do Polestar 7 está planeada para 2028. As contas consolidadas da própria Polestar no primeiro semestre de 2026 registaram prejuízo líquido de 842 milhões de dólares e fluxo operacional negativo de 850 milhões; a direção prevê fluxos operacionais negativos no curto prazo e reconhece incerteza material sobre a continuidade da empresa. As vendas estimadas nos primeiros nove meses cresceram apenas 0,6% e a orientação de 2026 aponta para crescimento de volume baixo a médio de um dígito, sem previsão oficial de lucro; os empréstimos convertidos/estendidos por Volvo/Geely são apoio do grupo, não resultados da marca.",
+      "summary": "A Polestar lançou-se como marca autónoma de automóveis elétricos em 2017 e iniciou vendas oficiais em Portugal em maio de 2022. A assistência nacional recorre a oficinas autorizadas Polestar na rede Volvo Car, com 28 pontos de serviço em Portugal segundo o diretor da marca no país (dezembro de 2025), mas o localizador oficial não permite confirmar a cobertura das ilhas; a produção atual está na Ásia e América do Norte, enquanto a produção europeia do Polestar 7 está planeada para 2028. As contas consolidadas da própria Polestar no primeiro semestre de 2026 registaram prejuízo líquido de 842 milhões de dólares e fluxo operacional negativo de 850 milhões; a direção prevê fluxos operacionais negativos no curto prazo e reconhece incerteza material sobre a continuidade da empresa. As vendas estimadas nos primeiros nove meses cresceram apenas 0,6% e a orientação de 2026 aponta para crescimento de volume baixo a médio de um dígito, sem previsão oficial de lucro, e a 03/11/2026 a empresa adiou a divulgação dos resultados do 3.º trimestre, previstos para 05/11, sem anunciar nova data; os empréstimos convertidos/estendidos por Volvo/Geely são apoio do grupo, não resultados da marca.",
       "pros": [
         "Apoio técnico e industrial formal de Volvo/Geely, incluindo financiamento e acordos de produção",
-        "Acesso em Portugal a oficinas autorizadas Polestar através da rede Volvo Car",
+        "Acesso em Portugal a 28 pontos de serviço autorizados através da rede Volvo Car",
         "Presença comercial oficial em Portugal desde 2022, com vendas diretas e assistência local"
       ],
       "cons": [
         "A presença global como marca automóvel autónoma começou apenas em 2017 e a entrada oficial em Portugal ocorreu em 2022",
         "Não há produção europeia atual; a fábrica eslovaca para o Polestar 7 está prevista para 2028",
-        "Prejuízos e fluxos de caixa operacionais negativos persistem, com dúvida material sobre a continuidade nas contas de H1 2026"
+        "Prejuízos e fluxos de caixa operacionais negativos persistem, com dúvida material sobre a continuidade nas contas de H1 2026; os resultados do 3.º trimestre de 2026 foram adiados sem nova data"
       ],
       "sourceIds": [
         "polestar-global-launch",
@@ -206,7 +206,9 @@
         "polestar-q3-2026-update",
         "polestar-europe-plan",
         "polestar-financial-h1-2026",
-        "polestar-shareholder-support-2026"
+        "polestar-shareholder-support-2026",
+        "barlavento-polestar-faro",
+        "polestar-q3-2026-delay"
       ]
     },
     "equipment": {
@@ -604,6 +606,18 @@
       "id": "autotrader-polestar4",
       "label": "Autotrader — Polestar 4 SUV review (2026)",
       "url": "https://www.autotrader.co.uk/content/car-reviews/polestar-4-suv-review-2026",
+      "type": "press"
+    },
+    {
+      "id": "barlavento-polestar-faro",
+      "label": "Barlavento — Polestar abre espaço em Faro; 28 pontos de serviço em Portugal pela rede Volvo (13/12/2025)",
+      "url": "https://www.barlavento.pt/polestar-space-algarve-faro/",
+      "type": "press"
+    },
+    {
+      "id": "polestar-q3-2026-delay",
+      "label": "Polestar — atualização sobre a data dos resultados do 3.º trimestre de 2026 (Business Wire, 03/11/2026)",
+      "url": "https://www.morningstar.com/news/business-wire/20261103739028/polestar-provides-an-update-on-the-q3-2026-reporting-date",
       "type": "press"
     }
   ]
