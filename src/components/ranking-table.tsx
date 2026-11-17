@@ -804,8 +804,9 @@ export function RankingTable({
           preço fica abaixo (−, a verde) ou acima (+, a cobre) do preço médio da
           lista para a mesma nota · o <span className="font-medium text-foreground">#</span> é
           a posição na nota global. Passa o rato sobre um critério para ver o que
-          mede, ou sobre o ícone junto à percentagem para ver o preço médio e o
-          preço a que o carro seria o melhor custo-benefício.
+          mede, ou sobre o ícone junto à percentagem para ver a diferença em
+          euros, o preço médio e o preço a que o carro seria o melhor
+          custo-benefício.
         </p>
         <p className="shrink-0 text-xs tracking-[0.14em] whitespace-nowrap uppercase">
           Atualizado a {updatedAt}
