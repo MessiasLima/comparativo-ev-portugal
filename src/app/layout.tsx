@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
 import "./globals.css"
+import { AnalyticsListener } from "@/components/analytics-listener"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { withBasePath } from "@/lib/base-path"
@@ -121,6 +122,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <AnalyticsListener />
       </body>
     </html>
   )

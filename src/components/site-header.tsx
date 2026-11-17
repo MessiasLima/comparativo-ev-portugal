@@ -1,17 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import { withBasePath } from "@/lib/base-path"
+import { trackAttributes } from "@/lib/analytics"
 
 const navItems = [
-  { href: "/#ranking", label: "Ranking" },
-  { href: "/#metodologia", label: "Metodologia" },
+  { href: "/#ranking", label: "Ranking", id: "ranking" },
+  { href: "/#metodologia", label: "Metodologia", id: "metodologia" },
 ]
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/95 text-paper backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="/" className="group flex items-center gap-3">
+        <Link
+          href="/"
+          className="group flex items-center gap-3"
+          {...trackAttributes("navegar", { destino: "inicio", origem: "cabecalho" })}
+        >
           <Image
             src={withBasePath("/comparativo-ev-portugal-icon.svg")}
             alt=""
@@ -36,6 +41,10 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               className="transition-colors hover:text-lime"
+              {...trackAttributes("navegar", {
+                destino: item.id,
+                origem: "cabecalho",
+              })}
             >
               {item.label}
             </Link>

@@ -5,6 +5,7 @@ import { CARS } from "@/data/cars"
 import { SITE_UPDATED_AT } from "@/data/site"
 import { formatCarName, formatDatePt } from "@/lib/format"
 import { withBasePath } from "@/lib/base-path"
+import { trackAttributes } from "@/lib/analytics"
 
 const footerCars = CARS.slice(0, 4)
 
@@ -47,12 +48,23 @@ export function SiteFooter() {
             </p>
             <ul className="mt-4 space-y-3 text-sm text-white/55">
               <li>
-                <Link href="/#ranking" className="transition-colors hover:text-lime">
+                <Link
+                  href="/#ranking"
+                  className="transition-colors hover:text-lime"
+                  {...trackAttributes("navegar", { destino: "ranking", origem: "rodape" })}
+                >
                   Ranking geral
                 </Link>
               </li>
               <li>
-                <Link href="/#metodologia" className="transition-colors hover:text-lime">
+                <Link
+                  href="/#metodologia"
+                  className="transition-colors hover:text-lime"
+                  {...trackAttributes("navegar", {
+                    destino: "metodologia",
+                    origem: "rodape",
+                  })}
+                >
                   Como calculamos
                 </Link>
               </li>
@@ -68,6 +80,10 @@ export function SiteFooter() {
                 <li key={car.id}>
                   <Link
                     href={`/carros/${car.slug}`}
+                    {...trackAttributes("abrir-dossie", {
+                      carro: car.slug,
+                      origem: "rodape",
+                    })}
                     className="group inline-flex items-center gap-1.5 transition-colors hover:text-lime"
                   >
                     {formatCarName(car)}
@@ -79,6 +95,10 @@ export function SiteFooter() {
                 <li>
                   <Link
                     href="/#ranking"
+                    {...trackAttributes("navegar", {
+                      destino: "ranking",
+                      origem: "rodape-ver-todos",
+                    })}
                     className="text-white/40 transition-colors hover:text-lime"
                   >
                     Ver todos os dossiês
@@ -100,6 +120,7 @@ export function SiteFooter() {
           </div>
           <a
             href="https://appoutlet.dev"
+            {...trackAttributes("link-externo", { destino: "appoutlet" })}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="AppOutlet — appoutlet.dev (abre num novo separador)"

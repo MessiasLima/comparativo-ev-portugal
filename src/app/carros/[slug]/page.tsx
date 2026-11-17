@@ -31,6 +31,7 @@ import {
   formatScore,
   truncateText,
 } from "@/lib/format"
+import { trackAttributes } from "@/lib/analytics"
 import { getComparison, getScoredCar } from "@/lib/scoring"
 import {
   SITE_LOCALE,
@@ -343,6 +344,11 @@ async function CarDossier({
         <div className="relative mx-auto w-full max-w-7xl px-5 pt-8 pb-12 sm:px-8 sm:pt-10 sm:pb-16">
           <Link
             href="/"
+            {...trackAttributes("navegar", {
+              destino: "inicio",
+              origem: "dossie-topo",
+              carro: car.slug,
+            })}
             className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-white/65 transition-colors hover:text-lime"
           >
             <ArrowLeft className="size-3.5" />
@@ -460,6 +466,11 @@ async function CarDossier({
                 <a
                   key={item.href}
                   href={item.href}
+                  {...trackAttributes("dossie-secao", {
+                    carro: car.slug,
+                    secao: item.href.slice(1),
+                    origem: "menu-lateral",
+                  })}
                   className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {item.label}
@@ -474,6 +485,11 @@ async function CarDossier({
                 <a
                   key={item.href}
                   href={item.href}
+                  {...trackAttributes("dossie-secao", {
+                    carro: car.slug,
+                    secao: item.href.slice(1),
+                    origem: "menu-topo",
+                  })}
                   className="shrink-0 rounded-full border border-line px-3 py-1.5 text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground"
                 >
                   {item.label}
@@ -662,6 +678,12 @@ async function CarDossier({
                       href={source.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      {...trackAttributes("abrir-fonte", {
+                        carro: car.slug,
+                        fonte: source.id,
+                        tipo: source.type,
+                        origem: "fontes",
+                      })}
                       className="rounded-xl border border-line bg-card p-4 transition-colors hover:border-foreground/25 hover:bg-muted/30"
                     >
                       {content}
@@ -681,6 +703,11 @@ async function CarDossier({
             <div className="border-t border-line pt-6">
               <Link
                 href="/"
+                {...trackAttributes("navegar", {
+                  destino: "inicio",
+                  origem: "dossie-fim",
+                  carro: car.slug,
+                })}
                 className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 <ArrowLeft className="size-3.5" />

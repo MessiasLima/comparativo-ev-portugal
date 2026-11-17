@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { Check, RotateCcw, Settings2, X, type LucideIcon } from "lucide-react"
 import { cn } from "cn"
+import { trackEvent } from "@/lib/analytics"
 import type { CriterionId } from "@/data/types"
 import {
   CRITERION_IDS,
@@ -65,10 +66,29 @@ export function WeightModal({
   // Os pesos só chegam ao ranking em Aplicar; até lá ficam neste rascunho.
   const [draft, setDraft] = useState<WeightMap>(() => ({ ...weights }))
   const closeButtonRef = useRef<HTMLButtonElement>(null)
+  // O Escape é registado uma vez; a ref dá-lhe o rascunho atual.
+  const draftRef = useRef(draft)
+  useEffect(() => {
+    draftRef.current = draft
+  }, [draft])
 
-  const cancel = onClose
+  const countChanges = (next: WeightMap) =>
+    CRITERION_IDS.filter((id) => next[id] !== weights[id]).length
+
+  const cancel = (via: string) => {
+    trackEvent("prioridades-cancelar", {
+      via,
+      alteracoes: countChanges(draftRef.current),
+    })
+    onClose()
+  }
 
   const apply = () => {
+    trackEvent("prioridades-aplicar", {
+      alteracoes: countChanges(draft),
+      porDefeito: isDefaultWeights(draft),
+      ...Object.fromEntries(CRITERION_IDS.map((id) => [id, draft[id]])),
+    })
     onChange(draft)
     onClose()
   }
@@ -79,7 +99,7 @@ export function WeightModal({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") cancel()
+      if (event.key === "Escape") cancel("escape")
     }
 
     const previousOverflow = document.body.style.overflow
@@ -102,7 +122,7 @@ export function WeightModal({
     <div
       className="fixed inset-0 z-[100] flex items-end justify-center bg-ink/75 p-3 backdrop-blur-sm sm:items-center sm:p-6"
       onMouseDown={(event) => {
-        if (event.target === event.currentTarget) cancel()
+        if (event.target === event.currentTarget) cancel("fora")
       }}
     >
       <div
@@ -136,7 +156,7 @@ export function WeightModal({
           <button
             ref={closeButtonRef}
             type="button"
-            onClick={cancel}
+            onClick={() => cancel("fechar")}
             aria-label="Fechar sem aplicar"
             className="grid size-9 shrink-0 place-items-center rounded-full border border-line text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
@@ -234,7 +254,10 @@ export function WeightModal({
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line bg-muted/30 px-5 py-4 sm:px-6">
           <button
             type="button"
-            onClick={() => setDraft({ ...DEFAULT_WEIGHTS })}
+            onClick={() => {
+              setDraft({ ...DEFAULT_WEIGHTS })
+              trackEvent("prioridades-repor")
+            }}
             className="inline-flex h-10 items-center gap-2 rounded-full border border-line bg-card px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <RotateCcw className="size-3.5" />
@@ -243,7 +266,7 @@ export function WeightModal({
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
-              onClick={cancel}
+              onClick={() => cancel("cancelar")}
               className="inline-flex h-10 items-center rounded-full px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               Cancelar

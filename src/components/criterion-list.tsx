@@ -9,6 +9,7 @@ import type {
   SatisfactionAssessment,
 } from "@/data/types"
 import { formatScore } from "@/lib/format"
+import { trackAttributes } from "@/lib/analytics"
 import { withBasePath } from "@/lib/base-path"
 import type { CriterionScore, ScoredCar } from "@/lib/scoring"
 import { ACCENT_HEX, ScoreBar } from "@/components/score"
@@ -32,9 +33,13 @@ import {
 function SourceLinks({
   ids,
   sources,
+  car,
+  criterion,
 }: {
   ids: string[]
   sources: Source[]
+  car: string
+  criterion: string
 }) {
   const byId = new Map(sources.map((source) => [source.id, source]))
   const resolved = Array.from(new Set(ids))
@@ -56,6 +61,13 @@ function SourceLinks({
               href={source.url.startsWith("/") ? withBasePath(source.url) : source.url}
               target="_blank"
               rel="noopener noreferrer"
+              {...trackAttributes("abrir-fonte", {
+                carro: car,
+                fonte: source.id,
+                tipo: source.type,
+                criterio: criterion,
+                origem: "criterio",
+              })}
               className="inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-2.5 py-1 text-xs text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
             >
               {source.label}
@@ -145,7 +157,12 @@ export function CriterionList({
             open={index === 0}
             className="group scroll-mt-28 border-b border-line last:border-b-0"
           >
-            <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-4 gap-y-3 px-4 py-4 sm:flex-nowrap sm:px-5">
+            <summary
+              {...trackAttributes("dossie-criterio", {
+                carro: entry.car.slug,
+                criterio: criterion.id,
+              })}
+              className="flex cursor-pointer list-none flex-wrap items-center gap-x-4 gap-y-3 px-4 py-4 sm:flex-nowrap sm:px-5">
               <span className="w-8 shrink-0 font-mono text-xs font-semibold text-copper">
                 {sectionNumber}.{criterion.number}
               </span>
@@ -219,6 +236,11 @@ export function CriterionList({
               {criterion.id === "equipment" ? (
                 <a
                   href="#equipamento"
+                  {...trackAttributes("dossie-secao", {
+                    carro: entry.car.slug,
+                    secao: "equipamento",
+                    origem: "criterio",
+                  })}
                   className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-line bg-background px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-forest/40 hover:bg-muted/40"
                 >
                   Ver a checklist completa de equipamento
@@ -469,7 +491,12 @@ export function CriterionList({
                 </div>
               )}
 
-              <SourceLinks ids={review.sourceIds} sources={entry.car.sources} />
+              <SourceLinks
+                ids={review.sourceIds}
+                sources={entry.car.sources}
+                car={entry.car.slug}
+                criterion={criterion.id}
+              />
             </div>
           </details>
         )

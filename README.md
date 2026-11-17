@@ -2,7 +2,7 @@
 
 Comparador de carros elétricos do mercado português, publicado em <https://comparativo-ev-portugal.appoutlet.dev>. O site tem duas vistas principais:
 
-- **Home (`/`)** — hero e uma tabela única de ranking com nota global, os onze critérios e o custo em €/ponto. Qualquer coluna pode ser usada para ordenar, com atalhos para “Melhor nota” e “Melhor custo-benefício”. O botão «Ajustar prioridades» abre um modal onde, para cada critério, se escolhe com botões quanto importa (de «Não me importa» a «Extremamente importante»). A nota global, o €/ponto e o ranking só são recalculados ao clicar em Aplicar, e a configuração fica guardada no `localStorage` do browser. Cancelar fecha o modal sem alterar os pesos ativos.
+- **Home (`/`)** — hero e uma tabela única de ranking com nota global, os onze critérios e o custo em €/ponto. Em ecrãs estreitos (abaixo de 768 px) a tabela dá lugar a uma lista de cartões, com um seletor para ordenar. Qualquer coluna pode ser usada para ordenar, com atalhos para “Melhor nota” e “Melhor custo-benefício”. O botão «Ajustar prioridades» abre um modal onde, para cada critério, se escolhe com botões quanto importa (de «Não me importa» a «Extremamente importante»). A nota global, o €/ponto e o ranking só são recalculados ao clicar em Aplicar, e a configuração fica guardada no `localStorage` do browser. Cancelar fecha o modal sem alterar os pesos ativos.
 - **Dossiê (`/carros/[slug]`)** — visão geral, ficha técnica, critérios de avaliação (3.1 a 3.11), equipamento, informações adicionais e fontes.
 
 A aplicação não assume um número fixo de carros. O registo `src/data/cars/index.ts` alimenta a home, as tabelas, o rodapé e as rotas de dossiê. Cada versão do mesmo modelo é um carro autónomo: o nome público inclui sempre a marca, o modelo e a variante (por exemplo, “BYD Seal Design” e “BYD Seal Excellence AWD”).
@@ -149,6 +149,24 @@ Rotas atuais: `/carros/cupra-raval-vz`, `/carros/cupra-tavascan-base`, `/carros/
 ## Analytics
 
 O site usa **Umami** (analytics sem cookies) através de um `<script defer>` no `<head>` do layout raiz, identificado pelo website ID `8a02495b-916b-4a40-a014-08eb3a060c3e`. Carrega em todas as páginas, não bloqueia o render e acrescenta cerca de 3 KB ao total transferido; não afeta as métricas de Lighthouse (desempenho mantém-se em 96).
+
+Além das visitas, o site envia eventos personalizados. Os elementos clicáveis levam `data-track="<evento>"` e `data-track-<chave>="<valor>"` (gerados por `trackAttributes` em `src/lib/analytics.ts`, também em Server Components) e o `AnalyticsListener` montado no layout envia-os com `umami.track`. As ações que dependem de estado chamam `trackEvent` diretamente. Não se usa `data-umami-event`, porque em links internos o script do Umami cancela o clique e força um reload completo, o que estraga a navegação do Next.
+
+| Evento | Quando | Dados |
+| --- | --- | --- |
+| `ranking-ordenar` | Mudar a ordenação do ranking | `criterio`, `direcao`, `origem` (`cabecalho`, `atalho`, `seletor`, `inverter`) |
+| `prioridades-abrir` | Abrir o modal de prioridades | `personalizadas` |
+| `prioridades-aplicar` | Aplicar prioridades | `alteracoes`, `porDefeito` e o peso de cada critério |
+| `prioridades-cancelar` | Fechar o modal sem aplicar | `via` (`cancelar`, `fechar`, `escape`, `fora`), `alteracoes` |
+| `prioridades-repor` | «Repor defeito» no modal | — |
+| `abrir-dossie` | Abrir o dossiê de um carro | `carro`, `origem` (`ranking-tabela`, `ranking-cartao`, `rodape`), `posicao` e `ordem` no ranking |
+| `preco-ideal-ver` | Primeiro tooltip do preço ideal de cada ícone | `carro`, `origem`, `melhorValor`, `personalizadas` |
+| `criterio-explicacao-ver` | Tooltip de um critério no cabeçalho da tabela | `criterio` |
+| `navegar` | Links internos (cabeçalho, hero, rodapé, voltar, 404) | `destino`, `origem`, `carro` quando vem de um dossiê |
+| `dossie-secao` | Atalhos para secções do dossiê | `carro`, `secao`, `origem` |
+| `dossie-criterio` | Abrir ou fechar um critério no dossiê | `carro`, `criterio` |
+| `abrir-fonte` | Abrir uma fonte externa | `carro`, `fonte`, `tipo`, `origem`, `criterio` quando vem de um critério |
+| `link-externo` | Link para a AppOutlet no rodapé | `destino` |
 
 ## Notas de implementação
 

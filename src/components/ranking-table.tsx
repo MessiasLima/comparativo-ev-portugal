@@ -5,7 +5,9 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import {
   ArrowDown,
+  ArrowDownWideNarrow,
   ArrowUp,
+  ArrowUpNarrowWide,
   ArrowUpDown,
   ArrowUpRight,
   Settings2,
@@ -27,9 +29,10 @@ import { CRITERIA } from "@/data/criteria"
 import type { CriterionDefinition, CriterionId } from "@/data/types"
 import { formatCarName, formatEuro, formatScore } from "@/lib/format"
 import { useWeights } from "@/hooks/use-weights"
+import { trackAttributes, trackEvent } from "@/lib/analytics"
 import { idealPrices, rankByTotal } from "@/lib/ranking"
 import { weightedAverage } from "@/lib/weights"
-import { ScoreCell } from "@/components/score"
+import { ScoreBar, ScoreCell } from "@/components/score"
 import { IdealPriceInfo } from "@/components/ideal-price-info"
 
 export interface ComparisonRow {
@@ -159,6 +162,7 @@ function CriterionHeader({
       if (nextRect) {
         setRect(nextRect)
         setOpen(true)
+        trackEvent("criterio-explicacao-ver", { criterio: criterion.id })
       }
     }, 1000)
   }
@@ -204,6 +208,141 @@ function CriterionHeader({
         <CriterionTooltip criterion={criterion} rect={rect} />
       ) : null}
     </div>
+  )
+}
+
+function CarBadges({ entry }: { entry: WeightedRow }) {
+  return (
+    <>
+      {entry.rank === 1 && <Badge className="bg-lime text-ink">Líder</Badge>}
+      {entry.valueRank === 1 && (
+        <Badge
+          variant="outline"
+          className="border-copper/30 bg-copper/5 text-copper"
+        >
+          Melhor valor
+        </Badge>
+      )}
+    </>
+  )
+}
+
+/** Versão em cartão de uma linha do ranking, para ecrãs estreitos. */
+function RankingCard({
+  entry,
+  sortKey,
+  customized,
+}: {
+  entry: WeightedRow
+  sortKey: SortKey
+  customized: boolean
+}) {
+  return (
+    <li className="rounded-xl border border-line bg-card p-4">
+      <div className="flex items-start justify-between gap-3">
+        <Link
+          href={`/carros/${entry.slug}`}
+          className="group flex min-w-0 items-start gap-2.5"
+          {...trackAttributes("abrir-dossie", {
+            carro: entry.slug,
+            posicao: entry.rank,
+            origem: "ranking-cartao",
+            ordem: sortKey,
+          })}
+        >
+          <span
+            className="shrink-0 pt-0.5 font-mono text-sm font-semibold text-muted-foreground"
+            title="Posição no ranking geral"
+          >
+            #{entry.rank}
+          </span>
+          <span className="min-w-0">
+            <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <span className="font-heading text-lg leading-tight font-semibold">
+                {formatCarName(entry)}
+              </span>
+              <CarBadges entry={entry} />
+            </span>
+            <span className="mt-1 block text-sm leading-6 text-muted-foreground">
+              {entry.version}
+            </span>
+          </span>
+          <ArrowUpRight className="mt-1 size-3.5 shrink-0 text-muted-foreground/40 transition-colors group-hover:text-foreground" />
+        </Link>
+        <div
+          className={cn(
+            "flex shrink-0 items-baseline gap-1",
+            sortKey === "total" ? "text-foreground" : "text-foreground/70",
+          )}
+        >
+          <span className="font-heading text-2xl leading-none font-semibold">
+            {formatScore(entry.total)}
+          </span>
+          <span className="text-sm text-muted-foreground">/10</span>
+        </div>
+      </div>
+
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-y border-line py-2 text-sm whitespace-nowrap">
+        <span className="inline-flex items-center gap-1">
+          <span className="text-muted-foreground">Preço</span>
+          <span
+            className={cn(
+              "font-mono",
+              sortKey === "price" && "font-semibold",
+            )}
+          >
+            {formatEuro(entry.price)}
+          </span>
+          {entry.idealPrice !== null ? (
+            <IdealPriceInfo
+              price={entry.price}
+              idealPrice={entry.idealPrice}
+              isBestValue={entry.valueRank === 1}
+              customized={customized}
+              analytics={{ carro: entry.slug, origem: "ranking-cartao" }}
+            />
+          ) : null}
+        </span>
+        <span className="inline-flex items-baseline gap-1.5">
+          <span className="text-muted-foreground">€/ponto</span>
+          <span className="font-mono text-base font-semibold text-copper">
+            {formatEuro(entry.pricePerPoint)}
+          </span>
+        </span>
+      </div>
+
+      <dl className="mt-3 grid grid-cols-3 gap-x-4 gap-y-3">
+        {CRITERIA.map((criterion) => {
+          const active = sortKey === criterion.id
+          return (
+            <div
+              key={criterion.id}
+              title={criterion.label}
+              className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-1 text-xs"
+            >
+              <dt
+                className={cn(
+                  "truncate",
+                  active
+                    ? "font-semibold text-foreground"
+                    : "text-muted-foreground",
+                )}
+              >
+                {compactLabels[criterion.id]}
+              </dt>
+              <dd className="font-mono font-semibold tabular-nums">
+                {formatScore(entry.scores[criterion.id])}
+              </dd>
+              <ScoreBar
+                score={entry.scores[criterion.id]}
+                color={active ? "var(--color-copper)" : undefined}
+                className="col-span-2 mt-1"
+              />
+            </div>
+          )
+        })}
+      </dl>
+    </li>
   )
 }
 
@@ -282,14 +421,21 @@ export function RankingTable({
     })
   }, [weightedRows, sort])
 
+  const changeSort = (next: SortState, origem: string) => {
+    setSort(next)
+    trackEvent("ranking-ordenar", {
+      criterio: next.key,
+      direcao: next.direction,
+      origem,
+    })
+  }
+
   const handleSort = (key: SortKey) => {
-    setSort((current) =>
-      current.key === key
-        ? {
-            key,
-            direction: current.direction === "asc" ? "desc" : "asc",
-          }
+    changeSort(
+      sort.key === key
+        ? { key, direction: sort.direction === "asc" ? "desc" : "asc" }
         : { key, direction: defaultDirection(key) },
+      "cabecalho",
     )
   }
 
@@ -319,14 +465,18 @@ export function RankingTable({
               Ranking completo
             </p>
             <p className="mt-1 text-base leading-7 text-muted-foreground">
-              Clique num cabeçalho para ordenar. As notas são absolutas ou
-              relativas à lista, conforme o critério.
+              <span className="hidden md:inline">
+                Clique num cabeçalho para ordenar.{" "}
+              </span>
+              As notas são absolutas ou relativas à lista, conforme o critério.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
-              onClick={() => setSort({ key: "total", direction: "desc" })}
+              onClick={() =>
+                changeSort({ key: "total", direction: "desc" }, "atalho")
+              }
               aria-pressed={bestScoreActive}
               className={cn(
                 "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-colors",
@@ -346,7 +496,7 @@ export function RankingTable({
             <button
               type="button"
               onClick={() =>
-                setSort({ key: "pricePerPoint", direction: "asc" })
+                changeSort({ key: "pricePerPoint", direction: "asc" }, "atalho")
               }
               aria-pressed={bestValueActive}
               className={cn(
@@ -366,7 +516,10 @@ export function RankingTable({
             </button>
             <button
               type="button"
-              onClick={() => setWeightModalOpen(true)}
+              onClick={() => {
+                setWeightModalOpen(true)
+                trackEvent("prioridades-abrir", { personalizadas: customized })
+              }}
               title="Escolher quanto importa cada critério na nota global"
               className={cn(
                 "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-colors",
@@ -384,7 +537,51 @@ export function RankingTable({
           </div>
         </div>
 
-        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+        <div className="mt-3 flex items-center gap-2 md:hidden">
+          <label className="flex min-w-0 flex-1 items-center gap-2 text-sm text-muted-foreground">
+            <span className="shrink-0">Ordenar por</span>
+            <select
+              value={sort.key}
+              onChange={(event) => {
+                const key = event.target.value as SortKey
+                changeSort({ key, direction: defaultDirection(key) }, "seletor")
+              }}
+              className="h-10 min-w-0 flex-1 rounded-full border border-line bg-card px-3 text-sm font-medium text-foreground"
+            >
+              <option value="total">Nota global</option>
+              <option value="pricePerPoint">€/ponto</option>
+              <option value="price">Preço</option>
+              {CRITERIA.map((criterion) => (
+                <option key={criterion.id} value={criterion.id}>
+                  {criterion.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <button
+            type="button"
+            onClick={() =>
+              changeSort(
+                {
+                  key: sort.key,
+                  direction: sort.direction === "asc" ? "desc" : "asc",
+                },
+                "inverter",
+              )
+            }
+            aria-label={`Inverter a ordem (agora ${directionLabel})`}
+            title={`${directionLabel[0].toUpperCase()}${directionLabel.slice(1)} · tocar para inverter`}
+            className="inline-grid size-10 shrink-0 place-items-center rounded-full border border-line bg-card text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            {sort.direction === "asc" ? (
+              <ArrowUpNarrowWide className="size-4" aria-hidden="true" />
+            ) : (
+              <ArrowDownWideNarrow className="size-4" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+
+        <div className="mt-3 hidden flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground md:flex">
           <span>
             A ordenar por{" "}
             <span className="font-medium text-foreground">{currentSortLabel}</span>{" "}
@@ -401,6 +598,18 @@ export function RankingTable({
         </div>
       </div>
 
+      <ol className="grid gap-3 bg-muted/35 p-3 sm:grid-cols-2 md:hidden">
+        {sortedRows.map((entry) => (
+          <RankingCard
+            key={entry.id}
+            entry={entry}
+            sortKey={sort.key}
+            customized={customized}
+          />
+        ))}
+      </ol>
+
+      <div className="hidden md:block">
       <Table className="min-w-[1100px]">
         <TableHeader>
           <TableRow className="border-line hover:bg-transparent">
@@ -495,6 +704,12 @@ export function RankingTable({
                 <Link
                   href={`/carros/${entry.slug}`}
                   className="group flex items-center gap-2.5"
+                  {...trackAttributes("abrir-dossie", {
+                    carro: entry.slug,
+                    posicao: entry.rank,
+                    origem: "ranking-tabela",
+                    ordem: sort.key,
+                  })}
                 >
                   <span
                     className="shrink-0 font-mono text-sm font-semibold text-muted-foreground"
@@ -507,17 +722,7 @@ export function RankingTable({
                        <span className="whitespace-nowrap font-heading text-lg leading-tight font-semibold">
                         {formatCarName(entry)}
                       </span>
-                      {entry.rank === 1 && (
-                        <Badge className="bg-lime text-ink">Líder</Badge>
-                      )}
-                      {entry.valueRank === 1 && (
-                        <Badge
-                          variant="outline"
-                          className="border-copper/30 bg-copper/5 text-copper"
-                        >
-                          Melhor valor
-                        </Badge>
-                      )}
+                      <CarBadges entry={entry} />
                     </span>
                     <span className="mt-1 block text-sm leading-6 text-muted-foreground">
                       {entry.version}
@@ -544,6 +749,7 @@ export function RankingTable({
                       idealPrice={entry.idealPrice}
                       isBestValue={entry.valueRank === 1}
                       customized={customized}
+                      analytics={{ carro: entry.slug, origem: "ranking-tabela" }}
                     />
                   ) : null}
                 </span>
@@ -565,6 +771,7 @@ export function RankingTable({
           ))}
         </TableBody>
       </Table>
+      </div>
 
       <div className="flex flex-col gap-1.5 border-t border-line bg-muted/35 px-5 py-3 text-sm leading-6 text-muted-foreground sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:px-6">
         <p>

@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { Info } from "lucide-react"
 import { cn } from "cn"
+import { trackEvent } from "@/lib/analytics"
 import { formatEuro, formatPercent } from "@/lib/format"
 
 function IdealPriceTooltip({
@@ -88,20 +89,34 @@ export function IdealPriceInfo({
   isBestValue,
   customized,
   tone = "light",
+  analytics,
 }: {
   price: number
   idealPrice: number
   isBestValue: boolean
   customized: boolean
   tone?: "light" | "dark"
+  /** Identifica o carro e o sítio da página no evento do Umami. */
+  analytics?: { carro: string; origem: string }
 }) {
   const [rect, setRect] = useState<DOMRect | null>(null)
   const triggerRef = useRef<HTMLButtonElement>(null)
+  const trackedRef = useRef(false)
   const tooltipId = useId()
 
   const show = () => {
     const nextRect = triggerRef.current?.getBoundingClientRect()
-    if (nextRect) setRect(nextRect)
+    if (!nextRect) return
+    setRect(nextRect)
+    // Só o primeiro tooltip conta: hover e foco repetem-se muito.
+    if (!trackedRef.current) {
+      trackedRef.current = true
+      trackEvent("preco-ideal-ver", {
+        ...analytics,
+        melhorValor: isBestValue,
+        personalizadas: customized,
+      })
+    }
   }
   const hide = () => setRect(null)
 

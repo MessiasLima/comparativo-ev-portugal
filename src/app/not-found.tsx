@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import { trackAttributes } from "@/lib/analytics"
 
 export default function NotFound() {
   return (
@@ -18,6 +19,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
+          {...trackAttributes("navegar", { destino: "inicio", origem: "404" })}
           className="mt-8 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-lime px-5 text-sm font-medium text-ink transition-colors hover:bg-lime/85"
         >
           <ArrowLeft className="size-4" />

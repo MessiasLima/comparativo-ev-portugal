@@ -38,6 +38,7 @@ export function CarPriceBadge({
           isBestValue={isBestValue}
           customized={customized}
           tone="dark"
+          analytics={{ carro: current.id, origem: "dossie" }}
         />
       ) : null}
     </span>

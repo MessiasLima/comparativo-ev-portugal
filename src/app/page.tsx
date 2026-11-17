@@ -10,6 +10,7 @@ import { RankingTable } from "@/components/ranking-table"
 import { JsonLd } from "@/components/structured-data"
 import type { ComparisonRow } from "@/components/ranking-table"
 import { CRITERIA } from "@/data/criteria"
+import { trackAttributes } from "@/lib/analytics"
 import type { CriterionId } from "@/data/types"
 import { formatCarName, formatDatePt } from "@/lib/format"
 import { getComparison } from "@/lib/scoring"
@@ -133,6 +134,7 @@ export default function HomePage() {
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <Link
                 href="#ranking"
+                {...trackAttributes("navegar", { destino: "ranking", origem: "hero" })}
                 className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-lime px-5 text-sm font-medium text-ink transition-colors hover:bg-lime/85"
               >
                 Ver ranking
@@ -140,6 +142,10 @@ export default function HomePage() {
               </Link>
               <Link
                 href="#metodologia"
+                {...trackAttributes("navegar", {
+                  destino: "metodologia",
+                  origem: "hero",
+                })}
                 className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-white/20 px-5 text-sm font-medium text-paper transition-colors hover:bg-white/10"
               >
                 Como calculamos
