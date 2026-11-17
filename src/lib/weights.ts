@@ -1,7 +1,7 @@
 import { CRITERIA } from "@/data/criteria"
 import type { CriterionId } from "@/data/types"
 
-export const WEIGHTS_STORAGE_KEY = "comparativo-ev-portugal:weights:v3"
+export const WEIGHTS_STORAGE_KEY = "comparativo-ev-portugal:weights:v4"
 export const MODERATE_WEIGHT = 1
 
 export interface WeightLevel {
@@ -15,7 +15,7 @@ export const WEIGHT_LEVELS: WeightLevel[] = [
   { value: 0.5, label: "Importa-me pouco" },
   { value: 1, label: "Importa-me moderadamente" },
   { value: 2, label: "Importa-me muito" },
-  { value: 3, label: "Extremamente importante" },
+  { value: 4, label: "Extremamente importante" },
 ]
 
 export type WeightMap = Record<CriterionId, number>
@@ -73,7 +73,7 @@ export function saveWeights(weights: WeightMap): void {
 }
 
 // Cada peso é um multiplicador da nota do critério (um dos WEIGHT_LEVELS):
-// 1 mantém o peso base, 3 triplica-o e 0 anula o critério. A média ponderada normaliza pela
+// 1 mantém o peso base, 4 quadruplica-o e 0 anula o critério. A média ponderada normaliza pela
 // soma dos multiplicadores, pelo que com todos iguais resulta na média simples.
 export function weightedAverage(
   scores: Record<CriterionId, number>,
