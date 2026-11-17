@@ -457,8 +457,8 @@ export function RankingTable({
 
   return (
     <>
-      <div className="overflow-hidden rounded-2xl border border-line bg-card shadow-[0_1px_0_rgba(20,32,26,0.04),0_20px_50px_-35px_rgba(20,32,26,0.25)]">
-      <div className="border-b border-line px-5 py-4 sm:px-6">
+      <div className="sm:overflow-hidden sm:rounded-2xl sm:border sm:border-line sm:bg-card sm:shadow-[0_1px_0_rgba(20,32,26,0.04),0_20px_50px_-35px_rgba(20,32,26,0.25)]">
+      <div className="border-b border-line pb-4 sm:px-6 sm:pt-4">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
@@ -598,7 +598,7 @@ export function RankingTable({
         </div>
       </div>
 
-      <ol className="grid gap-3 bg-muted/35 p-3 sm:grid-cols-2 md:hidden">
+      <ol className="grid gap-3 py-4 sm:grid-cols-2 sm:bg-muted/35 sm:p-3 md:hidden">
         {sortedRows.map((entry) => (
           <RankingCard
             key={entry.id}
@@ -773,7 +773,7 @@ export function RankingTable({
       </Table>
       </div>
 
-      <div className="flex flex-col gap-1.5 border-t border-line bg-muted/35 px-5 py-3 text-sm leading-6 text-muted-foreground sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:px-6">
+      <div className="flex flex-col gap-1.5 border-t border-line py-3 text-sm leading-6 text-muted-foreground sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:bg-muted/35 sm:px-6">
         <p>
           <span className="font-medium text-foreground">Nota global</span> = média
           ponderada dos {CRITERIA.length} critérios, ajustável em{" "}
