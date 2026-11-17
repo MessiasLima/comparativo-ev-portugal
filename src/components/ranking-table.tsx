@@ -371,11 +371,11 @@ export function RankingTable({
               className={cn(
                 "inline-flex h-10 items-center gap-2 rounded-full border px-3.5 text-sm font-medium transition-colors",
                 customized
-                  ? "border-forest bg-lime/20 text-forest"
-                  : "border-line bg-card text-muted-foreground hover:bg-muted hover:text-foreground",
+                  ? "border-forest bg-lime/30 text-forest"
+                  : "border-forest bg-lime/10 text-forest hover:bg-lime/25",
               )}
             >
-              <Settings2 className="size-4" />
+              <Settings2 className="size-4 text-copper" />
               Ajustar prioridades
               {customized ? (
                 <span className="size-1.5 rounded-full bg-forest" />
