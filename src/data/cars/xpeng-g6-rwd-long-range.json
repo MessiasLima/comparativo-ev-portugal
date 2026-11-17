@@ -194,20 +194,20 @@
         "globalBrandAge": 6,
         "portugalMarketTenure": 3,
         "portugalServiceNetwork": 5,
-        "europeanManufacturing": 7,
+        "europeanManufacturing": 7.5,
         "establishedGroupSupport": 7.5,
-        "financialStability": 5,
+        "financialStability": 5.5,
         "portugalFactory": false
       },
-      "summary": "A XPENG foi fundada em 2014 e o primeiro modelo de série, o G3, entrou em produção em novembro de 2018, o que dá cerca de oito anos como marca automóvel autónoma. Está em Portugal desde setembro de 2024, através da Salvador Caetano, e a rede chegou a 15 pontos de venda em abril de 2026, com o G6 como modelo mais vendido da marca no país; a Caetano disponibiliza marcação de oficinas XPENG, mas o diretório consultado não lista os locais nem permite contar as oficinas autorizadas. Desde setembro de 2025, a Magna Steyr monta o G6 e o G9 para a Europa em Graz, em regime SKD (com componentes vindos da China); as fontes não confirmam a origem das unidades vendidas em Portugal. Não tem empresa-mãe: He Xiaopeng é o acionista de controlo e a Volkswagen detém 4,99% e licencia tecnologia à marca. No 3.º trimestre de 2026, a XPENG entregou 118.390 veículos, faturou 24,28 mil milhões de yuan, com margem automóvel de 13,1%, e registou prejuízo líquido de 0,87 mil milhões de yuan.",
+      "summary": "A XPENG foi fundada em 2014 e o primeiro modelo de série, o G3, entrou em produção em novembro de 2018, o que dá cerca de oito anos como marca automóvel autónoma. Está em Portugal desde setembro de 2024, através da Salvador Caetano, e a rede chegou a 15 pontos de venda em abril de 2026, com o G6 como modelo mais vendido da marca no país; a Caetano disponibiliza marcação de oficinas XPENG, mas o diretório consultado não lista os locais nem permite contar as oficinas autorizadas. Desde setembro de 2025, a Magna Steyr monta o G6 e o G9 para a Europa em Graz, em regime SKD (com componentes vindos da China); as fontes não confirmam a origem das unidades vendidas em Portugal. Não tem empresa-mãe: He Xiaopeng é o acionista de controlo e a Volkswagen detém 4,99% e licencia tecnologia à marca. A XPENG fechou 2025 com receita de 76,72 mil milhões de yuan e prejuízo líquido de 1,14 mil milhões, sendo o 4.º trimestre de 2025 o primeiro com lucro líquido; seguiram-se prejuízos de 1,78 mil milhões no 1.º trimestre e 1,34 mil milhões no 2.º trimestre de 2026, com margem automóvel de 12,1%. No 3.º trimestre de 2026, a receita subiu para 24,28 mil milhões de yuan (mais 19,1% do que um ano antes), com margem automóvel de 13,1%, e o prejuízo líquido desceu para 0,87 mil milhões; no fim do trimestre tinha 45,41 mil milhões de yuan em caixa, depósitos e investimentos de curto prazo.",
       "pros": [
         "Montagem europeia do G6 na Magna Steyr, em Graz, desde setembro de 2025",
         "Volkswagen como acionista estratégico e licenciador de tecnologia",
-        "Receita de 24,28 mil milhões de yuan e margem automóvel de 13,1% no 3.º trimestre de 2026"
+        "45,41 mil milhões de yuan em caixa e investimentos de curto prazo no fim do 3.º trimestre de 2026"
       ],
       "cons": [
         "Presença oficial em Portugal desde setembro de 2024",
-        "Prejuízo líquido de 0,87 mil milhões de yuan no 3.º trimestre de 2026",
+        "Prejuízos líquidos nos três primeiros trimestres de 2026 (1,78, 1,34 e 0,87 mil milhões de yuan)",
         "Rede de oficinas autorizadas por confirmar: o diretório consultado não as lista"
       ],
       "sourceIds": [
@@ -216,7 +216,8 @@
         "electrive-magna-g6",
         "electrive-magna",
         "sec-xpeng-q3-2026",
-        "caetano-oficinas"
+        "caetano-oficinas",
+        "cnevpost-xpeng"
       ]
     },
     "equipment": {
@@ -705,6 +706,12 @@
       "id": "driven-g6",
       "label": "Driven — ensaio ao XPENG G6 2026 (níveis de regeneração e modo X-Pedal)",
       "url": "https://driven.site/words/2026-xpeng-g6-review",
+      "type": "press"
+    },
+    {
+      "id": "cnevpost-xpeng",
+      "label": "CnEVPost — XPENG: resultados do 2.º trimestre de 2026 e calendário do 3.º trimestre",
+      "url": "https://cnevpost.com/2026/11/02/xpeng-q3-2026-results-nov-16/",
       "type": "press"
     }
   ]

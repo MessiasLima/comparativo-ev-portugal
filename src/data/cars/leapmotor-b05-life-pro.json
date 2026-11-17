@@ -114,7 +114,7 @@
       "assessment": {
         "seats": 6.9,
         "acoustics": 7.3,
-        "drivetrainCalibration": 7.4
+        "drivetrainCalibration": 7.0
       },
       "suspensionBasis": {
         "dampers": "passive",
@@ -122,15 +122,15 @@
         "references": [
           {
             "protocol": "estimate",
-            "federung": 2.7,
+            "federung": 2.9,
             "dampers": "passive",
             "wheelInches": 19,
             "sourceId": "adac-b05",
-            "note": "Sem autoteste: o ADAC só publicou um primeiro contacto, com o autoteste ainda pendente, e descreve uma afinação orientada para o conforto. Auto Express, carwow, electrifying, Motoring Research, Razão Automóvel e Auto Bild dizem que absorve bem buracos e lombas; a What Car? acha-o irrequieto em piso degradado e a pancar em lombas maiores, o The Independent põe-no do lado firme do confortável e a Auto Bild nota balanço em curvas rápidas. Fica abaixo do BYD Seal Design (2,4 medido com 19\" e amortecedores passivos) e do Model 3 com FSD (2,5 com 19\")."
+            "note": "Sem autoteste: o ADAC só publicou um primeiro contacto, com o autoteste ainda pendente, e descreve uma afinação orientada para o conforto. Auto Express, carwow, electrifying, Motoring Research, Razão Automóvel e Auto Bild dizem que absorve bem buracos e lombas; a What Car? acha-o irrequieto em piso degradado e a pancar em lombas maiores (e desaconselha-o a quem põe o conforto em primeiro lugar), o The Independent põe-no do lado firme do confortável, o Nonstop Driving nota movimentos verticais da carroçaria em ondulações seguidas e a Auto Bild nota balanço em curvas rápidas. Como é uma estimativa e as críticas à firmeza são consistentes, fica do lado prudente: abaixo do BYD Seal Design (2,4 medido com 19\" e amortecedores passivos), do Model 3 com FSD (2,5 com 19\") e do XPENG G6 (2,7 medido com 20\")."
           }
         ]
       },
-      "summary": "A suspensão é passiva (McPherson à frente e multibraço atrás), com jantes de 19\" em todas as versões. A maioria dos ensaios descreve um acerto confortável, que absorve bem buracos e lombas em cidade sem balançar (Auto Express, carwow, electrifying, Razão Automóvel, Auto Bild), mas a What Car? diz que é irrequieto em piso degradado e o The Independent acha-o firme em buracos grandes. Os bancos dianteiros são bem almofadados mas com pouco apoio lateral (ADAC, What Car?), sem regulação lombar nem extensão do assento (carwow, Auto Bild); atrás há bom espaço para os joelhos, mas o piso alto deixa os joelhos levantados (ADAC, Motor1 Alemanha). A TopGear.nl considera os bancos em tecido desta versão mais confortáveis do que os de pele sintética da Design, mas são de regulação manual. Vários ensaios elogiam o silêncio a bordo (What Car?, electrifying, Razão Automóvel), mas a Auto Express, o The Independent e a Car Magazine notam ruído de rolamento das jantes de 19\" e ruído aerodinâmico em autoestrada; não há medições em dB(A) nem referência a vidros acústicos. O acelerador é linear e há três níveis de regeneração; a What Car? descreve um modo de um pedal que a Auto Express não encontrou no primeiro ensaio. A passagem da regeneração para os travões é progressiva (What Car?, electrifying), mas a regeneração só se ajusta no ecrã.",
+      "summary": "A suspensão é passiva (McPherson à frente e multibraço atrás), com jantes de 19\" em todas as versões. A maioria dos ensaios descreve um acerto confortável, que absorve bem buracos e lombas em cidade sem balançar (Auto Express, carwow, electrifying, Razão Automóvel, Auto Bild), mas a What Car? diz que é irrequieto em piso degradado e o The Independent acha-o firme em buracos grandes; o Nonstop Driving nota movimentos verticais da carroçaria em ondulações seguidas. Os bancos dianteiros são bem almofadados mas com pouco apoio lateral (ADAC, What Car?), sem regulação lombar nem extensão do assento (carwow, Auto Bild); atrás há bom espaço para os joelhos, mas o piso alto deixa os joelhos levantados (ADAC, Motor1 Alemanha). A TopGear.nl considera os bancos em tecido desta versão mais confortáveis do que os de pele sintética da Design, mas são de regulação manual. Vários ensaios elogiam o silêncio a bordo (What Car?, electrifying, Razão Automóvel), mas a Auto Express, o The Independent e a Car Magazine notam ruído de rolamento das jantes de 19\" e ruído aerodinâmico em autoestrada; não há medições em dB(A) nem referência a vidros acústicos. O acelerador é linear, mas de resposta lenta nos modos Conforto e Normal (What Car?), e há três níveis de regeneração; a What Car? descreve um modo de um pedal que a Auto Express não encontrou no primeiro ensaio. A passagem da regeneração para os travões é progressiva (What Car?, electrifying), mas a regeneração só se ajusta no ecrã, sem patilhas no volante (InsideEVs Alemanha).",
       "pros": [
         "Suspensão que absorve bem buracos e lombas em cidade",
         "Bancos em tecido considerados mais confortáveis do que os da Design",
@@ -139,7 +139,8 @@
       "cons": [
         "Bancos com pouco apoio lateral, sem regulação lombar e de ajuste manual",
         "Ruído de rolamento e aerodinâmico em autoestrada, sem vidros acústicos",
-        "Piso traseiro alto deixa os joelhos levantados"
+        "Piso traseiro alto deixa os joelhos levantados",
+        "Regeneração só ajustável no ecrã, sem patilhas no volante"
       ],
       "sourceIds": [
         "adac-b05",
@@ -155,7 +156,9 @@
         "motor1-de-b05",
         "motoringresearch-b05",
         "leapmotor-uk-guide",
-        "autoexpress-b05-primeiro"
+        "autoexpress-b05-primeiro",
+        "nonstopdriving-b05",
+        "insideevs-de-b05"
       ]
     },
     "brand": {
@@ -163,12 +166,12 @@
         "globalBrandAge": 5.5,
         "portugalMarketTenure": 1.5,
         "portugalServiceNetwork": 6.5,
-        "europeanManufacturing": 7.5,
-        "establishedGroupSupport": 9,
-        "financialStability": 7,
+        "europeanManufacturing": 7,
+        "establishedGroupSupport": 8,
+        "financialStability": 6.5,
         "portugalFactory": false
       },
-      "summary": "A Zhejiang Leapmotor foi fundada em dezembro de 2015 e entregou o primeiro carro, o S01, em 2019, o que dá cerca de sete anos como marca automóvel autónoma. Em Portugal vende desde abril de 2025 através da Leapmotor International, a joint venture em que a Stellantis tem 51% (a Stellantis detém ainda cerca de 21% da Leapmotor), e o localizador oficial lista 17 concessionários com assistência a 17/11/2026, concentrados no Norte e na Grande Lisboa, com um ponto em Évora, Faro e Ponta Delgada e nenhum na Madeira, em Coimbra ou em Leiria. A Stellantis assegura financiamento, peças pela rede Distrigo e fabrico: a produção em série do B10 arrancou em Saragoça a 16/10/2026, depois de a montagem do T03 em Tychy ter terminado em março de 2025; o B05 vendido em Portugal ainda não é feito na Europa, com produção em Saragoça prevista para 2027. A Leapmotor (HKEX: 9863) teve o primeiro lucro anual em 2025 (0,54 mil milhões de yuan, com 64,73 mil milhões de receita e 12,62 mil milhões de fluxo de caixa operacional) e lucro de 0,21 mil milhões no 1.º semestre de 2026, mas reviu em baixa a meta de lucro para 2026 e a margem bruta desceu para 11,7%. A Stellantis, parceira na joint venture, perdeu 22,3 mil milhões de euros em 2025.",
+      "summary": "A Zhejiang Leapmotor foi fundada em dezembro de 2015 e entregou o primeiro carro, o S01, em 2019, o que dá cerca de sete anos como marca automóvel autónoma. Em Portugal vende desde abril de 2025 através da Leapmotor International, a joint venture em que a Stellantis tem 51% (a Stellantis detém ainda cerca de 21% da Leapmotor, uma participação minoritária), e o localizador oficial lista 17 concessionários com assistência a 17/11/2026, concentrados no Norte e na Grande Lisboa, com um ponto em Évora, Faro e Ponta Delgada e nenhum na Madeira, em Coimbra ou em Leiria. A Stellantis assegura financiamento, peças pela rede Distrigo e fabrico: a produção em série do B10 arrancou em Saragoça a 16/10/2026, depois de a montagem do T03 em Tychy ter terminado em março de 2025; o B05 vendido em Portugal ainda não é feito na Europa, com produção em Saragoça prevista para 2027. A Leapmotor (HKEX: 9863) teve o primeiro lucro anual em 2025 (0,54 mil milhões de yuan, com 64,73 mil milhões de receita e 12,62 mil milhões de fluxo de caixa operacional) e lucro de 0,21 mil milhões no 1.º semestre de 2026, mas reviu em baixa a meta de lucro para 2026 e a margem bruta desceu para 11,7%. A Stellantis, parceira na joint venture, perdeu 22,3 mil milhões de euros em 2025.",
       "pros": [
         "Joint venture com a Stellantis: financiamento, peças Distrigo e rede de concessionários",
         "Lucro anual em 2025 e fluxo de caixa operacional positivo",
@@ -177,7 +180,8 @@
       "cons": [
         "Presença oficial em Portugal desde abril de 2025",
         "17 pontos de assistência, sem cobertura na Madeira nem no Centro interior",
-        "O B05 ainda é importado; a produção europeia só está prevista para 2027"
+        "O B05 ainda é importado; a produção europeia só está prevista para 2027",
+        "Meta de lucro para 2026 revista em baixa e margem bruta a cair para 11,7%"
       ],
       "sourceIds": [
         "wikipedia-leapmotor",
@@ -675,6 +679,18 @@
       "id": "newmobility-stellantis-2025",
       "label": "newmobility — Stellantis com prejuízo de 22,3 mil milhões de euros em 2025 (26/02/2026)",
       "url": "https://newmobility.news/en/2026/02/26/stellantis-posts-dramatic-e22-3bn-loss-in-historic-2025-reset/",
+      "type": "press"
+    },
+    {
+      "id": "nonstopdriving-b05",
+      "label": "Nonstop Driving — ensaio ao Leapmotor B05 Pro Max (2026)",
+      "url": "https://nonstopdriving.de/leapmotor-b05-test-fahrbericht/",
+      "type": "press"
+    },
+    {
+      "id": "insideevs-de-b05",
+      "label": "InsideEVs Alemanha — ensaio ao Leapmotor B05 ProMax Design (2026)",
+      "url": "https://insideevs.de/reviews/798153/leapmotor-b05-2026-test/",
       "type": "press"
     }
   ]

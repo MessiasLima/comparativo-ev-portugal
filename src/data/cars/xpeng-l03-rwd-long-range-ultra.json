@@ -177,16 +177,17 @@
         "globalBrandAge": 6,
         "portugalMarketTenure": 3,
         "portugalServiceNetwork": 5,
-        "europeanManufacturing": 7,
+        "europeanManufacturing": 7.5,
         "establishedGroupSupport": 7.5,
-        "financialStability": 5,
+        "financialStability": 5.5,
         "portugalFactory": false
       },
-      "summary": "A XPENG foi fundada em 2014 e o primeiro modelo de série, o G3, entrou em produção em novembro de 2018, o que dá cerca de oito anos como marca automóvel autónoma. Está em Portugal desde setembro de 2024, através da Salvador Caetano, e a rede chegou a 15 pontos de venda em abril de 2026; a Caetano disponibiliza marcação de oficinas XPENG, mas o diretório consultado não lista os locais nem permite contar as oficinas autorizadas. Na Europa, o G6, o G9 e o P7+ são montados em regime SKD na Magna Steyr, em Graz, mas as fontes indicam produção do L03 na China (Zhaoqing) e na Indonésia. Não tem empresa-mãe: He Xiaopeng é o acionista de controlo, a Volkswagen detém 4,99% e licencia tecnologia à marca. A XPENG fechou 2025 com receita de 76,72 mil milhões de yuan e prejuízo líquido de 1,14 mil milhões, sendo o 4.º trimestre de 2025 o primeiro com lucro líquido; seguiram-se prejuízos de 1,78 mil milhões no 1.º trimestre e 1,34 mil milhões no 2.º trimestre de 2026, com margem automóvel de 12,1%. No 3.º trimestre de 2026, a receita subiu para 24,28 mil milhões de yuan, com margem automóvel de 13,1%, e o prejuízo líquido desceu para 0,87 mil milhões.",
+      "summary": "A XPENG foi fundada em 2014 e o primeiro modelo de série, o G3, entrou em produção em novembro de 2018, o que dá cerca de oito anos como marca automóvel autónoma. Está em Portugal desde setembro de 2024, através da Salvador Caetano, e a rede chegou a 15 pontos de venda em abril de 2026; a Caetano disponibiliza marcação de oficinas XPENG, mas o diretório consultado não lista os locais nem permite contar as oficinas autorizadas. Na Europa, o G6, o G9 e o P7+ são montados em regime SKD na Magna Steyr, em Graz, mas as fontes indicam produção do L03 na China (Zhaoqing) e na Indonésia. Não tem empresa-mãe: He Xiaopeng é o acionista de controlo, a Volkswagen detém 4,99% e licencia tecnologia à marca. A XPENG fechou 2025 com receita de 76,72 mil milhões de yuan e prejuízo líquido de 1,14 mil milhões, sendo o 4.º trimestre de 2025 o primeiro com lucro líquido; seguiram-se prejuízos de 1,78 mil milhões no 1.º trimestre e 1,34 mil milhões no 2.º trimestre de 2026, com margem automóvel de 12,1%. No 3.º trimestre de 2026, a receita subiu para 24,28 mil milhões de yuan (mais 19,1% do que um ano antes), com margem automóvel de 13,1%, e o prejuízo líquido desceu para 0,87 mil milhões; no fim do trimestre tinha 45,41 mil milhões de yuan em caixa, depósitos e investimentos de curto prazo.",
       "pros": [
         "Mais de 429.000 veículos entregues em 2025, com escala industrial própria",
         "Montagem europeia em série na Magna Steyr, em Graz, para outros modelos da marca",
-        "Volkswagen como acionista estratégico e licenciador de tecnologia"
+        "Volkswagen como acionista estratégico e licenciador de tecnologia",
+        "45,41 mil milhões de yuan em caixa e investimentos de curto prazo no fim do 3.º trimestre de 2026"
       ],
       "cons": [
         "Presença oficial em Portugal desde setembro de 2024",
