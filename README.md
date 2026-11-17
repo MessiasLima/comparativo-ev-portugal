@@ -2,7 +2,7 @@
 
 Comparador de carros elétricos do mercado português, publicado em <https://comparativo-ev-portugal.appoutlet.dev>. O site tem duas vistas principais:
 
-- **Home (`/`)** — hero e uma tabela única de ranking com nota global, os onze critérios e o custo em €/ponto. Em ecrãs estreitos (abaixo de 768 px) a tabela dá lugar a uma lista de cartões, com um seletor para ordenar. Qualquer coluna pode ser usada para ordenar, com atalhos para “Melhor nota” e “Melhor custo-benefício”. O botão «Ajustar prioridades» abre um modal onde, para cada critério, se escolhe com botões quanto importa (de «Não me importa» a «Extremamente importante»). A nota global, o €/ponto e o ranking só são recalculados ao clicar em Aplicar, e a configuração fica guardada no `localStorage` do browser. Cancelar fecha o modal sem alterar os pesos ativos.
+- **Home (`/`)** — hero e uma tabela única de ranking com nota global, os onze critérios e a diferença face ao preço médio. Em ecrãs estreitos (abaixo de 768 px) a tabela dá lugar a uma lista de cartões, com um seletor para ordenar. Qualquer coluna pode ser usada para ordenar, com atalhos para “Melhor nota” e “Melhor custo-benefício”. O botão «Ajustar prioridades» abre um modal onde, para cada critério, se escolhe com botões quanto importa (de «Não me importa» a «Extremamente importante»). A nota global, o preço médio e o ranking só são recalculados ao clicar em Aplicar, e a configuração fica guardada no `localStorage` do browser. Cancelar fecha o modal sem alterar os pesos ativos.
 - **Dossiê (`/carros/[slug]`)** — visão geral, ficha técnica, critérios de avaliação (3.1 a 3.11), equipamento, informações adicionais e fontes.
 
 A aplicação não assume um número fixo de carros. O registo `src/data/cars/index.ts` alimenta a home, as tabelas, o rodapé e as rotas de dossiê. Cada versão do mesmo modelo é um carro autónomo: o nome público inclui sempre a marca, o modelo e a variante (por exemplo, “BYD Seal Design” e “BYD Seal Excellence AWD”).
@@ -78,12 +78,13 @@ src/data/
 └── types.ts                      # tipos do modelo de dados
 
 src/lib/weights.ts                # pesos padrão, validação e persistência
-src/lib/scoring.ts                # notas, ranking e €/ponto
+src/lib/scoring.ts                # notas e ranking
+src/lib/fair-price.ts             # recta do preço médio e custo-benefício
 src/lib/interior.ts               # rubrica do acabamento interno
 src/hooks/use-weights.ts          # store de pesos reativa (localStorage)
 ```
 
-O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia, equipamento e avaliações editoriais são a matéria-prima. As notas, a nota global, o ranking e o €/ponto são sempre calculados em `src/lib/scoring.ts`.
+O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia, equipamento e avaliações editoriais são a matéria-prima. As notas, a nota global e o ranking são sempre calculados em `src/lib/scoring.ts`; o preço médio, em `src/lib/fair-price.ts`.
 
 ### Adicionar um carro
 
@@ -103,7 +104,7 @@ O JSON guarda **dados**, não resultados. Preço, potência, bateria, autonomia,
 - **Acabamento interno** — critério de rubrica, com nota **absoluta** (não relativa à lista). A avaliação dos componentes, do estilo e do plástico duro segue a [skill de avaliação do interior](.agents/skills/evaluate-interior/SKILL.md); a fórmula vive em `src/lib/interior.ts` e os dados de cada carro em `reviews.interior.assessment`.
 - **Relatividade** — só os cinco critérios de dados (bagageira, autonomia, potência/peso, eficiência e carregamento) são relativos à lista: o melhor carro recebe 10 e os restantes a proporção do seu desempenho face ao líder. Se entrar um carro novo, só estas notas mudam; conforto, som, marca, satisfação, equipamento e acabamento mantêm-se, porque são absolutas.
 - **Nota global** — média ponderada dos 11 critérios. Cada critério tem um peso-multiplicador escolhido entre cinco níveis (`WEIGHT_LEVELS` em `src/lib/weights.ts`): «Não me importa» ×0, «Importa-me pouco» ×0,5, «Importa-me moderadamente» ×1, «Importa-me muito» ×2 e «Extremamente importante» ×3. Por defeito, acabamento e conforto estão em ×2, bagageira e som em ×0,5 e os restantes critérios em ×1 (`DEFAULT_WEIGHTS`). No modal, ×0 é cinzento e os restantes níveis são o verde da marca cada vez mais intenso, sem cores de alerta. A média é normalizada pela soma dos multiplicadores, pelo que com todos iguais resulta na média simples. Um valor guardado que não seja um destes níveis volta ao valor por defeito desse critério. Com a mesma nota global, fica à frente no ranking o carro mais barato (`src/lib/ranking.ts`).
-- **Custo-benefício** — `preço / nota global` = euros por ponto. Quanto menor, melhor.
+- **Custo-benefício** — compara o preço com o **preço médio** da lista para a mesma nota global (`src/lib/fair-price.ts`). O preço médio sai da recta `preço médio = a + b × nota`, calculada sobre toda a lista com as prioridades ativas: cada modelo vale um voto, repartido pelas suas versões, e a regressão é robusta (Huber), para que um carro muito afastado da recta não defina o preço médio dos outros. O ranking ordena por `preço / preço médio − 1`: quanto mais negativo, melhor. O tooltip mostra também o preço a que o carro passaria a ser o 1.º do custo-benefício. Como a recta depende da lista inteira, um carro novo mexe no preço médio de todos.
 - **Persistência** — os pesos são guardados em `localStorage` com a chave `comparativo-ev-portugal:weights:v3` e recuperados quando o utilizador volta ao site. A tabela e o painel de nota dos dossiês usam a mesma configuração.
 
 O carregamento usa apenas a **potência DC de pico** (`charging.dcKw`), relativa ao melhor da lista: é o que determina o tempo de paragem numa viagem. A potência AC continua no JSON como dado do carro mas não pontua — hoje todos os carros comparados aceitam 11 kW, por isso não os distingue. A quantidade de equipamento é contada sobre a mesma checklist de 38 itens para todos os carros e convertida numa nota absoluta de 0 a 10 pela proporção da checklist preenchida.
@@ -160,7 +161,7 @@ Além das visitas, o site envia eventos personalizados. Os elementos clicáveis 
 | `prioridades-cancelar` | Fechar o modal sem aplicar | `via` (`cancelar`, `fechar`, `escape`, `fora`), `alteracoes` |
 | `prioridades-repor` | «Repor defeito» no modal | — |
 | `abrir-dossie` | Abrir o dossiê de um carro | `carro`, `origem` (`ranking-tabela`, `ranking-cartao`, `rodape`), `posicao` e `ordem` no ranking |
-| `preco-ideal-ver` | Primeiro tooltip do preço ideal de cada ícone (no ranking, o ícone só aparece ao ordenar por melhor custo-benefício) | `carro`, `origem`, `melhorValor`, `personalizadas` |
+| `preco-justo-ver` | Primeiro tooltip do preço médio de cada ícone (junto à percentagem no ranking e ao preço no dossiê) | `carro`, `origem`, `melhorValor`, `personalizadas` |
 | `criterio-explicacao-ver` | Tooltip de um critério no cabeçalho da tabela | `criterio` |
 | `navegar` | Links internos (cabeçalho, hero, rodapé, voltar, 404) | `destino`, `origem`, `carro` quando vem de um dossiê |
 | `dossie-secao` | Atalhos para secções do dossiê | `carro`, `secao`, `origem` |

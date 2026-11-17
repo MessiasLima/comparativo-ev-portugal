@@ -15,7 +15,7 @@ Use this workflow when a user provides the proposed criterion's name and descrip
 4. **Set the rubric before researching scores.** Define what raises or lowers a mark, what evidence qualifies, and how to handle missing or conflicting evidence. Do not shape the rubric around a desired ranking.
 5. **Score each evaluated car independently and honestly.** Research the actual version/configuration in each `src/data/cars/*.json`, not a different trim or an unconfigured option. Use existing sources and add relevant sources to each car's `sources` array; cite them from the new review's `sourceIds`.
 6. **Keep source data separate from calculated results.** The scoring engine calculates criterion scores and overall ranks. Store defensible raw inputs or an editorial `baseScore`/rubric components, not cached final scores or ranks.
-7. **Adding a criterion changes the whole ranking.** The default weight is normally 1, so a new criterion changes the average and can change every car's total, rank, and price-per-point. Recalculate and review all cars, not only the apparent winner.
+7. **Adding a criterion changes the whole ranking.** The default weight is normally 1, so a new criterion changes the average and can change every car's total, rank, fair price and fair-price gap. Recalculate and review all cars, not only the apparent winner.
 
 ## Phase 0 — Intake and criterion design
 
@@ -81,7 +81,7 @@ Use the project's existing design patterns and avoid unnecessary component speci
    - Does the criterion duplicate another criterion or disproportionately reward one category/trim?
    - Do the highest and lowest assessments make sense when compared with source evidence and known competitors?
 4. If the result seems wrong, first revisit data, assumptions, definitions, or the formula. Do not tune an individual car's score to force a preferred rank. If the methodology itself is flawed, revise it consistently for every car and explain the change.
-5. Re-run the full overall ranking and price-per-point calculation. Check how much the new criterion changes each car's total and rank; explain surprising movements. Search all car reviews and dossier prose for claims invalidated by the new ranking or criterion count, and update them.
+5. Re-run the full overall ranking and the fair-price (cost-benefit) calculation. Check how much the new criterion changes each car's total and rank; explain surprising movements. Search all car reviews and dossier prose for claims invalidated by the new ranking or criterion count, and update them.
 6. Check the UI in the ranking and at least one car dossier: criterion label/order, icon, raw value/rank, score, description, evidence/pros/cons, source links, weighting controls, and methodology text. Confirm the new criterion can be selected/sorted/weighted where applicable.
 7. Run `npx tsc --noEmit`, `npm run lint`, and `npm run build` in addition to `npm run validate:data`. Fix failures caused by the change; report unrelated pre-existing failures separately.
 

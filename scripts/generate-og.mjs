@@ -98,7 +98,7 @@ function homeImage() {
       text(
         "div",
         { fontSize: 34, color: "rgba(242,239,231,0.65)" },
-        `${cars.length} carros elétricos · ${criteriaCount} critérios · custo por ponto`,
+        `${cars.length} carros elétricos · ${criteriaCount} critérios · custo-benefício`,
       ),
     ),
     h(
@@ -185,7 +185,7 @@ function carImage(car) {
     text(
       "div",
       { fontSize: 26, color: "rgba(242,239,231,0.55)" },
-      "Autonomia, equipamento, conforto e custo por ponto.",
+      "Autonomia, equipamento, conforto e custo-benefício.",
     ),
   )
 }

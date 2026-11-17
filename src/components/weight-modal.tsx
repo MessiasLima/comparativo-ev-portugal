@@ -148,7 +148,7 @@ export function WeightModal({
               </h2>
               <p className="mt-1 max-w-lg text-sm leading-6 text-muted-foreground">
                 Escolha quanto lhe importa cada critério. A nota global, o
-                €/ponto e o ranking só são recalculados quando clicar em{" "}
+                custo-benefício e o ranking só são recalculados quando clicar em{" "}
                 <span className="font-medium text-foreground">Aplicar</span>.
               </p>
             </div>

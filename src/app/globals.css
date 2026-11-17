@@ -15,6 +15,9 @@
   --color-forest: #173a2a;
   --color-lime: #d7ff4f;
   --color-copper: #9a4f2f;
+  /* Versões para fundos escuros e para o verde de «abaixo da média» em fundos claros. */
+  --color-copper-light: #e8946b;
+  --color-saving: #2a7046;
   --color-ocean: #2f5f8f;
   --color-sand: #e6dfd0;
   --color-line: #d8d2c3;

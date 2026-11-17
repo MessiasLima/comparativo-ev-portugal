@@ -5,8 +5,8 @@ conforto, som, marca, satisfação, equipamento e acabamento — and come from t
 car's own review, rubric or checklist count. Only five data criteria are relative:
 bagageira, autonomia, potência/peso, eficiência e carregamento; for those, the best
 car in the list gets 10 and the others get their proportion. Adding one car changes
-those five per-criterion scores, the weighted total, the ranking, the €/ponto, the
-value ranking, and the truthfulness of every comparative sentence in every dossier.
+those five per-criterion scores, the weighted total, the ranking, the fair-price
+line (and with it every car's fair price and gap), the value ranking, and the truthfulness of every comparative sentence in every dossier.
 Absolute scores do not move with the line-up, but every claim in their prose must
 still match the underlying assessment. Work through ALL sections below, in order.
 
@@ -57,7 +57,13 @@ and score, follow the verification steps in
 - Relative score (higher-is-better): `clamp(raw / bestRaw × 10, 0, 10)`;
   lower-is-better (only `efficiency`): `clamp(bestRaw / raw × 10, 0, 10)`. This
   applies only to bagageira, autonomia, potência/peso, eficiência e carregamento.
-- Total = weighted mean of the 11 scores → `pricePerPoint = price.amount / total`.
+- Total = weighted mean of the 11 scores (validator: `DEFAULT_WEIGHTS`).
+- Fair price (`src/lib/fair-price.ts`): fit `price = a + b × total` over the whole
+  list with weighted least squares, each version weighing `1 / versions of its
+  model` (`brand + model`), then Huber IRLS (k = 1.345, scale = 1.4826 × MAD of
+  the residuals). `fairPrice = a + b × total`, `gap = price / fairPrice − 1`;
+  the value ranking sorts by gap ascending. The validator prints `a` and `b`, so
+  recompute one car's fair price by hand from them.
 
 Pick the new car and one existing car, recompute objective criteria and inspect the
 brand/satisfaction rubric inputs as applicable, then confirm they match the
@@ -149,7 +155,9 @@ npm run build
 Both must pass. Then, with `npm run dev`, eyeball:
 
 - `/` — hero shows the new car count; ranking table includes the new car(s) with
-  plausible scores; sorting by "Melhor custo-benefício" works; footer lists the
+  plausible scores; sorting by "Melhor custo-benefício" works and the info icon
+  next to the "vs. média" percentage shows fair price, difference and the price to
+  become 1st; footer lists the
   right dossiers (first 4 of the registry order, plus "Ver todos" if > 4).
 - `/carros/<new-slug>` — every section renders in order: visão geral, ficha
   técnica, critérios de avaliação (3.1 a 3.11), equipamento com o novo total,
@@ -171,7 +179,8 @@ Both must pass. Then, with `npm run dev`, eyeball:
 
 Report in chat (not a file):
 
-1. New ranking (car — total score — €/ponto) and what moved.
+1. New ranking (car — total score) and cost-benefit table (car — fair price —
+   gap), and what moved.
 2. New car(s) summary: price basis, version(s) added, headline strengths/weaknesses.
 3. Equipment: new checklist ids, which existing cars gained them.
 4. Comparative claims corrected in old dossiers (before → after).

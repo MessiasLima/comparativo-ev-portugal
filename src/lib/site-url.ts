@@ -20,7 +20,7 @@ export const SITE_URL = trimTrailingSlash(
 
 export const SITE_NAME = "Comparativo EV Portugal"
 
-export const SITE_DESCRIPTION = `Compare carros elétricos no mercado português: autonomia, potência, equipamento, conforto e custo por ponto. ${CRITERIA.length} critérios, uma decisão.`
+export const SITE_DESCRIPTION = `Compare carros elétricos no mercado português: autonomia, potência, equipamento, conforto e custo-benefício. ${CRITERIA.length} critérios, uma decisão.`
 
 export const SITE_LOCALE = "pt_PT"
 

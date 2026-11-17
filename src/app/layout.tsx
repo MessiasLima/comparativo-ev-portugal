@@ -98,7 +98,8 @@ export const metadata: Metadata = {
     "EV Portugal",
     "comparativo",
     "autonomia WLTP",
-    "custo por ponto",
+    "preço médio",
+    "custo-benefício",
     "mercado português",
   ],
 }

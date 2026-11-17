@@ -13,8 +13,8 @@ const steps = [
   },
   {
     number: "03",
-    title: "Ranking e custo por ponto",
-    body: `A nota global é a média ponderada dos ${CRITERIA.length} critérios. Por defeito, acabamento e conforto contam «muito», bagageira e som «pouco» e os restantes critérios «moderadamente»; no ranking, o botão Ajustar prioridades deixa-te escolher quanto te importa cada critério, de «Não me importa» (×0) a «Extremamente importante» (×3). Esse valor é o peso do critério na média, que é normalizada pela soma dos pesos. Com a mesma nota global, fica à frente o carro mais barato. O custo-benefício divide o preço pela nota global: quanto menos euros por ponto, melhor o negócio.`,
+    title: "Ranking e custo-benefício",
+    body: `A nota global é a média ponderada dos ${CRITERIA.length} critérios. Por defeito, acabamento e conforto contam «muito», bagageira e som «pouco» e os restantes critérios «moderadamente»; no ranking, o botão Ajustar prioridades deixa-te escolher quanto te importa cada critério, de «Não me importa» (×0) a «Extremamente importante» (×3). Esse valor é o peso do critério na média, que é normalizada pela soma dos pesos. Com a mesma nota global, fica à frente o carro mais barato. O custo-benefício compara o preço de cada carro com o preço médio da lista para a mesma nota global. Esse preço médio sai de uma recta que liga nota e preço em toda a lista. Cada modelo conta uma vez, mesmo com várias versões, e os carros muito afastados da recta pesam menos, para que um caso extremo não mude o preço médio dos restantes. Quanto mais abaixo da média, melhor o negócio.`,
   },
 ]
 

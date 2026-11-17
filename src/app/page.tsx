@@ -207,7 +207,7 @@ export default function HomePage() {
             index="01"
             eyebrow="Ranking geral"
             title="Quem entrega mais, critério a critério."
-            description={`A nota global é a média ponderada dos ${CRITERIA.length} critérios. Por defeito, acabamento e conforto contam «muito», bagageira e som «pouco» e os restantes critérios «moderadamente»; usa o botão Ajustar prioridades para dizer o que mais valorizas. Conforto, som, marca, satisfação, equipamento e acabamento usam notas absolutas; nos restantes cinco critérios, o melhor carro da lista recebe 10 e os outros a proporção do seu desempenho. Ordene por qualquer coluna, pela nota global ou pelo custo por ponto.`}
+            description={`A nota global é a média ponderada dos ${CRITERIA.length} critérios. Por defeito, acabamento e conforto contam «muito», bagageira e som «pouco» e os restantes critérios «moderadamente»; usa o botão Ajustar prioridades para dizer o que mais valorizas. Conforto, som, marca, satisfação, equipamento e acabamento usam notas absolutas; nos restantes cinco critérios, o melhor carro da lista recebe 10 e os outros a proporção do seu desempenho. Ordene por qualquer coluna, pela nota global ou pela distância ao preço médio da lista para a mesma nota.`}
           />
         </div>
         <div className="w-full px-5 pb-16 sm:pb-24 lg:px-6">

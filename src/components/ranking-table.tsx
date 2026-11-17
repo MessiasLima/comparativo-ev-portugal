@@ -27,13 +27,19 @@ import {
 import { CriterionTooltip } from "@/components/criterion-tooltip"
 import { CRITERIA } from "@/data/criteria"
 import type { CriterionDefinition, CriterionId } from "@/data/types"
-import { formatCarName, formatEuro, formatScore } from "@/lib/format"
+import {
+  formatCarName,
+  formatEuro,
+  formatScore,
+  formatSignedPercent,
+} from "@/lib/format"
 import { useWeights } from "@/hooks/use-weights"
 import { trackAttributes, trackEvent } from "@/lib/analytics"
-import { idealPrices, rankByTotal } from "@/lib/ranking"
+import { compareByGap, fairPrices } from "@/lib/fair-price"
+import { rankByTotal } from "@/lib/ranking"
 import { weightedAverage } from "@/lib/weights"
 import { ScoreBar, ScoreCell } from "@/components/score"
-import { IdealPriceInfo } from "@/components/ideal-price-info"
+import { FairPriceInfo, differenceTextClass } from "@/components/fair-price-info"
 
 export interface ComparisonRow {
   id: string
@@ -49,13 +55,16 @@ export interface ComparisonRow {
 
 interface WeightedRow extends ComparisonRow {
   total: number
-  pricePerPoint: number
-  idealPrice: number | null
+  /** O que a lista cobra, em média, por esta nota global. */
+  fairPrice: number | null
+  /** Preço ÷ preço médio − 1: negativo é abaixo do preço médio. */
+  gap: number | null
+  leaderPrice: number | null
   rank: number
   valueRank: number
 }
 
-type SortKey = "total" | "pricePerPoint" | "price" | CriterionId
+type SortKey = "total" | "fairPriceGap" | "price" | CriterionId
 type SortDirection = "asc" | "desc"
 
 interface SortState {
@@ -83,7 +92,42 @@ const compactLabels: Record<CriterionId, string> = {
 }
 
 function defaultDirection(key: SortKey): SortDirection {
-  return key === "price" || key === "pricePerPoint" ? "asc" : "desc"
+  return key === "price" || key === "fairPriceGap" ? "asc" : "desc"
+}
+
+/** Diferença face ao preço médio, com o ícone que abre o detalhe. */
+function FairPriceGap({
+  entry,
+  customized,
+  origem,
+}: {
+  entry: WeightedRow
+  customized: boolean
+  origem: string
+}) {
+  if (entry.gap === null || entry.fairPrice === null) {
+    return <span className="font-mono text-base text-muted-foreground">—</span>
+  }
+  return (
+    <span className="inline-flex items-center gap-1">
+      <span
+        className={cn(
+          "font-mono text-base font-semibold",
+          differenceTextClass(entry.gap * 100),
+        )}
+      >
+        {formatSignedPercent(entry.gap * 100)}
+      </span>
+      <FairPriceInfo
+        price={entry.price}
+        fairPrice={entry.fairPrice}
+        leaderPrice={entry.leaderPrice}
+        isBestValue={entry.valueRank === 1}
+        customized={customized}
+        analytics={{ carro: entry.slug, origem }}
+      />
+    </span>
+  )
 }
 
 function SortHeader({
@@ -232,12 +276,10 @@ function RankingCard({
   entry,
   sortKey,
   customized,
-  showIdealPrice,
 }: {
   entry: WeightedRow
   sortKey: SortKey
   customized: boolean
-  showIdealPrice: boolean
 }) {
   return (
     <li className="rounded-xl border border-line bg-card p-4">
@@ -295,21 +337,14 @@ function RankingCard({
           >
             {formatEuro(entry.price)}
           </span>
-          {showIdealPrice && entry.idealPrice !== null ? (
-            <IdealPriceInfo
-              price={entry.price}
-              idealPrice={entry.idealPrice}
-              isBestValue={entry.valueRank === 1}
-              customized={customized}
-              analytics={{ carro: entry.slug, origem: "ranking-cartao" }}
-            />
-          ) : null}
         </span>
-        <span className="inline-flex items-baseline gap-1.5">
-          <span className="text-muted-foreground">€/ponto</span>
-          <span className="font-mono text-base font-semibold text-copper">
-            {formatEuro(entry.pricePerPoint)}
-          </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="text-muted-foreground">vs. média</span>
+          <FairPriceGap
+            entry={entry}
+            customized={customized}
+            origem="ranking-cartao"
+          />
         </span>
       </div>
 
@@ -369,32 +404,28 @@ export function RankingTable({
       return {
         ...row,
         total,
-        pricePerPoint: total > 0 ? row.price / total : 0,
-        idealPrice: null as number | null,
+        fairPrice: null as number | null,
+        gap: null as number | null,
+        leaderPrice: null as number | null,
         rank: 1,
         valueRank: 1,
       }
     })
 
     const ranks = rankByTotal(scored, (row) => row)
-    const ideal = idealPrices(scored, (row) => row)
+    const values = fairPrices(scored, (row) => ({
+      total: row.total,
+      price: row.price,
+      group: `${row.brand} ${row.model}`,
+    }))
     scored.forEach((row) => {
       row.rank = ranks.get(row) ?? scored.length
-      row.idealPrice = ideal.get(row) ?? null
-    })
-
-    const byValue = [...scored].sort(
-      (a, b) => a.pricePerPoint - b.pricePerPoint,
-    )
-    let valueRank = 1
-    byValue.forEach((row, index) => {
-      if (
-        index > 0 &&
-        row.pricePerPoint - byValue[index - 1].pricePerPoint > 0.000001
-      ) {
-        valueRank = index + 1
-      }
-      row.valueRank = valueRank
+      const value = values.get(row)
+      if (!value) return
+      row.fairPrice = value.fairPrice
+      row.gap = value.gap
+      row.leaderPrice = value.leaderPrice
+      row.valueRank = value.valueRank
     })
 
     return scored
@@ -406,18 +437,14 @@ export function RankingTable({
         // A posição já inclui o desempate pelo preço.
         return sort.direction === "desc" ? a.rank - b.rank : b.rank - a.rank
       }
-      const aValue =
-        sort.key === "price"
-          ? a.price
-          : sort.key === "pricePerPoint"
-            ? a.pricePerPoint
-            : a.scores[sort.key]
-      const bValue =
-        sort.key === "price"
-          ? b.price
-          : sort.key === "pricePerPoint"
-            ? b.pricePerPoint
-            : b.scores[sort.key]
+      if (sort.key === "fairPriceGap") {
+        // Sem preço médio fica sempre no fim, em qualquer direção.
+        const order = compareByGap(a.gap, b.gap)
+        if (a.gap === null || b.gap === null) return order
+        return sort.direction === "asc" ? order : -order
+      }
+      const aValue = sort.key === "price" ? a.price : a.scores[sort.key]
+      const bValue = sort.key === "price" ? b.price : b.scores[sort.key]
 
       return sort.direction === "asc" ? aValue - bValue : bValue - aValue
     })
@@ -448,14 +475,14 @@ export function RankingTable({
       ? "Nota global"
       : sort.key === "price"
         ? "Preço"
-        : sort.key === "pricePerPoint"
-          ? "€/ponto"
+        : sort.key === "fairPriceGap"
+          ? "Face ao preço médio"
           : criterionLabel
   const directionLabel =
     sort.direction === "desc" ? "maior primeiro" : "menor primeiro"
   const bestScoreActive = sort.key === "total" && sort.direction === "desc"
   const bestValueActive =
-    sort.key === "pricePerPoint" && sort.direction === "asc"
+    sort.key === "fairPriceGap" && sort.direction === "asc"
 
   return (
     <>
@@ -498,7 +525,7 @@ export function RankingTable({
             <button
               type="button"
               onClick={() =>
-                changeSort({ key: "pricePerPoint", direction: "asc" }, "atalho")
+                changeSort({ key: "fairPriceGap", direction: "asc" }, "atalho")
               }
               aria-pressed={bestValueActive}
               className={cn(
@@ -551,7 +578,7 @@ export function RankingTable({
               className="h-10 min-w-0 flex-1 rounded-full border border-line bg-card px-3 text-sm font-medium text-foreground"
             >
               <option value="total">Nota global</option>
-              <option value="pricePerPoint">€/ponto</option>
+              <option value="fairPriceGap">Face ao preço médio</option>
               <option value="price">Preço</option>
               {CRITERIA.map((criterion) => (
                 <option key={criterion.id} value={criterion.id}>
@@ -593,7 +620,7 @@ export function RankingTable({
           <span>
             {customized
               ? "Prioridades personalizadas"
-              : "Todos os critérios contam igual"}
+              : "Prioridades por defeito"}
           </span>
           <span className="text-line">/</span>
           <span className="xl:hidden">Deslize para ver todas as colunas →</span>
@@ -607,7 +634,6 @@ export function RankingTable({
             entry={entry}
             sortKey={sort.key}
             customized={customized}
-            showIdealPrice={bestValueActive}
           />
         ))}
       </ol>
@@ -678,18 +704,18 @@ export function RankingTable({
             </TableHead>
             <TableHead
               aria-sort={
-                sort.key === "pricePerPoint"
+                sort.key === "fairPriceGap"
                   ? sort.direction === "asc"
                     ? "ascending"
                     : "descending"
                   : "none"
               }
-              className="min-w-[92px] pr-5 text-right text-sm"
+              className="min-w-[104px] pr-5 text-right text-sm"
             >
               <SortHeader
-                label="€/ponto"
-                title="Ordenar pelo custo por ponto"
-                sortKey="pricePerPoint"
+                label="vs. média"
+                title="Ordenar pela diferença face ao preço médio"
+                sortKey="fairPriceGap"
                 currentSort={sort}
                 onSort={handleSort}
                 align="right"
@@ -746,15 +772,6 @@ export function RankingTable({
                   <span className="font-mono text-sm">
                     {formatEuro(entry.price)}
                   </span>
-                  {bestValueActive && entry.idealPrice !== null ? (
-                    <IdealPriceInfo
-                      price={entry.price}
-                      idealPrice={entry.idealPrice}
-                      isBestValue={entry.valueRank === 1}
-                      customized={customized}
-                      analytics={{ carro: entry.slug, origem: "ranking-tabela" }}
-                    />
-                  ) : null}
                 </span>
               </TableCell>
               <TableCell className="text-right">
@@ -766,9 +783,11 @@ export function RankingTable({
                 </div>
               </TableCell>
               <TableCell className="pr-5 text-right">
-                <span className="font-mono text-base font-semibold text-copper">
-                  {formatEuro(entry.pricePerPoint)}
-                </span>
+                <FairPriceGap
+                  entry={entry}
+                  customized={customized}
+                  origem="ranking-tabela"
+                />
               </TableCell>
             </TableRow>
           ))}
@@ -781,16 +800,12 @@ export function RankingTable({
           <span className="font-medium text-foreground">Nota global</span> = média
           ponderada dos {CRITERIA.length} critérios, ajustável em{" "}
           <span className="font-medium text-foreground">Ajustar prioridades</span> ·{" "}
-          <span className="font-medium text-foreground">€/ponto</span> = preço ÷
-          nota global · o{" "}
-          <span className="font-medium text-foreground">#</span> é a posição na
-          nota global. Passa o rato sobre um critério para ver o que mede. Ao
-          ordenar por{" "}
-          <span className="font-medium text-foreground">
-            Melhor custo-benefício
-          </span>
-          , o ícone junto ao preço mostra o preço a que o carro seria o melhor
-          custo-benefício.
+          <span className="font-medium text-foreground">vs. média</span> = quanto o
+          preço fica abaixo (−, a verde) ou acima (+, a cobre) do preço médio da
+          lista para a mesma nota · o <span className="font-medium text-foreground">#</span> é
+          a posição na nota global. Passa o rato sobre um critério para ver o que
+          mede, ou sobre o ícone junto à percentagem para ver o preço médio e o
+          preço a que o carro seria o melhor custo-benefício.
         </p>
         <p className="shrink-0 text-xs tracking-[0.14em] whitespace-nowrap uppercase">
           Atualizado a {updatedAt}

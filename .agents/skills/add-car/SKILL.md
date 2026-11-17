@@ -15,8 +15,8 @@ and verify everything. The phases must run in order, because each one feeds the 
    tone and style of the existing dossiers. Study `src/data/cars/cupra-raval-vz.json`
    and `src/data/cars/byd-seal-excellence-awd.json` before writing anything.
 2. **JSON files store data, never results.** No scores, rankings, "best of list"
-   claims, or €/ponto values belong in the JSON as *numbers* — those are computed by
-   `src/lib/scoring.ts`. The interior criterion follows the same rule: store the
+   claims, fair prices or value gaps belong in the JSON as *numbers* — those are
+   computed by `src/lib/scoring.ts` and `src/lib/fair-price.ts`. The interior criterion follows the same rule: store the
    rubric components in `reviews.interior.assessment`, never the resulting score.
    Comparative *prose* in reviews/dossiers is allowed (and expected), but must be
    re-verified in Phase 5.
@@ -26,8 +26,11 @@ and verify everything. The phases must run in order, because each one feeds the 
    `interiorScore()`), so they do not move when the line-up changes. Bagageira,
    autonomia, potência/peso, eficiência e carregamento are relative: the best car
    gets 10 and the others their proportion. Adding one car changes those five
-   scores, and therefore the rank, €/ponto and value-rank of **every** car. Phase 5
-   is not optional either way.
+   scores, and therefore the rank of **every** car. The cost-benefit ranking moves
+   even more: the fair price comes from a price × score line fitted on the whole
+   list (one vote per model, robust Huber regression in `src/lib/fair-price.ts`),
+   so any new car — even with only absolute scores changing — shifts the fair price,
+   the gap and the value rank of every car. Phase 5 is not optional either way.
 4. **Every claim needs a source.** Each `reviews.<criterion>.sourceIds` entry must
    reference a source declared in the same JSON's `sources` array. The validator
    (`npm run validate:data`) enforces this — use it early and often.
@@ -48,14 +51,14 @@ and verify everything. The phases must run in order, because each one feeds the 
    repo's `AGENTS.md`. Most of this skill's work is data-only and needs none of that.
 7. **No list-relative claims in JSON prose.** Never write "o mais caro da lista",
    "a maior autonomia da lista", "o melhor consumo da lista", "líder", "melhor
-   custo por ponto" or hardcoded counts like "29 dos 38 equipamentos": they are
+   custo-benefício", "X% abaixo da média" or hardcoded counts like "29 dos 38 equipamentos": they are
    static text and silently become false when a car or checklist item is added.
    Write stable facts instead ("Preço de €50.926 com IVA", "570 km WLTP") or
    comparisons against a named car ("consome 1,6 kWh menos do que o Excellence"),
    which stay true regardless of new entries. The UI calculates ranks and counts
    dynamically; the prose must not duplicate them.
 8. **Never hardcode a calculated value, in JSON or in UI copy.** Notes, rubric
-   indices, ranks, "#2 da lista", €/ponto, "lidera 3 dos 11 critérios" and every
+   indices, ranks, "#2 da lista", preço médio, "lidera 3 dos 11 critérios" and every
    count that follows the line-up or the registry (cars, criteria, checklist items)
    must be rendered from data: `CRITERIA.length`, `EQUIPMENT_CHECKLIST.length`,
    `comparison.cars.length`, or the `rawLabel`/`score`/`rank` fields of a `ScoredCar`.
@@ -233,7 +236,8 @@ The essential steps:
 3. **List-relative claims sweep.** Read every car's `reviews` and `dossier` prose
    (old cars included) and make sure it contains **no** claim that depends on the
    current line-up: "melhor consumo da lista", "o mais barato", "o mais caro",
-   "líder", "melhor custo por ponto", counts like "29 dos 38 equipamentos", etc.
+   "líder", "melhor custo-benefício", "abaixo da média", counts like
+   "29 dos 38 equipamentos", etc.
    They go stale as soon as a car or checklist item is added, so replace them with
    stable facts ("570 km WLTP", "Preço de €50.926 com IVA"). Grep helps
    (`da lista|na lista|o mais |a mais |melhor da lista|pior da lista|38`) but
@@ -264,7 +268,8 @@ The essential steps:
 ## Phase 6 — Final report to the user
 
 Summarize in chat (do not create a report file unless asked):
-- The new ranking and €/ponto table (from the validator output)
+- The new ranking and cost-benefit table — score, fair price and gap (from the
+  validator output)
 - Files created/modified, new equipment ids added and which existing cars gained them
 - Comparative claims in old dossiers that were corrected
 - Sources relied on, and any spec discrepancies found between sources

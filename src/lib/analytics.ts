@@ -15,8 +15,8 @@ export type AnalyticsEvent =
   | "prioridades-aplicar"
   | "prioridades-cancelar"
   | "prioridades-repor"
-  /** Tooltip do preço ideal aberto (uma vez por ícone). */
-  | "preco-ideal-ver"
+  /** Tooltip do preço médio aberto (uma vez por ícone). */
+  | "preco-justo-ver"
   /** Tooltip de explicação de um critério no cabeçalho da tabela. */
   | "criterio-explicacao-ver"
   /** Links de navegação interna (cabeçalho, hero, rodapé, voltar). */

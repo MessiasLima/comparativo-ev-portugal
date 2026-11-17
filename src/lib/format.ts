@@ -52,6 +52,22 @@ export function formatPercent(value: number): string {
   return `${number1.format(value)}%`
 }
 
+function sign(value: number): string {
+  return value > 0 ? "+" : value < 0 ? "−" : ""
+}
+
+/** Percentagem inteira com sinal: "−20%", "+16%". */
+export function formatSignedPercent(value: number): string {
+  const rounded = Math.round(value)
+  return `${sign(rounded)}${number0.format(Math.abs(rounded))}%`
+}
+
+/** Euros com sinal: "−9 442 €", "+6 480 €". */
+export function formatSignedEuro(value: number): string {
+  const rounded = Math.round(value)
+  return `${sign(rounded)}${formatEuro(Math.abs(rounded))}`
+}
+
 /** Trims prose for meta descriptions, cutting on a word boundary. */
 export function truncateText(value: string, max = 160): string {
   const normalized = value.replace(/\s+/g, " ").trim()

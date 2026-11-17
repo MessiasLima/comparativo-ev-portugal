@@ -1,7 +1,7 @@
 {
   "name": "Comparativo EV Portugal",
   "short_name": "Comparativo EV",
-  "description": "Compare carros elétricos no mercado português: autonomia, equipamento, conforto e custo por ponto.",
+  "description": "Compare carros elétricos no mercado português: autonomia, equipamento, conforto e custo-benefício.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

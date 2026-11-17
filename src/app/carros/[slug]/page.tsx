@@ -107,7 +107,7 @@ export async function generateMetadata({
     url: publicAssetUrl(`/og/carros/${car.slug}.png`),
     width: 1200,
     height: 630,
-    alt: `${title} — autonomia, equipamento e custo por ponto`,
+    alt: `${title} — autonomia, equipamento e custo-benefício`,
   }
 
   return {
@@ -226,6 +226,7 @@ async function CarDossier({
   ).length
   const scoreCars = comparison.cars.map((item) => ({
     id: item.car.id,
+    group: `${item.car.brand} ${item.car.model}`,
     price: item.car.price.amount,
     scores: Object.fromEntries(
       CRITERIA.map((criterion) => [

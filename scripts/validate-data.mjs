@@ -19,6 +19,28 @@ const criteria = [
   { id: "satisfaction", kind: "rubric", direction: "higher", scale: "absolute" },
 ]
 
+// Mantém em sincronia com DEFAULT_WEIGHTS em src/lib/weights.ts: os rankings
+// impressos no fim são os que o site mostra com as prioridades por defeito.
+const defaultWeights = {
+  interior: 2,
+  comfort: 2,
+  brand: 1,
+  equipment: 1,
+  boot: 0.5,
+  sound: 0.5,
+  range: 1,
+  powerToWeight: 1,
+  efficiency: 1,
+  charging: 1,
+  satisfaction: 1,
+}
+
+// Mantém em sincronia com src/lib/fair-price.ts.
+const fairPriceEpsilon = 0.000001
+const huberK = 1.345
+const madToSd = 1.4826
+const fairPriceMaxIterations = 50
+
 // Mantém em sincronia com src/lib/interior.ts.
 const interiorWeights = {
   softTouch: 0.4,
@@ -463,14 +485,17 @@ function metric(car, criterionId) {
   }
 }
 
+const weightSum = criteria.reduce((sum, criterion) => sum + defaultWeights[criterion.id], 0)
+
 const scored = cars.map(({ data: car }) => {
   let total = 0
   for (const criterion of criteria) {
     const value = metric(car, criterion.id)
+    const weight = defaultWeights[criterion.id]
     if (criterion.scale === "absolute") {
-      total += clamp(
-        criterion.id === "equipment" ? (value / equipmentIds.length) * 10 : value,
-      )
+      total +=
+        weight *
+        clamp(criterion.id === "equipment" ? (value / equipmentIds.length) * 10 : value)
       continue
     }
     const values = cars.map(({ data }) => metric(data, criterion.id))
@@ -478,13 +503,80 @@ const scored = cars.map(({ data: car }) => {
       criterion.direction === "higher"
         ? Math.max(...values)
         : Math.min(...values)
-    total += clamp(
-      criterion.direction === "higher" ? (value / best) * 10 : (best / value) * 10,
-    )
+    total +=
+      weight *
+      clamp(criterion.direction === "higher" ? (value / best) * 10 : (best / value) * 10)
   }
-  const score = total / criteria.length
-  return { car, score, pricePerPoint: car.price.amount / score }
+  const score = total / weightSum
+  return { car, score, group: `${car.brand} ${car.model}` }
 })
+
+function weightedLeastSquares(points) {
+  const totalWeight = points.reduce((sum, point) => sum + point.weight, 0)
+  if (totalWeight <= 0) return null
+  const meanX = points.reduce((sum, point) => sum + point.weight * point.x, 0) / totalWeight
+  const meanY = points.reduce((sum, point) => sum + point.weight * point.y, 0) / totalWeight
+  let covariance = 0
+  let variance = 0
+  for (const point of points) {
+    covariance += point.weight * (point.x - meanX) * (point.y - meanY)
+    variance += point.weight * (point.x - meanX) ** 2
+  }
+  if (variance <= fairPriceEpsilon) return null
+  const slope = covariance / variance
+  return { intercept: meanY - slope * meanX, slope }
+}
+
+function median(values) {
+  const sorted = [...values].sort((a, b) => a - b)
+  const middle = Math.floor(sorted.length / 2)
+  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2
+}
+
+// Recta do preço médio: cada modelo vale um voto e a regressão de Huber tira
+// peso aos carros muito afastados da recta.
+function fairPriceLine(entries) {
+  const valid = entries.filter((entry) => entry.score > 0)
+  if (valid.length < 2) return null
+  const versions = new Map()
+  for (const entry of valid) versions.set(entry.group, (versions.get(entry.group) ?? 0) + 1)
+  const baseWeights = valid.map((entry) => 1 / versions.get(entry.group))
+  const points = (weights) =>
+    valid.map((entry, index) => ({
+      x: entry.score,
+      y: entry.car.price.amount,
+      weight: weights[index],
+    }))
+
+  let line = weightedLeastSquares(points(baseWeights))
+  if (!line) return null
+  for (let iteration = 0; iteration < fairPriceMaxIterations; iteration++) {
+    const current = line
+    const residuals = valid.map(
+      (entry) => entry.car.price.amount - (current.intercept + current.slope * entry.score),
+    )
+    const scale = madToSd * median(residuals.map(Math.abs))
+    if (scale <= fairPriceEpsilon) break
+    const weights = baseWeights.map(
+      (weight, index) => weight * Math.min(1, huberK / Math.abs(residuals[index] / scale)),
+    )
+    const next = weightedLeastSquares(points(weights))
+    if (!next) break
+    const converged =
+      Math.abs(next.intercept - current.intercept) < fairPriceEpsilon &&
+      Math.abs(next.slope - current.slope) < fairPriceEpsilon
+    line = next
+    if (converged) break
+  }
+  return line
+}
+
+const line = fairPriceLine(scored)
+for (const entry of scored) {
+  const fairPrice = line && entry.score > 0 ? line.intercept + line.slope * entry.score : null
+  entry.fairPrice = fairPrice !== null && fairPrice > 0 ? fairPrice : null
+  entry.gap = entry.fairPrice === null ? null : entry.car.price.amount / entry.fairPrice - 1
+}
 
 // Mesmo desempate de src/lib/ranking.ts: com a mesma nota, o mais barato fica à frente.
 const byScore = [...scored].sort((a, b) =>
@@ -492,7 +584,11 @@ const byScore = [...scored].sort((a, b) =>
     ? b.score - a.score
     : a.car.price.amount - b.car.price.amount,
 )
-const byValue = [...scored].sort((a, b) => a.pricePerPoint - b.pricePerPoint)
+// Sem preço médio fica no fim, como em src/lib/fair-price.ts.
+const byValue = [...scored].sort((a, b) =>
+  a.gap === null ? 1 : b.gap === null ? -1 : a.gap - b.gap,
+)
+const formatGap = (gap) => `${gap > 0 ? "+" : ""}${(gap * 100).toFixed(1)}%`
 
 console.log(`\nDados válidos: ${cars.length} carros, ${equipmentIds.length} equipamentos.\n`)
 console.log("Ranking geral")
@@ -501,10 +597,17 @@ for (const [index, entry] of byScore.entries()) {
     `  ${index + 1}. ${entry.car.brand} ${entry.car.model} ${entry.car.variant} — ${entry.score.toFixed(2)}/10`,
   )
 }
-console.log("\nCusto-benefício")
+console.log("\nCusto-benefício (face ao preço médio)")
+if (line) {
+  console.log(
+    `  Recta: preço médio = ${Math.round(line.intercept)} € + ${Math.round(line.slope)} € × nota`,
+  )
+}
 for (const [index, entry] of byValue.entries()) {
   console.log(
-    `  ${index + 1}. ${entry.car.brand} ${entry.car.model} ${entry.car.variant} — ${Math.round(entry.pricePerPoint)} €/ponto`,
+    entry.gap === null
+      ? `  ${index + 1}. ${entry.car.brand} ${entry.car.model} ${entry.car.variant} — sem preço médio`
+      : `  ${index + 1}. ${entry.car.brand} ${entry.car.model} ${entry.car.variant} — ${entry.score.toFixed(2)}/10 · ${Math.round(entry.car.price.amount)} € vs. ${Math.round(entry.fairPrice)} € médio (${formatGap(entry.gap)})`,
   )
 }
 console.log("")

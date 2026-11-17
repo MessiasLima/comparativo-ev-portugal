@@ -1,16 +1,21 @@
 "use client"
 
+import { cn } from "cn"
+import { differenceTextClass } from "@/components/fair-price-info"
 import { Badge } from "@/components/ui/badge"
 import { CRITERIA } from "@/data/criteria"
 import { EQUIPMENT_CHECKLIST } from "@/data/equipment"
 import type { CriterionId } from "@/data/types"
-import { formatEuro, formatScore } from "@/lib/format"
+import { formatEuro, formatScore, formatSignedPercent } from "@/lib/format"
 import { useWeights } from "@/hooks/use-weights"
+import { fairPrices } from "@/lib/fair-price"
 import { rankByTotal } from "@/lib/ranking"
 import { weightedAverage } from "@/lib/weights"
 
 export interface ScoreCar {
   id: string
+  /** Marca + modelo: as versões do mesmo modelo dividem um voto na recta do preço médio. */
+  group: string
   scores: Record<CriterionId, number>
   price: number
 }
@@ -28,20 +33,13 @@ export function WeightedScorePanel({
 }) {
   const { weights, customized } = useWeights()
 
-  const scored = cars.map((car) => {
-    const total = weightedAverage(car.scores, weights)
-    return {
-      ...car,
-      total,
-      pricePerPoint: total > 0 ? car.price / total : 0,
-    }
-  })
-  const byValue = [...scored].sort(
-    (a, b) => a.pricePerPoint - b.pricePerPoint,
-  )
+  const scored = cars.map((car) => ({
+    ...car,
+    total: weightedAverage(car.scores, weights),
+  }))
   const current = scored.find((car) => car.id === carId) ?? scored[0]
   const rank = rankByTotal(scored, (car) => car).get(current) ?? scored.length
-  const valueRank = byValue.findIndex((car) => car.id === carId) + 1
+  const value = fairPrices(scored, (car) => car).get(current)
 
   return (
     <div className="grid gap-3">
@@ -74,13 +72,20 @@ export function WeightedScorePanel({
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-4">
           <p className="text-xs uppercase tracking-[0.18em] text-white/60">
-            Preço por ponto
+            Face ao preço médio
           </p>
-          <p className="mt-2 font-mono text-xl font-semibold">
-            {formatEuro(current.pricePerPoint)}
+          <p
+            className={cn(
+              "mt-2 font-mono text-xl font-semibold",
+              value?.gap != null && differenceTextClass(value.gap * 100, "dark"),
+            )}
+          >
+            {value?.gap != null ? formatSignedPercent(value.gap * 100) : "—"}
           </p>
           <p className="mt-1 text-xs text-white/60">
-            #{valueRank} melhor custo-benefício
+            {value?.fairPrice != null
+              ? `Médio: ${formatEuro(value.fairPrice)} · #${value.valueRank} em custo-benefício`
+              : "Sem preço médio"}
           </p>
         </div>
         <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-4">

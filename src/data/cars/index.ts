@@ -36,7 +36,7 @@ import leapmotorB05DesignProMax from "./leapmotor-b05-design-promax.json"
 /**
  * Registo dos carros do comparativo.
  * Para adicionar um carro: criar o JSON nesta pasta e importá-lo aqui.
- * As notas, o ranking e o custo por ponto são calculados automaticamente.
+ * As notas, o ranking e o preço médio são calculados automaticamente.
  */
 export const CARS = ([
   cupraRaval,

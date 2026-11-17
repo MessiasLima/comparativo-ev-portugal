@@ -33,7 +33,7 @@ export function SiteFooter() {
               </div>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-6 text-white/55">
-              Dossiês independentes, critérios transparentes e custo por ponto.
+              Dossiês independentes, critérios transparentes e custo-benefício.
               Cada dossiê é revisto à medida que surgem novos dados, para que o
               ranking acompanhe sempre a informação mais recente.
             </p>

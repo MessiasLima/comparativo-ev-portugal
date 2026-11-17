@@ -35,16 +35,11 @@ export interface ScoredCar {
   criteria: Record<CriterionId, CriterionScore>
   total: number
   rank: number
-  pricePerPoint: number
-  pointsPer10k: number
-  valueRank: number
 }
 
 export interface Comparison {
   cars: ScoredCar[]
-  byValue: ScoredCar[]
   winner: ScoredCar
-  bestValue: ScoredCar
   updatedAt: string
 }
 
@@ -177,17 +172,6 @@ function rankTotals(cars: ScoredCar[]): void {
   })
 }
 
-function rankValue(cars: ScoredCar[]): void {
-  const sorted = [...cars].sort((a, b) => a.pricePerPoint - b.pricePerPoint)
-  let rank = 1
-  sorted.forEach((car, index) => {
-    if (index > 0 && car.pricePerPoint - sorted[index - 1].pricePerPoint > 0.000001) {
-      rank = index + 1
-    }
-    car.valueRank = rank
-  })
-}
-
 export function getComparison(): Comparison {
   const baseCars = CARS.map((car) => ({
     car,
@@ -262,23 +246,16 @@ export function getComparison(): Comparison {
       criteria,
       total,
       rank: 1,
-      pricePerPoint: car.price.amount / total,
-      pointsPer10k: total / (car.price.amount / 10_000),
-      valueRank: 1,
     }
   })
 
   rankTotals(scoredCars)
-  rankValue(scoredCars)
 
   const cars = [...scoredCars].sort((a, b) => a.rank - b.rank)
-  const byValue = [...scoredCars].sort((a, b) => a.valueRank - b.valueRank)
 
   return {
     cars,
-    byValue,
     winner: cars[0],
-    bestValue: byValue[0],
     updatedAt: SITE_UPDATED_AT,
   }
 }
