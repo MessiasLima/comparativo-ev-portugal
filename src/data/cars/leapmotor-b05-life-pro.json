@@ -1,0 +1,681 @@
+{
+  "id": "leapmotor-b05-life-pro",
+  "slug": "leapmotor-b05-life-pro",
+  "brand": "Leapmotor",
+  "model": "B05",
+  "variant": "Life Pro",
+  "version": "Life Pro 56,2 kWh (tração traseira)",
+  "year": 2026,
+  "segment": "Compacto elétrico",
+  "tagline": "O B05 de entrada: 218 cv, 401 km WLTP e o essencial da tecnologia por 26.285 €.",
+  "accent": "copper",
+  "price": {
+    "amount": 26285,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-10-06",
+    "note": "PVP de 26.285 € com IVA incluído, segundo o comunicado de lançamento da Leapmotor em Portugal (Stellantis, 06/10/2026), sem despesas de legalização e transporte. A campanha de lançamento para particulares baixava o preço para 24.445,48 €; a 17/11/2026 o site oficial anuncia o B05 \"desde 25.000 €\" para particulares, com IVA e sem despesas de legalização e transporte, sem data de fim. O Guia do Automóvel (16/11/2026) lista 26.787,10 €, mais 502,10 € do que o comunicado, sem explicar a diferença. Não inclui pintura: há cinco cores e nenhuma fonte portuguesa indica quais têm custo (no Reino Unido a pintura paga custa 575 £).",
+    "sourceId": "stellantis-pt-b05"
+  },
+  "specs": {
+    "powerKw": 160,
+    "powerHp": 218,
+    "torqueNm": 240,
+    "drivetrain": "Tração traseira (RWD)",
+    "acceleration0100": 7.5,
+    "topSpeedKmh": 170,
+    "batteryKwh": 56.2,
+    "usableBatteryKwh": 55,
+    "batteryChemistry": "LFP, 400 V (cell-to-chassis)",
+    "rangeKm": 401,
+    "consumptionKwh100": 15.8,
+    "weightKg": 1749,
+    "grossWeightKg": 2172,
+    "lengthMm": 4430,
+    "widthMm": 1880,
+    "heightMm": 1520,
+    "wheelbaseMm": 2735,
+    "bootL": 345,
+    "frunkL": 0,
+    "seats": 5,
+    "doors": 5
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 156,
+    "dcTime1080Min": 23,
+    "dcTime3080Min": 16,
+    "connector": "CCS2",
+    "v2l": true,
+    "v2lKw": 3.3,
+    "v2h": false
+  },
+  "warranty": {
+    "vehicle": "4 anos / 120.000 km",
+    "battery": "8 anos / 160.000 km",
+    "note": "O site oficial da Leapmotor Portugal indica garantia do veículo \"até 4 anos ou 120.000 km\" e da bateria \"até 8 anos ou 160.000 km\", com a ressalva de que os planos variam por modelo, extensões de garantia na rede e assistência em viagem. No lançamento da marca, em 2025, a DECO indicava 3 anos sem limite de quilómetros para o veículo. Nenhum documento oficial consultado indica a percentagem mínima de capacidade (SOH) garantida na bateria. Confirmar os termos aplicáveis à encomenda."
+  },
+  "equipmentIncluded": [
+    "acc",
+    "lane-keep",
+    "blind-spot",
+    "rear-cross-traffic",
+    "front-cross-traffic",
+    "aeb",
+    "traffic-sign",
+    "driver-monitor",
+    "camera-360",
+    "adaptive-high-beam",
+    "heat-pump",
+    "wireless-charging",
+    "carplay",
+    "digital-cockpit",
+    "large-screen",
+    "connected-services",
+    "ota",
+    "digital-key",
+    "v2l",
+    "wheels-19",
+    "rear-usb"
+  ],
+  "options": [],
+  "reviews": {
+    "interior": {
+      "assessment": {
+        "softTouch": 6,
+        "upholstery": 5,
+        "design": 5.8,
+        "assembly": 7,
+        "hardPlastic": "moderate"
+      },
+      "summary": "O habitáculo do B05 tem um desenho limpo, dominado pelo ecrã central de 14,6\" e pelo painel digital de 8,8\". Os ensaios descrevem a parte superior do tablier como macia e os painéis das portas almofadados (Razão Automóvel, What Car?, Auto Bild), mas o tablier inferior e a consola são em plástico duro, com bom granulado mas aspeto de contenção de custos (What Car?, Autozine). A montagem é elogiada e não há relatos de ruídos parasitas, embora a What Car? ache que as portas traseiras soam ocas ao fechar. A Motor1 Alemanha e o The Independent consideram o ambiente cinzento e pouco inspirado. A versão Life usa bancos em tecido preto e não tem iluminação ambiente; nenhum ensaio consultado testou esta versão, pelo que a avaliação parte dos ensaios à Design e da lista de equipamento.",
+      "pros": [
+        "Parte superior do tablier macia e portas almofadadas",
+        "Montagem elogiada e sem relatos de ruídos parasitas",
+        "Desenho limpo, com ecrã de 14,6\" e painel digital de 8,8\""
+      ],
+      "cons": [
+        "Tablier inferior e consola em plástico duro",
+        "Bancos em tecido e sem iluminação ambiente nesta versão",
+        "Ambiente cinzento descrito como pouco inspirado"
+      ],
+      "sourceIds": [
+        "leapmotor-brochura",
+        "razao-b05",
+        "whatcar-b05",
+        "autobild-b05",
+        "autozine-b05",
+        "motor1-de-b05",
+        "independent-b05",
+        "carwow-b05"
+      ]
+    },
+    "comfort": {
+      "assessment": {
+        "seats": 6.9,
+        "acoustics": 7.3,
+        "drivetrainCalibration": 7.4
+      },
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "estimate",
+            "federung": 2.7,
+            "dampers": "passive",
+            "wheelInches": 19,
+            "sourceId": "adac-b05",
+            "note": "Sem autoteste: o ADAC só publicou um primeiro contacto, com o autoteste ainda pendente, e descreve uma afinação orientada para o conforto. Auto Express, carwow, electrifying, Motoring Research, Razão Automóvel e Auto Bild dizem que absorve bem buracos e lombas; a What Car? acha-o irrequieto em piso degradado e a pancar em lombas maiores, o The Independent põe-no do lado firme do confortável e a Auto Bild nota balanço em curvas rápidas. Fica abaixo do BYD Seal Design (2,4 medido com 19\" e amortecedores passivos) e do Model 3 com FSD (2,5 com 19\")."
+          }
+        ]
+      },
+      "summary": "A suspensão é passiva (McPherson à frente e multibraço atrás), com jantes de 19\" em todas as versões. A maioria dos ensaios descreve um acerto confortável, que absorve bem buracos e lombas em cidade sem balançar (Auto Express, carwow, electrifying, Razão Automóvel, Auto Bild), mas a What Car? diz que é irrequieto em piso degradado e o The Independent acha-o firme em buracos grandes. Os bancos dianteiros são bem almofadados mas com pouco apoio lateral (ADAC, What Car?), sem regulação lombar nem extensão do assento (carwow, Auto Bild); atrás há bom espaço para os joelhos, mas o piso alto deixa os joelhos levantados (ADAC, Motor1 Alemanha). A TopGear.nl considera os bancos em tecido desta versão mais confortáveis do que os de pele sintética da Design, mas são de regulação manual. Vários ensaios elogiam o silêncio a bordo (What Car?, electrifying, Razão Automóvel), mas a Auto Express, o The Independent e a Car Magazine notam ruído de rolamento das jantes de 19\" e ruído aerodinâmico em autoestrada; não há medições em dB(A) nem referência a vidros acústicos. O acelerador é linear e há três níveis de regeneração; a What Car? descreve um modo de um pedal que a Auto Express não encontrou no primeiro ensaio. A passagem da regeneração para os travões é progressiva (What Car?, electrifying), mas a regeneração só se ajusta no ecrã.",
+      "pros": [
+        "Suspensão que absorve bem buracos e lombas em cidade",
+        "Bancos em tecido considerados mais confortáveis do que os da Design",
+        "Acelerador linear e passagem progressiva da regeneração para os travões"
+      ],
+      "cons": [
+        "Bancos com pouco apoio lateral, sem regulação lombar e de ajuste manual",
+        "Ruído de rolamento e aerodinâmico em autoestrada, sem vidros acústicos",
+        "Piso traseiro alto deixa os joelhos levantados"
+      ],
+      "sourceIds": [
+        "adac-b05",
+        "autoexpress-b05",
+        "carwow-b05",
+        "electrifying-b05",
+        "razao-b05",
+        "autobild-b05",
+        "whatcar-b05",
+        "independent-b05",
+        "carmagazine-b05",
+        "topgear-nl-b05",
+        "motor1-de-b05",
+        "motoringresearch-b05",
+        "leapmotor-uk-guide",
+        "autoexpress-b05-primeiro"
+      ]
+    },
+    "brand": {
+      "assessment": {
+        "globalBrandAge": 5.5,
+        "portugalMarketTenure": 1.5,
+        "portugalServiceNetwork": 6.5,
+        "europeanManufacturing": 7.5,
+        "establishedGroupSupport": 9,
+        "financialStability": 7,
+        "portugalFactory": false
+      },
+      "summary": "A Zhejiang Leapmotor foi fundada em dezembro de 2015 e entregou o primeiro carro, o S01, em 2019, o que dá cerca de sete anos como marca automóvel autónoma. Em Portugal vende desde abril de 2025 através da Leapmotor International, a joint venture em que a Stellantis tem 51% (a Stellantis detém ainda cerca de 21% da Leapmotor), e o localizador oficial lista 17 concessionários com assistência a 17/11/2026, concentrados no Norte e na Grande Lisboa, com um ponto em Évora, Faro e Ponta Delgada e nenhum na Madeira, em Coimbra ou em Leiria. A Stellantis assegura financiamento, peças pela rede Distrigo e fabrico: a produção em série do B10 arrancou em Saragoça a 16/10/2026, depois de a montagem do T03 em Tychy ter terminado em março de 2025; o B05 vendido em Portugal ainda não é feito na Europa, com produção em Saragoça prevista para 2027. A Leapmotor (HKEX: 9863) teve o primeiro lucro anual em 2025 (0,54 mil milhões de yuan, com 64,73 mil milhões de receita e 12,62 mil milhões de fluxo de caixa operacional) e lucro de 0,21 mil milhões no 1.º semestre de 2026, mas reviu em baixa a meta de lucro para 2026 e a margem bruta desceu para 11,7%. A Stellantis, parceira na joint venture, perdeu 22,3 mil milhões de euros em 2025.",
+      "pros": [
+        "Joint venture com a Stellantis: financiamento, peças Distrigo e rede de concessionários",
+        "Lucro anual em 2025 e fluxo de caixa operacional positivo",
+        "Produção em série na Europa (B10 em Saragoça desde outubro de 2026)"
+      ],
+      "cons": [
+        "Presença oficial em Portugal desde abril de 2025",
+        "17 pontos de assistência, sem cobertura na Madeira nem no Centro interior",
+        "O B05 ainda é importado; a produção europeia só está prevista para 2027"
+      ],
+      "sourceIds": [
+        "wikipedia-leapmotor",
+        "pplware-leapmotor-pt",
+        "leapmotor-rede",
+        "hkex-fy2024",
+        "hkex-fy2025",
+        "hkex-h1-2026",
+        "caixin-leapmotor-2026",
+        "cnevpost-b10-zaragoza",
+        "carscoops-tychy",
+        "stellantis-zaragoza-b05",
+        "newmobility-stellantis-2025",
+        "gasgoo-stellantis-leapmotor"
+      ]
+    },
+    "equipment": {
+      "summary": "A versão Life Pro traz o pacote completo de assistências: cruise control adaptativo com centragem na faixa e mudança de faixa automática, manutenção de faixa, travagem automática de emergência, ângulo morto, alertas e travagem de tráfego cruzado dianteiro e traseiro, assistente de velocidade inteligente, monitorização da fadiga e da distração do condutor, câmara 360° e máximos automáticos. Tem ainda bomba de calor, painel digital de 8,8\", ecrã central de 14,6\", Apple CarPlay e Android Auto, carregamento sem fios, atualizações OTA, app com controlo remoto, chave Bluetooth e cartão NFC, V2L, jantes de 19\" e tomadas USB atrás (o Driven, da Nova Zelândia, confirma USB-A e USB-C atrás; o guia britânico indica duas USB e duas USB-C sem dizer onde). Ficam de fora os bancos e o volante aquecidos, o teto panorâmico e a iluminação ambiente (só na Design), os sensores de estacionamento dianteiros (só há atrás), os bancos elétricos ou com memória, a ventilação dos bancos, o head-up display, o porta-bagagens elétrico, o V2H e a suspensão adaptativa. O reconhecimento de sinais é contado a partir do assistente de velocidade inteligente com câmara frontal, confirmado em ensaios fora da Europa.",
+      "pros": [
+        "Câmara 360° e assistências de condução completas de série",
+        "Bomba de calor, V2L e chave digital NFC",
+        "Ecrã de 14,6\", CarPlay, Android Auto e atualizações OTA"
+      ],
+      "cons": [
+        "Sem bancos nem volante aquecidos",
+        "Sensores de estacionamento só atrás",
+        "Sem teto panorâmico nem iluminação ambiente"
+      ],
+      "sourceIds": [
+        "leapmotor-brochura",
+        "leapmotor-brochura-pt",
+        "leapmotor-uk-guide",
+        "driven-nz-b05",
+        "euroncap-b05"
+      ]
+    },
+    "boot": {
+      "summary": "A bagageira traseira tem 345 L, ou 1.400 L com os bancos rebatidos, segundo a Leapmotor; não há bagageira dianteira (o EV Database indica 0 L e a DECO nota a falta de espaço à frente para o cabo de carregamento), pelo que o total é de 345 L. A DECO mede 295 L e o Driven NZ indica 329 L, valores que divergem do oficial e não são usados.",
+      "pros": [
+        "345 L com os bancos em uso",
+        "Até 1.400 L com os bancos rebatidos",
+        "Banco traseiro rebatível 60/40"
+      ],
+      "cons": [
+        "Sem bagageira dianteira para o cabo de carregamento",
+        "Medições da DECO (295 L) e do Driven (329 L) abaixo do valor oficial"
+      ],
+      "sourceIds": [
+        "leapmotor-brochura",
+        "leapmotor-pt-b05",
+        "evdb-pro",
+        "deco-b05",
+        "driven-nz-b05",
+        "leapmotor-uk-guide"
+      ]
+    },
+    "sound": {
+      "baseScore": 2.3,
+      "summary": "A versão Life tem um sistema de seis altifalantes sem marca de áudio e sem potência publicada. Não foi encontrado nenhum ensaio que comente este sistema; os ensaios ouviram o de 12 altifalantes da Design. Sem opiniões específicas nem potência, essas componentes ficam na referência neutra.",
+      "pros": [
+        "Seis altifalantes de série",
+        "Apple CarPlay e Android Auto para o áudio do telemóvel"
+      ],
+      "cons": [
+        "Sem marca de áudio especializada nem potência publicada",
+        "Sem ensaios que avaliem este sistema",
+        "O sistema de 12 altifalantes é exclusivo da Design"
+      ],
+      "sourceIds": [
+        "leapmotor-brochura",
+        "autobild-b05"
+      ]
+    },
+    "range": {
+      "summary": "A autonomia combinada WLTP é de 401 km com a bateria LFP de 56,2 kWh (55 kWh úteis segundo o EV Database), valor igual na brochura europeia, no site português e no EV Database.",
+      "pros": [
+        "401 km WLTP",
+        "Bateria LFP tolera cargas diárias a 100%",
+        "Valor coerente entre todas as fontes"
+      ],
+      "cons": [
+        "81 km menos do que a versão ProMax de 67,1 kWh",
+        "Autonomia real fica abaixo da homologada",
+        "Bateria LFP perde autonomia com frio intenso"
+      ],
+      "sourceIds": [
+        "leapmotor-brochura",
+        "leapmotor-pt-b05",
+        "evdb-pro"
+      ]
+    },
+    "powerToWeight": {
+      "summary": "O motor traseiro de 160 kW (218 cv) e 240 Nm move 1.749 kg, cerca de 125 cv/t, com 0-100 km/h em 7,5 segundos e 170 km/h de velocidade máxima. O peso é a tara indicada pela Leapmotor e pelo Guia do Automóvel; o EV Database indica 1.775 kg em ordem de marcha (norma UE).",
+      "pros": [
+        "218 cv e 240 Nm",
+        "0-100 km/h em 7,5 segundos",
+        "Cerca de 125 cv/t"
+      ],
+      "cons": [
+        "Mais lento do que a ProMax (6,6 s)",
+        "Velocidade máxima limitada a 170 km/h",
+        "Não está homologado para rebocar"
+      ],
+      "sourceIds": [
+        "leapmotor-brochura",
+        "guia-auto-b05",
+        "evdb-pro",
+        "driven-nz-b05"
+      ]
+    },
+    "efficiency": {
+      "summary": "O consumo combinado WLTP é de 15,8 kWh/100 km, segundo a brochura europeia, a brochura portuguesa e o EV Database. O site português publica 14 kWh/100 km para esta bateria, sem indicar a base de medição; usa-se o valor combinado WLTP da ficha técnica das brochuras, confirmado pelo EV Database. Nos ensaios à Design, a Razão Automóvel registou 14,8 kWh/100 km e a Autoolymp 18 kWh/100 km a 120 km/h.",
+      "pros": [
+        "15,8 kWh/100 km homologados",
+        "Bateria LFP e tração traseira",
+        "Consumos baixos em percursos mistos nos ensaios"
+      ],
+      "cons": [
+        "Consumo sobe para cerca de 18 kWh/100 km a 120 km/h",
+        "Site português e brochura publicam valores diferentes",
+        "Bateria LFP perde eficiência com frio intenso"
+      ],
+      "sourceIds": [
+        "leapmotor-brochura",
+        "leapmotor-brochura-pt",
+        "leapmotor-pt-b05",
+        "evdb-pro",
+        "razao-b05",
+        "autoolymp-b05"
+      ]
+    },
+    "charging": {
+      "summary": "Carrega a 11 kW em corrente alternada e até 156 kW em corrente contínua, com 30–80% em 16 minutos segundo a Leapmotor e 10–80% em cerca de 23 minutos segundo o EV Database. A brochura portuguesa indica 140 kW, mas o site português, a brochura europeia e o EV Database indicam 156 kW, valor usado. A arquitetura é de 400 V e o conector CCS2; o V2L de 3,3 kW funciona com um adaptador na tomada Type 2 e não há V2H.",
+      "pros": [
+        "Até 156 kW em corrente contínua",
+        "30–80% em 16 minutos",
+        "V2L de 3,3 kW de série"
+      ],
+      "cons": [
+        "18 kW abaixo da versão ProMax",
+        "Brochura portuguesa indica 140 kW",
+        "Arquitetura de 400 V e sem V2H"
+      ],
+      "sourceIds": [
+        "leapmotor-brochura",
+        "leapmotor-brochura-pt",
+        "leapmotor-pt-b05",
+        "evdb-pro",
+        "carexpert-b05"
+      ]
+    },
+    "satisfaction": {
+      "assessment": {
+        "ownerSentiment": 6,
+        "reportedDefects": 5.5,
+        "recallRecord": 6.5,
+        "evidenceLevel": "limited"
+      },
+      "summary": "O B05 chegou aos concessionários portugueses a 06/10/2026 e as primeiras entregas europeias foram no verão de 2026, pelo que ainda não há ensaios de longa duração e a amostra de proprietários é mínima (um único proprietário confirmado no fórum GoingElectric). Os ensaios elogiam o preço, o espaço e a condução, mas há uma queixa comum a quase todos (What Car?, Auto Express, carwow, Car Magazine, Motor1 Alemanha, Autozine, ADAC): as assistências de manutenção de faixa e de monitorização do condutor emitem avisos constantes e voltam a ligar-se a cada arranque, e a Autozine chegou a considerar perigoso o comportamento da manutenção de faixa em estradas estreitas. No fórum há relatos de avisos falsos do cinto e de fadiga, à espera de atualização. Não foi encontrado nenhum recall de segurança do B05 em pesquisas feitas a 17/11/2026 (Safety Gate, CarChecker e imprensa); o recall chinês de agosto de 2026 abrange só o C01 e o C11. As bases do KBA e da DVSA não puderam ser consultadas e, com poucos meses de vendas, a ausência de registos não prova um historial limpo.",
+      "pros": [
+        "Ensaios positivos quanto a preço, espaço e condução",
+        "Sem recalls de segurança do B05 encontrados a 17/11/2026",
+        "Cinco estrelas Euro NCAP (2026)"
+      ],
+      "cons": [
+        "Avisos constantes das assistências, que voltam a ligar-se a cada arranque",
+        "Sem proprietários nem testes de longa duração: modelo à venda há poucos meses",
+        "Pesquisa de recalls incompleta (sem KBA nem DVSA)"
+      ],
+      "sourceIds": [
+        "goingelectric-b05",
+        "whatcar-b05",
+        "autoexpress-b05",
+        "carwow-b05",
+        "carmagazine-b05",
+        "motor1-de-b05",
+        "autozine-b05",
+        "adac-b05",
+        "carexpert-avisos",
+        "carchecker-b05",
+        "sina-recall-c01-c11",
+        "euroncap-b05"
+      ]
+    }
+  },
+  "dossier": {
+    "headline": "O B05 de entrada: 218 cv e assistências completas por 26.285 €",
+    "verdict": "O B05 Life Pro é a porta de entrada da gama: o mesmo motor de 218 cv da Design ProMax, bateria de 56,2 kWh para 401 km WLTP, carregamento a 156 kW e câmara 360°, assistências completas, bomba de calor e V2L de série. Custa 4.000 € menos do que a Design ProMax, mas perde 81 km de autonomia, os bancos e o volante aquecidos, o teto panorâmico e o som de 12 altifalantes. A condução é elogiada pela imprensa e o preço é baixo para o equipamento; contra ele pesam a marca recente em Portugal, os avisos insistentes das assistências e a falta de ensaios a esta versão.",
+    "pros": [
+      "Preço de 26.285 € com IVA",
+      "218 cv e 0-100 km/h em 7,5 segundos",
+      "Câmara 360°, bomba de calor e V2L de série",
+      "Até 156 kW em corrente contínua",
+      "Cinco estrelas Euro NCAP (2026)"
+    ],
+    "cons": [
+      "401 km WLTP",
+      "Sem bancos nem volante aquecidos",
+      "Avisos das assistências insistentes e que se religam a cada arranque",
+      "Marca presente em Portugal desde abril de 2025",
+      "Sem bagageira dianteira e sem homologação para reboque"
+    ],
+    "bestFor": "Quem procura um elétrico compacto com 218 cv e bom equipamento de segurança por pouco mais de 26.000 € e faz sobretudo percursos curtos e médios.",
+    "sections": [
+      {
+        "title": "Posicionamento",
+        "body": "O Leapmotor B05 é um compacto elétrico de 4,43 m com linhas de shooting brake, portas sem caixilho e 2,735 m de distância entre eixos. A versão Life Pro usa um motor traseiro de 160 kW (218 cv) e 240 Nm e a bateria LFP de 56,2 kWh, para 401 km WLTP. O PVP de 26.285 € com IVA é o do comunicado de lançamento em Portugal, de 06/10/2026."
+      },
+      {
+        "title": "Interior e ergonomia",
+        "body": "O tablier tem um painel digital de 8,8\" e um ecrã central flutuante de 14,6\" com resolução 2,5K e Leap OS 4.0 Plus. A versão Life usa bancos em tecido preto de regulação manual e não tem iluminação ambiente nem teto panorâmico. A parte superior do tablier e as portas são macias, mas o tablier inferior e a consola são em plástico duro; os menus são pouco intuitivos e a regeneração e os modos de condução só se ajustam no ecrã."
+      },
+      {
+        "title": "Como se conduz",
+        "body": "A Leapmotor afinou na Europa a suspensão McPherson e multibraço, e a imprensa elogia a direção e o equilíbrio entre conforto e controlo. A Auto Express, o carwow e a Razão Automóvel descrevem uma suspensão que absorve bem as irregularidades, enquanto a What Car? a acha irrequieta em piso degradado. A versão Pro anuncia 7,5 segundos dos 0 aos 100 km/h, mais lenta do que a ProMax (6,6 s), e 170 km/h de velocidade máxima."
+      },
+      {
+        "title": "Autonomia, eficiência e carregamento",
+        "body": "A bateria de 55 kWh úteis permite 401 km WLTP e 15,8 kWh/100 km. Em corrente contínua aceita até 156 kW, com 30–80% em 16 minutos; em corrente alternada carrega a 11 kW. O V2L de 3,3 kW funciona com um adaptador e a bateria pode ser pré-aquecida pela app."
+      },
+      {
+        "title": "Vida a bordo e tecnologia",
+        "body": "De série tem cruise control adaptativo com centragem na faixa, mudança de faixa automática e assistente de engarrafamento, câmara 360°, alertas de tráfego cruzado com travagem, carregamento sem fios, Apple CarPlay e Android Auto, atualizações OTA, chave Bluetooth e cartão NFC. As assistências obrigatórias religam-se a cada arranque e os avisos sonoros são a crítica mais comum nos ensaios. A bagageira tem 345 L e não há frunk."
+      },
+      {
+        "title": "Propriedade e assistência",
+        "body": "A Leapmotor indica garantia do veículo até 4 anos ou 120.000 km e da bateria até 8 anos ou 160.000 km. A marca vende em Portugal desde abril de 2025 através da joint venture com a Stellantis, com 17 concessionários com assistência a 17/11/2026. O B05 obteve cinco estrelas no Euro NCAP em 2026. A produção do B05 em Saragoça está prevista para 2027; até lá, o carro é importado."
+      },
+      {
+        "title": "Configuração avaliada",
+        "body": "B05 Life Pro com bateria de 56,2 kWh, sem opcionais, ao PVP de 26.285 € com IVA do comunicado de lançamento em Portugal (06/10/2026), sem despesas de legalização e transporte. A campanha para particulares baixava o preço para 24.445,48 € no lançamento e o site oficial anuncia o B05 desde 25.000 € a 17/11/2026. O Guia do Automóvel lista 26.787,10 €. A Leapmotor não publica em Portugal um preço para a Life ProMax (67,1 kWh), pelo que essa versão fica de fora."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "leapmotor-brochura",
+      "label": "Leapmotor — brochura europeia do B05 (PDF fornecido)",
+      "url": "/sources/leapmotor-b05-brochura.pdf",
+      "type": "pdf"
+    },
+    {
+      "id": "leapmotor-brochura-pt",
+      "label": "Leapmotor Portugal — brochura do B05 (abril de 2026)",
+      "url": "https://www.leapmotor.net/docs/lpmiwebsiteptptlibraries/documentos-b05/1777539919491leapmotor_brochure_b05pt.pdf",
+      "type": "official"
+    },
+    {
+      "id": "leapmotor-pt-b05",
+      "label": "Leapmotor Portugal — página do B05 (consultada a 17/11/2026)",
+      "url": "https://www.leapmotor.net/pt-pt/modelos/b05",
+      "type": "official"
+    },
+    {
+      "id": "stellantis-pt-b05",
+      "label": "Stellantis Portugal — Leapmotor B05 chegou a Portugal: versões e preços (06/10/2026)",
+      "url": "https://www.media.stellantis.com/pt-pt/leapmotor/press/leapmotor-b05-chegou-a-portugal-um-novo-patamar-na-mobilidade-eletrica-desportiva",
+      "type": "official"
+    },
+    {
+      "id": "leapmotor-uk-guide",
+      "label": "Leapmotor Reino Unido — guia de preços e equipamento do B05 (junho de 2026)",
+      "url": "https://www.leapmotor.net/docs/lpmiwebsiteengblibraries/price---spec-guides/1782890526442b05_q3.pdf",
+      "type": "official"
+    },
+    {
+      "id": "leapmotor-garantia",
+      "label": "Leapmotor Portugal — manutenção e garantia (consultada a 17/11/2026)",
+      "url": "https://www.leapmotor.net/pt-pt/servicos-para-si/manutencao-e-garantia",
+      "type": "official"
+    },
+    {
+      "id": "deco-leapmotor-2025",
+      "label": "DECO Proteste — Leapmotor T03 e C10 chegam a Portugal, garantia de lançamento (24/03/2025)",
+      "url": "https://www.deco.proteste.pt/auto/carros-eletricos/noticias/leapmotor-t03-c10-carros-eletricos-baratos-recheados-tecnologia",
+      "type": "press"
+    },
+    {
+      "id": "leapmotor-rede",
+      "label": "Leapmotor Portugal — rede de concessionários (17 pontos com assistência a 17/11/2026)",
+      "url": "https://www.leapmotor.net/pt-pt/servicos-para-si/rede-de-concessionarios",
+      "type": "official"
+    },
+    {
+      "id": "stellantis-zaragoza-b05",
+      "label": "Stellantis Portugal — Leapmotor anuncia a produção do B05 em Saragoça (20/10/2026)",
+      "url": "https://www.media.stellantis.com/pt-pt/leapmotor/press/leapmotor-anuncia-a-producao-do-b05-em-saragoca-espanha-e-reforca-a-sua-presenca-industrial-made-in-europe",
+      "type": "official"
+    },
+    {
+      "id": "guia-auto-b05",
+      "label": "Guia do Automóvel — preços e ficha técnica do Leapmotor B05 (16/11/2026)",
+      "url": "https://www.guiadoautomovel.pt/marcas/leapmotor/b05/precos",
+      "type": "database"
+    },
+    {
+      "id": "evdb-pro",
+      "label": "EV Database — Leapmotor B05 56.2 kWh",
+      "url": "https://ev-database.org/car/3563/Leapmotor-B05-562-kWh",
+      "type": "database"
+    },
+    {
+      "id": "euroncap-b05",
+      "label": "Euro NCAP — Leapmotor B05: cinco estrelas (02/09/2026)",
+      "url": "https://www.euroncap.com/assessments/leapmotor/b05/1237/",
+      "type": "database"
+    },
+    {
+      "id": "deco-b05",
+      "label": "DECO Proteste — Leapmotor B05: compacto elétrico confortável (outubro de 2026)",
+      "url": "https://www.deco.proteste.pt/auto/carros-eletricos/noticias/leapmotor-b05-compacto-eletrico-confortavel-218-cv-bem-equipado-26285-euros",
+      "type": "press"
+    },
+    {
+      "id": "adac-b05",
+      "label": "ADAC — primeiro contacto com o Leapmotor B05 (27/07/2026; autoteste pendente)",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/leapmotor/leapmotor-b05-fahrbericht/",
+      "type": "press"
+    },
+    {
+      "id": "razao-b05",
+      "label": "Razão Automóvel — primeiro contacto com o Leapmotor B05 (15/06/2026)",
+      "url": "https://www.razaoautomovel.com/testes/primeiro-contacto/testes-primeiro-contacto-leapmotor-b05/",
+      "type": "press"
+    },
+    {
+      "id": "whatcar-b05",
+      "label": "What Car? — ensaio ao Leapmotor B05 (11/06/2026)",
+      "url": "https://www.whatcar.com/leapmotor/b05/hatchback/review/n29126",
+      "type": "press"
+    },
+    {
+      "id": "autoexpress-b05",
+      "label": "Auto Express — ensaio ao Leapmotor B05 (11/11/2026)",
+      "url": "https://www.autoexpress.co.uk/leapmotor/b05/370883/leapmotor-b05-review",
+      "type": "press"
+    },
+    {
+      "id": "autoexpress-b05-primeiro",
+      "label": "Auto Express — primeiro ensaio ao Leapmotor B05 (12/06/2026)",
+      "url": "https://www.autoexpress.co.uk/leapmotor/b05/369770/new-leapmotor-b05-2026-review-lack-thrills-dents-its-appeal",
+      "type": "press"
+    },
+    {
+      "id": "carwow-b05",
+      "label": "carwow — ensaio ao Leapmotor B05 (12/06/2026)",
+      "url": "https://www.carwow.co.uk/leapmotor/b05",
+      "type": "press"
+    },
+    {
+      "id": "electrifying-b05",
+      "label": "electrifying — ensaio ao Leapmotor B05 (12/06/2026)",
+      "url": "https://www.electrifying.com/reviews/leapmotor/b05/review",
+      "type": "press"
+    },
+    {
+      "id": "autobild-b05",
+      "label": "Auto Bild — primeira condução do Leapmotor B05 Life ProMax (junho de 2026)",
+      "url": "https://www.autobild.de/artikel/neuer-leapmotor-b05-erste-fahrt-im-e-kompakten-28689257.html",
+      "type": "press"
+    },
+    {
+      "id": "carmagazine-b05",
+      "label": "Car Magazine — ensaio ao Leapmotor B05 (19/06/2026)",
+      "url": "https://www.carmagazine.co.uk/car-reviews/leapmotor/b05-hatchback-2026/",
+      "type": "press"
+    },
+    {
+      "id": "independent-b05",
+      "label": "The Independent — ensaio ao Leapmotor B05 (23/07/2026, via Newswav)",
+      "url": "https://newswav.com/article/leapmotor-b05-review-i-drove-the-29k-electric-hatchback-with-300-miles-of-r-A2607_5Tv6O4",
+      "type": "press"
+    },
+    {
+      "id": "topgear-nl-b05",
+      "label": "TopGear.nl — ensaio ao Leapmotor B05 ProMax Design (12/06/2026)",
+      "url": "https://topgear.nl/autotest/leapmotor-b05-promax-design-review-2026-de-beste-chinees/",
+      "type": "press"
+    },
+    {
+      "id": "autozine-b05",
+      "label": "Autozine — ensaio ao Leapmotor B05 Design 67 kWh (junho de 2026)",
+      "url": "https://www.autozine.nl/leapmotor/b05/autotest",
+      "type": "press"
+    },
+    {
+      "id": "motor1-de-b05",
+      "label": "Motor1 Alemanha — ensaio ao Leapmotor B05 ProMax Design (12/06/2026)",
+      "url": "https://de.motor1.com/reviews/798407/leapmotor-b05-2026-test/",
+      "type": "press"
+    },
+    {
+      "id": "motoringresearch-b05",
+      "label": "Motoring Research — primeiro contacto com o Leapmotor B05",
+      "url": "https://www.motoringresearch.com/car-reviews/leapmotor-b05-2026-review/",
+      "type": "press"
+    },
+    {
+      "id": "autoolymp-b05",
+      "label": "Autoolymp — ensaio ao Leapmotor B05 Design ProMax (outubro de 2026)",
+      "url": "https://www.autoolymp.sk/test-leapmotor-b05-v-slovenskom-teste-671-kwh-a-nizka-spotreba/",
+      "type": "press"
+    },
+    {
+      "id": "driven-nz-b05",
+      "label": "Driven (Nova Zelândia) — ensaio ao Leapmotor B05 Design (equipamento e reboque)",
+      "url": "https://www.drivencarguide.co.nz/reviews/leapmotor-b05-design-review-not-hot-just-seriously-good/",
+      "type": "press"
+    },
+    {
+      "id": "carexpert-b05",
+      "label": "CarExpert — Leapmotor B05: tecnologia e V2L de 3,3 kW",
+      "url": "https://www.carexpert.com.au/leapmotor/b05/style/technology",
+      "type": "press"
+    },
+    {
+      "id": "carexpert-avisos",
+      "label": "CarExpert — Leapmotor diz que os avisos de segurança podem melhorar, mas não desaparecer (15/06/2026)",
+      "url": "https://www.carexpert.com.au/car-news/leapmotor-says-annoying-safety-beeps-could-get-better-but-not-disappear",
+      "type": "press"
+    },
+    {
+      "id": "goingelectric-b05",
+      "label": "GoingElectric — fórum de proprietários do Leapmotor B05 (agosto–novembro de 2026)",
+      "url": "https://www.goingelectric.de/forum/viewtopic.php?t=101738",
+      "type": "owner"
+    },
+    {
+      "id": "carchecker-b05",
+      "label": "CarChecker — relatório do Leapmotor B05 67 kWh (sem recalls, agosto de 2026)",
+      "url": "https://www.carchecker.pro/reports/leapmotor_b05_mk1_67kwh.html",
+      "type": "database"
+    },
+    {
+      "id": "sina-recall-c01-c11",
+      "label": "Sina Finance — recall S2026M0100V da Leapmotor na China, só C01 e C11 (21/08/2026)",
+      "url": "https://finance.sina.com.cn/wm/2026-08-21/doc-inipavkm8056590.shtml",
+      "type": "press"
+    },
+    {
+      "id": "wikipedia-leapmotor",
+      "label": "Wikipedia — Leapmotor (fundação e primeiro modelo)",
+      "url": "https://en.wikipedia.org/wiki/Leapmotor",
+      "type": "database"
+    },
+    {
+      "id": "gasgoo-stellantis-leapmotor",
+      "label": "Gasgoo — Stellantis conclui a compra de 21,26% da Leapmotor (novembro de 2023)",
+      "url": "https://autonews.gasgoo.com/articles/ev/70029582",
+      "type": "press"
+    },
+    {
+      "id": "pplware-leapmotor-pt",
+      "label": "Pplware — Leapmotor chega a Portugal em abril de 2025 (12/03/2025)",
+      "url": "https://pplware.sapo.pt/?p=1047090",
+      "type": "press"
+    },
+    {
+      "id": "hkex-fy2024",
+      "label": "Leapmotor — resultados anuais de 2024 e acordos com a Stellantis (HKEX, 10/03/2025)",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0310/2025031000296.pdf",
+      "type": "official"
+    },
+    {
+      "id": "hkex-fy2025",
+      "label": "Leapmotor — resultados anuais de 2025 (HKEX, 16/03/2026)",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031601214.pdf",
+      "type": "official"
+    },
+    {
+      "id": "hkex-h1-2026",
+      "label": "Leapmotor — resultados do 1.º semestre de 2026 (HKEX, 24/08/2026)",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0824/2026082400886.pdf",
+      "type": "official"
+    },
+    {
+      "id": "caixin-leapmotor-2026",
+      "label": "Caixin — Leapmotor reduz a meta de lucro para 2026 (25/08/2026)",
+      "url": "https://www.caixinglobal.com/2026-08-25/leapmotor-slashes-2026-profit-target-despite-sales-surge-102477725.html",
+      "type": "press"
+    },
+    {
+      "id": "cnevpost-b10-zaragoza",
+      "label": "CnEVPost — Leapmotor inicia a produção do B10 em Espanha (13/10/2026)",
+      "url": "https://cnevpost.com/2026/10/13/leapmotor-starts-b10-production-spain-a05-european-debut/",
+      "type": "press"
+    },
+    {
+      "id": "carscoops-tychy",
+      "label": "Carscoops — Stellantis termina a montagem Leapmotor na Polónia (abril de 2025)",
+      "url": "https://www.carscoops.com/2025/04/stellantis-axes-leapmotor-production-in-poland-may-move-to-spain/",
+      "type": "press"
+    },
+    {
+      "id": "newmobility-stellantis-2025",
+      "label": "newmobility — Stellantis com prejuízo de 22,3 mil milhões de euros em 2025 (26/02/2026)",
+      "url": "https://newmobility.news/en/2026/02/26/stellantis-posts-dramatic-e22-3bn-loss-in-historic-2025-reset/",
+      "type": "press"
+    }
+  ]
+}

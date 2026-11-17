@@ -52,7 +52,26 @@ src/data/
 │   ├── tesla-model-3-standard.json
 │   ├── tesla-model-3-premium-long-range-rwd.json
 │   ├── tesla-model-3-premium-long-range-awd.json
-│   └── tesla-model-3-performance.json
+│   ├── tesla-model-3-performance.json
+│   ├── tesla-model-y-standard.json
+│   ├── tesla-model-y-premium-long-range-rwd.json
+│   ├── tesla-model-y-premium-long-range-awd.json
+│   ├── tesla-model-y-performance.json
+│   ├── cupra-tavascan-base.json
+│   ├── cupra-tavascan-drive.json
+│   ├── cupra-tavascan-endurance.json
+│   ├── cupra-tavascan-adrenaline.json
+│   ├── cupra-tavascan-vz.json
+│   ├── xpeng-l03-rwd-standard-range.json
+│   ├── xpeng-l03-rwd-long-range.json
+│   ├── xpeng-l03-rwd-long-range-ultra.json
+│   ├── xpeng-l03-awd-performance-ultra.json
+│   ├── xpeng-g6-rwd-standard-range.json
+│   ├── xpeng-g6-rwd-long-range.json
+│   ├── xpeng-g6-awd-performance.json
+│   ├── xpeng-g6-awd-performance-black-edition.json
+│   ├── leapmotor-b05-life-pro.json
+│   └── leapmotor-b05-design-promax.json
 ├── criteria.ts                   # os 11 critérios
 ├── equipment.ts                  # checklist normalizada de 38 equipamentos
 ├── site.ts                       # data editorial da lista
@@ -101,6 +120,7 @@ O carregamento usa apenas a **potência DC de pico** (`charging.dcKw`), relativa
 - Tesla Model Y Standard, Premium Long Range RWD, Premium Long Range AWD e Performance: propostas de 16/11/2026 fornecidas pelo utilizador, com preço de aquisição que inclui IVA, despesas de documentação e transporte e taxa para pneus. Os PDF originais estão em `public/sources/`; as especificações foram cruzadas com a Tesla Portugal, a EV Database, o autoteste do ADAC e a imprensa especializada.
 - XPENG L03 RWD Standard Range, RWD Long Range, RWD Long Range Ultra e AWD Performance Ultra: PVP do configurador oficial da XPENG Portugal de 16/11/2026, sem a campanha de financiamento (que reduz cada preço em 1.491,99 €) e sem despesas administrativas e de transporte. A Performance Ultra só tem a pintura Midnight Black (+900 €), incluída no preço. O configurador português não publica potência, consumo nem autonomia da versão de tração integral, nem o peso de nenhuma versão: estes valores vêm da XPENG Alemanha, do EV Database, do ADAC e do CarNewsChina (pesos sem condutor), e o equipamento da Long Range Ultra é inferido da versão de tração integral, que partilha a mesma lista no configurador.
 - XPENG G6 RWD Standard Range, RWD Long Range, AWD Performance e AWD Performance Black Edition: PVP do configurador oficial da XPENG Portugal de 16/11/2026, sem a campanha de financiamento (que reduz o preço em 1.701,81 €, 1.949,98 €, 749,99 € e 749,99 €, respetivamente) e sem despesas administrativas e de transporte. A Black Edition só tem a pintura Midnight Black, incluída no preço, e tem o mesmo equipamento da AWD Performance segundo a API do configurador. Autonomia e consumo vêm do configurador português, que diverge do EV Database e do ADAC na Standard Range (480 vs 470/455 km) e na Long Range (535 vs 525 km; 17,9 vs 17,5 kWh/100 km); o consumo da AWD (18,4 kWh/100 km), não publicado em Portugal, vem do EV Database e do ADAC. Os pesos são os da página portuguesa, sem condutor.
+- Leapmotor B05 Life Pro e Design ProMax: PVP do comunicado de lançamento da Leapmotor em Portugal (Stellantis, 06/10/2026), de 26.285 € e 30.285 € com IVA, sem a campanha para particulares e sem despesas de legalização e transporte. A brochura europeia fornecida está em `public/sources/`; as especificações foram cruzadas com o site e a brochura portuguesa, o EV Database e o Guia do Automóvel. O consumo usado (15,8 e 15,9 kWh/100 km) é o da brochura e do EV Database, não o do site português (14 e 14,8 kWh/100 km), e a potência DC (156 e 174 kW) é a do site português, não a da brochura portuguesa (140 e 168 kW). A Life ProMax não entra porque a Leapmotor não publica o seu preço em Portugal.
 - Autonomia e consumo são **WLTP**. Os valores reais variam com percurso, clima, carga e estilo de condução.
 - As avaliações editoriais são uma síntese de imprensa especializada, dados oficiais e testemunhos de proprietários. As fontes estão listadas em cada dossiê.
 - As descrições evitam comparações relativas à lista (“o mais caro”, “a maior autonomia”), porque ficariam desatualizadas assim que entrasse um carro novo. Os rankings, contagens e superlativos são calculados na interface; o texto usa valores concretos ou comparações com carros nomeados.
@@ -114,7 +134,7 @@ O carregamento usa apenas a **potência DC de pico** (`charging.dcKw`), relativa
 | `/sitemap.xml` | Sitemap com home, dossiês e imagens sociais |
 | `/robots.txt` | Regras de indexação + referência ao sitemap |
 
-Rotas atuais: `/carros/cupra-raval-vz`, `/carros/byd-seal-design`, `/carros/byd-seal-excellence-awd`, `/carros/polestar-4-rear-motor-prime`, `/carros/mazda-6e-takumi`, `/carros/mazda-6e-takumi-plus`, `/carros/mazda-6e-homura-plus`, `/carros/mazda-cx-6e-takumi`, `/carros/mazda-cx-6e-takumi-plus`, `/carros/tesla-model-3-standard`, `/carros/tesla-model-3-premium-long-range-rwd`, `/carros/tesla-model-3-premium-long-range-awd`, `/carros/tesla-model-3-performance`, `/carros/tesla-model-y-standard`, `/carros/tesla-model-y-premium-long-range-rwd`, `/carros/tesla-model-y-premium-long-range-awd`, `/carros/tesla-model-y-performance`, `/carros/xpeng-l03-rwd-standard-range`, `/carros/xpeng-l03-rwd-long-range`, `/carros/xpeng-l03-rwd-long-range-ultra` `/carros/xpeng-l03-awd-performance-ultra`, `/carros/xpeng-g6-rwd-standard-range`, `/carros/xpeng-g6-rwd-long-range`, `/carros/xpeng-g6-awd-performance` e `/carros/xpeng-g6-awd-performance-black-edition`.
+Rotas atuais: `/carros/cupra-raval-vz`, `/carros/cupra-tavascan-base`, `/carros/cupra-tavascan-drive`, `/carros/cupra-tavascan-endurance`, `/carros/cupra-tavascan-adrenaline`, `/carros/cupra-tavascan-vz`, `/carros/byd-seal-design`, `/carros/byd-seal-excellence-awd`, `/carros/polestar-4-rear-motor-prime`, `/carros/mazda-6e-takumi`, `/carros/mazda-6e-takumi-plus`, `/carros/mazda-6e-homura-plus`, `/carros/mazda-cx-6e-takumi`, `/carros/mazda-cx-6e-takumi-plus`, `/carros/tesla-model-3-standard`, `/carros/tesla-model-3-premium-long-range-rwd`, `/carros/tesla-model-3-premium-long-range-awd`, `/carros/tesla-model-3-performance`, `/carros/tesla-model-y-standard`, `/carros/tesla-model-y-premium-long-range-rwd`, `/carros/tesla-model-y-premium-long-range-awd`, `/carros/tesla-model-y-performance`, `/carros/xpeng-l03-rwd-standard-range`, `/carros/xpeng-l03-rwd-long-range`, `/carros/xpeng-l03-rwd-long-range-ultra` `/carros/xpeng-l03-awd-performance-ultra`, `/carros/xpeng-g6-rwd-standard-range`, `/carros/xpeng-g6-rwd-long-range`, `/carros/xpeng-g6-awd-performance`, `/carros/xpeng-g6-awd-performance-black-edition`, `/carros/leapmotor-b05-life-pro` e `/carros/leapmotor-b05-design-promax`.
 
 ## SEO
 

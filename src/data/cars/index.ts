@@ -30,6 +30,8 @@ import xpengG6RwdStandardRange from "./xpeng-g6-rwd-standard-range.json"
 import xpengG6RwdLongRange from "./xpeng-g6-rwd-long-range.json"
 import xpengG6AwdPerformance from "./xpeng-g6-awd-performance.json"
 import xpengG6AwdPerformanceBlackEdition from "./xpeng-g6-awd-performance-black-edition.json"
+import leapmotorB05LifePro from "./leapmotor-b05-life-pro.json"
+import leapmotorB05DesignProMax from "./leapmotor-b05-design-promax.json"
 
 /**
  * Registo dos carros do comparativo.
@@ -67,4 +69,6 @@ export const CARS = ([
   xpengG6RwdLongRange,
   xpengG6AwdPerformance,
   xpengG6AwdPerformanceBlackEdition,
+  leapmotorB05LifePro,
+  leapmotorB05DesignProMax,
 ] as unknown as Car[]).map(withSuspensionScore)
