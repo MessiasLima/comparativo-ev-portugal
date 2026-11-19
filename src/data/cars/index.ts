@@ -14,6 +14,10 @@ import mazda6eTakumi from "./mazda-6e-takumi.json"
 import mazdaCx6eTakumi from "./mazda-cx-6e-takumi.json"
 import mazdaCx6eTakumiPlus from "./mazda-cx-6e-takumi-plus.json"
 import polestar4RearMotorPrime from "./polestar-4-rear-motor-prime.json"
+import polestar2StandardRange from "./polestar-2-standard-range.json"
+import polestar2LongRangeSingleMotor from "./polestar-2-long-range-single-motor.json"
+import polestar2LongRangeSingleMotorPrime from "./polestar-2-long-range-single-motor-prime.json"
+import polestar2LongRangeDualMotorPerformance from "./polestar-2-long-range-dual-motor-performance.json"
 import teslaModel3Standard from "./tesla-model-3-standard.json"
 import teslaModel3PremiumLongRangeRwd from "./tesla-model-3-premium-long-range-rwd.json"
 import teslaModel3PremiumLongRangeAwd from "./tesla-model-3-premium-long-range-awd.json"
@@ -53,6 +57,10 @@ export const CARS = ([
   mazdaCx6eTakumi,
   mazdaCx6eTakumiPlus,
   polestar4RearMotorPrime,
+  polestar2StandardRange,
+  polestar2LongRangeSingleMotor,
+  polestar2LongRangeSingleMotorPrime,
+  polestar2LongRangeDualMotorPerformance,
   teslaModel3Standard,
   teslaModel3PremiumLongRangeRwd,
   teslaModel3PremiumLongRangeAwd,

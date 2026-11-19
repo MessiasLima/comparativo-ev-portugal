@@ -1,0 +1,632 @@
+{
+  "id": "polestar-2-standard-range",
+  "slug": "polestar-2-standard-range",
+  "brand": "Polestar",
+  "model": "2",
+  "variant": "Standard Range",
+  "version": "Standard range Single motor 70 kWh (MY27)",
+  "year": 2027,
+  "segment": "Berlina fastback premium",
+  "tagline": "A porta de entrada do Polestar 2: berlina fastback de tração traseira, 551 km WLTP e um desenho escandinavo sóbrio.",
+  "accent": "ocean",
+  "price": {
+    "amount": 40000,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-11-17",
+    "note": "Configuração para encomenda particular, a pronto pagamento, de 17/11/2026: versão Standard range Single motor, pintura Vapour, interior em tecido Charcoal com frisos 3D Etched, jantes Aero de 19\" e cabo de carregamento CA, tudo incluído. O valor da viatura é 49.900 €; acrescem 1.000 € de legalização e transporte e aplica-se a \"Oferta exclusiva\" Polestar de −10.900 €, válida para encomendas até 31/12/2026, resultando em 40.000 € com IVA e despesas incluídos. O Pack Climate, gratuito no configurador, não está nesta configuração. A produção terminou em outubro de 2026; as vendas são feitas a partir de stock.",
+    "sourceId": "polestar-config"
+  },
+  "specs": {
+    "powerKw": 200,
+    "powerHp": 272,
+    "torqueNm": 490,
+    "drivetrain": "Tração traseira (RWD)",
+    "acceleration0100": 6.4,
+    "topSpeedKmh": 205,
+    "batteryKwh": 70,
+    "usableBatteryKwh": 67,
+    "batteryChemistry": "NMC (CATL), 400 V",
+    "rangeKm": 551,
+    "consumptionKwh100": 15,
+    "weightKg": 1949,
+    "grossWeightKg": 2450,
+    "lengthMm": 4606,
+    "widthMm": 1859,
+    "heightMm": 1479,
+    "wheelbaseMm": 2735,
+    "bootL": 407,
+    "frunkL": 41,
+    "seats": 5,
+    "doors": 5,
+    "towingBrakedKg": 1500
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 180,
+    "dcTime1080Min": 26,
+    "connector": "CCS2",
+    "v2l": false,
+    "v2h": false
+  },
+  "warranty": {
+    "vehicle": "3 anos",
+    "battery": "8 anos / 160.000 km (SOH ≥ 70%)",
+    "note": "A Polestar cobre defeitos de fabrico durante 3 anos; a bateria de alta tensão tem garantia de 8 anos ou 160.000 km, o que ocorrer primeiro, com reparação ou substituição se o SOH descer abaixo de 70%. A garantia anticorrosão é de 12 anos e a assistência em viagem de 3 anos. A marca indica que não é necessária manutenção até aos 2 anos ou 30.000 km. Confirmar os termos aplicáveis a carros de stock."
+  },
+  "equipmentIncluded": [
+    "acc",
+    "lane-keep",
+    "aeb",
+    "traffic-sign",
+    "driver-monitor",
+    "parking-sensors",
+    "adaptive-high-beam",
+    "heated-seats",
+    "climate-2zone",
+    "wireless-charging",
+    "carplay",
+    "digital-cockpit",
+    "connected-services",
+    "ota",
+    "electric-tailgate",
+    "frunk",
+    "wheels-19",
+    "rear-usb"
+  ],
+  "options": [
+    {
+      "name": "Cabo de carregamento CA para ponto público/doméstico",
+      "price": 0,
+      "description": "Opção individual incluída na configuração."
+    }
+  ],
+  "reviews": {
+    "interior": {
+      "assessment": {
+        "softTouch": 7.8,
+        "upholstery": 6.5,
+        "design": 8.3,
+        "assembly": 8.5,
+        "hardPlastic": "moderate"
+      },
+      "summary": "O interior de série usa tecido em relevo Charcoal com decoração 3D Etched, bancos dianteiros semielétricos e o desenho escandinavo do Polestar 2: consola central alta, ecrã vertical de 11,2\" e poucos botões. O tablier e os insertos das portas são macios, o ADAC considera os materiais de nível elevado e classifica a montagem como irrepreensível (Verarbeitung 1,9), sem ruídos parasitas. Em contrapartida, os painéis inferiores não são espumados, as laterais da consola são de plástico duro e roçam nos joelhos dos condutores mais altos, e há plástico rijo junto aos pés; a alcatifa e o forro do tejadilho também são criticados. O tecido está bem executado, mas não tem o toque do MicroTech dos packs Plus/Prime.",
+      "pros": [
+        "Montagem sólida, sem ruídos parasitas no autoteste do ADAC",
+        "Desenho minimalista coerente, com materiais reciclados e decoração 3D Etched",
+        "Tablier e zonas de contacto superiores acolchoados"
+      ],
+      "cons": [
+        "Plástico duro nas laterais da consola, nos painéis inferiores e junto aos pés",
+        "Estofos em tecido; o MicroTech exige o Pack Plus ou Prime",
+        "Climatização comandada apenas pelo ecrã tátil"
+      ],
+      "sourceIds": [
+        "polestar-config",
+        "polestar-specs",
+        "adac-polestar-2",
+        "autoexpress-interior",
+        "carwow",
+        "carsguide",
+        "motor1-de",
+        "whatcar"
+      ]
+    },
+    "comfort": {
+      "assessment": {
+        "seats": 7.7,
+        "acoustics": 7.2,
+        "drivetrainCalibration": 7.8
+      },
+      "suspensionBasis": {
+        "dampers": "passive",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 3,
+            "dampers": "passive",
+            "wheelInches": 19,
+            "sourceId": "adac-polestar-2"
+          }
+        ]
+      },
+      "summary": "A Standard range usa a suspensão passiva de série, com amortecedores bitubo, e jantes de 19\". O ADAC testou um Long Range Single Motor de 2023 com a mesma suspensão e jantes e deu 3,0 à Federung: os buracos em cidade chegam claramente ao habitáculo e o conforto melhora com a velocidade, sendo correto em autoestrada. Os bancos dianteiros desta versão são semielétricos, com encosto de regulação manual e apoio lombar elétrico de 4 vias; o ADAC elogia o apoio em viagens longas (Sitze 2,5), mas atrás o encosto é vertical, os joelhos ficam altos por causa da bateria e o lugar central é de recurso. O isolamento é o ponto fraco: 67,3 dB(A) a 130 km/h no ADAC, com ruído de rolamento e de vento, e a What Car? considera-o mais ruidoso do que a maioria dos rivais. A regeneração tem três níveis, incluindo one-pedal até à paragem, com transição suave para os travões, mas só se muda no menu.",
+      "pros": [
+        "Bancos dianteiros com bom apoio em viagens longas e lombar elétrico de 4 vias",
+        "Compostura correta em autoestrada",
+        "One-pedal até à paragem com transição suave para os travões"
+      ],
+      "cons": [
+        "Buracos e juntas sentem-se em cidade (ADAC Federung 3,0)",
+        "Ruído de rolamento e de vento: 67,3 dB(A) a 130 km/h",
+        "Banco traseiro com encosto vertical e joelhos altos; encosto dianteiro de regulação manual"
+      ],
+      "sourceIds": [
+        "polestar-specs",
+        "polestar-config",
+        "adac-polestar-2",
+        "autoexpress-longterm",
+        "carwow",
+        "whatcar",
+        "motor1-de",
+        "carsguide"
+      ]
+    },
+    "brand": {
+      "assessment": {
+        "globalBrandAge": 6,
+        "portugalMarketTenure": 3.5,
+        "portugalServiceNetwork": 7.5,
+        "europeanManufacturing": 2,
+        "establishedGroupSupport": 9,
+        "financialStability": 2,
+        "portugalFactory": false
+      },
+      "summary": "A Polestar lançou-se como marca autónoma de automóveis elétricos em 2017 e iniciou vendas oficiais em Portugal em maio de 2022. A assistência nacional recorre a oficinas autorizadas Polestar na rede Volvo Car, com 28 pontos de serviço em Portugal segundo o diretor da marca no país (dezembro de 2025), mas o localizador oficial não permite confirmar a cobertura das ilhas; a produção atual está na Ásia e América do Norte, enquanto a produção europeia do Polestar 7 está planeada para 2028. As contas consolidadas da própria Polestar no primeiro semestre de 2026 registaram prejuízo líquido de 842 milhões de dólares e fluxo operacional negativo de 850 milhões; a direção prevê fluxos operacionais negativos no curto prazo e reconhece incerteza material sobre a continuidade da empresa. As vendas estimadas nos primeiros nove meses cresceram apenas 0,6% e a orientação de 2026 aponta para crescimento de volume baixo a médio de um dígito, sem previsão oficial de lucro, e a 03/11/2026 a empresa adiou a divulgação dos resultados do 3.º trimestre, previstos para 05/11, sem anunciar nova data; os empréstimos convertidos/estendidos por Volvo/Geely são apoio do grupo, não resultados da marca. O Polestar 2 era produzido em Luqiao, na China; a produção terminou em outubro de 2026, depois de cerca de 200 mil unidades, e a marca indica que há stock para venda até ao próximo ano e um sucessor previsto para 2027.",
+      "pros": [
+        "Apoio técnico e industrial formal de Volvo/Geely, incluindo financiamento e acordos de produção",
+        "Acesso em Portugal a 28 pontos de serviço autorizados através da rede Volvo Car",
+        "Presença comercial oficial em Portugal desde 2022, com vendas diretas e assistência local"
+      ],
+      "cons": [
+        "A presença global como marca automóvel autónoma começou apenas em 2017 e a entrada oficial em Portugal ocorreu em 2022",
+        "Não há produção europeia atual; a fábrica eslovaca para o Polestar 7 está prevista para 2028",
+        "Prejuízos e fluxos de caixa operacionais negativos persistem, com dúvida material sobre a continuidade nas contas de H1 2026; os resultados do 3.º trimestre de 2026 foram adiados sem nova data"
+      ],
+      "sourceIds": [
+        "polestar-global-launch",
+        "polestar-portugal-entry",
+        "polestar-market-expansion-2022",
+        "polestar-service",
+        "polestar-q3-2026-update",
+        "polestar-europe-plan",
+        "polestar-financial-h1-2026",
+        "polestar-shareholder-support-2026",
+        "barlavento-polestar-faro",
+        "polestar-q3-2026-delay",
+        "electrive-production-end"
+      ]
+    },
+    "equipment": {
+      "summary": "A configuração não tem packs. De série traz cruise control adaptativo, manutenção de faixa, reconhecimento de sinais, Driver Alert Control (alerta de fadiga), travagem automática, câmara traseira e sensores à frente, atrás e aos lados, máximos automáticos, bancos dianteiros aquecidos, climatização de duas zonas, carregamento wireless de 15 W, CarPlay e Android Auto por cabo, Google built-in com atualizações OTA, porta-bagagens elétrico e jantes de 19\". Ficam de fora a bomba de calor, o volante e os bancos traseiros aquecidos (Pack Climate, gratuito no configurador mas não incluído), a câmara 360º, o ângulo morto, o teto panorâmico, a chave digital e os bancos com memória (Pack Prime).",
+      "pros": [
+        "Assistências essenciais de série, incluindo ACC e manutenção de faixa",
+        "Sensores de estacionamento à frente, atrás e aos lados",
+        "Google built-in, OTA, carregamento wireless e porta-bagagens elétrico"
+      ],
+      "cons": [
+        "Sem bomba de calor nem volante aquecido: o Pack Climate gratuito não foi incluído",
+        "Sem ângulo morto, câmara 360º nem alerta de tráfego traseiro",
+        "Ecrã central de 11,2\" e CarPlay apenas por cabo"
+      ],
+      "sourceIds": [
+        "polestar-config",
+        "polestar-specs",
+        "polestar-safety",
+        "polestar-configurator"
+      ]
+    },
+    "boot": {
+      "summary": "O Polestar 2 tem 407 L de bagageira traseira, incluindo 43 L sob o piso, e 41 L no compartimento dianteiro, num total de 448 L com os bancos na posição normal. A Polestar não indica a norma de medição. Com os bancos traseiros rebatidos chega a 1.097 L, mas esse volume não entra no critério.",
+      "pros": [
+        "407 L atrás, com compartimento de 43 L sob o piso",
+        "41 L à frente para cabos e objetos pequenos"
+      ],
+      "cons": [
+        "Abertura de berlina fastback, menos prática do que a de um SUV",
+        "A Polestar não publica a norma de medição dos volumes"
+      ],
+      "sourceIds": [
+        "polestar-specs",
+        "polestar-brochure-my27"
+      ]
+    },
+    "sound": {
+      "baseScore": 3,
+      "summary": "Esta configuração tem o sistema de série \"High performance audio\", sem marca de áudio, com 8 altifalantes e amplificador de 250 W. A Polestar não indica outra base de medição, pelo que a potência é tratada como RMS. Não encontrei testes independentes específicos deste sistema; a T3 considera o Bowers & Wilkins claramente superior à instalação de série. O Harman Kardon de 13 altifalantes exige o Pack Plus ou Prime, que não foi escolhido.",
+      "pros": [
+        "8 altifalantes e 250 W, tratados como RMS",
+        "Rádio DAB+ e integração de streaming via Google built-in"
+      ],
+      "cons": [
+        "Sistema sem assinatura de áudio especializada",
+        "Sem testes independentes que descrevam a qualidade do sistema de série",
+        "O Harman Kardon exige o Pack Plus ou Prime, não incluído"
+      ],
+      "sourceIds": [
+        "polestar-specs",
+        "polestar-technology",
+        "polestar-config"
+      ]
+    },
+    "range": {
+      "summary": "A configuração indica 551 km WLTP com a bateria de 70 kWh (67 kWh úteis segundo a EV Database) e jantes de 19\". A página técnica da Polestar refere até 554 km para a versão, e a EV Database 554 km no ciclo TEL e 520 km no TEH, consoante o equipamento. A bateria CATL de 70 kWh chegou no ano-modelo 2026 e substituiu a anterior de 69 kWh.",
+      "pros": [
+        "551 km WLTP nesta configuração",
+        "Bateria CATL de 70 kWh do ano-modelo 2026"
+      ],
+      "cons": [
+        "Sem bomba de calor, o que penaliza a autonomia no frio",
+        "Autonomia real em autoestrada fica bem abaixo do valor homologado"
+      ],
+      "sourceIds": [
+        "polestar-config",
+        "polestar-specs",
+        "evdb",
+        "thedriven-battery"
+      ]
+    },
+    "powerToWeight": {
+      "summary": "O motor traseiro de 200 kW (272 cv) e 490 Nm move uma tara de 1.949 kg, cerca de 140 cv/t, e acelera dos 0 aos 100 km/h em 6,4 segundos, com 205 km/h de velocidade máxima. A Polestar publica uma tara entre 1.949 e 2.042 kg consoante o equipamento; usa-se o valor mínimo, o mesmo que a brochura europeia indica como peso em ordem de marcha. A EV Database indica 2.020 kg como peso UE, uma base que inclui condutor.",
+      "pros": [
+        "490 Nm e 0-100 km/h em 6,4 segundos",
+        "Tração traseira com boa motricidade"
+      ],
+      "cons": [
+        "Menos 27 cv e 0,2 s mais lento dos 0 aos 100 km/h do que o Long Range Single Motor",
+        "Tara elevada para uma berlina do segmento D"
+      ],
+      "sourceIds": [
+        "polestar-config",
+        "polestar-specs",
+        "polestar-brochure-my27",
+        "evdb"
+      ]
+    },
+    "efficiency": {
+      "summary": "A configuração indica 15 kWh/100 km WLTP. A EV Database publica 14,9 kWh/100 km no ciclo TEL e 15,8 no TEH. Esta configuração não tem bomba de calor, que faz parte do Pack Climate, pelo que o consumo de inverno deverá subir mais do que nas versões com o pack.",
+      "pros": [
+        "15 kWh/100 km WLTP",
+        "Apenas 0,1 kWh/100 km acima do Long Range Single Motor sem packs"
+      ],
+      "cons": [
+        "Sem bomba de calor nesta configuração",
+        "Consumo real sensível à velocidade em autoestrada"
+      ],
+      "sourceIds": [
+        "polestar-config",
+        "polestar-specs",
+        "evdb"
+      ]
+    },
+    "charging": {
+      "summary": "Carregador de bordo de 11 kW CA e até 180 kW CC, subida face aos 135 kW da bateria anterior. A Polestar indica 26 minutos dos 10 aos 80% e 7 horas para carregar de 0 a 100% em CA; a EV Database estima 30 minutos para os 10–80%. Tem Plug & Charge, mas não oferece carregador de 22 kW, V2L nem V2H.",
+      "pros": [
+        "Até 180 kW CC e 10–80% em 26 minutos",
+        "Plug & Charge de série"
+      ],
+      "cons": [
+        "Sem carregador CA de 22 kW",
+        "Sem V2L nem V2H"
+      ],
+      "sourceIds": [
+        "polestar-config",
+        "polestar-specs",
+        "polestar-brochure-my27",
+        "evdb",
+        "thedriven-battery"
+      ]
+    },
+    "satisfaction": {
+      "assessment": {
+        "ownerSentiment": 6.8,
+        "reportedDefects": 4.5,
+        "recallRecord": 4.5,
+        "evidenceLevel": "broad"
+      },
+      "summary": "O Polestar 2 está à venda desde 2020 e foram produzidas cerca de 200 mil unidades, por isso há muita evidência — mas quase toda sobre carros anteriores ao restyling de 2024. Os proprietários gostam da condução e da construção: o modelo ficou em 17.º de 75 no Driver Power 2023, da Auto Express, embora tenha ficado em último entre cinco elétricos premium no estudo EVX da J.D. Power de 2023 (724 pontos). A fiabilidade medida é fraca e tem piorado: 92,0%, 89,3% e 86,0% em três edições do inquérito da What Car?, com 41% dos carros avariados na mais recente (eletrónica, infoentretenimento, bateria de tração e bateria de 12 V), e o 71.º lugar em 75 em fiabilidade no Driver Power. Os proprietários relatam sobretudo bloqueios do Android Automotive, falhas do módulo de conectividade (chave, GPS, rede móvel) e baterias de 12 V descarregadas; as reparações foram cobertas pela garantia. Nos recalls consultados a 19/11/2026 (NHTSA, KBA e Safety Gate) constam a substituição de inversores em 2020 e o software da bateria em 2021, ambos por risco de perda de tração; nos EUA, a câmara traseira precisou de três campanhas até ficar corrigida em 2026. Em 2025 houve ainda um erro de software que podia deixar o travão sem efeito em One Pedal Drive, em descidas; o alerta no Safety Gate foi submetido por Portugal e a correção é feita por OTA. O teste de longa duração da Auto Express a um Long Range Single Motor de 2024 (cerca de 14.800 km) registou apenas um ecrã intermitente e o GPS bloqueado, ambos resolvidos com um reinício.",
+      "pros": [
+        "Proprietários elogiam condução, construção e autonomia (17.º de 75 no Driver Power 2023)",
+        "Teste de longa duração a um modelo de 2024 sem idas à oficina",
+        "A maioria dos recalls recentes corrige-se por atualização OTA"
+      ],
+      "cons": [
+        "Fiabilidade em queda na What Car?: 86,0% e 41% dos carros com avaria",
+        "Falhas recorrentes no infoentretenimento, na conectividade e na bateria de 12 V",
+        "Recalls por perda de tração (2020–2021), câmara traseira e travão em One Pedal Drive (2025)"
+      ],
+      "sourceIds": [
+        "whatcar-reliability-2024",
+        "whatcar-reliability-latest",
+        "drivingelectric-reliability",
+        "jdpower-2023",
+        "autoexpress-longterm",
+        "insideevs-100k",
+        "thedrive-tcam",
+        "polestar-forum-12v",
+        "nhtsa-recalls",
+        "nhtsa-rq25004",
+        "safety-gate-rp1061",
+        "autoexpress-recall-2020"
+      ]
+    }
+  },
+  "dossier": {
+    "headline": "A versão de entrada do Polestar 2, com 551 km WLTP e oferta de 10.900 €",
+    "verdict": "O Polestar 2 Standard Range junta motor traseiro de 272 cv, bateria de 70 kWh, 551 km WLTP e carregamento até 180 kW por 40.000 € com a oferta da marca. A construção é sólida e o desenho do interior é sóbrio, mas a suspensão é firme em cidade, o habitáculo é ruidoso em autoestrada e o banco traseiro é apertado. Sem packs, faltam bomba de calor, volante aquecido, ângulo morto e câmara 360º; o Pack Climate é gratuito e vale a pena pedi-lo.",
+    "pros": [
+      "Preço de 40.000 € com IVA, despesas e oferta da marca",
+      "551 km WLTP e carregamento CC até 180 kW",
+      "Montagem sólida e desenho escandinavo coerente",
+      "Bagageira de 407 L e frunk de 41 L",
+      "0-100 km/h em 6,4 segundos com tração traseira"
+    ],
+    "cons": [
+      "Sem bomba de calor nem volante aquecido nesta configuração",
+      "Ruído de rolamento e de vento em autoestrada",
+      "Suspensão firme em pisos degradados",
+      "Banco traseiro com pouco espaço para os pés e túnel central",
+      "Fiabilidade abaixo da média nos inquéritos britânicos"
+    ],
+    "bestFor": "Quem quer uma berlina elétrica bem construída, com boa autonomia e carregamento rápido, e aproveita a oferta da marca sem precisar de muito equipamento.",
+    "sections": [
+      {
+        "title": "Posicionamento",
+        "body": "O Polestar 2 é uma berlina fastback elétrica de 4,61 m, à venda desde 2020 e renovada em 2024 com tração traseira. A Standard range Single motor é a versão de entrada: motor traseiro de 200 kW (272 cv) e 490 Nm, bateria CATL de 70 kWh e 551 km WLTP nesta configuração. A produção em Luqiao, na China, terminou em outubro de 2026 e as vendas fazem-se a partir de stock; está previsto um sucessor para 2027."
+      },
+      {
+        "title": "Interior e ergonomia",
+        "body": "O habitáculo segue o minimalismo escandinavo, com consola central alta, quadrante digital de 12,3\" e ecrã vertical de 11,2\" com Android Automotive e Google built-in. Esta versão usa tecido em relevo Charcoal e bancos dianteiros semielétricos com apoio lombar elétrico. A montagem é sólida, mas há plástico duro nas laterais da consola e nas zonas baixas, e a climatização passa pelo ecrã. Atrás, a bateria e o túnel central limitam o espaço para os pés."
+      },
+      {
+        "title": "Como se conduz",
+        "body": "A tração traseira e os 490 Nm dão respostas vivas: 0-100 km/h em 6,4 segundos. A direção é precisa e o carro é equilibrado, mas a suspensão passiva com jantes de 19\" transmite os buracos em cidade; em autoestrada assenta melhor, embora o ruído de rolamento e de vento seja evidente. A regeneração tem três níveis, incluindo one-pedal até à paragem."
+      },
+      {
+        "title": "Vida a bordo e tecnologia",
+        "body": "O Google built-in integra mapas com planeamento de carregamentos, Assistente e aplicações; o CarPlay e o Android Auto funcionam por cabo. A bagageira tem 407 L, incluindo 43 L sob o piso, e o frunk 41 L. Sem packs, ficam de fora a bomba de calor, o volante aquecido, a câmara 360º, o ângulo morto e o teto panorâmico."
+      },
+      {
+        "title": "Propriedade e assistência",
+        "body": "A Polestar vende em Portugal desde 2022 e recorre à rede Volvo Car para a assistência, com cerca de 28 pontos de serviço. A garantia é de 3 anos para o veículo e 8 anos/160.000 km para a bateria (SOH ≥ 70%), e não é necessária manutenção até aos 2 anos ou 30.000 km. Os inquéritos britânicos apontam falhas recorrentes de software e eletrónica, quase sempre resolvidas em garantia ou por atualização."
+      },
+      {
+        "title": "Configuração avaliada",
+        "body": "Configuração particular de 17/11/2026: Standard range Single motor, pintura Vapour, interior em tecido Charcoal com frisos 3D Etched, jantes Aero de 19\" e cabo de carregamento CA. O PDF indica 49.900 € de viatura, 1.000 € de legalização e transporte e a \"Oferta exclusiva\" de −10.900 €, num total de 40.000 € com IVA. O Pack Climate, gratuito, não foi selecionado."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "polestar-config",
+      "label": "Configuração Polestar 2 Standard range Single motor (PDF fornecido, 17/11/2026)",
+      "url": "/sources/polestar-2-standard-range-configuracao.pdf",
+      "type": "pdf"
+    },
+    {
+      "id": "polestar-specs",
+      "label": "Polestar Portugal — Especificações técnicas do Polestar 2",
+      "url": "https://www.polestar.com/pt/polestar-2/specifications/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-configurator",
+      "label": "Polestar Portugal — Configurador do Polestar 2 (consultado a 19/11/2026)",
+      "url": "https://www.polestar.com/pt/configure/polestar-2/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-overview",
+      "label": "Polestar Portugal — Polestar 2",
+      "url": "https://www.polestar.com/pt/polestar-2/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-safety",
+      "label": "Polestar Portugal — Segurança do Polestar 2",
+      "url": "https://www.polestar.com/pt/polestar-2/safety/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-technology",
+      "label": "Polestar Portugal — Tecnologia do Polestar 2",
+      "url": "https://www.polestar.com/pt/polestar-2/technology/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-offer",
+      "label": "Polestar Portugal — Oferta exclusiva Polestar 2 (até 31/12/2026)",
+      "url": "https://www.polestar.com/pt/offers/polestar-2-oferta-exclusiva/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-brochure-my27",
+      "label": "Polestar — Brochura de frota do Polestar 2 MY27 (UE, abril de 2026)",
+      "url": "https://www.polestar.com/dato-assets/11286/1775572382-fleet_polestar-2_brochure_my27_eu_260402.pdf",
+      "type": "official"
+    },
+    {
+      "id": "thedriven-battery",
+      "label": "The Driven — Polestar 2 recebe bateria CATL de 70 kWh e carregamento até 180 kW (22/08/2025)",
+      "url": "https://thedriven.io/2025/08/22/polestar-2-gets-upgrade-with-new-battery-longer-range-and-faster-charging/",
+      "type": "press"
+    },
+    {
+      "id": "electrive-production-end",
+      "label": "electrive — Polestar termina a produção do Polestar 2 na China (28/10/2026)",
+      "url": "https://electrive.com/2026/10/28/polestar-ends-production-of-the-polestar-2-in-china",
+      "type": "press"
+    },
+    {
+      "id": "adac-polestar-2",
+      "label": "ADAC — autoteste ao Polestar 2 Long Range Single Motor 82 kWh, novembro de 2023 (Federung 3,0 · Sitze 2,5 · Innengeräusch 2,6 · 67,3 dB(A) a 130 km/h · Verarbeitung 1,9; suspensão passiva e jantes de 19\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6355-polestar-2-long-range-single-motor-82-kwh/polestar-2-long-range-single-motor-82-kwh.pdf",
+      "type": "press"
+    },
+    {
+      "id": "autoexpress-longterm",
+      "label": "Auto Express — teste de longa duração ao Polestar 2 Long Range Single Motor (relatório final, 02/01/2025)",
+      "url": "https://www.autoexpress.co.uk/polestar/2/363829/polestar-2-long-range-single-motor-long-term-test-executive-ev-great-all-rounder",
+      "type": "press"
+    },
+    {
+      "id": "autoexpress-interior",
+      "label": "Auto Express — Polestar 2: interior, design e tecnologia",
+      "url": "https://www.autoexpress.co.uk/polestar/2/interior",
+      "type": "press"
+    },
+    {
+      "id": "carwow",
+      "label": "Carwow — Polestar 2 review",
+      "url": "https://www.carwow.co.uk/polestar/2",
+      "type": "press"
+    },
+    {
+      "id": "carsguide",
+      "label": "CarsGuide — Polestar 2 (2024) review",
+      "url": "https://www.carsguide.com.au/ev/polestar-2-90673",
+      "type": "press"
+    },
+    {
+      "id": "motor1-de",
+      "label": "Motor1 Alemanha — Polestar 2 Long Range 2026 em teste de longa distância",
+      "url": "https://de.motor1.com/news/788822/polestar2-longrange-2026-test-langstrecke/",
+      "type": "press"
+    },
+    {
+      "id": "whatcar",
+      "label": "What Car? — Polestar 2 review",
+      "url": "https://www.whatcar.com/polestar/2/hatchback/review/n21641",
+      "type": "press"
+    },
+    {
+      "id": "whatcar-reliability-2024",
+      "label": "What Car? — inquérito de fiabilidade de elétricos (Polestar 2: 89,3%)",
+      "url": "https://www.whatcar.com/news/what-car-reliability-survey-most-and-least-reliable-electric-cars/n27319",
+      "type": "press"
+    },
+    {
+      "id": "whatcar-reliability-latest",
+      "label": "What Car? — inquérito de fiabilidade mais recente (Polestar 2: 86,0%, 41% com avaria)",
+      "url": "https://whatcar.com/news/most-reliable-cars-electric-cars/n26158",
+      "type": "press"
+    },
+    {
+      "id": "drivingelectric-reliability",
+      "label": "DrivingElectric — fiabilidade do Polestar 2 e resultados Driver Power 2023",
+      "url": "https://www.drivingelectric.com/polestar/2/reliability",
+      "type": "press"
+    },
+    {
+      "id": "jdpower-2023",
+      "label": "The Truth About Cars — estudo J.D. Power EVX 2023 (Polestar 2: 724 pontos)",
+      "url": "https://thetruthaboutcars.com/cars/news-blog/j-d-power-reports-ev-satisfaction-nissan-polestar-trail-pack-44499772",
+      "type": "press"
+    },
+    {
+      "id": "insideevs-100k",
+      "label": "InsideEVs — Polestar 2 com mais de 100.000 milhas: degradação e avarias (23/12/2024)",
+      "url": "https://insideevs.com/features/745314/polestar-2-100000-miles-owner-review-battery-degradation-issues/",
+      "type": "owner"
+    },
+    {
+      "id": "thedrive-tcam",
+      "label": "The Drive — proprietários do Polestar 2 com falhas de chave, GPS e ligação móvel (25/10/2022)",
+      "url": "https://www.thedrive.com/news/polestar-2-owners-plagued-with-faulty-key-fobs-gps-cellular-connectivity",
+      "type": "press"
+    },
+    {
+      "id": "polestar-forum-12v",
+      "label": "Polestar Forum — relato de bateria de 12 V descarregada",
+      "url": "https://www.polestar-forum.com/threads/dead-12v-battery-and-subsequent-design-flaw-revealed.20583/",
+      "type": "owner"
+    },
+    {
+      "id": "nhtsa-recalls",
+      "label": "NHTSA — recalls do Polestar 2 nos EUA (21V110, 24V477, 25V280, 25V409, 25V615, entre outros)",
+      "url": "https://www.nhtsa.gov/vehicle/2024/POLESTAR/2",
+      "type": "database"
+    },
+    {
+      "id": "nhtsa-rq25004",
+      "label": "NHTSA — investigação RQ25-004 à eficácia do recall da câmara traseira",
+      "url": "https://static.nhtsa.gov/odi/inv/2025/INCLA-RQ25004-57280.pdf",
+      "type": "database"
+    },
+    {
+      "id": "safety-gate-rp1061",
+      "label": "Safety Gate (UE) — alerta SR/02509/25 submetido por Portugal: travões em One Pedal Drive, Polestar 2 MY2024–25",
+      "url": "https://car-recalls.eu/recall/polestar-2-2024-2025-brakes-failure/",
+      "type": "database"
+    },
+    {
+      "id": "autoexpress-recall-2020",
+      "label": "Auto Express — recall do Polestar 2 por possível perda de potência dos inversores (02/11/2020)",
+      "url": "https://www.autoexpress.co.uk/polestar/2/353618/polestar-2-recalled-over-potential-power-failure-issue",
+      "type": "press"
+    },
+    {
+      "id": "polestar-warranty",
+      "label": "Polestar Portugal — Garantia",
+      "url": "https://www.polestar.com/pt/owning-a-polestar/car-warranty/",
+      "type": "official"
+    },
+    {
+      "id": "evdb",
+      "label": "EV Database — Polestar 2 Standard Range Single Motor (MY26)",
+      "url": "https://ev-database.org/car/3150/Polestar-2-Standard-Range-Single-Motor",
+      "type": "database"
+    },
+    {
+      "id": "polestar-service",
+      "label": "Polestar Portugal — Assistência e manutenção",
+      "url": "https://www.polestar.com/pt/owning-a-polestar/service-points/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-europe-plan",
+      "label": "Polestar — produção do Polestar 7 na Eslováquia anunciada para 2028",
+      "url": "https://investors.polestar.com/news-releases/news-release-details/european-production-polestar-7-confirmed-kosice-slovakia",
+      "type": "official"
+    },
+    {
+      "id": "polestar-global-launch",
+      "label": "Polestar — lançamento da marca autónoma elétrica em 2017",
+      "url": "https://www.polestar.com/global/about/",
+      "type": "official"
+    },
+    {
+      "id": "polestar-portugal-entry",
+      "label": "Observador — vendas do Polestar 2 em Portugal a partir de 24/05/2022",
+      "url": "https://observador.pt/2022/05/20/polestar-ja-esta-em-portugal-e-as-vendas-do-2-arrancam-a-24-de-maio/",
+      "type": "press"
+    },
+    {
+      "id": "polestar-market-expansion-2022",
+      "label": "Polestar — Portugal entre os novos mercados de 2022 (15/06/2022)",
+      "url": "https://investors.polestar.com/news-releases/news-release-details/polestar-delivering-growth-promise-continues-drive-customer",
+      "type": "official"
+    },
+    {
+      "id": "polestar-q3-2026-update",
+      "label": "Polestar — vendas estimadas no Q3/9M 2026 e produção por continente (08/10/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1884082/000110465926114526/tm2627195d1_ex99-1.htm",
+      "type": "official"
+    },
+    {
+      "id": "polestar-financial-h1-2026",
+      "label": "Polestar Automotive Holding — demonstrações financeiras intercalares H1 2026 (03/09/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1884082/000188408226000013/psny-20260630.htm",
+      "type": "official"
+    },
+    {
+      "id": "polestar-shareholder-support-2026",
+      "label": "Polestar — conversão e extensão de empréstimos de acionistas (31/03/2026)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1884082/000110465926037200/tm2610648d1_ex99-1.htm",
+      "type": "official"
+    },
+    {
+      "id": "barlavento-polestar-faro",
+      "label": "Barlavento — Polestar abre espaço em Faro; 28 pontos de serviço em Portugal pela rede Volvo (13/12/2025)",
+      "url": "https://www.barlavento.pt/polestar-space-algarve-faro/",
+      "type": "press"
+    },
+    {
+      "id": "polestar-q3-2026-delay",
+      "label": "Polestar — atualização sobre a data dos resultados do 3.º trimestre de 2026 (Business Wire, 03/11/2026)",
+      "url": "https://www.morningstar.com/news/business-wire/20261103739028/polestar-provides-an-update-on-the-q3-2026-reporting-date",
+      "type": "press"
+    }
+  ]
+}
