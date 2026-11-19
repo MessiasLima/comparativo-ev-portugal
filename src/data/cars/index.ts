@@ -2,6 +2,12 @@ import type { Car } from "@/data/types"
 import { withSuspensionScore } from "@/lib/comfort"
 import bydSealDesign from "./byd-seal-design.json"
 import bydSeal from "./byd-seal-excellence-awd.json"
+import bmwIx2Edrive20Base from "./bmw-ix2-edrive20-base.json"
+import bmwIx2Edrive20PackDesportivoM from "./bmw-ix2-edrive20-pack-desportivo-m.json"
+import bmwIx2Edrive20PackDesportivoMPro from "./bmw-ix2-edrive20-pack-desportivo-m-pro.json"
+import bmwIx2Xdrive30Base from "./bmw-ix2-xdrive30-base.json"
+import bmwIx2Xdrive30PackDesportivoM from "./bmw-ix2-xdrive30-pack-desportivo-m.json"
+import bmwIx2Xdrive30PackDesportivoMPro from "./bmw-ix2-xdrive30-pack-desportivo-m-pro.json"
 import cupraRaval from "./cupra-raval-vz.json"
 import cupraTavascanDrive from "./cupra-tavascan-drive.json"
 import cupraTavascanBase from "./cupra-tavascan-base.json"
@@ -61,6 +67,12 @@ export const CARS = ([
   polestar2LongRangeSingleMotor,
   polestar2LongRangeSingleMotorPrime,
   polestar2LongRangeDualMotorPerformance,
+  bmwIx2Edrive20Base,
+  bmwIx2Edrive20PackDesportivoM,
+  bmwIx2Edrive20PackDesportivoMPro,
+  bmwIx2Xdrive30Base,
+  bmwIx2Xdrive30PackDesportivoM,
+  bmwIx2Xdrive30PackDesportivoMPro,
   teslaModel3Standard,
   teslaModel3PremiumLongRangeRwd,
   teslaModel3PremiumLongRangeAwd,

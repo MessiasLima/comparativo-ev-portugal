@@ -1,0 +1,744 @@
+{
+  "id": "bmw-ix2-edrive20-pack-desportivo-m-pro",
+  "slug": "bmw-ix2-edrive20-pack-desportivo-m-pro",
+  "brand": "BMW",
+  "model": "iX2",
+  "variant": "eDrive20 Pack Desportivo M Pro",
+  "version": "eDrive20 Pack Desportivo M Pro 65,2 kWh",
+  "year": 2026,
+  "segment": "SUV coupé compacto premium",
+  "tagline": "SUV coupé compacto de tração dianteira com 204 cv, jantes de 19\" e acabamentos M Shadow Line.",
+  "accent": "ocean",
+  "price": {
+    "amount": 57730,
+    "currency": "EUR",
+    "vatIncluded": true,
+    "asOf": "2026-11-19",
+    "note": "PVP de série do BMW iX2 eDrive20 Pack Desportivo M Pro no configurador da BMW Portugal a 19/11/2026, com IVA a 23% e sem opcionais: pintura sólida Branco Alpine de série, jantes M de 19\" JLL 871 e nenhum dos packs opcionais (Comfort, Premium, Premium Plus). Não inclui despesas de legalização e transporte. O Service Inclusive de 4 anos aparece incluído a 0 € na configuração. O Pack Desportivo M Pro soma 6.030 € ao preço da versão base do mesmo motor e 2.230 € ao do Pack Desportivo M.",
+    "sourceId": "bmw-pt-config"
+  },
+  "specs": {
+    "powerKw": 150,
+    "powerHp": 204,
+    "torqueNm": 250,
+    "drivetrain": "Tração dianteira (FWD)",
+    "acceleration0100": 8.6,
+    "topSpeedKmh": 170,
+    "batteryKwh": 66.5,
+    "usableBatteryKwh": 65.2,
+    "batteryChemistry": "NMC, 400 V",
+    "rangeKm": 512,
+    "consumptionKwh100": 14.4,
+    "weightKg": 1885,
+    "grossWeightKg": 2460,
+    "lengthMm": 4554,
+    "widthMm": 1845,
+    "heightMm": 1560,
+    "wheelbaseMm": 2692,
+    "bootL": 525,
+    "frunkL": 0,
+    "seats": 5,
+    "doors": 5,
+    "towingBrakedKg": 750
+  },
+  "charging": {
+    "acKw": 11,
+    "dcKw": 130,
+    "dcTime1080Min": 29,
+    "connector": "CCS2",
+    "v2l": false,
+    "v2h": false
+  },
+  "warranty": {
+    "vehicle": "3 anos, sem limite de quilometragem",
+    "battery": "8 anos / 160.000 km (capacidade ≥ 70%)",
+    "note": "A garantia de 3 anos sem limite de km conta desde a primeira matrícula e inclui a assistência em viagem BMW; a bateria de alta tensão tem 8 anos ou 160.000 km e cobre defeitos de material e uma capacidade abaixo de 70%. O configurador inclui o Service Inclusive de 4 anos a 0 €, que cobre a manutenção programada nos pontos de serviço autorizados quando o sistema CBS a pede, sem as peças de desgaste. A extensão de garantia até 5 anos ou 200.000 km é opcional (1.144 € para 4 anos e 2.214 € para 5 anos)."
+  },
+  "equipmentIncluded": [
+    "aeb",
+    "lane-keep",
+    "driver-monitor",
+    "parking-sensors",
+    "heated-seats",
+    "climate-2zone",
+    "heat-pump",
+    "carplay",
+    "digital-cockpit",
+    "connected-services",
+    "ota",
+    "ambient-lighting",
+    "rear-usb",
+    "electric-tailgate",
+    "adaptive-suspension",
+    "sport-seats",
+    "wheels-19",
+    "adaptive-high-beam"
+  ],
+  "options": [],
+  "reviews": {
+    "interior": {
+      "assessment": {
+        "softTouch": 7.0,
+        "upholstery": 7.6,
+        "design": 7.8,
+        "assembly": 8.3,
+        "hardPlastic": "moderate"
+      },
+      "summary": "O Pack Desportivo M acrescenta bancos dianteiros desportivos em Alcantara/Veganza com pespontos azuis, volante M em pele, Painel de instrumentos Luxury, forro do tejadilho M em antracite e frisos em alumínio Hexacube. A montagem continua irrepreensível segundo o ADAC (Verarbeitung 2,0) e a Motor1 destaca a qualidade do habitáculo com estes revestimentos. A zona inferior do tablier, das portas e da consola mantém-se em plástico duro, e a mistura de texturas no tablier continua a ser criticada pela imprensa. O Pack Desportivo M Pro acrescenta apenas os cintos de segurança M ao interior.",
+      "pros": [
+        "Bancos em Alcantara/Veganza com pespontos azuis e volante M em pele",
+        "Montagem sólida (ADAC Verarbeitung 2,0)",
+        "Forro do tejadilho antracite e frisos em alumínio Hexacube coerentes com o tom desportivo"
+      ],
+      "cons": [
+        "Plástico duro na zona inferior do habitáculo",
+        "Revestimento macio do tablier fino, segundo o ADAC",
+        "Porta-luvas sem forro nem iluminação"
+      ],
+      "sourceIds": [
+        "bmw-pt-config",
+        "adac-ix2",
+        "whatcar-ix2",
+        "autoexpress-ix2",
+        "electrive-ix2",
+        "motor1-es-ix2",
+        "bmw-de-produktinfo"
+      ]
+    },
+    "comfort": {
+      "assessment": {
+        "seats": 7.9,
+        "acoustics": 7.5,
+        "drivetrainCalibration": 7.6
+      },
+      "suspensionBasis": {
+        "dampers": "frequency-selective",
+        "wheelInches": 19,
+        "references": [
+          {
+            "protocol": "adac-2019",
+            "federung": 2.9,
+            "dampers": "frequency-selective",
+            "wheelInches": 18,
+            "sourceId": "adac-ix2"
+          }
+        ]
+      },
+      "summary": "As versões com Pack Desportivo M usam a suspensão adaptativa M rebaixada 15 mm (amortecedores dependentes da frequência, sem regulação eletrónica) e jantes M de 19\" com pneus 245/45 R19. O ADAC testou o iX2 xDrive30 com a suspensão adaptativa M e jantes de 18\", com Federung 2,9: firme em cidade e em pisos degradados, mas confortável em autoestrada. Os bancos dianteiros desportivos têm assento extensível e regulação da inclinação, mas continuam manuais e sem apoio lombar; o ADAC elogia o apoio das costas (Sitze 2,3), mas atrás o acolchoamento é escasso e o lugar central é desconfortável. O carro do ADAC mediu 65,6 dB(A) a 130 km/h com vidros acústicos opcionais, que nesta versão exigem o Pack Premium; as jantes de 19\" acrescentam ruído de rolamento, segundo a Auto Express e a What Car?. A Motor1 chama «excelente rodador» a um eDrive20 Pack M Pro de 19\", mas a What Car? e a Auto Express consideram a marcha firme e seca a baixa velocidade em cidade. A aceleração é linear e a regeneração adaptativa tem três níveis e transição suave para os travões, mas mesmo o nível mais forte não permite conduzir só com o pedal.",
+      "pros": [
+        "Compostura e conforto em autoestrada (ADAC)",
+        "Motor praticamente inaudível e aceleração sem solavancos",
+        "Regeneração adaptativa com transição suave para os travões",
+        "Bancos desportivos com assento extensível e bom apoio lateral"
+      ],
+      "cons": [
+        "Suspensão firme em cidade e pisos degradados (ADAC Federung 2,9)",
+        "Vidros acústicos só com o Pack Premium; ruído de vento e de rolamento audível",
+        "Sem one-pedal: mesmo o nível mais forte é fraco; bancos manuais e sem apoio lombar"
+      ],
+      "sourceIds": [
+        "adac-ix2",
+        "adac-ix1",
+        "bmw-newsroom-launch-2023",
+        "km77-ix2",
+        "autoexpress-ix2",
+        "whatcar-ix2",
+        "carwow-ix2",
+        "evo-ix2",
+        "electrive-ix2",
+        "insidedigital-ix2",
+        "bmw-pt-config",
+        "motor1-es-ix2"
+      ]
+    },
+    "brand": {
+      "assessment": {
+        "globalBrandAge": 10,
+        "portugalMarketTenure": 10,
+        "portugalServiceNetwork": 9.5,
+        "europeanManufacturing": 10,
+        "establishedGroupSupport": 9.5,
+        "financialStability": 7.5,
+        "portugalFactory": false
+      },
+      "summary": "A BMW tem origem na Bayerische Flugzeugwerke, fundada a 7 de março de 1916, e fabrica automóveis desde 1929, depois de comprar a Fahrzeugfabrik Eisenach em 1928. Em Portugal, a marca foi representada pela importadora Baviera, comprada pelo Grupo Salvador Caetano em 1982. O localizador do bmw.pt, consultado a 19/11/2026 com o filtro «Serviço», lista 45 pontos de serviço autorizados: 42 no continente, de Viana do Castelo e Bragança a Faro, um no Funchal e dois nos Açores (Ponta Delgada e Angra do Heroísmo); no interior alentejano só há Évora. O iX2 é produzido em Regensburg, na Alemanha, ao lado do iX1, e a marca fabrica automóveis em série também em Munique, Dingolfing, Leipzig e Debrecen (Hungria); em Portugal o grupo tem a Critical TechWorks, dedicada a software, mas nenhuma fábrica de automóveis. A marca não publica contas próprias, por isso a estabilidade financeira usa o BMW Group como referência: em 2025 o grupo lucrou 7.451 milhões de euros, com margem EBIT automóvel de 5,3% e fluxo de caixa livre automóvel de 3.240 milhões. Nos primeiros nove meses de 2026 o lucro líquido caiu 24,4%, para 4.320 milhões, e a margem automóvel desceu para 3,5%; a 04/11/2026 a orientação da margem reportada para 2026 passou para entre −0,5% e +0,5%, por custos de reestruturação, tarifas e amortizações da BBA, mantendo-se o fluxo de caixa livre automóvel acima de 2.500 milhões. A Moody's (A2) e a S&P (A) mantêm perspetiva estável.",
+      "pros": [
+        "Marca automóvel desde 1929, com importador oficial em Portugal desde, pelo menos, 1982",
+        "45 pontos de serviço autorizados, incluindo Funchal, Ponta Delgada e Angra do Heroísmo",
+        "Produção em série em cinco fábricas europeias; o iX2 é feito em Regensburg, com baterias montadas no local"
+      ],
+      "cons": [
+        "Margem EBIT automóvel do grupo caiu de 5,3% (2025) para 3,5% nos primeiros nove meses de 2026",
+        "Orientação de margem reportada para 2026 cortada para entre −0,5% e +0,5% devido à reestruturação",
+        "Sem fábrica de automóveis em Portugal; no interior alentejano a rede de assistência resume-se a Évora"
+      ],
+      "sourceIds": [
+        "bmw-group-history",
+        "wikipedia-salvador-caetano",
+        "bmw-pt-dealer-locator",
+        "electrive-ix2-production",
+        "bmw-germany-production-2025",
+        "bmw-production-network",
+        "bmw-debrecen-ix3",
+        "bmw-portugal-techhub",
+        "bmw-group-report-2025",
+        "bmw-group-q3-2026-cfo",
+        "bmw-group-q3-2026-release",
+        "rttnews-q3-2026",
+        "moodys-bmw-2026",
+        "spg-bmw-rating-2026"
+      ]
+    },
+    "equipment": {
+      "summary": "A configuração é o BMW iX2 eDrive20 Pack Desportivo M Pro sem opcionais. Têm de série os travões automáticos de emergência, o aviso de saída de faixa com intervenção na direção, o alerta de fadiga, o Parking Assistant com sensores e câmara traseira, bancos dianteiros aquecidos, climatização automática de duas zonas, a bomba de calor, o BMW Curved Display com CarPlay e Android Auto sem fios, serviços conectados com atualizações remotas, iluminação ambiente, USB-C traseiras e porta-bagagens elétrico. Acrescenta suspensão adaptativa M, jantes M de 19\", bancos dianteiros desportivos e faróis LED adaptativos com máximos automáticos. Ficam de fora o cruise control adaptativo (o de série só trava, sem seguir o trânsito), o ângulo morto, o alerta de tráfego cruzado, o reconhecimento de sinais, a câmara 360º, o carregamento sem fios, o head-up display, a chave digital, o teto panorâmico, o volante aquecido e o som Harman Kardon, que dependem de opcionais ou dos packs Comfort, Premium e Premium Plus.",
+      "pros": [
+        "Travagem automática, manutenção de faixa, alerta de fadiga e Parking Assistant com câmara de série",
+        "Bomba de calor, aquecimento dos bancos dianteiros e climatização de duas zonas",
+        "CarPlay e Android Auto sem fios, serviços conectados e atualizações remotas",
+        "Suspensão adaptativa M de série",
+        "Máximos automáticos e faróis LED adaptativos"
+      ],
+      "cons": [
+        "Cruise control sem seguimento do trânsito; o adaptativo exige o Assistente de condução Plus (730 €)",
+        "Ângulo morto, tráfego cruzado e reconhecimento de sinais só nos assistentes opcionais",
+        "Sem câmara 360º, head-up display, carregamento sem fios nem chave digital de série"
+      ],
+      "sourceIds": [
+        "bmw-pt-config",
+        "bmw-pt-visao-geral",
+        "adac-edrive20",
+        "bmw-newsroom-launch-2023",
+        "bmw-de-produktinfo"
+      ]
+    },
+    "boot": {
+      "summary": "A bagageira tem 525 L com os bancos traseiros na posição normal, valor que o configurador e a ficha técnica da BMW dão para todas as versões, e chega a 1.400 L com os encostos rebatidos, volume que não entra no critério. O iX2 não tem compartimento dianteiro: a EV Database indica 0 L e a ficha da BMW refere um único volume de carga. O total é, por isso, de 525 L.",
+      "pros": [
+        "525 L com os bancos na posição normal",
+        "Porta-bagagens elétrico de série"
+      ],
+      "cons": [
+        "Sem compartimento dianteiro",
+        "1.400 L só com os encostos traseiros rebatidos"
+      ],
+      "sourceIds": [
+        "bmw-pt-config",
+        "bmw-pt-dados-edrive20",
+        "bmw-ix2-spec-2024",
+        "evdb-edrive20-my26"
+      ]
+    },
+    "sound": {
+      "baseScore": 2.5,
+      "summary": "Nenhuma das versões avaliadas inclui o Harman Kardon: em Portugal é opção de 780 € ou parte do Pack Comfort (1.800 €), com 12 altifalantes e 205 W. O sistema de série não tem marca de áudio; segundo a TotallyEV tem 6 altifalantes, com médios nas portas e dois graves sob os bancos dianteiros, e 100 W, valor tratado como RMS por não ser indicada outra base de medição. Não encontrei testes independentes que avaliem o som do sistema de série.",
+      "pros": [
+        "Rádio DAB+ e Apple CarPlay/Android Auto sem fios de série",
+        "Graves sob os bancos dianteiros"
+      ],
+      "cons": [
+        "Sistema sem assinatura de áudio especializada e com 6 altifalantes",
+        "O Harman Kardon exige uma opção de 780 € ou o Pack Comfort",
+        "Sem testes independentes do sistema de série"
+      ],
+      "sourceIds": [
+        "totallyev-ix2",
+        "bmw-pt-config"
+      ]
+    },
+    "range": {
+      "summary": "O configurador da BMW Portugal indica 512 km WLTP combinados para o BMW iX2 eDrive20 Pack Desportivo M Pro, com jantes M de 19\" e bateria de 65,2 kWh úteis. O EV Database indica 516 km no ciclo TEL e 474 km no TEH e o ADAC e o Driveduel indicam 512 km para o mercado alemão. A atualização de primavera de 2026 trouxe semicondutores de carboneto de silício à eletrónica de potência, que a BMW diz aumentarem a autonomia WLTP; a ficha de março de 2024 e a EV Database da geração anterior mostram valores mais baixos.",
+      "pros": [
+        "512 km WLTP nesta versão",
+        "65,2 kWh úteis"
+      ],
+      "cons": [
+        "O valor varia alguns quilómetros com o tamanho das jantes",
+        "Fica abaixo do valor WLTP em condições de inverno (ciclo TEH da EV Database)"
+      ],
+      "sourceIds": [
+        "bmw-pt-config",
+        "bmw-pt-dados-edrive20",
+        "evdb-edrive20-my26",
+        "adac-edrive20",
+        "driveduel-ix2",
+        "bmw-newsroom-spring26-global",
+        "bmw-ix2-spec-2024"
+      ]
+    },
+    "powerToWeight": {
+      "summary": "O motor dianteiro entrega 150 kW (204 cv) e 250 Nm para uma tara de 1.885 kg, cerca de 108 cv/t, com 0–100 km/h em 8,6 s e 170 km/h de velocidade máxima. A BMW Portugal indica 1.960 kg de peso em vazio UE, que inclui um condutor de 75 kg; o valor guardado é o peso sem condutor, 1.885 kg na ficha técnica da BMW de 2024.",
+      "pros": [
+        "204 cv e 0–100 km/h em 8,6 s",
+        "Tração dianteira simples e leve"
+      ],
+      "cons": [
+        "Tara de 1.885 kg",
+        "Sem a tração integral do xDrive30"
+      ],
+      "sourceIds": [
+        "bmw-pt-config",
+        "bmw-pt-dados-edrive20",
+        "bmw-ix2-spec-2024",
+        "evdb-edrive20-my26",
+        "adac-edrive20"
+      ]
+    },
+    "efficiency": {
+      "summary": "O configurador indica 14,4 kWh/100 km WLTP combinados para o BMW iX2 eDrive20 Pack Desportivo M Pro. A BMW atribui parte da melhoria da atualização de 2026 aos semicondutores de carboneto de silício da eletrónica de potência. O ADAC e o Driveduel publicam 14,4 kWh/100 km para o mercado alemão. A bomba de calor de série ajuda a limitar a perda de autonomia no frio.",
+      "pros": [
+        "14,4 kWh/100 km WLTP",
+        "Bomba de calor de série"
+      ],
+      "cons": [
+        "O consumo sobe com as jantes de 19\"",
+        "Valor do ADAC e do Driveduel ligeiramente acima do WLTP do configurador"
+      ],
+      "sourceIds": [
+        "bmw-pt-config",
+        "bmw-pt-dados-edrive20",
+        "evdb-edrive20-my26",
+        "adac-edrive20",
+        "driveduel-ix2",
+        "bmw-newsroom-spring26-global"
+      ]
+    },
+    "charging": {
+      "summary": "Carregador de bordo de 11 kW em corrente alternada (0–100% em 6 h 30) e até 130 kW em corrente contínua, com 29 minutos dos 10 aos 80% segundo a BMW Portugal; a EV Database indica 30 minutos. A BMW refere 136 a 161 km de autonomia adicional em 10 minutos de carregamento rápido. O carregador de corrente alternada de 22 kW é opcional (520 €) e não está incluído. Não há V2L nem V2H.",
+      "pros": [
+        "Até 130 kW em corrente contínua, 10–80% em 29 minutos",
+        "Cabo de modo 3 e cartão BMW Charging incluídos"
+      ],
+      "cons": [
+        "Sem carregador de 22 kW de série",
+        "Sem V2L nem V2H"
+      ],
+      "sourceIds": [
+        "bmw-pt-config",
+        "bmw-pt-dados-edrive20",
+        "evdb-edrive20-my26"
+      ]
+    },
+    "satisfaction": {
+      "assessment": {
+        "ownerSentiment": 7.2,
+        "reportedDefects": 6.0,
+        "recallRecord": 5.0,
+        "evidenceLevel": "moderate"
+      },
+      "summary": "O iX2 (U10) chegou ao mercado no início de 2024 e partilha plataforma, bateria e motores com o iX1 (U11), à venda desde o fim de 2022; quase toda a evidência de proprietários diz respeito ao iX1. No inquérito de fiabilidade da What Car? (atualizado a 26/07/2026), o iX1 obteve 86,8%, com 19% dos carros avariados, sobretudo infoentretenimento (13%), bateria de 12 V, sistema de carregamento e motor elétrico (6% cada); a BMW pagou todas as reparações, mas dois terços dos carros afetados ficaram imobilizados e 63% passaram mais de uma semana na oficina. Na Pannenstatistik 2026 do ADAC, o iX1 surge entre os melhores da sua classe. Os testes de longa duração da Auto Express, do Telegraph e da Business Car elogiam a qualidade interior, o conforto e a eficiência, mas registam falhas de Bluetooth e, num caso, uma avaria de carregamento que obrigou a devolver o carro. No fórum alemão MOTOR-TALK, os proprietários dizem-se em geral satisfeitos, mas queixam-se de erros de software, de comandos só táteis e do ruído dos travões; há relatos isolados de unidades de tração dianteira substituídas. Nos registos KBA e Safety Gate consultados a 19/11/2026 constam três recalls que incluem o iX2: o sistema de travagem integrado (KBA 013586, campanha de 1.493.890 veículos de vários modelos), a soldadura do servomotor dos travões (SR/00053/25, 2.316 veículos, repetida em julho de 2026 por correção possivelmente incompleta) e os cintos dianteiros de unidades produzidas entre 18/06 e 25/08/2025 (SR/03496/25, 8.800 veículos). O iX2 não é vendido nos EUA, pelo que não há registos NHTSA, e a base britânica DVSA não pôde ser consultada; a aplicabilidade a cada carro depende do VIN.",
+      "pros": [
+        "Testes de longa duração elogiam a qualidade interior, o conforto e a eficiência",
+        "iX1 entre os melhores da classe na Pannenstatistik 2026 do ADAC",
+        "Reparações reportadas na What Car? cobertas a 100% pela BMW"
+      ],
+      "cons": [
+        "19% dos iX1 com avaria na What Car? (86,8%), sobretudo infoentretenimento, 12 V e carregamento",
+        "Três recalls que incluem o iX2, dois deles ligados aos travões, um repetido em 2026",
+        "Proprietários queixam-se de erros de software recorrentes e de comandos só táteis"
+      ],
+      "sourceIds": [
+        "whatcar-reliability-ix1",
+        "adac-pannenstatistik-2026",
+        "autoexpress-ix1-longterm",
+        "telegraph-ix1-longterm",
+        "businesscar-ix1-longterm",
+        "motortalk-ix1-ix2-forum",
+        "motortalk-satisfaction",
+        "motortalk-drive-unit",
+        "motortalk-brake-noise",
+        "carrecalls-kba-013586",
+        "carrecalls-ix2-servomotor",
+        "carrecalls-kba-14325r",
+        "carrecalls-ix2-seatbelts",
+        "carrecalls-kba-15584r",
+        "carrecalls-ix1",
+        "autohaus-ix1-bpillar",
+        "bmwblog-ix2-us",
+        "bmw-pt-recalls"
+      ]
+    }
+  },
+  "dossier": {
+    "headline": "O eDrive20 com travões M vermelhos, spoiler M e faróis adaptativos",
+    "verdict": "O iX2 eDrive20 Pack Desportivo M Pro custa 57.730 € e acrescenta ao Pack Desportivo M travões M vermelhos, spoiler traseiro M, cintos M, faróis M Shadow Line e faróis LED adaptativos com máximos automáticos. O motor é o mesmo de 204 cv, com 8,6 s dos 0 aos 100 km/h, por isso a diferença é sobretudo visual e de equipamento de iluminação. Dá 512 km WLTP, menos 4 km do que o Pack Desportivo M, e o xDrive30 do mesmo nível custa 6.500 € mais.",
+    "pros": [
+      "512 km WLTP e 14,4 kWh/100 km",
+      "Carregamento até 130 kW, 10–80% em 29 minutos",
+      "Preço de 57.730 € com IVA",
+      "Bomba de calor, câmara traseira e travagem automática de série",
+      "Bagageira de 525 L"
+    ],
+    "cons": [
+      "Sem cruise control adaptativo, ângulo morto nem câmara 360º de série",
+      "Marcha firme em cidade, sobretudo com jantes de 19\"",
+      "Sem V2L, V2H nem compartimento dianteiro",
+      "Três recalls recentes que incluem o iX2, dois ligados aos travões",
+      "Som de série modesto; o Harman Kardon custa 780 €"
+    ],
+    "bestFor": "Quem valoriza o aspeto M completo e a iluminação adaptativa, sem precisar de tração integral.",
+    "sections": [
+      {
+        "title": "Posicionamento",
+        "body": "O iX2 é o SUV coupé elétrico da BMW, com 4,55 m, produzido em Regensburg e vendido desde 2024. O BMW iX2 eDrive20 Pack Desportivo M Pro usa um motor elétrico no eixo dianteiro, 150 kW (204 cv) e 250 Nm, uma bateria de 65,2 kWh úteis e 512 km WLTP nesta versão. A atualização de primavera de 2026 trouxe semicondutores de carboneto de silício à eletrónica de potência."
+      },
+      {
+        "title": "Interior e ergonomia",
+        "body": "O habitáculo tem o BMW Curved Display com o Operating System 9, volante desportivo em pele e comandos físicos no volante. Esta versão tem bancos desportivos em Alcantara/Veganza com pespontos azuis, volante M e forro do tejadilho antracite. A montagem é sólida, mas a zona inferior do tablier e das portas é de plástico duro e o porta-luvas não tem forro."
+      },
+      {
+        "title": "Como se conduz",
+        "body": "Os 204 cv levam o carro aos 100 km/h em 8,6 s, com tração dianteira. As versões com Pack Desportivo M usam a suspensão adaptativa M rebaixada 15 mm (amortecedores dependentes da frequência, sem regulação eletrónica) e jantes M de 19\" com pneus 245/45 R19. A regeneração tem três níveis, mas não permite conduzir só com o pedal."
+      },
+      {
+        "title": "Vida a bordo e tecnologia",
+        "body": "O CarPlay e o Android Auto funcionam sem fios e o carro tem eSIM, atualizações remotas e iluminação ambiente. A bagageira tem 525 L e não há compartimento dianteiro. O carregamento rápido vai até 130 kW e o de corrente alternada até 11 kW. Ficam de fora o head-up display, o carregamento sem fios e o teto panorâmico, que são opcionais."
+      },
+      {
+        "title": "Propriedade e assistência",
+        "body": "A BMW tem 45 pontos de serviço autorizados em Portugal, incluindo o Funchal e os Açores. A garantia é de 3 anos sem limite de quilómetros e de 8 anos ou 160.000 km para a bateria, com o Service Inclusive de 4 anos incluído no configurador. O iX1, que partilha a técnica do iX2, aparece com 86,8% na What Car?, e há três recalls que incluem o iX2."
+      },
+      {
+        "title": "Configuração avaliada",
+        "body": "PVP de série de 57.730 € com IVA a 23% no configurador da BMW Portugal a 19/11/2026, sem opcionais nem packs, sem despesas de legalização e transporte e com pintura sólida Branco Alpine. Jantes M de 19\" JLL 871. O Pack Desportivo M Pro soma 6.030 € ao preço da versão base do mesmo motor e 2.230 € ao do Pack Desportivo M."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "bmw-pt-config",
+      "label": "BMW Portugal — Configurador do iX2 eDrive20 Pack Desportivo M Pro (consultado a 19/11/2026)",
+      "url": "https://configure.bmw.pt/pt_PT/configure/U10E/71GN/FKTNL,P0300,S01EK,S0230,S02PA,S02VB,S02VD,S02VF,S0302,S0337,S033B,S03M2,S03MF,S0428,S0478,S0481,S0494,S04GQ,S04H2,S04NW,S04T2,S04U9,S04V1,S0548,S0552,S05AC,S05AV,S05DM,S0654,S06AE,S06AF,S06PA,S06S3,S0710,S0754,S0760,S0775,S07M9,S07UN,S0889,S08R3,S08R9,S08TF,S08WH,S09T1,S09T2,S09TB/SE000001",
+      "type": "official"
+    },
+    {
+      "id": "bmw-pt-dados-edrive20",
+      "label": "BMW Portugal — Dados técnicos do iX2 eDrive20",
+      "url": "https://www.bmw.pt/pt/all-models/bmw-i/ix2/bmw-ix2-dados-tecnicos.html/bmw-ix2-edrive20.bmw",
+      "type": "official"
+    },
+    {
+      "id": "bmw-pt-visao-geral",
+      "label": "BMW Portugal — BMW iX2: versões, dados técnicos e preços",
+      "url": "https://www.bmw.pt/pt/all-models/bmw-i/ix2/bmw-ix2-visao-geral.html",
+      "type": "official"
+    },
+    {
+      "id": "bmw-ix2-spec-2024",
+      "label": "BMW Group Newsroom — Especificações técnicas do BMW iX2 eDrive20 (válidas desde 03/2024, PDF)",
+      "url": "https://newsroom.bmwgroup.com/global/download/3dd5e488-1972-4b05-b7dd-a77a5ff1bfa3/20260723090027968-760.pdf",
+      "type": "press"
+    },
+    {
+      "id": "bmw-newsroom-spring26-global",
+      "label": "BMW Group Newsroom — BMW model updates, primavera de 2026",
+      "url": "https://newsroom.bmwgroup.com/global/bmw-model-updates-spring-2026",
+      "type": "press"
+    },
+    {
+      "id": "bmw-newsroom-launch-2023",
+      "label": "BMW Group Newsroom PT — Novo BMW X2 e primeiro BMW iX2",
+      "url": "https://newsroom.bmwgroup.com/emea/pt-pt/the-all-new-bmw-x2-and-the-first-ever-bmw-ix2-pt-pt",
+      "type": "official"
+    },
+    {
+      "id": "evdb-edrive20-my26",
+      "label": "EV Database — BMW iX2 eDrive20 (MY26)",
+      "url": "https://ev-database.org/car/3460/BMW-iX2-eDrive20",
+      "type": "database"
+    },
+    {
+      "id": "adac-edrive20",
+      "label": "ADAC — Autodatenbank: iX2 eDrive20 (desde 03/2026)",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/bmw/ix2/u10/348804/",
+      "type": "database"
+    },
+    {
+      "id": "driveduel-ix2",
+      "label": "Driveduel — BMW iX2: especificações, versões e preços (Reino Unido)",
+      "url": "https://uk.driveduel.de/models/bmw/ix2/specs",
+      "type": "database"
+    },
+    {
+      "id": "adac-ix2",
+      "label": "ADAC — autoteste ao BMW iX2 xDrive30, dezembro de 2024 (Federung 2,9 · Sitze 2,3 · Innengeräusch 2,1 · 65,6 dB(A) a 130 km/h · Verarbeitung 2,0; suspensão adaptativa M e jantes de 18\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6460-bmw-ix2-xdrive30/bmw-ix2-xdrive30.pdf",
+      "type": "press"
+    },
+    {
+      "id": "adac-ix1",
+      "label": "ADAC — autoteste ao BMW iX1 xDrive30, agosto de 2023 (Federung 2,9 · Sitze 2,3 · Innengeräusch 2,4 · 66,8 dB(A); jantes de 17\")",
+      "url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6312-bmw-ix1-xdrive30/bmw-ix1-xdrive30.pdf",
+      "type": "press"
+    },
+    {
+      "id": "bmw-de-produktinfo",
+      "label": "BMW Alemanha — Informação digital do produto X2/iX2 (composição dos packs M)",
+      "url": "https://www.bmw.de/content/dam/bmw/marketDE/bmw_de/new-vehicles/pdf/Digitale_Produktinfo_X2.pdf.coredownload.inline.pdf",
+      "type": "official"
+    },
+    {
+      "id": "autoexpress-ix2",
+      "label": "Auto Express — BMW iX2 review",
+      "url": "https://www.autoexpress.co.uk/bmw/ix2",
+      "type": "press"
+    },
+    {
+      "id": "whatcar-ix2",
+      "label": "What Car? — BMW iX2 review",
+      "url": "https://www.whatcar.com/news/bmw-ix2-suv/n26200",
+      "type": "press"
+    },
+    {
+      "id": "carwow-ix2",
+      "label": "Carwow — BMW iX2 review (xDrive30)",
+      "url": "https://www.carwow.co.uk/bmw/ix2",
+      "type": "press"
+    },
+    {
+      "id": "evo-ix2",
+      "label": "evo — BMW iX2 xDrive30 review",
+      "url": "https://evo.co.uk/bmw/206601/bmw-ix2-xdrive30-2024-review-hot-hatch-speed-but-not-without-compromise",
+      "type": "press"
+    },
+    {
+      "id": "electrive-ix2",
+      "label": "Electrive — teste do BMW iX2 xDrive30 com Pack M (04/08/2024)",
+      "url": "https://www.electrive.com/2024/08/04/bmw-ix2-test-proves-sporty-and-comfortable-with-a-manageable-range",
+      "type": "press"
+    },
+    {
+      "id": "insidedigital-ix2",
+      "label": "inside digital — BMW iX2 xDrive30 im Test (jantes de 20\", modo B)",
+      "url": "https://www.inside-digital.de/e-autos/bmw-ix2-xdrive30-2024/test",
+      "type": "press"
+    },
+    {
+      "id": "km77-ix2",
+      "label": "km77 — BMW iX2: impressões de condução (amortecedores dependentes da frequência)",
+      "url": "https://www.km77.com/coches/bmw/ix2/2024/estandar/informacion/bmw-ix2-2024-impresiones-de-conduccion",
+      "type": "press"
+    },
+    {
+      "id": "motor1-es-ix2",
+      "label": "Motor1 Espanha — BMW iX2 eDrive20 com Pack M Pro (jantes de 19\")",
+      "url": "https://es.motor1.com/features/743387/bmw-ix2-204cv-opinion-suv/",
+      "type": "press"
+    },
+    {
+      "id": "totallyev-ix2",
+      "label": "TotallyEV — análise de áudio do BMW iX2 (sistema de série vs. Harman Kardon)",
+      "url": "https://totallyev.net/bmw-ix2-bmw-x2-audio-review-harman-kardon-upgrade",
+      "type": "press"
+    },
+    {
+      "id": "bmw-group-history",
+      "label": "BMW Group — história: fundação em 1916, Eisenach em 1928, automóveis desde 1929",
+      "url": "https://www.bmwgroup.com/en/company/history.html",
+      "type": "official"
+    },
+    {
+      "id": "wikipedia-salvador-caetano",
+      "label": "Wikipedia — Salvador Caetano: a Baviera, importadora BMW em Portugal, adquirida em 1982",
+      "url": "https://en.wikipedia.org/wiki/Salvador_Caetano",
+      "type": "press"
+    },
+    {
+      "id": "bmw-pt-dealer-locator",
+      "label": "BMW Portugal — localizador de concessionários com filtro «Serviço» (consultado a 19/11/2026)",
+      "url": "https://www.bmw.pt/pt/fastlane/dealer-locator.html",
+      "type": "official"
+    },
+    {
+      "id": "electrive-ix2-production",
+      "label": "electrive — início da produção em série do X2 e do iX2 em Regensburg (02/11/2023)",
+      "url": "https://electrive.com/2023/11/02/bmw-starts-series-production-of-the-ix2",
+      "type": "press"
+    },
+    {
+      "id": "bmw-germany-production-2025",
+      "label": "BMW Group — mais de um milhão de veículos produzidos na Alemanha em 2025; iX1 e iX2 em Regensburg (07/01/2026)",
+      "url": "https://newsroom.bmwgroup.com/global/bmw-group-once-again-produces-more-than-one-million-vehicles-in-germany",
+      "type": "official"
+    },
+    {
+      "id": "bmw-production-network",
+      "label": "BMW Group — rede de produção: Munique, Dingolfing, Regensburg, Leipzig e Debrecen (24/03/2025)",
+      "url": "https://www.bmwgroup.com/en/news/general/2025/production-network-of-the-future.html",
+      "type": "official"
+    },
+    {
+      "id": "bmw-debrecen-ix3",
+      "label": "BMW Group — produção em série do iX3 em Debrecen a partir do fim de outubro de 2025 (30/09/2025)",
+      "url": "https://www.bmwgroup.com/en/news/general/2025/series-production-of-the-BMW-iX3.html",
+      "type": "official"
+    },
+    {
+      "id": "bmw-portugal-techhub",
+      "label": "BMW Group — hub de TI e software em Portugal (Critical TechWorks)",
+      "url": "https://www.bmwgroup.com/en/innovation/innovation-network/tech-offices/portugal.html",
+      "type": "official"
+    },
+    {
+      "id": "bmw-group-report-2025",
+      "label": "BMW Group — resultados anuais de 2025 (12/03/2026)",
+      "url": "https://newsroom.bmwgroup.com/global/stable-group-earnings-thanks-to-consistent-strategy-bmw-group-on-track",
+      "type": "official"
+    },
+    {
+      "id": "bmw-group-q3-2026-cfo",
+      "label": "BMW Group — declaração do CFO sobre os resultados até 30/09/2026 (04/11/2026)",
+      "url": "https://newsroom.bmwgroup.com/global/statement-walter-mertl-member-of-the-board-of-management-of-bmw-ag-finance-conference-call-quarterly-statement-to-30-september-2026-munich-4-november-2026-830-am/",
+      "type": "official"
+    },
+    {
+      "id": "bmw-group-q3-2026-release",
+      "label": "Total Motorcycle — comunicado do BMW Group sobre o 3.º trimestre de 2026 (04/11/2026)",
+      "url": "https://www.totalmotorcycle.com/bmw-group-accelerates-realignment",
+      "type": "press"
+    },
+    {
+      "id": "rttnews-q3-2026",
+      "label": "RTTNews — lucro do 3.º trimestre de 2026 e corte da orientação de margem automóvel (04/11/2026)",
+      "url": "https://www.rttnews.com/3709236/bmw-group-q3-profit-deliveries-drop-cuts-fy26-automotive-segment-ebit-margin.aspx",
+      "type": "press"
+    },
+    {
+      "id": "moodys-bmw-2026",
+      "label": "MT Newswires/Placera — a Moody's confirma A2 com perspetiva estável (12/05/2026)",
+      "url": "https://www.placera.se/telegram/moody-s-affirms-bmw-rating-outlook-stays-stable-20260512",
+      "type": "press"
+    },
+    {
+      "id": "spg-bmw-rating-2026",
+      "label": "S&P Ratings (China) — relatório do BMW AG com notação S&P Global A, perspetiva estável (02/07/2026)",
+      "url": "https://www.spgchinaratings.cn/upload/20260703_BMW%20AG%20Rating%20Report_EN.pdf",
+      "type": "database"
+    },
+    {
+      "id": "bmw-pt-garantia",
+      "label": "BMW Portugal — Garantia BMW: 3 anos sem limite de km; bateria de alta tensão 8 anos/160.000 km",
+      "url": "https://www.bmw.pt/pt/topics/offers-and-services/personal-services/bmw-guarantee.html",
+      "type": "official"
+    },
+    {
+      "id": "bmw-pt-service-portal",
+      "label": "BMW Portugal — BMW Service: Service Inclusive e extensão de garantia",
+      "url": "https://www.bmw.pt/pt/service-portal.html",
+      "type": "official"
+    },
+    {
+      "id": "bmw-pt-service-inclusive",
+      "label": "BMW Portugal — BMW Service Inclusive: âmbito e condições",
+      "url": "https://www.bmw.pt/pt/shop/ls/dp/Service_Inclusive_pt",
+      "type": "official"
+    },
+    {
+      "id": "bmw-pt-recalls",
+      "label": "BMW Portugal — recalls e ações técnicas: consulta pelo VIN",
+      "url": "https://www.bmw.pt/pt/topics/offers-and-services/recall-acoes-tecnicas.html",
+      "type": "official"
+    },
+    {
+      "id": "whatcar-reliability-ix1",
+      "label": "What Car? — BMW mais fiáveis: iX1 com 86,8% e 19% com avaria (atualizado a 26/07/2026)",
+      "url": "https://www.whatcar.com/news/most-reliable-bmws",
+      "type": "press"
+    },
+    {
+      "id": "adac-pannenstatistik-2026",
+      "label": "ADAC — Pannenstatistik 2026: iX1 entre os melhores da classe (23/04/2026)",
+      "url": "https://www.adac.de/rund-ums-fahrzeug/unfall/adac-pannenstatistik/",
+      "type": "database"
+    },
+    {
+      "id": "autoexpress-ix1-longterm",
+      "label": "Auto Express — teste de longa duração ao iX1 eDrive20 M Sport, relatório final (06/11/2024)",
+      "url": "https://www.autoexpress.co.uk/bmw/ix1/363699/bmw-ix1-edrive20-m-sport-long-term-test-great-customer-service-rescues-our-suv",
+      "type": "press"
+    },
+    {
+      "id": "telegraph-ix1-longterm",
+      "label": "The Telegraph (via Yahoo) — teste de longa duração ao iX1 (19/03/2024)",
+      "url": "https://www.yahoo.com/news/bmw-ix1-ev-easy-recommend-173000327.html",
+      "type": "press"
+    },
+    {
+      "id": "businesscar-ix1-longterm",
+      "label": "Business Car — iX1 devolvido antes do fim do teste por avaria no carregamento (05/01/2024)",
+      "url": "https://www.businesscar.co.uk/?p=20848",
+      "type": "press"
+    },
+    {
+      "id": "motortalk-ix1-ix2-forum",
+      "label": "MOTOR-TALK — fórum BMW iX1 & iX2 (consultado a 19/11/2026)",
+      "url": "https://www.motor-talk.de/forum/bmw-ix1-ix2-b1180.html",
+      "type": "owner"
+    },
+    {
+      "id": "motortalk-satisfaction",
+      "label": "MOTOR-TALK — «Wie zufrieden seid ihr mit dem iX1?» (desde 02/04/2025)",
+      "url": "https://www.motor-talk.de/forum/wie-zufrieden-seit-ihr-mit-dem-ix1-t8194195.html",
+      "type": "owner"
+    },
+    {
+      "id": "motortalk-drive-unit",
+      "label": "MOTOR-TALK — unidade de tração dianteira avariada num iX1 com 68.000 km (02/05/2026)",
+      "url": "https://www.motor-talk.de/forum/vordere-antriebseinheit-defekt-ix1-t8556319.html",
+      "type": "owner"
+    },
+    {
+      "id": "motortalk-brake-noise",
+      "label": "MOTOR-TALK — ruído dos travões do iX1 (desde 26/03/2023)",
+      "url": "https://www.motor-talk.de/forum/bmw-ix1-bremsen-sind-sehr-laut-t7437991.html",
+      "type": "owner"
+    },
+    {
+      "id": "carrecalls-kba-013586",
+      "label": "car-recalls.eu — KBA 013586: sistema de travagem integrado, 1.493.890 veículos; iX2 incluído em 09/2024",
+      "url": "https://car-recalls.eu/bmw-recall-brake-assist-failure-kba/amp",
+      "type": "database"
+    },
+    {
+      "id": "carrecalls-ix2-servomotor",
+      "label": "car-recalls.eu — Safety Gate SR/00053/25: soldadura do servomotor dos travões, iX2 2022–2024",
+      "url": "https://car-recalls.eu/recall/bmw-ix2-2022-2024-brakes-accident/",
+      "type": "database"
+    },
+    {
+      "id": "carrecalls-kba-14325r",
+      "label": "car-recalls.eu — KBA 14325R repetido a 06/07/2026",
+      "url": "https://car-recalls.eu/esp-abs-fail-bmw-kba/?noamp=mobile",
+      "type": "database"
+    },
+    {
+      "id": "carrecalls-ix2-seatbelts",
+      "label": "car-recalls.eu — Safety Gate SR/03496/25: cintos de segurança, iX2 produzidos entre 18/06 e 25/08/2025",
+      "url": "https://car-recalls.eu/recall/bmw-ix2-2025-seat-belts/",
+      "type": "database"
+    },
+    {
+      "id": "carrecalls-kba-15584r",
+      "label": "car-recalls.eu — KBA 15584R: enroladores dos cintos dianteiros, 8.800 BMW",
+      "url": "https://car-recalls.eu/damaged-belt-retractor-bmw-mini-kba",
+      "type": "database"
+    },
+    {
+      "id": "carrecalls-ix1",
+      "label": "car-recalls.eu — recalls do BMW iX1 (seis registos, 2022–2025)",
+      "url": "https://car-recalls.eu/model/ix1",
+      "type": "database"
+    },
+    {
+      "id": "autohaus-ix1-bpillar",
+      "label": "Autohaus — KBA 14481R: reforço do pilar B no X1 e iX1 (01/07/2025)",
+      "url": "https://www.autohaus.de/automarken/rueckrufe/bmw-ruft-x1-und-ix1-zurueck-b-saeule-zu-schwach-gefahr-bei-crash-3684155",
+      "type": "press"
+    },
+    {
+      "id": "bmwblog-ix2-us",
+      "label": "BMWBLOG — o iX2 e o iX1 não são vendidos nos EUA (14/03/2024)",
+      "url": "https://www.bmwblog.com/2024/03/14/should-bmw-bring-the-ix2-electric-to-the-united-states/",
+      "type": "press"
+    }
+  ]
+}
